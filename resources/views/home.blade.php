@@ -72,6 +72,7 @@ if (isset($_SESSION['User_Fname'])){
 <section class="services">
 
    <h1 class="heading-title"> Today Allocation </h1>
+   <h2>DEPARTMENT OF COMPUTER SCIENCE UNIVERSITY OF RUHUNA</h2>
 
    <div class="box-container">
 
