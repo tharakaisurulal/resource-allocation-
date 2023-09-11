@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.b{
+    height: 100vh;
+    background-color: rgb(241, 236, 236);
+    /*background-image: url('https://wallpaperaccess.com/full/2830692.jpg');*/
+    background-size: cover;
+    background-position: center;
+    animation: animate 10s ease-in-out infinite;
+    /*background: rgba( 0, 0, 0, 0.5);*/
+}
+@keyframes animate{
+    0%{
+        background-image: url('https://www.lib.ruh.ac.lk/assets/img/2.jpg');
+    }
+    25%{
+        background-image:url('https://www.sci.ruh.ac.lk/computer/img/slider/slider2.jpg') ;
+    }
+    50%{
+        background-image: url('https://www.sci.ruh.ac.lk/computer/img/slider/slider12.jpg');
+    }
+    75%{
+        background-image: url('https://media.licdn.com/dms/image/C4E1BAQGUGhRlEXo2-Q/company-background_10000/0/1519244761593?e=1694350800&v=beta&t=A0TmsxJGtA0xwpWUpmHWBoa-Tf4iII07xkUeQ4vYXxI');
+    }
+
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+}
+a:hover{
+    color: orangered;
+}
+header{
+    position: relative;
+    padding: 0 2rem;
+}
+.navbar{
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar .logo{
+    width: 20px;
+    height: 25px;
+}
+
+.navbar .links{
+    display: flex;
+    gap: 2rem;
+}
+.navbar .toggle_btn{
+    color:#fff ;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+.action_btn{
+    background-color: gold;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.2 ease;
+}
+.action_btn:hover{
+    scale: 1.05;
+    color: #fff;
+}
+.action_btn:active{
+    scale:0.95;
+}
+/*DROP DOWN MENU*/
+.dropdown_menu{
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    height: 0;
+    width: 300px;
+    background: rgba( 255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: hight ,2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.dropdown_menu.open{
+    height: 240px;
+}
+.dropdown_menu li{
+    padding: 0.7rem;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.dropdown_menu .action_btn{
+    width: 100px;
+    display: flex;
+    justify-content: center;
+}
+/*HERO*/
+section#hero{
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    text-align: center;
+    color: #fff;
+}
+#hero{
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+/*#hero:hover{
+        scale: 1.05;
+        color:orangered;
+}*/
+/*RESPONSIVE DESIGN*/
+@media(max-width: 992px) {
+    .navbar  .links,
+    .navbar  .action_btn{
+        display:none;
+    }
+    .navbar .toggle_btn{
+        display:block;
+    }
+    .dropdown_menu{
+        display: block;
+    }
+}
+@media(max-width: 576px){
+    .dropdown_menu{
+        left:2rem;
+        width: unset;
+    }
+}
+/*@media(max-width: 576px){
+    .b{
+        left:2rem;
+        width: unset;
+    }
+}*/
