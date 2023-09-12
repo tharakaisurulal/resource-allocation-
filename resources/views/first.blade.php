@@ -6,15 +6,15 @@
 
         <title>Lecture hall Allocation</title>
         @include('cdn')
-        <link rel="stylesheet" href={{asset('assets/css/bootstrap.css')}}>
-        <link rel="stylesheet" href={{asset('assets/css/style.css')}}>
+        <link rel="stylesheet" href={{asset('css/bootstrap.css')}}>
+        <link rel="stylesheet" href={{asset('css/style.css')}}>
         <link rel="icon" type="text/css" href="{{asset('img/icons/favicon.png')}}">
 
     </head>
     <body>
         <section>
         <div class="header">
-            <img src="assets/images/logo_copy.png" class="logo">
+            <img src="images/logo_copy.png" class="logo">
 
 
         <input type="checkbox" id="openSidebarMenu">
@@ -57,7 +57,7 @@
 
                     <div class="content">
                         <div class="article">
-                            <img src={{asset('assets/images/slider3.jpg')}} alt="" class="img-responsive floating-image right">
+                            <img src={{asset('images/slider3.jpg')}} alt="" class="img-responsive floating-image right">
 
                             <h2><ins>Department Of Computer Science</ins></h2>
                             <p>&nbsp&nbsp&nbspThe Department of Computer Science of the University of Ruhuna is the oldest and one of the most esteemed computer science departments in the university system of Sri Lanka. The root of the department was the Computer Unit of the University of Ruhuna and the department was established in 1997 fulfilling a long-standing need of the University. Currently the department offers undergraduate programs, postgraduate programs and training programs on demand. The department disseminates it’s knowledge not only to the university students but also to the outside society through its external courses. The department further extends its services by providing software solutions and though ICT related consultancy services. </p>
@@ -65,7 +65,7 @@
                             <div class="profile">
                                 <h4><ins> HEAD </ins></h4>
                                 <div class="img">
-                                    <img src={{asset('assets/images/849.jpg')}}>
+                                    <img src={{asset('images/849.jpg')}}>
                                 </div>
 
                                 <div class="b">
