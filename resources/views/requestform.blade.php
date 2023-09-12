@@ -33,7 +33,7 @@
                     <br>
                     <div class="form-grouprow">
                     <label for="inputlocation3" class="col-sm-2 col-form-label">Location:</label>
-                            <select name="faculty" id="faculty">
+                            <select name="location" id="location">
                             <option value="op1">lab 1</option>
                             <option value="op2">lab 2</option>
                             <option value="op3">lab 3</option>
@@ -42,11 +42,6 @@
                             <option value="op6">lecture hall 03</option>
                             <option value="op7">Main auditorium</option>
                             </select>
-                    </div>
-                    <br>
-                    <div class="form-grouprow">
-                        <label for="inputdepartment3" class="col-sm-2 col-form-label">Department :</label>
-                                <input type="department" class="form-control" id="inputdepartment3" placeholder="department">       
                     </div>
                     <br>
                     <div class="form-grouprow">
@@ -61,6 +56,11 @@
                             <option value="op7">Faculty of Technology</option>
                             <option value="op7">Faculty of Agriculture</option>
                             </select>
+                    </div>
+                    <br>
+                    <div class="form-grouprow">
+                        <label for="inputdepartment3" class="col-sm-2 col-form-label">Department :</label> 
+                        <input type="text" class="form-control" id="inputDepartment3" placeholder="Department of Computer Science">    
                     </div>
                     <br>
                     <div class="form-grouprow">
