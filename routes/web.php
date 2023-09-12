@@ -22,9 +22,3 @@ Route::get('/register', function () {
 Route::get('/request', function () {
     return view('requestform');
 });
-Route::get('/home', function () {
-    return view('home');
-});
-Route::get('/2homepage', function () {
-    return view('secondhomepage');
-});
