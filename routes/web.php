@@ -22,3 +22,10 @@ Route::get('/register', function () {
 Route::get('/request', function () {
     return view('requestform');
 });
+Route::get('/login', function () {
+    return view('Login');
+});
+Route::get('/first', function () {
+    return view('first');
+});
+
