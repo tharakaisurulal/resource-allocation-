@@ -5,11 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class course extends Model
+class accsupportive extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'course_name',
-        'course_code'
+        'username',
+        'password',
+        'acc_name',
+        'acc_mobile',
+        'photo'
+
     ];
 }
