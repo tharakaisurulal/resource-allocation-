@@ -40,15 +40,22 @@
             <form action="">
                 <h1> LOGIN </h1>
                 <div class="inputBox">
-                    <input type="text" required>
-                    <span>Username</span>
-                    <i><ion-icon name="person"></ion-icon></i>
+
+                    <select name="user" id="userid">
+                        <option value=""><span>--Login As--</span></option>
+                        <option value="volvo">Lecturer</option>
+                        <option value="saab">Student</option>
+                        <option value="mercedes">Accademic-Supportive</option>
+                        <option value="audi">Guest</option>
+                        </select>
+
+
                 </div>
 
                 <div class="inputBox">
                     <input type="text" required>
-                    <span>Email</span>
-                    <i><ion-icon name="mail"></ion-icon></i>
+                    <span>Username</span>
+                    <i><ion-icon name="person"></ion-icon></i>
                 </div>
 
                 <div class="inputBox">
