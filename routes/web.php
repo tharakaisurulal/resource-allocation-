@@ -16,7 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
 Route::get('/request', function () {
     return view('requestform');
 });
@@ -28,5 +27,11 @@ Route::get('/footer', function () {
 });
 Route::get('/Register', function () {
     return view('registration');
+});
+Route::get('/sturegister', function () {
+    return view('sturegistration');
+});
+Route::get('/guestregistration', function () {
+    return view('guestregistration');
 });
 

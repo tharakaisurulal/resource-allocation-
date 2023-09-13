@@ -3,11 +3,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+
     margin: 0;
-    background-color: #034665;
+    background-color: #23242a;
   }
-  
+
   .container {
     background-color: white;
     border-radius: 5px;
@@ -15,15 +15,19 @@ body {
     padding: 40px; /* Increased padding for a larger box */
     width: 500px; /* Increased width for a larger box */
     text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
   }
-  
+
   /* Apply your provided styles within the container */
   .container * {
     box-sizing: border-box;
   }
-  
+
   .container input[type="text"],
-  .container input[type="password"] {
+  .container input[type="password"],
+  .container input[type="email"] {
     width: 100%;
     padding: 15px;
     margin: 10px 0 25px 0; /* Adjusted margin for more spacing */
@@ -31,18 +35,19 @@ body {
     border: none;
     background: #f1f1f1;
   }
-  
+
   .container input[type="text"]:focus,
-  .container input[type="password"]:focus {
+  .container input[type="password"]:focus,
+  .container input[type="email"]:focus {
     background-color: #ddd;
     outline: none;
   }
-  
+
   .container hr {
-    border: 1px solid #f1f1f1;
+    border: 1px solid #080808;
     margin-bottom: 30px; /* Adjusted margin for more spacing */
   }
-  
+
   .container .registerbtn {
     background-color: #f6a210;
     color: white;
@@ -53,16 +58,24 @@ body {
     width: 100%;
     opacity: 0.9;
   }
-  
+
   .container .registerbtn:hover {
     opacity: 1;
   }
-  
+
   .container a {
     color: dodgerblue;
   }
-  
+
   .container .signin {
     background-color: #f1f1f1;
     text-align: center;
+  }
+#faculty {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0 25px 0; /* Adjusted margin for more spacing */
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
   }

@@ -11,15 +11,10 @@
     </head>
     <body>
 
-
-    <form action="action_page.php">
-    <br>
-    <h1>Register</h1>
-    <p>Please fill in this form to create an account.</p>
-    <hr>
-
-
+        <form action="action_page.php">
+            @csrf
   <div class="container">
+
   <h1>Register</h1>
     <p>Please fill in this form to create an account.</p>
     <hr>
@@ -27,21 +22,30 @@
     <label for="name"><b>Name With Initials</b></label>
     <input type="text" placeholder="Enter Name" name="name" id="name" required>
 
-    <label for="name"><b>Student No</b></label>
-    <input type="text" placeholder="Enter Student No" name="student no" id="student no" required>
+    <label for="name"><b>Faculty</b></label>
+
+    <select name="faculty" id="faculty">
+        <option value="">--Choose faculty--</option>
+        <option value="op1">Faculty of Science</option>
+        <option value="op2">Faculty of Management and Finance</option>
+        <option value="op3">Faculty of Humanities and Social Sciences	</option>
+        <option value="op4">Faculty of Fisheries and Marine Sciences and Technology</option>
+        <option value="op5">Faculty of Medicine</option>
+        <option value="op6">Faculty of Engineering</option>
+        <option value="op7">Faculty of Technology</option>
+        <option value="op7">Faculty of Agriculture</option>
+        </select>
+
+
+    <label for="name"><b>Department</b></label>
+    <input type="text" placeholder="Enter Department" name="department" id="dpt" required>
 
 
     <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" id="email" required>
+    <input type="email" placeholder="Enter Email" name="email" id="email" required><br>
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
-
-    <label for="psw-repeat"><b>Repeat Password</b></label>
-    <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
-    
-
- 
+    <label for="psw"><b>Position</b></label>
+    <input type="text" placeholder="Enter Position" name="position" id="psw" required>
 
    <label for="profileImage" class="form-label"><b>Upload Profile Image</b></label>
    <input type="file" class="form-control" id="profileImage" name="profileImage" accept="image/*">
@@ -51,6 +55,7 @@
     <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
     <button type="submit" class="registerbtn">Register</button>
   </div>
+
 
   <div class="container signin">
     <p>Already have an account? <a href="#">Sign in</a>.</p>
