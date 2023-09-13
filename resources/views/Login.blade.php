@@ -39,8 +39,8 @@
         <div class="box">
             <form action="">
                 <h1> LOGIN </h1>
-                <div class="inputBox">
 
+                <div class="inputBox">
                     <select name="user" id="userid">
                         <option value=""><span>--Login As--</span></option>
                         <option value="volvo">Lecturer</option>
@@ -48,8 +48,6 @@
                         <option value="mercedes">Accademic-Supportive</option>
                         <option value="audi">Guest</option>
                         </select>
-
-
                 </div>
 
                 <div class="inputBox">
@@ -66,7 +64,7 @@
 
                 <div class="links">
                     <a href="#">Forget Password?</a>
-                    <a href="#">Register</a>
+                    <a href="/guestregistration">Register</a>
                 </div>
 
                 <input type="submit"value="Login">
