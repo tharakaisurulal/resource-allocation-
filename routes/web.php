@@ -16,16 +16,17 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/register', function () {
-    return view('registration');
-});
+
 Route::get('/request', function () {
     return view('requestform');
 });
 Route::get('/login', function () {
     return view('Login');
 });
-Route::get('/first', function () {
-    return view('first');
+Route::get('/footer', function () {
+    return view('footer');
+});
+Route::get('/Register', function () {
+    return view('registration');
 });
 
