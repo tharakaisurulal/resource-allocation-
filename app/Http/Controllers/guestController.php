@@ -23,7 +23,7 @@ class guestController extends Controller
 {
     public function guestregistration()
     {
-        return view('guestregistration');
+        return view('guest.guestregistration');
     }
 
     public function gueststore(Request $request)
@@ -53,9 +53,23 @@ class guestController extends Controller
             'mobile'=> $request -> mobile,
 
             ]);
-//return $request;
 
             $res = $guests ->save();
+
+            /*$image = new guest;
+            if($request->hasfile('photo'))
+           {
+               $file = $request->file('photo');
+               $extenstion = $file->getClientOriginalExtension();
+               $filename = time().'.'.$extenstion;
+               $file->move('uploads/guests/', $filename);
+               $image->photo = $filename;
+           }
+
+           $image->save();*/
+//return $request;
+
+
             //$student=post::create($request->all());
             //$student->password = Hash::make($request->input('password'));
             //$student->save();

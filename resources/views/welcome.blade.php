@@ -31,7 +31,7 @@
                     <li><a href="#contactus">CONTACT US</a></li>
                     <li><a href="#">NOTICE</a></li>
                     <li><a href="/loginpage">LOGIN</a></li>
-                    <li><a href="/guestregistration">REGISTER</a></li>
+                    <li><a href="/guest/guestregistration">REGISTER</a></li>
                 </ul>
             </div>
 
@@ -45,7 +45,7 @@
                 <div class="banner-btn">
                     <a href="#"><span></span>GUEST US</a>
                     <a href="/loginpage"><span></span>LOGIN</a>
-                    <a href="/guestregistration"><span></span>REGISTER</a>
+                    <a href="/guest/guestregistration"><span></span>REGISTER</a>
                 </div>
             </div>
         </div>

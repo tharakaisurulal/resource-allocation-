@@ -15,7 +15,7 @@ class AlreadLoggedIn
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(session()->has('reid') && (url('/loginpage')==$request->url()||url('/guestregistration')==$request->url()))
+        if(session()->has('reid') && (url('/loginpage')==$request->url()||url('/guest/guestregistration')==$request->url()))
         {
            return back();
         }
