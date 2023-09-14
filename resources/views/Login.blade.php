@@ -38,7 +38,7 @@
         </label>
             <div id="sidebarMenu">
                 <ul class="menu">
-                    <li><a href="#">HOME</a></li>
+                    <li><a href="/">HOME</a></li>
                     <li><a href="#">ABOUT US</a></li>
                     <li><a href="#">MY PROFILE</a></li>
                     <li><a href="#">CONTACT US</a></li>
@@ -93,7 +93,7 @@
                 <div class="links">
                     <input type="submit"value="login">
                         <div class="link2">
-                            <a href="/guestregistration">Register</a>
+                            <a href="/guest/guestregistration">Register</a>
                         </div>
                 </div>
 

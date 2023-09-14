@@ -12,33 +12,9 @@
     </head>
 
     <body>
-    <section>
-        <div class="header">
-            <img src="images/logo_copy.png" class="logo">
-        </div>
-
-
-        <input type="checkbox" id="openSidebarMenu">
-        <label for="openSidebarMenu" class="sidebarIconToggle">
-            <div class="spinner top"></div>
-            <div class="spinner middle"></div>
-            <div class="spinner bottom"></div>
-        </label>
-            <div id="sidebarMenu">
-                <ul class="menu">
-                    <li><a href="#">HOME</a></li>
-                    <li><a href="#">ABOUT US</a></li>
-                    <li><a href="#">MY PROFILE</a></li>
-                    <li><a href="#">CONTACT US</a></li>
-                    <li><a href="#">NOTICE</a></li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
         <section class="login">
         <div class="box">
-            <form action="{{route('gueststore')}}" method="post">
+            <form action="{{route('gueststore')}}" method="post" enctype="multipart/form-data">
                 @if(session()->has('success'))
                     <div class="alert alert-success">{{session()->get('success')}}</div>
                 @endif
