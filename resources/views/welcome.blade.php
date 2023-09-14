@@ -30,7 +30,7 @@
                     <li><a href="#about">ABOUT US</a></li>
                     <li><a href="#contactus">CONTACT US</a></li>
                     <li><a href="#">NOTICE</a></li>
-                    <li><a href="/login">LOGIN</a></li>
+                    <li><a href="/loginpage">LOGIN</a></li>
                     <li><a href="/guestregistration">REGISTER</a></li>
                 </ul>
             </div>
@@ -44,7 +44,7 @@
                 <h1>WELCOME TO RESOURCES MANAGEMENT SYSTEM...</h1>
                 <div class="banner-btn">
                     <a href="#"><span></span>GUEST US</a>
-                    <a href="/login"><span></span>LOGIN</a>
+                    <a href="/loginpage"><span></span>LOGIN</a>
                     <a href="/guestregistration"><span></span>REGISTER</a>
                 </div>
             </div>

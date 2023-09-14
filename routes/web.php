@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\guestController;
+use App\Http\Controllers\loginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,9 +21,9 @@ Route::get('/', function () {
 Route::get('/request', function () {
     return view('requestform');
 });
-Route::get('/login', function () {
-    return view('Login');
-});
+//Route::get('/login', function () {
+    //return view('Login')->middleware('LoggedIn');
+//});
 Route::get('/footer', function () {
     return view('footer');
 });
@@ -31,7 +33,24 @@ Route::get('/Register', function () {
 Route::get('/sturegister', function () {
     return view('sturegistration');
 });
-Route::get('/guestregistration', function () {
-    return view('guestregistration');
+//Route::get('/guestregistration', function () {
+    //return view('guestregistration');
+//});
+//Route::get('/home', function () {
+    //return view('home')->middleware('IsLoggedIn');
+//});
+Route::get('/home1', function () {
+    return view('home1');
 });
 
+Route::post('/gueststore', [guestController::class, 'gueststore'])->name('gueststore'); //storing data in guest table.
+
+Route::get('/guestregistration', [guestController::class, 'guestregistration'])->middleware('LoggedIn'); //restrict from home to guest registration, go to guest registraion
+
+Route::post('/login', [loginController::class, 'login'])->name('login'); //login functions
+
+Route::get('/loginpage', [loginController::class, 'loginpage'])->middleware('LoggedIn');//restrict from home to login, go to login
+
+Route::get('/logout', [loginController::class, 'logout'])->name('logout'); //loout functions
+
+Route::get('/home', [loginController::class, 'home'])->middleware('IsLoggedIn'); //restrict from login to home

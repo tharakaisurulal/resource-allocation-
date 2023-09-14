@@ -20,7 +20,7 @@ body{
     position: relative;
     margin-top: 75px;
     width: 450px;
-    height:575px;
+    height:700px;
     background:#1c1c1c;
     border-radius: 8px;
     overflow: hidden;
@@ -32,7 +32,7 @@ body{
     top: -50%;
     left: -50%;
     width: 380px;
-    height: 420px;
+    height: 620px;
     background: linear-gradient(0deg, transparent,transparent,#45f3ff,#45f3ff,#45f3ff);
     z-index: 1;
     transform-origin: bottom right;
@@ -45,7 +45,7 @@ body{
     top: -50%;
     left: -50%;
     width: 380px;
-    height: 420px;
+    height: 620px;
     background: linear-gradient(0deg, transparent,transparent,#45f3ff,#45f3ff,#45f3ff);
     z-index: 1;
     transform-origin: bottom right;
@@ -184,7 +184,7 @@ body{
     background: #3586ff;
     min-height: 100px;
     padding: 20px 50px;
-    margin-top: 4%;
+    margin-top: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -305,3 +305,18 @@ body{
     background: #585252;
     border: 2px solid #45f3ff;
   }
+
+  .label1
+{
+    color: #45f3ff;
+}
+
+.links1
+{
+    padding-left: 150px;
+}
+
+.link2{
+    padding-right: 30px;
+    padding-top: 35px;
+}

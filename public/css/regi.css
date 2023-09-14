@@ -20,7 +20,7 @@ body{
     position: relative;
     margin-top: 80px;
     width: 450px;
-    height:1040px;
+    height:1300px;
     background:#1c1c1c;
     border-radius: 8px;
     overflow: hidden;
@@ -32,7 +32,7 @@ body{
     top: -50%;
     left: -50%;
     width: 380px;
-    height: 900px;
+    height: 1220px;
     background: linear-gradient(0deg, transparent,transparent,#45f3ff,#45f3ff,#45f3ff);
     z-index: 1;
     transform-origin: bottom right;
@@ -45,7 +45,7 @@ body{
     top: -50%;
     left: -50%;
     width: 380px;
-    height: 900px;
+    height: 1220px;
     background: linear-gradient(0deg, transparent,transparent,#45f3ff,#45f3ff,#45f3ff);
     z-index: 1;
     transform-origin: bottom right;
@@ -94,11 +94,12 @@ body{
     outline: none;
     border:none;
     box-shadow:none;
-    color: #23242a;
+    color: #c00d0d;
     font-size: 1em;
     letter-spacing:0.05em;
     transition:0.5s;
     z-index:8;
+
 }
 
 .box form .inputBox span{
@@ -133,9 +134,9 @@ body{
     pointer-events: none;
 }
 
-.box form .inputBox input:valid ~ i,
 .box form .inputBox input:focus ~ i
 {
+
     height: 44px;
 }
 
@@ -190,5 +191,4 @@ body{
   .pr{
     color: #45f3ff;
   }
-
 

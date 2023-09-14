@@ -3,10 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-namespace App\Http\Controllers;
-use App\Models\post;
-
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\hash;
 use session;
@@ -18,47 +14,90 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Response;
 //use Symfony\Component\HttpFoundation\Cookie;
 use Illuminate\Support\Facades\Cookie;
+use App\Models\guest;
 
 class loginController extends Controller
 {
+
+    public function loginpage()
+    {
+        return view('Login');
+    }
+
+    public function home()
+    {
+        return view('home');
+    }
+
+
     public function login(Request $request){
 
-if($request){
-        $request->validate([
-            'name'=> 'required',
-            'password'=> 'required|min:5|max:12'
-          ]);
-
-          $mv=post::where('name','=',$request -> name)->first();
-          //$mv1=$request->all();
-          //return $request['remember'];
-          if($mv)
-          {
-            if(Hash::check($request -> password,$mv -> password))
-            {
-                $request-> session() ->put('reid',$mv->id); //store session variable
-
-                if($request->remember===null){
-
-                }
-                else{
-                   setcookie('nameid',$request -> name,time()+60);
-                   setcookie('password',$request -> password,time()+60);
-                }
-
-                    return redirect('/home');
+      //return $request;
+      if(($request->user)=="Guest"){
+      $mv=guest::where('username','=',$request -> username)->first();
+      //return $mv;
+      if($mv)
+      {
+        if(Hash::check($request -> password,$mv -> password))
+        {
+            $request-> session() ->put('reid',$mv->id);
+         //$na=session()->get('reid');
+         //return $na;
+            if($request->remember===null){
+                //$na=session()->get('reid');
+                //return $na;
+            }
+            else{
+               setcookie('nameid',$request -> username,time()+60);
+               setcookie('password',$request -> password,time()+60);
+               //return $request->remember;
             }
 
-            else{
-                return back() -> with('fail',"this password is not match");
-                }
 
-          }
+                return redirect('/home');
+        }
 
-          else
-          {
-            return back() -> with('fail',"this username is not registered");
-          }
+        else{
+            return back() -> with('fail',"this password is not match");
+            }
+
+      }
+
+      else
+      {
+        return back() -> with('fail',"this username is not registered");
+      }
     }
+
+
+    elseif(($request->user)=="Lecturer"){
+        return view('home1');
+    }
+
+    elseif(($request->user)=="Student"){
+        return view('home1');
+    }
+
+    elseif(($request->user)=="Accademic_Supportive"){
+        return view('home1');
+    }
+
+    elseif(($request->user)==""){
+        //return view('home1');
+        return back() -> with('fail',"please choose the user");
+    }
+
+
 }
+
+public function logout()
+    {
+        if(session()->has('reid'))
+        {
+            session()->pull('reid');
+            return redirect('/loginpage');
+        }
+    }
+
+
 }
