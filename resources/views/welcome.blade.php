@@ -179,6 +179,7 @@
         <!---------------------- contact section ends ---------------------------------------->
 
         <!---------------------- footer section starts ---------------------------------------->
+    <section class="footer">
         <div class="page-wrapper">
             <div id="waterdrop"></div>
               <div class="footer-top">
@@ -191,7 +192,7 @@
                     </div>
 
                     <div class="col-lg-3 col-md-12 col-sm-12 footer-col-3">
-                      <div class="widget footer_widget">
+                      <div class="Contact Info ">
                         <h5 class="footer-title">Address</h5>
                             <div class="contact">
                             <div>
@@ -207,27 +208,28 @@
                         </div>
                     </div>
 
+
                     <div class="col-lg-3 col-md-12 col-sm-12 footer-col-3">
-                          <div class="widget">
-                            <h5 class="footer-title">Email Us</h5>
-                            <div class="textwidget">
-                              <div role="form" class="wpcf7" id="wpcf7-f4-o1" lang="en-US" dir="ltr">
+                        <div class="widget">
+                          <h5 class="footer-title">Email Us</h5>
+                          <div class="textwidget">
+                            <div role="form" class="wpcf7" id="wpcf7-f4-o1" lang="en-US" dir="ltr">
 
-                                <form method="post" class="wpcf7-form" novalidate="novalidate">
+                              <form method="post" class="wpcf7-form" novalidate="novalidate">
 
-                                  <div class="contact-form-footer">
-                                    <p><span class="wpcf7-form-control-wrap your-first-name"><input type="text" name="your-first-name" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" placeholder="Your name"></span></p>
-                                    <p><span class="wpcf7-form-control-wrap your-email_1"><input type="email" name="your-email_1" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-email" aria-invalid="false" placeholder="Your email"></span></p>
-                                    <p><span class="wpcf7-form-control-wrap your-message"><textarea name="your-message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Your message"></textarea></span></p>
-                                    <div><input type="submit" value="Send" class="wpcf7-form-control wpcf7-submit"><span class="ajax-loader"></span></div>
-                                  </div>
-                                </form>
-                              </div>
+                                <div class="contact-form-footer">
+                                  <p><span class="wpcf7-form-control-wrap your-first-name"><input type="text" name="your-first-name" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" placeholder="Your name"></span></p>
+                                  <p><span class="wpcf7-form-control-wrap your-email_1"><input type="email" name="your-email_1" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-email" aria-invalid="false" placeholder="Your email"></span></p>
+                                  <p><span class="wpcf7-form-control-wrap your-message"><textarea name="your-message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Your message"></textarea></span></p>
+                                  <div><input type="submit" value="Send" class="wpcf7-form-control wpcf7-submit"><span class="ajax-loader"></span></div>
+                                </div>
+                              </form>
                             </div>
                           </div>
                         </div>
+                      </div>
 
-                    <div class="col-lg-3 col-md-12 col-sm-12 footer-col-3">
+                      <div class="col-lg-3 col-md-12 col-sm-12 footer-col-3">
                         <div class="widget">
                             <h5 class="footer-title">Quick Link</h5>
                             <div class="box">
@@ -243,9 +245,8 @@
 
                     <div class="credit"><span> UNIVERSITY OF RUHUNA </span> | COMPUTER SCIENCE DEPARTMENT </div>
                 </div>
-              </div>
-        </div>
-    </div>
+            </section>
+
       <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
       <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     </body>
