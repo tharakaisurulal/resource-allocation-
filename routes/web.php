@@ -45,7 +45,7 @@ Route::get('/home1', function () {
 
 Route::post('/gueststore', [guestController::class, 'gueststore'])->name('gueststore'); //storing data in guest table.
 
-Route::get('/guestregistration', [guestController::class, 'guestregistration'])->middleware('LoggedIn'); //restrict from home to guest registration, go to guest registraion
+Route::get('/guest/guestregistration', [guestController::class, 'guestregistration'])->middleware('LoggedIn'); //restrict from home to guest registration, go to guest registraion
 
 Route::post('/login', [loginController::class, 'login'])->name('login'); //login functions
 

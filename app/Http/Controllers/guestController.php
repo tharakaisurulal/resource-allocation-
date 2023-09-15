@@ -23,7 +23,7 @@ class guestController extends Controller
 {
     public function guestregistration()
     {
-        return view('guestregistration');
+        return view('guest.guestregistration');
     }
 
     public function gueststore(Request $request)
@@ -42,6 +42,15 @@ class guestController extends Controller
           ]);
           //return $request;
 
+          if($request->hasfile('photo'))
+           {
+               $file = $request->file('photo');
+               $extenstion = $file->getClientOriginalExtension();
+               $filename = time().'.'.$extenstion;
+               $file->move('uploads/guests/', $filename);
+               //$image->photo = $filename;
+           }
+
           $guests=guest::create([
             'username'=> $request -> username,
             //'email' => $request -> email,
@@ -51,17 +60,32 @@ class guestController extends Controller
             'guest_department'=> $request -> department,
             'guest_position'=> $request -> position,
             'mobile'=> $request -> mobile,
-
+            'photo'=> $filename,
             ]);
-//return $request;
 
             $res = $guests ->save();
+
+            /*$image = new guest;
+            if($request->hasfile('photo'))
+           {
+               $file = $request->file('photo');
+               $extenstion = $file->getClientOriginalExtension();
+               $filename = time().'.'.$extenstion;
+               $file->move('uploads/guests/', $filename);
+               $image->photo = $filename;
+           }
+
+           $image->save();*/
+//return $request;
+
+
             //$student=post::create($request->all());
             //$student->password = Hash::make($request->input('password'));
             //$student->save();
             if($res){
             //return redirect('/') -> withSuccess("you are registered");
-            return back() -> with('success',"you are registered");
+            //return back() -> with('success',"you are registered");
+            return redirect('/loginpage') -> with('success',"you are registered,please login now");
             }
             else{
                 return back() -> with('fail',"you are not registered");
