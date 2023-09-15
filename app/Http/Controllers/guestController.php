@@ -42,6 +42,15 @@ class guestController extends Controller
           ]);
           //return $request;
 
+          if($request->hasfile('photo'))
+           {
+               $file = $request->file('photo');
+               $extenstion = $file->getClientOriginalExtension();
+               $filename = time().'.'.$extenstion;
+               $file->move('uploads/guests/', $filename);
+               //$image->photo = $filename;
+           }
+
           $guests=guest::create([
             'username'=> $request -> username,
             //'email' => $request -> email,
@@ -51,7 +60,7 @@ class guestController extends Controller
             'guest_department'=> $request -> department,
             'guest_position'=> $request -> position,
             'mobile'=> $request -> mobile,
-
+            'photo'=> $filename,
             ]);
 
             $res = $guests ->save();
