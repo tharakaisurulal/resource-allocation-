@@ -29,6 +29,11 @@ class loginController extends Controller
         return view('home');
     }
 
+    public function forgetpassword()
+    {
+        return view('forgetpassword');
+    }
+
 
     public function login(Request $request){
 
