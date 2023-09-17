@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 *{
     margin: 0;
     padding: 0;
@@ -73,3 +74,13 @@
   
   }
   .
+=======
+#location {
+    width: 100%;
+    padding: 15px;
+    display: inline-block;
+    background: #585252;
+    border: 2px solid #45f3ff;
+    margin-top: 10px;
+  }
+>>>>>>> Stashed changes
