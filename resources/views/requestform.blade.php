@@ -27,26 +27,22 @@
                         </div>
                         <div class="inputBox">
                             <input type="time" class="form-control" id="input_time3">
-                            <span>Time : </span><br>
-                            <span>From : </span>
-                            <i><ion-icon name="lock-closed"><icon-icon></i>
-                            </div>
-                        <div class="inputBox">
-                            <label for="input_time3" class="col-sm-2 col-form-label">To </label>
-                            <input type="time" class="form-control" id="input_time3">
-                            <i><ion-icon name="lock-closed"><icon-icon></i>
+                            <span>Time :</span>
                         </div>
+                            
+                            
+                            
                         <div class="inputBox">
-                        <label for="input_time3" class="col-sm-2 col-form-label">Location : </label>
-                            <select name="location" id="location">
-                                <option value="op1">lab 1</option>
-                                <option value="op2">lab 2</option>
-                                <option value="op3">lab 3</option>
-                                <option value="op4">lecture hall 01</option>
-                                <option value="op5">lecture hall 02</option>
-                                <option value="op6">lecture hall 03</option>
-                                <option value="op7">Main auditorium</option>
-                            </select>
+                            <label for="input_time3" class="col-sm-2 col-form-label">Location : </label>
+                                <select name="location" id="location">
+                                    <option value="op1">lab 1</option>
+                                    <option value="op2">lab 2</option>
+                                    <option value="op3">lab 3</option>
+                                    <option value="op4">lecture hall 01</option>
+                                    <option value="op5">lecture hall 02</option>
+                                    <option value="op6">lecture hall 03</option>
+                                    <option value="op7">Main auditorium</option>
+                                </select>
                             
                         </div>
                         <div class="inputBox">
