@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html>
     <head>
+
         <link rel="stylesheet" type="text/css" href="{{asset('css/regi.css')}}">
+
+
         <link rel="stylesheet" type="text/css" href="{{asset('css/request.css')}}">
     </head>
     <body>
-<<<<<<< Updated upstream
+
         <div class ="container">
                 
                 <form class="formcl">
                 <h1>SEND YOUR REQUEST</h1>
                 <br>
                     <div class="form-grouprow">
-=======
+
             <div class ="login">
                 <div class="box">
                     <form>
                         <h1>Send Your Request</h1>
                             <br>
                         <div class="inputBox">
->>>>>>> Stashed changes
+
                             <label for="inputname3" class="col-sm-2 col-form-label">Initial Name:</label>
                             <input type="text" class="form-control" id="inputname3" placeholder="G.R.Perera">
                             <i><ion-icon name="lock-closed"><icon-icon></i>
@@ -74,10 +77,10 @@
                             <option value="op7">Faculty of Agriculture</option>
                             </select>
                         </div>
-<<<<<<< Updated upstream
+
                 </div>
         </div>
-=======
+
                         <br>
                         <div class="inputBox">
                             <label for="inputdepartment3" class="col-sm-2 col-form-label">Department :</label> 
@@ -92,6 +95,6 @@
                         </div>
                     </form>
             </div>
->>>>>>> Stashed changes
+
     </body>
 </html>
