@@ -1,3 +1,6 @@
+@extends('layout.headerFooter')
+@section("content")
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -26,7 +29,7 @@
                 <h1> REGISTER </h1>
 
                 <div class="inputBox">
-                    <input type="text" name="name" value="{{old('name')}}">
+                    <input type="text" name="name" value="{{old('name')}}" placeholder="K.M.L.Silva">
                     <span >Name With Initials </span>
                 <i><ion-icon name="person"></ion-icon></i>
                 </div>
@@ -49,36 +52,36 @@
                 <label class="text-danger span1">@error('faculty')  {{$message}}  @enderror</label>
 
                 <div class="inputBox">
-                    <input type="text" name="department" value="{{old('department')}}">
+                    <input type="text" name="department" value="{{old('department')}}"  placeholder="Departmet of Mathematics">
                     <span>Department</span>
-                    <i><ion-icon name="lock-closed"></ion-icon></i>
+                    <i><ion-icon name="person"></ion-icon></i>
                 </div>
                 <label class="text-danger span1">@error('department')  {{$message}}  @enderror</label>
 
                 <div class="inputBox">
-                    <input type="text" name="position" value="{{old('position')}}">
+                    <input type="text" name="position" value="{{old('position')}}"  placeholder="Student/Lecturer">
                     <span>Position</span>
-                    <i><ion-icon name="lock-closed"></ion-icon></i>
+                    <i><ion-icon name="person"></ion-icon></i>
                 </div>
                 <label class="text-danger span1">@error('position')  {{$message}}  @enderror</label>
 
                 <div class="inputBox">
-                    <input type="text" name="mobile" value="{{old('mobile')}}">
+                    <input type="text" name="mobile" value="{{old('mobile')}}"  placeholder="+94717665324">
                     <span>Tel. No</span>
-                    <i><ion-icon name="lock-closed"></ion-icon></i>
+                    <i><ion-icon name="call-sharp"></ion-icon></i>
                 </div>
                 <label class="text-danger span1">@error('mobile')  {{$message}}  @enderror</label>
 
                 <div class="inputBox">
                     <input type="file" name="photo" value="{{old('photo')}}">
-                    <i><ion-icon name="lock-closed"></ion-icon></i>
+                    <i><ion-icon name="person-circle-sharp"></ion-icon></i>
                 </div>
                 <label class="text-danger span1">@error('photo')  {{$message}}  @enderror</label>
 
 		<div class="inputBox">
-                    <input type="email" name="username">
+                    <input type="email" name="username"  placeholder="silva@gmail.com">
                     <span>Username</span>
-                    <i><ion-icon name="lock-closed"></ion-icon></i>
+                    <i><ion-icon name="mail-sharp"></ion-icon></i>
         </div>
         <label class="text-danger span1">@error('username')  {{$message}}  @enderror</label>
 
@@ -88,6 +91,13 @@
                 <i><ion-icon name="lock-closed"></ion-icon></i>
             </div>
             <label class="text-danger span1">@error('password')  {{$message}}  @enderror</label>
+
+            <div class="inputBox">
+                <input type="password" name="password1">
+                <span>Conformed Password</span>
+                <i><ion-icon name="lock-closed"></ion-icon></i>
+            </div>
+            <label class="text-danger span1">@error('password1')  {{$message}}  @enderror</label>
 
             <p class="pr">By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
                 <input type="submit"value="Register" name="submit">
@@ -100,7 +110,10 @@
             </form>
         </div>
     </section>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
 
     </body>
 </html>
+@endsection

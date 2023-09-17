@@ -41,7 +41,7 @@ class guestController extends Controller
 
           ]);
           //return $request;
-
+    if(($request->password)==($request->password1)){
           if($request->hasfile('photo'))
            {
                $file = $request->file('photo');
@@ -91,5 +91,9 @@ class guestController extends Controller
                 return back() -> with('fail',"you are not registered");
             }
     }
-
+    else
+    {
+    return back() -> with('fail',"confirm passsword is not match");
+    }
+}
 }
