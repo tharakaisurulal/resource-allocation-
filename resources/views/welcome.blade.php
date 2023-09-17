@@ -1,3 +1,5 @@
+@extends('layout.headerFooter')
+@section('content')
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,33 +14,6 @@
 
     </head>
     <body>
-        <section>
-        <div class="header">
-            <img src="images/logo_copy.png" class="logo">
-
-
-        <input type="checkbox" id="openSidebarMenu" style="display:none">
-
-        <label for="openSidebarMenu" class="sidebarIconToggle">
-            <div class="spinner top"></div>
-            <div class="spinner middle"></div>
-            <div class="spinner bottom"></div>
-        </label>
-            <div id="sidebarMenu">
-                <ul class="menu">
-                    <li><a href="#">HOME</a></li>
-                    <li><a href="#about">ABOUT US</a></li>
-                    <li><a href="#contactus">CONTACT US</a></li>
-                    <li><a href="#">NOTICE</a></li>
-                    <li><a href="/loginpage">LOGIN</a></li>
-                    <li><a href="/guest/guestregistration">REGISTER</a></li>
-                    <li><a href="#">LOG OUT</a></li>
-                </ul>
-            </div>
-
-        </div>
-    </section>
-
         <section id="banner">
 
             <div class="banner-text">
@@ -178,75 +153,6 @@
         </section>
         <!---------------------- contact section ends ---------------------------------------->
 
-        <!---------------------- footer section starts ---------------------------------------->
-    <section class="footer">
-        <div class="page-wrapper">
-            <div id="waterdrop"></div>
-              <div class="footer-top">
-                  <div class="row">
-
-                    <div class="col-lg-3 col-md-12 col-sm-12 footer-col-3">
-                        <div class="logo2">
-                            <img src={{asset('images/u-ruhuna.png')}}>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-12 col-sm-12 footer-col-3">
-                      <div class="Contact Info ">
-                        <h5 class="footer-title">Address</h5>
-                            <div class="contact">
-                            <div>
-                                <span><ion-icon name="location"></ion-icon></span>
-                                <p>Department Of Computer Science,<br>University of Ruhuna,<br>Matara,<br>Sri Lanka</p>
-                            </div>
-
-                            <div>
-                                <span><ion-icon name="call"></ion-icon></span>
-                                <a href="tel:+94 41 2222681/2 Ext 4801/2">+94 41 2222681/2 Ext 4801/2</a>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-
-
-                    <div class="col-lg-3 col-md-12 col-sm-12 footer-col-3">
-                        <div class="widget">
-                          <h5 class="footer-title">Email Us</h5>
-                          <div class="textwidget">
-                            <div role="form" class="wpcf7" id="wpcf7-f4-o1" lang="en-US" dir="ltr">
-
-                              <form method="post" class="wpcf7-form" novalidate="novalidate">
-
-                                <div class="contact-form-footer">
-                                  <p><span class="wpcf7-form-control-wrap your-first-name"><input type="text" name="your-first-name" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" placeholder="Your name"></span></p>
-                                  <p><span class="wpcf7-form-control-wrap your-email_1"><input type="email" name="your-email_1" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-email" aria-invalid="false" placeholder="Your email"></span></p>
-                                  <p><span class="wpcf7-form-control-wrap your-message"><textarea name="your-message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Your message"></textarea></span></p>
-                                  <div><input type="submit" value="Send" class="wpcf7-form-control wpcf7-submit"><span class="ajax-loader"></span></div>
-                                </div>
-                              </form>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="col-lg-3 col-md-12 col-sm-12 footer-col-3">
-                        <div class="widget">
-                            <h5 class="footer-title">Quick Link</h5>
-                            <div class="box">
-
-                                  <a href="#"> <i class="fas fa-angle-right"></i> Home</a><br>
-                                  <a href="#"> <i class="fas fa-angle-right"></i> About</a><br>
-                                  <a href="#"> <i class="fas fa-angle-right"></i> Contact</a><br>
-                                  <a href="#"> <i class="fas fa-angle-right"></i> Log Out</a>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="credit"><span> UNIVERSITY OF RUHUNA </span> | COMPUTER SCIENCE DEPARTMENT </div>
-                </div>
-            </section>
-
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
             <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
             <script src="https://daniellaharel.com/raindrops/js/raindrops.js"></script>
@@ -259,4 +165,4 @@
     </body>
 
     </html>
-
+    @endsection

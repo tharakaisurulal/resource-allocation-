@@ -42,6 +42,9 @@ Route::get('/sturegister', function () {
 Route::get('/home1', function () {
     return view('home1');
 });
+Route::get('/headerFooter', function () {
+    return view('Layout.headerFooter');
+});
 
 Route::post('/gueststore', [guestController::class, 'gueststore'])->name('gueststore'); //storing data in guest table.
 
@@ -54,3 +57,5 @@ Route::get('/loginpage', [loginController::class, 'loginpage'])->middleware('Log
 Route::get('/logout', [loginController::class, 'logout'])->name('logout'); //loout functions
 
 Route::get('/home', [loginController::class, 'home'])->middleware('IsLoggedIn'); //restrict from login to home
+
+Route::get('/forgetpassword', [loginController::class, 'forgetpassword'])->name('forgetpassword'); //forget passsword page.

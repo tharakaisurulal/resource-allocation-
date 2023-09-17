@@ -6,12 +6,12 @@
 
         <title>Lecture hall Allocation</title>
         @include('cdn')
-        <link rel="stylesheet" href={{asset('css/style1.css')}}>
+        <link rel="stylesheet" href={{asset('css/style.css')}}>
 
     </head>
 
     <body>
-        <section>
+        <section class="sec1">
         <div class="header">
             <img src="images/logo_copy.png" class="logo">
         </div>
@@ -25,14 +25,18 @@
         </label>
             <div id="sidebarMenu">
                 <ul class="menu">
-                    <li><a href="#">HOME</a></li>
+                    <li><a href="/">HOME</a></li>
                     <li><a href="#">ABOUT US</a></li>
                     <li><a href="#">MY PROFILE</a></li>
                     <li><a href="#">CONTACT US</a></li>
                     <li><a href="#">NOTICE</a></li>
+                    <li><a href="/loginpage">LOGIN</a></li>
+                    <li><a href="/guest/guestregistration">REGISTER</a></li>
                 </ul>
             </div>
         </section>
+
+        @yield('content')
 
         <!-- footer section starts  -->
 
@@ -71,6 +75,7 @@
 
                     <div class="col-lg-3 col-md-12 col-sm-12 footer-col-3">
                           <div class="widget">
+                            <div class="box1">
                             <h5 class="footer-title">Email Us</h5>
                             <div class="textwidget">
                               <div role="form" class="wpcf7" id="wpcf7-f4-o1" lang="en-US" dir="ltr">
@@ -86,17 +91,18 @@
                                 </form>
                               </div>
                             </div>
+                        </div>
                           </div>
                         </div>
 
                     <div class="col-lg-3 col-md-12 col-sm-12 footer-col-3">
                         <div class="widget">
-                            <h5 class="footer-title">Quick Link</h5>
-                            <div class="box">
 
-                                  <a href="#"> <i class="fas fa-angle-right"></i> Home</a><br>
-                                  <a href="#"> <i class="fas fa-angle-right"></i> About</a><br>
-                                  <a href="#"> <i class="fas fa-angle-right"></i> Contact</a><br>
+                            <div class="box1">
+                                <h5 class="footer-title">Quick Link</h5>
+                                  <a href="/"> <i class="fas fa-angle-right"></i> Home</a><br><br>
+                                  <a href="#"> <i class="fas fa-angle-right"></i> About</a><br><br>
+                                  <a href="#"> <i class="fas fa-angle-right"></i> Contact</a><br><br>
                                   <a href="#"> <i class="fas fa-angle-right"></i> Log Out</a>
                             </div>
 
