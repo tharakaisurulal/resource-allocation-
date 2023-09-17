@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="{{asset('css/reqform.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{asset('css/request.css')}}">
     </head>
-    <body class="container">
+    <body>
+        <div class ="container">
                 
                 <form class="formcl">
-                <h1>Request Form</h1>
+                <h1>SEND YOUR REQUEST</h1>
                 <br>
                     <div class="form-grouprow">
                             <label for="inputname3" class="col-sm-2 col-form-label">Initial Name:</label>
@@ -68,6 +69,7 @@
                         <button type="reset" class="btn btn-primary">Reset</button>
                         <button type="register" class="btn btn-primary">Submit</button>
                         </div>
-                    </div>
+                </div>
+        </div>
     </body>
 </html>
