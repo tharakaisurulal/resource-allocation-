@@ -1,3 +1,6 @@
+@extends('layout.headerFooter')
+@section("content")
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,3 +53,4 @@
         <script src="assets/js/script.js"></script>
 </body>
 </html>
+@endsection

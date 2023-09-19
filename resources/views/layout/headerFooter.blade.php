@@ -13,7 +13,7 @@
     <body>
         <section class="sec1">
         <div class="header">
-            <img src="images/logo_copy.png" class="logo">
+            <img src="/images/logo_copy.png" class="logo">
         </div>
 
 
@@ -27,7 +27,6 @@
                 <ul class="menu">
                     <li><a href="/">HOME</a></li>
                     <li><a href="#">ABOUT US</a></li>
-                    <li><a href="#">MY PROFILE</a></li>
                     <li><a href="#">CONTACT US</a></li>
                     <li><a href="#">NOTICE</a></li>
                     <li><a href="/loginpage">LOGIN</a></li>
