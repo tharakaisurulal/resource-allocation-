@@ -6,8 +6,8 @@
 
         <title>Lecture hall Allocation</title>
         @include('cdn')
-        <link rel="stylesheet" href={{asset('css/style.css')}}>
-
+        <link rel="stylesheet" href={{asset('css/headerfooter.css')}}>
+        <link rel ="icon" href ="/images/R.png">
     </head>
 
     <body>
@@ -18,11 +18,11 @@
 
 
         <input type="checkbox" id="openSidebarMenu">
-        <label for="openSidebarMenu" class="sidebarIconToggle">
+        <div><label for="openSidebarMenu" class="sidebarIconToggle">
             <div class="spinner top"></div>
             <div class="spinner middle"></div>
             <div class="spinner bottom"></div>
-        </label>
+        </label></div>
             <div id="sidebarMenu">
                 <ul class="menu">
                     <li><a href="/">HOME</a></li>
@@ -33,6 +33,7 @@
                     <li><a href="/guest/guestregistration">REGISTER</a></li>
                 </ul>
             </div>
+
         </section>
 
         @yield('content')

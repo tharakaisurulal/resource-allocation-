@@ -8,7 +8,14 @@
 
         <title>Lecture hall Allocation</title>
         @include('cdn')
+<<<<<<< Updated upstream
 
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> f69db177a928114b232c5934a519562af9e5dfe4
+>>>>>>> Stashed changes
         <link rel="stylesheet" href={{asset('css/Login.css')}}>
     </head>
 
