@@ -9,8 +9,7 @@
 
         <title>Lecture hall Allocation</title>
         @include('cdn')
-        <link rel="stylesheet" href={{asset('css/style.css')}}>
-        <link rel="stylesheet" href={{asset('css/regi.css')}}>
+        <link rel="stylesheet" href={{asset('css/guestregi.css')}}>
 
     </head>
 

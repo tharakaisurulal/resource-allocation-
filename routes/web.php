@@ -50,6 +50,11 @@ Route::get('/allocate', function () {
     return view('allocate');
 });
 
+Route::get('/hall', function () {
+    return view('hall');
+});
+
+
 
 Route::post('/gueststore', [guestController::class, 'gueststore'])->name('gueststore'); //storing data in guest table.
 
