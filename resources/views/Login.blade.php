@@ -8,7 +8,6 @@
 
         <title>Lecture hall Allocation</title>
         @include('cdn')
-
         <link rel="stylesheet" href={{asset('css/Login.css')}}>
     </head>
 

@@ -9,7 +9,7 @@
         <title>Lecture hall Allocation</title>
         @include('cdn')
         <link rel="stylesheet" href={{asset('css/bootstrap.css')}}>
-        <link rel="stylesheet" href={{asset('css/style.css')}}>
+        <link rel="stylesheet" href={{asset('css/welcome.css')}}>
         <link rel="icon" type="text/css" href="{{asset('img/icons/favicon.png')}}">
 
     </head>
