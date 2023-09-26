@@ -1,3 +1,5 @@
+@extends('layout.headerFooter')
+@section("content")
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +15,7 @@
 </head>
 <body>
 <!--------------------card section---------------------------->
-
+<div class="div1">
     <div class="card">
 
             <div class="face front">
@@ -30,7 +32,7 @@
                     </div>
             </div>
         </div>
-        </div>
+
 
         <div class="card">
 
@@ -48,7 +50,7 @@
                     </div>
             </div>
         </div>
-        </div>
+
 
 
 
@@ -68,7 +70,7 @@
                     </div>
             </div>
         </div>
-        </div>
+
 
         <div class="card">
 
@@ -86,9 +88,9 @@
                     </div>
             </div>
         </div>
-        </div>
+    </div>
 
     </body>
-
 </html>
 
+@endsection
