@@ -1,3 +1,5 @@
+@extends('layout.headerFooter')
+@section('content')
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,40 +14,14 @@
 
     </head>
     <body>
-        <section>
-        <div class="header">
-            <img src="images/logo_copy.png" class="logo">
-
-
-        <input type="checkbox" id="openSidebarMenu" style="display:none">
-
-        <label for="openSidebarMenu" class="sidebarIconToggle">
-            <div class="spinner top"></div>
-            <div class="spinner middle"></div>
-            <div class="spinner bottom"></div>
-        </label>
-            <div id="sidebarMenu">
-                <ul class="menu">
-                    <li><a href="#">HOME</a></li>
-                    <li><a href="#about">ABOUT US</a></li>
-                    <li><a href="#contactus">CONTACT US</a></li>
-                    <li><a href="#">NOTICE</a></li>
-                    <li><a href="/login">LOGIN</a></li>
-                    <li><a href="/Register">REGISTER</a></li>
-                </ul>
-            </div>
-
-        </div>
-    </section>
-
         <section id="banner">
 
             <div class="banner-text">
-                <h1>WELCOME TO RESOURCES SYSTEM...</h1>
+                <h1>WELCOME TO RESOURCES MANAGEMENT SYSTEM...</h1>
                 <div class="banner-btn">
                     <a href="#"><span></span>GUEST US</a>
-                    <a href="/login"><span></span>LOGIN</a>
-                    <a href="/Register"><span></span>REGISTER</a>
+                    <a href="/loginpage"><span></span>LOGIN</a>
+                    <a href="/guest/guestregistration"><span></span>REGISTER</a>
                 </div>
             </div>
         </div>
@@ -154,11 +130,6 @@
                         </div>
 
                         <div>
-                            <span><ion-icon name="mail"></ion-icon></span>
-                            <a href="computerscience@gmail.com">computerscience@gmail.com</a>
-                        </div>
-
-                        <div>
                             <span><ion-icon name="call"></ion-icon></span>
                             <a href="tel:+94 41 2222681/2 Ext 4801/2">+94 41 2222681/2 Ext 4801/2</a>
                         </div>
@@ -182,44 +153,16 @@
         </section>
         <!---------------------- contact section ends ---------------------------------------->
 
-        <!---------------------- footer section starts ---------------------------------------->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+            <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+            <script src="https://daniellaharel.com/raindrops/js/raindrops.js"></script>
+            <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+            <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-        <footer class="footer">
+           <script> jQuery('#waterdrop').raindrops({color:'#1c1f2f', canvasHeight:150, density: 0.1, frequency: 20});
+          </script>
 
-        <div class="waves">
-          <div class="wave" id="wave1"></div>
-          <div class="wave" id="wave2"></div>
-          <div class="wave" id="wave3"></div>
-          <div class="wave" id="wave4"></div>
-        </div>
-        <ul class="social-icon">
-          <li class="social-icon__item"><a class="social-icon__link" href="#">
-              <ion-icon name="logo-facebook"></ion-icon>
-            </a></li>
-          <li class="social-icon__item"><a class="social-icon__link" href="#">
-              <ion-icon name="logo-twitter"></ion-icon>
-            </a></li>
-          <li class="social-icon__item"><a class="social-icon__link" href="#">
-              <ion-icon name="logo-linkedin"></ion-icon>
-            </a></li>
-          <li class="social-icon__item"><a class="social-icon__link" href="#">
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a></li>
-        </ul>
-        <ul class="menu">
-          <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
-          <li class="menu__item"><a class="menu__link" href="#">About</a></li>
-          <li class="menu__item"><a class="menu__link" href="#">Services</a></li>
-          <li class="menu__item"><a class="menu__link" href="#">Team</a></li>
-          <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
-
-        </ul>
-        <p>&copy;UNIVERSITY OF RUHUNA| COMPUTER SCIENCE DEPARTMENT</p>
-
-</footer>
-      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     </body>
 
     </html>
-
+    @endsection
