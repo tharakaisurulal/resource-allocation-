@@ -46,6 +46,11 @@ Route::get('/headerFooter', function () {
     return view('Layout.headerFooter');
 });
 
+Route::get('/allocate', function () {
+    return view('allocate');
+});
+
+
 Route::post('/gueststore', [guestController::class, 'gueststore'])->name('gueststore'); //storing data in guest table.
 
 Route::get('/guest/guestregistration', [guestController::class, 'guestregistration'])->middleware('LoggedIn'); //restrict from home to guest registration, go to guest registraion
