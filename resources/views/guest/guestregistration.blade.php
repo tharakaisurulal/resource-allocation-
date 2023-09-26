@@ -14,7 +14,7 @@
     </head>
 
     <body>
-        <section class="login">
+        <section class="regis">
         <div class="box">
             <form action="{{route('gueststore')}}" method="post" enctype="multipart/form-data">
                 @if(session()->has('success'))
