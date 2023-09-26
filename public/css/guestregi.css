@@ -5,15 +5,16 @@
     font-family: 'Poppins', sans-serif;
 }
 body{
-    background:#23242a;
+    background:white;
     background-size:cover;
 }
-.login{
+.regis{
    display: flex;
    justify-content: center;
    align-items:center;
    min-height: 100vh;
-   background-color:#23242a;
+   background-color:#0805056b;
+   padding-top: 20px;
 }
 
 .box{

@@ -5,8 +5,9 @@
     font-family: 'Poppins', sans-serif;
 }
 body{
-    background: #0805056b;
+    background: white;
     background-size:cover;
+
 }
 .login{
    display: flex;
@@ -14,6 +15,7 @@ body{
    align-items:center;
    min-height: 100vh;
    background-color:#0805056b;
+   padding-top: 20px;
 }
 
 .box{

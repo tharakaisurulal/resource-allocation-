@@ -14,15 +14,16 @@
         <section class="sec1">
         <div class="header">
             <img src="/images/logo_copy.png" class="logo">
-        </div>
 
 
-        <input type="checkbox" id="openSidebarMenu">
+
+        <input type="checkbox" id="openSidebarMenu" hidden>
         <label for="openSidebarMenu" class="sidebarIconToggle">
             <div class="spinner top"></div>
             <div class="spinner middle"></div>
             <div class="spinner bottom"></div>
         </label>
+
             <div id="sidebarMenu">
                 <ul class="menu">
                     <li><a href="/">HOME</a></li>
@@ -33,6 +34,7 @@
                     <li><a href="/guest/guestregistration">REGISTER</a></li>
                 </ul>
             </div>
+        </div>
         </section>
 
         @yield('content')
