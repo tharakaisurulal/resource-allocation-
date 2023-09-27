@@ -51,7 +51,7 @@ Route::get('/allocate', function () {
 });
 
 Route::get('/hall', function () {
-    return view('hall');
+    return view('lecturers.hall');
 });
 
 
