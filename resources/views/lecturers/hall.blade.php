@@ -19,7 +19,7 @@
     <div class="card">
 
             <div class="face front">
-                <img src="images/main.jpg" alt="">
+                <img src="images/main.jpg" alt=""  width=300px height=350px>
                 <h3> Lecture Hall</h3>
             </div>
 
@@ -37,7 +37,7 @@
         <div class="card">
 
             <div class="face front">
-                <img src="images/Lap.jpg" alt="">
+                <img src="images/Lap.jpg" alt="" width=300px height=350px>
                 <h3> Labortory</h3>
             </div>
 
@@ -57,7 +57,7 @@
         <div class="card">
 
             <div class="face front">
-                <img src="images/1523342686phpo9K5NA.jpeg" alt="">
+                <img src="images/1523342686phpo9K5NA.jpeg" alt="" width=300px height=350px>
                 <h3> Time Table</h3>
             </div>
 
@@ -75,7 +75,7 @@
         <div class="card">
 
             <div class="face front">
-                <img src="images/904740.png" alt="">
+                <img src="images/904740.png" alt="" width=300px height=350px>
                 <h3> Request </h3>
             </div>
 
@@ -83,7 +83,7 @@
                     <div class="back-content center">
                         <h3> Request Form</h3>
                         <div class="button">
-                            <a href=""><span>CLICK</span></a>
+                            <a href="/request"><span>CLICK</span></a>
                         </div>
                     </div>
             </div>
