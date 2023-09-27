@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="{{asset('css/regi.css')}}">
         <link rel="stylesheet" type="text/css" href="{{asset('css/request.css')}}">
     </head>
     <body>
 
-            <div class ="login">
+            <div class ="request">
                 <div class="box">
                     <form>
                         <h1>Send Your Request</h1>
@@ -29,9 +28,9 @@
                             <input type="time" class="form-control" id="input_time3">
                             <span>Time :</span>
                         </div>
-                            
-                            
-                            
+
+
+
                         <div class="inputBox">
                             <label for="input_time3" class="col-sm-2 col-form-label">Location : </label>
                                 <select name="location" id="location">
@@ -43,7 +42,7 @@
                                     <option value="op6">lecture hall 03</option>
                                     <option value="op7">Main auditorium</option>
                                 </select>
-                            
+
                         </div>
                         <div class="inputBox">
                         <label for="input_time3" class="col-sm-2 col-form-label">Faculty: </label>
@@ -60,8 +59,8 @@
                         </div>
                         <div class="inputBox">
                             <input type="text" class="form-control" id="inputDepartment3" placeholder="Department of Computer Science">
-                            <i><ion-icon name="lock-closed"><icon-icon></i>   
-                            <span>Department : </span> 
+                            <i><ion-icon name="lock-closed"><icon-icon></i>
+                            <span>Department : </span>
                         </div>
                         <div class="inputBox">
                             <div class="col-sm-10">
