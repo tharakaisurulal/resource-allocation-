@@ -83,7 +83,7 @@
                     <div class="back-content center">
                         <h3> Request Form</h3>
                         <div class="button">
-                            <a href="/request"><span>CLICK</span></a>
+                            <a href="/lecturers/request"><span>CLICK</span></a>
                         </div>
                     </div>
             </div>
