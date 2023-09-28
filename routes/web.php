@@ -65,15 +65,18 @@ Route::get('/table', function () {
 
 Route::post('/gueststore', [guestController::class, 'gueststore'])->name('gueststore'); //storing data in guest table.
 
-Route::get('/guest/guestregistration', [guestController::class, 'guestregistration'])->middleware('LoggedIn'); //restrict from home to guest registration, go to guest registraion
+//Route::get('/guest/guestregistration', [guestController::class, 'guestregistration'])->middleware('LoggedIn'); //restrict from home to guest registration, go to guest registraion
+Route::get('/guest/guestregistration', [guestController::class, 'guestregistration']);
 
 Route::post('/login', [loginController::class, 'login'])->name('login'); //login functions
 
-Route::get('/loginpage', [loginController::class, 'loginpage'])->middleware('LoggedIn');//restrict from home to login, go to login
+//Route::get('/loginpage', [loginController::class, 'loginpage'])->middleware('LoggedIn');//restrict from home to login, go to login
+Route::get('/loginpage', [loginController::class, 'loginpage']);
 
 Route::get('/logout', [loginController::class, 'logout'])->name('logout'); //loout functions
 
-Route::get('/home', [loginController::class, 'home'])->middleware('IsLoggedIn'); //restrict from login to home
+//Route::get('/home', [loginController::class, 'home'])->middleware('IsLoggedIn'); //restrict from login to home
+Route::get('/home', [loginController::class, 'home']);
 
 Route::get('/forgetpassword', [loginController::class, 'forgetpassword'])->name('forgetpassword'); //forget passsword page.
 
