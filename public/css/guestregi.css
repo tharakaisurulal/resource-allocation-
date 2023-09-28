@@ -5,7 +5,7 @@
     font-family: 'Poppins', sans-serif;
 }
 body{
-    background:white;
+    background:#0805056b;
     background-size:cover;
 }
 .regis{
@@ -13,7 +13,7 @@ body{
    justify-content: center;
    align-items:center;
    min-height: 100vh;
-   background-color:#0805056b;
+   /*background-color:white;*/
    padding-top: 20px;
 }
 

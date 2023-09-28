@@ -1,11 +1,11 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    /*box-sizing: border-box;*/
+    /*font-family: 'Poppins', sans-serif;*/
 }
 body{
-    background: white;
+    background: #0805056b;
     background-size:cover;
 
 }
@@ -14,8 +14,9 @@ body{
    justify-content: center;
    align-items:center;
    min-height: 100vh;
-   background-color:#0805056b;
+   /*background-color:#0805056b;*/
    padding-top: 20px;
+
 }
 
 .box{
@@ -180,7 +181,7 @@ body{
     opacity: 0.8;
 }
 
-.footer{
+/*.footer{
     position: relative;
     width: 100%;
     background: #3586ff;
@@ -298,7 +299,7 @@ body{
     100% {
       background-positon-x: 0px;
     }
-  }
+  }*/
 
   #userid {
     width: 100%;
