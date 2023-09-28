@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\guest;
+use App\Models\guestrequest;
 use Illuminate\View\View;
 
 use Illuminate\Support\Facades\Auth;
@@ -95,5 +96,71 @@ class guestController extends Controller
     {
     return back() -> with('fail',"confirm passsword is not match");
     }
+}
+
+
+//add details to the guest request table
+public function guestreq(Request $request)
+{
+//return $request;
+$na=session()->get('reid');
+    $request->validate([
+        'name'=> 'required',
+        'email'=> 'required',
+        'date'=> 'required',
+        'starttime'=> 'required',
+        'endtime'=> 'required',
+        'hallname'=> 'required',
+        //'faculty'=> 'required',
+        //'department'=> 'required',
+        //'guest_id'=> 'required',
+
+
+      ]);
+      //return $request;
+
+      $guestsreq=guestrequest::create([
+        'name'=> $request -> name,
+        'email' => $request -> email,
+        'date'=> $request -> date,
+        'start_time'=> $request -> starttime,
+        'end_time'=> $request -> endtime,
+        'hall_name'=> $request -> hallname,
+        'faculty'=> $request -> faculty,
+        'department'=> $request -> department,
+        'reason'=> $request -> note,
+        'guest_id'=> $request -> guestid,
+
+        ]);
+
+        $res1 = $guestsreq ->save();
+
+        /*$image = new guest;
+        if($request->hasfile('photo'))
+       {
+           $file = $request->file('photo');
+           $extenstion = $file->getClientOriginalExtension();
+           $filename = time().'.'.$extenstion;
+           $file->move('uploads/guests/', $filename);
+           $image->photo = $filename;
+       }
+
+       $image->save();*/
+//return $request;
+
+
+        //$student=post::create($request->all());
+        //$student->password = Hash::make($request->input('password'));
+        //$student->save();
+        if($res1){
+        //return redirect('/') -> withSuccess("you are registered");
+        //return back() -> with('success',"you are registered");
+        return redirect('/guest/request') -> with('success',"your is request submitted");
+        }
+        else{
+            return back() -> with('fail',"your is not request submitted, Try again!");
+        }
+
+
 }
 }
