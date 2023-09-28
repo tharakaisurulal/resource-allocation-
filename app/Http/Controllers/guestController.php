@@ -24,7 +24,14 @@ class guestController extends Controller
 {
     public function guestlogin()
     {
-        return view('guest.guesthome');
+        $dater = array();
+        if(session()->has('reid'))
+        {
+            $dater=guest::where('id','=',session()->get('reid'))->first();
+        }
+        //return $dater;
+            return view('guest.guesthome',compact('dater'));
+        //return view('guest.guesthome');
     }
 
     public function guestregistration()
