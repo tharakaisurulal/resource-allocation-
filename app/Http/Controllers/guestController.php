@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Cookie;
 
 class guestController extends Controller
 {
-    public function guestlogin()
+    public function guesthome()
     {
         $dater = array();
         if(session()->has('reid'))

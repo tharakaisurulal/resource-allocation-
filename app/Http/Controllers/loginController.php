@@ -60,7 +60,7 @@ class loginController extends Controller
 
 
                 //return redirect('/home');
-                return redirect('/guest/login');
+                return redirect('/guest/guesthome');
         }
 
         else{
