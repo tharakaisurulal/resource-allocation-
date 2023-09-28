@@ -14,6 +14,8 @@
 
 </head>
 <body>
+
+
 <!--------------------card section---------------------------->
 <div class="div1">
     <div class="card">
@@ -28,6 +30,7 @@
                         <h3> Lecture Hall</h3>
                         <div class="button">
                             <a href=""><span>CLICK</span></a>
+                            <a href="/logout"><button type="button" class="btn btn-secondary">LogOut</button></a>
                         </div>
                     </div>
             </div>

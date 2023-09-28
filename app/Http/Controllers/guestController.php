@@ -103,7 +103,7 @@ class guestController extends Controller
 public function guestreq(Request $request)
 {
 //return $request;
-$na=session()->get('reid');
+//$na=session()->get('reid');
     $request->validate([
         'name'=> 'required',
         'email'=> 'required',
