@@ -18,8 +18,11 @@ use App\Http\Controllers\loginController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/request', function () {
-    return view('requestform');
+Route::get('/guest/request', function () {
+    return view('guest.guestrequestform');
+});
+Route::get('/lecturers/request', function () {
+    return view('lecturers.lecturerrequestform');
 });
 //Route::get('/login', function () {
     //return view('Login')->middleware('LoggedIn');
@@ -54,6 +57,10 @@ Route::get('/hall', function () {
     return view('lecturers.hall');
 });
 
+Route::get('/table', function () {
+    return view('table');
+});
+
 
 
 Route::post('/gueststore', [guestController::class, 'gueststore'])->name('gueststore'); //storing data in guest table.
@@ -69,3 +76,5 @@ Route::get('/logout', [loginController::class, 'logout'])->name('logout'); //loo
 Route::get('/home', [loginController::class, 'home'])->middleware('IsLoggedIn'); //restrict from login to home
 
 Route::get('/forgetpassword', [loginController::class, 'forgetpassword'])->name('forgetpassword'); //forget passsword page.
+
+Route::post('/guestreq', [guestController::class, 'guestreq'])->name('guestreq');
