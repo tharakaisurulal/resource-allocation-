@@ -94,7 +94,7 @@
                     <div class="back-content center">
                         <h3> Request Form</h3>
                         <div class="button">
-                            <a href="/guest/request"><span>CLICK</span></a>
+                            <a href="/guest/guestrequest"><span>CLICK</span></a>
                         </div>
                     </div>
             </div>

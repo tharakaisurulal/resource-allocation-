@@ -9,24 +9,45 @@
             <div class ="request">
                 <div class="box">
                     <form action="{{route('guestreq')}}" method="post">
-                        @if(session()->has('success'))
+                        @csrf
+                    @if(session()->has('success'))
                         <div class="alert alert-success">{{session()->get('success')}}</div>
                     @endif
 
                     @if(session()->has('fail'))
                         <div class="alert alert-danger">{{session()->get('fail')}}</div>
                     @endif
-                        @csrf
+
+                    @php
+                    if(session()->has('reid')){
+                        $name=$dater->guest_name;
+                        $id=$dater->id;
+                        $email=$dater->username;
+                    }
+                    else{
+                        $name='';
+                        $id='';
+                        $email='';
+                    }
+                    @endphp
+
                         <h1>Send Your Request</h1>
                         <div class="inputBox">
-                            <input type="text" placeholder="G.R.Perera" name="name">
+                            <input type="text" placeholder="G.R.Perera" name="name" value="{{$name}}" readonly="readonly" id="in1">
                             <span>Name with Initial :</span>
                             <i><ion-icon name="person"><icon-icon></i>
                         </div>
                         <label class="text-danger span1">@error('name')  {{$message}}  @enderror</label>
 
                         <div class="inputBox">
-                            <input type="email" placeholder="email@gmail.com" name="email">
+                            <input type="text" name="guestid" value="{{$id}}" readonly="readonly" id="in1">
+                            <span>Guest Id :</span>
+                            <i><ion-icon name="person"><icon-icon></i>
+                        </div>
+                        <label class="text-danger span1">@error('guestid')  {{$message}}  @enderror</label>
+
+                        <div class="inputBox">
+                            <input type="email" placeholder="email@gmail.com" name="email" value="{{$email}}" readonly="readonly" id="in1">
                             <span>E-mail :</span>
                             <i><ion-icon name="mail-sharp"><icon-icon></i>
                         </div>
@@ -42,9 +63,9 @@
                         <div class="inputBox">
                             <input type="time" name="starttime">
                             <span>Start Time :</span>
-                            <i><ion-icon name="starttime"><icon-icon></i>
+                            <i><ion-icon name="time"><icon-icon></i>
                         </div>
-                        <label class="text-danger span1">@error('name')  {{$message}}  @enderror</label>
+                        <label class="text-danger span1">@error('starttime')  {{$message}}  @enderror</label>
 
                         <div class="inputBox">
                             <input type="time" name="endtime">
