@@ -15,7 +15,7 @@
         <div class="header">
             <img src="/images/logo_copy.png" class="logo">
 
-
+            @yield('content1')
 
         <input type="checkbox" id="openSidebarMenu" hidden>
         <label for="openSidebarMenu" class="sidebarIconToggle">

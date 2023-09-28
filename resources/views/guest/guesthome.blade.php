@@ -1,4 +1,12 @@
 @extends('layout.headerFooter')
+@section("content1")
+    <div class="div3"><img src="{{asset('/uploads/guests/'.$dater->photo) }}" alt="image" class="img1"></div>
+    <div class="div2">
+        <h6>Welcome!</h6><br>
+        <h6>{{$dater->guest_name}}</h6>
+    </div>
+@endsection
+
 @section("content")
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +16,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 
-    <link rel="stylesheet" href={{asset('css/lecturerhome.css')}}>
+    <link rel="stylesheet" href={{asset('css/guesthome.css')}}>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
 
 
@@ -91,6 +99,25 @@
                     </div>
             </div>
         </div>
+
+
+
+        <div class="card">
+
+            <div class="face front">
+                <img src="" alt="" width=300px height=350px>
+                <h3> user</h3>
+            </div>
+
+            <div class="face back">
+                    <div class="back-content center">
+                        <h1>home</h1>
+                        <h3>{{$dater->guest_name}}</h3>
+                    </div>
+            </div>
+        </div>
+
+
     </div>
 
     </body>
