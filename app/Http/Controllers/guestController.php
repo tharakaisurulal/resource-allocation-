@@ -22,6 +22,11 @@ use Illuminate\Support\Facades\Cookie;
 
 class guestController extends Controller
 {
+    public function guestlogin()
+    {
+        return view('guest.guesthome');
+    }
+
     public function guestregistration()
     {
         return view('guest.guestregistration');

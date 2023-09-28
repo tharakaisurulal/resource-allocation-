@@ -24,10 +24,10 @@ class loginController extends Controller
         return view('Login');
     }
 
-    public function home()
-    {
-        return view('home');
-    }
+   // public function home()
+    //{
+       // return view('home');
+    //}
 
     public function forgetpassword()
     {
@@ -59,7 +59,8 @@ class loginController extends Controller
             }
 
 
-                return redirect('/home');
+                //return redirect('/home');
+                return redirect('/guest/login');
         }
 
         else{
