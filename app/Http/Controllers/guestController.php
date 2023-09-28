@@ -111,8 +111,8 @@ $na=session()->get('reid');
         'starttime'=> 'required',
         'endtime'=> 'required',
         'hallname'=> 'required',
-        //'faculty'=> 'required',
-        //'department'=> 'required',
+        'faculty'=> 'required',
+        'department'=> 'required',
         //'guest_id'=> 'required',
 
 

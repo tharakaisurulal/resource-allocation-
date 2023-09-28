@@ -67,6 +67,8 @@ Route::post('/gueststore', [guestController::class, 'gueststore'])->name('guests
 
 Route::get('/guest/guestregistration', [guestController::class, 'guestregistration'])->middleware('LoggedIn'); //restrict from home to guest registration, go to guest registraion
 
+//Route::get('/guest/guesthome', [guestController::class, 'guesthome']);
+
 Route::post('/login', [loginController::class, 'login'])->name('login'); //login functions
 
 Route::get('/loginpage', [loginController::class, 'loginpage'])->middleware('LoggedIn');//restrict from home to login, go to login
