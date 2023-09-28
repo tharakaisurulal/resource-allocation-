@@ -32,7 +32,7 @@ body{
     position: relative;
     margin-top: 80px;
     width: 450px;
-    height:1200px;
+    height:1500px;
     background:#1c1c1c;
     border-radius: 8px;
     overflow: hidden;
@@ -44,7 +44,7 @@ body{
     top: -50%;
     left: -50%;
     width: 380px;
-    height: 980px;
+    height: 1380px;
     background: linear-gradient(0deg, transparent,transparent,#45f3ff,#45f3ff,#45f3ff);
     z-index: 1;
     transform-origin: bottom right;
@@ -57,7 +57,7 @@ body{
     top: -50%;
     left: -50%;
     width: 380px;
-    height: 980px;
+    height: 1380px;
     background: linear-gradient(0deg, transparent,transparent,#45f3ff,#45f3ff,#45f3ff);
     z-index: 1;
     transform-origin: bottom right;

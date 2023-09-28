@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        @include('cdn')
         <link rel="stylesheet" type="text/css" href="{{asset('css/guestrequest.css')}}">
     </head>
     <body>
@@ -18,32 +19,39 @@
                         @csrf
                         <h1>Send Your Request</h1>
                         <div class="inputBox">
-                            <input type="text" class="form-control" id="inputname3" placeholder="G.R.Perera" name="name">
+                            <input type="text" placeholder="G.R.Perera" name="name">
                             <span>Name with Initial :</span>
                             <i><ion-icon name="person"><icon-icon></i>
                         </div>
+                        <label class="text-danger span1">@error('name')  {{$message}}  @enderror</label>
+
                         <div class="inputBox">
-                            <input type="email" class="form-control" id="inputEmail3" placeholder="email@gmail.com" name="email">
+                            <input type="email" placeholder="email@gmail.com" name="email">
                             <span>E-mail :</span>
                             <i><ion-icon name="mail-sharp"><icon-icon></i>
                         </div>
+                        <label class="text-danger span1">@error('email')  {{$message}}  @enderror</label>
+
                         <div class="inputBox">
-                            <input type="Date" class="form-control" id="inputdate3" name="date">
+                            <input type="Date" name="date">
                             <span>Date :</span>
                             <i><ion-icon name="calendar"><icon-icon></i>
                         </div>
+                        <label class="text-danger span1">@error('date')  {{$message}}  @enderror</label>
+
                         <div class="inputBox">
-                            <input type="time" class="form-control" id="input_time3" name="starttime">
+                            <input type="time" name="starttime">
                             <span>Start Time :</span>
-                            <i><ion-icon name="time"><icon-icon></i>
+                            <i><ion-icon name="starttime"><icon-icon></i>
                         </div>
+                        <label class="text-danger span1">@error('name')  {{$message}}  @enderror</label>
+
                         <div class="inputBox">
-                            <input type="time" class="form-control" id="input_time3" name="endtime">
+                            <input type="time" name="endtime">
                             <span>End Time :</span>
                             <i><ion-icon name="time"><icon-icon></i>
                         </div>
-
-
+                        <label class="text-danger span1">@error('endtime')  {{$message}}  @enderror</label>
 
                         <div class="inputBox">
                             <!--<label for="input_time3" class="col-sm-2 col-form-label">Location : </label>
@@ -58,8 +66,9 @@
                                     <option value="op6">lecture hall 03</option>
                                     <option value="op7">Main auditorium</option>
                                 </select>
-
                         </div>
+                        <label class="text-danger span1">@error('hallname')  {{$message}}  @enderror</label>
+
                         <div class="inputBox">
                         <!--<label for="input_time3" class="col-sm-2 col-form-label">Faculty: </label>-->
                             <select name="faculty" id="faculty">
@@ -74,14 +83,18 @@
                             <option value="op7">Faculty of Agriculture</option>
                             </select>
                         </div>
+                        <label class="text-danger span1">@error('faculty')  {{$message}}  @enderror</label>
+
                         <div class="inputBox">
-                            <input type="text" class="form-control" id="inputDepartment3" placeholder="Department of Computer Science" name="department">
+                            <input type="text" placeholder="Department of Computer Science" name="department">
                             <i><ion-icon name="school"><icon-icon></i>
                             <span>Department : </span>
                         </div>
+                        <label class="text-danger span1">@error('department')  {{$message}}  @enderror</label>
+
                         <div class="inputBox">
-                            <label for="input_time3" class="col-sm-2 col-form-label" id="label1" >Reason : </label>
-                            <textarea id="w3review" name="note" rows="10" cols="41" placeholder="--Description about request--"></textarea>
+                            <label for="input_time3" class="col-sm-2 col-form-label" id="label1" >Reason:</label>
+                            <textarea id="w3review" name="note" rows="6" cols="41" placeholder="--Description about request--"></textarea>
                         </div>
                         <div class="inputBox">
                             <div class="col-sm-10">
