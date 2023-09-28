@@ -61,7 +61,7 @@
                 <div class="inputBox">
                     <input type="text" name="department" value="{{old('department')}}"  placeholder="Departmet of Mathematics">
                     <span>Department</span>
-                    <i><ion-icon name="person"></ion-icon></i>
+                    <i><ion-icon name="school"></ion-icon></i>
                 </div>
                 <label class="text-danger span1">@error('department')  {{$message}}  @enderror</label>
 

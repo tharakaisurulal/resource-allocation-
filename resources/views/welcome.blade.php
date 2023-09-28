@@ -34,6 +34,7 @@
             </div>
         </div>
         </section>
+        <center><hr width="80%"></center>
 
         <!------------------------about section starts -------------------------------------->
 
@@ -75,7 +76,7 @@
         <!---------------------- about section ends ---------------------------------------->
 
         <!---------------------- contact section starts ---------------------------------------->
-
+        <center><hr width="80%"></center>
         <section class="contactus" id="contactus">
             <div class="container">
             <div class="title-text">
