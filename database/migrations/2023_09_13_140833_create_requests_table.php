@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('guestrequests', function (Blueprint $table) {
+        Schema::create('requests', function (Blueprint $table) {
             $table->id();
             $table->String ('name');
             $table->String ('email');
@@ -21,7 +21,6 @@ return new class extends Migration
             $table->String ('hall_name');
             $table->String ('faculty');
             $table->String ('department');
-            $table->String ('reason',400)->nullable();
             $table->unsignedBigInteger('guest_id');
             $table->foreign('guest_id')->references('id')->on('guests');
             $table->timestamps();
@@ -33,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('guestrequests');
+        Schema::dropIfExists('requests');
     }
 };

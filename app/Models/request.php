@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class lecturerrequest extends Model
+class request extends Model
 {
     use HasFactory;
     protected $fillable = [
@@ -15,7 +15,8 @@ class lecturerrequest extends Model
         'start_time',
         'end_time',
         'hall_name',
-        'reason',
+        'faculty',
+        'department',
         'guest_id'
     ];
 }
