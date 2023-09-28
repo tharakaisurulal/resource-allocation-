@@ -144,14 +144,14 @@
 
 .div1{
 padding-top: 100px;
-
+/*background-color: #0805056b;*/
 display: flex;
 flex-wrap: wrap;
 align-items:center;
 justify-content: center;
 min-height: 100vh;
-background-color:#23242a;
-height: auto;
+/*background-color:#23242a;*/
+/*height: auto;*/
 }
 
 .div2{
@@ -181,5 +181,5 @@ height: auto;
   }
 
   body{
-    background-color: white;
+    background-color: #0805056b;
   }
