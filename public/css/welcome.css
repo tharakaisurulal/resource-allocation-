@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: 'Poppins', sans-serif;
 }
 
 #banner{
@@ -93,7 +94,7 @@
 
  .about{
     padding: 80px 0;
-    background-color: #0805056b;
+    /*background-color: #0805056b;*/
     margin-top: 2.5px;
 
     }
@@ -301,7 +302,7 @@
 /*---------------------- contact section starts ----------------------------------------*/
 .contactus{
     padding: 80px 0;
-    background-color:#0805056b;
+    /*background-color:#0805056b;*/
     margin-top: 2.5px;
 
     }
@@ -309,7 +310,7 @@
  .contactus .container{
     width: 80%;
     display: block;
-    margin: auto;
+    /*margin: auto;*/
     padding-top: 20px;
 
  }
@@ -517,4 +518,13 @@
 
  .sec1{
     width: auto;
+    }
+
+body{
+    background: #0805056b;
+    background-size:cover;
+    }
+
+hr{
+    border-width:7px;
     }
