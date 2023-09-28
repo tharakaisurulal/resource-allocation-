@@ -53,8 +53,12 @@ Route::get('/allocate', function () {
     return view('allocate');
 });
 
-Route::get('/hall', function () {
-    return view('lecturers.hall');
+Route::get('/lecturers/lecturerhome', function () {
+    return view('lecturers.lecturerhome');
+});
+
+Route::get('/guest/guesthome', function () {
+    return view('guest.guesthome');
 });
 
 Route::get('/table', function () {
