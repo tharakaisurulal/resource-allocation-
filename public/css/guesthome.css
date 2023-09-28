@@ -179,3 +179,7 @@ height: auto;
     top: 15px;
     right: -20px;
   }
+
+  body{
+    background-color: white;
+  }

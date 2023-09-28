@@ -99,25 +99,6 @@
                     </div>
             </div>
         </div>
-
-
-
-        <div class="card">
-
-            <div class="face front">
-                <img src="" alt="" width=300px height=350px>
-                <h3> user</h3>
-            </div>
-
-            <div class="face back">
-                    <div class="back-content center">
-                        <h1>home</h1>
-                        <h3>{{$dater->guest_name}}</h3>
-                    </div>
-            </div>
-        </div>
-
-
     </div>
 
     </body>

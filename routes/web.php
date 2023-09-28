@@ -81,7 +81,7 @@ Route::get('/logout', [loginController::class, 'logout'])->name('logout'); //loo
 
 //Route::get('/home', [loginController::class, 'home'])->middleware('IsLoggedIn'); //restrict from login to home
 //Route::get('/home', [loginController::class, 'home']);
-Route::get('/guest/login', [guestController::class, 'guestlogin']);
+Route::get('/guest/guesthome', [guestController::class, 'guesthome']);
 
 Route::get('/forgetpassword', [loginController::class, 'forgetpassword'])->name('forgetpassword'); //forget passsword page.
 
