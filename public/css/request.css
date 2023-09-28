@@ -5,7 +5,6 @@
     background: #585252;
     border: 2px solid #45f3ff;
     margin-top: 10px;
-    font-size: medium;
   }
 
   *{
@@ -15,24 +14,22 @@
     font-family: 'Poppins', sans-serif;
 }
 body{
-    background:white;
+    background:#23242a;
     background-size:cover;
-
 }
 .request{
    display: flex;
    justify-content: center;
    align-items:center;
    min-height: 100vh;
-   background-color:#0805056b;
-   padding-bottom: 30px;
+   background-color:#23242a;
 }
 
 .box{
     position: relative;
     margin-top: 80px;
     width: 450px;
-    height:1200px;
+    height:900px;
     background:#1c1c1c;
     border-radius: 8px;
     overflow: hidden;
@@ -44,7 +41,7 @@ body{
     top: -50%;
     left: -50%;
     width: 380px;
-    height: 980px;
+    height: 1220px;
     background: linear-gradient(0deg, transparent,transparent,#45f3ff,#45f3ff,#45f3ff);
     z-index: 1;
     transform-origin: bottom right;
@@ -57,7 +54,7 @@ body{
     top: -50%;
     left: -50%;
     width: 380px;
-    height: 980px;
+    height: 1220px;
     background: linear-gradient(0deg, transparent,transparent,#45f3ff,#45f3ff,#45f3ff);
     z-index: 1;
     transform-origin: bottom right;
@@ -146,7 +143,6 @@ body{
     pointer-events: none;
 }
 
-.box form .inputBox input:valid ~ i,
 .box form .inputBox input:focus ~ i
 {
 
@@ -172,8 +168,7 @@ body{
     color: #45f3ff;
 }
 
-.box form input[type="submit"],
-.box form input[type="reset"]
+.box form input[type="submit"]
 {
     border: none;
     outline: none;
@@ -188,8 +183,7 @@ body{
 
 }
 
-.box form input[type="submit"]:active,
-.box form input[type="reset"]:active
+.box form input[type="submit"]:active
 {
     opacity: 0.8;
 }
@@ -201,29 +195,9 @@ body{
     background: #585252;
     border: 2px solid #45f3ff;
     margin-top: 10px;
-    font-size: medium;
   }
 
   .pr{
     color: #45f3ff;
-  }
-
-#label1{
-    color: #45f3ff;
-    font-size: small;
-}
-
-#w3review{
-    width: 100%;
-    padding: 15px;
-    display: inline-block;
-    background: #585252;
-    border: 2px solid #45f3ff;
-    margin-top: 10px;
-}
-
-textarea::placeholder {
-    color: rgb(20, 24, 26);
-    font-size: medium;
   }
 
