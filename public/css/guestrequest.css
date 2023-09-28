@@ -125,8 +125,9 @@ body{
     transition:0.5s;
 }
 
-.box form .inputBox input:valid ~ span,
-.box form .inputBox input:focus ~ span
+/*.box form .inputBox input:valid ~ span,
+.box form .inputBox input:focus ~ span*/
+.box form .inputBox input ~ span
 {
     color: #45f3ff;
     font-size: 0.75em;
@@ -146,8 +147,10 @@ body{
     pointer-events: none;
 }
 
-.box form .inputBox input:valid ~ i,
-.box form .inputBox input:focus ~ i
+/*.box form .inputBox input:valid ~ i,
+.box form .inputBox input:focus ~ i*/
+
+.box form .inputBox input ~ i
 {
 
     height: 44px;
@@ -227,3 +230,6 @@ textarea::placeholder {
     font-size: medium;
   }
 
+#in1{
+    color: #4e4d4d;
+}

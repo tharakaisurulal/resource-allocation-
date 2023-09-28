@@ -36,7 +36,26 @@ class guestController extends Controller
 
     public function guestregistration()
     {
-        return view('guest.guestregistration');
+        $dater = array();
+        if(session()->has('reid'))
+        {
+            $dater=guest::where('id','=',session()->get('reid'))->first();
+        }
+        //return $dater;
+            return view('guest.guestregistration',compact('dater'));
+        //return view('guest.guestregistration');
+    }
+
+    public function guestrequest()
+    {
+        $dater = array();
+        if(session()->has('reid'))
+        {
+            $dater=guest::where('id','=',session()->get('reid'))->first();
+        }
+        //return $dater;
+            return view('guest.guestrequestform',compact('dater'));
+        //return view('guest.guestregistration');
     }
 
     public function gueststore(Request $request)
@@ -117,8 +136,8 @@ public function guestreq(Request $request)
 //return $request;
 //$na=session()->get('reid');
     $request->validate([
-        'name'=> 'required',
-        'email'=> 'required',
+        //'name'=> 'required',
+        //'email'=> 'required',
         'date'=> 'required',
         'starttime'=> 'required',
         'endtime'=> 'required',
@@ -167,10 +186,10 @@ public function guestreq(Request $request)
         if($res1){
         //return redirect('/') -> withSuccess("you are registered");
         //return back() -> with('success',"you are registered");
-        return redirect('/guest/request') -> with('success',"your is request submitted");
+        return redirect('/guest/guestrequest') -> with('success',"your request is submitted");
         }
         else{
-            return back() -> with('fail',"your is not request submitted, Try again!");
+            return back() -> with('fail',"your request is not submitted, Try again!");
         }
 
 

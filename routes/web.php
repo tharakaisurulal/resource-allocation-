@@ -18,9 +18,9 @@ use App\Http\Controllers\loginController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/guest/request', function () {
-    return view('guest.guestrequestform');
-});
+//Route::get('/guest/request', function () {
+    //return view('guest.guestrequestform');
+//});
 Route::get('/lecturers/request', function () {
     return view('lecturers.lecturerrequestform');
 });
@@ -71,6 +71,8 @@ Route::post('/gueststore', [guestController::class, 'gueststore'])->name('guests
 
 //Route::get('/guest/guestregistration', [guestController::class, 'guestregistration'])->middleware('LoggedIn'); //restrict from home to guest registration, go to guest registraion
 Route::get('/guest/guestregistration', [guestController::class, 'guestregistration']);
+
+Route::get('/guest/guestrequest', [guestController::class, 'guestrequest']);
 
 Route::post('/login', [loginController::class, 'login'])->name('login'); //login functions
 
