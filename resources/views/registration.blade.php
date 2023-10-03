@@ -4,7 +4,8 @@
         <link rel="stylesheet" type="text/css" href="{{asset('css/main.css')}}">
     </head>
     <body class="container">
-                
+        <!--kkk-->
+
                 <form class="formcl">
                 <h1>Registration Form</h1>
                 <br>
@@ -16,13 +17,13 @@
                     <div class="form-grouprow">
                         <label for="inputEmail3" class="col-sm-2 col-form-label">Email:</label>
                         <input type="email" class="form-control" id="inputEmail3" placeholder="email@gmail.com">
-                        
+
                     </div>
                     <br>
                     <div class="form-grouprow">
                         <label for="inputPassword3" class="col-sm-2 col-form-label">Password :</label>
                         <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-                        
+
                     </div>
                     <br>
                     <div class="form-grouprow">
@@ -38,10 +39,10 @@
                             <option value="op7">Faculty of Agriculture</option>
                             </select>
                     </div>
-                    <br> 
+                    <br>
                     <div class="form-grouprow">
-                        <label for="inputdepartment3" class="col-sm-2 col-form-label">Department :</label> 
-                        <input type="text" class="form-control" id="inputDepartment3" placeholder="Department of Computer Science">    
+                        <label for="inputdepartment3" class="col-sm-2 col-form-label">Department :</label>
+                        <input type="text" class="form-control" id="inputDepartment3" placeholder="Department of Computer Science">
                     </div>
                     <br>
                     <div class="form-grouprow">
