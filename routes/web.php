@@ -69,6 +69,10 @@ Route::get('/add', function () {
     return view('guest.add');
 });
 
+Route::get('/header', function () {
+    return view('layout.header');
+});
+
 
 Route::post('/gueststore', [guestController::class, 'gueststore'])->name('gueststore'); //storing data in guest table.
 
