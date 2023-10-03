@@ -91,3 +91,11 @@ Route::get('/guest/guesthome', [guestController::class, 'guesthome']);
 Route::get('/forgetpassword', [loginController::class, 'forgetpassword'])->name('forgetpassword'); //forget passsword page.
 
 Route::post('/guestreq', [guestController::class, 'guestreq'])->name('guestreq');
+
+Route::get('/adminheader', function () {
+    return view('layout.adminheader');
+});
+
+Route::get('/adminheaderfooter', function () {
+    return view('layout.adminheaderfooter');
+});
