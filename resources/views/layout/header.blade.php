@@ -6,36 +6,32 @@
 
         <title>Lecture hall Allocation</title>
         @include('cdn')
-        <link rel="stylesheet" href={{asset('css/style1.css')}}>
+        <link rel="stylesheet" href={{asset('css/headerfooter.css')}}>
 
     </head>
 
     <body>
-        <section>
+        <section class="sec1">
         <div class="header">
-            <img src="images/logo_copy.png" class="logo">
+            <img src="/images/logo_copy.png" class="logo">
 
+            @yield('content1')
 
-
-       
+        <input type="checkbox" id="openSidebarMenu" hidden>
         <label for="openSidebarMenu" class="sidebarIconToggle">
             <div class="spinner top"></div>
             <div class="spinner middle"></div>
             <div class="spinner bottom"></div>
         </label>
+
             <div id="sidebarMenu">
                 <ul class="menu">
-                    <li><a href="#">HOME</a></li>
-                    <li><a href="#">ABOUT US</a></li>
-                    <li><a href="#">MY PROFILE</a></li>
-                    <li><a href="#">CONTACT US</a></li>
-                    <li><a href="#">NOTICE</a></li>
+                    @yield('content2')
                 </ul>
             </div>
         </div>
         </section>
 
-     @yield('content')
-
+        @yield('content')
     </body>
-</html>
+    </html>
