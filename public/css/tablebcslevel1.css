@@ -1,0 +1,120 @@
+BODY {
+    font-family: Trebuchet MS;
+    margin:20px;
+    background-color: #0805056b;
+    
+  }
+  
+  H1 {
+    text-align: center;
+    color: #272525;
+  }
+  
+  H2 {
+    text-align: center;
+    color: #1d1b1b;
+  }
+  
+
+  .myTimetable {
+    width:100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+  
+  .myTimetable THEAD{
+    color: #1b1a1a;
+    text-align:center;
+  }
+  
+  .myTimetable TBODY {
+    background-color: #c0c3c3;
+    background: linear-gradient(to right, #f8fafa, #c5c7c7)
+  }
+  
+  .myTimetable TD {
+    border: 1px solid black;
+    padding: 6px;
+    text-align: center;
+  }
+
+
+  .myTimetable TBODY TR TD:first-child {
+    background-color: #bbbcbe;
+    font-weight: bold;
+  }
+  
+  .break, .lunch {
+    background-color: #f8f8f3 !important;
+    font-style:italic ;
+
+  }
+  
+  .code {
+    font-size: 12pt;
+    margin-bottom:4px;
+  }
+  
+  .hall {
+    font-size: 10pt;
+    font-style: italic;
+  }
+
+  .lecturer {
+    font-size: 10pt;
+    font-style: italic;
+  }
+
+
+
+  
+        /* Style for the notice board container */
+        .notice-board {
+          background-color: #e2e4eb;
+          border: 1px solid  #e2e4eb;;
+          padding: 80px;
+          border-radius: 5px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          max-width: 900px;
+          margin:auto 0;
+          float: left;
+      }
+
+      /* Style for individual notice items */
+      .notice-item {
+          margin-bottom: 15px;
+          padding: 50px;
+          background-color: #c6c7ca;
+          border: 1px solid #e0e0e0;
+          border-radius: 5px;
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+          max-width: 1000px;
+      }
+
+      /* Style for the title of each notice */
+      .notice-title {
+          font-weight: bold;
+          margin-bottom: 5px;
+      }
+
+      /* Style for the content of each notice */
+      .notice-content {
+          font-size: 14px;
+      }
+
+      .map{
+        padding-left: 30%;
+       
+      }
+
+      .contact map{
+        padding-left: 50%;
+        
+      }
+      .map iframe{
+        width:700px;
+        height:500px;
+
+      }
+
+    
