@@ -26,6 +26,9 @@
 
             <div id="sidebarMenu">
                 <ul class="menu">
+                  <li><a href=#>DASHBOARD</a></li>
+                  <li><a href=#>ACTORS</a></li>
+                  <li><a href=#>TIMETABLE</a></li>
                     @yield('content2')
                 </ul>
             </div>
