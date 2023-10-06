@@ -1,4 +1,13 @@
 @extends('layout.headerFooter')
+@section('content2')
+        <li><a href="/">HOME</a></li>
+        <li><a href="#">ABOUT US</a></li>
+        <li><a href="#">CONTACT US</a></li>
+        <li><a href="#">NOTICE</a></li>
+        <li><a href="/loginpage">LOGIN</a></li>
+        <li><a href="/guest/guestregistration">REGISTER</a></li>
+@endsection
+
 @section('content')
 <!DOCTYPE html>
 <html>
@@ -8,8 +17,7 @@
 
         <title>Lecture hall Allocation</title>
         @include('cdn')
-        <link rel="stylesheet" href={{asset('css/bootstrap.css')}}>
-        <link rel="stylesheet" href={{asset('css/style.css')}}>
+        <link rel="stylesheet" href={{asset('css/welcome.css')}}>
         <link rel="icon" type="text/css" href="{{asset('img/icons/favicon.png')}}">
 
     </head>
@@ -26,6 +34,7 @@
             </div>
         </div>
         </section>
+        <center><hr width="80%"></center>
 
         <!------------------------about section starts -------------------------------------->
 
@@ -67,7 +76,7 @@
         <!---------------------- about section ends ---------------------------------------->
 
         <!---------------------- contact section starts ---------------------------------------->
-
+        <center><hr width="80%"></center>
         <section class="contactus" id="contactus">
             <div class="container">
             <div class="title-text">
