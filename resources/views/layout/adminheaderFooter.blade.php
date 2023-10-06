@@ -27,7 +27,14 @@
             <div id="sidebarMenu">
                 <ul class="menu">
                   <li><a href=#>DASHBOARD</a></li>
-                  <li><a href=#>ACTORS</a></li>
+                  <div id="dropdown">
+                  <li><button class="dropbtn">ACTORS</button></li>
+                  <div class="dropdown-container">
+                    <a href="#">LECTURER</a>
+                    <a href="#">STUDENT</a>
+                   <a href="#">NON-ACCADEMICS</a>
+                  </div>
+
                   <li><a href=#>TIMETABLE</a></li>
                     @yield('content2')
                 </ul>
@@ -125,6 +132,10 @@
 
          <script> jQuery('#waterdrop').raindrops({color:'#1c1f2f', canvasHeight:150, density: 0.1, frequency: 20});
         </script>
+
+
+
+
 
  <!-- footer section ends ---->
 </div>
