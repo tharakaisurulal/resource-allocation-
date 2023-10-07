@@ -77,6 +77,14 @@ Route::get('/adminheaderFooter', function () {
     return view('Layout.adminheaderFooter');
 });
 
+Route::get('/tablebcslevel1', function () {
+    return view('tablebcslevel1');
+});
+
+Route::get('/tablebcslevel2', function () {
+    return view('tablebcslevel2');
+});
+
 
 Route::post('/gueststore', [guestController::class, 'gueststore'])->name('gueststore'); //storing data in guest table.
 
