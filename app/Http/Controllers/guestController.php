@@ -80,7 +80,7 @@ class guestController extends Controller
                $extenstion = $file->getClientOriginalExtension();
                $filename = time().'.'.$extenstion;
                $file->move('uploads/guests/', $filename);
-               //$image->photo = $filename;
+               $image->photo = $filename;
            }
 
           $guests=guest::create([
@@ -92,7 +92,7 @@ class guestController extends Controller
             'guest_department'=> $request -> department,
             'guest_position'=> $request -> position,
             'mobile'=> $request -> mobile,
-            'photo'=> $filename,
+            //'photo'=> $filename -> photo,
             ]);
 
             $res = $guests ->save();
