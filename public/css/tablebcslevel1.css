@@ -45,8 +45,9 @@ BODY {
   }
   
   .break, .lunch {
-    background-color: #a6a6a0 !important;
-    font-style: italic;
+    background-color: #f8f8f3 !important;
+    font-style:italic ;
+
   }
   
   .code {
