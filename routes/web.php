@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\guestController;
 use App\Http\Controllers\loginController;
+use App\Http\Controllers\lecturehallController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,20 +22,11 @@ Route::get('/', function () {
 //Route::get('/guest/request', function () {
     //return view('guest.guestrequestform');
 //});
-Route::get('/lecturers/request', function () {
-    return view('lecturers.lecturerrequestform');
-});
 //Route::get('/login', function () {
     //return view('Login')->middleware('LoggedIn');
 //});
-Route::get('/footer', function () {
-    return view('footer');
-});
-Route::get('/Register', function () {
-    return view('registration');
-});
-Route::get('/sturegister', function () {
-    return view('sturegistration');
+Route::get('/admin/sturegister', function () {
+    return view('admin.sturegistration');
 });
 //Route::get('/guestregistration', function () {
     //return view('guestregistration');
@@ -49,8 +41,8 @@ Route::get('/headerFooter', function () {
     return view('Layout.headerFooter');
 });
 
-Route::get('/allocate', function () {
-    return view('allocate');
+Route::get('/lecturehalldetails', function () {
+    return view('lecturehalldetails');
 });
 
 Route::get('/lecturers/lecturerhome', function () {
@@ -85,7 +77,7 @@ Route::get('/tablebcslevel2', function () {
     return view('tablebcslevel2');
 });
 
-
+/*guest routes*/
 Route::post('/gueststore', [guestController::class, 'gueststore'])->name('gueststore'); //storing data in guest table.
 
 //Route::get('/guest/guestregistration', [guestController::class, 'guestregistration'])->middleware('LoggedIn'); //restrict from home to guest registration, go to guest registraion
@@ -93,6 +85,15 @@ Route::get('/guest/guestregistration', [guestController::class, 'guestregistrati
 
 Route::get('/guest/guestrequest', [guestController::class, 'guestrequest']);
 
+//Route::get('/home', [loginController::class, 'home'])->middleware('IsLoggedIn'); //restrict from login to home
+//Route::get('/home', [loginController::class, 'home']);
+Route::get('/guest/guesthome', [guestController::class, 'guesthome']);
+
+Route::post('/guestreq', [guestController::class, 'guestreq'])->name('guestreq');
+
+
+
+/*Login routes*/
 Route::post('/login', [loginController::class, 'login'])->name('login'); //login functions
 
 //Route::get('/loginpage', [loginController::class, 'loginpage'])->middleware('LoggedIn');//restrict from home to login, go to login
@@ -100,10 +101,27 @@ Route::get('/loginpage', [loginController::class, 'loginpage']);
 
 Route::get('/logout', [loginController::class, 'logout'])->name('logout'); //loout functions
 
-//Route::get('/home', [loginController::class, 'home'])->middleware('IsLoggedIn'); //restrict from login to home
-//Route::get('/home', [loginController::class, 'home']);
-Route::get('/guest/guesthome', [guestController::class, 'guesthome']);
-
 Route::get('/forgetpassword', [loginController::class, 'forgetpassword'])->name('forgetpassword'); //forget passsword page.
 
-Route::post('/guestreq', [guestController::class, 'guestreq'])->name('guestreq');
+
+
+/*Lecture routes*/
+Route::get('/lecturers/request', function () {
+    return view('lecturers.lecturerrequestform');
+});
+
+/*academicsupportive routes*/
+
+/*student routes*/
+
+/*admin routes*/
+//Route::get('/admin/adminlecturehallopera', function () {
+    //return view('admin.adminlecturehallopera');
+//});
+Route::get('/admin/adminlecturehallopera', [lecturehallController::class, 'viewlecturehall'])->name('viewlecturehall');
+
+Route::post('/admin/addlecturehall', [lecturehallController::class, 'addlecturehall'])->name('addlecturehall');
+
+Route::get('delete-lechall/{id}',[lecturehallController::class, 'deletelecturehall'])->name('deletelecturehall');
+
+Route::get('update-lechall/{id}',[lecturehallController::class, 'updatelecturehall'])->name('updatelecturehall');
