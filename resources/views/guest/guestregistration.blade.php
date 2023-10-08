@@ -1,4 +1,12 @@
 @extends('layout.headerFooter')
+@section('content2')
+        <li><a href="/">HOME</a></li>
+        <li><a href="#">ABOUT US</a></li>
+        <li><a href="#">CONTACT US</a></li>
+        <li><a href="#">NOTICE</a></li>
+        <li><a href="/loginpage">LOGIN</a></li>
+@endsection
+
 @section("content")
 
 <!DOCTYPE html>
@@ -9,13 +17,12 @@
 
         <title>Lecture hall Allocation</title>
         @include('cdn')
-        <link rel="stylesheet" href={{asset('css/style.css')}}>
-        <link rel="stylesheet" href={{asset('css/regi.css')}}>
+        <link rel="stylesheet" href={{asset('css/guestregi.css')}}>
 
     </head>
 
     <body>
-        <section class="login">
+        <section class="regis">
         <div class="box">
             <form action="{{route('gueststore')}}" method="post" enctype="multipart/form-data">
                 @if(session()->has('success'))
@@ -54,7 +61,7 @@
                 <div class="inputBox">
                     <input type="text" name="department" value="{{old('department')}}"  placeholder="Departmet of Mathematics">
                     <span>Department</span>
-                    <i><ion-icon name="person"></ion-icon></i>
+                    <i><ion-icon name="school"></ion-icon></i>
                 </div>
                 <label class="text-danger span1">@error('department')  {{$message}}  @enderror</label>
 

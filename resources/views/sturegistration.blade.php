@@ -1,3 +1,14 @@
+@extends('layout.header')
+@section('content2')
+        <li><a href="/">HOME</a></li>
+        <li><a href="#">ABOUT US</a></li>
+        <li><a href="#">CONTACT US</a></li>
+        <li><a href="#">NOTICE</a></li>
+        <li><a href="/loginpage">LOGIN</a></li>
+        <li><a href="/guest/guestregistration">REGISTER</a></li>
+@endsection
+
+@section('content')
 <!DOCTYPE html>
 <html>
     <head>
@@ -48,17 +59,9 @@
     <input type="text" placeholder="Enter Position" name="position" id="psw" required>
 
    <label for="profileImage" class="form-label"><b>Upload Profile Image</b></label>
-   <input type="file" class="form-control" id="profileImage" name="profileImage" accept="image/*">
+   <input type="file" class="form-control" id="profileImage" name="profileImage" accept="image/*"><br>
    <hr>
-
-
-    <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
     <button type="submit" class="registerbtn">Register</button>
-  </div>
-
-
-  <div class="container signin">
-    <p>Already have an account? <a href="#">Sign in</a>.</p>
   </div>
 </form>
 
@@ -67,3 +70,4 @@
 
 </body>
 </html>
+@endsection

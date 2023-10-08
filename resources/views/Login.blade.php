@@ -1,4 +1,12 @@
 @extends('layout.headerFooter')
+@section('content2')
+        <li><a href="/">HOME</a></li>
+        <li><a href="#">ABOUT US</a></li>
+        <li><a href="#">CONTACT US</a></li>
+        <li><a href="#">NOTICE</a></li>
+        <li><a href="/guest/guestregistration">REGISTER</a></li>
+@endsection
+
 @section("content")
 <!DOCTYPE html>
 <html>
@@ -8,7 +16,6 @@
 
         <title>Lecture hall Allocation</title>
         @include('cdn')
-
         <link rel="stylesheet" href={{asset('css/Login.css')}}>
     </head>
 
