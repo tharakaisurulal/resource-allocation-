@@ -194,4 +194,8 @@ public function guestreq(Request $request)
 
 
 }
+
+public function guestlecturehall(){
+    
+}
 }
