@@ -73,8 +73,8 @@ Route::get('/header', function () {
     return view('layout.header');
 });
 
-Route::get('/adminheaderFooter', function () {
-    return view('Layout.adminheaderFooter');
+Route::get('/admin/adminhome', function () {
+    return view('admin.adminhome');
 });
 
 Route::get('/tablebcslevel1', function () {
