@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\guestController;
 use App\Http\Controllers\loginController;
+use App\Http\Controllers\lecturehallController;
 
 /*
 |--------------------------------------------------------------------------
@@ -114,3 +115,13 @@ Route::get('/lecturers/request', function () {
 /*student routes*/
 
 /*admin routes*/
+//Route::get('/admin/adminlecturehallopera', function () {
+    //return view('admin.adminlecturehallopera');
+//});
+Route::get('/admin/adminlecturehallopera', [lecturehallController::class, 'viewlecturehall'])->name('viewlecturehall');
+
+Route::post('/admin/addlecturehall', [lecturehallController::class, 'addlecturehall'])->name('addlecturehall');
+
+Route::get('delete-lechall/{id}',[lecturehallController::class, 'deletelecturehall'])->name('deletelecturehall');
+
+Route::get('update-lechall/{id}',[lecturehallController::class, 'updatelecturehall'])->name('updatelecturehall');
