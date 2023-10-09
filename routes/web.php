@@ -6,6 +6,7 @@ use App\Http\Controllers\loginController;
 use App\Http\Controllers\lecturehallController;
 use App\Http\Controllers\courseController;
 use App\Http\Controllers\labController;
+use App\Http\Controllers\programController;
 
 /*
 |--------------------------------------------------------------------------
@@ -154,3 +155,14 @@ Route::get('delete-lab/{id}',[labController::class, 'deletelab'])->name('deletel
 Route::get('update-lab/{id}',[labController::class, 'updatelab'])->name('updatelab');
 
 Route::post('update1-lab/{id}',[labController::class, 'updatelab1'])->name('updatelab1');
+
+/*admin.lab routes*/
+Route::get('/admin/program/adminprogramopera', [programController::class, 'viewprogram'])->name('viewprogram');
+
+Route::post('/admin/program/addprogram', [programController::class, 'addprogram'])->name('addprogram');
+
+Route::get('delete-program/{id}',[programController::class, 'deleteprogram'])->name('deleteprogram');
+
+Route::get('update-program/{id}',[programController::class, 'updateprogram'])->name('updateprogram');
+
+Route::post('update1-program/{id}',[programController::class, 'updateprogram1'])->name('updateprogram1');
