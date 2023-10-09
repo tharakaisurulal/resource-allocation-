@@ -44,7 +44,7 @@
                     <td><input type="checkbox" name="lh_air_conditioner" value="yes" ></td>
                     <td>
                             <button class="btn btn-secondary btn-sm" type="submit" >Submit</button>
-                           <a href="/admin/adminlecturehallopera"> <button class="btn btn-secondary btn-sm" type="button" >Back</button></a>
+                           <a href="/admin/lecturehall/adminlecturehallopera"> <button class="btn btn-secondary btn-sm" type="button" >Back</button></a>
                     </td>
                 </tr>
 

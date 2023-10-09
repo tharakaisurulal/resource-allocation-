@@ -11,10 +11,10 @@ class lecturehallController extends Controller
         $cusdata= lecturehall::all();
         //return  $cusdata;
         if(count($cusdata) === 0){
-            return view('admin.adminlecturehallopera');
+            return view('admin.lecturehall.adminlecturehallopera');
         }
         else{
-            return view('admin.adminlecturehallopera',['cusdata'=> $cusdata]);
+            return view('admin.lecturehall.adminlecturehallopera',['cusdata'=> $cusdata]);
         }
     }
 
@@ -30,7 +30,7 @@ class lecturehallController extends Controller
             if($res1){
             //return redirect('/') -> withSuccess("you are registered");
             //return back() -> with('success',"you are registered");
-                return redirect('/admin/adminlecturehallopera') -> with('success',"successfully registered.");
+                return redirect('/admin/lecturehall/adminlecturehallopera') -> with('success',"successfully registered.");
             }
             else{
                 return back() -> with('fail',"Not registered");
@@ -51,7 +51,7 @@ class lecturehallController extends Controller
         //$this-> lhname = $lecturehall1->lh_name;
         //$lecturehall1->update();
         //return $lecturehall1;
-        return view('admin.adminlecturehalledit', ['lecturehall'=>$lecturehall]);
+        return view('admin.lecturehall.adminlecturehalledit', ['lecturehall'=>$lecturehall]);
 
 }
 
