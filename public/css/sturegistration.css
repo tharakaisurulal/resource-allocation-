@@ -7,14 +7,22 @@
     margin: 0;
     background-color: #23242a;
   }*/
+  
+  .bdy{
+    background-color:  #0805056b;
+  }
+
+  .topic{
+    text-align: center;
+  }
 
   .container {
-    background-color: white;
+    background-color:#dcd8d8f2;
     border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 10px rgba(17, 17, 17, 0.881);
     /*padding: 40px;  Increased padding for a larger box */
     width: 500px; /* Increased width for a larger box */
-    text-align: center;
+    text-align:left;
     padding-top: 100px;
 
     margin-bottom: 30px;
@@ -33,24 +41,31 @@
     margin: 10px 0 25px 0; /* Adjusted margin for more spacing */
     display: inline-block;
     border: none;
-    background: #f1f1f1;
+    background: #fdfefd6b;
   }
 
   .container input[type="text"]:focus,
   .container input[type="password"]:focus,
   .container input[type="email"]:focus {
-    background-color: #ddd;
+    background-color: #0805056b;
     outline: none;
   }
 
+  .fac{
+    /*background-color: #0805056b;*/
+    outline: none;
+  }
+
+
   .container hr {
-    border: 1px solid #080808;
+    border: 1px solid #060606;
     margin-bottom: 30px; /* Adjusted margin for more spacing */
   }
 
   .container .registerbtn {
-    background-color: #f6a210;
-    color: white;
+    background-color: #646361;
+    text-decoration:solid;
+    color: rgb(5, 5, 5);
     padding: 16px 20px;
     margin: 10px 0;
     border: none;
@@ -77,5 +92,6 @@
     margin: 10px 0 25px 0; /* Adjusted margin for more spacing */
     display: inline-block;
     border: none;
-    background: #f1f1f1;
+    background: #e4e1e1;
+    font-display:#fdfefdf6;
   }
