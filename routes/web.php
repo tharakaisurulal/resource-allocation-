@@ -125,3 +125,5 @@ Route::post('/admin/addlecturehall', [lecturehallController::class, 'addlectureh
 Route::get('delete-lechall/{id}',[lecturehallController::class, 'deletelecturehall'])->name('deletelecturehall');
 
 Route::get('update-lechall/{id}',[lecturehallController::class, 'updatelecturehall'])->name('updatelecturehall');
+
+Route::post('update1-lechall/{id}',[lecturehallController::class, 'updatelecturehall1'])->name('updatelecturehall1');
