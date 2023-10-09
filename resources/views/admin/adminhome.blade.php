@@ -1,5 +1,6 @@
 @extends('layout.headerFooter')
 @section('content2')
+
 <div class="sidenav">
         <li><a href="#">DASHBOARD</a></li>
         <li><a href="#">TIMETABLE</a></li>
@@ -12,11 +13,10 @@
             </div>
         </div>
         <li><a href="#">Contact</a></li>
-    <<div>
+    <div>
                     @yield('content2')
                 </ul>
       
-
         
 @endsection
 

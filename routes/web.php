@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\guestController;
 use App\Http\Controllers\loginController;
+use App\Http\Controllers\lecturehallController;
+use App\Http\Controllers\courseController;
+use App\Http\Controllers\labController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,20 +24,11 @@ Route::get('/', function () {
 //Route::get('/guest/request', function () {
     //return view('guest.guestrequestform');
 //});
-Route::get('/lecturers/request', function () {
-    return view('lecturers.lecturerrequestform');
-});
 //Route::get('/login', function () {
     //return view('Login')->middleware('LoggedIn');
 //});
-Route::get('/footer', function () {
-    return view('footer');
-});
-Route::get('/Register', function () {
-    return view('registration');
-});
-Route::get('/sturegister', function () {
-    return view('sturegistration');
+Route::get('/admin/student/sturegister', function () {
+    return view('admin.student.sturegistration');
 });
 //Route::get('/guestregistration', function () {
     //return view('guestregistration');
@@ -49,8 +43,8 @@ Route::get('/headerFooter', function () {
     return view('Layout.headerFooter');
 });
 
-Route::get('/allocate', function () {
-    return view('allocate');
+Route::get('/lecturehalldetails', function () {
+    return view('lecturehalldetails');
 });
 
 Route::get('/lecturers/lecturerhome', function () {
@@ -86,7 +80,7 @@ Route::get('/tablebcslevel2', function () {
 });
 
 
-
+/*guest routes*/
 
 Route::post('/gueststore', [guestController::class, 'gueststore'])->name('gueststore'); //storing data in guest table.
 
@@ -95,6 +89,15 @@ Route::get('/guest/guestregistration', [guestController::class, 'guestregistrati
 
 Route::get('/guest/guestrequest', [guestController::class, 'guestrequest']);
 
+//Route::get('/home', [loginController::class, 'home'])->middleware('IsLoggedIn'); //restrict from login to home
+//Route::get('/home', [loginController::class, 'home']);
+Route::get('/guest/guesthome', [guestController::class, 'guesthome']);
+
+Route::post('/guestreq', [guestController::class, 'guestreq'])->name('guestreq');
+
+
+
+/*Login routes*/
 Route::post('/login', [loginController::class, 'login'])->name('login'); //login functions
 
 //Route::get('/loginpage', [loginController::class, 'loginpage'])->middleware('LoggedIn');//restrict from home to login, go to login
@@ -102,10 +105,52 @@ Route::get('/loginpage', [loginController::class, 'loginpage']);
 
 Route::get('/logout', [loginController::class, 'logout'])->name('logout'); //loout functions
 
-//Route::get('/home', [loginController::class, 'home'])->middleware('IsLoggedIn'); //restrict from login to home
-//Route::get('/home', [loginController::class, 'home']);
-Route::get('/guest/guesthome', [guestController::class, 'guesthome']);
-
 Route::get('/forgetpassword', [loginController::class, 'forgetpassword'])->name('forgetpassword'); //forget passsword page.
 
-Route::post('/guestreq', [guestController::class, 'guestreq'])->name('guestreq');
+
+
+/*Lecture routes*/
+Route::get('/lecturers/request', function () {
+    return view('lecturers.lecturerrequestform');
+});
+
+/*academicsupportive routes*/
+
+/*student routes*/
+
+/*admin routes*/
+//Route::get('/admin/adminlecturehallopera', function () {
+    //return view('admin.adminlecturehallopera');
+//});
+/*admin.lecturehall routes*/
+Route::get('/admin/lecturehall/adminlecturehallopera', [lecturehallController::class, 'viewlecturehall'])->name('viewlecturehall');
+
+Route::post('/admin/lecturehall/addlecturehall', [lecturehallController::class, 'addlecturehall'])->name('addlecturehall');
+
+Route::get('delete-lechall/{id}',[lecturehallController::class, 'deletelecturehall'])->name('deletelecturehall');
+
+Route::get('update-lechall/{id}',[lecturehallController::class, 'updatelecturehall'])->name('updatelecturehall');
+
+Route::post('update1-lechall/{id}',[lecturehallController::class, 'updatelecturehall1'])->name('updatelecturehall1');
+
+/*admin.course routes*/
+Route::get('/admin/course/admincourseopera', [courseController::class, 'viewcourse'])->name('viewcourse');
+
+Route::post('/admin/course/addcourse', [courseController::class, 'addcourse'])->name('addcourse');
+
+Route::get('delete-course/{id}',[courseController::class, 'deletecourse'])->name('deletecourse');
+
+Route::get('update-course/{id}',[courseController::class, 'updatecourse'])->name('updatecourse');
+
+Route::post('update1-course/{id}',[courseController::class, 'updatecourse1'])->name('updatecourse1');
+
+/*admin.lab routes*/
+Route::get('/admin/lab/adminlabopera', [labController::class, 'viewlab'])->name('viewlab');
+
+Route::post('/admin/lab/addlab', [labController::class, 'addlab'])->name('addlab');
+
+Route::get('delete-lab/{id}',[labController::class, 'deletelab'])->name('deletelab');
+
+Route::get('update-lab/{id}',[labController::class, 'updatelab'])->name('updatelab');
+
+Route::post('update1-lab/{id}',[labController::class, 'updatelab1'])->name('updatelab1');
