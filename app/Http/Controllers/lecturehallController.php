@@ -41,7 +41,7 @@ class lecturehallController extends Controller
 {
         $lecturehall = lecturehall::find($id);
         $lecturehall->delete();
-        return redirect()->back();
+        return redirect()->back()-> with('success',"successfully deleted.");
 }
 
     public function updatelecturehall($id)

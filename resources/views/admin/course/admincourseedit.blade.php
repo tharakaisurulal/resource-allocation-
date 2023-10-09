@@ -2,7 +2,7 @@
 
 @section("content2")
         <li><a href="#">BACK</a></li>
-        
+
 @endsection
 
 @section("content")
@@ -22,29 +22,28 @@
                 <h1>Retrive data</h1>
             </div>
 
-            <form action="{{url('update1-lechall/'.$lecturehall->id)}}" method="POST">
+            <form action="{{url('update1-course/'.$course->id)}}" method="POST">
                 @csrf
          <div class="d-flex justify-content-center div2">
 
             <table class="table table-dark">
                 <thead>
                     <td>Id</td>
-                    <td>Lecturehall Name</td>
-                    <td>Capacity</td>
-                    <td>A/C</td>
+                    <td>Course Name</td>
+                    <td>Course Code</td>
                     <td>Action</td>
 
                 </thead>
                 <tbody>
 
                 <tr>
-                    <td><input type="text" name="id" value="{{$lecturehall->id}}" required disabled></td>
-                    <td><input type="text" name="lhname" value="{{$lecturehall->lh_name}}" required></td>
-                    <td><input type="text" name="lhcapacity" value="{{$lecturehall->lh_capacity}}" required></td>
-                    <td><input type="checkbox" name="lh_air_conditioner" value="yes" ></td>
+                    <td><input type="text" name="id" value="{{$course->id}}" required disabled></td>
+                    <td><input type="text" name="coursename" value="{{$course->course_name}}" required></td>
+                    <td><input type="text" name="coursecode" value="{{$course->course_code}}" required></td>
+
                     <td>
                             <button class="btn btn-secondary btn-sm" type="submit" >Submit</button>
-                           <a href="/admin/lecturehall/adminlecturehallopera"> <button class="btn btn-secondary btn-sm" type="button" >Back</button></a>
+                           <a href="/admin/course/admincourseopera"> <button class="btn btn-secondary btn-sm" type="button" >Back</button></a>
                     </td>
                 </tr>
 

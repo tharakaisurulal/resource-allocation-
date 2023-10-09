@@ -21,7 +21,7 @@
 
     </head>
     <body>
-
+        <div class="bdy">
         <form action="action_page.php">
             @csrf
   <div class="container">
@@ -67,7 +67,7 @@
 
 
 
-
+</div>
 </body>
 </html>
 @endsection
