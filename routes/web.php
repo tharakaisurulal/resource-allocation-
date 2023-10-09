@@ -79,6 +79,10 @@ Route::get('/tablebcslevel2', function () {
     return view('tablebcslevel2');
 });
 
+Route::get('/tablebsclevel3', function () {
+    return view('tablebsclevel3');
+});
+
 
 /*guest routes*/
 
