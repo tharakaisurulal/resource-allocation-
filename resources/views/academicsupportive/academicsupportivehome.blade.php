@@ -1,17 +1,4 @@
 @extends('layout.headerFooter')
-@section("content1")
-    <div class="div3"><img src="{{asset('/uploads/guests/'.$dater->photo) }}" alt="image" class="img1"></div>
-    <div class="div2">
-        <h6>Welcome!</h6><br>
-        <h6>{{$dater->guest_name}}</h6>
-    </div>
-@endsection
-
-@section("content2")
-        <li><a href="/logout">LOG OUT</a></li>
-        <li><a href="#">ABOUT US</a></li>
-@endsection
-
 @section("content")
 <!DOCTYPE html>
 <html lang="en">
@@ -21,14 +8,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 
-    <link rel="stylesheet" href={{asset('css/guesthome.css')}}>
+    <link rel="stylesheet" href={{asset('css/lecturerhome.css')}}>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
 
 
 </head>
 <body>
-
-
 <!--------------------card section---------------------------->
 <div class="div1">
     <div class="card">
@@ -42,7 +27,7 @@
                     <div class="back-content center">
                         <h3> Lecture Hall</h3>
                         <div class="button">
-                            <a href="/lecturehalldetails"><span>CLICK</span></a>
+                            <a href=""><span>CLICK</span></a>
                         </div>
                     </div>
             </div>
@@ -66,6 +51,27 @@
             </div>
         </div>
 
+
+
+
+        <div class="card">
+
+            <div class="face front">
+                <img src="/images/1523342686phpo9K5NA.jpeg" alt="" width=300px height=350px>
+                <h3> Time Table</h3>
+            </div>
+
+            <div class="face back">
+                    <div class="back-content center">
+                        <h3> Time Table</h3>
+                        <div class="button">
+                            <a href=""><span>CLICK</span></a>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+
         <div class="card">
 
             <div class="face front">
@@ -77,7 +83,7 @@
                     <div class="back-content center">
                         <h3> Request Form</h3>
                         <div class="button">
-                            <a href="/guest/guestrequest"><span>CLICK</span></a>
+                            <a href="/lecturers/request"><span>CLICK</span></a>
                         </div>
                     </div>
             </div>
