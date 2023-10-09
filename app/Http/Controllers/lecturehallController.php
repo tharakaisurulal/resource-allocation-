@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 class lecturehallController extends Controller
 {
+
     public function viewlecturehall(){
         $cusdata= lecturehall::all();
         //return  $cusdata;
@@ -29,10 +30,10 @@ class lecturehallController extends Controller
             if($res1){
             //return redirect('/') -> withSuccess("you are registered");
             //return back() -> with('success',"you are registered");
-                return redirect('/admin/adminlecturehallopera') -> with('success',"you are registered,please login now");
+                return redirect('/admin/adminlecturehallopera') -> with('success',"successfully registered.");
             }
             else{
-                return back() -> with('fail',"you are not registered");
+                return back() -> with('fail',"Not registered");
             }
 }
 
@@ -45,10 +46,30 @@ class lecturehallController extends Controller
 
     public function updatelecturehall($id)
 {
-        $lecturehall1 = lecturehall::find($id);
+        $lecturehall = lecturehall::find($id);
+        //$this-> lhcapacity = $lecturehall1->lh_capacity;
+        //$this-> lhname = $lecturehall1->lh_name;
         //$lecturehall1->update();
         //return $lecturehall1;
-        //return view('admin.adminlecturehallopera', compact('lecturehall1'));
+        return view('admin.adminlecturehalledit', ['lecturehall'=>$lecturehall]);
+
+}
+
+public function updatelecturehall1(Request $request,$id)
+{
+
+    $lecturehall = lecturehall::find($id);
+    //return $request;
+        $lecturehall->lh_name = $request -> input('lhname');
+        $lecturehall->lh_capacity = $request -> input('lhcapacity');
+        $lecturehall->lh_air_conditioner = $request -> input('lh_air_conditioner');
+        $lecturehall->update();
+    //return $request;
+    //return $lecturehall;
+    //$lecturehall->update($request->all());
+        //return $lecturehall;
+        return redirect()->route('viewlecturehall')->with('success',"Data updated successfully.");
+
 }
 
 }

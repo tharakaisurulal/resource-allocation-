@@ -51,7 +51,7 @@
 
                 <tr>
                     <td>A/C:</td>
-                    <td><input type="checkbox" name="lh_air_conditioner" value="yes"></td>
+                    <td><input type="checkbox" name="lh_air_conditioner" value="yes" checked></td>
                 </tr>
              </table>
 
@@ -71,6 +71,15 @@
             <div class="text-center">
                 <h1>Retrive data</h1>
             </div>
+
+            @if(session()->has('success'))
+            <div class="alert alert-success div5">{{session()->get('success')}}</div>
+        @endif
+
+        @if(session()->has('fail'))
+            <div class="alert alert-danger">{{session()->get('fail')}}</div>
+        @endif
+
 
             @if (isset($cusdata))
          <div class="d-flex justify-content-center div2">
@@ -113,57 +122,6 @@
          @endif
 
         </div>
-
-
-        <div class="div3">
-
-            <!-- Button trigger modal -->
-            <!--<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                Add Lecturehalls
-            </button>-->
-
-            <!-- Modal -->
-  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <form action="{{route('addlecturehall')}}" method="POST">
-            @csrf
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-
-            <table>
-
-                <tr>
-                    <td>Lecture Hall Name:</td>
-                    <td><input type="text" name="lhname" required></td>
-                </tr>
-
-                <tr>
-                    <td>Lecture Hall capacity:</td>
-                    <td><input type="text" name="lhcapacity" required></td>
-                </tr>
-
-                <tr>
-                    <td>A/C:</td>
-                    <td><input type="checkbox" name="lh_air_conditioner" value="yes"></td>
-                </tr>
-             </table>
-
-
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="reset" class="btn btn-primary">Reset</button>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
-        </form>
-      </div>
-    </div>
-  </div>
-            </div>
 
     </body>
 </html>
