@@ -5,6 +5,7 @@ use App\Http\Controllers\guestController;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\lecturehallController;
 use App\Http\Controllers\courseController;
+use App\Http\Controllers\labController;
 
 /*
 |--------------------------------------------------------------------------
@@ -134,3 +135,20 @@ Route::post('update1-lechall/{id}',[lecturehallController::class, 'updatelecture
 Route::get('/admin/course/admincourseopera', [courseController::class, 'viewcourse'])->name('viewcourse');
 
 Route::post('/admin/course/addcourse', [courseController::class, 'addcourse'])->name('addcourse');
+
+Route::get('delete-course/{id}',[courseController::class, 'deletecourse'])->name('deletecourse');
+
+Route::get('update-course/{id}',[courseController::class, 'updatecourse'])->name('updatecourse');
+
+Route::post('update1-course/{id}',[courseController::class, 'updatecourse1'])->name('updatecourse1');
+
+/*admin.lab routes*/
+Route::get('/admin/lab/adminlabopera', [labController::class, 'viewlab'])->name('viewlab');
+
+Route::post('/admin/lab/addlab', [labController::class, 'addlab'])->name('addlab');
+
+Route::get('delete-lab/{id}',[labController::class, 'deletelab'])->name('deletelab');
+
+Route::get('update-lab/{id}',[labController::class, 'updatelab'])->name('updatelab');
+
+Route::post('update1-lab/{id}',[labController::class, 'updatelab1'])->name('updatelab1');

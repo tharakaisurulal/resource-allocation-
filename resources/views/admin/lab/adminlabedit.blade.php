@@ -2,7 +2,7 @@
 
 @section("content2")
         <li><a href="#">BACK</a></li>
-        
+
 @endsection
 
 @section("content")
@@ -22,7 +22,7 @@
                 <h1>Retrive data</h1>
             </div>
 
-            <form action="{{url('update1-lechall/'.$lecturehall->id)}}" method="POST">
+            <form action="{{url('update1-lab/'.$lab->id)}}" method="POST">
                 @csrf
          <div class="d-flex justify-content-center div2">
 
@@ -38,13 +38,13 @@
                 <tbody>
 
                 <tr>
-                    <td><input type="text" name="id" value="{{$lecturehall->id}}" required disabled></td>
-                    <td><input type="text" name="lhname" value="{{$lecturehall->lh_name}}" required></td>
-                    <td><input type="text" name="lhcapacity" value="{{$lecturehall->lh_capacity}}" required></td>
-                    <td><input type="checkbox" name="lh_air_conditioner" value="yes" ></td>
+                    <td><input type="text" name="id" value="{{$lab->id}}" required disabled></td>
+                    <td><input type="text" name="labname" value="{{$lab->lab_name}}" required></td>
+                    <td><input type="text" name="labcapacity" value="{{$lab->lab_capacity}}" required></td>
+                    <td><input type="checkbox" name="lab_air_conditioner" value="yes" ></td>
                     <td>
                             <button class="btn btn-secondary btn-sm" type="submit" >Submit</button>
-                           <a href="/admin/lecturehall/adminlecturehallopera"> <button class="btn btn-secondary btn-sm" type="button" >Back</button></a>
+                           <a href="/admin/lab/adminlabopera"> <button class="btn btn-secondary btn-sm" type="button" >Back</button></a>
                     </td>
                 </tr>
 
