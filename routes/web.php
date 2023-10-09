@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\guestController;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\lecturehallController;
+use App\Http\Controllers\courseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -118,6 +119,7 @@ Route::get('/lecturers/request', function () {
 //Route::get('/admin/adminlecturehallopera', function () {
     //return view('admin.adminlecturehallopera');
 //});
+/*admin.lecturehall routes*/
 Route::get('/admin/lecturehall/adminlecturehallopera', [lecturehallController::class, 'viewlecturehall'])->name('viewlecturehall');
 
 Route::post('/admin/lecturehall/addlecturehall', [lecturehallController::class, 'addlecturehall'])->name('addlecturehall');
@@ -127,3 +129,8 @@ Route::get('delete-lechall/{id}',[lecturehallController::class, 'deletelectureha
 Route::get('update-lechall/{id}',[lecturehallController::class, 'updatelecturehall'])->name('updatelecturehall');
 
 Route::post('update1-lechall/{id}',[lecturehallController::class, 'updatelecturehall1'])->name('updatelecturehall1');
+
+/*admin.course routes*/
+Route::get('/admin/course/admincourseopera', [courseController::class, 'viewcourse'])->name('viewcourse');
+
+Route::post('/admin/course/addcourse', [courseController::class, 'addcourse'])->name('addcourse');

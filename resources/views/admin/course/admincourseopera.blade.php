@@ -2,7 +2,7 @@
 
 @section("content2")
         <li><a href="#">BACK</a></li>
-        
+
 @endsection
 
 @section("content")
@@ -22,14 +22,14 @@
 
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                Add Lecturehalls
+                Add courses
             </button>
 
             <!-- Modal -->
   <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
-        <form action="{{route('addlecturehall')}}" method="POST">
+        <form action="{{route('addcourse')}}" method="POST">
             @csrf
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
@@ -40,19 +40,15 @@
             <table>
 
                 <tr>
-                    <td>Lecture Hall Name:</td>
-                    <td><input type="text" name="lhname" required></td>
+                    <td>Course Name:</td>
+                    <td><input type="text" name="coursename" required></td>
                 </tr>
 
                 <tr>
-                    <td>Lecture Hall capacity:</td>
-                    <td><input type="text" name="lhcapacity" required></td>
+                    <td>Course Code:</td>
+                    <td><input type="text" name="coursecode" required></td>
                 </tr>
 
-                <tr>
-                    <td>A/C:</td>
-                    <td><input type="checkbox" name="lh_air_conditioner" value="yes" checked></td>
-                </tr>
              </table>
 
 
@@ -81,25 +77,23 @@
         @endif
 
 
-            @if (isset($cusdata))
+            @if (isset($cusdata1))
          <div class="d-flex justify-content-center div2">
 
             <table class="table table-dark">
                 <thead>
                     <td>Id</td>
-                    <td>Lecturehall Name</td>
-                    <td>Capacity</td>
-                    <td>A/C</td>
+                    <td>Course Name</td>
+                    <td>Course Code</td>
                     <td>Action</td>
 
                 </thead>
                 <tbody>
-                    @foreach ($cusdata as $cdb)
+                    @foreach ($cusdata1 as $cdb)
                 <tr>
                     <td>{{$cdb->id}}</td>
-                    <td>{{$cdb->lh_name}}</td>
-                    <td>{{$cdb->lh_capacity}}</td>
-                    <td>{{$cdb->lh_air_conditioner}}</td>
+                    <td>{{$cdb->course_name}}</td>
+                    <td>{{$cdb->course_code}}</td>
                     <td>
                         <div class="dropdown">
                             <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
