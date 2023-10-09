@@ -75,15 +75,10 @@
 
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="flush-headingFour">
-                      <button class="accordion-button collapsed sec2" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
-                        <li><a href="#">DEGREE PROGRAM</a></li>
+                      <button class="accordion-button collapsed sec2" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour" onclick="window.location.href='/admin/program/adminprogramopera';">
+                        <li><a>DEGREE PROGRAM</a></li>
                       </button>
                     </h2>
-                    <div id="flush-collapseFour" class="accordion-collapse collapse sec2" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
-                      <div class="accordion-body">
-                          <!--write-->
-                      </div>
-                    </div>
                   </div>
 
 
