@@ -72,6 +72,67 @@
     cursor: pointer;
 }
 
+
+/* Style the side navigation bar */
+.sidenav {
+    width: 250px;
+    background-color: #333;
+    padding: 20px;
+}
+
+/* Style the links in the navigation bar */
+.sidenav a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+}
+
+/* Style the dropdown button */
+.dropbtn {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Style the dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    background-color: #444;
+    position: absolute;
+    min-width: 200px;
+    z-index: 1;
+}
+
+/* Style the dropdown links */
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color on hover */
+.dropdown-content a:hover {
+    background-color: #555;
+}
+
+/* Show the dropdown content when hovering over the dropdown button */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
 .spinner{
     height: 3.5px;
     background:#fff;
