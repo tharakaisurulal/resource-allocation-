@@ -25,8 +25,8 @@ Route::get('/', function () {
 //Route::get('/login', function () {
     //return view('Login')->middleware('LoggedIn');
 //});
-Route::get('/admin/sturegister', function () {
-    return view('admin.sturegistration');
+Route::get('/admin/student/sturegister', function () {
+    return view('admin.student.sturegistration');
 });
 //Route::get('/guestregistration', function () {
     //return view('guestregistration');
@@ -118,9 +118,9 @@ Route::get('/lecturers/request', function () {
 //Route::get('/admin/adminlecturehallopera', function () {
     //return view('admin.adminlecturehallopera');
 //});
-Route::get('/admin/adminlecturehallopera', [lecturehallController::class, 'viewlecturehall'])->name('viewlecturehall');
+Route::get('/admin/lecturehall/adminlecturehallopera', [lecturehallController::class, 'viewlecturehall'])->name('viewlecturehall');
 
-Route::post('/admin/addlecturehall', [lecturehallController::class, 'addlecturehall'])->name('addlecturehall');
+Route::post('/admin/lecturehall/addlecturehall', [lecturehallController::class, 'addlecturehall'])->name('addlecturehall');
 
 Route::get('delete-lechall/{id}',[lecturehallController::class, 'deletelecturehall'])->name('deletelecturehall');
 

@@ -2,7 +2,7 @@
 
 @section("content2")
         <li><a href="#">BACK</a></li>
-        <li><a href="#">ABOUT US</a></li>
+        
 @endsection
 
 @section("content")
