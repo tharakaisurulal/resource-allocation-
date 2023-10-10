@@ -163,7 +163,31 @@
             </div>
         </div>
         </section>
+<!--header section end-->
+<div class="section1">
+    <div class="card">
+        <img src="/images/R2.png" alt="" width="50px" height="50px">
+        <h4>STUDENTS</h4><br>
+        <h4>{{$count}}</h4>
+    </div>
 
-        @yield('content')
+    <div class="card">
+        <img src="/images/lecturer.png" alt="" width="50px" height="50px">
+        <h4>LECTURERS</h4><br>
+        <h4>{{$count1}}</h4>
+    </div>
+
+    <div class="card">
+        <img src="/images/sup.png" alt="" width="50px" height="50px">
+        <h4>ACADEMIC-SUPPORTIVE</h4>
+        <h4>{{$count2}}</h4>
+    </div>
+
+    <div class="card">
+        <img src="/images/R3.png" alt="" width="50px" height="50px">
+        <h4>GUEST</h4><br>
+        <h4>{{$count3}}</h4>
+    </div>
+</div>
     </body>
     </html>
