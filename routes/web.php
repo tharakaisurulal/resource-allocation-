@@ -84,6 +84,10 @@ Route::get('/tablebsclevel3', function () {
     return view('tablebsclevel3');
 });
 
+Route::get('/stuprofile', function () {
+    return view('stuprofile');
+});
+
 
 /*guest routes*/
 
