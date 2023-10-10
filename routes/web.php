@@ -7,6 +7,7 @@ use App\Http\Controllers\lecturehallController;
 use App\Http\Controllers\courseController;
 use App\Http\Controllers\labController;
 use App\Http\Controllers\programController;
+use App\Http\Controllers\adminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -129,10 +130,11 @@ Route::get('/lecturers/lecturerhome', function () {
 //Route::get('/admin/adminlecturehallopera', function () {
     //return view('admin.adminlecturehallopera');
 //});
+Route::get('/admin/adminhome', [adminController::class, 'adminhome'])->name('adminhome');
 
-Route::get('/admin/adminhome', function () {
-    return view('admin.adminhome');
-});
+//Route::get('/admin/adminhome', function () {
+    //return view('admin.adminhome');
+//});
 
 /*admin.lecturehall routes*/
 Route::get('/admin/lecturehall/adminlecturehallopera', [lecturehallController::class, 'viewlecturehall'])->name('viewlecturehall');
