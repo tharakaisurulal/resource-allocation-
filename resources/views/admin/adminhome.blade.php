@@ -38,7 +38,7 @@
                 <div class="accordion-item">
                   <h2 class="accordion-header bb" id="flush-headingOne">
                     <button class="accordion-button collapsed sec2" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                        <a href="#"><li>ACTORS</li></a>
+                        <li><a href="#">ACTORS</a></li>
                     </button>
                   </h2>
                   <div id="flush-collapseOne" class="accordion-collapse collapse sec2" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
@@ -68,7 +68,7 @@
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="flush-headingThree">
                     <button class="accordion-button collapsed sec2" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree" onclick="window.location.href='/admin/course/admincourseopera';">
-                        <li><a>COURSE</a></li>
+                        <li><a href="#">COURSE</a></li>
                     </button>
                   </h2>
                 </div>
@@ -76,7 +76,7 @@
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="flush-headingFour">
                       <button class="accordion-button collapsed sec2" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour" onclick="window.location.href='/admin/program/adminprogramopera';">
-                        <li><a>DEGREE PROGRAM</a></li>
+                        <li><a href="#">DEGREE PROGRAM</a></li>
                       </button>
                     </h2>
                   </div>
@@ -148,6 +148,15 @@
                           <!--write-->
                       </div>
                     </div>
+                  </div>
+
+
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingTen">
+                      <button class="accordion-button collapsed sec2" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTen" aria-expanded="false" aria-controls="flush-collapseTen" onclick="window.location.href='/logout';">
+                        <li><a href="#">LOG OUT</a></li>
+                      </button>
+                    </h2>
                   </div>
 
               </div>

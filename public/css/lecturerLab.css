@@ -4,7 +4,7 @@
     box-sizing:border-box;
 }
 
-body{
+/*body{
     width:100%;
     min-height: 100vh;
     background-color: #0805056b;
@@ -14,7 +14,7 @@ body{
     margin-top: 10%;
     flex-wrap: wrap;
 
-}
+}*/
 
 .card{
     width: 320px;
@@ -67,3 +67,13 @@ body{
     font-weight: 400;
 }
 
+.div1{
+    padding-top: 70px;
+    width:100%;
+    min-height: 100vh;
+    background-color: #0805056b;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    flex-wrap: wrap;
+}

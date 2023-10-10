@@ -48,9 +48,7 @@ Route::get('/lecturehalldetails', function () {
     return view('lecturehalldetails');
 });
 
-Route::get('/lecturers/lecturerhome', function () {
-    return view('lecturers.lecturerhome');
-});
+
 
 Route::get('/guest/guesthome', function () {
     return view('guest.guesthome');
@@ -66,10 +64,6 @@ Route::get('/add', function () {
 
 Route::get('/header', function () {
     return view('layout.header');
-});
-
-Route::get('/admin/adminhome', function () {
-    return view('admin.adminhome');
 });
 
 Route::get('/tablebcslevel1', function () {
@@ -119,6 +113,14 @@ Route::get('/lecturers/request', function () {
     return view('lecturers.lecturerrequestform');
 });
 
+Route::get('/lecturers/lab', function () {
+    return view('lecturers.lecturerlab');
+});
+
+Route::get('/lecturers/lecturerhome', function () {
+    return view('lecturers.lecturerhome');
+});
+
 /*academicsupportive routes*/
 
 /*student routes*/
@@ -127,6 +129,11 @@ Route::get('/lecturers/request', function () {
 //Route::get('/admin/adminlecturehallopera', function () {
     //return view('admin.adminlecturehallopera');
 //});
+
+Route::get('/admin/adminhome', function () {
+    return view('admin.adminhome');
+});
+
 /*admin.lecturehall routes*/
 Route::get('/admin/lecturehall/adminlecturehallopera', [lecturehallController::class, 'viewlecturehall'])->name('viewlecturehall');
 
@@ -160,7 +167,7 @@ Route::get('update-lab/{id}',[labController::class, 'updatelab'])->name('updatel
 
 Route::post('update1-lab/{id}',[labController::class, 'updatelab1'])->name('updatelab1');
 
-/*admin.lab routes*/
+/*admin.program routes*/
 Route::get('/admin/program/adminprogramopera', [programController::class, 'viewprogram'])->name('viewprogram');
 
 Route::post('/admin/program/addprogram', [programController::class, 'addprogram'])->name('addprogram');

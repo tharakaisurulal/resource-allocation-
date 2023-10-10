@@ -1,3 +1,8 @@
+@extends('layout.header')
+@section("content2")
+<li><a href="/lecturers/lecturerhome">BACK</a></li>
+@endsection
+@section("content")
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,15 +11,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href={{asset('css/style1.css')}}>
-    <link rel="stylesheet" href={{asset('css/allocateLab.css')}}>
+    <link rel="stylesheet" href={{asset('css/lecturerLab.css')}}>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
-    <link rel="stylesheet" href={{asset('css/bootstrap.css')}}>
+
 
 </head>
 <body>
+    <div class="div1">
     <div class="card">
         <div class="col-6">
-            <img src="images/p.jfif" alt="">
+            <img src="/images/OIP.jpg" alt="" width="320px" height="500px">
         </div>
         <div class="card-body">
             <h1 class="card-title"> Laboratory 01</h1>
@@ -28,7 +34,7 @@
 
     <div class="card">
         <div class="col-6">
-            <img src="images/Computer1.jfif" alt="">
+            <img src="/images/computer.jpg" alt="" width="320px" height="500px">
         </div>
         <div class="card-body">
             <h1 class="card-title"> Laboratory 02</h1>
@@ -42,7 +48,7 @@
 
     <div class="card">
         <div class="col-6">
-            <img src="images/20160122_1327231.jpg" alt="">
+            <img src="/images/computer1.jpg" alt="" width="320px" height="500px">
         </div>
         <div class="card-body">
             <h1 class="card-title">Reserach Lab</h1>
@@ -53,5 +59,7 @@
             </p>
         </div>
     </div>
+</div>
 </body>
 </html>
+@endsection
