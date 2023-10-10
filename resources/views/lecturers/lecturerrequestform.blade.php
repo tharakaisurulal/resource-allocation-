@@ -2,6 +2,7 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="{{asset('css/lecturerrequest.css')}}">
+
     </head>
     <body>
 
@@ -59,6 +60,7 @@
                             <div class="col-sm-10">
                                 <input type="reset"value="Reset" name="reset">
                                 <input type="submit"value="Submit" name="submit">
+                                <button type="button">Warning</button>
                         </div>
                     </form>
             </div>
