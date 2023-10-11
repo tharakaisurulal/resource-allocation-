@@ -15,6 +15,7 @@ use Illuminate\Http\Response;
 //use Symfony\Component\HttpFoundation\Cookie;
 use Illuminate\Support\Facades\Cookie;
 use App\Models\guest;
+use App\Models\admin;
 
 class loginController extends Controller
 {
@@ -75,6 +76,42 @@ class loginController extends Controller
       }
     }
 
+    elseif(($request->user)=="Admin"){
+        $mv=admin::where('username','=',$request -> username)->first();
+        //return $mv;
+        if($mv)
+        {
+          if(Hash::check($request -> password,$mv -> password))
+          {
+              $request-> session() ->put('reid',$mv->id);
+           //$na=session()->get('reid');
+           //return $na;
+              if($request->remember===null){
+                  //$na=session()->get('reid');
+                  //return $na;
+              }
+              else{
+                 setcookie('nameid',$request -> username,time()+60);
+                 setcookie('password',$request -> password,time()+60);
+                 //return $request->remember;
+              }
+
+
+                  //return redirect('/home');
+                  return redirect('/admin/adminhome');
+          }
+
+          else{
+              return back() -> with('fail',"this password is not match");
+              }
+
+        }
+
+        else
+        {
+          return back() -> with('fail',"this username is not registered");
+        }
+    }
 
     elseif(($request->user)=="Lecturer"){
         return view('home1');

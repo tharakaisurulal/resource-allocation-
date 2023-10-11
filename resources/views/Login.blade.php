@@ -54,6 +54,7 @@
                         <option value="Student">Student</option>
                         <option value="Accademic_Supportive">Accademic-Supportive</option>
                         <option value="Guest">Guest</option>
+                        <option value="Admin">Admin</option>
                         </select>
                 </div>
 
