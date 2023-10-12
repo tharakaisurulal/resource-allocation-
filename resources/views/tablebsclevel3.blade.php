@@ -362,7 +362,7 @@
             <div class="notice-content">agdeudglehclheich</div>
         </div>
         <div class="notice-item">
-            <div class="notice-title">Important Notice </div>
+            <div class="notice-title">General</div>
             <div class="notice-content">uvsegdoiecgugoeoci</div>
         </div>
     </div>
