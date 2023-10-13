@@ -1,7 +1,7 @@
 @extends('layout.header')
 
 @section("content2")
-        <li><a href="#">BACK</a></li>
+        <li><a href="/admin/adminhome">BACK</a></li>
 
 @endsection
 
@@ -22,14 +22,14 @@
 
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                Add courses
+                Add Lecturehalls
             </button>
 
             <!-- Modal -->
   <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
-        <form action="{{route('addcourse')}}" method="POST">
+        <form action="{{route('addprogram')}}" method="POST">
             @csrf
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
@@ -40,13 +40,8 @@
             <table>
 
                 <tr>
-                    <td>Course Name:</td>
-                    <td><input type="text" name="coursename" required></td>
-                </tr>
-
-                <tr>
-                    <td>Course Code:</td>
-                    <td><input type="text" name="coursecode" required></td>
+                    <td>program Name:</td>
+                    <td><input type="text" name="program" required></td>
                 </tr>
 
              </table>
@@ -77,31 +72,29 @@
         @endif
 
 
-            @if (isset($cusdata1))
+            @if (isset($cusdata3))
          <div class="d-flex justify-content-center div2">
 
             <table class="table table-dark">
                 <thead>
                     <td>Id</td>
-                    <td>Course Name</td>
-                    <td>Course Code</td>
+                    <td>program Name</td>
                     <td>Action</td>
 
                 </thead>
                 <tbody>
-                    @foreach ($cusdata1 as $cdb)
+                    @foreach ($cusdata3 as $cdb)
                 <tr>
                     <td>{{$cdb->id}}</td>
-                    <td>{{$cdb->course_name}}</td>
-                    <td>{{$cdb->course_code}}</td>
+                    <td>{{$cdb->program}}</td>
                     <td>
                         <div class="dropdown">
                             <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                               Action
                             </button>
                             <ul class="dropdown-menu">
-                              <li><a class="dropdown-item" href="{{url('update-course/'.$cdb->id)}}" >Edit</a></li>
-                              <li><a class="dropdown-item" href="{{url('delete-course/'.$cdb->id)}}">Delete</a></li>
+                              <li><a class="dropdown-item" href="{{url('update-program/'.$cdb->id)}}" >Edit</a></li>
+                              <li><a class="dropdown-item" href="{{url('delete-program/'.$cdb->id)}}">Delete</a></li>
                             </ul>
                           </div>
                     </td>
