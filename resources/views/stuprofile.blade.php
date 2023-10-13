@@ -12,7 +12,7 @@
 
 
 
-    <link rel="stylesheet" type="text/css" href="{{asset('css/profile.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/stuprofile.css')}}">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <style>
         /* CSS for styling the bell icon */
@@ -34,9 +34,10 @@
                         </td>
                          </div>
 
+                         <div class="topic">
                         <td width="75%">
-                            <h2>My Profile</h2></br>
-
+                         <h2>My Profile</h2></br>
+                        </div>
 
                           <div class="sform"> 
                         <form>
@@ -56,6 +57,11 @@
                                  <option value="bio science">Bio Science</option>
                              </select><br><br>
                           </form>
+
+                          
+                 <div class="btn">
+                <br><button class="custom-button" onclick="alert('Button Clicked!')">Edit</button>
+        </div>
         </div>
 
 
@@ -74,9 +80,6 @@
                 </div>
                 
 
-                <div class="editbtn">
-                
-                <br><button class="custom-button" onclick="alert('Button Clicked!')">Edit</button>
-        </div>
+              
 </body>
 </html>
