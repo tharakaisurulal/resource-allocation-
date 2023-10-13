@@ -354,15 +354,15 @@
   <h1 style="text-align: left;">NOTICE</h1>
   <div class="notice-board">
         <div class="notice-item">
-            <div class="notice-title">Important Notice 1</div>
+            <div class="notice-title">Academic</div>
             <div class="notice-content">ahhhhddhiedhiediedhiehdih</div>
         </div>
         <div class="notice-item">
-            <div class="notice-title">Important Notice 2</div>
+            <div class="notice-title">Non-academic</div>
             <div class="notice-content">agdeudglehclheich</div>
         </div>
         <div class="notice-item">
-            <div class="notice-title">Important Notice 3</div>
+            <div class="notice-title">General</div>
             <div class="notice-content">uvsegdoiecgugoeoci</div>
         </div>
     </div>
