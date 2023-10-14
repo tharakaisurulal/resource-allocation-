@@ -107,7 +107,7 @@ Route::get('/guest/lab', function () { //route to view lab page.
 
 
 
-/*Login routes*/
+/*Login routes*/  
 Route::post('/login', [loginController::class, 'login'])->name('login'); //login functions
 
 //Route::get('/loginpage', [loginController::class, 'loginpage'])->middleware('LoggedIn');//restrict from home to login, go to login
