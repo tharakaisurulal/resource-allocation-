@@ -64,7 +64,7 @@ class guestController extends Controller
         $request->validate([
             'name'=> 'required',
             'faculty'=> 'required',
-            'username'=> 'required|unique:guests',
+            'username'=> 'required|unique:guests|unique:admins|unique:lecturers|unique:students|unique:accsupportives',
             'password'=> 'required|unique:guests|min:5|max:12',
             'department'=> 'required',
             'position'=> 'required',
@@ -80,8 +80,13 @@ class guestController extends Controller
                $extenstion = $file->getClientOriginalExtension();
                $filename = time().'.'.$extenstion;
                $file->move('uploads/guests/', $filename);
-               $image->photo = $filename;
+
            }
+           else{
+            $filename=null;
+           }
+
+
 
           $guests=guest::create([
             'username'=> $request -> username,
@@ -92,7 +97,7 @@ class guestController extends Controller
             'guest_department'=> $request -> department,
             'guest_position'=> $request -> position,
             'mobile'=> $request -> mobile,
-            //'photo'=> $filename -> photo,
+            'photo'=> $filename
             ]);
 
             $res = $guests ->save();

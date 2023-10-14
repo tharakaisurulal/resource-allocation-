@@ -21,7 +21,9 @@ return new class extends Migration
             $table->String ('hall_name');
             $table->String ('reason',400)->nullable();
             $table->unsignedBigInteger('lecturer_id');
-            $table->foreign('lecturer_id')->references('id')->on('lecturers');
+            $table->foreign('lecturer_id')->references('id')->on('lecturers')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }

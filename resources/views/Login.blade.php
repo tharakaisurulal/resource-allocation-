@@ -47,7 +47,7 @@
                 @csrf
                 <h1> LOGIN </h1>
 
-                <div class="inputBox">
+                <!--<div class="inputBox">
                     <select name="user" id="userid">
                         <option value=""><span>--Login As--</span></option>
                         <option value="Lecturer">Lecturer</option>
@@ -56,7 +56,7 @@
                         <option value="Guest">Guest</option>
                         <option value="Admin">Admin</option>
                         </select>
-                </div>
+                </div>-->
 
                 <div class="inputBox" >
                     <input type="text" name="username" value="{{$loginname}}">
