@@ -7,10 +7,10 @@ use Illuminate\Support\Facades\DB;
 
 class adminController extends Controller
 {
-    public function adminhome()
+    public function adminhome() //view admin home page.
     {
         $dater = array();
-        if(session()->has('reid'))
+        if(session()->has('reid')) //getting the details of logged in user.
         {
             $dater=admin::where('id','=',session()->get('reid'))->first();
         }

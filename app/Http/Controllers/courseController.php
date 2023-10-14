@@ -6,10 +6,10 @@ use Illuminate\Http\Request;
 
 class courseController extends Controller
 {
-    public function viewcourse(){
+    public function viewcourse(){ //view the courses in database.
         $cusdata1= course::all();
         //return  $cusdata;
-        if(count($cusdata1) === 0){
+        if(count($cusdata1) === 0){ //if course table is empty it does not return the $cusdata1 because it is empty.
             return view('admin.course.admincourseopera');
         }
         else{
@@ -18,7 +18,7 @@ class courseController extends Controller
     }
 
 
-    public function addcourse(Request $request){
+    public function addcourse(Request $request){ // add course.
 
         $courses=course::create([
           'course_name'=> $request -> coursename,
@@ -37,14 +37,14 @@ class courseController extends Controller
           }
 }
 
-public function deletecourse($id)
+public function deletecourse($id) //delete course using the selected id.
 {
         $course = course::find($id);
         $course->delete();
         return redirect()->back()-> with('success',"successfully deleted.");
 }
 
-    public function updatecourse($id)
+    public function updatecourse($id) //to do the update choose the selected id and return details in to edit page.
 {
         $course = course::find($id);
         //$this-> lhcapacity = $lecturehall1->lh_capacity;
@@ -55,7 +55,7 @@ public function deletecourse($id)
 
 }
 
-public function updatecourse1(Request $request,$id)
+public function updatecourse1(Request $request,$id) //selected id will be updated using this function.
 {
 
     $course = course::find($id);

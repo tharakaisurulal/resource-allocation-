@@ -6,10 +6,10 @@ use Illuminate\Http\Request;
 
 class programController extends Controller
 {
-    public function viewprogram(){
+    public function viewprogram(){ //view the programs in database.
         $cusdata3= program::all();
         //return  $cusdata;
-        if(count($cusdata3) === 0){
+        if(count($cusdata3) === 0){  //if programs table is empty it does not return the $cusdata3 because it is empty.
             return view('admin.program.adminprogramopera');
         }
         else{
@@ -17,7 +17,7 @@ class programController extends Controller
         }
     }
 
-    public function addprogram(Request $request){
+    public function addprogram(Request $request){  // add programs.
 
           $programs=program::create([
             'program'=> $request -> program,
@@ -35,14 +35,14 @@ class programController extends Controller
             }
 }
 
-    public function deleteprogram($id)
+    public function deleteprogram($id) //delete programs using the selected id.
 {
         $program = program::find($id);
         $program->delete();
         return redirect()->back()-> with('success',"successfully deleted.");
 }
 
-    public function updateprogram($id)
+    public function updateprogram($id)  //to do the update choose the selected id and return details in to edit page.
 {
         $program = program::find($id);
         //$this-> lhcapacity = $lecturehall1->lh_capacity;
@@ -53,7 +53,7 @@ class programController extends Controller
 
 }
 
-public function updateprogram1(Request $request,$id)
+public function updateprogram1(Request $request,$id)  //selected id will be updated using this function.
 {
 
     $program = program::find($id);

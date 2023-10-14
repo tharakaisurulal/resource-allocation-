@@ -8,6 +8,7 @@ use App\Http\Controllers\courseController;
 use App\Http\Controllers\labController;
 use App\Http\Controllers\programController;
 use App\Http\Controllers\adminController;
+use App\Http\Controllers\studentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +21,7 @@ use App\Http\Controllers\adminController;
 |
 */
 
-Route::get('/', function () {
+Route::get('/', function () { //route to view welcome page.
     return view('welcome');
 });
 //Route::get('/guest/request', function () {
@@ -29,9 +30,7 @@ Route::get('/', function () {
 //Route::get('/login', function () {
     //return view('Login')->middleware('LoggedIn');
 //});
-Route::get('/admin/student/sturegister', function () {
-    return view('admin.student.sturegistration');
-});
+
 //Route::get('/guestregistration', function () {
     //return view('guestregistration');
 //});
@@ -41,13 +40,11 @@ Route::get('/admin/student/sturegister', function () {
 Route::get('/home1', function () {
     return view('home1');
 });
-Route::get('/headerFooter', function () {
+Route::get('/headerFooter', function () {  //route to view header and footer layout.
     return view('Layout.headerFooter');
 });
 
-Route::get('/lecturehalldetails', function () {
-    return view('lecturehalldetails');
-});
+
 
 
 
@@ -59,11 +56,11 @@ Route::get('/table', function () {
     return view('table');
 });
 
-Route::get('/add', function () {
+Route::get('/add', function () { //route to testing page.
     return view('guest.add');
 });
 
-Route::get('/header', function () {
+Route::get('/header', function () {  //route to view header layout.
     return view('layout.header');
 });
 
@@ -91,39 +88,52 @@ Route::post('/gueststore', [guestController::class, 'gueststore'])->name('guests
 //Route::get('/guest/guestregistration', [guestController::class, 'guestregistration'])->middleware('LoggedIn'); //restrict from home to guest registration, go to guest registraion
 Route::get('/guest/guestregistration', [guestController::class, 'guestregistration']);
 
-Route::get('/guest/guestrequest', [guestController::class, 'guestrequest']);
+Route::get('/guest/guestrequest', [guestController::class, 'guestrequest']); //view request page.
 
 //Route::get('/home', [loginController::class, 'home'])->middleware('IsLoggedIn'); //restrict from login to home
 //Route::get('/home', [loginController::class, 'home']);
 Route::get('/guest/guesthome', [guestController::class, 'guesthome']);
 
-Route::post('/guestreq', [guestController::class, 'guestreq'])->name('guestreq');
+Route::post('/guestreq', [guestController::class, 'guestreq'])->name('guestreq'); //store request details in database.
+
+Route::get('/guest/guestlecturehalldetails', function () { //route to view lecturehalls.
+    return view('guest.guestlecturehalldetails');
+});
+
+Route::get('/guest/lab', function () { //route to view lab page.
+    return view('guest.guestlab');
+});
 
 
 
-/*Login routes*/
+
+/*Login routes*/  
 Route::post('/login', [loginController::class, 'login'])->name('login'); //login functions
 
 //Route::get('/loginpage', [loginController::class, 'loginpage'])->middleware('LoggedIn');//restrict from home to login, go to login
 Route::get('/loginpage', [loginController::class, 'loginpage']);
 
-Route::get('/logout', [loginController::class, 'logout'])->name('logout'); //loout functions
+Route::get('/logout', [loginController::class, 'logout'])->name('logout'); //logout functions
 
 Route::get('/forgetpassword', [loginController::class, 'forgetpassword'])->name('forgetpassword'); //forget passsword page.
 
 
 
 /*Lecture routes*/
-Route::get('/lecturers/request', function () {
+Route::get('/lecturers/request', function () { //view lecture request page.
     return view('lecturers.lecturerrequestform');
 });
 
-Route::get('/lecturers/lab', function () {
+Route::get('/lecturers/lab', function () { //view lecture lab page.
     return view('lecturers.lecturerlab');
 });
 
-Route::get('/lecturers/lecturerhome', function () {
+Route::get('/lecturers/lecturerhome', function () { //view lecture home page.
     return view('lecturers.lecturerhome');
+});
+
+Route::get('/lecturers/leclecturehalldetails', function () {
+    return view('lecturers.leclecturehalldetails');
 });
 
 /*academicsupportive routes*/
@@ -134,52 +144,59 @@ Route::get('/lecturers/lecturerhome', function () {
 //Route::get('/admin/adminlecturehallopera', function () {
     //return view('admin.adminlecturehallopera');
 //});
-Route::get('/admin/adminhome', [adminController::class, 'adminhome'])->name('adminhome');
+Route::get('/admin/adminhome', [adminController::class, 'adminhome'])->name('adminhome'); //view admin home page.
 
 //Route::get('/admin/adminhome', function () {
     //return view('admin.adminhome');
 //});
 
 /*admin.lecturehall routes*/
-Route::get('/admin/lecturehall/adminlecturehallopera', [lecturehallController::class, 'viewlecturehall'])->name('viewlecturehall');
+Route::get('/admin/lecturehall/adminlecturehallopera', [lecturehallController::class, 'viewlecturehall'])->name('viewlecturehall'); //route to view lecturehall crud operation page.
 
-Route::post('/admin/lecturehall/addlecturehall', [lecturehallController::class, 'addlecturehall'])->name('addlecturehall');
+Route::post('/admin/lecturehall/addlecturehall', [lecturehallController::class, 'addlecturehall'])->name('addlecturehall'); //route to function of add lecturehalls.
 
-Route::get('delete-lechall/{id}',[lecturehallController::class, 'deletelecturehall'])->name('deletelecturehall');
+Route::get('delete-lechall/{id}',[lecturehallController::class, 'deletelecturehall'])->name('deletelecturehall');  //route to function of delete lecturehalls.
 
-Route::get('update-lechall/{id}',[lecturehallController::class, 'updatelecturehall'])->name('updatelecturehall');
+Route::get('update-lechall/{id}',[lecturehallController::class, 'updatelecturehall'])->name('updatelecturehall');  //route to function of return selected user details to edit page.
 
-Route::post('update1-lechall/{id}',[lecturehallController::class, 'updatelecturehall1'])->name('updatelecturehall1');
+Route::post('update1-lechall/{id}',[lecturehallController::class, 'updatelecturehall1'])->name('updatelecturehall1'); //route to function of update lecturehall.
 
 /*admin.course routes*/
-Route::get('/admin/course/admincourseopera', [courseController::class, 'viewcourse'])->name('viewcourse');
+Route::get('/admin/course/admincourseopera', [courseController::class, 'viewcourse'])->name('viewcourse'); //route to view course crud operation page.
 
-Route::post('/admin/course/addcourse', [courseController::class, 'addcourse'])->name('addcourse');
+Route::post('/admin/course/addcourse', [courseController::class, 'addcourse'])->name('addcourse');  //route to function of add course.
 
-Route::get('delete-course/{id}',[courseController::class, 'deletecourse'])->name('deletecourse');
+Route::get('delete-course/{id}',[courseController::class, 'deletecourse'])->name('deletecourse');  //route to function of delete courses.
 
-Route::get('update-course/{id}',[courseController::class, 'updatecourse'])->name('updatecourse');
+Route::get('update-course/{id}',[courseController::class, 'updatecourse'])->name('updatecourse');  //route to function of return selected user details to edit page.
 
-Route::post('update1-course/{id}',[courseController::class, 'updatecourse1'])->name('updatecourse1');
+Route::post('update1-course/{id}',[courseController::class, 'updatecourse1'])->name('updatecourse1');  //route to function of update course.
 
 /*admin.lab routes*/
-Route::get('/admin/lab/adminlabopera', [labController::class, 'viewlab'])->name('viewlab');
+Route::get('/admin/lab/adminlabopera', [labController::class, 'viewlab'])->name('viewlab');  //route to view labs crud operation page.
 
-Route::post('/admin/lab/addlab', [labController::class, 'addlab'])->name('addlab');
+Route::post('/admin/lab/addlab', [labController::class, 'addlab'])->name('addlab');  //route to function of add labs.
 
-Route::get('delete-lab/{id}',[labController::class, 'deletelab'])->name('deletelab');
+Route::get('delete-lab/{id}',[labController::class, 'deletelab'])->name('deletelab');  //route to function of delete labs.
 
-Route::get('update-lab/{id}',[labController::class, 'updatelab'])->name('updatelab');
+Route::get('update-lab/{id}',[labController::class, 'updatelab'])->name('updatelab');  //route to function of return selected user details to edit page.
 
-Route::post('update1-lab/{id}',[labController::class, 'updatelab1'])->name('updatelab1');
+Route::post('update1-lab/{id}',[labController::class, 'updatelab1'])->name('updatelab1');  //route to function of update labs.
 
 /*admin.program routes*/
-Route::get('/admin/program/adminprogramopera', [programController::class, 'viewprogram'])->name('viewprogram');
+Route::get('/admin/program/adminprogramopera', [programController::class, 'viewprogram'])->name('viewprogram');  //route to view program crud operation page.
 
-Route::post('/admin/program/addprogram', [programController::class, 'addprogram'])->name('addprogram');
+Route::post('/admin/program/addprogram', [programController::class, 'addprogram'])->name('addprogram');  //route to function of add programs.
 
-Route::get('delete-program/{id}',[programController::class, 'deleteprogram'])->name('deleteprogram');
+Route::get('delete-program/{id}',[programController::class, 'deleteprogram'])->name('deleteprogram');  //route to function of delete programs.
 
-Route::get('update-program/{id}',[programController::class, 'updateprogram'])->name('updateprogram');
+Route::get('update-program/{id}',[programController::class, 'updateprogram'])->name('updateprogram');  //route to function of return selected user details to edit page.
 
-Route::post('update1-program/{id}',[programController::class, 'updateprogram1'])->name('updateprogram1');
+Route::post('update1-program/{id}',[programController::class, 'updateprogram1'])->name('updateprogram1');  //route to function of update programs.
+
+/*admin.student routes*/
+Route::get('/admin/student/stuopera', [studentController::class, 'viewstudent'])->name('admin.student.stuopera');  //route to view student crud operation page.
+
+Route::get('/admin/student/sturegister', function () { //view student registration page.
+    return view('admin.student.sturegistration');
+});

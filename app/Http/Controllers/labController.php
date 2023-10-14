@@ -6,10 +6,10 @@ use Illuminate\Http\Request;
 
 class labController extends Controller
 {
-    public function viewlab(){
+    public function viewlab(){ //view the labs in database.
         $cusdata2= lab::all();
         //return  $cusdata;
-        if(count($cusdata2) === 0){
+        if(count($cusdata2) === 0){  //if labs table is empty it does not return the $cusdata12 because it is empty.
             return view('admin.lab.adminlabopera');
         }
         else{
@@ -17,7 +17,7 @@ class labController extends Controller
         }
     }
 
-    public function addlab(Request $request){
+    public function addlab(Request $request){ // add labs.
 
           $labs=lab::create([
             'lab_name'=> $request -> labname,
@@ -36,14 +36,14 @@ class labController extends Controller
             }
 }
 
-    public function deletelab($id)
+    public function deletelab($id) //delete lab using the selected id.
 {
         $lab = lab::find($id);
         $lab->delete();
         return redirect()->back()-> with('success',"successfully deleted.");
 }
 
-    public function updatelab($id)
+    public function updatelab($id)  //to do the update choose the selected id and return details in to edit page.
 {
         $lab = lab::find($id);
         //$this-> lhcapacity = $lecturehall1->lh_capacity;
@@ -54,7 +54,7 @@ class labController extends Controller
 
 }
 
-public function updatelab1(Request $request,$id)
+public function updatelab1(Request $request,$id) //selected id will be updated using this function.
 {
 
     $lab = lab::find($id);

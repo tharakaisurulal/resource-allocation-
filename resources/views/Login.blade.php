@@ -1,4 +1,4 @@
-@extends('layout.headerFooter')
+@extends('layout.header')
 @section('content2')
         <li><a href="/">HOME</a></li>
         <li><a href="#">ABOUT US</a></li>

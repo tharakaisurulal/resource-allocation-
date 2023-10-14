@@ -7,9 +7,11 @@
     margin: 0;
     background-color: #23242a;
   }*/
-  
+
   .bdy{
     background-color:  #0805056b;
+  padding-bottom: 30px;
+  padding-top: 100px;
   }
 
   .topic{
@@ -23,9 +25,7 @@
     /*padding: 40px;  Increased padding for a larger box */
     width: 500px; /* Increased width for a larger box */
     text-align:left;
-    padding-top: 100px;
-
-    margin-bottom: 30px;
+    padding-top: 30px;
   }
 
   /* Apply your provided styles within the container */
