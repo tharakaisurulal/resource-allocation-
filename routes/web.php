@@ -6,6 +6,8 @@ use App\Http\Controllers\loginController;
 use App\Http\Controllers\lecturehallController;
 use App\Http\Controllers\courseController;
 use App\Http\Controllers\labController;
+use App\Http\Controllers\programController;
+use App\Http\Controllers\adminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,9 +49,7 @@ Route::get('/lecturehalldetails', function () {
     return view('lecturehalldetails');
 });
 
-Route::get('/lecturers/lecturerhome', function () {
-    return view('lecturers.lecturerhome');
-});
+
 
 Route::get('/guest/guesthome', function () {
     return view('guest.guesthome');
@@ -67,16 +67,20 @@ Route::get('/header', function () {
     return view('layout.header');
 });
 
-Route::get('/admin/adminhome', function () {
-    return view('admin.adminhome');
-});
-
 Route::get('/tablebcslevel1', function () {
     return view('tablebcslevel1');
 });
 
 Route::get('/tablebcslevel2', function () {
     return view('tablebcslevel2');
+});
+
+Route::get('/tablebsclevel3', function () {
+    return view('tablebsclevel3');
+});
+
+Route::get('/stuprofile', function () {
+    return view('stuprofile');
 });
 
 
@@ -114,6 +118,14 @@ Route::get('/lecturers/request', function () {
     return view('lecturers.lecturerrequestform');
 });
 
+Route::get('/lecturers/lab', function () {
+    return view('lecturers.lecturerlab');
+});
+
+Route::get('/lecturers/lecturerhome', function () {
+    return view('lecturers.lecturerhome');
+});
+
 /*academicsupportive routes*/
 
 /*student routes*/
@@ -122,6 +134,12 @@ Route::get('/lecturers/request', function () {
 //Route::get('/admin/adminlecturehallopera', function () {
     //return view('admin.adminlecturehallopera');
 //});
+Route::get('/admin/adminhome', [adminController::class, 'adminhome'])->name('adminhome');
+
+//Route::get('/admin/adminhome', function () {
+    //return view('admin.adminhome');
+//});
+
 /*admin.lecturehall routes*/
 Route::get('/admin/lecturehall/adminlecturehallopera', [lecturehallController::class, 'viewlecturehall'])->name('viewlecturehall');
 
@@ -154,3 +172,14 @@ Route::get('delete-lab/{id}',[labController::class, 'deletelab'])->name('deletel
 Route::get('update-lab/{id}',[labController::class, 'updatelab'])->name('updatelab');
 
 Route::post('update1-lab/{id}',[labController::class, 'updatelab1'])->name('updatelab1');
+
+/*admin.program routes*/
+Route::get('/admin/program/adminprogramopera', [programController::class, 'viewprogram'])->name('viewprogram');
+
+Route::post('/admin/program/addprogram', [programController::class, 'addprogram'])->name('addprogram');
+
+Route::get('delete-program/{id}',[programController::class, 'deleteprogram'])->name('deleteprogram');
+
+Route::get('update-program/{id}',[programController::class, 'updateprogram'])->name('updateprogram');
+
+Route::post('update1-program/{id}',[programController::class, 'updateprogram1'])->name('updateprogram1');

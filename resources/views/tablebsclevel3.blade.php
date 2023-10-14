@@ -12,8 +12,8 @@
 
 
 
-<H1>MY TIMETABLE-[BCS(General) DEGREE PROGRAMME(LEVEL 1 SEMESTER 1)]</H1>
-<H2>Bachelor of Computer Science(General)(SC/2022)</H2>
+<H1>MY TIMETABLE-[BSc(General) DEGREE PROGRAMME(LEVEL 3 SEMESTER 2)]</H1>
+<H2>Bachelor of Physical Science(General)(SC/2019)</H2>
 <br>
 
 <TABLE class="myTimetable"> 
@@ -30,7 +30,7 @@
   <TBODY>
     <TR>
       
-    <TD> 8.00-8.55</TD>
+    <TD> 8.00-9.00</TD>
       <TD>
         <div class="code" ></div>
         <div class="lecturer"></div>
@@ -38,25 +38,25 @@
         </TD>
 
 
-      <TD>
-        <div class="code" >MAT113D/MAT112D</div>
+      <TD >
+        <div class="code" ></div>
         <div class="lecturer"> </div>
         <div class="hall"> </div>
         
       </TD>
       <TD>
-        <div class="code" >MAT112D/MAT113D</div>
+        <div class="code" ></div>
         <div class="lecturer"></div>
         <div class="hall"></div>
         
       </TD>
-      <TD rowspan="2">
-        <div class="code" >CSC1153(T&P) LABORATORY ASSIGNMENTS(On campus)</div>
+      <TD >
+        <div class="code" ></div>
         <div class="lecturer"></div>
         <div class="hall"></div>
         
       </TD>
-      <TD rowspan="2">
+      <TD >
         <div class="code" ></div>
         <div class="lecturer"></div>
         <div class="hall"></div>
@@ -67,22 +67,35 @@
     <TR>
       <TD>9.00-9.55</TD>
 
-      
-
       <TD>
         <div class="code" ></div>
         <div class="lecturer"></div>
         <div class="hall"></div>
         </TD>
 
+
+      <TD rowspan="3">
+        <div class="code" >COM PROJECT GROUP PRACTICAL</div>
+        <div class="lecturer"> </div>
+        <div class="hall"> </div>
+        
+      </TD>
+
         <TD>
         <div class="code" ></div>
         <div class="lecturer"></div>
         <div class="hall"></div>
         </TD>
 
+        <TD rowspan="3">
+        <div class="code" >COM PROJECT GROUP PRACTICAL</div>
+        <div class="lecturer"> </div>
+        <div class="hall"> </div>
+        
+      </TD>
+
         <TD>
-        <div class="code" >AMT112B</div>
+        <div class="code" ></div>
         <div class="lecturer"></div>
         <div class="hall"></div>
         </TD>
@@ -93,35 +106,25 @@
       
       <TR>
       <TD>10.00-10.55</TD>
-      <TD rowspan="2">
-        <div class="code" >CSC1153(T&P) LABORATORY ASSIGNMENT(On campus)</div>
+      <TD >
+        <div class="code" ></div>
         <div class="lecturer"></div>
         <div class="hall"></div>
         
       </TD>    
       
-      <TD rowspan="2">
-        <div class="code" >CSC1122(T) COMPUTER SYSTEM</div>
-        <div class="lecturer">DR. THUSANGI</div>
-        <div class="hall"></div>
-        
-      </TD>    
-      <TD rowspan="2">
-        <div class="code" >CSC1113(P) PROGRAMMING TECHNIQUES</div>
-        <div class="lecturer">MS.G.K.MABULA</div>
+      
+      <TD>
+        <div class="code" ></div>
+        <div class="lecturer"></div>
         <div class="hall"></div>
         </TD> 
 
-      <TD rowspan="2">
-        <div class="code" >CSC1142(T) SYSTEM ANALYSIS 7 DESIGN</div>
-        <div class="lecturer">MS. HIRUNI & MS UPAMALIKA</div>
-        <div class="hall"></div>
-        
-      </TD>  
       
-      <TD rowspan="2">
-        <div class="code" >CSC113A (T) INTERNET SERVICES & WEB DEVELOPMENT</div>
-        <div class="lecturer">MS. BINURI</div>
+      
+      <TD >
+        <div class="code" ></div>
+        <div class="lecturer"></div>
         <div class="hall"></div>
         
       </TD>    
@@ -129,6 +132,27 @@
      
     <TR>
       <TD>11.00-12.00</TD>
+
+      <TD >
+        <div class="code" ></div>
+        <div class="lecturer"></div>
+        <div class="hall"></div>
+        
+      </TD>   
+
+      <TD >
+        <div class="code" ></div>
+        <div class="lecturer"></div>
+        <div class="hall"></div>
+        
+      </TD>   
+
+      <TD >
+        <div class="code" ></div>
+        <div class="lecturer"></div>
+        <div class="hall"></div>
+        
+      </TD>   
       
       
     
@@ -143,28 +167,31 @@
       <TD>13.00-13.55</TD>
     
     
-        <TD rowspan="2">
-        <div class="code" >CSC1113(T) PROGRAMMING TECHNIQUES</div>
-        <div class="lecturer">MS GILMINI 7 MS. KALYANI</div>
+        <TD >
+        <div class="code" ></div>
+        <div class="lecturer"></div>
         <div class="hall"></div>
         
       </TD>   
 
       <TD>
-        <div class="code" >MAT113D/MAT112D</div>
+        <div class="code" ></div>
         <div class="lecturer"></div>
         <div class="hall"></div>
         </TD>  
 
       
-        <TD rowspan="2">
-        <div class="code" >CSC 1153(T&P) LABORATORY ASSIGNMENTS (On campus)</div>
+        <TD >
+        <div class="code" ></div>
         <div class="lecturer"></div>
         <div class="hall"></div>
         </TD> 
 
-        <TD rowspan="2">
-        <div class="code" >AMT112B</div>
+        
+
+       
+        <TD>
+        <div class="code" ></div>
         <div class="lecturer"></div>
         <div class="hall"></div>
         </TD>
@@ -174,15 +201,34 @@
         <div class="lecturer"></div>
         <div class="hall"></div>
         </TD>
-</TR>
+     
+    </TR>
       
       <TR>
       <TD>14.00-14.55</TD>
       
 
-        <TD rowspan="2">
-        <div class="code" >CSC113A(P) INTERNET SERVICES AND WEB DEVELOPMET</div>
-        <div class="lecturer">MS.NILANI</div>
+        <TD >
+        <div class="code" ></div>
+        <div class="lecturer"></div>
+        <div class="hall"></div>
+        </TD>
+
+        <TD>
+        <div class="code" ></div>
+        <div class="lecturer"></div>
+        <div class="hall"></div>
+        </TD>
+
+        <TD>
+        <div class="code" ></div>
+        <div class="lecturer"></div>
+        <div class="hall"></div>
+        </TD>
+
+        <TD>
+        <div class="code" ></div>
+        <div class="lecturer"></div>
         <div class="hall"></div>
         </TD>
 
@@ -211,6 +257,12 @@
         <div class="hall"></div>
         </TD>
       
+        <TD>
+        <div class="code" ></div>
+        <div class="lecturer"></div>
+        <div class="hall"></div>
+        </TD>
+
         <TD>
         <div class="code" ></div>
         <div class="lecturer"></div>
@@ -310,7 +362,7 @@
             <div class="notice-content">agdeudglehclheich</div>
         </div>
         <div class="notice-item">
-            <div class="notice-title">Important Notice </div>
+            <div class="notice-title">General</div>
             <div class="notice-content">uvsegdoiecgugoeoci</div>
         </div>
     </div>

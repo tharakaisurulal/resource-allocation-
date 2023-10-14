@@ -227,3 +227,16 @@ textarea::placeholder {
     font-size: medium;
   }
 
+button{
+    border: none;
+    outline: none;
+    /*padding: 9px 25px;*/
+    background: #45f3ff;
+    cursor: pointer;
+    font-size: 0.9em;
+    border-radius:4px;
+    font-weight: 600;
+    width: 100px;
+    /*margin-top: 35px;*/
+    padding-left: 70px;
+}

@@ -194,8 +194,13 @@ public function guestreq(Request $request)
 
 
 }
-
-public function guestlecturehall(){
-    
+public function count(){
+$count = DB::table('goods')->count();
+return view('admin.adminhome',['count'=>$count]);
+//if($count > 0) {
+     //more than one raw
+//}else {
+     //zero raw
+//}
 }
 }
