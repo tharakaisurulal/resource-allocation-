@@ -36,7 +36,7 @@ class loginController extends Controller
     }
 
 
-    public function login(Request $request){
+    /*public function login1(Request $request){
 
       //return $request;
       if(($request->user)=="Guest"){
@@ -131,7 +131,7 @@ class loginController extends Controller
     }
 
 
-}
+}*/
 
 public function logout()
     {
@@ -143,4 +143,126 @@ public function logout()
     }
 
 
+
+
+
+
+    public function login(Request $request){
+
+        $mv=guest::where('username','=',$request -> username)->first();
+        $mv1=admin::where('username','=',$request -> username)->first();
+        //$mv2=accsupportive::where('username','=',$request -> username)->first();
+        //$mv3=student::where('username','=',$request -> username)->first();
+        //$mv4=lecturer::where('username','=',$request -> username)->first();
+        //$nm=['mv',$mv];
+        //$nm1=['mv1',$mv1];
+
+        //return $request;
+if($mv!==null){
+    //return $mv;
+    if(Hash::check($request -> password,$mv -> password))
+          {
+              $request-> session() ->put('reid',$mv->id);
+           //$na=session()->get('reid');
+           //return $na;
+              if($request->remember===null){
+                  //$na=session()->get('reid');
+                  //return $na;
+              }
+              else{
+                 setcookie('nameid',$request -> username,time()+60);
+                 setcookie('password',$request -> password,time()+60);
+                 //return $request->remember;
+              }
+
+
+                  //return redirect('/home');
+                  return redirect('/guest/guesthome');
+          }
+
+          else{
+              return back() -> with('fail',"this password is not match");
+              }
 }
+elseif($mv1!==null){
+    //return $mv1;
+    if(Hash::check($request -> password,$mv1 -> password))
+            {
+                $request-> session() ->put('reid',$mv1->id);
+             //$na=session()->get('reid');
+             //return $na;
+                if($request->remember===null){
+                    //$na=session()->get('reid');
+                    //return $na;
+                }
+                else{
+                   setcookie('nameid',$request -> username,time()+60);
+                   setcookie('password',$request -> password,time()+60);
+                   //return $request->remember;
+                }
+
+
+                    //return redirect('/home');
+                    return redirect('/admin/adminhome');
+            }
+
+            else{
+                return back() -> with('fail',"this password is not match");
+                }
+
+}
+
+/*elseif($mv2!==null){
+    //return $mv1;
+}
+
+elseif($mv3!==null){
+    //return $mv1;
+}
+
+elseif($mv4!==null){
+    //return $mv1;
+}*/
+
+else
+        {
+          return back() -> with('fail',"this username is not registered");
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      /*elseif(($request->user)=="Lecturer"){
+          return view('home1');
+      }
+
+      elseif(($request->user)=="Student"){
+          return view('home1');
+      }
+
+      elseif(($request->user)=="Accademic_Supportive"){
+          return view('home1');
+      }
+
+      elseif(($request->user)==""){
+          //return view('home1');
+          return back() -> with('fail',"please choose the user");
+      }*/
+
+
+  }
+
+
+}
+
+//}
