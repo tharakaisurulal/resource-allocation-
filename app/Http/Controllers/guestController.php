@@ -25,7 +25,8 @@ class guestController extends Controller
     public function guesthome() //view the guest home page
     {
         $dater = array();
-        if(session()->has('reid')) //If we are logged in session variable is assign, then we get the id of logged in user and detailas are assign to $dater variable and return the logged in user details to guest home.
+        if(session()->has('reid')) /*If we are logged in session variable is assign, then we get the id of logged in user and detailas are assign to $dater variable and
+                                   return the logged in user details to guest home.mainly it is used in header welcome message.*/
         {
             $dater=guest::where('id','=',session()->get('reid'))->first();
         }
@@ -69,6 +70,7 @@ class guestController extends Controller
             'department'=> 'required',
             'position'=> 'required',
             'mobile'=> 'required',
+            'password1'=> 'required',
             'faculty'=> 'required'
 
           ]);
