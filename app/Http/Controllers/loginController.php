@@ -20,7 +20,7 @@ use App\Models\admin;
 class loginController extends Controller
 {
 
-    public function loginpage()
+    public function loginpage() //view login page.
     {
         return view('Login');
     }
@@ -30,7 +30,7 @@ class loginController extends Controller
        // return view('home');
     //}
 
-    public function forgetpassword()
+    public function forgetpassword() //view forget password page.
     {
         return view('forgetpassword');
     }
@@ -133,7 +133,7 @@ class loginController extends Controller
 
 }*/
 
-public function logout()
+public function logout() //logout function
     {
         if(session()->has('reid'))
         {
@@ -144,12 +144,9 @@ public function logout()
 
 
 
+    public function login(Request $request){ //login function
 
-
-
-    public function login(Request $request){
-
-        $mv=guest::where('username','=',$request -> username)->first();
+        $mv=guest::where('username','=',$request -> username)->first(); //choose the table which have entered username.
         $mv1=admin::where('username','=',$request -> username)->first();
         //$mv2=accsupportive::where('username','=',$request -> username)->first();
         //$mv3=student::where('username','=',$request -> username)->first();
@@ -158,14 +155,14 @@ public function logout()
         //$nm1=['mv1',$mv1];
 
         //return $request;
-if($mv!==null){
+if($mv!==null){ //if it is guest.
     //return $mv;
-    if(Hash::check($request -> password,$mv -> password))
+    if(Hash::check($request -> password,$mv -> password)) //check the entered password and guest table password.
           {
-              $request-> session() ->put('reid',$mv->id);
+              $request-> session() ->put('reid',$mv->id); //assign session variable.
            //$na=session()->get('reid');
            //return $na;
-              if($request->remember===null){
+              if($request->remember===null){ //remember me function
                   //$na=session()->get('reid');
                   //return $na;
               }
@@ -180,7 +177,7 @@ if($mv!==null){
                   return redirect('/guest/guesthome');
           }
 
-          else{
+          else{ //entered password is not matched.
               return back() -> with('fail',"this password is not match");
               }
 }

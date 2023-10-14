@@ -42,7 +42,7 @@
                     <div class="back-content center">
                         <h3> Lecture Hall</h3>
                         <div class="button">
-                            <a href="/lecturehalldetails"><span>CLICK</span></a>
+                            <a href="/guest/guestlecturehalldetails"><span>CLICK</span></a>
                         </div>
                     </div>
             </div>
@@ -60,7 +60,7 @@
                     <div class="back-content center">
                         <h3> Labortory</h3>
                         <div class="button">
-                            <a href=""><span>CLICK</span></a>
+                            <a href="/guest/lab"><span>CLICK</span></a>
                         </div>
                     </div>
             </div>
