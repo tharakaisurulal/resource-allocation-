@@ -178,9 +178,7 @@ body{
     transform: translateX(-50%);
  }
 
-
-
- .dotsContainer .dot{
+.dotsContainer .dot{
     width: 15px;
     height: 15px;
     margin: 0px 2px;
