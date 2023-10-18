@@ -95,6 +95,38 @@
         slideImages[counter].style.animation = 'next2 0.5s ease-in forwards';
         }
 
+        //code for prev button
+        prev.addEventListener('click' , slideNext);
+        function slideNext(){
+        slideImages[counter].style.animation = 'prev1 0.5s ease-in forwards';
+        if(counter == 0){
+            counter = slideImages.length -1;
+        }
+        else{
+            counter--;
+        }
+        slideImages[counter].style.animation = 'prev2 0.5s ease-in forwards';
+        }
+
+        // Auto slideing
+        function autoSliding() {
+            deletInterval = setInterval(timer, 1000);
+            function timer(){
+            slideNext();
+        }
+        }
+        autoSliding();
+
+        // stop auto sliding when mouse is over
+        const container = document.querySelector('.slide-container');
+        container.assEventListener('mouseover' , function(){
+        clearInterval(deletInterval);
+        });
+
+        // Resume sliding when mouse is out
+        container.addEventListener('mouseout', autoSliding);
+
+
     </script>
 
 
