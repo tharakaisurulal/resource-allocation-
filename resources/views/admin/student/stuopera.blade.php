@@ -40,29 +40,36 @@
         @endif
 
 
-            @if (isset($cusdata3))
+            @if (isset($cusdata4))
          <div class="d-flex justify-content-center div2">
 
             <table class="table table-dark">
                 <thead>
                     <td>Id</td>
-                    <td>program Name</td>
+                    <td>username</td>
+                    <td>first name</td>
+                    <td>last_name</td>
+                    <td>mobile</td>
                     <td>Action</td>
 
                 </thead>
                 <tbody>
-                    @foreach ($cusdata3 as $cdb)
+                    @foreach ($cusdata4 as $cdb)
                 <tr>
                     <td>{{$cdb->id}}</td>
-                    <td>{{$cdb->program}}</td>
+                    <td>{{$cdb->username}}</td>
+                    <td>{{$cdb->first_name}}</td>
+                    <td>{{$cdb->last_name}}</td>
+                    <td>{{$cdb->mobile}}</td>
                     <td>
                         <div class="dropdown">
                             <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                               Action
                             </button>
                             <ul class="dropdown-menu">
-                              <li><a class="dropdown-item" href="{{url('update-program/'.$cdb->id)}}" >Edit</a></li>
-                              <li><a class="dropdown-item" href="{{url('delete-program/'.$cdb->id)}}">Delete</a></li>
+                              <li><a class="dropdown-item" href="{{url('update-student/'.$cdb->id)}}" >Edit</a></li>
+                              <li><a class="dropdown-item" href="{{url('delete-student/'.$cdb->id)}}">Delete</a></li>
+                              <li><a class="dropdown-item" href="">More</a></li>
                             </ul>
                           </div>
                     </td>

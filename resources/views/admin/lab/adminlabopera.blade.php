@@ -1,7 +1,7 @@
 @extends('layout.header')
 
 @section("content2")
-        <li><a href="#">BACK</a></li>
+        <li><a href="/admin/adminhome">BACK</a></li>
 
 @endsection
 
@@ -22,7 +22,7 @@
 
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                Add Lecturehalls
+                Add Labs
             </button>
 
             <!-- Modal -->
