@@ -7,10 +7,10 @@ use Illuminate\Http\Request;
 class lecturehallController extends Controller
 {
 
-    public function viewlecturehall(){
+    public function viewlecturehall(){  //view the lecturehalls in database.
         $cusdata= lecturehall::all();
         //return  $cusdata;
-        if(count($cusdata) === 0){
+        if(count($cusdata) === 0){ //if lecturehall table is empty it does not return the $cusdata because it is empty.
             return view('admin.lecturehall.adminlecturehallopera');
         }
         else{
@@ -18,7 +18,7 @@ class lecturehallController extends Controller
         }
     }
 
-    public function addlecturehall(Request $request){
+    public function addlecturehall(Request $request){  // add lecturehalls.
 
           $lecturehalls=lecturehall::create([
             'lh_name'=> $request -> lhname,
@@ -37,14 +37,14 @@ class lecturehallController extends Controller
             }
 }
 
-    public function deletelecturehall($id)
+    public function deletelecturehall($id)  //delete lecturehalls using the selected id.
 {
         $lecturehall = lecturehall::find($id);
         $lecturehall->delete();
         return redirect()->back()-> with('success',"successfully deleted.");
 }
 
-    public function updatelecturehall($id)
+    public function updatelecturehall($id) //to do the update choose the selected id and return details in to edit page.
 {
         $lecturehall = lecturehall::find($id);
         //$this-> lhcapacity = $lecturehall1->lh_capacity;
@@ -55,7 +55,7 @@ class lecturehallController extends Controller
 
 }
 
-public function updatelecturehall1(Request $request,$id)
+public function updatelecturehall1(Request $request,$id)  //selected id will be updated using this function.
 {
 
     $lecturehall = lecturehall::find($id);

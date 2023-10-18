@@ -23,7 +23,9 @@ return new class extends Migration
             $table->String ('department');
             $table->String ('reason',400)->nullable();
             $table->unsignedBigInteger('guest_id');
-            $table->foreign('guest_id')->references('id')->on('guests');
+            $table->foreign('guest_id')->references('id')->on('guests')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }
