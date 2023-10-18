@@ -71,10 +71,33 @@
 
     </div>
 
+    <script>
+        // Access the images
+        let slideImages = document.querySelectorAll('img');
+        //Access the next and prev buttons
+        let next = document.querySelector('.next');
+        let prev = document.querySelector('.prev');
+        //Access the indicators
+        let dots = document.querySelectorAll('.dot');
 
+        var counter = 0;
+
+        //code for next button
+        next.addEventListener('click' , slideNext);
+        function slideNext(){
+        slideImages[counter].style.animation = 'next1 0.5s ease-in forwards';
+        if(counter >= slideImages.length -1){
+            counter = 0;
+        }
+        else{
+            counter++;
+        }
+        slideImages[counter].style.animation = 'next2 0.5s ease-in forwards';
+        }
+
+    </script>
 
 
 
 </body>
-
 </html>
