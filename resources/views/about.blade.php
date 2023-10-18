@@ -53,7 +53,7 @@
             <img src="images/b.jpg">
             <img src="images/c.jpg">
             <img src="images/p1.jpg">
-            <img src="images/R3.jfif">
+            <img src="images/R4.jfif">
         </div>
 
         <div class="buttons">
