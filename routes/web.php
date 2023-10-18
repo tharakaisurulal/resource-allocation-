@@ -207,3 +207,7 @@ Route::get('/admin/student/sturegister', function () { //view student registrati
 });
 
 Route::post('/admin/student/studentstore', [studentController::class, 'studentstore'])->name('studentstore'); //storing data in student table.
+
+Route::get('update-student/{id}',[studentController::class, 'updatestudent'])->name('updatestudent');  //route to function of return selected user details to edit page.
+
+Route::post('update1-student/{id}',[studentController::class, 'updatestudent1'])->name('updatestudent1');  //route to function of update programs.
