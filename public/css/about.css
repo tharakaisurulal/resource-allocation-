@@ -194,6 +194,46 @@ body{
  }
 
 
+ @keyframes next1{
+    from{
+        left: 0%;
+    }
+    to{
+        left:-100%;
+    }
+
+ }
+
+ @keyframes next2{
+    from{
+        left: 100%;
+    }
+    to{
+        left: 0%;
+    }
+
+ }
+
+ @keyframes prev1{
+    from{
+        left: 0%;
+    }
+    to{
+        left: 100%;
+    }
+
+ }
+
+ @keyframes prev2{
+    from{
+        left: -100%;
+    }
+    to{
+        left: 0%;
+    }
+
+ }
+
 
 
   /* On smaller screens, decrease text size */
