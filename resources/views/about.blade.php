@@ -44,6 +44,32 @@
 
     </header>
 
+    <!---------slideshow Start------------------------------------------------------------>
+
+    <div class="slide-container">
+
+        <div class="slides">
+            <img src="images/a1.jpg" class="active">
+            <img src="images/b.jpg">
+            <img src="images/c.jpg">
+            <img src="images/p1.jpg">
+            <img src="images/R3.jfif">
+        </div>
+
+        <div class="buttons">
+            <span class="next">&#10095;</span>
+            <span class="prev">&#10094;</span>
+        </div>
+
+        <div class="dotsContainer">
+            <div class="dot active" attr="0"></div>
+            <div class="dot" attr="1"></div>
+            <div class="dot" attr="2"></div>
+            <div class="dot" attr="3"></div>
+            <div class="dot" attr="4"></div>
+        </div>
+
+    </div>
 
 
 
