@@ -1,7 +1,7 @@
 @extends('layout.headerFooter')
 @section("content1")
-    <div class="div3"><img src="{{asset('/uploads/guests/'.$dater->photo) }}" alt="image" class="img1"></div>
-    <div class="div2">
+    <div class="header3"><img src="{{asset('/uploads/guests/'.$dater->photo) }}" alt="image" class="img1"></div>
+    <div class="header2">
         <h6>Welcome!</h6><br>
         <h6>{{$dater->guest_name}}</h6>
     </div>

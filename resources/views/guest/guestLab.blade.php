@@ -1,6 +1,6 @@
 @extends('layout.header')
 @section("content2")
-<li><a href="/lecturers/lecturerhome">BACK</a></li>
+<li><a href="/guest/guesthome">BACK</a></li>
 @endsection
 @section("content")
 <!DOCTYPE html>
