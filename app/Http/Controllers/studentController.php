@@ -138,4 +138,25 @@ public function updatestudent1(Request $request,$id)  //selected id will be upda
         return redirect()->route('admin.student.stuopera')->with('success',"Data updated successfully.");
 
 }
+
+public function updatestudentpassword(Request $request,$id)  //selected id will be updated using this function.
+{
+
+    /*$student = student::find($id);
+    return $request;
+    if(($request -> oldpassword)==($student -> password))
+    return $request;
+        //$student->first_name = $request -> input('fname');
+        //$student->last_name = $request -> input('lname');
+        //$student->mobile = $request -> input('mobile');
+        //$student->first_name = $request -> input('photo');
+        //$student->username = $request -> input('username');
+        //$student->update();
+    //return $request;
+    //return $lecturehall;
+    //$lecturehall->update($request->all());
+        //return $lecturehall;
+        return redirect()->route('admin.student.stuopera')->with('success',"Data updated successfully.");*/
+
+}
 }

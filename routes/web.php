@@ -211,3 +211,5 @@ Route::post('/admin/student/studentstore', [studentController::class, 'studentst
 Route::get('update-student/{id}',[studentController::class, 'updatestudent'])->name('updatestudent');  //route to function of return selected user details to edit page.
 
 Route::post('update1-student/{id}',[studentController::class, 'updatestudent1'])->name('updatestudent1');  //route to function of update programs.
+
+Route::post('updatestudentpassword-student/{id}',[studentController::class, 'updatestudentpassword'])->name('updatestudentpassword');  //route to function of update student password.

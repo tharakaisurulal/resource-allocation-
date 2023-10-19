@@ -2,7 +2,6 @@
 
 @section("content2")
         <li><a href="/admin/student/stuopera">BACK</a></li>
-
 @endsection
 
 @section("content")
