@@ -20,6 +20,7 @@ body{
 .box{
     position: relative;
     margin-top: 80px;
+    margin-bottom: 40px;
     width: 450px;
     height:1300px;
     background:#1c1c1c;

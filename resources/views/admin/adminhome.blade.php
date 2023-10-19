@@ -44,7 +44,7 @@
                   <div id="flush-collapseOne" class="accordion-collapse collapse sec2" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                     <div class="accordion-body">
                         <ul>
-                            <li class="sec3"><a href="#">STUDENT</a></li>
+                            <li class="sec3"><a href="/admin/student/stuopera">STUDENT</a></li>
                             <li class="sec3"><a href="#">LECTURER</a></li>
                             <li class="sec3"><a href="#">ACADEMIC-SUPPORTIVE</a></li>
                             <li class="sec3"><a href="#">GUEST</a></li>

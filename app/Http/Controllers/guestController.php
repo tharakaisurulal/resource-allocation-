@@ -22,10 +22,11 @@ use Illuminate\Support\Facades\Cookie;
 
 class guestController extends Controller
 {
-    public function guesthome()
+    public function guesthome() //view the guest home page
     {
         $dater = array();
-        if(session()->has('reid'))
+        if(session()->has('reid')) /*If we are logged in session variable is assign, then we get the id of logged in user and detailas are assign to $dater variable and
+                                   return the logged in user details to guest home.mainly it is used in header welcome message.*/
         {
             $dater=guest::where('id','=',session()->get('reid'))->first();
         }
@@ -34,21 +35,21 @@ class guestController extends Controller
         //return view('guest.guesthome');
     }
 
-    public function guestregistration()
+    public function guestregistration() //view guest registration page.
     {
-        $dater = array();
+        /*$dater = array();
         if(session()->has('reid'))
         {
             $dater=guest::where('id','=',session()->get('reid'))->first();
         }
         //return $dater;
-            return view('guest.guestregistration',compact('dater'));
-        //return view('guest.guestregistration');
+            return view('guest.guestregistration',compact('dater'));*/
+        return view('guest.guestregistration');
     }
 
-    public function guestrequest()
+    public function guestrequest() //view guest request page.
     {
-        $dater = array();
+        $dater = array();     //return the details of logged in user to guest request form.
         if(session()->has('reid'))
         {
             $dater=guest::where('id','=',session()->get('reid'))->first();
@@ -58,30 +59,36 @@ class guestController extends Controller
         //return view('guest.guestregistration');
     }
 
-    public function gueststore(Request $request)
+    public function gueststore(Request $request) //store guest registration details.
     {
     //return $request;
-        $request->validate([
+        $request->validate([  //validation part.
             'name'=> 'required',
             'faculty'=> 'required',
-            'username'=> 'required|unique:guests',
+            'username'=> 'required|unique:guests|unique:admins|unique:lecturers|unique:students|unique:accsupportives',
             'password'=> 'required|unique:guests|min:5|max:12',
             'department'=> 'required',
             'position'=> 'required',
             'mobile'=> 'required',
+            'password1'=> 'required',
             'faculty'=> 'required'
 
           ]);
           //return $request;
-    if(($request->password)==($request->password1)){
-          if($request->hasfile('photo'))
+    if(($request->password)==($request->password1)){  //if password input and confirm password input are same.
+          if($request->hasfile('photo')) //check photo id added or not.
            {
                $file = $request->file('photo');
                $extenstion = $file->getClientOriginalExtension();
                $filename = time().'.'.$extenstion;
                $file->move('uploads/guests/', $filename);
-               $image->photo = $filename;
+
            }
+           else{ //if photo is not added.
+            $filename=null;
+           }
+
+
 
           $guests=guest::create([
             'username'=> $request -> username,
@@ -92,7 +99,7 @@ class guestController extends Controller
             'guest_department'=> $request -> department,
             'guest_position'=> $request -> position,
             'mobile'=> $request -> mobile,
-            //'photo'=> $filename -> photo,
+            'photo'=> $filename
             ]);
 
             $res = $guests ->save();
@@ -131,7 +138,7 @@ class guestController extends Controller
 
 
 //add details to the guest request table
-public function guestreq(Request $request)
+public function guestreq(Request $request) //request form details store to database.
 {
 //return $request;
 //$na=session()->get('reid');
@@ -194,7 +201,7 @@ public function guestreq(Request $request)
 
 
 }
-public function count(){
+/*public function count(){ //getting the number of guest registered and return it to admin home page.
 $count = DB::table('goods')->count();
 return view('admin.adminhome',['count'=>$count]);
 //if($count > 0) {
@@ -202,5 +209,5 @@ return view('admin.adminhome',['count'=>$count]);
 //}else {
      //zero raw
 //}
-}
+}*/
 }

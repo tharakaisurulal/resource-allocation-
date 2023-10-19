@@ -27,7 +27,7 @@
                     <div class="back-content center">
                         <h3> Lecture Hall</h3>
                         <div class="button">
-                            <a href="/lecturehalldetails"><span>CLICK</span></a>
+                            <a href="/lecturers/leclecturehalldetails"><span>CLICK</span></a>
                         </div>
                     </div>
             </div>
