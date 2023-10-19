@@ -129,13 +129,13 @@ public function updatestudent1(Request $request,$id)  //selected id will be upda
         $student->last_name = $request -> input('lname');
         $student->mobile = $request -> input('mobile');
         //$student->first_name = $request -> input('photo');
-        $student->user_name = $request -> input('username');
+        $student->username = $request -> input('username');
         $student->update();
     //return $request;
     //return $lecturehall;
     //$lecturehall->update($request->all());
         //return $lecturehall;
-        return redirect()->route('viewstudent')->with('success',"Data updated successfully.");
+        return redirect()->route('admin.student.stuopera')->with('success',"Data updated successfully.");
 
 }
 }

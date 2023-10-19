@@ -1,7 +1,7 @@
 @extends('layout.header')
 
 @section("content2")
-        <li><a href="#">BACK</a></li>
+        <li><a href="/admin/student/stuopera">BACK</a></li>
 
 @endsection
 
@@ -29,7 +29,10 @@
             <table class="table table-dark">
                 <thead>
                     <td>Id</td>
-                    <td>program Name</td>
+                    <td>username</td>
+                    <td>first name</td>
+                    <td>last name</td>
+                    <td>mobile</td>
                     <td>Action</td>
 
                 </thead>
@@ -37,10 +40,14 @@
 
                 <tr>
                     <td><input type="text" name="id" value="{{$student->id}}" required disabled></td>
-                    <!--<td><input type="text" name="program" value="{{$student->program}}" required></td>-->
+                    <td><input type="text" name="username" value="{{$student->username}}" required></td>
+                    <td><input type="text" name="fname" value="{{$student->first_name}}" required></td>
+                    <td><input type="text" name="lname" value="{{$student->last_name}}" required></td>
+                    <td><input type="text" name="mobile" value="{{$student->mobile}}" required></td>
+
                     <td>
                             <button class="btn btn-secondary btn-sm" type="submit" >Submit</button>
-                           <a href="/admin/program/adminprogramopera"> <button class="btn btn-secondary btn-sm" type="button" >Back</button></a>
+                           <a href="/admin/student/stuopera"> <button class="btn btn-secondary btn-sm" type="button" >Back</button></a>
                     </td>
                 </tr>
 
