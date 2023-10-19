@@ -19,12 +19,9 @@
     <body>
         <div class="div1">
             <div class="div3">
-
-            <!-- Button trigger modal -->
             <button type="button" class="btn btn-warning" onclick="window.location.href='/admin/student/sturegister'">
                 Add Students
             </button>
-
             </div>
 
             <div class="text-center">
@@ -69,7 +66,7 @@
                             <ul class="dropdown-menu">
                               <li><a class="dropdown-item" href="{{url('update-student/'.$cdb->id)}}" >Edit</a></li>
                               <li><a class="dropdown-item" href="{{url('delete-student/'.$cdb->id)}}">Delete</a></li>
-
+                              <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Change Password</a></li>  <!-- Button trigger modal -->
                               <li><a class="dropdown-item" href="">More</a></li>
                             </ul>
                           </div>
@@ -83,8 +80,27 @@
          @else
          <div class="alert alert-danger div5">{{ 'No Data!' }}</div>
          @endif
-
         </div>
+
+
+        <!-- Modal id="staticBackdrop"-->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Change Password</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            Do You want to change password?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+          <button type="button" class="btn btn-primary"><a class="dropdown-item" href="{{url('updatestudentpassword-student/'.$cdb->id)}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">Yes</a></button>
+        </div>
+      </div>
+    </div>
+  </div>
 
     </body>
 </html>
