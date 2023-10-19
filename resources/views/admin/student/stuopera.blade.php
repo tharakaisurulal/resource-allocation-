@@ -69,6 +69,7 @@
                             <ul class="dropdown-menu">
                               <li><a class="dropdown-item" href="{{url('update-student/'.$cdb->id)}}" >Edit</a></li>
                               <li><a class="dropdown-item" href="{{url('delete-student/'.$cdb->id)}}">Delete</a></li>
+
                               <li><a class="dropdown-item" href="">More</a></li>
                             </ul>
                           </div>
@@ -88,3 +89,4 @@
     </body>
 </html>
 @endsection
+
