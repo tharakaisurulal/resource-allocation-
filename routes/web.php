@@ -9,6 +9,7 @@ use App\Http\Controllers\labController;
 use App\Http\Controllers\programController;
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\studentController;
+use App\Http\Controllers\lecturerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -213,3 +214,19 @@ Route::get('update-student/{id}',[studentController::class, 'updatestudent'])->n
 Route::post('update1-student/{id}',[studentController::class, 'updatestudent1'])->name('updatestudent1');  //route to function of update programs.
 
 Route::post('updatestudentpassword-student/{id}',[studentController::class, 'updatestudentpassword'])->name('updatestudentpassword');  //route to function of update student password.
+
+
+/*admin.lecturer routes*/
+Route::get('/admin/lecturer/stuopera', [studentController::class, 'viewlecturer'])->name('admin.lecturer.lectureropera');  //route to view student crud operation page.
+
+Route::get('/admin/lecturer/lecturerregister', function () { //view student registration page.
+    return view('admin.lecturer.lecturerregistration');
+});
+
+Route::post('/admin/lecturer/lecturerstore', [lecturerController::class, 'lecturerstore'])->name('lecturerstore'); //storing data in lecturer table.
+
+Route::get('update-lecturer/{id}',[lecturerController::class, 'updatelecturer'])->name('updatelecturer');  //route to function of return selected user details to edit page.
+
+Route::post('update1-lecturer/{id}',[lecturerController::class, 'updatelecturer1'])->name('updatelecturer1');  //route to function of update programs.
+
+Route::post('updatelecturerpassword-lecturer/{id}',[lecturerController::class, 'updatelecturerpassword'])->name('updatelecturerpassword');  //route to function of update student password.

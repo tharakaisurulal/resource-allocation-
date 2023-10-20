@@ -151,7 +151,7 @@ public function logout() //logout function
         $mv1=admin::where('username','=',$request -> username)->first();
         //$mv2=accsupportive::where('username','=',$request -> username)->first();
         $mv3=student::where('username','=',$request -> username)->first();
-        //$mv4=lecturer::where('username','=',$request -> username)->first();
+        $mv4=lecturer::where('username','=',$request -> username)->first();
         //$nm=['mv',$mv];
         //$nm1=['mv1',$mv1];
 
@@ -250,19 +250,7 @@ else
         }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-      /*elseif(($request->user)=="Lecturer"){
+      elseif(($request->user)=="Lecturer"){
           return view('home1');
       }
 
