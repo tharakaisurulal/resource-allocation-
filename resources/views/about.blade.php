@@ -1,3 +1,5 @@
+@extends('layout.headerFooter')
+@section('content')
 <html>
  <head>
 	<meta charset="UTF-8">
@@ -19,41 +21,23 @@
     <script src="https://unpkg.com/scrollreveal"></script>
 
     <!--custom js link --->
-
+    
 
  </head>
 
 
-<body>
-
-    <header>
-
-        <img src="images/logo_copy.png" class="logo">
-
-        <div class="navlist">
-            <a href="#">Home</a>
-            <a href="#">Staff</a>
-            <a href="#">Programs</a>
-            <a href="#">Research</a>
-            <a href="#">Services</a>
-            <a href="#">contact</a>
-            <a href="#">Log Out</a>
-        </div>
-
-        <div class="bx bx-menu" id="menu-icon"></div>
-
-    </header>
-
+<body class="body1">
+    <div class="main">
     <!---------slideshow Start------------------------------------------------------------>
 
     <div class="slide-container">
 
         <div class="slides">
-            <img src="images/a1.jpg" class="active">
-            <img src="images/b.jpg">
-            <img src="images/c.jpg">
-            <img src="images/p1.jpg">
-            <img src="images/R4.jfif">
+            <img src="/images/a1.jpg" class="active">
+            <img src="/images/b.jpg">
+            <img src="/images/c.jpg">
+            <img src="/images/p1.jpg">
+            <img src="/images/R4.jfif">
         </div>
 
         <div class="buttons">
@@ -70,6 +54,7 @@
         </div>
 
     </div>
+</div>
 
     <script>
         // Access the images
@@ -110,7 +95,7 @@
 
         // Auto slideing
         function autoSliding() {
-            deletInterval = setInterval(timer, 1000);
+            deletInterval = setInterval(timer, 2000);
             function timer(){
             slideNext();
         }
@@ -133,3 +118,4 @@
 
 </body>
 </html>
+@endsection

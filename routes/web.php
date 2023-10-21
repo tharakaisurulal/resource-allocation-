@@ -26,6 +26,10 @@ use App\Http\Controllers\academicsupportiveController;
 Route::get('/', function () { //route to view welcome page.
     return view('welcome');
 });
+
+Route::get('/welcome/about', function () { //route to view welcome page.
+    return view('about');
+});
 //Route::get('/guest/request', function () {
     //return view('guest.guestrequestform');
 //});
