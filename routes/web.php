@@ -147,12 +147,25 @@ Route::post('/lecturerreq', [lecturerController::class, 'lecturerreq'])->name('l
 /*academicsupportive routes*/
 Route::get('/academicsupportive/academicsupportivehome', [academicsupportiveController::class, 'academicsupportivehome']);
 
-/*student routes*/
-//Route::get('/students/studenthome', function () { //view student home page.
-    //return view('students.studenthome');
-//});
+Route::get('/academicsupportive/accsuplecturehalldetails', function () { //route to view lecturehalls.
+    return view('academicsupportive.accsuplecturehalldetails');
+});
 
+Route::get('/academicsupportive/accsuplab', function () { //route to view lab page.
+    return view('academicsupportive.accsuplab');
+});
+
+/*student routes*/
 Route::get('/students/studenthome', [studentController::class, 'studenthome']);
+
+Route::get('/students/studentlecturehalldetails', function () { //route to view lecturehalls.
+    return view('students.studentlecturehalldetails');
+});
+
+Route::get('/students/lab', function () { //route to view lab page.
+    return view('students.studentLab');
+});
+
 
 /*admin routes*/
 //Route::get('/admin/adminlecturehallopera', function () {
@@ -253,3 +266,4 @@ Route::post('/admin/academicsupportive/accsupstore', [academicsupportiveControll
 //Route::post('update1-lecturer/{id}',[academicsupportiveController::class, 'updatelecturer1'])->name('updatelecturer1');  //route to function of update programs.
 
 //Route::post('updatelecturerpassword-lecturer/{id}',[academicsupportiveController::class, 'updatelecturerpassword'])->name('updatelecturerpassword');  //route to function of update student password.
+
