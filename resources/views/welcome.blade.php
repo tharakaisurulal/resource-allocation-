@@ -28,7 +28,7 @@
             <div class="banner-text">
                 <h1>WELCOME TO RESOURCES MANAGEMENT SYSTEM...</h1>
                 <div class="banner-btn">
-                    <a href="#"><span></span>GUEST US</a>
+                    <a href="/guestpage"><span></span>GUEST US</a>
                     <a href="/loginpage"><span></span>LOGIN</a>
                     <a href="/guest/guestregistration"><span></span>REGISTER</a>
                 </div>

@@ -71,7 +71,7 @@ Route::get('/header', function () {  //route to view header layout.
     return view('layout.header');
 });
 Route::get('/guestpage', function () {
-    return view('guest.guestpage');
+    return view('guestpage');
 });
 
 Route::get('/tablebcslevel1', function () {
