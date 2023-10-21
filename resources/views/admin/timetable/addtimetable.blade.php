@@ -1,7 +1,6 @@
 @extends('layout.header')
 @section('content2')
-        <li><a href="/">HOME</a></li>
-        <li><a href="/admin/student/stuopera">BACK</a></li>
+        <li><a href="">BACK</a></li>
 @endsection
 
 @section('content')
@@ -29,13 +28,23 @@
             @csrf
   <div class="container">
 
-  <h1>Register</h1>
-    <p>Please fill in this form to create an account.</p>
+  <h1>Add Timetable</h1>
+    <p>Please fill in this form to create Timetable</p>
     <hr>
 
-    <label for="name"><b>First Name:</b></label>
-    <input type="text" placeholder="Enter Name" name="fname" id="name" >
-    <label class="text-danger span1">@error('fname')  {{$message}}  @enderror</label><br>
+    <label for="name"><b>Program:</b></label>
+    <select name="program" id="faculty">
+        <option value="">--Choose Program--</option>
+        <option value="1">BCs</option>
+        <option value="2">BSc</option>
+        </select>
+
+        <label for="name"><b>Course:</b></label>
+    <select name="course" id="faculty">
+        <option value="">--Choose course--</option>
+        <option value="1">Laboratory Assignment</option>
+        <option value="2">Networking</option>
+        </select>
 
     <label for="name"><b>Last Name:</b></label>
     <input type="text" placeholder="Enter Name" name="lname" id="name" >

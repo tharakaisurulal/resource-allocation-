@@ -34,6 +34,17 @@ class academicsupportiveController extends Controller
         //return view('guest.guesthome');
     }
 
+    public function viewacademicsupportive(){  //view the students in database(inside the admin page).
+        $cusdata6= accsupportive::all();
+        //return  $cusdata4;
+        if(count($cusdata6) === 0){  //if students table is empty it does not return the $cusdata4 because it is empty.
+            return view('admin.academicsupportive.academicsupopera');
+        }
+        else{
+            return view('admin.academicsupportive.academicsupopera',['cusdata6'=> $cusdata6]);
+        }
+    }
+
     public function accsupstore(Request $request) //store guest registration details.  //ok
     {
     //return $request;

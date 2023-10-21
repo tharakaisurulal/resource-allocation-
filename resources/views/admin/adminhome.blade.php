@@ -7,6 +7,7 @@
         <title>Lecture hall Allocation</title>
         @include('cdn')
         <link rel="stylesheet" href={{asset('css/adminhome.css')}}>
+        <link rel="icon" type="text/css" href="{{asset('/images/R.png')}}">
 
     </head>
 
@@ -45,9 +46,9 @@
                     <div class="accordion-body">
                         <ul>
                             <li class="sec3"><a href="/admin/student/stuopera">STUDENT</a></li>
-                            <li class="sec3"><a href="#">LECTURER</a></li>
-                            <li class="sec3"><a href="#">ACADEMIC-SUPPORTIVE</a></li>
-                            <li class="sec3"><a href="#">GUEST</a></li>
+                            <li class="sec3"><a href="/admin/lecturer/lectureopera">LECTURER</a></li>
+                            <li class="sec3"><a href="/admin/academicsupportive/academicsupopera">ACADEMIC-SUPPORTIVE</a></li>
+                            <li class="sec3"><a href="/admin/guest/guestopera">GUEST</a></li>
                         </ul>
                     </div>
                   </div>
