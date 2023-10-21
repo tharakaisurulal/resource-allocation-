@@ -42,7 +42,7 @@
                     <div class="back-content center">
                         <h3> Lecture Hall</h3>
                         <div class="button">
-                            <a href=""><span>CLICK</span></a>
+                            <a href="/academicsupportive/accsuplecturehalldetails"><span>CLICK</span></a>
                         </div>
                     </div>
             </div>
@@ -60,7 +60,7 @@
                     <div class="back-content center">
                         <h3> Labortory</h3>
                         <div class="button">
-                            <a href=""><span>CLICK</span></a>
+                            <a href="/academicsupportive/accsuplab"><span>CLICK</span></a>
                         </div>
                     </div>
             </div>
@@ -70,7 +70,7 @@
 
             <div class="face front">
                 <img src="/images/904740.png" alt="" width=300px height=350px>
-                <h3> Request </h3>
+                <h3> Maintains</h3>
             </div>
 
             <div class="face back">

@@ -1,6 +1,6 @@
 @extends('layout.header')
 @section("content2")
-<li><a href="/lecturers/lecturerhome">BACK</a></li>
+<li><a href="/students/studenthome">BACK</a></li>
 @endsection
 @section("content")
 <!DOCTYPE html>
@@ -17,7 +17,7 @@
 
 </head>
 <body>
-<h1 id="tit">Lecturehall Details</h1>
+    <h1 id="tit">Lecturehall Details</h1>
     <div class="sec1">
 
     <div class="card">
