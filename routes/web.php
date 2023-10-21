@@ -9,6 +9,8 @@ use App\Http\Controllers\labController;
 use App\Http\Controllers\programController;
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\studentController;
+use App\Http\Controllers\lecturerController;
+use App\Http\Controllers\academicsupportiveController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +25,10 @@ use App\Http\Controllers\studentController;
 
 Route::get('/', function () { //route to view welcome page.
     return view('welcome');
+});
+
+Route::get('/welcome/about', function () { //route to view welcome page.
+    return view('about');
 });
 //Route::get('/guest/request', function () {
     //return view('guest.guestrequestform');
@@ -120,30 +126,46 @@ Route::get('/forgetpassword', [loginController::class, 'forgetpassword'])->name(
 
 
 /*Lecture routes*/
-Route::get('/lecturers/request', function () { //view lecture request page.
-    return view('lecturers.lecturerrequestform');
-});
-
 Route::get('/lecturers/lab', function () { //view lecture lab page.
     return view('lecturers.lecturerlab');
 });
 
-Route::get('/lecturers/lecturerhome', function () { //view lecture home page.
+/*Route::get('/lecturers/lecturerhome', function () { //view lecture home page.
     return view('lecturers.lecturerhome');
-});
+});*/
+
+Route::get('/lecturers/lecturerhome', [lecturerController::class, 'lecturerhome']);
 
 Route::get('/lecturers/leclecturehalldetails', function () {
     return view('lecturers.leclecturehalldetails');
 });
 
+Route::get('/lecturers/request', [lecturerController::class, 'lecturerrequest']); //view request page.
+
+Route::post('/lecturerreq', [lecturerController::class, 'lecturerreq'])->name('lecturerreq'); //store request details in database.
+
 /*academicsupportive routes*/
+Route::get('/academicsupportive/academicsupportivehome', [academicsupportiveController::class, 'academicsupportivehome']);
+
+Route::get('/academicsupportive/accsuplecturehalldetails', function () { //route to view lecturehalls.
+    return view('academicsupportive.accsuplecturehalldetails');
+});
+
+Route::get('/academicsupportive/accsuplab', function () { //route to view lab page.
+    return view('academicsupportive.accsuplab');
+});
 
 /*student routes*/
-//Route::get('/students/studenthome', function () { //view student home page.
-    //return view('students.studenthome');
-//});
-
 Route::get('/students/studenthome', [studentController::class, 'studenthome']);
+
+Route::get('/students/studentlecturehalldetails', function () { //route to view lecturehalls.
+    return view('students.studentlecturehalldetails');
+});
+
+Route::get('/students/lab', function () { //route to view lab page.
+    return view('students.studentLab');
+});
+
 
 /*admin routes*/
 //Route::get('/admin/adminlecturehallopera', function () {
@@ -213,3 +235,35 @@ Route::get('update-student/{id}',[studentController::class, 'updatestudent'])->n
 Route::post('update1-student/{id}',[studentController::class, 'updatestudent1'])->name('updatestudent1');  //route to function of update programs.
 
 Route::post('updatestudentpassword-student/{id}',[studentController::class, 'updatestudentpassword'])->name('updatestudentpassword');  //route to function of update student password.
+
+
+/*admin.lecturer routes*/
+//Route::get('/admin/lecturer/stuopera', [studentController::class, 'viewlecturer'])->name('admin.lecturer.lectureropera');  //route to view student crud operation page.
+
+Route::get('/admin/lecturer/lecturerregister', function () { //view student registration page.
+    return view('admin.lecturer.lecturerregistration');
+});
+
+Route::post('/admin/lecturer/lecturerstore', [lecturerController::class, 'lecturerstore'])->name('lecturerstore'); //storing data in lecturer table.
+
+//Route::get('update-lecturer/{id}',[lecturerController::class, 'updatelecturer'])->name('updatelecturer');  //route to function of return selected user details to edit page.
+
+//Route::post('update1-lecturer/{id}',[lecturerController::class, 'updatelecturer1'])->name('updatelecturer1');  //route to function of update programs.
+
+//Route::post('updatelecturerpassword-lecturer/{id}',[lecturerController::class, 'updatelecturerpassword'])->name('updatelecturerpassword');  //route to function of update student password.
+
+/*admin.academicsupportive routes*/
+//Route::get('/admin/lecturer/stuopera', [studentController::class, 'viewlecturer'])->name('admin.lecturer.lectureropera');  //route to view student crud operation page.
+
+Route::get('/admin/academicsupportive/academicsupregister', function () { //view student registration page.
+    return view('admin.academicsupportive.academicsupregistration');
+});
+
+Route::post('/admin/academicsupportive/accsupstore', [academicsupportiveController::class, 'accsupstore'])->name('accsupstore'); //storing data in lecturer table.
+
+//Route::get('update-lecturer/{id}',[academicsupportiveController::class, 'updatelecturer'])->name('updatelecturer');  //route to function of return selected user details to edit page.
+
+//Route::post('update1-lecturer/{id}',[academicsupportiveController::class, 'updatelecturer1'])->name('updatelecturer1');  //route to function of update programs.
+
+//Route::post('updatelecturerpassword-lecturer/{id}',[academicsupportiveController::class, 'updatelecturerpassword'])->name('updatelecturerpassword');  //route to function of update student password.
+

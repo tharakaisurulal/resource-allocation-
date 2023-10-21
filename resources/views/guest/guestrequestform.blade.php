@@ -3,6 +3,8 @@
     <head>
         @include('cdn')
         <link rel="stylesheet" type="text/css" href="{{asset('css/guestrequest.css')}}">
+        <link rel="icon" type="text/css" href="{{asset('/images/R.png')}}">
+
     </head>
     <body>
 

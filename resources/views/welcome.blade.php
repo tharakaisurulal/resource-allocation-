@@ -68,7 +68,7 @@
                             </div>
 
                             <div class="button">
-                                <a href=""><span>Read More</span></a>
+                                <a href="/welcome/about"><span>Read More</span></a>
                             </div>
                         </div>
                     </div>
