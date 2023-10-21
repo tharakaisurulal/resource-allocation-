@@ -70,6 +70,9 @@ Route::get('/add', function () { //route to testing page.
 Route::get('/header', function () {  //route to view header layout.
     return view('layout.header');
 });
+Route::get('/guestpage', function () {
+    return view('guest.guestpage');
+});
 
 Route::get('/tablebcslevel1', function () {
     return view('tablebcslevel1');
