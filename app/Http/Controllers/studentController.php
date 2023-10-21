@@ -41,8 +41,8 @@ class studentController extends Controller
             'username'=> 'required|unique:guests|unique:admins|unique:lecturers|unique:students|unique:accsupportives',
             'password'=> 'required|unique:students|min:5|max:12',
             'mobile'=> 'required',
-            'password1'=> 'required'
-
+            'password1'=> 'required',
+            //'program_Id' => 'required'
           ]);
           //return $request;
     if(($request->password)==($request->password1)){  //if password input and confirm password input are same.
@@ -68,6 +68,7 @@ class studentController extends Controller
             'last_name'=> $request -> lname,
             'mobile'=> $request -> mobile,
             'photo'=> $filename,
+            'program_Id' => $request -> program,
             'subject1'=> $request -> subject1,
             'subject2'=> $request -> subject2,
             'subject3'=> $request -> subject3,

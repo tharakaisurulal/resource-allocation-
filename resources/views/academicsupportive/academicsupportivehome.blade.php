@@ -69,6 +69,38 @@
         <div class="card">
 
             <div class="face front">
+                <img src="/images/1523342686phpo9K5NA.jpeg" alt="" width=300px height=350px>
+                <h3> Time Table</h3>
+            </div>
+
+            <div class="face back">
+                    <div class="back-content center">
+                        <h3> Time Table</h3>
+                        <div class="dropdown">
+                        <div class="button btn-sm dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a><span>BCs</span></a>
+                        </div>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/tablebcslevel1" >Level 1</a></li>
+                            <li><a class="dropdown-item" href="/tablebcslevel2">Level 2</a></li>
+                            <li><a class="dropdown-item" href="">Level 3</a></li>
+                          </ul>
+                        <div class="button btn-sm dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a><span>BSc</span></a>
+                        </div>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="" >Level 1</a></li>
+                            <li><a class="dropdown-item" href="">Level 2</a></li>
+                            <li><a class="dropdown-item" href="/tablebsclevel3">Level 3</a></li>
+                          </ul>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+        <div class="card">
+
+            <div class="face front">
                 <img src="/images/904740.png" alt="" width=300px height=350px>
                 <h3> Maintains</h3>
             </div>
