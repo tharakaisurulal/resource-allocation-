@@ -118,16 +118,74 @@
         // stop auto sliding when mouse is over
         const container = document.querySelector('.slide-container');
         container.assEventListener('mouseover' , function(){
-        clearInterval(deletInterval);
+            clearInterval(deletInterval);
         });
 
         // Resume sliding when mouse is out
         container.addEventListener('mouseout', autoSliding);
 
 
+        //Add and remove active class from the indicators
+        function indicators(){
+            for(i = 0; i < dots.length; i++){
+                dots[i].className = dots[i].className.replace(' active','');
+            }
+            dots[counter].className += ' active';
+        }
+
+        //Add click event to the indicator
+        function switchImage(currentImage){
+            currentImage.classList.add('active');
+            var imageId = currentImage.getAttribute('attr');
+            if(imageId > counter){
+                slideImages[counter].style.animation = 'next1 0.5s ease-in forwards';
+                conter = imageId;
+                slideImages[counter].style.animation = 'next2 0.5s ease-in forwards';
+            }
+            else if(imageId == counter){
+                return;
+            }
+            else{
+                slideImages[counter].style.animation = 'prev1 0.5s ease-in forwards';
+                counter = imageId;
+                slideImages[counter].style.animation = 'prev2 0.5s ease-in forwards';
+            }
+            indicators();
+        }
     </script>
 
+<section class="about" id="about">
+    <div class="container">
+            <div class="content">
+                <div class="article">
+                    <h2><ins>Department Of Computer Science</ins></h2>
+                    <p>&nbsp&nbsp&nbspThe Department of Computer Science of the University of Ruhuna is the oldest and one of the most esteemed computer science departments in the university system of Sri Lanka. The root of the department was the Computer Unit of the University of Ruhuna and the department was established in 1997 fulfilling a long-standing need of the University. Currently the department offers undergraduate programs, postgraduate programs and training programs on demand. The department disseminates it’s knowledge not only to the university students but also to the outside society through its external courses. The department further extends its services by providing software solutions and though ICT related consultancy services. </p>
 
+                    <div class="profile">
+                        <h4><ins> HEAD </ins></h4>
+                        <div class="img">
+                            <img src={{asset('images/849.jpg')}}>
+                        </div>
+
+                        <div class="b">
+                                <h3>Dr. Sugandima Vidanagamachchi </h3>
+                                <h4>Senior Lecturer (Grade I)</h4>
+                                <p>B.Sc. in Computer Science (UCSC) , PhD in Computer Engineering (Pdn),<br>
+                                Email :<a href="#">smv@dcs.ruh.ac.lk</a><br>
+                                Extention 14600</p>
+                        </div>
+                    </div>
+
+                    <div class="Premises">
+                        <h4><ins>Department Premises</ins></h4>
+                        <div class="img">
+                            <img src={{asset('images/NewFloor3.jpg')}}>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</section>
 
 </body>
 </html>
