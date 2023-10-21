@@ -22,7 +22,7 @@
 
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                Add Lecturehalls
+                Add Programs
             </button>
 
             <!-- Modal -->

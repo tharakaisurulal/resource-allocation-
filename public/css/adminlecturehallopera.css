@@ -12,11 +12,12 @@ body{
 
 .div3{
     padding: 20px 20px 20px 1000px;
+
 }
 
 td{
-    width: 100px;
-    height: 50px;
+    width: auto;
+    height: auto;
 }
 
 table{

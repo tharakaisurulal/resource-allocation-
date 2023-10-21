@@ -22,7 +22,7 @@ class studentController extends Controller
 
     public function viewstudent(){  //view the students in database(inside the admin page).
         $cusdata4= student::all();
-        //return  $cusdata;
+        //return  $cusdata4;
         if(count($cusdata4) === 0){  //if students table is empty it does not return the $cusdata4 because it is empty.
             return view('admin.student.stuopera');
         }
@@ -107,5 +107,56 @@ class studentController extends Controller
     {
     return back() -> with('fail',"confirm passsword is not match");
     }
+}
+
+public function updatestudent($id) //to do the update choose the selected id and return details in to edit page.
+{
+        $student = student::find($id);
+        //$this-> lhcapacity = $lecturehall1->lh_capacity;
+        //$this-> lhname = $lecturehall1->lh_name;
+        //$lecturehall1->update();
+        //return $lecturehall1;
+        return view('admin.student.adminstudentedit', ['student'=>$student]);
+
+}
+
+public function updatestudent1(Request $request,$id)  //selected id will be updated using this function.
+{
+
+    $student = student::find($id);
+    //return $request;
+        $student->first_name = $request -> input('fname');
+        $student->last_name = $request -> input('lname');
+        $student->mobile = $request -> input('mobile');
+        //$student->first_name = $request -> input('photo');
+        $student->username = $request -> input('username');
+        $student->update();
+    //return $request;
+    //return $lecturehall;
+    //$lecturehall->update($request->all());
+        //return $lecturehall;
+        return redirect()->route('admin.student.stuopera')->with('success',"Data updated successfully.");
+
+}
+
+public function updatestudentpassword(Request $request,$id)  //selected id will be updated using this function.
+{
+
+    /*$student = student::find($id);
+    return $request;
+    if(($request -> oldpassword)==($student -> password))
+    return $request;
+        //$student->first_name = $request -> input('fname');
+        //$student->last_name = $request -> input('lname');
+        //$student->mobile = $request -> input('mobile');
+        //$student->first_name = $request -> input('photo');
+        //$student->username = $request -> input('username');
+        //$student->update();
+    //return $request;
+    //return $lecturehall;
+    //$lecturehall->update($request->all());
+        //return $lecturehall;
+        return redirect()->route('admin.student.stuopera')->with('success',"Data updated successfully.");*/
+
 }
 }
