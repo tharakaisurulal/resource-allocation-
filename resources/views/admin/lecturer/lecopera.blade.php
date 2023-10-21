@@ -19,8 +19,8 @@
     <body>
         <div class="div1">
             <div class="div3">
-            <button type="button" class="btn btn-warning" onclick="window.location.href='/admin/student/sturegister'">
-                Add Students
+            <button type="button" class="btn btn-warning" onclick="window.location.href='/admin/lecturer/lecturerregister'">
+                Add Lecturers
             </button>
             </div>
 
@@ -37,35 +37,35 @@
         @endif
 
 
-            @if (isset($cusdata4))
+            @if (isset($cusdata5))
          <div class="d-flex justify-content-center div2">
 
             <table class="table table-dark">
                 <thead>
                     <td>Id</td>
+                    <td>Photo</td>
                     <td>username</td>
-                    <td>first name</td>
-                    <td>last_name</td>
+                    <td>name</td>
                     <td>mobile</td>
                     <td>Action</td>
 
                 </thead>
                 <tbody>
-                    @foreach ($cusdata4 as $cdb)
+                    @foreach ($cusdata5 as $cdb)
                 <tr>
                     <td>{{$cdb->id}}</td>
+                    <td><img src="{{asset('/uploads/lecturers/'.$cdb->lec_photo) }}" alt="image" width="50px" height="50px"></td>
                     <td>{{$cdb->username}}</td>
-                    <td>{{$cdb->first_name}}</td>
-                    <td>{{$cdb->last_name}}</td>
-                    <td>{{$cdb->mobile}}</td>
+                    <td>{{$cdb->lec_name}}</td>
+                    <td>{{$cdb->lec_mobile}}</td>
                     <td>
                         <div class="dropdown">
                             <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                               Action
                             </button>
                             <ul class="dropdown-menu">
-                              <li><a class="dropdown-item" href="{{url('update-student/'.$cdb->id)}}" >Edit</a></li>
-                              <li><a class="dropdown-item" href="{{url('delete-student/'.$cdb->id)}}">Delete</a></li>
+                              <li><a class="dropdown-item" href="" >Edit</a></li>
+                              <li><a class="dropdown-item" href="">Delete</a></li>
                               <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Change Password</a></li>  <!-- Button trigger modal -->
                               <li><a class="dropdown-item" href="">More</a></li>
                             </ul>
