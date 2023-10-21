@@ -22,8 +22,9 @@ use Illuminate\Support\Facades\Cookie;
 
 class lecturerController extends Controller
 {
-    public function lecturerhome() //view the guest home page
+    public function lecturerhome() //view the guest home page       //ok
     {
+        //return "mv";
         $dater = array();
         if(session()->has('reid')) /*If we are logged in session variable is assign, then we get the id of logged in user and detailas are assign to $dater variable and
                                    return the logged in user details to guest home.mainly it is used in header welcome message.*/
@@ -47,20 +48,20 @@ class lecturerController extends Controller
         return view('lecturer.lecturerregistration');
     }
 
-    public function guestrequest() //view guest request page.
+    public function lecturerrequest() //view guest request page.
     {
         $dater = array();     //return the details of logged in user to guest request form.
         if(session()->has('reid'))
         {
-            $dater=guest::where('id','=',session()->get('reid'))->first();
+            $dater=lecturer::where('id','=',session()->get('reid'))->first();
         }
         //return $dater;
-            return view('guest.guestrequestform',compact('dater'));
+            return view('lecturers.lecturerrequestform',compact('dater'));
         //return view('guest.guestregistration');
     }
 
 
-    public function lecturerstore(Request $request) //store guest registration details.
+    public function lecturerstore(Request $request) //store guest registration details.  //ok
     {
     //return $request;
         $request->validate([  //validation part.
@@ -78,7 +79,7 @@ class lecturerController extends Controller
                $file = $request->file('lec_photo');
                $extenstion = $file->getClientOriginalExtension();
                $filename = time().'.'.$extenstion;
-               $file->move('/uploads/lecturers/', $filename);
+               $file->move('uploads/lecturers/', $filename);
 
            }
            else{ //if photo is not added.
@@ -128,6 +129,71 @@ class lecturerController extends Controller
     {
     return back() -> with('fail',"confirm passsword is not match");
     }
+}
+
+
+//add details to the guest request table
+public function lecturerreq(Request $request) //request form details store to database.
+{
+//return $request;
+//$na=session()->get('reid');
+    $request->validate([
+        //'name'=> 'required',
+        //'email'=> 'required',
+        'date'=> 'required',
+        'starttime'=> 'required',
+        'endtime'=> 'required',
+        'hallname'=> 'required',
+        //'guest_id'=> 'required',
+
+
+      ]);
+      //return $request;
+      //return $request ->lecturerid;
+
+      $lecturerreq=lecturerrequest::create([
+        'lecturer_id'=> $request -> lecturerid,
+        'name'=> $request -> name,
+        'email' => $request -> email,
+        'date'=> $request -> date,
+        'start_time'=> $request -> starttime,
+        'end_time'=> $request -> endtime,
+        'hall_name'=> $request -> hallname,
+        'reason'=> $request -> note,
+
+
+        ]);
+
+        //return $res3;
+        $res3 = $lecturerreq -> save();
+
+        /*$image = new guest;
+        if($request->hasfile('photo'))
+       {
+           $file = $request->file('photo');
+           $extenstion = $file->getClientOriginalExtension();
+           $filename = time().'.'.$extenstion;
+           $file->move('uploads/guests/', $filename);
+           $image->photo = $filename;
+       }
+
+       $image->save();*/
+//return $request;
+
+
+        //$student=post::create($request->all());
+        //$student->password = Hash::make($request->input('password'));
+        //$student->save();
+        if($res3){
+        //return redirect('/') -> withSuccess("you are registered");
+        //return back() -> with('success',"you are registered");
+        return redirect('/lecturers/request') -> with('success',"your request is submitted");
+        }
+        else{
+            return back() -> with('fail',"your request is not submitted, Try again!");
+        }
+
+
 }
 
 }
