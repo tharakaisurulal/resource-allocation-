@@ -151,9 +151,7 @@
                 slideImages[counter].style.animation = 'prev2 0.5s ease-in forwards';
             }
             indicators();
-
         }
-
     </script>
 
 
