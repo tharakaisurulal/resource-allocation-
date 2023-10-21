@@ -1,4 +1,14 @@
 @extends('layout.headerFooter')
+@section('content2')
+       <li><a href="/">Home</a></li>
+       <li><a href="#">Staff</a></li>
+       <li><a href="#">Programs</a></li>
+       <li><a href="#">Research</a></li>
+       <li><a href="#">Services</a></li>
+       <li><a href="#">contact</a></li>
+       <li><a href="#">Log Out</a></li>
+@endsection
+
 @section('content')
 <html>
  <head>
@@ -21,7 +31,7 @@
     <script src="https://unpkg.com/scrollreveal"></script>
 
     <!--custom js link --->
-    
+
 
  </head>
 
@@ -46,11 +56,11 @@
         </div>
 
         <div class="dotsContainer">
-            <div class="dot active" attr="0"></div>
-            <div class="dot" attr="1"></div>
-            <div class="dot" attr="2"></div>
-            <div class="dot" attr="3"></div>
-            <div class="dot" attr="4"></div>
+            <div class="dot active" attr="0" onclick="switchImage(this)"></div>
+            <div class="dot" attr="1" onclick="switchImage(this)"></div>
+            <div class="dot" attr="2" onclick="switchImage(this)"></div>
+            <div class="dot" attr="3" onclick="switchImage(this)"></div>
+            <div class="dot" attr="4" onclick="switchImage(this)"></div>
         </div>
 
     </div>
@@ -78,11 +88,12 @@
             counter++;
         }
         slideImages[counter].style.animation = 'next2 0.5s ease-in forwards';
+        indicators();
         }
 
         //code for prev button
-        prev.addEventListener('click' , slideNext);
-        function slideNext(){
+        prev.addEventListener('click' , slidePrev);
+        function slidePrev(){
         slideImages[counter].style.animation = 'prev1 0.5s ease-in forwards';
         if(counter == 0){
             counter = slideImages.length -1;
@@ -91,13 +102,15 @@
             counter--;
         }
         slideImages[counter].style.animation = 'prev2 0.5s ease-in forwards';
+        indicators();
         }
 
         // Auto slideing
         function autoSliding() {
-            deletInterval = setInterval(timer, 2000);
+            deletInterval = setInterval(timer, 4000);
             function timer(){
             slideNext();
+            indicators();
         }
         }
         autoSliding();
