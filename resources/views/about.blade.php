@@ -118,12 +118,41 @@
         // stop auto sliding when mouse is over
         const container = document.querySelector('.slide-container');
         container.assEventListener('mouseover' , function(){
-        clearInterval(deletInterval);
+            clearInterval(deletInterval);
         });
 
         // Resume sliding when mouse is out
         container.addEventListener('mouseout', autoSliding);
 
+
+        //Add and remove active class from the indicators
+        function indicators(){
+            for(i = 0; i < dots.length; i++){
+                dots[i].className = dots[i].className.replace(' active','');
+            }
+            dots[counter].className += ' active';
+        }
+
+        //Add click event to the indicator
+        function switchImage(currentImage){
+            currentImage.classList.add('active');
+            var imageId = currentImage.getAttribute('attr');
+            if(imageId > counter){
+                slideImages[counter].style.animation = 'next1 0.5s ease-in forwards';
+                conter = imageId;
+                slideImages[counter].style.animation = 'next2 0.5s ease-in forwards';
+            }
+            else if(imageId == counter){
+                return;
+            }
+            else{
+                slideImages[counter].style.animation = 'prev1 0.5s ease-in forwards';
+                counter = imageId;
+                slideImages[counter].style.animation = 'prev2 0.5s ease-in forwards';
+            }
+            indicators();
+
+        }
 
     </script>
 
