@@ -3,9 +3,37 @@
 namespace App\Http\Controllers;
 use App\Models\accsupportive;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
+
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\hash;
+use session;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Contracts\Hashing\Hasher;
+use Illuminate\Contracts\Auth\Authenticatable;
+use Illuminate\Support\Facades\DB;
+
+use Illuminate\Http\Response;
+
+use Illuminate\Support\Facades\Cookie;
+
 
 class academicsupportiveController extends Controller
 {
+    public function academicsupportivehome() //view the guest home page       //ok
+    {
+        //return "mv";
+        $dater = array();
+        if(session()->has('reid')) /*If we are logged in session variable is assign, then we get the id of logged in user and detailas are assign to $dater variable and
+                                   return the logged in user details to guest home.mainly it is used in header welcome message.*/
+        {
+            $dater=accsupportive::where('id','=',session()->get('reid'))->first();
+        }
+        //return $dater;
+            return view('academicsupportive.academicsupportivehome',compact('dater'));
+        //return view('guest.guesthome');
+    }
+
     public function accsupstore(Request $request) //store guest registration details.  //ok
     {
     //return $request;

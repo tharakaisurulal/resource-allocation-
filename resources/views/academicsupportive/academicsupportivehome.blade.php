@@ -1,4 +1,19 @@
 @extends('layout.headerFooter')
+
+@section("content1")
+    <div class="header3"><img src="{{asset('/uploads/accsup/'.$dater->photo) }}" alt="image" class="img1"></div>
+    <div class="header2">
+        <h6>Welcome!</h6><br>
+        <h6>{{$dater->acc_name}}</h6>
+    </div>
+@endsection
+
+
+@section("content2")
+        <li><a href="/logout">LOG OUT</a></li>
+        <li><a href="#">ABOUT US</a></li>
+@endsection
+
 @section("content")
 <!DOCTYPE html>
 <html lang="en">
@@ -51,27 +66,6 @@
             </div>
         </div>
 
-
-
-
-        <div class="card">
-
-            <div class="face front">
-                <img src="/images/1523342686phpo9K5NA.jpeg" alt="" width=300px height=350px>
-                <h3> Time Table</h3>
-            </div>
-
-            <div class="face back">
-                    <div class="back-content center">
-                        <h3> Time Table</h3>
-                        <div class="button">
-                            <a href=""><span>CLICK</span></a>
-                        </div>
-                    </div>
-            </div>
-        </div>
-
-
         <div class="card">
 
             <div class="face front">
@@ -81,7 +75,7 @@
 
             <div class="face back">
                     <div class="back-content center">
-                        <h3> Request Form</h3>
+                        <h3> Maintains Form</h3>
                         <div class="button">
                             <a href="/lecturers/request"><span>CLICK</span></a>
                         </div>
