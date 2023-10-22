@@ -37,8 +37,8 @@ class timetableController extends Controller
             'endtime'=> 'required',
             'course'=> 'required',
             'level'=> 'required',
-            'lab'=> 'required',
-            'lecturehall'=> 'required',
+            //'lab'=> 'required',
+            //'lecturehall'=> 'required',
             'lecturername'=> 'required',
             'semester' => 'required'
           ]);
