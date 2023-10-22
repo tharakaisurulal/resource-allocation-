@@ -74,9 +74,9 @@ Route::get('/guestpage', function () {
     return view('guestpage');
 });
 
-Route::get('/tablebcslevel1', function () {
-    return view('tablebcslevel1');
-});
+//Route::get('/tablebcslevel1', function () {
+    //return view('tablebcslevel1');
+//});
 
 Route::get('/tablebcslevel2', function () {
     return view('tablebcslevel2');
@@ -158,6 +158,8 @@ Route::get('/academicsupportive/accsuplecturehalldetails', function () { //route
 Route::get('/academicsupportive/accsuplab', function () { //route to view lab page.
     return view('academicsupportive.accsuplab');
 });
+
+Route::get('/academicsupportive/acasuptablebcslevel1', [academicsupportiveController::class, 'viewbcs1'])->name('viewbcs1'); //storing data in lecturer table.
 
 /*student routes*/
 Route::get('/students/studenthome', [studentController::class, 'studenthome']);
@@ -271,6 +273,8 @@ Route::post('/admin/academicsupportive/accsupstore', [academicsupportiveControll
 
 //Route::post('updatelecturerpassword-lecturer/{id}',[academicsupportiveController::class, 'updatelecturerpassword'])->name('updatelecturerpassword');  //route to function of update student password.
 
+
+
 /*admin.lecturehall routes*/
 Route::get('/admin/guest/guestopera', [guestController::class, 'viewguest'])->name('admin.guest.guestopera');  //route to view student crud operation page.
 
@@ -280,3 +284,4 @@ Route::get('/admin/timetable/addtimetable', [timetableController::class, 'addtim
 Route::post('/admin/timetable/timetablestore', [timetableController::class, 'timetablestore'])->name('timetablestore'); //storing data in lecturer table.
 
 Route::get('/admin/timetable/timetableopera', [timetableController::class, 'viewtimetable'])->name('admin.timetable.timetableopera');  //route to view student crud operation page.
+

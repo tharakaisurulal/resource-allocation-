@@ -85,15 +85,10 @@
 
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="flush-headingSeven">
-                      <button class="accordion-button collapsed sec2" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven">
+                      <button class="accordion-button collapsed sec2" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven" onclick="window.location.href='/admin/timetable/timetableopera';">
                         <li><a href="#">TIMETABLE</a></li>
                       </button>
                     </h2>
-                    <div id="flush-collapseSeven" class="accordion-collapse collapse sec2" aria-labelledby="flush-headingSeven" data-bs-parent="#accordionFlushExample">
-                      <div class="accordion-body">
-                          <!--write-->
-                      </div>
-                    </div>
                   </div>
 
                   <div class="accordion-item">
