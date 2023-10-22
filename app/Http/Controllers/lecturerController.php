@@ -36,6 +36,18 @@ class lecturerController extends Controller
         //return view('guest.guesthome');
     }
 
+    public function viewlecturer(){  //view the students in database(inside the admin page).
+        $cusdata5= lecturer::all();
+        //return  $cusdata4;
+        if(count($cusdata5) === 0){  //if students table is empty it does not return the $cusdata4 because it is empty.
+            return view('admin.lecturer.lecopera');
+        }
+        else{
+            return view('admin.lecturer.lecopera',['cusdata5'=> $cusdata5]);
+        }
+    }
+
+
     public function lecturerregistration() //view guest registration page.          //ok
     {
         /*$dater = array();

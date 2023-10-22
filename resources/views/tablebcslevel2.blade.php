@@ -12,11 +12,11 @@
 
 
 
-<H1>MY TIMETABLE-[BCS(General) DEGREE PROGRAMME(LEVEL 2 SEMESTER 2)]</H1>
+<H1>BCS(General) DEGREE PROGRAMME(LEVEL 2 SEMESTER 2)</H1>
 <H2>Bachelor of Computer Science(General)(SC/2020)</H2>
 <br>
 
-<TABLE class="myTimetable"> 
+<TABLE class="myTimetable">
   <THEAD>
     <TR>
       <TH>Time</TH>
@@ -24,15 +24,15 @@
       <TH>Tuesday</TH>
       <TH>Wednesday</TH>
       <TH>Thursday</TH>
-      <TH>Friday</TH>     
+      <TH>Friday</TH>
     </TR>
   </THEAD>
   <TBODY>
     <TR>
-      
+
     <TD> 8.00-8.55</TD>
       <TD rowspan="2" >
-      
+
         <div class="code" >CSC2263(P)</div>
         <div class="lecturer">Mr.RANIL/Mr.LAL</div>
         <div class="hall">LAB 1</div>
@@ -43,32 +43,32 @@
         <div class="code" > </div>
         <div class="lecturer"> </div>
         <div class="hall"> </div>
-        
+
       </TD>
       <TD rowspan="2">
         <div class="code" >CSC2222(T)</div>
         <div class="lecturer">MS. HIRUNI</div>
         <div class="hall">MINI AUDITORIUM</div>
-        
+
       </TD>
       <TD rowspan="2">
         <div class="code" >CSC2213(T)</div>
         <div class="lecturer">MS. BINUNI</div>
         <div class="hall">MINI AUDITORIUM</div>
-        
+
       </TD>
       <TD rowspan="2">
         <div class="code" >CSC2242(T)</div>
         <div class="lecturer">MR. THILINA</div>
         <div class="hall">MINI AUDITORIUM</div>
-        
-      </TD>    
+
+      </TD>
     </TR>
-    
+
     <TR>
       <TD>9.00-9.55</TD>
 
-      
+
 
       <TD rowspan="2">
         <div class="code" >MAT225B</div>
@@ -76,49 +76,49 @@
         <div class="hall"></div>
         </TD>
 
-       
+
       </TR>
-      
+
       <TR>
       <TD>10.00-10.55</TD>
       <TD rowspan="2">
         <div class="code" >CSC2233(P)</div>
         <div class="lecturer">MRS.NILANI</div>
         <div class="hall">LAB 1</div>
-        
-      </TD>    
-      
+
+      </TD>
+
       <TD rowspan="2">
         <div class="code" >CSC2252(T)</div>
         <div class="lecturer">DR. WANNIGE</div>
         <div class="hall">MINI AUDITAURIUM</div>
-        
-      </TD>    
+
+      </TD>
       <TD rowspan="2">
         <div class="code" >CSC2213(P)</div>
         <div class="lecturer">MS. BINURI</div>
         <div class="hall">LAB 1(10.00AM-12.30PM)</div>
-        </TD> 
+        </TD>
 
       <TD rowspan="2">
         <div class="code" ></div>
         <div class="lecturer">DR. ARUNA & DR. CHARAKA</div>
         <div class="hall">MINI AUDITORIUM</div>
-        
-      </TD>    
+
+      </TD>
     </TR>
-     
+
     <TR>
       <TD>11.00-11.55</TD>
-      
+
       <TD>
         <div class="code" ></div>
         <div class="lecturer"></div>
         <div class="hall"></div>
         </TD>
-    
+
     </TR>
-     
+
 
       <TR>
       <TD colspan="6" class="lunch">Lunch</TD>
@@ -131,19 +131,19 @@
         <div class="lecturer"></div>
         <div class="hall"></div>
         </TD>
-    
+
         <TD rowspan="2">
         <div class="code" >CSC2263(T)</div>
         <div class="lecturer">MRS THARIKA</div>
         <div class="hall">LAB 1</div>
-        
-      </TD>   
+
+      </TD>
 
       <TD rowspan="2">
         <div class="code" >CSC2233(T)</div>
         <div class="lecturer">MRS GILMINI</div>
         <div class="hall">LAB 1</div>
-        </TD>  
+        </TD>
 
         <TD>
         <div class="code" ></div>
@@ -151,35 +151,35 @@
         <div class="hall"></div>
         </TD>
 
-      
+
         <TD rowspan="3">
         <div class="code" >PHY2222 & FSC225A</div>
         <div class="lecturer"></div>
         <div class="hall"></div>
-        </TD> 
+        </TD>
 </TR>
-      
+
       <TR>
       <TD>2.00-2.55</TD>
       <TD rowspan="3">
         <div class="code" >ZOO2232 & PHY2222</div>
         <div class="lecturer"></div>
         <div class="hall"></div>
-        </TD> 
+        </TD>
 
         <TD>
         <div class="code" >MAT225B</div>
         <div class="lecturer"></div>
         <div class="hall"></div>
         </TD>
-      
+
     </TR>
 
     <TR>
       <TD>3.00-3.55</TD>
-      
-      
-      
+
+
+
       <TD>
         <div class="code" >ZOO 2232</div>
         <div class="lecturer"></div>
@@ -191,18 +191,18 @@
         <div class="lecturer"></div>
         <div class="hall"></div>
         </TD>
-      
+
         <TD>
         <div class="code" ></div>
         <div class="lecturer"></div>
         <div class="hall"></div>
         </TD>
-    
+
     </TR>
 
     <TR>
       <TD>4.00-4.55</TD>
-      
+
       <TD>
         <div class="code" ></div>
         <div class="lecturer"></div>

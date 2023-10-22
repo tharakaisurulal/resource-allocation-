@@ -19,7 +19,7 @@
     <body>
         <div class="bdy">
         <form action="{{route('studentstore')}}" method="POST" enctype="multipart/form-data">
-            @if(session()->has('success'))
+        @if(session()->has('success'))
             <div class="alert alert-success div1">{{session()->get('success')}}</div>
         @endif
 
@@ -66,9 +66,17 @@
    <input type="file" class="form-control" id="profileImage" name="photo" accept="image/*">
    <label class="text-danger span1">@error('photo')  {{$message}}  @enderror</label><br>
 
+   <label for="name"><b>Degree Program:</b></label>
+   <select name="program" id="faculty">
+       <option value="">--Choose subject--</option>
+       <option value="1">BCs</option>
+       <option value="2">BSc</option>
+       </select>
+
+
    <label for="name"><b>Subject 1:</b></label>
     <select name="subject1" id="faculty">
-        <option value="">--Choose faculty--</option>
+        <option value="">--Choose subject--</option>
         <option value="op1">Faculty of Science</option>
         <option value="op2">Faculty of Management and Finance</option>
         <option value="op3">Faculty of Humanities and Social Sciences	</option>
@@ -81,7 +89,7 @@
 
         <label for="subject2"><b>Subject 2:</b></label>
     <select name="subject2" id="faculty">
-        <option value="">--Choose faculty--</option>
+        <option value="">--Choose subject--</option>
         <option value="op1">Faculty of Science</option>
         <option value="op2">Faculty of Management and Finance</option>
         <option value="op3">Faculty of Humanities and Social Sciences	</option>
@@ -94,7 +102,7 @@
 
         <label for="subject3"><b>Subject 3:</b></label>
     <select name="subject3" id="faculty">
-        <option value="">--Choose faculty--</option>
+        <option value="">--Choose subject--</option>
         <option value="op1">Faculty of Science</option>
         <option value="op2">Faculty of Management and Finance</option>
         <option value="op3">Faculty of Humanities and Social Sciences	</option>
@@ -107,7 +115,7 @@
 
         <label for="subject4"><b>Subject 4:</b></label>
     <select name="subject4" id="faculty">
-        <option value="">--Choose faculty--</option>
+        <option value="">--Choose subject--</option>
         <option value="op1">Faculty of Science</option>
         <option value="op2">Faculty of Management and Finance</option>
         <option value="op3">Faculty of Humanities and Social Sciences	</option>

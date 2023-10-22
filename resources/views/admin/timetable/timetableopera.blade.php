@@ -19,8 +19,8 @@
     <body>
         <div class="div1">
             <div class="div3">
-            <button type="button" class="btn btn-warning" onclick="window.location.href='/admin/student/sturegister'">
-                Add Students
+            <button type="button" class="btn btn-warning" onclick="window.location.href='/admin/timetable/addtimetable'">
+                Add Timetable
             </button>
             </div>
 
@@ -28,7 +28,7 @@
                 <h1>Retrive data</h1>
             </div>
 
-            @if(session()->has('success'))
+        @if(session()->has('success'))
             <div class="alert alert-success div5">{{session()->get('success')}}</div>
         @endif
 
@@ -37,36 +37,47 @@
         @endif
 
 
-            @if (isset($cusdata4))
+            @if (isset($cusdata8))
          <div class="d-flex justify-content-center div2">
 
             <table class="table table-dark">
                 <thead>
-                    <td>Id</td>
-                    <td>username</td>
-                    <td>first name</td>
-                    <td>last_name</td>
-                    <td>mobile</td>
+                    <td>Program</td>
+                    <td>Course code</td>
+                    <td>Course name</td>
+                    <td>Level</td>
+                    <td>Semester</td>
+                    <td>Day</td>
+                    <td>Start Time</td>
+                    <td>End Time</td>
+                    <td>Lecturer</td>
+                    <td>Lecturehall</td>
+                    <td>Lab</td>
                     <td>Action</td>
 
                 </thead>
                 <tbody>
-                    @foreach ($cusdata4 as $cdb)
+                    @foreach ($data1 as $cdb)
                 <tr>
-                    <td>{{$cdb->id}}</td>
-                    <td>{{$cdb->username}}</td>
-                    <td>{{$cdb->first_name}}</td>
-                    <td>{{$cdb->last_name}}</td>
-                    <td>{{$cdb->mobile}}</td>
+                    <td>{{$cdb->program}}</td>
+                    <td>{{$cdb->course_code}}</td>
+                    <td>{{$cdb->course_name}}</td>
+                    <td>{{$cdb->level}}</td>
+                    <td>{{$cdb->semester}}</td>
+                    <td>{{$cdb->day}}</td>
+                    <td>{{$cdb->start_time}}</td>
+                    <td>{{$cdb->end_time}}</td>
+                    <td>{{$cdb->lec_name}}</td>
+                    <td>{{$cdb->lh_name}}</td>
+                    <td>{{$cdb->lab_name}}</td>
                     <td>
                         <div class="dropdown">
                             <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                               Action
                             </button>
                             <ul class="dropdown-menu">
-                              <li><a class="dropdown-item" href="{{url('update-student/'.$cdb->id)}}" >Edit</a></li>
-                              <li><a class="dropdown-item" href="{{url('delete-student/'.$cdb->id)}}">Delete</a></li>
-                              <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Change Password</a></li>  <!-- Button trigger modal -->
+                              <li><a class="dropdown-item" href="" >Edit</a></li>
+                              <li><a class="dropdown-item" href="">Delete</a></li>
                               <li><a class="dropdown-item" href="">More</a></li>
                             </ul>
                           </div>

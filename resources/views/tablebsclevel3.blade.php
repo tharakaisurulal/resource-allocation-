@@ -12,11 +12,11 @@
 
 
 
-<H1>MY TIMETABLE-[BSc(General) DEGREE PROGRAMME(LEVEL 3 SEMESTER 2)]</H1>
+<H1>BSc(General) DEGREE PROGRAMME(LEVEL 3 SEMESTER 2)</H1>
 <H2>Bachelor of Physical Science(General)(SC/2019)</H2>
 <br>
 
-<TABLE class="myTimetable"> 
+<TABLE class="myTimetable">
   <THEAD>
     <TR>
       <TH>Time</TH>
@@ -24,12 +24,12 @@
       <TH>Tuesday</TH>
       <TH>Wednesday</TH>
       <TH>Thursday</TH>
-      <TH>Friday</TH>     
+      <TH>Friday</TH>
     </TR>
   </THEAD>
   <TBODY>
     <TR>
-      
+
     <TD> 8.00-9.00</TD>
       <TD>
         <div class="code" ></div>
@@ -42,28 +42,28 @@
         <div class="code" ></div>
         <div class="lecturer"> </div>
         <div class="hall"> </div>
-        
+
       </TD>
       <TD>
         <div class="code" ></div>
         <div class="lecturer"></div>
         <div class="hall"></div>
-        
+
       </TD>
       <TD >
         <div class="code" ></div>
         <div class="lecturer"></div>
         <div class="hall"></div>
-        
+
       </TD>
       <TD >
         <div class="code" ></div>
         <div class="lecturer"></div>
         <div class="hall"></div>
-        
-      </TD>    
+
+      </TD>
     </TR>
-    
+
     <TR>
       <TD>9.00-9.55</TD>
 
@@ -78,7 +78,7 @@
         <div class="code" >COM PROJECT GROUP PRACTICAL</div>
         <div class="lecturer"> </div>
         <div class="hall"> </div>
-        
+
       </TD>
 
         <TD>
@@ -91,7 +91,7 @@
         <div class="code" >COM PROJECT GROUP PRACTICAL</div>
         <div class="lecturer"> </div>
         <div class="hall"> </div>
-        
+
       </TD>
 
         <TD>
@@ -100,36 +100,36 @@
         <div class="hall"></div>
         </TD>
 
-       
-       
+
+
       </TR>
-      
+
       <TR>
       <TD>10.00-10.55</TD>
       <TD >
         <div class="code" ></div>
         <div class="lecturer"></div>
         <div class="hall"></div>
-        
-      </TD>    
-      
-      
+
+      </TD>
+
+
       <TD>
         <div class="code" ></div>
         <div class="lecturer"></div>
         <div class="hall"></div>
-        </TD> 
+        </TD>
 
-      
-      
+
+
       <TD >
         <div class="code" ></div>
         <div class="lecturer"></div>
         <div class="hall"></div>
-        
-      </TD>    
+
+      </TD>
     </TR>
-     
+
     <TR>
       <TD>11.00-12.00</TD>
 
@@ -137,27 +137,27 @@
         <div class="code" ></div>
         <div class="lecturer"></div>
         <div class="hall"></div>
-        
-      </TD>   
+
+      </TD>
 
       <TD >
         <div class="code" ></div>
         <div class="lecturer"></div>
         <div class="hall"></div>
-        
-      </TD>   
+
+      </TD>
 
       <TD >
         <div class="code" ></div>
         <div class="lecturer"></div>
         <div class="hall"></div>
-        
-      </TD>   
-      
-      
-    
+
+      </TD>
+
+
+
     </TR>
-     
+
 
       <TR>
       <TD colspan="6" class="lunch">Lunch</TD>
@@ -165,31 +165,31 @@
 
       <TR>
       <TD>13.00-13.55</TD>
-    
-    
+
+
         <TD >
         <div class="code" ></div>
         <div class="lecturer"></div>
         <div class="hall"></div>
-        
-      </TD>   
+
+      </TD>
 
       <TD>
         <div class="code" ></div>
         <div class="lecturer"></div>
         <div class="hall"></div>
-        </TD>  
+        </TD>
 
-      
+
         <TD >
         <div class="code" ></div>
         <div class="lecturer"></div>
         <div class="hall"></div>
-        </TD> 
+        </TD>
 
-        
 
-       
+
+
         <TD>
         <div class="code" ></div>
         <div class="lecturer"></div>
@@ -201,12 +201,12 @@
         <div class="lecturer"></div>
         <div class="hall"></div>
         </TD>
-     
+
     </TR>
-      
+
       <TR>
       <TD>14.00-14.55</TD>
-      
+
 
         <TD >
         <div class="code" ></div>
@@ -237,14 +237,14 @@
         <div class="lecturer"></div>
         <div class="hall"></div>
         </TD>
-      
+
     </TR>
 
     <TR>
       <TD>15.00-15.55</TD>
-      
-      
-      
+
+
+
       <TD>
         <div class="code" ></div>
         <div class="lecturer"></div>
@@ -256,12 +256,6 @@
         <div class="lecturer"></div>
         <div class="hall"></div>
         </TD>
-      
-        <TD>
-        <div class="code" ></div>
-        <div class="lecturer"></div>
-        <div class="hall"></div>
-        </TD>
 
         <TD>
         <div class="code" ></div>
@@ -274,12 +268,18 @@
         <div class="lecturer"></div>
         <div class="hall"></div>
         </TD>
-    
+
+        <TD>
+        <div class="code" ></div>
+        <div class="lecturer"></div>
+        <div class="hall"></div>
+        </TD>
+
     </TR>
 
     <TR>
       <TD>16.00-16.55</TD>
-      
+
       <TD>
         <div class="code" ></div>
         <div class="lecturer"></div>

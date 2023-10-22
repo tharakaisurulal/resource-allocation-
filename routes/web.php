@@ -11,6 +11,7 @@ use App\Http\Controllers\adminController;
 use App\Http\Controllers\studentController;
 use App\Http\Controllers\lecturerController;
 use App\Http\Controllers\academicsupportiveController;
+use App\Http\Controllers\timetableController;
 
 /*
 |--------------------------------------------------------------------------
@@ -68,6 +69,9 @@ Route::get('/add', function () { //route to testing page.
 
 Route::get('/header', function () {  //route to view header layout.
     return view('layout.header');
+});
+Route::get('/guestpage', function () {
+    return view('guestpage');
 });
 
 Route::get('/tablebcslevel1', function () {
@@ -238,7 +242,7 @@ Route::post('updatestudentpassword-student/{id}',[studentController::class, 'upd
 
 
 /*admin.lecturer routes*/
-//Route::get('/admin/lecturer/stuopera', [studentController::class, 'viewlecturer'])->name('admin.lecturer.lectureropera');  //route to view student crud operation page.
+Route::get('/admin/lecturer/lectureopera', [lecturerController::class, 'viewlecturer'])->name('admin.lecturer.lectureropera');  //route to view student crud operation page.
 
 Route::get('/admin/lecturer/lecturerregister', function () { //view student registration page.
     return view('admin.lecturer.lecturerregistration');
@@ -253,7 +257,7 @@ Route::post('/admin/lecturer/lecturerstore', [lecturerController::class, 'lectur
 //Route::post('updatelecturerpassword-lecturer/{id}',[lecturerController::class, 'updatelecturerpassword'])->name('updatelecturerpassword');  //route to function of update student password.
 
 /*admin.academicsupportive routes*/
-//Route::get('/admin/lecturer/stuopera', [studentController::class, 'viewlecturer'])->name('admin.lecturer.lectureropera');  //route to view student crud operation page.
+Route::get('/admin/academicsupportive/academicsupopera', [academicsupportiveController::class, 'viewacademicsupportive'])->name('admin.academicsupportive.academicsupopera');  //route to view student crud operation page.
 
 Route::get('/admin/academicsupportive/academicsupregister', function () { //view student registration page.
     return view('admin.academicsupportive.academicsupregistration');
@@ -267,3 +271,12 @@ Route::post('/admin/academicsupportive/accsupstore', [academicsupportiveControll
 
 //Route::post('updatelecturerpassword-lecturer/{id}',[academicsupportiveController::class, 'updatelecturerpassword'])->name('updatelecturerpassword');  //route to function of update student password.
 
+/*admin.lecturehall routes*/
+Route::get('/admin/guest/guestopera', [guestController::class, 'viewguest'])->name('admin.guest.guestopera');  //route to view student crud operation page.
+
+/*admin.timetable routes*/
+Route::get('/admin/timetable/addtimetable', [timetableController::class, 'addtimetable'])->name('admin.timetable.addtimetable');  //route to view student crud operation page.
+
+Route::post('/admin/timetable/timetablestore', [timetableController::class, 'timetablestore'])->name('timetablestore'); //storing data in lecturer table.
+
+Route::get('/admin/timetable/timetableopera', [timetableController::class, 'viewtimetable'])->name('admin.timetable.timetableopera');  //route to view student crud operation page.
