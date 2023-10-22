@@ -159,7 +159,25 @@ Route::get('/academicsupportive/accsuplab', function () { //route to view lab pa
     return view('academicsupportive.accsuplab');
 });
 
-Route::get('/academicsupportive/acasuptablebcslevel1', [academicsupportiveController::class, 'viewbcs1'])->name('viewbcs1'); //storing data in lecturer table.
+Route::get('/academicsupportive/acasuptablebcslevel1sem1', [academicsupportiveController::class, 'viewbcs1sem1'])->name('viewbcs1sem1'); //storing data in lecturer table.
+Route::get('/academicsupportive/acasuptablebcslevel1sem2', [academicsupportiveController::class, 'viewbcs1sem2'])->name('viewbcs1sem2');
+
+Route::get('/academicsupportive/acasuptablebcslevel2sem1', [academicsupportiveController::class, 'viewbcs2sem1'])->name('viewbcs2sem1');
+Route::get('/academicsupportive/acasuptablebcslevel2sem2', [academicsupportiveController::class, 'viewbcs2sem2'])->name('viewbcs2sem2');
+
+Route::get('/academicsupportive/acasuptablebcslevel3sem1', [academicsupportiveController::class, 'viewbcs3sem1'])->name('viewbcs3sem1');
+Route::get('/academicsupportive/acasuptablebcslevel3sem2', [academicsupportiveController::class, 'viewbcs3sem2'])->name('viewbcs3sem2');
+
+Route::get('/academicsupportive/acasuptablebsclevel1sem1', [academicsupportiveController::class, 'viewbsc1sem1'])->name('viewbsc1sem1');
+Route::get('/academicsupportive/acasuptablebsclevel1sem2', [academicsupportiveController::class, 'viewbsc1sem2'])->name('viewbsc1sem2');
+
+Route::get('/academicsupportive/acasuptablebsclevel2sem1', [academicsupportiveController::class, 'viewbsc2sem1'])->name('viewbsc2sem1');
+Route::get('/academicsupportive/acasuptablebsclevel2sem2', [academicsupportiveController::class, 'viewbsc2sem2'])->name('viewbsc2sem2');
+
+Route::get('/academicsupportive/acasuptablebsclevel3sem1', [academicsupportiveController::class, 'viewbsc3sem1'])->name('viewbsc3sem1');
+Route::get('/academicsupportive/acasuptablebsclevel3sem2', [academicsupportiveController::class, 'viewbsc3sem2'])->name('viewbsc3sem2');
+
+Route::post('/academicsupportive/choosetimetable', [academicsupportiveController::class, 'choosetimetable'])->name('choosetimetable');
 
 /*student routes*/
 Route::get('/students/studenthome', [studentController::class, 'studenthome']);
