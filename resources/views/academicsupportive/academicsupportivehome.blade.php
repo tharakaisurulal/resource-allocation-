@@ -75,25 +75,67 @@
 
             <div class="face back">
                     <div class="back-content center">
-                        <h3> Time Table</h3>
-                        <div class="dropdown">
+                        <h3> Time Table</h3><br>
+                            <form action="{{route('choosetimetable')}}" method="POST">
+                                @csrf
+                                <table>
+                                    <tr>
+                                        <td colspan="3" id="td1"><h5><b>Choose Level</b></h5></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label class="container">One
+                                                <input type="radio" checked="checked" name="radio" value="1">
+                                                <span class="checkmark"></span>
+                                              </label>
+                                        </td>
+                                        <td>
+                                            <label class="container">Two
+                                                <input type="radio" name="radio" value="2">
+                                                <span class="checkmark"></span>
+                                              </label>
+                                        </td>
+                                        <td>
+                                            <label class="container">Three
+                                                <input type="radio" name="radio" value="3">
+                                                <span class="checkmark"></span>
+                                              </label>
+                                        </td>
+                                    </tr>
+                                    <hr class="hr1">
+                                    <tr>
+                                        <td colspan="3" id="td1"><h5><b>Choose Semester</b></h5></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label class="container1">One
+                                                <input type="radio" checked="checked" name="radio1" value="1">
+                                                <span class="checkmark"></span>
+                                              </label>
+                                        </td>
+                                        <td>
+                                            <label class="container1">Two
+                                                <input type="radio" name="radio1" value="2">
+                                                <span class="checkmark"></span>
+                                              </label>
+                                        </td>
+
+                                    </tr>
+                                </table>
+                                <hr>
+                                <button type="submit" class="btn btn-primary">View</button>
+                            </form>
+
+                        <!--<div class="dropdown">
                         <div class="button btn-sm dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                             <a><span>BCs</span></a>
                         </div>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="/academicsupportive/acasuptablebcslevel1" >Level 1</a></li>
-                            <li><a class="dropdown-item" href="/tablebcslevel2">Level 2</a></li>
-                            <li><a class="dropdown-item" href="">Level 3</a></li>
+                          <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/academicsupportive/acasuptablebcslevel1sem1" >Level 1</a></li>
+                            <li><a class="dropdown-item" href="/academicsupportive/acasuptablebcslevel2sem2">Level 2</a></li>
+                            <li><a class="dropdown-item" href="/academicsupportive/acasuptablebcslevel3sem1">Level 3</a></li>
                           </ul>
-                        <div class="button btn-sm dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                            <a><span>BSc</span></a>
-                        </div>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="" >Level 1</a></li>
-                            <li><a class="dropdown-item" href="">Level 2</a></li>
-                            <li><a class="dropdown-item" href="/tablebsclevel3">Level 3</a></li>
-                          </ul>
-                        </div>
+                        </div>-->
                     </div>
             </div>
         </div>

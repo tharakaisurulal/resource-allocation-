@@ -72,28 +72,36 @@ class timetableController extends Controller
 }
 
 public function viewtimetable(){  //view the students in database(inside the admin page).
-    $cusdata8= timetable::all();
+    //$cusdata8= timetable::all();
     //return  $cusdata8;
-    if(count($cusdata8) === 0){  //if students table is empty it does not return the $cusdata4 because it is empty.
+    //if(count($cusdata8) === 0){  //if students table is empty it does not return the $cusdata4 because it is empty.
         //return $cusdata8;
-        return view('admin.timetable.timetableopera');
-    }
-    else{
+       // return view('admin.timetable.timetableopera');
+   // }
+    //else{
         $data1 = DB::table('timetables')
             ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
             ->join('programs', 'timetables.program_id', '=', 'programs.id')
             ->join('courses', 'timetables.course_id', '=', 'courses.id')
             ->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
-            ->join('labs', 'timetables.lab_id', '=', 'labs.id')
-        ->select('timetables.*', 'courses.course_name', 'courses.course_code','lecturehalls.lh_name','programs.program','labs.lab_name','lecturers.lec_name')
+            //->join('labs', 'timetables.lab_id', '=', 'labs.id')
+        ->select('timetables.*', 'courses.course_name', 'courses.course_code','lecturehalls.lh_name','programs.program','lecturers.lec_name')
             //->where('lh_name','=','MLT1')
             //->where('day','=','Monday')
         ->get();
-         //return view('booking');
-         //return view('booking',['data1'=> $data1]);
-         //return $data1;
-
-        return view('admin.timetable.timetableopera',['data1'=> $data1],['cusdata8'=> $cusdata8]);
-    }
+        //return $data1;
+        $data2 = DB::table('timetables')
+            ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+            ->join('programs', 'timetables.program_id', '=', 'programs.id')
+            ->join('courses', 'timetables.course_id', '=', 'courses.id')
+            //->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
+            ->join('labs', 'timetables.lab_id', '=', 'labs.id')
+        ->select('timetables.*', 'courses.course_name', 'courses.course_code','programs.program','lecturers.lec_name','labs.lab_name')
+            //->where('lh_name','=','MLT1')
+            //->where('day','=','Monday')
+        ->get();
+        //return $data2;
+        return view('admin.timetable.timetableopera',['data1'=> $data1,'data2'=> $data2]);
+    //}
 }
 }
