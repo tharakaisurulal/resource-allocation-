@@ -1,6 +1,6 @@
 @extends('layout.header')
 @section('content2')
-        <li><a href="">BACK</a></li>
+        <li><a href="/admin/timetable/timetableopera">BACK</a></li>
 @endsection
 
 @section('content')
@@ -17,7 +17,7 @@
     </head>
     <body>
         <div class="bdy">
-        <form action="{{route('studentstore')}}" method="POST" enctype="multipart/form-data">
+        <form action="{{route('timetablestore')}}" method="POST">
         @if(session()->has('success'))
             <div class="alert alert-success div1">{{session()->get('success')}}</div>
         @endif
@@ -41,6 +41,7 @@
         @endphp</option>
         @endforeach
         </select>
+        <label class="text-danger span1">@error('program')  {{$message}}  @enderror</label><br>
 
         <label for="name"><b>Course:</b></label>
     <select name="course" id="faculty">
@@ -51,6 +52,7 @@
         @endphp</option>
         @endforeach
         </select>
+        <label class="text-danger span1">@error('course')  {{$message}}  @enderror</label><br>
 
         <label for="name"><b>Level:</b></label>
     <select name="level" id="faculty">
@@ -59,6 +61,7 @@
         <option value="leve2">Level 2</option>
         <option value="leve3">Level 3</option>
         </select>
+        <label class="text-danger span1">@error('level')  {{$message}}  @enderror</label><br>
 
         <label for="name"><b>Semester:</b></label>
     <select name="semester" id="faculty">
@@ -66,6 +69,7 @@
         <option value="semester1">Semester 1</option>
         <option value="semester2">Semester 2</option>
         </select>
+        <label class="text-danger span1">@error('semester')  {{$message}}  @enderror</label><br>
 
         <label for="name"><b>Day:</b></label>
     <select name="day" id="faculty">
@@ -78,13 +82,14 @@
         <option value="Friday">Friday</option>
         <option value="Saturday">Saturday</option>
         </select>
+        <label class="text-danger span1">@error('day')  {{$message}}  @enderror</label><br>
 
     <label for="name"><b>Start Time:</b></label>
-    <input type="time" name="starttime" id="name" ><br>
+    <input type="time" name="starttime" id="faculty" >
     <label class="text-danger span1">@error('starttime')  {{$message}}  @enderror</label><br>
 
     <label for="name"><b>End Time:</b></label>
-    <input type="time" name="endtime" id="name" ><br>
+    <input type="time" name="endtime" id="faculty" ><br>
     <label class="text-danger span1">@error('endtime')  {{$message}}  @enderror</label><br>
 
     <label for="name"><b>Lecturehall:</b></label>
@@ -96,6 +101,7 @@
         @endphp</option>
         @endforeach
         </select>
+        <label class="text-danger span1">@error('lecturehall')  {{$message}}  @enderror</label><br>
 
         <label for="name"><b>Lab:</b></label>
     <select name="lab" id="faculty">
@@ -106,6 +112,7 @@
         @endphp</option>
         @endforeach
         </select>
+        <label class="text-danger span1">@error('lab')  {{$message}}  @enderror</label><br>
 
         <label for="name"><b>Lecturer Name:</b></label>
     <select name="lecturername" id="faculty">
@@ -116,6 +123,7 @@
         @endphp</option>
         @endforeach
         </select>
+        <label class="text-danger span1">@error('lecturername')  {{$message}}  @enderror</label><br>
    <hr>
     <button type="submit" class="registerbtn">Register</button>
   </div>
