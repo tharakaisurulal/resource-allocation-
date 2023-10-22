@@ -132,12 +132,12 @@ public function viewbcs1sem1() //view the guest home page       //ok
 
 
         $data2 = DB::table('timetables')
-        ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+        ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
         ->join('programs', 'timetables.program_id', '=', 'programs.id')
         ->join('courses', 'timetables.course_id', '=', 'courses.id')
         //->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
         ->join('labs', 'timetables.lab_id', '=', 'labs.id')
-    ->select('timetables.*', 'courses.course_name', 'courses.course_code','programs.program','labs.lab_name','lecturers.lec_name')
+    ->select('timetables.*', 'courses.course_name', 'courses.course_code','programs.program','labs.lab_name','accsupportives.acc_name')
         ->where('program','=','BCs')
         ->where('level','=','level1')
         ->where('semester','=','semester1')
@@ -165,12 +165,12 @@ public function viewbcs1sem2() //view the guest home page       //ok
 
 
         $data2 = DB::table('timetables')
-        ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+        ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
         ->join('programs', 'timetables.program_id', '=', 'programs.id')
         ->join('courses', 'timetables.course_id', '=', 'courses.id')
         //->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
         ->join('labs', 'timetables.lab_id', '=', 'labs.id')
-    ->select('timetables.*', 'courses.course_name', 'courses.course_code','programs.program','labs.lab_name','lecturers.lec_name')
+    ->select('timetables.*', 'courses.course_name', 'courses.course_code','programs.program','labs.lab_name','accsupportives.acc_name')
         ->where('program','=','BCs')
         ->where('level','=','level1')
         ->where('semester','=','semester2')
@@ -198,12 +198,12 @@ public function viewbcs2sem1() //view the guest home page       //ok
 
 
         $data2 = DB::table('timetables')
-        ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+        ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
         ->join('programs', 'timetables.program_id', '=', 'programs.id')
         ->join('courses', 'timetables.course_id', '=', 'courses.id')
         //->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
         ->join('labs', 'timetables.lab_id', '=', 'labs.id')
-    ->select('timetables.*', 'courses.course_name', 'courses.course_code','programs.program','labs.lab_name','lecturers.lec_name')
+    ->select('timetables.*', 'courses.course_name', 'courses.course_code','programs.program','labs.lab_name','accsupportives.acc_name')
         ->where('program','=','BCs')
         ->where('level','=','level2')
         ->where('semester','=','semester1')
@@ -231,12 +231,12 @@ public function viewbcs2sem2() //view the guest home page       //ok
 
 
         $data2 = DB::table('timetables')
-        ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+        ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
         ->join('programs', 'timetables.program_id', '=', 'programs.id')
         ->join('courses', 'timetables.course_id', '=', 'courses.id')
         //->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
         ->join('labs', 'timetables.lab_id', '=', 'labs.id')
-    ->select('timetables.*', 'courses.course_name', 'courses.course_code','programs.program','labs.lab_name','lecturers.lec_name')
+    ->select('timetables.*', 'courses.course_name', 'courses.course_code','programs.program','labs.lab_name','accsupportives.acc_name')
         ->where('program','=','BCs')
         ->where('level','=','level2')
         ->where('semester','=','semester2')
@@ -264,12 +264,12 @@ public function viewbcs3sem1() //view the guest home page       //ok
 
 
         $data2 = DB::table('timetables')
-        ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+        ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
         ->join('programs', 'timetables.program_id', '=', 'programs.id')
         ->join('courses', 'timetables.course_id', '=', 'courses.id')
         //->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
         ->join('labs', 'timetables.lab_id', '=', 'labs.id')
-    ->select('timetables.*', 'courses.course_name', 'courses.course_code','programs.program','labs.lab_name','lecturers.lec_name')
+    ->select('timetables.*', 'courses.course_name', 'courses.course_code','programs.program','labs.lab_name','accsupportives.acc_name')
         ->where('program','=','BCs')
         ->where('level','=','level3')
         ->where('semester','=','semester1')
@@ -297,12 +297,12 @@ public function viewbcs3sem2() //view the guest home page       //ok
 
 
         $data2 = DB::table('timetables')
-        ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+        ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
         ->join('programs', 'timetables.program_id', '=', 'programs.id')
         ->join('courses', 'timetables.course_id', '=', 'courses.id')
         //->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
         ->join('labs', 'timetables.lab_id', '=', 'labs.id')
-    ->select('timetables.*', 'courses.course_name', 'courses.course_code','programs.program','labs.lab_name','lecturers.lec_name')
+    ->select('timetables.*', 'courses.course_name', 'courses.course_code','programs.program','labs.lab_name','accsupportives.acc_name')
         ->where('program','=','BCs')
         ->where('level','=','level3')
         ->where('semester','=','semester2')
@@ -330,12 +330,12 @@ public function viewbsc1sem1() //view the guest home page       //ok
 
 
         $data2 = DB::table('timetables')
-        ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+        ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
         ->join('programs', 'timetables.program_id', '=', 'programs.id')
         ->join('courses', 'timetables.course_id', '=', 'courses.id')
         //->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
         ->join('labs', 'timetables.lab_id', '=', 'labs.id')
-    ->select('timetables.*', 'courses.course_name', 'courses.course_code','programs.program','labs.lab_name','lecturers.lec_name')
+    ->select('timetables.*', 'courses.course_name', 'courses.course_code','programs.program','labs.lab_name','accsupportives.acc_name')
         ->where('program','=','BSc')
         ->where('level','=','level1')
         ->where('semester','=','semester1')
@@ -363,12 +363,12 @@ public function viewbsc1sem2() //view the guest home page       //ok
 
 
         $data2 = DB::table('timetables')
-        ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+        ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
         ->join('programs', 'timetables.program_id', '=', 'programs.id')
         ->join('courses', 'timetables.course_id', '=', 'courses.id')
         //->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
         ->join('labs', 'timetables.lab_id', '=', 'labs.id')
-    ->select('timetables.*', 'courses.course_name', 'courses.course_code','programs.program','labs.lab_name','lecturers.lec_name')
+    ->select('timetables.*', 'courses.course_name', 'courses.course_code','programs.program','labs.lab_name','accsupportives.acc_name')
         ->where('program','=','BSc')
         ->where('level','=','level1')
         ->where('semester','=','semester2')
@@ -396,12 +396,12 @@ public function viewbsc2sem1() //view the guest home page       //ok
 
 
         $data2 = DB::table('timetables')
-        ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+        ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
         ->join('programs', 'timetables.program_id', '=', 'programs.id')
         ->join('courses', 'timetables.course_id', '=', 'courses.id')
         //->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
         ->join('labs', 'timetables.lab_id', '=', 'labs.id')
-    ->select('timetables.*', 'courses.course_name', 'courses.course_code','programs.program','labs.lab_name','lecturers.lec_name')
+    ->select('timetables.*', 'courses.course_name', 'courses.course_code','programs.program','labs.lab_name','accsupportives.acc_name')
         ->where('program','=','BSc')
         ->where('level','=','level2')
         ->where('semester','=','semester1')
@@ -429,12 +429,12 @@ public function viewbsc2sem2() //view the guest home page       //ok
 
 
         $data2 = DB::table('timetables')
-        ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+        ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
         ->join('programs', 'timetables.program_id', '=', 'programs.id')
         ->join('courses', 'timetables.course_id', '=', 'courses.id')
         //->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
         ->join('labs', 'timetables.lab_id', '=', 'labs.id')
-    ->select('timetables.*', 'courses.course_name', 'courses.course_code','programs.program','labs.lab_name','lecturers.lec_name')
+    ->select('timetables.*', 'courses.course_name', 'courses.course_code','programs.program','labs.lab_name','accsupportives.acc_name')
         ->where('program','=','BSc')
         ->where('level','=','level2')
         ->where('semester','=','semester2')
@@ -462,12 +462,12 @@ public function viewbsc3sem1() //view the guest home page       //ok
 
 
         $data2 = DB::table('timetables')
-        ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+        ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
         ->join('programs', 'timetables.program_id', '=', 'programs.id')
         ->join('courses', 'timetables.course_id', '=', 'courses.id')
         //->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
         ->join('labs', 'timetables.lab_id', '=', 'labs.id')
-    ->select('timetables.*', 'courses.course_name', 'courses.course_code','programs.program','labs.lab_name','lecturers.lec_name')
+    ->select('timetables.*', 'courses.course_name', 'courses.course_code','programs.program','labs.lab_name','accsupportives.acc_name')
         ->where('program','=','BSc')
         ->where('level','=','level3')
         ->where('semester','=','semester1')
@@ -496,12 +496,12 @@ public function viewbsc3sem2() //view the guest home page       //ok
 
 
         $data2 = DB::table('timetables')
-        ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+        ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
         ->join('programs', 'timetables.program_id', '=', 'programs.id')
         ->join('courses', 'timetables.course_id', '=', 'courses.id')
         //->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
         ->join('labs', 'timetables.lab_id', '=', 'labs.id')
-    ->select('timetables.*', 'courses.course_name', 'courses.course_code','programs.program','labs.lab_name','lecturers.lec_name')
+    ->select('timetables.*', 'courses.course_name', 'courses.course_code','programs.program','labs.lab_name','accsupportives.acc_name')
         ->where('program','=','BSc')
         ->where('level','=','level3')
         ->where('semester','=','semester2')

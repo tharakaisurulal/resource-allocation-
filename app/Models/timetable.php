@@ -18,7 +18,8 @@ class timetable extends Model
         'lec_id',
         'lab_id',
         'lh_id',
-        'semester'
+        'semester',
+        'acc_id'
 
     ];
 }
