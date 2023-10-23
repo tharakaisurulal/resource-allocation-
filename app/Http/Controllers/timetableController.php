@@ -39,9 +39,10 @@ class timetableController extends Controller
             'endtime'=> 'required',
             'course'=> 'required',
             'level'=> 'required',
-            //'lab'=> 'required',
-            //'lecturehall'=> 'required',
-            //'lecturername'=> 'required',
+            'lecturehall'=> 'required_with:lecturername|required_without:lab|prohibits:lab',
+            'lab'=> 'required_with:accsupname|required_without:lecturehall|prohibits:lecturehall',
+            'lecturername'=> 'required_with:lecturehall',
+            'accsupname'=> 'required_with:lab',
             'semester' => 'required'
           ]);
           //return $request;
