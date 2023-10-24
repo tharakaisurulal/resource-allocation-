@@ -49,7 +49,6 @@
 <body class="body1">
     <div class="main">
     <!---------slideshow Start------------------------------------------------------------>
-
     <div class="slide-container">
 
         <div class="slides">
@@ -188,15 +187,14 @@
 
                     <div class="Premises">
                         <h4><ins>Department Premises</ins></h4>
-                        <div class="img">
-                            <img src={{asset('images/NewFloor3.jpg')}}>
+                        <div class="img1">
+                            <img src={{asset('images/.jpg')}}>
                         </div>
                     </div>
                 </div>
             </div>
     </div>
 </section>
-
 </body>
 </html>
 @endsection
