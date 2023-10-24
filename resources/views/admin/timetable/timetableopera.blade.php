@@ -111,7 +111,7 @@
                    <td>Day</td>
                    <td>Start Time</td>
                    <td>End Time</td>
-                   <td>Lecturer</td>
+                   <td>Academic Supportive</td>
                    <td>Lab</td>
                    <td>Action</td>
 
@@ -127,7 +127,7 @@
                    <td>{{$cdb->day}}</td>
                    <td>{{$cdb->start_time}}</td>
                    <td>{{$cdb->end_time}}</td>
-                   <td>{{$cdb->lec_name}}</td>
+                   <td>{{$cdb->acc_name}}</td>
                    <td>{{$cdb->lab_name}}</td>
 
                    <td>

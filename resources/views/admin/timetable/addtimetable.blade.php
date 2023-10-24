@@ -116,7 +116,7 @@
 
         <label for="name"><b>Lecturer Name:</b></label>
     <select name="lecturername" id="faculty">
-        <option value="">--Choose course--</option>
+        <option value="">--Choose Lecturer--</option>
         @foreach ($dater5 as $cdb5 )
         <option value="{{$cdb5->id}}">@php
             echo $cdb5->lec_name;
@@ -124,6 +124,17 @@
         @endforeach
         </select>
         <label class="text-danger span1">@error('lecturername')  {{$message}}  @enderror</label><br>
+
+        <label for="name"><b>Academic Supportive Name:</b></label>
+    <select name="accsupname" id="faculty">
+        <option value="">--Choose Academic sup.--</option>
+        @foreach ($dater6 as $cdb6 )
+        <option value="{{$cdb6->id}}">@php
+            echo $cdb6->acc_name;
+        @endphp</option>
+        @endforeach
+        </select>
+        <label class="text-danger span1">@error('accsupname')  {{$message}}  @enderror</label><br>
    <hr>
     <button type="submit" class="registerbtn">Register</button>
   </div>
