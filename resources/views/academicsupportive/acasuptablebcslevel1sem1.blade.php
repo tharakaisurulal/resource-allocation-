@@ -1003,6 +1003,8 @@
 
   <br><br>
 
+  <button type="button" class="btn btn-warning but1">Filter Timetable</button>
+<!--
   <h1 style="text-align: left;">NOTICE</h1>
   <div class="notice-board">
         <div class="notice-item">
@@ -1025,6 +1027,6 @@
         <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3968.406479149826!2d80.57409017456467!3d5.938578379684964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1scomputer%20science%20department%20university%20of%20ruhuna!5e0!3m2!1sen!2slk!4v1694582628653!5m2!1sen!2slk"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         </div>
-
+    -->
 </body>
 </html>
