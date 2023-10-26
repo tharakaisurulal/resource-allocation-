@@ -35,6 +35,12 @@ class academicsupportiveController extends Controller
         //return view('guest.guesthome');
     }
 
+    public function filtertimetable()
+    {
+            return view('academicsupportive.filtertimetable');
+
+    }
+
     public function viewacademicsupportive(){  //view the students in database(inside the admin page).
         $cusdata6= accsupportive::all();
         //return  $cusdata4;

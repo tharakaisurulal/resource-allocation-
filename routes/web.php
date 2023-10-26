@@ -179,6 +179,8 @@ Route::get('/academicsupportive/acasuptablebsclevel3sem2', [academicsupportiveCo
 
 Route::post('/academicsupportive/choosetimetable', [academicsupportiveController::class, 'choosetimetable'])->name('choosetimetable');
 
+Route::get('/academicsupportive/filtertimetable', [academicsupportiveController::class, 'filtertimetable'])->name('filtertimetable');
+
 /*student routes*/
 Route::get('/students/studenthome', [studentController::class, 'studenthome']);
 
