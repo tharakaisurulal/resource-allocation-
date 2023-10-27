@@ -26,6 +26,7 @@ class timetableController extends Controller
         //return $dater1;
             //return view('admin.timetable.addtimetable',compact('dater1'));
         //return view('guest.guesthome');
+
     }
 
 

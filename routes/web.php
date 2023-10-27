@@ -181,6 +181,8 @@ Route::post('/academicsupportive/choosetimetable', [academicsupportiveController
 
 Route::get('/academicsupportive/filtertimetable', [academicsupportiveController::class, 'filtertimetable'])->name('filtertimetable');
 
+Route::post('/academicsupportive/filtertimetablesubmit', [academicsupportiveController::class, 'filtertimetablesubmit'])->name('filtertimetablesubmit');
+
 /*student routes*/
 Route::get('/students/studenthome', [studentController::class, 'studenthome']);
 

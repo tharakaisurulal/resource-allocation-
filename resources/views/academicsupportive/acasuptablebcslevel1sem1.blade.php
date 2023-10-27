@@ -1003,7 +1003,7 @@
 
   <br><br>
 
-  <button type="button" class="btn btn-warning but1">Filter Timetable</button>
+  <button type="button" class="btn btn-warning but1" onclick="window.location.href='/academicsupportive/filtertimetable'">Filter Timetable</button>
 <!--
   <h1 style="text-align: left;">NOTICE</h1>
   <div class="notice-board">
