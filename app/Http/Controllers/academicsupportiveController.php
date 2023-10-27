@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\accsupportive;
-use App\Models\timetable;
+
+
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -17,6 +17,13 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Response;
 
 use Illuminate\Support\Facades\Cookie;
+use App\Models\course;
+use App\Models\program;
+use App\Models\lecturehall;
+use App\Models\lab;
+use App\Models\lecturer;
+use App\Models\timetable;
+use App\Models\accsupportive;
 
 
 class academicsupportiveController extends Controller
@@ -37,9 +44,995 @@ class academicsupportiveController extends Controller
 
     public function filtertimetable()
     {
-            return view('academicsupportive.filtertimetable');
+        $dater1=course::all();
+        $dater2=program::all();
+        $dater3=lecturehall::all();
+        $dater4=lab::all();
+        $dater5=lecturer::all();
+        $dater6=accsupportive::all();
+        return view('academicsupportive.filtertimetable',['dater1'=> $dater1,'dater2'=> $dater2,'dater3'=> $dater3,'dater4'=> $dater4,'dater5'=> $dater5,'dater6'=> $dater6]);
 
+            //return view('academicsupportive.filtertimetable');
     }
+
+    public function filtertimetablesubmit(Request $request)
+    {
+        $dater1=course::all();
+        $dater2=program::all();
+        $dater3=lecturehall::all();
+        $dater4=lab::all();
+        $dater5=lecturer::all();
+        $dater6=accsupportive::all();
+        //return view('academicsupportive.filtertimetable',['dater1'=> $dater1,'dater2'=> $dater2,'dater3'=> $dater3,'dater4'=> $dater4,'dater5'=> $dater5,'dater6'=> $dater6]);
+
+            if(($request -> prog)&&($request -> level)&&($request -> day)&&($request -> coursecode)&&!($request -> semester))
+            {
+                $joindata = DB::table('timetables')
+                ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+            ->join('programs', 'timetables.program_id', '=', 'programs.id')
+            ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'lecturers.lec_name', 'courses.course_name', 'courses.course_code')
+                ->where('program_id','=',$request -> prog)
+                ->where('level','=',$request -> level)
+                ->where('day','=',$request -> day)
+            ->where('courses.course_code','=',$request -> coursecode)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+
+                $joindata1 = DB::table('timetables')
+                ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
+            ->join('programs', 'timetables.program_id', '=', 'programs.id')
+            ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'accsupportives.acc_name', 'courses.course_name', 'courses.course_code')
+                ->where('program_id','=',$request -> prog)
+                ->where('level','=',$request -> level)
+                ->where('day','=',$request -> day)
+            ->where('courses.course_code','=',$request -> coursecode)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+                    return view('academicsupportive.filtertimetable',['joindata1'=> $joindata1,'joindata'=> $joindata,'dater1'=> $dater1,'dater2'=> $dater2,'dater3'=> $dater3,'dater4'=> $dater4,'dater5'=> $dater5,'dater6'=> $dater6]);
+                    //return $joindata;
+            }
+
+            elseif(($request -> prog)&&($request -> level)&&($request -> day)&&!($request -> coursecode)&&!($request -> semester))
+            {
+                $joindata = DB::table('timetables')
+                ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+                    //->join('orders', 'users.id', '=', 'orders.user_id')
+                    ->join('programs', 'timetables.program_id', '=', 'programs.id')
+                    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'lecturers.lec_name', 'courses.course_name','courses.course_code')
+                ->where('program_id','=',$request -> prog)
+                ->where('level','=',$request -> level)
+                ->where('day','=',$request -> day)
+                //->orwhere('course_code','=',$request -> coursecode)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+
+                $joindata1 = DB::table('timetables')
+                ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
+                    //->join('orders', 'users.id', '=', 'orders.user_id')
+                    ->join('programs', 'timetables.program_id', '=', 'programs.id')
+                    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'accsupportives.acc_name', 'courses.course_name','courses.course_code')
+                ->where('program_id','=',$request -> prog)
+                ->where('level','=',$request -> level)
+                ->where('day','=',$request -> day)
+                //->orwhere('course_code','=',$request -> coursecode)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+                    return view('academicsupportive.filtertimetable',['joindata1'=> $joindata1,'joindata'=> $joindata,'dater1'=> $dater1,'dater2'=> $dater2,'dater3'=> $dater3,'dater4'=> $dater4,'dater5'=> $dater5,'dater6'=> $dater6]);
+            }
+
+            elseif(($request -> prog)&&($request -> level)&&!($request -> day)&&!($request -> coursecode)&&!($request -> semester))
+            {
+                $joindata = DB::table('timetables')
+                ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+                    //->join('orders', 'users.id', '=', 'orders.user_id')
+                    ->join('programs', 'timetables.program_id', '=', 'programs.id')
+                    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'lecturers.lec_name', 'courses.course_name','courses.course_code')
+                ->where('program_id','=',$request -> prog)
+                ->where('level','=',$request -> level)
+                //->where('day','=',$request -> day)
+                //->orwhere('course_code','=',$request -> coursecode)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+
+                $joindata1 = DB::table('timetables')
+                ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
+                    //->join('orders', 'users.id', '=', 'orders.user_id')
+                    ->join('programs', 'timetables.program_id', '=', 'programs.id')
+                    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'accsupportives.acc_name', 'courses.course_name','courses.course_code')
+                ->where('program_id','=',$request -> prog)
+                ->where('level','=',$request -> level)
+                //->where('day','=',$request -> day)
+                //->orwhere('course_code','=',$request -> coursecode)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+                    return view('academicsupportive.filtertimetable',['joindata1'=> $joindata1,'joindata'=> $joindata,'dater1'=> $dater1,'dater2'=> $dater2,'dater3'=> $dater3,'dater4'=> $dater4,'dater5'=> $dater5,'dater6'=> $dater6]);
+            }
+
+            elseif(($request -> prog)&&!($request -> level)&&!($request -> day)&&!($request -> coursecode)&&!($request -> semester))
+            {
+                $joindata = DB::table('timetables')
+                ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+                    //->join('orders', 'users.id', '=', 'orders.user_id')
+                    ->join('programs', 'timetables.program_id', '=', 'programs.id')
+                    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'lecturers.lec_name', 'courses.course_name','courses.course_code')
+                ->where('program_id','=',$request -> prog)
+                //->where('level','=',$request -> level)
+                //->where('day','=',$request -> day)
+                //->orwhere('course_code','=',$request -> coursecode)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+
+                $joindata1 = DB::table('timetables')
+                ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
+                    //->join('orders', 'users.id', '=', 'orders.user_id')
+                    ->join('programs', 'timetables.program_id', '=', 'programs.id')
+                    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'accsupportives.acc_name', 'courses.course_name','courses.course_code')
+                ->where('program_id','=',$request -> prog)
+                //->where('level','=',$request -> level)
+                //->where('day','=',$request -> day)
+                //->orwhere('course_code','=',$request -> coursecode)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+                    return view('academicsupportive.filtertimetable',['joindata1'=> $joindata1,'joindata'=> $joindata,'dater1'=> $dater1,'dater2'=> $dater2,'dater3'=> $dater3,'dater4'=> $dater4,'dater5'=> $dater5,'dater6'=> $dater6]);
+            }
+
+            elseif(!($request -> prog)&&($request -> level)&&!($request -> day)&&!($request -> coursecode)&&!($request -> semester))
+            {
+                $joindata = DB::table('timetables')
+                ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+                    //->join('orders', 'users.id', '=', 'orders.user_id')
+                    ->join('programs', 'timetables.program_id', '=', 'programs.id')
+                    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'lecturers.lec_name', 'courses.course_name','courses.course_code')
+                // ->where('program_id','=',$request -> prog)
+                ->where('level','=',$request -> level)
+                //->where('day','=',$request -> day)
+                //->orwhere('course_code','=',$request -> coursecode)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+
+                $joindata1 = DB::table('timetables')
+                ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
+                    //->join('orders', 'users.id', '=', 'orders.user_id')
+                    ->join('programs', 'timetables.program_id', '=', 'programs.id')
+                    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'accsupportives.acc_name', 'courses.course_name','courses.course_code')
+                // ->where('program_id','=',$request -> prog)
+                ->where('level','=',$request -> level)
+                //->where('day','=',$request -> day)
+                //->orwhere('course_code','=',$request -> coursecode)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+                    return view('academicsupportive.filtertimetable',['joindata1'=> $joindata1,'joindata'=> $joindata,'dater1'=> $dater1,'dater2'=> $dater2,'dater3'=> $dater3,'dater4'=> $dater4,'dater5'=> $dater5,'dater6'=> $dater6]);
+            }
+
+            elseif(!($request -> prog)&&!($request -> level)&&($request -> day)&&!($request -> coursecode)&&!($request -> semester))
+            {
+                $joindata = DB::table('timetables')
+                ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+                    //->join('orders', 'users.id', '=', 'orders.user_id')
+                    ->join('programs', 'timetables.program_id', '=', 'programs.id')
+                    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'lecturers.lec_name', 'courses.course_name','courses.course_code')
+                // ->where('program_id','=',$request -> prog)
+                //->where('level','=',$request -> level)
+                ->where('day','=',$request -> day)
+                //->orwhere('course_code','=',$request -> coursecode)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+
+                $joindata1 = DB::table('timetables')
+                ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
+                    //->join('orders', 'users.id', '=', 'orders.user_id')
+                    ->join('programs', 'timetables.program_id', '=', 'programs.id')
+                    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'accsupportives.acc_name', 'courses.course_name','courses.course_code')
+                // ->where('program_id','=',$request -> prog)
+                //->where('level','=',$request -> level)
+                ->where('day','=',$request -> day)
+                //->orwhere('course_code','=',$request -> coursecode)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+                    return view('academicsupportive.filtertimetable',['joindata1'=> $joindata1,'joindata'=> $joindata,'dater1'=> $dater1,'dater2'=> $dater2,'dater3'=> $dater3,'dater4'=> $dater4,'dater5'=> $dater5,'dater6'=> $dater6]);
+            }
+
+            elseif(!($request -> prog)&&!($request -> level)&&!($request -> day)&&($request -> coursecode)&&!($request -> semester))
+            {
+                $joindata = DB::table('timetables')
+                ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+                    //->join('orders', 'users.id', '=', 'orders.user_id')
+                    ->join('programs', 'timetables.program_id', '=', 'programs.id')
+                    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'lecturers.lec_name', 'courses.course_name','courses.course_code')
+                // ->where('program_id','=',$request -> prog)
+                //->where('level','=',$request -> level)
+                //->where('day','=',$request -> day)
+                    //->where('course_code','=',$request -> coursecode)
+                    ->where('courses.course_code','=',$request -> coursecode)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+
+                $joindata = DB::table('timetables')
+                ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
+                    //->join('orders', 'users.id', '=', 'orders.user_id')
+                    ->join('programs', 'timetables.program_id', '=', 'programs.id')
+                    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'accsupportives.acc_name', 'courses.course_name','courses.course_code')
+                // ->where('program_id','=',$request -> prog)
+                //->where('level','=',$request -> level)
+                //->where('day','=',$request -> day)
+                    //->where('course_code','=',$request -> coursecode)
+                    ->where('courses.course_code','=',$request -> coursecode)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+                    return view('academicsupportive.filtertimetable',['joindata1'=> $joindata1,'joindata'=> $joindata,'dater1'=> $dater1,'dater2'=> $dater2,'dater3'=> $dater3,'dater4'=> $dater4,'dater5'=> $dater5,'dater6'=> $dater6]);
+            }
+
+            elseif(!($request -> prog)&&!($request -> level)&&($request -> day)&&($request -> coursecode)&&!($request -> semester))
+            {
+                $joindata = DB::table('timetables')
+                ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+                    //->join('orders', 'users.id', '=', 'orders.user_id')
+                    ->join('programs', 'timetables.program_id', '=', 'programs.id')
+                    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'lecturers.lec_name', 'courses.course_name','courses.course_code')
+                // ->where('program_id','=',$request -> prog)
+                //->where('level','=',$request -> level)
+                ->where('day','=',$request -> day)
+                    //->where('course_code','=',$request -> coursecode)
+                    ->where('courses.course_code','=',$request -> coursecode)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+
+                $joindata1 = DB::table('timetables')
+                ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
+                    //->join('orders', 'users.id', '=', 'orders.user_id')
+                    ->join('programs', 'timetables.program_id', '=', 'programs.id')
+                    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'accsupportives.acc_name', 'courses.course_name','courses.course_code')
+                // ->where('program_id','=',$request -> prog)
+                //->where('level','=',$request -> level)
+                ->where('day','=',$request -> day)
+                    //->where('course_code','=',$request -> coursecode)
+                    ->where('courses.course_code','=',$request -> coursecode)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+                    return view('academicsupportive.filtertimetable',['joindata1'=> $joindata1,'joindata'=> $joindata,'dater1'=> $dater1,'dater2'=> $dater2,'dater3'=> $dater3,'dater4'=> $dater4,'dater5'=> $dater5,'dater6'=> $dater6]);
+            }
+
+            elseif(!($request -> prog)&&($request -> level)&&!($request -> day)&&($request -> coursecode)&&!($request -> semester))
+            {
+                $joindata = DB::table('timetables')
+                ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+                    //->join('orders', 'users.id', '=', 'orders.user_id')
+                    ->join('programs', 'timetables.program_id', '=', 'programs.id')
+                    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'lecturers.lec_name', 'courses.course_name','courses.course_code')
+                // ->where('program_id','=',$request -> prog)
+                ->where('level','=',$request -> level)
+                //->where('day','=',$request -> day)
+                    //->where('course_code','=',$request -> coursecode)
+                    ->where('courses.course_code','=',$request -> coursecode)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+
+                $joindata1 = DB::table('timetables')
+                ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
+                    //->join('orders', 'users.id', '=', 'orders.user_id')
+                    ->join('programs', 'timetables.program_id', '=', 'programs.id')
+                    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'accsupportives.acc_name', 'courses.course_name','courses.course_code')
+                // ->where('program_id','=',$request -> prog)
+                ->where('level','=',$request -> level)
+                //->where('day','=',$request -> day)
+                    //->where('course_code','=',$request -> coursecode)
+                    ->where('courses.course_code','=',$request -> coursecode)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+                    return view('academicsupportive.filtertimetable',['joindata1'=> $joindata1,'joindata'=> $joindata,'dater1'=> $dater1,'dater2'=> $dater2,'dater3'=> $dater3,'dater4'=> $dater4,'dater5'=> $dater5,'dater6'=> $dater6]);
+            }
+
+            elseif(!($request -> prog)&&($request -> level)&&($request -> day)&&!($request -> coursecode)&&!($request -> semester))
+            {
+                $joindata = DB::table('timetables')
+                ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+                    //->join('orders', 'users.id', '=', 'orders.user_id')
+                    ->join('programs', 'timetables.program_id', '=', 'programs.id')
+                    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'lecturers.lec_name', 'courses.course_name','courses.course_code')
+                // ->where('program_id','=',$request -> prog)
+                ->where('level','=',$request -> level)
+                ->where('day','=',$request -> day)
+                //->where('course_code','=',$request -> coursecode)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+
+                $joindata1 = DB::table('timetables')
+                ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
+                    //->join('orders', 'users.id', '=', 'orders.user_id')
+                    ->join('programs', 'timetables.program_id', '=', 'programs.id')
+                    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'accsupportives.acc_name', 'courses.course_name','courses.course_code')
+                // ->where('program_id','=',$request -> prog)
+                ->where('level','=',$request -> level)
+                ->where('day','=',$request -> day)
+                //->where('course_code','=',$request -> coursecode)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+                    return view('academicsupportive.filtertimetable',['joindata1'=> $joindata1,'joindata'=> $joindata,'dater1'=> $dater1,'dater2'=> $dater2,'dater3'=> $dater3,'dater4'=> $dater4,'dater5'=> $dater5,'dater6'=> $dater6]);
+            }
+
+            elseif(!($request -> prog)&&($request -> level)&&($request -> day)&&($request -> coursecode)&&!($request -> semester))
+            {
+                $joindata = DB::table('timetables')
+                ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+                    //->join('orders', 'users.id', '=', 'orders.user_id')
+                    ->join('programs', 'timetables.program_id', '=', 'programs.id')
+                    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'lecturers.lec_name', 'courses.course_name','courses.course_code')
+                // ->where('program_id','=',$request -> prog)
+                ->where('level','=',$request -> level)
+                ->where('day','=',$request -> day)
+                    //->where('course_code','=',$request -> coursecode)
+                    ->where('courses.course_code','=',$request -> coursecode)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+
+                $joindata1 = DB::table('timetables')
+                ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
+                    //->join('orders', 'users.id', '=', 'orders.user_id')
+                    ->join('programs', 'timetables.program_id', '=', 'programs.id')
+                    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'accsupportives.acc_name', 'courses.course_name','courses.course_code')
+                // ->where('program_id','=',$request -> prog)
+                ->where('level','=',$request -> level)
+                ->where('day','=',$request -> day)
+                    //->where('course_code','=',$request -> coursecode)
+                    ->where('courses.course_code','=',$request -> coursecode)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+                    return view('academicsupportive.filtertimetable',['joindata1'=> $joindata1,'joindata'=> $joindata,'dater1'=> $dater1,'dater2'=> $dater2,'dater3'=> $dater3,'dater4'=> $dater4,'dater5'=> $dater5,'dater6'=> $dater6]);
+            }
+
+            elseif(($request -> prog)&&!($request -> level)&&!($request -> day)&&($request -> coursecode)&&!($request -> semester))
+            {
+                $joindata = DB::table('timetables')
+                ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+                    //->join('orders', 'users.id', '=', 'orders.user_id')
+                    ->join('programs', 'timetables.program_id', '=', 'programs.id')
+                    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'lecturers.lec_name', 'courses.course_name','courses.course_code')
+                ->where('program_id','=',$request -> prog)
+                //->where('level','=',$request -> level)
+                //->where('day','=',$request -> day)
+                    //->where('course_code','=',$request -> coursecode)
+                    ->where('courses.course_code','=',$request -> coursecode)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+
+                $joindata1 = DB::table('timetables')
+                ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
+                    //->join('orders', 'users.id', '=', 'orders.user_id')
+                    ->join('programs', 'timetables.program_id', '=', 'programs.id')
+                    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'accsupportives.acc_name', 'courses.course_name','courses.course_code')
+                ->where('program_id','=',$request -> prog)
+                //->where('level','=',$request -> level)
+                //->where('day','=',$request -> day)
+                    //->where('course_code','=',$request -> coursecode)
+                    ->where('courses.course_code','=',$request -> coursecode)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+                    return view('academicsupportive.filtertimetable',['joindata1'=> $joindata1,'joindata'=> $joindata,'dater1'=> $dater1,'dater2'=> $dater2,'dater3'=> $dater3,'dater4'=> $dater4,'dater5'=> $dater5,'dater6'=> $dater6]);
+            }
+
+            elseif(($request -> prog)&&!($request -> level)&&($request -> day)&&!($request -> coursecode)&&!($request -> semester))
+            {
+                $joindata = DB::table('timetables')
+                ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+                    //->join('orders', 'users.id', '=', 'orders.user_id')
+                    ->join('programs', 'timetables.program_id', '=', 'programs.id')
+                    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'lecturers.lec_name', 'courses.course_name','courses.course_code')
+                ->where('program_id','=',$request -> prog)
+                //->where('level','=',$request -> level)
+                ->where('day','=',$request -> day)
+                //->where('course_code','=',$request -> coursecode)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+
+                $joindata1 = DB::table('timetables')
+                ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
+                    //->join('orders', 'users.id', '=', 'orders.user_id')
+                    ->join('programs', 'timetables.program_id', '=', 'programs.id')
+                    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'accsupportives.acc_name', 'courses.course_name','courses.course_code')
+                ->where('program_id','=',$request -> prog)
+                //->where('level','=',$request -> level)
+                ->where('day','=',$request -> day)
+                //->where('course_code','=',$request -> coursecode)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+                    return view('academicsupportive.filtertimetable',['joindata1'=> $joindata1,'joindata'=> $joindata,'dater1'=> $dater1,'dater2'=> $dater2,'dater3'=> $dater3,'dater4'=> $dater4,'dater5'=> $dater5,'dater6'=> $dater6]);
+            }
+
+            elseif(($request -> prog)&&!($request -> level)&&($request -> day)&&($request -> coursecode)&&!($request -> semester))
+            {
+                $joindata = DB::table('timetables')
+                ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+                    //->join('orders', 'users.id', '=', 'orders.user_id')
+                    ->join('programs', 'timetables.program_id', '=', 'programs.id')
+                    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'lecturers.lec_name', 'courses.course_name','courses.course_code')
+                ->where('program_id','=',$request -> prog)
+                //->where('level','=',$request -> level)
+                ->where('day','=',$request -> day)
+                    //->where('course_code','=',$request -> coursecode)
+                    ->where('courses.course_code','=',$request -> coursecode)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+
+                $joindata1 = DB::table('timetables')
+                ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
+                    //->join('orders', 'users.id', '=', 'orders.user_id')
+                    ->join('programs', 'timetables.program_id', '=', 'programs.id')
+                    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'accsupportives.acc_name', 'courses.course_name','courses.course_code')
+                ->where('program_id','=',$request -> prog)
+                //->where('level','=',$request -> level)
+                ->where('day','=',$request -> day)
+                    //->where('course_code','=',$request -> coursecode)
+                    ->where('courses.course_code','=',$request -> coursecode)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+                    return view('academicsupportive.filtertimetable',['joindata1'=> $joindata1,'joindata'=> $joindata,'dater1'=> $dater1,'dater2'=> $dater2,'dater3'=> $dater3,'dater4'=> $dater4,'dater5'=> $dater5,'dater6'=> $dater6]);
+            }
+
+            elseif(($request -> prog)&&($request -> level)&&!($request -> day)&&($request -> coursecode)&&!($request -> semester))
+            {
+                $joindata = DB::table('timetables')
+                ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+                    //->join('orders', 'users.id', '=', 'orders.user_id')
+                    ->join('programs', 'timetables.program_id', '=', 'programs.id')
+                    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'lecturers.lec_name', 'courses.course_name','courses.course_code')
+                ->where('program_id','=',$request -> prog)
+                ->where('level','=',$request -> level)
+                //->where('day','=',$request -> day)
+                    //->where('course_code','=',$request -> coursecode)
+                    ->where('courses.course_code','=',$request -> coursecode)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+
+                $joindata1 = DB::table('timetables')
+                ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
+                    //->join('orders', 'users.id', '=', 'orders.user_id')
+                    ->join('programs', 'timetables.program_id', '=', 'programs.id')
+                    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'accsupportives.acc_name', 'courses.course_name','courses.course_code')
+                ->where('program_id','=',$request -> prog)
+                ->where('level','=',$request -> level)
+                //->where('day','=',$request -> day)
+                    //->where('course_code','=',$request -> coursecode)
+                    ->where('courses.course_code','=',$request -> coursecode)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+                    return view('academicsupportive.filtertimetable',['joindata1'=> $joindata1,'joindata'=> $joindata,'dater1'=> $dater1,'dater2'=> $dater2,'dater3'=> $dater3,'dater4'=> $dater4,'dater5'=> $dater5,'dater6'=> $dater6]);
+            }
+
+            //////////////////////////////////////////////////////////////////////////////////
+
+            if(($request -> prog)&&($request -> level)&&($request -> day)&&($request -> coursecode)&&($request -> semester))
+            {
+                $joindata = DB::table('timetables')
+                ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+            ->join('programs', 'timetables.program_id', '=', 'programs.id')
+            ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'lecturers.lec_name', 'courses.course_name', 'courses.course_code')
+                ->where('program_id','=',$request -> prog)
+                ->where('level','=',$request -> level)
+                ->where('day','=',$request -> day)
+            ->where('courses.course_code','=',$request -> coursecode)
+            ->where('semester','=',$request -> semester)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+
+                $joindata1 = DB::table('timetables')
+                ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
+            ->join('programs', 'timetables.program_id', '=', 'programs.id')
+            ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'accsupportives.acc_name', 'courses.course_name', 'courses.course_code')
+                ->where('program_id','=',$request -> prog)
+                ->where('level','=',$request -> level)
+                ->where('day','=',$request -> day)
+            ->where('courses.course_code','=',$request -> coursecode)
+            ->where('semester','=',$request -> semester)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+                    return view('academicsupportive.filtertimetable',['joindata1'=> $joindata1,'joindata'=> $joindata,'dater1'=> $dater1,'dater2'=> $dater2,'dater3'=> $dater3,'dater4'=> $dater4,'dater5'=> $dater5,'dater6'=> $dater6]);
+                    //return $joindata;
+            }
+
+            elseif(($request -> prog)&&($request -> level)&&($request -> day)&&!($request -> coursecode)&&($request -> semester))
+            {
+                $joindata = DB::table('timetables')
+                ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+                    //->join('orders', 'users.id', '=', 'orders.user_id')
+                    ->join('programs', 'timetables.program_id', '=', 'programs.id')
+                    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'lecturers.lec_name', 'courses.course_name','courses.course_code')
+                ->where('program_id','=',$request -> prog)
+                ->where('level','=',$request -> level)
+                ->where('day','=',$request -> day)
+            ->where('semester','=',$request -> semester)
+                //->orwhere('course_code','=',$request -> coursecode)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+
+                $joindata1 = DB::table('timetables')
+                ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
+                    //->join('orders', 'users.id', '=', 'orders.user_id')
+                    ->join('programs', 'timetables.program_id', '=', 'programs.id')
+                    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'accsupportives.acc_name', 'courses.course_name','courses.course_code')
+                ->where('program_id','=',$request -> prog)
+                ->where('level','=',$request -> level)
+                ->where('day','=',$request -> day)
+            ->where('semester','=',$request -> semester)
+                //->orwhere('course_code','=',$request -> coursecode)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+                    return view('academicsupportive.filtertimetable',['joindata1'=> $joindata1,'joindata'=> $joindata,'dater1'=> $dater1,'dater2'=> $dater2,'dater3'=> $dater3,'dater4'=> $dater4,'dater5'=> $dater5,'dater6'=> $dater6]);
+            }
+
+            elseif(($request -> prog)&&($request -> level)&&!($request -> day)&&!($request -> coursecode)&&($request -> semester))
+            {
+                $joindata = DB::table('timetables')
+                ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+                    //->join('orders', 'users.id', '=', 'orders.user_id')
+                    ->join('programs', 'timetables.program_id', '=', 'programs.id')
+                    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'lecturers.lec_name', 'courses.course_name','courses.course_code')
+                ->where('program_id','=',$request -> prog)
+                ->where('level','=',$request -> level)
+            ->where('semester','=',$request -> semester)
+                //->where('day','=',$request -> day)
+                //->orwhere('course_code','=',$request -> coursecode)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+
+                $joindata1 = DB::table('timetables')
+                ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
+                    //->join('orders', 'users.id', '=', 'orders.user_id')
+                    ->join('programs', 'timetables.program_id', '=', 'programs.id')
+                    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'accsupportives.acc_name', 'courses.course_name','courses.course_code')
+                ->where('program_id','=',$request -> prog)
+                ->where('level','=',$request -> level)
+            ->where('semester','=',$request -> semester)
+                //->where('day','=',$request -> day)
+                //->orwhere('course_code','=',$request -> coursecode)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+                    return view('academicsupportive.filtertimetable',['joindata1'=> $joindata1,'joindata'=> $joindata,'dater1'=> $dater1,'dater2'=> $dater2,'dater3'=> $dater3,'dater4'=> $dater4,'dater5'=> $dater5,'dater6'=> $dater6]);
+            }
+
+            elseif(($request -> prog)&&!($request -> level)&&!($request -> day)&&!($request -> coursecode)&&($request -> semester))
+            {
+                $joindata = DB::table('timetables')
+                ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+                    //->join('orders', 'users.id', '=', 'orders.user_id')
+                    ->join('programs', 'timetables.program_id', '=', 'programs.id')
+                    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'lecturers.lec_name', 'courses.course_name','courses.course_code')
+                ->where('program_id','=',$request -> prog)
+            ->where('semester','=',$request -> semester)
+                //->where('level','=',$request -> level)
+                //->where('day','=',$request -> day)
+                //->orwhere('course_code','=',$request -> coursecode)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+
+                $joindata1 = DB::table('timetables')
+                ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
+                    //->join('orders', 'users.id', '=', 'orders.user_id')
+                    ->join('programs', 'timetables.program_id', '=', 'programs.id')
+                    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'accsupportives.acc_name', 'courses.course_name','courses.course_code')
+                ->where('program_id','=',$request -> prog)
+            ->where('semester','=',$request -> semester)
+                //->where('level','=',$request -> level)
+                //->where('day','=',$request -> day)
+                //->orwhere('course_code','=',$request -> coursecode)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+                    return view('academicsupportive.filtertimetable',['joindata1'=> $joindata1,'joindata'=> $joindata,'dater1'=> $dater1,'dater2'=> $dater2,'dater3'=> $dater3,'dater4'=> $dater4,'dater5'=> $dater5,'dater6'=> $dater6]);
+            }
+
+            elseif(!($request -> prog)&&($request -> level)&&!($request -> day)&&!($request -> coursecode)&&($request -> semester))
+            {
+                $joindata = DB::table('timetables')
+                ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+                    //->join('orders', 'users.id', '=', 'orders.user_id')
+                    ->join('programs', 'timetables.program_id', '=', 'programs.id')
+                    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'lecturers.lec_name', 'courses.course_name','courses.course_code')
+                // ->where('program_id','=',$request -> prog)
+                ->where('level','=',$request -> level)
+                ->where('semester','=',$request -> semester)
+                //->where('day','=',$request -> day)
+                //->orwhere('course_code','=',$request -> coursecode)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+
+
+                $joindata1 = DB::table('timetables')
+                ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
+                    //->join('orders', 'users.id', '=', 'orders.user_id')
+                    ->join('programs', 'timetables.program_id', '=', 'programs.id')
+                    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'accsupportives.acc_name', 'courses.course_name','courses.course_code')
+                // ->where('program_id','=',$request -> prog)
+                ->where('level','=',$request -> level)
+                ->where('semester','=',$request -> semester)
+                //->where('day','=',$request -> day)
+                //->orwhere('course_code','=',$request -> coursecode)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+                    return view('academicsupportive.filtertimetable',['joindata1'=> $joindata1,'joindata'=> $joindata,'dater1'=> $dater1,'dater2'=> $dater2,'dater3'=> $dater3,'dater4'=> $dater4,'dater5'=> $dater5,'dater6'=> $dater6]);
+            }
+
+            elseif(!($request -> prog)&&!($request -> level)&&($request -> day)&&!($request -> coursecode)&&($request -> semester))
+            {
+                $joindata = DB::table('timetables')
+                ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+                    //->join('orders', 'users.id', '=', 'orders.user_id')
+                    ->join('programs', 'timetables.program_id', '=', 'programs.id')
+                    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'lecturers.lec_name', 'courses.course_name','courses.course_code')
+                // ->where('program_id','=',$request -> prog)
+                //->where('level','=',$request -> level)
+                ->where('day','=',$request -> day)
+                ->where('semester','=',$request -> semester)
+                //->orwhere('course_code','=',$request -> coursecode)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+
+                $joindata1 = DB::table('timetables')
+                ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
+                    //->join('orders', 'users.id', '=', 'orders.user_id')
+                    ->join('programs', 'timetables.program_id', '=', 'programs.id')
+                    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'accsupportives.acc_name', 'courses.course_name','courses.course_code')
+                // ->where('program_id','=',$request -> prog)
+                //->where('level','=',$request -> level)
+                ->where('day','=',$request -> day)
+                ->where('semester','=',$request -> semester)
+                //->orwhere('course_code','=',$request -> coursecode)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+                    return view('academicsupportive.filtertimetable',['joindata1'=> $joindata1,'joindata'=> $joindata,'dater1'=> $dater1,'dater2'=> $dater2,'dater3'=> $dater3,'dater4'=> $dater4,'dater5'=> $dater5,'dater6'=> $dater6]);
+            }
+
+            elseif(!($request -> prog)&&!($request -> level)&&!($request -> day)&&($request -> coursecode)&&($request -> semester))
+            {
+                $joindata = DB::table('timetables')
+                ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+                    //->join('orders', 'users.id', '=', 'orders.user_id')
+                    ->join('programs', 'timetables.program_id', '=', 'programs.id')
+                    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'lecturers.lec_name', 'courses.course_name','courses.course_code')
+                // ->where('program_id','=',$request -> prog)
+                //->where('level','=',$request -> level)
+                //->where('day','=',$request -> day)
+                    //->where('course_code','=',$request -> coursecode)
+                    ->where('courses.course_code','=',$request -> coursecode)
+                    ->where('semester','=',$request -> semester)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+
+                $joindata1 = DB::table('timetables')
+                ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
+                    //->join('orders', 'users.id', '=', 'orders.user_id')
+                    ->join('programs', 'timetables.program_id', '=', 'programs.id')
+                    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'accsupportives.acc_name', 'courses.course_name','courses.course_code')
+                // ->where('program_id','=',$request -> prog)
+                //->where('level','=',$request -> level)
+                //->where('day','=',$request -> day)
+                    //->where('course_code','=',$request -> coursecode)
+                    ->where('courses.course_code','=',$request -> coursecode)
+                    ->where('semester','=',$request -> semester)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+                    return view('academicsupportive.filtertimetable',['joindata1'=> $joindata1,'joindata'=> $joindata,'dater1'=> $dater1,'dater2'=> $dater2,'dater3'=> $dater3,'dater4'=> $dater4,'dater5'=> $dater5,'dater6'=> $dater6]);
+            }
+
+            elseif(!($request -> prog)&&!($request -> level)&&($request -> day)&&($request -> coursecode)&&($request -> semester))
+            {
+                $joindata = DB::table('timetables')
+                ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+                    //->join('orders', 'users.id', '=', 'orders.user_id')
+                    ->join('programs', 'timetables.program_id', '=', 'programs.id')
+                    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'lecturers.lec_name', 'courses.course_name','courses.course_code')
+                // ->where('program_id','=',$request -> prog)
+                //->where('level','=',$request -> level)
+                ->where('day','=',$request -> day)
+                    //->where('course_code','=',$request -> coursecode)
+                    ->where('courses.course_code','=',$request -> coursecode)
+                    ->where('semester','=',$request -> semester)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+
+                $joindata1 = DB::table('timetables')
+                ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
+                    //->join('orders', 'users.id', '=', 'orders.user_id')
+                    ->join('programs', 'timetables.program_id', '=', 'programs.id')
+                    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'accsupportives.acc_name', 'courses.course_name','courses.course_code')
+                // ->where('program_id','=',$request -> prog)
+                //->where('level','=',$request -> level)
+                ->where('day','=',$request -> day)
+                    //->where('course_code','=',$request -> coursecode)
+                    ->where('courses.course_code','=',$request -> coursecode)
+                    ->where('semester','=',$request -> semester)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+                    return view('academicsupportive.filtertimetable',['joindata1'=> $joindata1,'joindata'=> $joindata,'dater1'=> $dater1,'dater2'=> $dater2,'dater3'=> $dater3,'dater4'=> $dater4,'dater5'=> $dater5,'dater6'=> $dater6]);
+            }
+
+            elseif(!($request -> prog)&&($request -> level)&&!($request -> day)&&($request -> coursecode)&&($request -> semester))
+            {
+                $joindata = DB::table('timetables')
+                ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+                    //->join('orders', 'users.id', '=', 'orders.user_id')
+                    ->join('programs', 'timetables.program_id', '=', 'programs.id')
+                    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'lecturers.lec_name', 'courses.course_name','courses.course_code')
+                // ->where('program_id','=',$request -> prog)
+                ->where('level','=',$request -> level)
+                //->where('day','=',$request -> day)
+                    //->where('course_code','=',$request -> coursecode)
+                    ->where('courses.course_code','=',$request -> coursecode)
+                    ->where('semester','=',$request -> semester)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+
+                $joindata1 = DB::table('timetables')
+                ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
+                    //->join('orders', 'users.id', '=', 'orders.user_id')
+                    ->join('programs', 'timetables.program_id', '=', 'programs.id')
+                    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'accsupportives.acc_name', 'courses.course_name','courses.course_code')
+                // ->where('program_id','=',$request -> prog)
+                ->where('level','=',$request -> level)
+                //->where('day','=',$request -> day)
+                    //->where('course_code','=',$request -> coursecode)
+                    ->where('courses.course_code','=',$request -> coursecode)
+                    ->where('semester','=',$request -> semester)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+                    return view('academicsupportive.filtertimetable',['joindata1'=> $joindata1,'joindata'=> $joindata,'dater1'=> $dater1,'dater2'=> $dater2,'dater3'=> $dater3,'dater4'=> $dater4,'dater5'=> $dater5,'dater6'=> $dater6]);
+            }
+
+            elseif(!($request -> prog)&&($request -> level)&&($request -> day)&&!($request -> coursecode)&&($request -> semester))
+            {
+                $joindata = DB::table('timetables')
+                ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+                    //->join('orders', 'users.id', '=', 'orders.user_id')
+                    ->join('programs', 'timetables.program_id', '=', 'programs.id')
+                    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'lecturers.lec_name', 'courses.course_name','courses.course_code')
+                // ->where('program_id','=',$request -> prog)
+                ->where('level','=',$request -> level)
+                ->where('day','=',$request -> day)
+                ->where('semester','=',$request -> semester)
+                //->where('course_code','=',$request -> coursecode)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+
+                $joindata1 = DB::table('timetables')
+                ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
+                    //->join('orders', 'users.id', '=', 'orders.user_id')
+                    ->join('programs', 'timetables.program_id', '=', 'programs.id')
+                    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'accsupportives.acc_name', 'courses.course_name','courses.course_code')
+                // ->where('program_id','=',$request -> prog)
+                ->where('level','=',$request -> level)
+                ->where('day','=',$request -> day)
+                ->where('semester','=',$request -> semester)
+                //->where('course_code','=',$request -> coursecode)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+                    return view('academicsupportive.filtertimetable',['joindata1'=> $joindata1,'joindata'=> $joindata,'dater1'=> $dater1,'dater2'=> $dater2,'dater3'=> $dater3,'dater4'=> $dater4,'dater5'=> $dater5,'dater6'=> $dater6]);
+            }
+
+            elseif(!($request -> prog)&&($request -> level)&&($request -> day)&&($request -> coursecode)&&($request -> semester))
+            {
+                $joindata = DB::table('timetables')
+                ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+                    //->join('orders', 'users.id', '=', 'orders.user_id')
+                    ->join('programs', 'timetables.program_id', '=', 'programs.id')
+                    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'lecturers.lec_name', 'courses.course_name','courses.course_code')
+                // ->where('program_id','=',$request -> prog)
+                ->where('level','=',$request -> level)
+                ->where('day','=',$request -> day)
+                    //->where('course_code','=',$request -> coursecode)
+                    ->where('courses.course_code','=',$request -> coursecode)
+                    ->where('semester','=',$request -> semester)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+
+                $joindata1 = DB::table('timetables')
+                ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
+                    //->join('orders', 'users.id', '=', 'orders.user_id')
+                    ->join('programs', 'timetables.program_id', '=', 'programs.id')
+                    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'accsupportives.acc_name', 'courses.course_name','courses.course_code')
+                // ->where('program_id','=',$request -> prog)
+                ->where('level','=',$request -> level)
+                ->where('day','=',$request -> day)
+                    //->where('course_code','=',$request -> coursecode)
+                    ->where('courses.course_code','=',$request -> coursecode)
+                    ->where('semester','=',$request -> semester)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+                    return view('academicsupportive.filtertimetable',['joindata1'=> $joindata1,'joindata'=> $joindata,'dater1'=> $dater1,'dater2'=> $dater2,'dater3'=> $dater3,'dater4'=> $dater4,'dater5'=> $dater5,'dater6'=> $dater6]);
+            }
+
+            elseif(($request -> prog)&&!($request -> level)&&!($request -> day)&&($request -> coursecode)&&($request -> semester))
+            {
+                $joindata = DB::table('timetables')
+                ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+                    //->join('orders', 'users.id', '=', 'orders.user_id')
+                    ->join('programs', 'timetables.program_id', '=', 'programs.id')
+                    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'lecturers.lec_name', 'courses.course_name','courses.course_code')
+                ->where('program_id','=',$request -> prog)
+                //->where('level','=',$request -> level)
+                //->where('day','=',$request -> day)
+                    //->where('course_code','=',$request -> coursecode)
+                    ->where('courses.course_code','=',$request -> coursecode)
+                    ->where('semester','=',$request -> semester)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+
+                $joindata1 = DB::table('timetables')
+                ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
+                    //->join('orders', 'users.id', '=', 'orders.user_id')
+                    ->join('programs', 'timetables.program_id', '=', 'programs.id')
+                    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'accsupportives.acc_name', 'courses.course_name','courses.course_code')
+                ->where('program_id','=',$request -> prog)
+                //->where('level','=',$request -> level)
+                //->where('day','=',$request -> day)
+                    //->where('course_code','=',$request -> coursecode)
+                    ->where('courses.course_code','=',$request -> coursecode)
+                    ->where('semester','=',$request -> semester)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+                    return view('academicsupportive.filtertimetable',['joindata1'=> $joindata1,'joindata'=> $joindata,'dater1'=> $dater1,'dater2'=> $dater2,'dater3'=> $dater3,'dater4'=> $dater4,'dater5'=> $dater5,'dater6'=> $dater6]);
+            }
+
+            elseif(($request -> prog)&&!($request -> level)&&($request -> day)&&!($request -> coursecode)&&($request -> semester))
+            {
+                $joindata = DB::table('timetables')
+                ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+                    //->join('orders', 'users.id', '=', 'orders.user_id')
+                    ->join('programs', 'timetables.program_id', '=', 'programs.id')
+                    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'lecturers.lec_name', 'courses.course_name','courses.course_code')
+                ->where('program_id','=',$request -> prog)
+                //->where('level','=',$request -> level)
+                ->where('day','=',$request -> day)
+                ->where('semester','=',$request -> semester)
+                //->where('course_code','=',$request -> coursecode)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+
+                $joindata1 = DB::table('timetables')
+                ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
+                    //->join('orders', 'users.id', '=', 'orders.user_id')
+                    ->join('programs', 'timetables.program_id', '=', 'programs.id')
+                    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'accsupportives.acc_name', 'courses.course_name','courses.course_code')
+                ->where('program_id','=',$request -> prog)
+                //->where('level','=',$request -> level)
+                ->where('day','=',$request -> day)
+                ->where('semester','=',$request -> semester)
+                //->where('course_code','=',$request -> coursecode)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+                    return view('academicsupportive.filtertimetable',['joindata1'=> $joindata1,'joindata'=> $joindata,'dater1'=> $dater1,'dater2'=> $dater2,'dater3'=> $dater3,'dater4'=> $dater4,'dater5'=> $dater5,'dater6'=> $dater6]);
+            }
+
+            elseif(($request -> prog)&&!($request -> level)&&($request -> day)&&($request -> coursecode)&&($request -> semester))
+            {
+                $joindata = DB::table('timetables')
+                ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+                    //->join('orders', 'users.id', '=', 'orders.user_id')
+                    ->join('programs', 'timetables.program_id', '=', 'programs.id')
+                    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'lecturers.lec_name', 'courses.course_name','courses.course_code')
+                ->where('program_id','=',$request -> prog)
+                //->where('level','=',$request -> level)
+                ->where('day','=',$request -> day)
+                    //->where('course_code','=',$request -> coursecode)
+                    ->where('courses.course_code','=',$request -> coursecode)
+                    ->where('semester','=',$request -> semester)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+
+                $joindata1 = DB::table('timetables')
+                ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
+                    //->join('orders', 'users.id', '=', 'orders.user_id')
+                    ->join('programs', 'timetables.program_id', '=', 'programs.id')
+                    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'accsupportives.acc_name', 'courses.course_name','courses.course_code')
+                ->where('program_id','=',$request -> prog)
+                //->where('level','=',$request -> level)
+                ->where('day','=',$request -> day)
+                    //->where('course_code','=',$request -> coursecode)
+                    ->where('courses.course_code','=',$request -> coursecode)
+                    ->where('semester','=',$request -> semester)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+                    return view('academicsupportive.filtertimetable',['joindata1'=> $joindata1,'joindata'=> $joindata,'dater1'=> $dater1,'dater2'=> $dater2,'dater3'=> $dater3,'dater4'=> $dater4,'dater5'=> $dater5,'dater6'=> $dater6]);
+            }
+
+            elseif(($request -> prog)&&($request -> level)&&!($request -> day)&&($request -> coursecode)&&($request -> semester))
+            {
+                $joindata = DB::table('timetables')
+                ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+                    //->join('orders', 'users.id', '=', 'orders.user_id')
+                    ->join('programs', 'timetables.program_id', '=', 'programs.id')
+                    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'lecturers.lec_name', 'courses.course_name','courses.course_code')
+                ->where('program_id','=',$request -> prog)
+                ->where('level','=',$request -> level)
+                //->where('day','=',$request -> day)
+                    //->where('course_code','=',$request -> coursecode)
+                    ->where('courses.course_code','=',$request -> coursecode)
+                    ->where('semester','=',$request -> semester)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+
+                $joindata1 = DB::table('timetables')
+                ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
+                    //->join('orders', 'users.id', '=', 'orders.user_id')
+                    ->join('programs', 'timetables.program_id', '=', 'programs.id')
+                    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*', 'accsupportives.acc_name', 'courses.course_name','courses.course_code')
+                ->where('program_id','=',$request -> prog)
+                ->where('level','=',$request -> level)
+                //->where('day','=',$request -> day)
+                    //->where('course_code','=',$request -> coursecode)
+                    ->where('courses.course_code','=',$request -> coursecode)
+                    ->where('semester','=',$request -> semester)
+                //->orwhere('course_name','=',$request -> coursename)
+                ->get();
+                    return view('academicsupportive.filtertimetable',['joindata1'=> $joindata1,'joindata'=> $joindata,'dater1'=> $dater1,'dater2'=> $dater2,'dater3'=> $dater3,'dater4'=> $dater4,'dater5'=> $dater5,'dater6'=> $dater6]);
+            }
+
+
+            else{
+                $comm="fill one of the filter option";
+                //return view('proj.ready')->with('comm');
+                //return back() -> with('fail',"you are not registered");
+                return view('academicsupportive.filtertimetable',['dater1'=> $dater1,'dater2'=> $dater2,'dater3'=> $dater3,'dater4'=> $dater4,'dater5'=> $dater5,'dater6'=> $dater6])->with('comm');
+            }
+
+                }
 
     public function viewacademicsupportive(){  //view the students in database(inside the admin page).
         $cusdata6= accsupportive::all();
