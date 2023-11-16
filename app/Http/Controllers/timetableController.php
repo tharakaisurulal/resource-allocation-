@@ -110,4 +110,45 @@ public function viewtimetable(){  //view the students in database(inside the adm
         return view('admin.timetable.timetableopera',['data1'=> $data1,'data2'=> $data2]);
     //}
 }
+
+public function updatetimetable($id) //to do the update choose the selected id and return details in to edit page.
+{
+        $timetable = timetable::find($id);
+
+        //$this-> lhcapacity = $lecturehall1->lh_capacity;
+        //$this-> lhname = $lecturehall1->lh_name;
+        //$lecturehall1->update();
+        //return $timetable->lec_id;
+        return view('admin.timetable.admintimetableedit', ['timetable'=>$timetable]);
+}
+
+
+
+
+
+public function updatetimetable1(Request $request,$id)  //selected id will be updated using this function.
+{
+
+    $timetable = timetable::find($id);
+    //return $request;
+        $timetable->level = $request -> input('level');
+        $timetable->semester = $request -> input('semester');
+        $timetable->day = $request -> input('day');
+        $timetable->start_time = $request -> input('starttime');
+        $timetable->end_time = $request -> input('endtime');
+        $timetable->update();
+    //return $request;
+    //return $lecturehall;
+    //$lecturehall->update($request->all());
+        //return $lecturehall;
+        return redirect()->route('admin.timetable.timetableopera')->with('success',"Data updated successfully.");
+
+}
+
+public function deletetimetable($id) //delete programs using the selected id.
+{
+        $timetable = timetable::find($id);
+        $timetable->delete();
+        return redirect()->back()-> with('success',"successfully deleted.");
+}
 }
