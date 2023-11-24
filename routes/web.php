@@ -307,3 +307,8 @@ Route::post('/admin/timetable/timetablestore', [timetableController::class, 'tim
 
 Route::get('/admin/timetable/timetableopera', [timetableController::class, 'viewtimetable'])->name('admin.timetable.timetableopera');  //route to view student crud operation page.
 
+Route::get('update-timetable/{id}',[timetableController::class, 'updatetimetable'])->name('updatetimetable');  //route to function of return selected user details to edit page.
+
+Route::post('update1-timetable/{id}',[timetableController::class, 'updatetimetable1'])->name('updatetimetable1');
+
+Route::get('delete-timetable/{id}',[timetableController::class, 'deletetimetable'])->name('deletetimetable');  //route to function of delete programs.

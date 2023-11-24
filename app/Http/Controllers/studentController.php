@@ -98,7 +98,7 @@ class studentController extends Controller
             if($res){
             //return redirect('/') -> withSuccess("you are registered");
             //return back() -> with('success',"you are registered");
-            return redirect('/admin/student/sturegister') -> with('success',"you are registered,please login now");
+            return back() -> with('success',"you are registered,please login now");
             }
             else{
                 return back() -> with('fail',"you are not registered");
