@@ -118,7 +118,7 @@ public function updatetimetable($id) //to do the update choose the selected id a
         //$this-> lhcapacity = $lecturehall1->lh_capacity;
         //$this-> lhname = $lecturehall1->lh_name;
         //$lecturehall1->update();
-        //return $timetable->lec_id;
+        return $timetable;
         return view('admin.timetable.admintimetableedit', ['timetable'=>$timetable]);
 }
 
