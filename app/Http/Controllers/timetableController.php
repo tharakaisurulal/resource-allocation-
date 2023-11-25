@@ -114,12 +114,33 @@ public function viewtimetable(){  //view the students in database(inside the adm
 public function updatetimetable($id) //to do the update choose the selected id and return details in to edit page.
 {
         $timetable = timetable::find($id);
+        $dater3=lecturehall::all();
+        $dater4=lab::all();
         $dater5=lecturer::all();
+        $dater6=accsupportive::all();
+        //return $timetable;
+    if($timetable->lec_id)
+    {
+        $dater7=lecturehall::find($timetable->lh_id);
+        $dater9=lecturer::find($timetable->lec_id);
+        $dater8=null;
+        $dater10=null;
+        //return $dater7;
+    }
+    else
+    {
+        $dater8=lab::find($timetable->lab_id);
+        $dater10=accsupportive::find($timetable->acc_id);
+        $dater7=null;
+        $dater9=null;
+
+    }
         //$this-> lhcapacity = $lecturehall1->lh_capacity;
         //$this-> lhname = $lecturehall1->lh_name;
         //$lecturehall1->update();
         //return $dater5;
-        return view('admin.timetable.admintimetableedit', ['timetable'=>$timetable, 'dater5'=>$dater5]);
+        //return $timetable->lec_id;
+        return view('admin.timetable.admintimetableedit', ['timetable'=>$timetable, 'dater3'=>$dater3, 'dater4'=>$dater4, 'dater5'=>$dater5, 'dater6'=>$dater6, 'dater7'=>$dater7, 'dater8'=>$dater8, 'dater9'=>$dater9, 'dater10'=>$dater10]);
 }
 
 
@@ -131,12 +152,35 @@ public function updatetimetable1(Request $request,$id)  //selected id will be up
 
     $timetable = timetable::find($id);
     //return $request;
-        $timetable->level = $request -> input('level');
-        $timetable->semester = $request -> input('semester');
-        $timetable->day = $request -> input('day');
-        $timetable->start_time = $request -> input('starttime');
-        $timetable->end_time = $request -> input('endtime');
+    $timetable->level = $request -> input('level');
+    $timetable->semester = $request -> input('semester');
+    $timetable->day = $request -> input('day');
+    $timetable->start_time = $request -> input('starttime');
+    $timetable->end_time = $request -> input('endtime');
+    $timetable->update();
+    //return $request;
+    //return $lecturehall;
+    //$lecturehall->update($request->all());
+        //return $lecturehall;
+        return redirect()->route('admin.timetable.timetableopera')->with('success',"Data updated successfully.");
+
+}
+
+public function updatetimetable2(Request $request,$id)  //selected id will be updated using this function.
+{
+
+    $timetable = timetable::find($id);
+    if($request->lecid)
+    {
+        $timetable->lec_id = $request -> input('lecid');
+        $timetable->lh_id = $request -> input('lhid');
         $timetable->update();
+    }
+        else{
+            $timetable->acc_id = $request -> input('accid');
+            $timetable->lab_id = $request -> input('labid');
+            $timetable->update();
+        }
     //return $request;
     //return $lecturehall;
     //$lecturehall->update($request->all());

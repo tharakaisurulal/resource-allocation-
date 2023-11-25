@@ -311,4 +311,6 @@ Route::get('update-timetable/{id}',[timetableController::class, 'updatetimetable
 
 Route::post('update1-timetable/{id}',[timetableController::class, 'updatetimetable1'])->name('updatetimetable1');
 
+Route::post('update2-timetable/{id}',[timetableController::class, 'updatetimetable2'])->name('updatetimetable2');
+
 Route::get('delete-timetable/{id}',[timetableController::class, 'deletetimetable'])->name('deletetimetable');  //route to function of delete programs.
