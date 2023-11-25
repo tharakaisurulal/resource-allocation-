@@ -29,7 +29,7 @@
             <p class="card-info">
                     Capacity :     <br>
                     Ac or Non Ac : <br>
-                    Location
+
             </p>
         </div>
     </div>

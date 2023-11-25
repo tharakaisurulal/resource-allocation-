@@ -151,7 +151,7 @@
                     <div class="back-content center">
                         <h3> Maintains Form</h3>
                         <div class="button">
-                            <a href="/lecturers/request"><span>CLICK</span></a>
+                            <a href="/academicsupportive/request"><span>CLICK</span></a>
                         </div>
                     </div>
             </div>
