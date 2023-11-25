@@ -25,7 +25,7 @@
             </div>
 
             <div class="text-center">
-                <h1>Retrive data</h1>
+                <h1>Theory Timetable</h1>
             </div>
 
         @if(session()->has('success'))
@@ -37,7 +37,7 @@
         @endif
 
 
-            @if (isset($cusdata8))
+            @if (isset($data1))
          <div class="d-flex justify-content-center div2">
 
             <table class="table table-dark">
@@ -52,7 +52,7 @@
                     <td>End Time</td>
                     <td>Lecturer</td>
                     <td>Lecturehall</td>
-                    <td>Lab</td>
+                    <!--<td>Lab</td>-->
                     <td>Action</td>
 
                 </thead>
@@ -69,15 +69,15 @@
                     <td>{{$cdb->end_time}}</td>
                     <td>{{$cdb->lec_name}}</td>
                     <td>{{$cdb->lh_name}}</td>
-                    <td>{{$cdb->lab_name}}</td>
+
                     <td>
                         <div class="dropdown">
                             <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                               Action
                             </button>
                             <ul class="dropdown-menu">
-                              <li><a class="dropdown-item" href="" >Edit</a></li>
-                              <li><a class="dropdown-item" href="">Delete</a></li>
+                              <li><a class="dropdown-item" href="{{url('update-timetable/'.$cdb->id)}}" >Edit</a></li>
+                              <li><a class="dropdown-item" href="{{url('delete-timetable/'.$cdb->id)}}">Delete</a></li>
                               <li><a class="dropdown-item" href="">More</a></li>
                             </ul>
                           </div>
@@ -92,6 +92,66 @@
          <div class="alert alert-danger div5">{{ 'No Data!' }}</div>
          @endif
         </div>
+
+        <div>
+        @if (isset($data2))
+
+        <div class="text-center">
+            <h1>Practical Timetable</h1>
+        </div>
+        <div class="d-flex justify-content-center div2">
+
+           <table class="table table-dark">
+               <thead>
+                   <td>Program</td>
+                   <td>Course code</td>
+                   <td>Course name</td>
+                   <td>Level</td>
+                   <td>Semester</td>
+                   <td>Day</td>
+                   <td>Start Time</td>
+                   <td>End Time</td>
+                   <td>Academic Supportive</td>
+                   <td>Lab</td>
+                   <td>Action</td>
+
+               </thead>
+               <tbody>
+                   @foreach ($data2 as $cdb)
+               <tr>
+                   <td>{{$cdb->program}}</td>
+                   <td>{{$cdb->course_code}}</td>
+                   <td>{{$cdb->course_name}}</td>
+                   <td>{{$cdb->level}}</td>
+                   <td>{{$cdb->semester}}</td>
+                   <td>{{$cdb->day}}</td>
+                   <td>{{$cdb->start_time}}</td>
+                   <td>{{$cdb->end_time}}</td>
+                   <td>{{$cdb->acc_name}}</td>
+                   <td>{{$cdb->lab_name}}</td>
+
+                   <td>
+                       <div class="dropdown">
+                           <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                             Action
+                           </button>
+                           <ul class="dropdown-menu">
+                             <li><a class="dropdown-item" href="{{url('update-timetable/'.$cdb->id)}}" >Edit</a></li>
+                             <li><a class="dropdown-item" href="">Delete</a></li>
+                             <li><a class="dropdown-item" href="">More</a></li>
+                           </ul>
+                         </div>
+                   </td>
+               </tr>
+                   @endforeach
+               </tbody>
+             </table>
+
+        </div>
+        @else
+        <div class="alert alert-danger div5">{{ 'No Data!' }}</div>
+        @endif
+    </div>
 
 
         <!-- Modal id="staticBackdrop"-->

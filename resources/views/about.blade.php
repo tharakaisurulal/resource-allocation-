@@ -1,7 +1,15 @@
 @extends('layout.headerFooter')
 @section('content2')
        <li><a href="/">Home</a></li>
-       <li><a href="#">Staff</a></li>
+       <li><a href="#">Staff  <i class="fas fa-caret-right"></i></a>
+            <div class="dropdown_menu">
+                <ul>
+                    <li><a href="#">Acedemic Staff</a></li>
+                    <li><a href="#">Acedemic Support Staff</a></li>
+                    <li><a href="#">Non Acedemic Staff</a></li>
+                </ul>
+            </div>
+       </li>
        <li><a href="#">Programs</a></li>
        <li><a href="#">Research</a></li>
        <li><a href="#">Services</a></li>
@@ -21,6 +29,8 @@
 
     <link rel="stylesheet" href={{asset('css/about.css')}}>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!---boxicons links-->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
@@ -39,7 +49,6 @@
 <body class="body1">
     <div class="main">
     <!---------slideshow Start------------------------------------------------------------>
-
     <div class="slide-container">
 
         <div class="slides">
@@ -178,15 +187,14 @@
 
                     <div class="Premises">
                         <h4><ins>Department Premises</ins></h4>
-                        <div class="img">
-                            <img src={{asset('images/NewFloor3.jpg')}}>
+                        <div class="img1">
+                            <img src={{asset('images/.jpg')}}>
                         </div>
                     </div>
                 </div>
             </div>
     </div>
 </section>
-
 </body>
 </html>
 @endsection

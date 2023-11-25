@@ -38,6 +38,10 @@ return new class extends Migration
             $table->foreign('lh_id')->references('id')->on('lecturehalls')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
+            $table->unsignedBigInteger('acc_id')->nullable();
+            $table->foreign('acc_id')->references('id')->on('accsupportives')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }

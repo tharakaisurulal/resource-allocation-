@@ -74,9 +74,9 @@ Route::get('/guestpage', function () {
     return view('guestpage');
 });
 
-Route::get('/tablebcslevel1', function () {
-    return view('tablebcslevel1');
-});
+//Route::get('/tablebcslevel1', function () {
+    //return view('tablebcslevel1');
+//});
 
 Route::get('/tablebcslevel2', function () {
     return view('tablebcslevel2');
@@ -158,6 +158,30 @@ Route::get('/academicsupportive/accsuplecturehalldetails', function () { //route
 Route::get('/academicsupportive/accsuplab', function () { //route to view lab page.
     return view('academicsupportive.accsuplab');
 });
+
+Route::get('/academicsupportive/acasuptablebcslevel1sem1', [academicsupportiveController::class, 'viewbcs1sem1'])->name('viewbcs1sem1'); //storing data in lecturer table.
+Route::get('/academicsupportive/acasuptablebcslevel1sem2', [academicsupportiveController::class, 'viewbcs1sem2'])->name('viewbcs1sem2');
+
+Route::get('/academicsupportive/acasuptablebcslevel2sem1', [academicsupportiveController::class, 'viewbcs2sem1'])->name('viewbcs2sem1');
+Route::get('/academicsupportive/acasuptablebcslevel2sem2', [academicsupportiveController::class, 'viewbcs2sem2'])->name('viewbcs2sem2');
+
+Route::get('/academicsupportive/acasuptablebcslevel3sem1', [academicsupportiveController::class, 'viewbcs3sem1'])->name('viewbcs3sem1');
+Route::get('/academicsupportive/acasuptablebcslevel3sem2', [academicsupportiveController::class, 'viewbcs3sem2'])->name('viewbcs3sem2');
+
+Route::get('/academicsupportive/acasuptablebsclevel1sem1', [academicsupportiveController::class, 'viewbsc1sem1'])->name('viewbsc1sem1');
+Route::get('/academicsupportive/acasuptablebsclevel1sem2', [academicsupportiveController::class, 'viewbsc1sem2'])->name('viewbsc1sem2');
+
+Route::get('/academicsupportive/acasuptablebsclevel2sem1', [academicsupportiveController::class, 'viewbsc2sem1'])->name('viewbsc2sem1');
+Route::get('/academicsupportive/acasuptablebsclevel2sem2', [academicsupportiveController::class, 'viewbsc2sem2'])->name('viewbsc2sem2');
+
+Route::get('/academicsupportive/acasuptablebsclevel3sem1', [academicsupportiveController::class, 'viewbsc3sem1'])->name('viewbsc3sem1');
+Route::get('/academicsupportive/acasuptablebsclevel3sem2', [academicsupportiveController::class, 'viewbsc3sem2'])->name('viewbsc3sem2');
+
+Route::post('/academicsupportive/choosetimetable', [academicsupportiveController::class, 'choosetimetable'])->name('choosetimetable');
+
+Route::get('/academicsupportive/filtertimetable', [academicsupportiveController::class, 'filtertimetable'])->name('filtertimetable');
+
+Route::post('/academicsupportive/filtertimetablesubmit', [academicsupportiveController::class, 'filtertimetablesubmit'])->name('filtertimetablesubmit');
 
 /*student routes*/
 Route::get('/students/studenthome', [studentController::class, 'studenthome']);
@@ -271,6 +295,8 @@ Route::post('/admin/academicsupportive/accsupstore', [academicsupportiveControll
 
 //Route::post('updatelecturerpassword-lecturer/{id}',[academicsupportiveController::class, 'updatelecturerpassword'])->name('updatelecturerpassword');  //route to function of update student password.
 
+
+
 /*admin.lecturehall routes*/
 Route::get('/admin/guest/guestopera', [guestController::class, 'viewguest'])->name('admin.guest.guestopera');  //route to view student crud operation page.
 
@@ -280,3 +306,9 @@ Route::get('/admin/timetable/addtimetable', [timetableController::class, 'addtim
 Route::post('/admin/timetable/timetablestore', [timetableController::class, 'timetablestore'])->name('timetablestore'); //storing data in lecturer table.
 
 Route::get('/admin/timetable/timetableopera', [timetableController::class, 'viewtimetable'])->name('admin.timetable.timetableopera');  //route to view student crud operation page.
+
+Route::get('update-timetable/{id}',[timetableController::class, 'updatetimetable'])->name('updatetimetable');  //route to function of return selected user details to edit page.
+
+Route::post('update1-timetable/{id}',[timetableController::class, 'updatetimetable1'])->name('updatetimetable1');
+
+Route::get('delete-timetable/{id}',[timetableController::class, 'deletetimetable'])->name('deletetimetable');  //route to function of delete programs.
