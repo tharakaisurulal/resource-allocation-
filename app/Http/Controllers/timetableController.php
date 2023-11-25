@@ -114,12 +114,12 @@ public function viewtimetable(){  //view the students in database(inside the adm
 public function updatetimetable($id) //to do the update choose the selected id and return details in to edit page.
 {
         $timetable = timetable::find($id);
-
+        $dater5=lecturer::all();
         //$this-> lhcapacity = $lecturehall1->lh_capacity;
         //$this-> lhname = $lecturehall1->lh_name;
         //$lecturehall1->update();
-        return $timetable;
-        return view('admin.timetable.admintimetableedit', ['timetable'=>$timetable]);
+        //return $dater5;
+        return view('admin.timetable.admintimetableedit', ['timetable'=>$timetable, 'dater5'=>$dater5]);
 }
 
 

@@ -84,19 +84,19 @@
                 <thead>
                     <td>level</td>
                     <td>semester</td>
-                    <td>Action</td>
-
                 </thead>
                 <tbody>
 
+
                 <tr>
-                    <td><input type="text" name="id" value="{{$timetable->id}}" required disabled></td>
-                    <td><select name="level" id="faculty">
-                        <option value="">--Choose course--</option>
-                        <option value="level1" @selected($timetable->level == 'level1')>Level 1</option>
-                        <option value="level2" @selected($timetable->level == 'level2')>Level 2</option>
-                        <option value="level3" @selected($timetable->level == 'level3')>Level 3</option>
-                        </select></td>
+                    <td>
+                        @foreach ( $dater5 as $data )
+                        <select name="level" id="faculty">
+                            <option value="">--Choose lecturer--</option>
+                            <option value="level1">{{$data->lec_name}}</option>
+                        </select>
+                        @endforeach
+                    </td>
                     <td>
                             <button class="btn btn-secondary btn-sm" type="submit" >Submit</button>
                             <a href="/admin/timetable/timetableopera"> <button class="btn btn-secondary btn-sm" type="button" >Back</button></a>
