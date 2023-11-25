@@ -25,9 +25,12 @@
         <div class="card-body">
             <h1 class="card-title"> Laboratory 01</h1>
             <p class="card-info">
-                    Capacity :     <br>
-                    Ac or Non Ac : <br>
-                    Location
+                @foreach (  $dater4 as $data )
+                @if (($data->lab_name)=="Computer lab 01")
+                Capacity : {{$data->lab_capacity}}<br>
+                Ac or Non Ac : {{$data->lab_air_conditioner}}<br>
+                @endif
+            @endforeach
             </p>
         </div>
     </div>
@@ -39,9 +42,12 @@
         <div class="card-body">
             <h1 class="card-title"> Laboratory 02</h1>
             <p class="card-info">
-                    Capacity :     <br>
-                    Ac or Non Ac : <br>
-                    Location
+                @foreach (  $dater4 as $data )
+                @if (($data->lab_name)=="Computer lab 02")
+                Capacity : {{$data->lab_capacity}}<br>
+                Ac or Non Ac : {{$data->lab_air_conditioner}}<br>
+                @endif
+            @endforeach
             </p>
         </div>
     </div>
@@ -53,9 +59,29 @@
         <div class="card-body">
             <h1 class="card-title">Reserach Lab</h1>
             <p class="card-info">
-                    Capacity :     <br>
-                    Ac or Non Ac : <br>
-                    Location
+                @foreach (  $dater4 as $data )
+                @if (($data->lab_name)=="Computer lab 03")
+                Capacity : {{$data->lab_capacity}}<br>
+                Ac or Non Ac : {{$data->lab_air_conditioner}}<br>
+                @endif
+            @endforeach
+            </p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="col-6">
+            <img src="/images/computer1.jpg" alt="" width="320px" height="500px">
+        </div>
+        <div class="card-body">
+            <h1 class="card-title">Reserach Lab</h1>
+            <p class="card-info">
+                @foreach (  $dater4 as $data )
+                @if (($data->lab_name)=="Special lab")
+                Capacity : {{$data->lab_capacity}}<br>
+                Ac or Non Ac : {{$data->lab_air_conditioner}}<br>
+                @endif
+            @endforeach
             </p>
         </div>
     </div>

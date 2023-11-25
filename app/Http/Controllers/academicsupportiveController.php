@@ -42,6 +42,30 @@ class academicsupportiveController extends Controller
         //return view('guest.guesthome');
     }
 
+    public function accsuplecturehalldetails()
+    {
+        $dater3=lecturehall::all();
+        //return $dater3;
+        return view('academicsupportive.accsuplecturehalldetails',['dater3'=>$dater3]);
+
+    }
+
+    public function accsuplab()
+    {
+        $dater4=lab::all();
+        //return $dater3;
+        return view('academicsupportive.accsuplab',['dater4'=>$dater4]);
+
+    }
+
+
+    public function academicsupportiverequest()
+    {
+        $dater4=lab::all();
+        //return $dater3;
+        return view('academicsupportive.accsuplab',['dater4'=>$dater4]);
+
+    }
     public function filtertimetable()
     {
         $dater1=course::all();

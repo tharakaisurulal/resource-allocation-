@@ -151,13 +151,17 @@ Route::post('/lecturerreq', [lecturerController::class, 'lecturerreq'])->name('l
 /*academicsupportive routes*/
 Route::get('/academicsupportive/academicsupportivehome', [academicsupportiveController::class, 'academicsupportivehome']);
 
-Route::get('/academicsupportive/accsuplecturehalldetails', function () { //route to view lecturehalls.
-    return view('academicsupportive.accsuplecturehalldetails');
-});
+//Route::get('/academicsupportive/accsuplecturehalldetails', function () { //route to view lecturehalls.
+    //return view('academicsupportive.accsuplecturehalldetails');
+//});
+Route::get('/academicsupportive/accsuplecturehalldetails', [academicsupportiveController::class, 'accsuplecturehalldetails'])->name('accsuplecturehalldetails');
 
-Route::get('/academicsupportive/accsuplab', function () { //route to view lab page.
-    return view('academicsupportive.accsuplab');
-});
+//Route::get('/academicsupportive/accsuplab', function () { //route to view lab page.
+    //return view('academicsupportive.accsuplab');
+//});
+Route::get('/academicsupportive/request', [lecturerController::class, 'academicsupportiverequest'])->name('academicsupportiverequest');; //view request page.
+
+Route::get('/academicsupportive/accsuplab', [academicsupportiveController::class, 'accsuplab'])->name('accsuplab');
 
 Route::get('/academicsupportive/acasuptablebcslevel1sem1', [academicsupportiveController::class, 'viewbcs1sem1'])->name('viewbcs1sem1'); //storing data in lecturer table.
 Route::get('/academicsupportive/acasuptablebcslevel1sem2', [academicsupportiveController::class, 'viewbcs1sem2'])->name('viewbcs1sem2');
