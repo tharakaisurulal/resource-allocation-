@@ -1272,7 +1272,7 @@ public function viewbcs2sem2() //view the guest home page       //ok
 
 }
 
-public function viewbcs3sem1() //view the guest home page       //ok
+public function viewbcs3sem1()
 {
         $data1 = DB::table('timetables')
         ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
