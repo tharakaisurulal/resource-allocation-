@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Models\student;
+use App\Models\lecturehall;
+use App\Models\lab;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\hash;
 
@@ -29,6 +31,21 @@ class studentController extends Controller
         else{
             return view('admin.student.stuopera',['cusdata4'=> $cusdata4]);
         }
+    }
+
+    public function studentlecturehalldetails() //view the guest lecturehall page
+    {
+        $dater3=lecturehall::all();
+        //return $dater3;
+        return view('students.studentlecturehalldetails',['dater3'=>$dater3]);
+    }
+
+    public function studentlab() //view the guest lab page
+    {
+        $dater4=lab::all();
+        //return $dater3;
+        return view('students.studentLab',['dater4'=>$dater4]);
+
     }
 
 

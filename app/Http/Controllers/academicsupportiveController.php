@@ -59,13 +59,14 @@ class academicsupportiveController extends Controller
     }
 
 
-    public function academicsupportiverequest()
+    /*public function academicsupportiverequest()
     {
         $dater4=lab::all();
         //return $dater3;
         return view('academicsupportive.accsuplab',['dater4'=>$dater4]);
 
-    }
+    }*/
+
     public function filtertimetable()
     {
         $dater1=course::all();

@@ -23,10 +23,10 @@
             <img src="/images/OIP.jpg" alt="" width="320px" height="500px">
         </div>
         <div class="card-body">
-            <h1 class="card-title"> Laboratory 01</h1>
-            <p class="card-info">
-                @foreach (  $dater4 as $data )
+            @foreach (  $dater4 as $data )
                 @if (($data->lab_name)=="Computer lab 01")
+            <h1 class="card-title">{{$data->lab_name}}</h1>
+            <p class="card-info">
                 Capacity : {{$data->lab_capacity}}<br>
                 Ac or Non Ac : {{$data->lab_air_conditioner}}<br>
                 @endif
@@ -40,10 +40,10 @@
             <img src="/images/computer.jpg" alt="" width="320px" height="500px">
         </div>
         <div class="card-body">
-            <h1 class="card-title"> Laboratory 02</h1>
+            @foreach (  $dater4 as $data )
+            @if (($data->lab_name)=="Computer lab 02")
+            <h1 class="card-title"> {{$data->lab_name}}</h1>
             <p class="card-info">
-                @foreach (  $dater4 as $data )
-                @if (($data->lab_name)=="Computer lab 02")
                 Capacity : {{$data->lab_capacity}}<br>
                 Ac or Non Ac : {{$data->lab_air_conditioner}}<br>
                 @endif
@@ -57,10 +57,10 @@
             <img src="/images/computer1.jpg" alt="" width="320px" height="500px">
         </div>
         <div class="card-body">
-            <h1 class="card-title">Reserach Lab</h1>
-            <p class="card-info">
-                @foreach (  $dater4 as $data )
+            @foreach (  $dater4 as $data )
                 @if (($data->lab_name)=="Computer lab 03")
+            <h1 class="card-title">{{$data->lab_name}}</h1>
+            <p class="card-info">
                 Capacity : {{$data->lab_capacity}}<br>
                 Ac or Non Ac : {{$data->lab_air_conditioner}}<br>
                 @endif
@@ -74,10 +74,10 @@
             <img src="/images/computer1.jpg" alt="" width="320px" height="500px">
         </div>
         <div class="card-body">
-            <h1 class="card-title">Reserach Lab</h1>
-            <p class="card-info">
-                @foreach (  $dater4 as $data )
+            @foreach (  $dater4 as $data )
                 @if (($data->lab_name)=="Special lab")
+            <h1 class="card-title">{{$data->lab_name}}</h1>
+            <p class="card-info">
                 Capacity : {{$data->lab_capacity}}<br>
                 Ac or Non Ac : {{$data->lab_air_conditioner}}<br>
                 @endif
