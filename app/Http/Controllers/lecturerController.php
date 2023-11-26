@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\lecturer;
+use App\Models\lecturehall;
+use App\Models\lab;
 use App\Models\lecturerrequest;
 use Illuminate\View\View;
 
@@ -45,6 +47,21 @@ class lecturerController extends Controller
         else{
             return view('admin.lecturer.lecopera',['cusdata5'=> $cusdata5]);
         }
+    }
+
+    public function leclecturehalldetails() //view the guest lecturehall page
+    {
+        $dater3=lecturehall::all();
+        //return $dater3;
+        return view('lecturers.leclecturehalldetails',['dater3'=>$dater3]);
+    }
+
+    public function lecturelab() //view the guest lab page
+    {
+        $dater4=lab::all();
+        //return $dater3;
+        return view('lecturers.lecturerlab',['dater4'=>$dater4]);
+
     }
 
 

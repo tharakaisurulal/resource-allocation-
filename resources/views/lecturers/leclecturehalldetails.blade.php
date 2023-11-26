@@ -25,11 +25,14 @@
             <img src="/images/R3.jpg" alt=""  width=320px height=500px>
         </div>
         <div class="card-body">
-            <h1 class="card-title"> Lecture Hall 01</h1>
+            @foreach (  $dater3 as $data )
+            @if (($data->lh_name)=="Lecture Hall 01")
+            <h1 class="card-title">{{$data->lh_name}}</h1>
             <p class="card-info">
-                    Capacity :     <br>
-                    Ac or Non Ac : <br>
-                    Location
+                Capacity : {{$data->lh_capacity}}<br>
+                Ac or Non Ac : {{$data->lh_air_conditioner}}<br>
+                @endif
+            @endforeach
             </p>
         </div>
     </div>
@@ -39,11 +42,14 @@
             <img src="/images/R4.jpg" alt="" width=320px height=500px>
         </div>
         <div class="card-body">
-            <h1 class="card-title"> Lecture Hall 02</h1>
+            @foreach (  $dater3 as $data )
+            @if (($data->lh_name)=="mini-auditorium")
+            <h1 class="card-title"> {{$data->lh_name}}</h1>
             <p class="card-info">
-                    Capacity :     <br>
-                    Ac or Non Ac : <br>
-                    Location
+                Capacity : {{$data->lh_capacity}}<br>
+                Ac or Non Ac : {{$data->lh_air_conditioner}}<br>
+                @endif
+            @endforeach
             </p>
         </div>
     </div>
@@ -51,23 +57,14 @@
     <div class="card">
         <img src="/images/R5.jpg" alt="" width=320px height=500px>
         <div class="card-body">
-            <h1 class="card-title"> Lecture Hall 03</h1>
+            @foreach (  $dater3 as $data )
+            @if (($data->lh_name)=="main-auditorium")
+            <h1 class="card-title"> {{$data->lh_name}}</h1>
             <p class="card-info">
-                    Capacity :     <br>
-                    Ac or Non Ac : <br>
-                    Location
-            </p>
-        </div>
-    </div>
-
-    <div class="card">
-        <img src="/images/R6.jpg" alt="" width=320px height=500px>
-        <div class="card-body">
-            <h1 class="card-title">Audiotorium</h1>
-            <p class="card-info">
-                    Capacity :     <br>
-                    Ac or Non Ac : <br>
-                    Location
+                Capacity : {{$data->lh_capacity}}<br>
+                Ac or Non Ac : {{$data->lh_air_conditioner}}<br>
+                @endif
+            @endforeach
             </p>
         </div>
     </div>

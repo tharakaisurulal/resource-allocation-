@@ -106,14 +106,17 @@ Route::get('/guest/guesthome', [guestController::class, 'guesthome']);
 
 Route::post('/guestreq', [guestController::class, 'guestreq'])->name('guestreq'); //store request details in database.
 
-Route::get('/guest/guestlecturehalldetails', function () { //route to view lecturehalls.
-    return view('guest.guestlecturehalldetails');
-});
+//Route::get('/guest/guestlecturehalldetails', function () {
+    //return view('guest.guestlecturehalldetails');
+//});
 
-Route::get('/guest/lab', function () { //route to view lab page.
-    return view('guest.guestlab');
-});
+Route::get('/guest/guestlecturehalldetails', [guestController::class, 'guestlecturehalldetails'])->name('guestlecturehalldetails'); //route to view lecturehalls.
 
+//Route::get('/guest/lab', function () { //route to view lab page.
+    //return view('guest.guestlab');
+//});
+
+Route::get('/guest/lab', [guestController::class, 'guestlab'])->name('guestlab'); //route to view lab page.
 
 
 
@@ -130,9 +133,9 @@ Route::get('/forgetpassword', [loginController::class, 'forgetpassword'])->name(
 
 
 /*Lecture routes*/
-Route::get('/lecturers/lab', function () { //view lecture lab page.
-    return view('lecturers.lecturerlab');
-});
+//Route::get('/lecturers/lab', function () { //view lecture lab page.
+    //return view('lecturers.lecturerlab');
+//});
 
 /*Route::get('/lecturers/lecturerhome', function () { //view lecture home page.
     return view('lecturers.lecturerhome');
@@ -140,9 +143,13 @@ Route::get('/lecturers/lab', function () { //view lecture lab page.
 
 Route::get('/lecturers/lecturerhome', [lecturerController::class, 'lecturerhome']);
 
-Route::get('/lecturers/leclecturehalldetails', function () {
-    return view('lecturers.leclecturehalldetails');
-});
+//Route::get('/lecturers/leclecturehalldetails', function () {
+   //return view('lecturers.leclecturehalldetails');
+//});
+
+Route::get('/lecturers/leclecturehalldetails', [lecturerController::class, 'leclecturehalldetails'])->name('leclecturehalldetails'); //route to view lecturehalls.
+
+Route::get('/lecturers/lab', [lecturerController::class, 'lecturelab'])->name('lecturelab'); //route to view lab page.
 
 Route::get('/lecturers/request', [lecturerController::class, 'lecturerrequest']); //view request page.
 
@@ -159,7 +166,7 @@ Route::get('/academicsupportive/accsuplecturehalldetails', [academicsupportiveCo
 //Route::get('/academicsupportive/accsuplab', function () { //route to view lab page.
     //return view('academicsupportive.accsuplab');
 //});
-Route::get('/academicsupportive/request', [lecturerController::class, 'academicsupportiverequest'])->name('academicsupportiverequest');; //view request page.
+/*Route::get('/academicsupportive/request', [lecturerController::class, 'academicsupportiverequest'])->name('academicsupportiverequest');; //view request page.*/
 
 Route::get('/academicsupportive/accsuplab', [academicsupportiveController::class, 'accsuplab'])->name('accsuplab');
 
@@ -190,14 +197,17 @@ Route::post('/academicsupportive/filtertimetablesubmit', [academicsupportiveCont
 /*student routes*/
 Route::get('/students/studenthome', [studentController::class, 'studenthome']);
 
-Route::get('/students/studentlecturehalldetails', function () { //route to view lecturehalls.
-    return view('students.studentlecturehalldetails');
-});
+//Route::get('/students/studentlecturehalldetails', function () { //route to view lecturehalls.
+   // return view('students.studentlecturehalldetails');
+//});
 
-Route::get('/students/lab', function () { //route to view lab page.
-    return view('students.studentLab');
-});
+//Route::get('/students/lab', function () { //route to view lab page.
+    //return view('students.studentLab');
+//});
 
+Route::get('/students/studentlecturehalldetails', [studentController::class, 'studentlecturehalldetails'])->name('studentlecturehalldetails'); //route to view lecturehalls.
+
+Route::get('/students/lab', [studentController::class, 'studentlab'])->name('studentlab'); //route to view lab page.
 
 /*admin routes*/
 //Route::get('/admin/adminlecturehallopera', function () {

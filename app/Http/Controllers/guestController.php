@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\guest;
+use App\Models\lecturehall;
+use App\Models\lab;
 use App\Models\guestrequest;
 use Illuminate\View\View;
 
@@ -34,6 +36,22 @@ class guestController extends Controller
             return view('guest.guesthome',compact('dater'));
         //return view('guest.guesthome');
     }
+
+    public function guestlecturehalldetails() //view the guest lecturehall page
+    {
+        $dater3=lecturehall::all();
+        //return $dater3;
+        return view('guest.guestlecturehalldetails',['dater3'=>$dater3]);
+    }
+
+    public function guestlab() //view the guest lab page
+    {
+        $dater4=lab::all();
+        //return $dater3;
+        return view('guest.guestlab',['dater4'=>$dater4]);
+
+    }
+
 
     public function viewguest(){  //view the students in database(inside the admin page).
         $cusdata7= guest::all();
