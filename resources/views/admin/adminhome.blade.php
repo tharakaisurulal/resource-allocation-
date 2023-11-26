@@ -105,7 +105,7 @@
                   </div>
 
 
-                  <div class="accordion-item">
+                 <!-- <div class="accordion-item">
                     <h2 class="accordion-header" id="flush-headingSix">
                       <button class="accordion-button collapsed sec2" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
                         <li><a href="#">EVENTS</a></li>
@@ -114,9 +114,9 @@
                     <div id="flush-collapseSix" class="accordion-collapse collapse sec2" aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushExample">
                       <div class="accordion-body">
                           <!--write-->
-                      </div>
+                     <!-- </div>
                     </div>
-                  </div>
+                  </div>-->
 
 
                   <div class="accordion-item">
@@ -185,5 +185,19 @@
         <h4>{{$count3}}</h4>
     </div>
 </div>
+<div class="section2">
+    <button type="button" class="btn btn-warning but">
+        <a href="/admin/timetable/timetableopera">
+        <h4>Time Table</h4><br>
+        </a>
+    </button>
+
+    <button type="button" class="btn btn-warning but">
+        <a href="/admin/adminhallallocation">
+        <h4>Hall Allocation</h4><br>
+        </a>
+    </button>
+</div>
     </body>
     </html>
+
