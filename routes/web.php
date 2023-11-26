@@ -217,6 +217,10 @@ Route::get('/admin/adminhome', [adminController::class, 'adminhome'])->name('adm
 
 Route::get('/admin/adminhallallocation', [adminController::class, 'adminhallallocation'])->name('adminhallallocation');
 
+Route::post('/admin/adminhallallocation1', [adminController::class, 'adminhallallocation1'])->name('adminhallallocation1');
+
+Route::get('/admin/viewhallallocation', [adminController::class, 'viewhallallocation'])->name('viewhallallocation');
+
 //Route::get('/admin/adminhome', function () {
     //return view('admin.adminhome');
 //});
