@@ -215,6 +215,8 @@ Route::get('/students/lab', [studentController::class, 'studentlab'])->name('stu
 //});
 Route::get('/admin/adminhome', [adminController::class, 'adminhome'])->name('adminhome'); //view admin home page.
 
+Route::get('/admin/adminhallallocation', [adminController::class, 'adminhallallocation'])->name('adminhallallocation');
+
 //Route::get('/admin/adminhome', function () {
     //return view('admin.adminhome');
 //});
