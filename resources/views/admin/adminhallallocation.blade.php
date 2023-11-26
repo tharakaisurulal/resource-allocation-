@@ -83,7 +83,7 @@
         <div class="but1">
         <button type="button" class="btn btn-warning" onclick="window.location.href='/academicsupportive/filtertimetable'">Check Availability</button>
         <button type="button" class="btn btn-warning" onclick="window.location.href='/admin/timetable/timetableopera'">Change Timetable</button>
-        <button type="button" class="btn btn-warning" onclick="window.location.href='/admin/timetable/addtimetable'">Allocate LectureHall/Lab</button>
+        <button type="button" class="btn btn-warning" onclick="window.location.href='/admin/viewhallallocation'">Allocate LectureHall/Lab</button>
         </div><br>
     </div>
 </body>
