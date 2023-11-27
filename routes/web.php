@@ -211,7 +211,7 @@ Route::get('/students/studentlecturehalldetails', [studentController::class, 'st
 
 Route::get('/students/lab', [studentController::class, 'studentlab'])->name('studentlab'); //route to view lab page.
 
-Route::post('/students/viewtimetable', [studentController::class, 'stchoosetimetable'])->name('stchoosetimetable');
+Route::get('/students/viewtimetable', [studentController::class, 'stchoosetimetable'])->name('stchoosetimetable');
 
 
 Route::get('/student/acasuptablebcslevel1sem1', [studentController::class, 'stviewbcs1sem1'])->name('stviewbcs1sem1'); //storing data in lecturer table.
@@ -295,9 +295,11 @@ Route::post('update1-program/{id}',[programController::class, 'updateprogram1'])
 /*admin.student routes*/
 Route::get('/admin/student/stuopera', [studentController::class, 'viewstudent'])->name('admin.student.stuopera');  //route to view student crud operation page.
 
-Route::get('/admin/student/sturegister', function () { //view student registration page.
-    return view('admin.student.sturegistration');
-});
+//Route::get('/admin/student/sturegister', function () { //view student registration page.
+    //return view('admin.student.sturegistration');
+//});
+
+Route::get('/admin/student/sturegister', [studentController::class, 'sturegister'])->name('admin.student.sturegister');
 
 Route::post('/admin/student/studentstore', [studentController::class, 'studentstore'])->name('studentstore'); //storing data in student table.
 

@@ -1,6 +1,5 @@
 @extends('layout.header')
 @section('content2')
-        <li><a href="/">HOME</a></li>
         <li><a href="/admin/student/stuopera">BACK</a></li>
 @endsection
 
@@ -73,57 +72,61 @@
        <option value="2">BSc</option>
        </select>
 
+    <label for="name"><b>Level:</b></label>
+    <select name="level" id="faculty">
+        <option value="">--Choose Level--</option>
+        <option value="level1">Level 1</option>
+        <option value="level2">Level 2</option>
+        <option value="level3">Level 3</option>
+        </select>
+    <label class="text-danger span1">@error('level')  {{$message}}  @enderror</label><br>
+
+    <label for="name"><b>Semester:</b></label>
+    <select name="semester" id="faculty">
+        <option value="">--Choose course--</option>
+        <option value="semester1">Semester 1</option>
+        <option value="semester2">Semester 2</option>
+        </select>
+    <label class="text-danger span1">@error('semester')  {{$message}}  @enderror</label><br>
 
    <label for="name"><b>Subject 1:</b></label>
     <select name="subject1" id="faculty">
         <option value="">--Choose subject--</option>
-        <option value="op1">Faculty of Science</option>
-        <option value="op2">Faculty of Management and Finance</option>
-        <option value="op3">Faculty of Humanities and Social Sciences	</option>
-        <option value="op4">Faculty of Fisheries and Marine Sciences and Technology</option>
-        <option value="op5">Faculty of Medicine</option>
-        <option value="op6">Faculty of Engineering</option>
-        <option value="op7">Faculty of Technology</option>
-        <option value="op7">Faculty of Agriculture</option>
+        @foreach ($dater1 as $cdb1 )
+        <option value="{{$cdb1->id}}">@php
+            echo $cdb1->course_name;
+        @endphp</option>
+        @endforeach
         </select>
 
         <label for="subject2"><b>Subject 2:</b></label>
     <select name="subject2" id="faculty">
         <option value="">--Choose subject--</option>
-        <option value="op1">Faculty of Science</option>
-        <option value="op2">Faculty of Management and Finance</option>
-        <option value="op3">Faculty of Humanities and Social Sciences	</option>
-        <option value="op4">Faculty of Fisheries and Marine Sciences and Technology</option>
-        <option value="op5">Faculty of Medicine</option>
-        <option value="op6">Faculty of Engineering</option>
-        <option value="op7">Faculty of Technology</option>
-        <option value="op7">Faculty of Agriculture</option>
+        @foreach ($dater1 as $cdb1 )
+        <option value="{{$cdb1->id}}">@php
+            echo $cdb1->course_name;
+        @endphp</option>
+        @endforeach
         </select>
 
         <label for="subject3"><b>Subject 3:</b></label>
     <select name="subject3" id="faculty">
         <option value="">--Choose subject--</option>
-        <option value="op1">Faculty of Science</option>
-        <option value="op2">Faculty of Management and Finance</option>
-        <option value="op3">Faculty of Humanities and Social Sciences	</option>
-        <option value="op4">Faculty of Fisheries and Marine Sciences and Technology</option>
-        <option value="op5">Faculty of Medicine</option>
-        <option value="op6">Faculty of Engineering</option>
-        <option value="op7">Faculty of Technology</option>
-        <option value="op7">Faculty of Agriculture</option>
+        @foreach ($dater1 as $cdb1 )
+        <option value="{{$cdb1->id}}">@php
+            echo $cdb1->course_name;
+        @endphp</option>
+        @endforeach
         </select>
 
         <label for="subject4"><b>Subject 4:</b></label>
     <select name="subject4" id="faculty">
         <option value="">--Choose subject--</option>
-        <option value="op1">Faculty of Science</option>
-        <option value="op2">Faculty of Management and Finance</option>
-        <option value="op3">Faculty of Humanities and Social Sciences	</option>
-        <option value="op4">Faculty of Fisheries and Marine Sciences and Technology</option>
-        <option value="op5">Faculty of Medicine</option>
-        <option value="op6">Faculty of Engineering</option>
-        <option value="op7">Faculty of Technology</option>
-        <option value="op7">Faculty of Agriculture</option>
+        @foreach ($dater1 as $cdb1 )
+        <option value="{{$cdb1->id}}">@php
+            echo $cdb1->course_name;
+        @endphp</option>
+        @endforeach
         </select>
 
         <!--<label for="email"><b>Username:</b></label>

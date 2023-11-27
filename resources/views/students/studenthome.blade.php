@@ -77,59 +77,14 @@
 
             <div class="face back">
                     <div class="back-content center">
-                        <h3> Time Table</h3><br>
-                            <form action="{{route('choosetimetable')}}" method="POST">
-                                @csrf
-                                <table>
-                                    <tr>
-                                        <td colspan="3" id="td1"><h5><b>Choose Level</b></h5></td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <label class="container">One
-                                                <input type="radio" checked="checked" name="radio" value="1">
-                                                <span class="checkmark"></span>
-                                              </label>
-                                        </td>
-                                        <td>
-                                            <label class="container">Two
-                                                <input type="radio" name="radio" value="2">
-                                                <span class="checkmark"></span>
-                                              </label>
-                                        </td>
-                                        <td>
-                                            <label class="container">Three
-                                                <input type="radio" name="radio" value="3">
-                                                <span class="checkmark"></span>
-                                              </label>
-                                        </td>
-                                    </tr>
-                                    <hr class="hr1">
-                                    <tr>
-                                        <td colspan="3" id="td1"><h5><b>Choose Semester</b></h5></td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <label class="container1">One
-                                                <input type="radio" checked="checked" name="radio1" value="1">
-                                                <span class="checkmark"></span>
-                                              </label>
-                                        </td>
-                                        <td>
-                                            <label class="container1">Two
-                                                <input type="radio" name="radio1" value="2">
-                                                <span class="checkmark"></span>
-                                              </label>
-                                        </td>
-
-                                    </tr>
-                                </table>
-                                <hr>
-                                <button type="submit" class="btn btn-primary">View</button>
-                            </form>
+                        <h3> Time Table</h3>
+                        <div class="button">
+                            <a href="/students/viewtimetable"><span>CLICK</span></a>
+                        </div>
                     </div>
             </div>
         </div>
+
 
 
         <div class="card">

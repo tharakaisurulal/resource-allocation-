@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\student;
 use App\Models\lecturehall;
 use App\Models\lab;
+use App\Models\course;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\hash;
 
@@ -86,6 +87,8 @@ class studentController extends Controller
             'mobile'=> $request -> mobile,
             'photo'=> $filename,
             'program_Id' => $request -> program,
+            'semester' => $request -> semester,
+            'level' => $request -> level,
             'subject1'=> $request -> subject1,
             'subject2'=> $request -> subject2,
             'subject3'=> $request -> subject3,
@@ -574,35 +577,35 @@ public function stviewbsc3sem2() //view the guest home page       //ok
 
 }
 
-public function stchoosetimetable(Request $request) //store guest registration details.  //ok
+public function stchoosetimetable()
 {
-//return $request;
-    $request->validate([  //validation part.
-        'radio'=> 'required',
-        'radio1'=> 'required'
-      ]);
-if((($request->radio)==1)&(($request->radio1)==1)){
-    return redirect('/academicsupportive/acasuptablebcslevel1sem1');
-}
-elseif((($request->radio)==1)&(($request->radio1)==2)){
-    return redirect('/academicsupportive/acasuptablebcslevel1sem2');
-}
-elseif((($request->radio)==2)&(($request->radio1)==1)){
-    return redirect('/academicsupportive/acasuptablebcslevel2sem1');
-}
+    $dater = array();
+    if(session()->has('reid')) /*If we are logged in session variable is assign, then we get the id of logged in user and detailas are assign to $dater variable and
+                               return the logged in user details to guest home.mainly it is used in header welcome message.*/
+    {
+        $dater=student::where('id','=',session()->get('reid'))->first();
 
-elseif((($request->radio)==2)&(($request->radio1)==2)){
-    return redirect('/academicsupportive/acasuptablebcslevel2sem2');
-}
-
-elseif((($request->radio)==3)&(($request->radio1)==1)){
-    return redirect('/academicsupportive/acasuptablebcslevel3sem1');
-}
-
-elseif((($request->radio)==3)&(($request->radio1)==2)){
-    return redirect('/academicsupportive/acasuptablebcslevel3sem2');
-}
-
+       /* $dat1 = DB::table('timetables')
+        ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+        ->join('programs', 'timetables.program_id', '=', 'programs.id')
+        ->join('courses', 'timetables.course_id', '=', 'courses.id')
+        ->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
+        //->join('labs', 'timetables.lab_id', '=', 'labs.id')
+    ->select('timetables.*', 'courses.course_name', 'courses.course_code','lecturehalls.lh_name','programs.program','lecturers.lec_name')
+        ->where('program.id','=','$dater-> program_Id')
+        ->where('level','=','level3')
+        ->where('semester','=','semester2')
+    ->get();*/
     }
+
+
+    return $dater;
+}
+
+public function sturegister() //view admin's student registraion page.
+{
+        $dater1=course::all();
+        return view('admin.student.sturegistration',['dater1'=> $dater1]);
+}
 
 }
