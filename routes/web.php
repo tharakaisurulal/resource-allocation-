@@ -211,26 +211,8 @@ Route::get('/students/studentlecturehalldetails', [studentController::class, 'st
 
 Route::get('/students/lab', [studentController::class, 'studentlab'])->name('studentlab'); //route to view lab page.
 
-Route::post('/students/viewtimetable', [studentController::class, 'stchoosetimetable'])->name('stchoosetimetable');
+Route::get('/students/viewtimetable', [studentController::class, 'stchoosetimetable'])->name('stchoosetimetable');
 
-
-Route::get('/student/acasuptablebcslevel1sem1', [studentController::class, 'stviewbcs1sem1'])->name('stviewbcs1sem1'); //storing data in lecturer table.
-Route::get('/student/acasuptablebcslevel1sem2', [studentController::class, 'stviewbcs1sem2'])->name('stviewbcs1sem2');
-
-Route::get('/student/acasuptablebcslevel2sem1', [studentController::class, 'stviewbcs2sem1'])->name('stviewbcs2sem1');
-Route::get('/student/acasuptablebcslevel2sem2', [studentController::class, 'stviewbcs2sem2'])->name('stviewbcs2sem2');
-
-Route::get('/student/acasuptablebcslevel3sem1', [studentController::class, 'stviewbcs3sem1'])->name('stviewbcs3sem1');
-Route::get('/student/acasuptablebcslevel3sem2', [studentController::class, 'stviewbcs3sem2'])->name('stviewbcs3sem2');
-
-Route::get('/student/acasuptablebsclevel1sem1', [studentController::class, 'stviewbsc1sem1'])->name('stviewbsc1sem1');
-Route::get('/student/acasuptablebsclevel1sem2', [studentController::class, 'stviewbsc1sem2'])->name('stviewbsc1sem2');
-
-Route::get('/student/acasuptablebsclevel2sem1', [studentController::class, 'stviewbsc2sem1'])->name('stviewbsc2sem1');
-Route::get('/student/acasuptablebsclevel2sem2', [studentController::class, 'stviewbsc2sem2'])->name('stviewbsc2sem2');
-
-Route::get('/student/acasuptablebsclevel3sem1', [studentController::class, 'stviewbsc3sem1'])->name('stviewbsc3sem1');
-Route::get('/student/acasuptablebsclevel3sem2', [studentController::class, 'stviewbsc3sem2'])->name('stviewbsc3sem2');
 
 /*admin routes*/
 //Route::get('/admin/adminlecturehallopera', function () {
@@ -295,9 +277,11 @@ Route::post('update1-program/{id}',[programController::class, 'updateprogram1'])
 /*admin.student routes*/
 Route::get('/admin/student/stuopera', [studentController::class, 'viewstudent'])->name('admin.student.stuopera');  //route to view student crud operation page.
 
-Route::get('/admin/student/sturegister', function () { //view student registration page.
-    return view('admin.student.sturegistration');
-});
+//Route::get('/admin/student/sturegister', function () { //view student registration page.
+    //return view('admin.student.sturegistration');
+//});
+
+Route::get('/admin/student/sturegister', [studentController::class, 'sturegister'])->name('admin.student.sturegister');
 
 Route::post('/admin/student/studentstore', [studentController::class, 'studentstore'])->name('studentstore'); //storing data in student table.
 

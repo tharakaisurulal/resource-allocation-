@@ -32,9 +32,16 @@
 
     <TD> 8.00-8.55</TD>
       <TD>
-        <div class="code" ></div>
+        @foreach ($data1 as $cdb)
+        @foreach ($cdb as $mb)
+            @php
+                echo $mb->lec_name;
+            @endphp
+        @endforeach
+        @endforeach
+        <!--<div class="code" ></div>
         <div class="lecturer"></div>
-        <div class="hall"></div>
+        <div class="hall"></div>-->
         </TD>
 
 

@@ -145,7 +145,7 @@ class adminController extends Controller
                     'course'=> 'required',
                     'level'=> 'required',
                     //'lecturehall'=> 'required_with:lecturername|required_without:lab|prohibits:lab',
-                    'lab'=> 'required_with:accsupname|required_without:lecturehall|prohibits:lecturehall',
+                    'lab'=> 'required_with:accsupname|required_without:lecturehall|prohibits:lecturehall', //if accsupname is present lab should be present|if lecturehall is empty lab should be present|if the lab is not empty lecturehall must be empty
                     //'lecturername'=> 'required_with:lecturehall',
                     'accsupname'=> 'required_with:lab',
                     'semester' => 'required'
@@ -176,4 +176,7 @@ class adminController extends Controller
             }
 
         }
+
+
+
 }

@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 use App\Models\student;
 use App\Models\lecturehall;
 use App\Models\lab;
+use App\Models\course;
+use App\Models\timetable;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\hash;
+use Illuminate\Support\Facades\DB;
 
 class studentController extends Controller
 {
@@ -59,6 +62,14 @@ class studentController extends Controller
             'password'=> 'required|unique:students|min:5|max:12',
             'mobile'=> 'required',
             'password1'=> 'required',
+            'subject1'=> 'required'|'required_without:subject2',
+            'subject2'=> 'required_without:subject3',
+            'subject3'=> 'required_without:subject4',
+            'subject4'=>  'required_without:subject5',
+            'subject5'=>  'required_without:subject6',
+            'subject6'=>  'required_without:subject7',
+            'subject7'=>  'required_without:subject8',
+            'subject8'=>  'nullable'
             //'program_Id' => 'required'
           ]);
           //return $request;
@@ -86,6 +97,8 @@ class studentController extends Controller
             'mobile'=> $request -> mobile,
             'photo'=> $filename,
             'program_Id' => $request -> program,
+            'semester' => $request -> semester,
+            'level' => $request -> level,
             'subject1'=> $request -> subject1,
             'subject2'=> $request -> subject2,
             'subject3'=> $request -> subject3,
@@ -177,432 +190,801 @@ public function updatestudentpassword(Request $request,$id)  //selected id will 
         return redirect()->route('admin.student.stuopera')->with('success',"Data updated successfully.");*/
 }
 
-public function stviewbcs1sem1() //view the guest home page       //ok
+
+public function stchoosetimetable()
 {
-        $data1 = DB::table('timetables')
+    $dater = array();
+    if(session()->has('reid')) /*If we are logged in session variable is assign, then we get the id of logged in user and detailas are assign to $dater variable and
+                               return the logged in user details to guest home.mainly it is used in header welcome message.*/
+    {
+        $dater=student::where('id','=',session()->get('reid'))->first();
+//return $dater;
+    if(($dater-> subject1)&&($dater-> subject2)&&($dater-> subject3)&&($dater-> subject4)&&($dater-> subject5)&&($dater-> subject6)&&($dater-> subject7)&&!($dater-> subject8)){
+
+        $datt1 = DB::table('timetables')
         ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
         ->join('programs', 'timetables.program_id', '=', 'programs.id')
         ->join('courses', 'timetables.course_id', '=', 'courses.id')
         ->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
-        //->join('labs', 'timetables.lab_id', '=', 'labs.id')
-    ->select('timetables.*', 'courses.course_name', 'courses.course_code','lecturehalls.lh_name','programs.program','lecturers.lec_name')
-        ->where('program','=','BCs')
-        ->where('level','=','level1')
-        ->where('semester','=','semester1')
-    ->get();
+    ->select('timetables.*', 'courses.course_name', 'courses.course_code', 'lecturehalls.lh_name', 'programs.program','lecturers.lec_name')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject1)
+        ->get();
 
-
-        $data2 = DB::table('timetables')
+        $datt11 = DB::table('timetables')
         ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
         ->join('programs', 'timetables.program_id', '=', 'programs.id')
         ->join('courses', 'timetables.course_id', '=', 'courses.id')
         //->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
         ->join('labs', 'timetables.lab_id', '=', 'labs.id')
     ->select('timetables.*', 'courses.course_name', 'courses.course_code','programs.program','labs.lab_name','accsupportives.acc_name')
-        ->where('program','=','BCs')
-        ->where('level','=','level1')
-        ->where('semester','=','semester1')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject1)
     ->get();
-        //$dater=accsupportive::where('id','=',session()->get('reid'))->first();
-        //return $data1;
-        //return view('academicsupportive.acasuptablebcslevel1',compact('dater'));
-        return view('academicsupportive.acasuptablebcslevel1sem1',['data1'=> $data1],['data2'=> $data2]);
 
-}
-
-public function stviewbcs1sem2() //view the guest home page       //ok
-{
-        $data1 = DB::table('timetables')
+        $datt2 = DB::table('timetables')
         ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
         ->join('programs', 'timetables.program_id', '=', 'programs.id')
         ->join('courses', 'timetables.course_id', '=', 'courses.id')
         ->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
-        //->join('labs', 'timetables.lab_id', '=', 'labs.id')
-    ->select('timetables.*', 'courses.course_name', 'courses.course_code','lecturehalls.lh_name','programs.program','lecturers.lec_name')
-        ->where('program','=','BCs')
-        ->where('level','=','level1')
-        ->where('semester','=','semester2')
-    ->get();
+    ->select('timetables.*', 'courses.course_name', 'courses.course_code', 'lecturehalls.lh_name', 'programs.program','lecturers.lec_name')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject2)
+        ->get();
 
-
-        $data2 = DB::table('timetables')
+        $datt22 = DB::table('timetables')
         ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
         ->join('programs', 'timetables.program_id', '=', 'programs.id')
         ->join('courses', 'timetables.course_id', '=', 'courses.id')
         //->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
         ->join('labs', 'timetables.lab_id', '=', 'labs.id')
     ->select('timetables.*', 'courses.course_name', 'courses.course_code','programs.program','labs.lab_name','accsupportives.acc_name')
-        ->where('program','=','BCs')
-        ->where('level','=','level1')
-        ->where('semester','=','semester2')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject2)
     ->get();
-        //$dater=accsupportive::where('id','=',session()->get('reid'))->first();
-        //return $data1;
-        //return view('academicsupportive.acasuptablebcslevel1',compact('dater'));
-        return view('academicsupportive.acasuptablebcslevel1sem2',['data1'=> $data1],['data2'=> $data2]);
 
-}
-
-public function stviewbcs2sem1() //view the guest home page       //ok
-{
-        $data1 = DB::table('timetables')
+        $datt3 = DB::table('timetables')
         ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
         ->join('programs', 'timetables.program_id', '=', 'programs.id')
         ->join('courses', 'timetables.course_id', '=', 'courses.id')
         ->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
-        //->join('labs', 'timetables.lab_id', '=', 'labs.id')
-    ->select('timetables.*', 'courses.course_name', 'courses.course_code','lecturehalls.lh_name','programs.program','lecturers.lec_name')
-        ->where('program','=','BCs')
-        ->where('level','=','level2')
-        ->where('semester','=','semester1')
-    ->get();
+    ->select('timetables.*', 'courses.course_name', 'courses.course_code', 'lecturehalls.lh_name', 'programs.program','lecturers.lec_name')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject3)
+        ->get();
 
-
-        $data2 = DB::table('timetables')
+        $datt33 = DB::table('timetables')
         ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
         ->join('programs', 'timetables.program_id', '=', 'programs.id')
         ->join('courses', 'timetables.course_id', '=', 'courses.id')
         //->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
         ->join('labs', 'timetables.lab_id', '=', 'labs.id')
     ->select('timetables.*', 'courses.course_name', 'courses.course_code','programs.program','labs.lab_name','accsupportives.acc_name')
-        ->where('program','=','BCs')
-        ->where('level','=','level2')
-        ->where('semester','=','semester1')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject3)
     ->get();
-        //$dater=accsupportive::where('id','=',session()->get('reid'))->first();
-        //return $data1;
-        //return view('academicsupportive.acasuptablebcslevel1',compact('dater'));
-        return view('academicsupportive.acasuptablebcslevel2sem1',['data1'=> $data1],['data2'=> $data2]);
 
-}
-
-public function stviewbcs2sem2() //view the guest home page       //ok
-{
-        $data1 = DB::table('timetables')
+        $datt4 = DB::table('timetables')
         ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
         ->join('programs', 'timetables.program_id', '=', 'programs.id')
         ->join('courses', 'timetables.course_id', '=', 'courses.id')
         ->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
-        //->join('labs', 'timetables.lab_id', '=', 'labs.id')
-    ->select('timetables.*', 'courses.course_name', 'courses.course_code','lecturehalls.lh_name','programs.program','lecturers.lec_name')
-        ->where('program','=','BCs')
-        ->where('level','=','level2')
-        ->where('semester','=','semester2')
-    ->get();
+    ->select('timetables.*', 'courses.course_name', 'courses.course_code', 'lecturehalls.lh_name', 'programs.program','lecturers.lec_name')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject4)
+        ->get();
 
-
-        $data2 = DB::table('timetables')
+        $datt44 = DB::table('timetables')
         ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
         ->join('programs', 'timetables.program_id', '=', 'programs.id')
         ->join('courses', 'timetables.course_id', '=', 'courses.id')
         //->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
         ->join('labs', 'timetables.lab_id', '=', 'labs.id')
     ->select('timetables.*', 'courses.course_name', 'courses.course_code','programs.program','labs.lab_name','accsupportives.acc_name')
-        ->where('program','=','BCs')
-        ->where('level','=','level2')
-        ->where('semester','=','semester2')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject4)
     ->get();
-        //$dater=accsupportive::where('id','=',session()->get('reid'))->first();
-        //return $data1;
-        //return view('academicsupportive.acasuptablebcslevel1',compact('dater'));
-        return view('academicsupportive.acasuptablebcslevel2sem2',['data1'=> $data1],['data2'=> $data2]);
 
-}
-
-public function stviewbcs3sem1()
-{
-        $data1 = DB::table('timetables')
+        $datt5 = DB::table('timetables')
         ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
         ->join('programs', 'timetables.program_id', '=', 'programs.id')
         ->join('courses', 'timetables.course_id', '=', 'courses.id')
         ->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
-        //->join('labs', 'timetables.lab_id', '=', 'labs.id')
-    ->select('timetables.*', 'courses.course_name', 'courses.course_code','lecturehalls.lh_name','programs.program','lecturers.lec_name')
-        ->where('program','=','BCs')
-        ->where('level','=','level3')
-        ->where('semester','=','semester1')
-    ->get();
+    ->select('timetables.*', 'courses.course_name', 'courses.course_code', 'lecturehalls.lh_name', 'programs.program','lecturers.lec_name')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject5)
+        ->get();
 
-
-        $data2 = DB::table('timetables')
+        $datt55 = DB::table('timetables')
         ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
         ->join('programs', 'timetables.program_id', '=', 'programs.id')
         ->join('courses', 'timetables.course_id', '=', 'courses.id')
         //->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
         ->join('labs', 'timetables.lab_id', '=', 'labs.id')
     ->select('timetables.*', 'courses.course_name', 'courses.course_code','programs.program','labs.lab_name','accsupportives.acc_name')
-        ->where('program','=','BCs')
-        ->where('level','=','level3')
-        ->where('semester','=','semester1')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject5)
     ->get();
-        //$dater=accsupportive::where('id','=',session()->get('reid'))->first();
-        //return $data1;
-        //return view('academicsupportive.acasuptablebcslevel1',compact('dater'));
-        return view('academicsupportive.acasuptablebcslevel3sem1',['data1'=> $data1],['data2'=> $data2]);
 
-}
-
-public function stviewbcs3sem2() //view the guest home page       //ok
-{
-        $data1 = DB::table('timetables')
+        $datt6 = DB::table('timetables')
         ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
         ->join('programs', 'timetables.program_id', '=', 'programs.id')
         ->join('courses', 'timetables.course_id', '=', 'courses.id')
         ->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
-        //->join('labs', 'timetables.lab_id', '=', 'labs.id')
-    ->select('timetables.*', 'courses.course_name', 'courses.course_code','lecturehalls.lh_name','programs.program','lecturers.lec_name')
-        ->where('program','=','BCs')
-        ->where('level','=','level3')
-        ->where('semester','=','semester2')
-    ->get();
+        ->select('timetables.*', 'courses.course_name', 'courses.course_code', 'lecturehalls.lh_name', 'programs.program','lecturers.lec_name')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject6)
+        ->get();
 
+        $datt66 = DB::table('timetables')
+        ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
+        ->join('programs', 'timetables.program_id', '=', 'programs.id')
+        ->join('courses', 'timetables.course_id', '=', 'courses.id')
+        //->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
+        ->join('labs', 'timetables.lab_id', '=', 'labs.id')
+        ->select('timetables.*', 'courses.course_name', 'courses.course_code','programs.program','labs.lab_name','accsupportives.acc_name')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject6)
+        ->get();
 
-        $data2 = DB::table('timetables')
+        $datt7 = DB::table('timetables')
+        ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+        ->join('programs', 'timetables.program_id', '=', 'programs.id')
+        ->join('courses', 'timetables.course_id', '=', 'courses.id')
+        ->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
+    ->select('timetables.*', 'courses.course_name', 'courses.course_code', 'lecturehalls.lh_name', 'programs.program','lecturers.lec_name')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject7)
+        ->get();
+
+        $datt77 = DB::table('timetables')
         ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
         ->join('programs', 'timetables.program_id', '=', 'programs.id')
         ->join('courses', 'timetables.course_id', '=', 'courses.id')
         //->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
         ->join('labs', 'timetables.lab_id', '=', 'labs.id')
     ->select('timetables.*', 'courses.course_name', 'courses.course_code','programs.program','labs.lab_name','accsupportives.acc_name')
-        ->where('program','=','BCs')
-        ->where('level','=','level3')
-        ->where('semester','=','semester2')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject7)
     ->get();
-        //$dater=accsupportive::where('id','=',session()->get('reid'))->first();
-        //return $data1;
-        //return view('academicsupportive.acasuptablebcslevel1',compact('dater'));
-        return view('academicsupportive.acasuptablebcslevel3sem2',['data1'=> $data1],['data2'=> $data2]);
 
-}
-
-public function stviewbsc1sem1() //view the guest home page       //ok
-{
-        $data1 = DB::table('timetables')
+        $dat1 = array($datt1,$datt2,$datt3,$datt4,$datt5,$datt6,$datt7);
+        $dat2 = array($datt11,$datt22,$datt33,$datt44,$datt55,$datt66,$datt77);
+        //return $dat1;
+        //return view('students.stutablebcslevel1sem1',['dat1'=> $dat1,'dat2'=> $dat2]);
+    }
+    elseif(($dater-> subject1)&&($dater-> subject2)&&($dater-> subject3)&&($dater-> subject4)&&($dater-> subject5)&&($dater-> subject6)&&!($dater-> subject7)&&!($dater-> subject8)){
+        $datt1 = DB::table('timetables')
         ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
         ->join('programs', 'timetables.program_id', '=', 'programs.id')
         ->join('courses', 'timetables.course_id', '=', 'courses.id')
         ->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
-        //->join('labs', 'timetables.lab_id', '=', 'labs.id')
-    ->select('timetables.*', 'courses.course_name', 'courses.course_code','lecturehalls.lh_name','programs.program','lecturers.lec_name')
-        ->where('program','=','BSc')
-        ->where('level','=','level1')
-        ->where('semester','=','semester1')
-    ->get();
+    ->select('timetables.*', 'courses.course_name', 'courses.course_code', 'lecturehalls.lh_name', 'programs.program','lecturers.lec_name')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject1)
+        ->get();
 
-
-        $data2 = DB::table('timetables')
+        $datt11 = DB::table('timetables')
         ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
         ->join('programs', 'timetables.program_id', '=', 'programs.id')
         ->join('courses', 'timetables.course_id', '=', 'courses.id')
         //->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
         ->join('labs', 'timetables.lab_id', '=', 'labs.id')
     ->select('timetables.*', 'courses.course_name', 'courses.course_code','programs.program','labs.lab_name','accsupportives.acc_name')
-        ->where('program','=','BSc')
-        ->where('level','=','level1')
-        ->where('semester','=','semester1')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject1)
     ->get();
-        //$dater=accsupportive::where('id','=',session()->get('reid'))->first();
-        //return $data1;
-        //return view('academicsupportive.acasuptablebcslevel1',compact('dater'));
-        return view('academicsupportive.acasuptablebsclevel1sem1',['data1'=> $data1],['data2'=> $data2]);
 
-}
-
-public function stviewbsc1sem2() //view the guest home page       //ok
-{
-        $data1 = DB::table('timetables')
+        $datt2 = DB::table('timetables')
         ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
         ->join('programs', 'timetables.program_id', '=', 'programs.id')
         ->join('courses', 'timetables.course_id', '=', 'courses.id')
         ->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
-        //->join('labs', 'timetables.lab_id', '=', 'labs.id')
-    ->select('timetables.*', 'courses.course_name', 'courses.course_code','lecturehalls.lh_name','programs.program','lecturers.lec_name')
-        ->where('program','=','BSc')
-        ->where('level','=','level1')
-        ->where('semester','=','semester2')
-    ->get();
+    ->select('timetables.*', 'courses.course_name', 'courses.course_code', 'lecturehalls.lh_name', 'programs.program','lecturers.lec_name')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject2)
+        ->get();
 
-
-        $data2 = DB::table('timetables')
+        $datt22 = DB::table('timetables')
         ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
         ->join('programs', 'timetables.program_id', '=', 'programs.id')
         ->join('courses', 'timetables.course_id', '=', 'courses.id')
         //->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
         ->join('labs', 'timetables.lab_id', '=', 'labs.id')
     ->select('timetables.*', 'courses.course_name', 'courses.course_code','programs.program','labs.lab_name','accsupportives.acc_name')
-        ->where('program','=','BSc')
-        ->where('level','=','level1')
-        ->where('semester','=','semester2')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject2)
     ->get();
-        //$dater=accsupportive::where('id','=',session()->get('reid'))->first();
-        //return $data1;
-        //return view('academicsupportive.acasuptablebcslevel1',compact('dater'));
-        return view('academicsupportive.acasuptablebsclevel1sem2',['data1'=> $data1],['data2'=> $data2]);
 
-}
-
-public function stviewbsc2sem1() //view the guest home page       //ok
-{
-        $data1 = DB::table('timetables')
+        $datt3 = DB::table('timetables')
         ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
         ->join('programs', 'timetables.program_id', '=', 'programs.id')
         ->join('courses', 'timetables.course_id', '=', 'courses.id')
         ->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
-        //->join('labs', 'timetables.lab_id', '=', 'labs.id')
-    ->select('timetables.*', 'courses.course_name', 'courses.course_code','lecturehalls.lh_name','programs.program','lecturers.lec_name')
-        ->where('program','=','BSc')
-        ->where('level','=','level2')
-        ->where('semester','=','semester1')
-    ->get();
+    ->select('timetables.*', 'courses.course_name', 'courses.course_code', 'lecturehalls.lh_name', 'programs.program','lecturers.lec_name')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject3)
+        ->get();
 
-
-        $data2 = DB::table('timetables')
+        $datt33 = DB::table('timetables')
         ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
         ->join('programs', 'timetables.program_id', '=', 'programs.id')
         ->join('courses', 'timetables.course_id', '=', 'courses.id')
         //->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
         ->join('labs', 'timetables.lab_id', '=', 'labs.id')
     ->select('timetables.*', 'courses.course_name', 'courses.course_code','programs.program','labs.lab_name','accsupportives.acc_name')
-        ->where('program','=','BSc')
-        ->where('level','=','level2')
-        ->where('semester','=','semester1')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject3)
     ->get();
-        //$dater=accsupportive::where('id','=',session()->get('reid'))->first();
-        //return $data1;
-        //return view('academicsupportive.acasuptablebcslevel1',compact('dater'));
-        return view('academicsupportive.acasuptablebsclevel2sem1',['data1'=> $data1],['data2'=> $data2]);
 
-}
-
-public function stviewbsc2sem2() //view the guest home page       //ok
-{
-        $data1 = DB::table('timetables')
+        $datt4 = DB::table('timetables')
         ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
         ->join('programs', 'timetables.program_id', '=', 'programs.id')
         ->join('courses', 'timetables.course_id', '=', 'courses.id')
         ->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
-        //->join('labs', 'timetables.lab_id', '=', 'labs.id')
-    ->select('timetables.*', 'courses.course_name', 'courses.course_code','lecturehalls.lh_name','programs.program','lecturers.lec_name')
-        ->where('program','=','BSc')
-        ->where('level','=','level2')
-        ->where('semester','=','semester2')
-    ->get();
+    ->select('timetables.*', 'courses.course_name', 'courses.course_code', 'lecturehalls.lh_name', 'programs.program','lecturers.lec_name')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject4)
+        ->get();
 
-
-        $data2 = DB::table('timetables')
+        $datt44 = DB::table('timetables')
         ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
         ->join('programs', 'timetables.program_id', '=', 'programs.id')
         ->join('courses', 'timetables.course_id', '=', 'courses.id')
         //->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
         ->join('labs', 'timetables.lab_id', '=', 'labs.id')
     ->select('timetables.*', 'courses.course_name', 'courses.course_code','programs.program','labs.lab_name','accsupportives.acc_name')
-        ->where('program','=','BSc')
-        ->where('level','=','level2')
-        ->where('semester','=','semester2')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject4)
     ->get();
-        //$dater=accsupportive::where('id','=',session()->get('reid'))->first();
-        //return $data1;
-        //return view('academicsupportive.acasuptablebcslevel1',compact('dater'));
-        return view('academicsupportive.acasuptablebsclevel2sem2',['data1'=> $data1],['data2'=> $data2]);
 
-}
-
-public function stviewbsc3sem1() //view the guest home page       //ok
-{
-        $data1 = DB::table('timetables')
+        $datt5 = DB::table('timetables')
         ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
         ->join('programs', 'timetables.program_id', '=', 'programs.id')
         ->join('courses', 'timetables.course_id', '=', 'courses.id')
         ->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
-        //->join('labs', 'timetables.lab_id', '=', 'labs.id')
-    ->select('timetables.*', 'courses.course_name', 'courses.course_code','lecturehalls.lh_name','programs.program','lecturers.lec_name')
-        ->where('program','=','BSc')
-        ->where('level','=','level3')
-        ->where('semester','=','semester1')
-    ->get();
+    ->select('timetables.*', 'courses.course_name', 'courses.course_code', 'lecturehalls.lh_name', 'programs.program','lecturers.lec_name')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject5)
+        ->get();
 
-
-        $data2 = DB::table('timetables')
+        $datt55 = DB::table('timetables')
         ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
         ->join('programs', 'timetables.program_id', '=', 'programs.id')
         ->join('courses', 'timetables.course_id', '=', 'courses.id')
         //->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
         ->join('labs', 'timetables.lab_id', '=', 'labs.id')
     ->select('timetables.*', 'courses.course_name', 'courses.course_code','programs.program','labs.lab_name','accsupportives.acc_name')
-        ->where('program','=','BSc')
-        ->where('level','=','level3')
-        ->where('semester','=','semester1')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject5)
     ->get();
-        //$dater=accsupportive::where('id','=',session()->get('reid'))->first();
-        //return $data1;
-        //return view('academicsupportive.acasuptablebcslevel1',compact('dater'));
-        return view('academicsupportive.acasuptablebsclevel3sem1',['data1'=> $data1],['data2'=> $data2]);
 
-}
-
-
-public function stviewbsc3sem2() //view the guest home page       //ok
-{
-        $data1 = DB::table('timetables')
+        $datt6 = DB::table('timetables')
         ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
         ->join('programs', 'timetables.program_id', '=', 'programs.id')
         ->join('courses', 'timetables.course_id', '=', 'courses.id')
         ->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
-        //->join('labs', 'timetables.lab_id', '=', 'labs.id')
-    ->select('timetables.*', 'courses.course_name', 'courses.course_code','lecturehalls.lh_name','programs.program','lecturers.lec_name')
-        ->where('program','=','BSc')
-        ->where('level','=','level3')
-        ->where('semester','=','semester2')
-    ->get();
+        ->select('timetables.*', 'courses.course_name', 'courses.course_code', 'lecturehalls.lh_name', 'programs.program','lecturers.lec_name')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject6)
+        ->get();
 
+        $datt66 = DB::table('timetables')
+        ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
+        ->join('programs', 'timetables.program_id', '=', 'programs.id')
+        ->join('courses', 'timetables.course_id', '=', 'courses.id')
+        //->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
+        ->join('labs', 'timetables.lab_id', '=', 'labs.id')
+        ->select('timetables.*', 'courses.course_name', 'courses.course_code','programs.program','labs.lab_name','accsupportives.acc_name')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject6)
+        ->get();
 
-        $data2 = DB::table('timetables')
+        $dat1 = array($datt1,$datt2,$datt3,$datt4,$datt5,$datt6);
+        $dat2 = array($datt11,$datt22,$datt33,$datt44,$datt55,$datt66);
+    }
+    elseif(($dater-> subject1)&&($dater-> subject2)&&($dater-> subject3)&&($dater-> subject4)&&($dater-> subject5)&&!($dater-> subject6)&&!($dater-> subject7)&&!($dater-> subject8)){
+        $datt1 = DB::table('timetables')
+        ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+        ->join('programs', 'timetables.program_id', '=', 'programs.id')
+        ->join('courses', 'timetables.course_id', '=', 'courses.id')
+        ->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
+    ->select('timetables.*', 'courses.course_name', 'courses.course_code', 'lecturehalls.lh_name', 'programs.program','lecturers.lec_name')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject1)
+        ->get();
+
+        $datt11 = DB::table('timetables')
         ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
         ->join('programs', 'timetables.program_id', '=', 'programs.id')
         ->join('courses', 'timetables.course_id', '=', 'courses.id')
         //->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
         ->join('labs', 'timetables.lab_id', '=', 'labs.id')
     ->select('timetables.*', 'courses.course_name', 'courses.course_code','programs.program','labs.lab_name','accsupportives.acc_name')
-        ->where('program','=','BSc')
-        ->where('level','=','level3')
-        ->where('semester','=','semester2')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject1)
     ->get();
-        //$dater=accsupportive::where('id','=',session()->get('reid'))->first();
-        //return $data1;
-        //return view('academicsupportive.acasuptablebcslevel1',compact('dater'));
-        return view('academicsupportive.acasuptablebsclevel3sem2',['data1'=> $data1],['data2'=> $data2]);
 
-}
+        $datt2 = DB::table('timetables')
+        ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+        ->join('programs', 'timetables.program_id', '=', 'programs.id')
+        ->join('courses', 'timetables.course_id', '=', 'courses.id')
+        ->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
+    ->select('timetables.*', 'courses.course_name', 'courses.course_code', 'lecturehalls.lh_name', 'programs.program','lecturers.lec_name')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject2)
+        ->get();
 
-public function stchoosetimetable(Request $request) //store guest registration details.  //ok
-{
-//return $request;
-    $request->validate([  //validation part.
-        'radio'=> 'required',
-        'radio1'=> 'required'
-      ]);
-if((($request->radio)==1)&(($request->radio1)==1)){
-    return redirect('/academicsupportive/acasuptablebcslevel1sem1');
-}
-elseif((($request->radio)==1)&(($request->radio1)==2)){
-    return redirect('/academicsupportive/acasuptablebcslevel1sem2');
-}
-elseif((($request->radio)==2)&(($request->radio1)==1)){
-    return redirect('/academicsupportive/acasuptablebcslevel2sem1');
-}
+        $datt22 = DB::table('timetables')
+        ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
+        ->join('programs', 'timetables.program_id', '=', 'programs.id')
+        ->join('courses', 'timetables.course_id', '=', 'courses.id')
+        //->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
+        ->join('labs', 'timetables.lab_id', '=', 'labs.id')
+    ->select('timetables.*', 'courses.course_name', 'courses.course_code','programs.program','labs.lab_name','accsupportives.acc_name')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject2)
+    ->get();
 
-elseif((($request->radio)==2)&(($request->radio1)==2)){
-    return redirect('/academicsupportive/acasuptablebcslevel2sem2');
-}
+        $datt3 = DB::table('timetables')
+        ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+        ->join('programs', 'timetables.program_id', '=', 'programs.id')
+        ->join('courses', 'timetables.course_id', '=', 'courses.id')
+        ->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
+    ->select('timetables.*', 'courses.course_name', 'courses.course_code', 'lecturehalls.lh_name', 'programs.program','lecturers.lec_name')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject3)
+        ->get();
 
-elseif((($request->radio)==3)&(($request->radio1)==1)){
-    return redirect('/academicsupportive/acasuptablebcslevel3sem1');
-}
+        $datt33 = DB::table('timetables')
+        ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
+        ->join('programs', 'timetables.program_id', '=', 'programs.id')
+        ->join('courses', 'timetables.course_id', '=', 'courses.id')
+        //->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
+        ->join('labs', 'timetables.lab_id', '=', 'labs.id')
+    ->select('timetables.*', 'courses.course_name', 'courses.course_code','programs.program','labs.lab_name','accsupportives.acc_name')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject3)
+    ->get();
 
-elseif((($request->radio)==3)&(($request->radio1)==2)){
-    return redirect('/academicsupportive/acasuptablebcslevel3sem2');
-}
+        $datt4 = DB::table('timetables')
+        ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+        ->join('programs', 'timetables.program_id', '=', 'programs.id')
+        ->join('courses', 'timetables.course_id', '=', 'courses.id')
+        ->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
+    ->select('timetables.*', 'courses.course_name', 'courses.course_code', 'lecturehalls.lh_name', 'programs.program','lecturers.lec_name')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject4)
+        ->get();
+
+        $datt44 = DB::table('timetables')
+        ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
+        ->join('programs', 'timetables.program_id', '=', 'programs.id')
+        ->join('courses', 'timetables.course_id', '=', 'courses.id')
+        //->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
+        ->join('labs', 'timetables.lab_id', '=', 'labs.id')
+    ->select('timetables.*', 'courses.course_name', 'courses.course_code','programs.program','labs.lab_name','accsupportives.acc_name')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject4)
+    ->get();
+
+        $datt5 = DB::table('timetables')
+        ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+        ->join('programs', 'timetables.program_id', '=', 'programs.id')
+        ->join('courses', 'timetables.course_id', '=', 'courses.id')
+        ->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
+    ->select('timetables.*', 'courses.course_name', 'courses.course_code', 'lecturehalls.lh_name', 'programs.program','lecturers.lec_name')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject5)
+        ->get();
+
+        $datt55 = DB::table('timetables')
+        ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
+        ->join('programs', 'timetables.program_id', '=', 'programs.id')
+        ->join('courses', 'timetables.course_id', '=', 'courses.id')
+        //->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
+        ->join('labs', 'timetables.lab_id', '=', 'labs.id')
+    ->select('timetables.*', 'courses.course_name', 'courses.course_code','programs.program','labs.lab_name','accsupportives.acc_name')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject5)
+    ->get();
+
+        $dat1 = array($datt1,$datt2,$datt3,$datt4,$datt5);
+        $dat2 = array($datt11,$datt22,$datt33,$datt44,$datt55);
+    }
+
+    elseif(($dater-> subject1)&&($dater-> subject2)&&($dater-> subject3)&&($dater-> subject4)&&!($dater-> subject5)&&!($dater-> subject6)&&!($dater-> subject7)&&!($dater-> subject8)){
+        $datt1 = DB::table('timetables')
+        ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+        ->join('programs', 'timetables.program_id', '=', 'programs.id')
+        ->join('courses', 'timetables.course_id', '=', 'courses.id')
+        ->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
+    ->select('timetables.*', 'courses.course_name', 'courses.course_code', 'lecturehalls.lh_name', 'programs.program','lecturers.lec_name')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject1)
+        ->get();
+
+
+        $datt11 = DB::table('timetables')
+        ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
+        ->join('programs', 'timetables.program_id', '=', 'programs.id')
+        ->join('courses', 'timetables.course_id', '=', 'courses.id')
+        //->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
+        ->join('labs', 'timetables.lab_id', '=', 'labs.id')
+    ->select('timetables.*', 'courses.course_name', 'courses.course_code','programs.program','labs.lab_name','accsupportives.acc_name')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject1)
+    ->get();
+
+        $datt2 = DB::table('timetables')
+        ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+        ->join('programs', 'timetables.program_id', '=', 'programs.id')
+        ->join('courses', 'timetables.course_id', '=', 'courses.id')
+        ->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
+    ->select('timetables.*', 'courses.course_name', 'courses.course_code', 'lecturehalls.lh_name', 'programs.program','lecturers.lec_name')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject2)
+        ->get();
+
+        $datt22 = DB::table('timetables')
+        ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
+        ->join('programs', 'timetables.program_id', '=', 'programs.id')
+        ->join('courses', 'timetables.course_id', '=', 'courses.id')
+        //->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
+        ->join('labs', 'timetables.lab_id', '=', 'labs.id')
+    ->select('timetables.*', 'courses.course_name', 'courses.course_code','programs.program','labs.lab_name','accsupportives.acc_name')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject2)
+    ->get();
+
+        $datt3 = DB::table('timetables')
+        ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+        ->join('programs', 'timetables.program_id', '=', 'programs.id')
+        ->join('courses', 'timetables.course_id', '=', 'courses.id')
+        ->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
+    ->select('timetables.*', 'courses.course_name', 'courses.course_code', 'lecturehalls.lh_name', 'programs.program','lecturers.lec_name')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject3)
+        ->get();
+
+        $datt33 = DB::table('timetables')
+        ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
+        ->join('programs', 'timetables.program_id', '=', 'programs.id')
+        ->join('courses', 'timetables.course_id', '=', 'courses.id')
+        //->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
+        ->join('labs', 'timetables.lab_id', '=', 'labs.id')
+    ->select('timetables.*', 'courses.course_name', 'courses.course_code','programs.program','labs.lab_name','accsupportives.acc_name')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject3)
+    ->get();
+
+        $datt4 = DB::table('timetables')
+        ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+        ->join('programs', 'timetables.program_id', '=', 'programs.id')
+        ->join('courses', 'timetables.course_id', '=', 'courses.id')
+        ->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
+    ->select('timetables.*', 'courses.course_name', 'courses.course_code', 'lecturehalls.lh_name', 'programs.program','lecturers.lec_name')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject4)
+        ->get();
+
+        $datt44 = DB::table('timetables')
+        ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
+        ->join('programs', 'timetables.program_id', '=', 'programs.id')
+        ->join('courses', 'timetables.course_id', '=', 'courses.id')
+        //->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
+        ->join('labs', 'timetables.lab_id', '=', 'labs.id')
+    ->select('timetables.*', 'courses.course_name', 'courses.course_code','programs.program','labs.lab_name','accsupportives.acc_name')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject4)
+    ->get();
+
+        $dat1 = array($datt1,$datt2,$datt3,$datt4);
+        $dat2 = array($datt11,$datt22,$datt33,$datt44);
+    }
+
+    elseif(($dater-> subject1)&&($dater-> subject2)&&($dater-> subject3)&&!($dater-> subject4)&&!($dater-> subject5)&&!($dater-> subject6)&&!($dater-> subject7)&&!($dater-> subject8)){
+        $datt1 = DB::table('timetables')
+        ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+        ->join('programs', 'timetables.program_id', '=', 'programs.id')
+        ->join('courses', 'timetables.course_id', '=', 'courses.id')
+        ->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
+    ->select('timetables.*', 'courses.course_name', 'courses.course_code', 'lecturehalls.lh_name', 'programs.program','lecturers.lec_name')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject1)
+        ->get();
+
+        $datt11 = DB::table('timetables')
+        ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
+        ->join('programs', 'timetables.program_id', '=', 'programs.id')
+        ->join('courses', 'timetables.course_id', '=', 'courses.id')
+        //->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
+        ->join('labs', 'timetables.lab_id', '=', 'labs.id')
+    ->select('timetables.*', 'courses.course_name', 'courses.course_code','programs.program','labs.lab_name','accsupportives.acc_name')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject1)
+    ->get();
+
+        $datt2 = DB::table('timetables')
+        ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+        ->join('programs', 'timetables.program_id', '=', 'programs.id')
+        ->join('courses', 'timetables.course_id', '=', 'courses.id')
+        ->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
+    ->select('timetables.*', 'courses.course_name', 'courses.course_code', 'lecturehalls.lh_name', 'programs.program','lecturers.lec_name')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject2)
+        ->get();
+
+        $datt22 = DB::table('timetables')
+        ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
+        ->join('programs', 'timetables.program_id', '=', 'programs.id')
+        ->join('courses', 'timetables.course_id', '=', 'courses.id')
+        //->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
+        ->join('labs', 'timetables.lab_id', '=', 'labs.id')
+    ->select('timetables.*', 'courses.course_name', 'courses.course_code','programs.program','labs.lab_name','accsupportives.acc_name')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject2)
+    ->get();
+
+        $datt3 = DB::table('timetables')
+        ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+        ->join('programs', 'timetables.program_id', '=', 'programs.id')
+        ->join('courses', 'timetables.course_id', '=', 'courses.id')
+        ->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
+    ->select('timetables.*', 'courses.course_name', 'courses.course_code', 'lecturehalls.lh_name', 'programs.program','lecturers.lec_name')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject3)
+        ->get();
+
+        $datt33 = DB::table('timetables')
+        ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
+        ->join('programs', 'timetables.program_id', '=', 'programs.id')
+        ->join('courses', 'timetables.course_id', '=', 'courses.id')
+        //->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
+        ->join('labs', 'timetables.lab_id', '=', 'labs.id')
+    ->select('timetables.*', 'courses.course_name', 'courses.course_code','programs.program','labs.lab_name','accsupportives.acc_name')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject3)
+    ->get();
+
+        $dat1 = array($datt1,$datt2,$datt3);
+        $dat2 = array($datt11,$datt22,$datt33);
+    }
+
+    elseif(($dater-> subject1)&&($dater-> subject2)&&!($dater-> subject3)&&!($dater-> subject4)&&!($dater-> subject5)&&!($dater-> subject6)&&!($dater-> subject7)&&!($dater-> subject8)){
+        $datt1 = DB::table('timetables')
+        ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+        ->join('programs', 'timetables.program_id', '=', 'programs.id')
+        ->join('courses', 'timetables.course_id', '=', 'courses.id')
+        ->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
+    ->select('timetables.*', 'courses.course_name', 'courses.course_code', 'lecturehalls.lh_name', 'programs.program','lecturers.lec_name')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject1)
+        ->get();
+
+        $datt11 = DB::table('timetables')
+        ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
+        ->join('programs', 'timetables.program_id', '=', 'programs.id')
+        ->join('courses', 'timetables.course_id', '=', 'courses.id')
+        //->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
+        ->join('labs', 'timetables.lab_id', '=', 'labs.id')
+    ->select('timetables.*', 'courses.course_name', 'courses.course_code','programs.program','labs.lab_name','accsupportives.acc_name')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject1)
+    ->get();
+
+        $datt2 = DB::table('timetables')
+        ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+        ->join('programs', 'timetables.program_id', '=', 'programs.id')
+        ->join('courses', 'timetables.course_id', '=', 'courses.id')
+        ->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
+    ->select('timetables.*', 'courses.course_name', 'courses.course_code', 'lecturehalls.lh_name', 'programs.program','lecturers.lec_name')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject2)
+        ->get();
+
+        $datt22 = DB::table('timetables')
+        ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
+        ->join('programs', 'timetables.program_id', '=', 'programs.id')
+        ->join('courses', 'timetables.course_id', '=', 'courses.id')
+        //->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
+        ->join('labs', 'timetables.lab_id', '=', 'labs.id')
+    ->select('timetables.*', 'courses.course_name', 'courses.course_code','programs.program','labs.lab_name','accsupportives.acc_name')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject2)
+    ->get();
+
+        $dat1 = array($datt1,$datt2);
+        $dat2 = array($datt11,$datt22);
+    }
+
+    elseif(($dater-> subject1)&&!($dater-> subject2)&&!($dater-> subject3)&&!($dater-> subject4)&&!($dater-> subject5)&&!($dater-> subject6)&&!($dater-> subject7)&&!($dater-> subject8)){
+        $datt1 = DB::table('timetables')
+        ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+        ->join('programs', 'timetables.program_id', '=', 'programs.id')
+        ->join('courses', 'timetables.course_id', '=', 'courses.id')
+        ->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
+    ->select('timetables.*', 'courses.course_name', 'courses.course_code', 'lecturehalls.lh_name', 'programs.program','lecturers.lec_name')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject1)
+        ->get();
+
+        $datt11 = DB::table('timetables')
+        ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
+        ->join('programs', 'timetables.program_id', '=', 'programs.id')
+        ->join('courses', 'timetables.course_id', '=', 'courses.id')
+        //->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
+        ->join('labs', 'timetables.lab_id', '=', 'labs.id')
+    ->select('timetables.*', 'courses.course_name', 'courses.course_code','programs.program','labs.lab_name','accsupportives.acc_name')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject1)
+    ->get();
+
+        $dat1 = array($datt1);
+        $dat2 = array($datt11);
+    }
+
+
+        if(($dater-> program_Id)=='1' && ($dater-> level)=='level1' && ($dater-> semester)== 'semester1'){
+            return view('students.stutablebcslevel1sem1',['dat1'=> $dat1,'dat2'=> $dat2]);
+        }
+        elseif(($dater-> program_Id)=='1' && ($dater-> level)=='level1' && ($dater-> semester)== 'semester2'){
+            return view('students.stutablebcslevel1sem2',['dat1'=> $dat1,'dat2'=> $dat2]);
+        }
+        elseif(($dater-> program_Id)=='1' && ($dater-> level)=='level2' && ($dater-> semester)== 'semester1'){
+            return view('students.stutablebcslevel2sem1',['dat1'=> $dat1,'dat2'=> $dat2]);
+        }
+        elseif(($dater-> program_Id)=='1' && ($dater-> level)=='level2' && ($dater-> semester)== 'semester2'){
+            return view('students.stutablebcslevel2sem2',['dat1'=> $dat1,'dat2'=> $dat2]);
+        }
+        elseif(($dater-> program_Id)=='1' && ($dater-> level)=='level3' && ($dater-> semester)== 'semester1'){
+            return view('students.stutablebcslevel3sem1',['dat1'=> $dat1,'dat2'=> $dat2]);
+        }
+        elseif(($dater-> program_Id)=='1' && ($dater-> level)=='level3' && ($dater-> semester)== 'semester2'){
+            return view('students.stutablebcslevel3sem2',['dat1'=> $dat1,'dat2'=> $dat2]);
+        }
+        elseif(($dater-> program_Id)=='2' && ($dater-> level)=='level1' && ($dater-> semester)== 'semester1'){
+            return view('students.stutablebsclevel1sem1',['dat1'=> $dat1,'dat2'=> $dat2]);
+        }
+        elseif(($dater-> program_Id)=='2' && ($dater-> level)=='level1' && ($dater-> semester)== 'semester2'){
+            return view('students.stutablebsclevel1sem2',['dat1'=> $dat1,'dat2'=> $dat2]);
+        }
+        elseif(($dater-> program_Id)=='2' && ($dater-> level)=='level2' && ($dater-> semester)== 'semester1'){
+            return view('students.stutablebsclevel2sem1',['dat1'=> $dat1,'dat2'=> $dat2]);
+        }
+        elseif(($dater-> program_Id)=='2' && ($dater-> level)=='level2' && ($dater-> semester)== 'semester2'){
+            return view('students.stutablebsclevel2sem2',['dat1'=> $dat1,'dat2'=> $dat2]);
+        }
+        elseif(($dater-> program_Id)=='2' && ($dater-> level)=='level3' && ($dater-> semester)== 'semester1'){
+            return view('students.stutablebsclevel3sem1',['dat1'=> $dat1,'dat2'=> $dat2]);
+        }
+        elseif(($dater-> program_Id)=='2' && ($dater-> level)=='level3' && ($dater-> semester)== 'semester2'){
+            return view('students.stutablebsclevel3sem2',['dat1'=> $dat1,'dat2'=> $dat2]);
+        }
+
 
     }
+
+
+    //return $dat1;
+}
+
+public function sturegister() //view admin's student registraion page.
+{
+        $dater1=course::all();
+        return view('admin.student.sturegistration',['dater1'=> $dater1]);
+}
 
 }
