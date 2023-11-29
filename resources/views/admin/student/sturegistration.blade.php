@@ -98,6 +98,7 @@
         @endphp</option>
         @endforeach
         </select>
+        <label class="text-danger span1">@error('subject1')  {{$message}}  @enderror</label><br>
 
         <label for="subject2"><b>Subject 2:</b></label>
     <select name="subject2" id="faculty">
@@ -108,6 +109,7 @@
         @endphp</option>
         @endforeach
         </select>
+        <label class="text-danger span1">@error('subject2')  {{$message}}  @enderror</label><br>
 
         <label for="subject3"><b>Subject 3:</b></label>
     <select name="subject3" id="faculty">
@@ -118,6 +120,7 @@
         @endphp</option>
         @endforeach
         </select>
+        <label class="text-danger span1">@error('subject3')  {{$message}}  @enderror</label><br>
 
         <label for="subject4"><b>Subject 4:</b></label>
     <select name="subject4" id="faculty">
@@ -128,6 +131,7 @@
         @endphp</option>
         @endforeach
         </select>
+        <label class="text-danger span1">@error('subject4')  {{$message}}  @enderror</label><br>
 
         <!--<label for="email"><b>Username:</b></label>
     <input type="email" placeholder="Enter Email" name="email" id="email" >
