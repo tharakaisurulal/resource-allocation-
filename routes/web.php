@@ -155,6 +155,8 @@ Route::get('/lecturers/request', [lecturerController::class, 'lecturerrequest'])
 
 Route::post('/lecturerreq', [lecturerController::class, 'lecturerreq'])->name('lecturerreq'); //store request details in database.
 
+Route::get('/lecturers/viewtimetable', [lecturerController::class, 'lecchoosetimetable'])->name('lecchoosetimetable');
+
 /*academicsupportive routes*/
 Route::get('/academicsupportive/academicsupportivehome', [academicsupportiveController::class, 'academicsupportivehome']);
 

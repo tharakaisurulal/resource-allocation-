@@ -225,4 +225,26 @@ public function lecturerreq(Request $request) //request form details store to da
 
 }
 
+public function lecchoosetimetable()
+{
+    $dater = array();
+    if(session()->has('reid')) /*If we are logged in session variable is assign, then we get the id of logged in user and detailas are assign to $dater variable and
+                               return the logged in user details to guest home.mainly it is used in header welcome message.*/
+    {
+        $dater=lecturer::where('id','=',session()->get('reid'))->first();
+
+        $data1 = DB::table('timetables')
+        ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+        ->join('programs', 'timetables.program_id', '=', 'programs.id')
+        ->join('courses', 'timetables.course_id', '=', 'courses.id')
+        ->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
+    ->select('timetables.*', 'courses.course_name', 'courses.course_code', 'lecturehalls.lh_name', 'programs.program','lecturers.lec_name')
+        ->where('lec_id','=',$dater-> id)
+        ->get();
+    }
+
+    //return $data1;
+    return view('lecturers.lectimetable',['data1'=> $data1]);
+}
+
 }
