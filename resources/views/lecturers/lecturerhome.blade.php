@@ -80,7 +80,7 @@
                     <div class="back-content center">
                         <h3> Time Table</h3>
                         <div class="button">
-                            <a href=""><span>CLICK</span></a>
+                            <a href="/lecturers/viewtimetable"><span>CLICK</span></a>
                         </div>
                     </div>
             </div>
