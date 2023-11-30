@@ -22,13 +22,22 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="{{asset('css/guestpage.css')}}">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
+
+
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
 
 <div class="jumbotron text-center">
-  <h1>TODAY ALLOCATION</h1> 
-  <p>From Department Of Computer Science</p> 
-  
+  <h1>TODAY ALLOCATION</h1>
+  <p>From Department Of Computer Science</p>
+
 </div>
 <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
     <!-- Indicators -->
@@ -173,50 +182,50 @@
               <td> </td>
               <td> </td>
               <td> </td>
-              
+
             </tr>
             <tr>
             <th scope="row">10-11</th>
               <td> </td>
               <td> </td>
               <td> </td>
-              
+
             </tr>
             <th scope="row">11-12</th>
               <td> </td>
               <td> </td>
               <td> </td>
-              
+
             </tr>
             <th scope="row">13-14</th>
               <td> </td>
               <td> </td>
               <td> </td>
-              
+
             </tr>
             <th scope="row">14-15</th>
               <td> </td>
               <td> </td>
               <td> </td>
-              
+
             </tr>
             <th scope="row">15-16</th>
               <td> </td>
               <td> </td>
               <td> </td>
-              
+
             </tr>
             <th scope="row">16-17</th>
               <td> </td>
               <td> </td>
               <td> </td>
-              
+
             </tr>
             <th scope="row">17-18</th>
               <td> </td>
               <td> </td>
               <td> </td>
-              
+
             </tr>
 
           </tbody>
@@ -224,6 +233,27 @@
             </div>
           </div>
         </div>
+
+        <div id="calendar">
+            <h1>d</h1>
+            </div>
+
+        <script type="text/javascript">
+            var booking =@json($event);
+                //console.log(event)
+                $(document).ready(function() {
+                var calendar = $('#calendar').fullCalendar({
+                    header: {
+                        left:'prev,next today',
+                        center:'title',
+                        right:'month,agendaWeek,agendaDay',
+                    },
+                    events:booking,
+                    selectable: true,
+                    selectHelper: true
+                    })
+            });
+            </script>
 </body>
 </html>
 @endsection

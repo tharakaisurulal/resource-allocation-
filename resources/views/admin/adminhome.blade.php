@@ -135,15 +135,10 @@
 
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="flush-headingEight">
-                      <button class="accordion-button collapsed sec2" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseEight" aria-expanded="false" aria-controls="flush-collapseEight">
+                      <button class="accordion-button collapsed sec2" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseEight" aria-expanded="false" aria-controls="flush-collapseEight" onclick="window.location.href='/addevent';">
                         <li><a href="#">EVENTS</a></li>
                       </button>
                     </h2>
-                    <div id="flush-collapseEight" class="accordion-collapse collapse sec2" aria-labelledby="flush-headingEight" data-bs-parent="#accordionFlushExample">
-                      <div class="accordion-body">
-                          <!--write-->
-                      </div>
-                    </div>
                   </div>
 
 
