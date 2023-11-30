@@ -41,7 +41,7 @@
                     <div class="back-content center">
                         <h3> Lecture Hall</h3>
                         <div class="button">
-                            <a href=""><span>CLICK</span></a>
+                            <a href="/students/studentlecturehalldetails"><span>CLICK</span></a>
                         </div>
                     </div>
             </div>
@@ -59,7 +59,7 @@
                     <div class="back-content center">
                         <h3> Labortory</h3>
                         <div class="button">
-                            <a href=""><span>CLICK</span></a>
+                            <a href="/students/lab"><span>CLICK</span></a>
                         </div>
                     </div>
             </div>
@@ -79,11 +79,12 @@
                     <div class="back-content center">
                         <h3> Time Table</h3>
                         <div class="button">
-                            <a href=""><span>CLICK</span></a>
+                            <a href="/students/viewtimetable"><span>CLICK</span></a>
                         </div>
                     </div>
             </div>
         </div>
+
 
 
         <div class="card">
@@ -102,8 +103,10 @@
                     </div>
             </div>
         </div>
+
     </div>
 
     </body>
 </html>
 @endsection
+

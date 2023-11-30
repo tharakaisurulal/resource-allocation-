@@ -7,6 +7,7 @@
         <title>Lecture hall Allocation</title>
         @include('cdn')
         <link rel="stylesheet" href={{asset('css/adminhome.css')}}>
+        <link rel="icon" type="text/css" href="{{asset('/images/R.png')}}">
 
     </head>
 
@@ -45,9 +46,9 @@
                     <div class="accordion-body">
                         <ul>
                             <li class="sec3"><a href="/admin/student/stuopera">STUDENT</a></li>
-                            <li class="sec3"><a href="#">LECTURER</a></li>
-                            <li class="sec3"><a href="#">ACADEMIC-SUPPORTIVE</a></li>
-                            <li class="sec3"><a href="#">GUEST</a></li>
+                            <li class="sec3"><a href="/admin/lecturer/lectureopera">LECTURER</a></li>
+                            <li class="sec3"><a href="/admin/academicsupportive/academicsupopera">ACADEMIC-SUPPORTIVE</a></li>
+                            <li class="sec3"><a href="/admin/guest/guestopera">GUEST</a></li>
                         </ul>
                     </div>
                   </div>
@@ -84,15 +85,10 @@
 
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="flush-headingSeven">
-                      <button class="accordion-button collapsed sec2" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven">
+                      <button class="accordion-button collapsed sec2" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven" onclick="window.location.href='/admin/timetable/timetableopera';">
                         <li><a href="#">TIMETABLE</a></li>
                       </button>
                     </h2>
-                    <div id="flush-collapseSeven" class="accordion-collapse collapse sec2" aria-labelledby="flush-headingSeven" data-bs-parent="#accordionFlushExample">
-                      <div class="accordion-body">
-                          <!--write-->
-                      </div>
-                    </div>
                   </div>
 
                   <div class="accordion-item">
@@ -109,7 +105,7 @@
                   </div>
 
 
-                  <div class="accordion-item">
+                 <!-- <div class="accordion-item">
                     <h2 class="accordion-header" id="flush-headingSix">
                       <button class="accordion-button collapsed sec2" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
                         <li><a href="#">EVENTS</a></li>
@@ -118,9 +114,9 @@
                     <div id="flush-collapseSix" class="accordion-collapse collapse sec2" aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushExample">
                       <div class="accordion-body">
                           <!--write-->
-                      </div>
+                     <!-- </div>
                     </div>
-                  </div>
+                  </div>-->
 
 
                   <div class="accordion-item">
@@ -139,15 +135,10 @@
 
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="flush-headingEight">
-                      <button class="accordion-button collapsed sec2" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseEight" aria-expanded="false" aria-controls="flush-collapseEight">
+                      <button class="accordion-button collapsed sec2" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseEight" aria-expanded="false" aria-controls="flush-collapseEight" onclick="window.location.href='/addevent';">
                         <li><a href="#">EVENTS</a></li>
                       </button>
                     </h2>
-                    <div id="flush-collapseEight" class="accordion-collapse collapse sec2" aria-labelledby="flush-headingEight" data-bs-parent="#accordionFlushExample">
-                      <div class="accordion-body">
-                          <!--write-->
-                      </div>
-                    </div>
                   </div>
 
 
@@ -189,5 +180,19 @@
         <h4>{{$count3}}</h4>
     </div>
 </div>
+<div class="section2">
+    <button type="button" class="btn btn-warning but">
+        <a href="/admin/timetable/timetableopera">
+        <h4>Time Table</h4><br>
+        </a>
+    </button>
+
+    <button type="button" class="btn btn-warning but">
+        <a href="/admin/adminhallallocation">
+        <h4>Hall Allocation</h4><br>
+        </a>
+    </button>
+</div>
     </body>
     </html>
+

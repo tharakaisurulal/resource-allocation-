@@ -2,36 +2,36 @@ BODY {
     font-family: Trebuchet MS;
     margin:20px;
     background-color: #0805056b;
-    
+
   }
-  
+
   H1 {
     text-align: center;
     color: #272525;
   }
-  
+
   H2 {
     text-align: center;
     color: #1d1b1b;
   }
-  
+
 
   .myTimetable {
     width:100%;
     border-collapse: collapse;
     table-layout: fixed;
   }
-  
+
   .myTimetable THEAD{
     color: #1b1a1a;
     text-align:center;
   }
-  
+
   .myTimetable TBODY {
     background-color: #c0c3c3;
     background: linear-gradient(to right, #f8fafa, #c5c7c7)
   }
-  
+
   .myTimetable TD {
     border: 1px solid black;
     padding: 6px;
@@ -43,18 +43,18 @@ BODY {
     background-color: #bbbcbe;
     font-weight: bold;
   }
-  
+
   .break, .lunch {
     background-color: #f8f8f3 !important;
     font-style:italic ;
 
   }
-  
+
   .code {
     font-size: 12pt;
     margin-bottom:4px;
   }
-  
+
   .hall {
     font-size: 10pt;
     font-style: italic;
@@ -66,10 +66,8 @@ BODY {
   }
 
 
-
-  
         /* Style for the notice board container */
-        .notice-board {
+       .notice-board {
           background-color: #e2e4eb;
           border: 1px solid  #e2e4eb;;
           padding: 80px;
@@ -104,12 +102,12 @@ BODY {
 
       .map{
         padding-left: 30%;
-       
+
       }
 
       .contact map{
         padding-left: 50%;
-        
+
       }
       .map iframe{
         width:700px;
@@ -117,4 +115,7 @@ BODY {
 
       }
 
-    
+.but1{
+
+   margin-left: 1000px;
+}

@@ -18,7 +18,7 @@ return new class extends Migration
             //$table->String ('reg_no');
             $table->String ('first_name');
             $table->String ('last_name');
-            $table->String ('email')->nullable();
+            //$table->String ('email')->nullable();
             $table->String ('mobile')->nullable();
             $table->String ('photo')->nullable();
             $table->unsignedBigInteger ('subject1')->nullable();
@@ -53,6 +53,12 @@ return new class extends Migration
             $table->foreign('subject8')->references('id')->on('courses')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
+            $table->unsignedBigInteger ('program_Id')->nullable();
+            $table->foreign('program_Id')->references('id')->on('programs')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->string ('level');
+            $table->string('semester');
             $table->timestamps();
         });
     }

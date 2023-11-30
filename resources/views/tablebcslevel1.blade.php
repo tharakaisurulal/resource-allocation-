@@ -12,11 +12,11 @@
 
 
 
-<H1>MY TIMETABLE-[BCS(General) DEGREE PROGRAMME(LEVEL 1 SEMESTER 1)]</H1>
+<H1>BCS(General) DEGREE PROGRAMME(LEVEL 1 SEMESTER 1)</H1>
 <H2>Bachelor of Computer Science(General)(SC/2022)</H2>
 <br>
 
-<TABLE class="myTimetable"> 
+<TABLE class="myTimetable">
   <THEAD>
     <TR>
       <TH>Time</TH>
@@ -24,17 +24,24 @@
       <TH>Tuesday</TH>
       <TH>Wednesday</TH>
       <TH>Thursday</TH>
-      <TH>Friday</TH>     
+      <TH>Friday</TH>
     </TR>
   </THEAD>
   <TBODY>
     <TR>
-      
+
     <TD> 8.00-8.55</TD>
       <TD>
-        <div class="code" ></div>
+        @foreach ($data1 as $cdb)
+        @foreach ($cdb as $mb)
+            @php
+                echo $mb->lec_name;
+            @endphp
+        @endforeach
+        @endforeach
+        <!--<div class="code" ></div>
         <div class="lecturer"></div>
-        <div class="hall"></div>
+        <div class="hall"></div>-->
         </TD>
 
 
@@ -42,32 +49,32 @@
         <div class="code" >MAT113D/MAT112D</div>
         <div class="lecturer"> </div>
         <div class="hall"> </div>
-        
+
       </TD>
       <TD>
         <div class="code" >MAT112D/MAT113D</div>
         <div class="lecturer"></div>
         <div class="hall"></div>
-        
+
       </TD>
       <TD rowspan="2">
         <div class="code" >CSC1153(T&P) LABORATORY ASSIGNMENTS(On campus)</div>
         <div class="lecturer"></div>
         <div class="hall"></div>
-        
+
       </TD>
       <TD rowspan="2">
         <div class="code" ></div>
         <div class="lecturer"></div>
         <div class="hall"></div>
-        
-      </TD>    
+
+      </TD>
     </TR>
-    
+
     <TR>
       <TD>9.00-9.55</TD>
 
-      
+
 
       <TD>
         <div class="code" ></div>
@@ -87,53 +94,53 @@
         <div class="hall"></div>
         </TD>
 
-       
-       
+
+
       </TR>
-      
+
       <TR>
       <TD>10.00-10.55</TD>
       <TD rowspan="2">
         <div class="code" >CSC1153(T&P) LABORATORY ASSIGNMENT(On campus)</div>
         <div class="lecturer"></div>
         <div class="hall"></div>
-        
-      </TD>    
-      
+
+      </TD>
+
       <TD rowspan="2">
         <div class="code" >CSC1122(T) COMPUTER SYSTEM</div>
         <div class="lecturer">DR. THUSANGI</div>
         <div class="hall"></div>
-        
-      </TD>    
+
+      </TD>
       <TD rowspan="2">
         <div class="code" >CSC1113(P) PROGRAMMING TECHNIQUES</div>
         <div class="lecturer">MS.G.K.MABULA</div>
         <div class="hall"></div>
-        </TD> 
+        </TD>
 
       <TD rowspan="2">
         <div class="code" >CSC1142(T) SYSTEM ANALYSIS 7 DESIGN</div>
         <div class="lecturer">MS. HIRUNI & MS UPAMALIKA</div>
         <div class="hall"></div>
-        
-      </TD>  
-      
+
+      </TD>
+
       <TD rowspan="2">
         <div class="code" >CSC113A (T) INTERNET SERVICES & WEB DEVELOPMENT</div>
         <div class="lecturer">MS. BINURI</div>
         <div class="hall"></div>
-        
-      </TD>    
+
+      </TD>
     </TR>
-     
+
     <TR>
       <TD>11.00-12.00</TD>
-      
-      
-    
+
+
+
     </TR>
-     
+
 
       <TR>
       <TD colspan="6" class="lunch">Lunch</TD>
@@ -141,27 +148,27 @@
 
       <TR>
       <TD>13.00-13.55</TD>
-    
-    
+
+
         <TD rowspan="2">
         <div class="code" >CSC1113(T) PROGRAMMING TECHNIQUES</div>
         <div class="lecturer">MS GILMINI 7 MS. KALYANI</div>
         <div class="hall"></div>
-        
-      </TD>   
+
+      </TD>
 
       <TD>
         <div class="code" >MAT113D/MAT112D</div>
         <div class="lecturer"></div>
         <div class="hall"></div>
-        </TD>  
+        </TD>
 
-      
+
         <TD rowspan="2">
         <div class="code" >CSC 1153(T&P) LABORATORY ASSIGNMENTS (On campus)</div>
         <div class="lecturer"></div>
         <div class="hall"></div>
-        </TD> 
+        </TD>
 
         <TD rowspan="2">
         <div class="code" >AMT112B</div>
@@ -175,10 +182,10 @@
         <div class="hall"></div>
         </TD>
 </TR>
-      
+
       <TR>
       <TD>14.00-14.55</TD>
-      
+
 
         <TD rowspan="2">
         <div class="code" >CSC113A(P) INTERNET SERVICES AND WEB DEVELOPMET</div>
@@ -191,14 +198,14 @@
         <div class="lecturer"></div>
         <div class="hall"></div>
         </TD>
-      
+
     </TR>
 
     <TR>
       <TD>15.00-15.55</TD>
-      
-      
-      
+
+
+
       <TD>
         <div class="code" ></div>
         <div class="lecturer"></div>
@@ -210,7 +217,7 @@
         <div class="lecturer"></div>
         <div class="hall"></div>
         </TD>
-      
+
         <TD>
         <div class="code" ></div>
         <div class="lecturer"></div>
@@ -222,12 +229,12 @@
         <div class="lecturer"></div>
         <div class="hall"></div>
         </TD>
-    
+
     </TR>
 
     <TR>
       <TD>16.00-16.55</TD>
-      
+
       <TD>
         <div class="code" ></div>
         <div class="lecturer"></div>
