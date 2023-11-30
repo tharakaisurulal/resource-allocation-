@@ -554,8 +554,6 @@
                   <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
               @endif
           @endforeach
-
-
             </TD>
 
             <TD>
@@ -599,9 +597,6 @@
                   <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
               @endif
               @endforeach
-
-
-
             </TD>
     </TR>
 
