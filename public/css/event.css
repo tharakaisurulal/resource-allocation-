@@ -9,12 +9,13 @@ body{
     /*padding: 40px;  Increased padding for a larger box */
     width: 500px; /* Increased width for a larger box */
     text-align:left;
-    padding-top: 30px;
+    padding-top: 100px;
   }
 
   /* Apply your provided styles within the container */
   .container * {
     box-sizing: border-box;
+    height: auto;
   }
 
   .container input[type="text"],
@@ -78,4 +79,16 @@ body{
     border: none;
     background: #e4e1e1;
     font-display:#fdfefdf6;
+  }
+
+  .div1{
+    padding-top: 100px;
+  }
+  .div3{
+    padding-left: 40px;
+  }
+
+  .div55{
+    padding-top: 100px;
+    text-align: center;
   }

@@ -8,8 +8,8 @@ body {
 .jumbotron {
   background-color: gray;
   color: #070707;
-
   font-family: Montserrat, sans-serif;
+
 }
 
 .container-fluid {
@@ -39,11 +39,15 @@ body {
 .item span {
   font-style: normal;
 }
+.item{
+    background: #0805056b;
+
+}
 
 #calendar{
     /*padding-top: 50px;
 padding-left: 100px;*/
-width: 500px;
+width: 700px;
 
 
 }
@@ -55,12 +59,12 @@ width: 500px;
 
 .divi2{
     padding-top: 50px;
-    padding-left: 50px;
+    padding-left: 200px;
 padding-bottom: 50px;
 }
 
 .hb{
-padding-left: 160px;
+padding-left: 260px;
 padding-bottom: 30px;
 }
 
@@ -70,16 +74,17 @@ padding-bottom: 30px;
 /* Container needed to position the button. Adjust the width as needed */
 
   /* Make the image responsive */
-  .img1 {
+  .img2 {
     position: relative;
     width: 100%;
     height: auto;
+    
   }
 
   .mm {
     position: absolute;
-    top: 19%;
-    left: 17.15%;
+    top: 13%;
+    left: 17.30%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     padding: 10px 80px;
@@ -91,8 +96,8 @@ padding-bottom: 30px;
 
   .mm1 {
     position: absolute;
-    top: 17.5%;
-    left: 39.5%;
+    top: 12%;
+    left: 39.6%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     padding: 10px 80px;
@@ -105,8 +110,8 @@ padding-bottom: 30px;
 
   .mm2 {
     position: absolute;
-    top: 67.15%;
-    left: 17.15%;
+    top: 45.9%;
+    left: 17.25%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     padding: 10px 80px;
@@ -119,8 +124,8 @@ padding-bottom: 30px;
 
   .mm3 {
     position: absolute;
-    top: 66%;
-    left: 39.4%;
+    top: 45.2%;
+    left: 39.2%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     padding: 10px 80px;
@@ -133,7 +138,7 @@ padding-bottom: 30px;
 
   .mm4 {
     position: absolute;
-    top: 30.5%;
+    top: 20.8%;
     left: 9.5%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
@@ -147,7 +152,7 @@ padding-bottom: 30px;
 
   .mm5 {
     position: absolute;
-    top: 41.75%;
+    top: 28.5%;
     left: 53%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
@@ -160,7 +165,7 @@ padding-bottom: 30px;
 
   .mm6 {
     position: absolute;
-    top: 37.5%;
+    top: 25.5%;
     left: 59.75%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
@@ -174,7 +179,7 @@ padding-bottom: 30px;
 
    .overlay {
     position: absolute;
-    top: 21.5%;
+    top: 14.5%;
     left: 32.75%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
@@ -187,7 +192,7 @@ padding-bottom: 30px;
 
   .overlay1 {
     position: absolute;
-    top:  20.5%;
+    top:  14%;
     left: 62%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
@@ -200,7 +205,7 @@ padding-bottom: 30px;
 
   .overlay2 {
     position: absolute;
-    top:  69.65%;
+    top:  47.5%;
     left: 32.95%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
@@ -213,7 +218,7 @@ padding-bottom: 30px;
 
   .overlay3 {
     position: absolute;
-    top: 68.3%;
+    top: 46.5%;
     left: 56.6%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
@@ -226,7 +231,7 @@ padding-bottom: 30px;
 
   .overlay4 {
     position: absolute;
-    top: 37%;
+    top: 25%;
     left: 25%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
@@ -240,7 +245,7 @@ padding-bottom: 30px;
 
   .overlay5 {
     position: absolute;
-    top: 44.5%;
+    top: 30.5%;
     left: 65%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
@@ -253,7 +258,7 @@ padding-bottom: 30px;
 
   .overlay6 {
     position: absolute;
-    top: 39.5%;
+    top: 27%;
     left: 68.75%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);

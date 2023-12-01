@@ -347,10 +347,14 @@ Route::get('delete-timetable/{id}',[timetableController::class, 'deletetimetable
 
 Route::get('/index', [bookingController::class, 'index']);
 Route::get('/deletevent', [ bookingController::class, 'deletevent'])->name('delevent');
+
 Route::get('/editevent', [ bookingController::class, 'editevent'])->name('editevent');
+Route::get('update-event/{id}',[bookingController::class, 'updatetimetable'])->name('updatetimetable');  //route to function of return selected user details to edit page.
+
 Route::get('/addevent', [ bookingController::class, 'addevent']);
 Route::post('/storer', [ bookingController::class, 'storer'])->name('storert');
 Route::post('/deleter', [ bookingController::class, 'deleter'])->name('deleter');
 Route::post('/editer', [ bookingController::class, 'editer'])->name('editer');
+Route::get('/eventope', [ bookingController::class, 'eventope']);
 
 Route::get('/guestpage', [bookingController::class, 'viewguestpage'])->name('viewguestpage');
