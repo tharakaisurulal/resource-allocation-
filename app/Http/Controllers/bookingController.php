@@ -1,12 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\booking;
 use Illuminate\Http\Request;
 
-class eventController extends Controller
+class bookingController extends Controller
 {
-    public function index()
+    public function viewguestpage()
     {
         $event = Array();
         $bookings=booking::all();
@@ -18,7 +18,8 @@ class eventController extends Controller
         ];
         }
         //return  $event;
-        return view('index',['event'=>$event]);
+        return view('guestpage',['event'=>$event]);
+        //return view('home1',['event'=>$event]);
     }
 
 
@@ -83,5 +84,4 @@ class eventController extends Controller
             //return  $affected;
             return redirect()->route('editevent');
             }
-
 }
