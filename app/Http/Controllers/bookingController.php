@@ -22,6 +22,13 @@ class bookingController extends Controller
         //return view('home1',['event'=>$event]);
     }
 
+    public function eventope()
+    {
+        $cusdata4 = booking::all();
+        //return $cusdata4;
+        return view('admin.events.eventope');
+    }
+
 
     public function addevent()
     {
@@ -41,7 +48,7 @@ class bookingController extends Controller
 
     public function storer(Request $request)
     {
-
+//return $request;
           $bookings=booking::create([
             'title'=> $request -> name,
             'start_time' => $request -> start,
@@ -55,10 +62,10 @@ class bookingController extends Controller
             //$student->save();
             if($res){
             //return redirect('/') -> withSuccess("you are registered");
-            return back() -> with('success',"you are registered");
+            return back() -> with('success',"event is added");
             }
             else{
-                return back() -> with('fail',"you are not registered");
+                return back() -> with('fail',"event is not added");
             }
     }
 

@@ -232,15 +232,9 @@
             </div>
           </div>
         </div>-->
-    <div class="divi2">
-        <h1 class="hb">Speacial Events</h1>
-        <div id="calendar">
-            </div>
-        </div>
-    </div>
 
     <div class="container">
-        <img src="images/im1.jpg" alt="Snow"  class="img1" >
+        <img src="images/im1.jpg" alt="Snow"  class="img2" >
 
             <div class="container1">
                     <img src="images/im2rec.png"  class="mm" width="356px" height="80px">
@@ -291,6 +285,13 @@
                 </div>
             </div>
 
+
+            <div class="divi2">
+              <h1 class="hb">Speacial Events</h1>
+              <div id="calendar">
+                  </div>
+              </div>
+          </div>
 
     </div>
 
