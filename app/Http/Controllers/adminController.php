@@ -56,6 +56,20 @@ class adminController extends Controller
 
     public function adminhallallocation1(Request $request)
     {
+        $request->validate([  //validation part.
+            'starttime'=> 'required',
+            'program'=> 'required',
+            'day'=> 'required',
+            'endtime'=> 'required',
+            'course'=> 'required',
+            'level'=> 'required',
+            'lecturehall'=> 'required_with:lecturername|required_without:lab|prohibits:lab',
+            'lab'=> 'required_with:accsupname|required_without:lecturehall|prohibits:lecturehall', //if accsupname is present lab should be present|if lecturehall is empty lab should be present|if the lab is not empty lecturehall must be empty
+            'lecturername'=> 'required_with:lecturehall',
+            'accsupname'=> 'required_with:lab',
+            'semester' => 'required'
+          ]);
+
             if(($request -> program)&&($request -> course)&&($request -> level)&&($request -> semester)&&($request -> day)&&($request -> starttime)&&($request -> endtime)&&($request -> lecturername )&&($request -> lecturehall )&&!($request -> accsupname )&&!($request -> lab ))
             {
                 $joindata = DB::table('timetables')
@@ -67,28 +81,17 @@ class adminController extends Controller
                 ->where('level','=',$request -> level)
                 ->where('day','=',$request -> day)
                 ->where('course_id','=',$request -> course)
-                ->where('program_id','=',$request -> semester)
+                ->where('semester','=',$request -> semester)
                 ->where('start_time','=',$request -> starttime)
                 ->where('end_time','=',$request -> endtime)
                 ->where('lec_id','=',$request -> lecturername)
                 ->where('lh_id','=',$request -> lecturehall)
                 ->get();
-
-                if(!$joindata)
+                //return $request;
+                //return $joindata;
+                if($joindata->isEmpty())
                 {
-                $request->validate([  //validation part.
-                    'starttime'=> 'required',
-                    'program'=> 'required',
-                    'day'=> 'required',
-                    'endtime'=> 'required',
-                    'course'=> 'required',
-                    'level'=> 'required',
-                    'lecturehall'=> 'required_with:lecturername|required_without:lab|prohibits:lab',
-                    //'lab'=> 'required_with:accsupname|required_without:lecturehall|prohibits:lecturehall',
-                    'lecturername'=> 'required_with:lecturehall',
-                    //'accsupname'=> 'required_with:lab',
-                    'semester' => 'required'
-                  ]);
+                    //return $request;
 
                   $timetable=timetable::create([
                     'program_id'=> $request -> program,
@@ -112,7 +115,9 @@ class adminController extends Controller
                 }
 
                 else{
+                    //return $request;
                     return redirect('/admin/viewhallallocation') -> with('fail',"There is a allocated slot in that time!");
+
                 }
             }
 
@@ -124,45 +129,33 @@ class adminController extends Controller
                     //->join('programs', 'timetables.program_id', '=', 'programs.id')
                     //->join('courses', 'timetables.course_id', '=', 'courses.id')
                 ->select('timetables.*')
-                ->where('program_id','=',$request -> prog)
+                ->where('program_id','=',$request -> program)
                 ->where('level','=',$request -> level)
                 ->where('day','=',$request -> day)
                 ->where('course_id','=',$request -> course)
-                ->where('program_id','=',$request -> semester)
+                ->where('semester','=',$request -> semester)
                 ->where('start_time','=',$request -> starttime)
                 ->where('end_time','=',$request -> endtime)
-                ->where('acc_id','=',$request -> accsupname)
-                ->where('lab_id','=',$request -> lab)
+                ->where('lec_id','=',$request -> lecturername)
+                ->where('lh_id','=',$request -> lecturehall)
                 ->get();
+                //return $joindata1;
 
-                if($joindata)
+                if($joindata1->isEmpty())
                 {
-                $request->validate([  //validation part.
-                    'starttime'=> 'required',
-                    'program'=> 'required',
-                    'day'=> 'required',
-                    'endtime'=> 'required',
-                    'course'=> 'required',
-                    'level'=> 'required',
-                    //'lecturehall'=> 'required_with:lecturername|required_without:lab|prohibits:lab',
-                    'lab'=> 'required_with:accsupname|required_without:lecturehall|prohibits:lecturehall', //if accsupname is present lab should be present|if lecturehall is empty lab should be present|if the lab is not empty lecturehall must be empty
-                    //'lecturername'=> 'required_with:lecturehall',
-                    'accsupname'=> 'required_with:lab',
-                    'semester' => 'required'
-                  ]);
 
-                  $timetable=timetable::create([
-                    'program_id'=> $request -> program,
-                    'level'=> $request -> level,
-                    'day'=> $request -> day,
-                    'course_id'=> $request -> course,
-                    'start_time'=> $request -> starttime,
-                    'end_time'=> $request -> endtime,
-                    //'lec_id' => $request -> lecturername,
-                    'acc_id' => $request -> accsupname,
-                    'lab_id'=> $request -> lab,
-                    //'lh_id'=> $request -> lecturehall,
-                    'semester'=> $request -> semester,
+                    $timetable=timetable::create([
+                        'program_id'=> $request -> program,
+                        'level'=> $request -> level,
+                        'day'=> $request -> day,
+                        'course_id'=> $request -> course,
+                        'start_time'=> $request -> starttime,
+                        'end_time'=> $request -> endtime,
+                        //'lec_id' => $request -> lecturername,
+                        'acc_id' => $request -> accsupname,
+                        'lab_id'=> $request -> lab,
+                        //'lh_id'=> $request -> lecturehall,
+                        'semester'=> $request -> semester,
                     ]);
 
                     $res = $timetable ->save();
