@@ -1,7 +1,7 @@
 @extends('layout.header')
 
 @section("content2")
-        <li><a href="#">BACK</a></li>
+        <li><a href="/admin/adminhome">BACK</a></li>
 
 @endsection
 
@@ -26,15 +26,15 @@
 
         @if(session()->has('success'))
         <div class="alert alert-success div5">{{session()->get('success')}}</div>
-    @endif
+        @endif
 
-    @if(session()->has('fail'))
+        @if(session()->has('fail'))
         <div class="alert alert-danger">{{session()->get('fail')}}</div>
-    @endif
+        @endif
 
 
-        @if (isset($cusdata4))
-     <div class="d-flex justify-content-center div2">
+        @if ($cusdata4)
+        <div class="d-flex justify-content-center div2">
 
         <table class="table table-dark">
             <thead>

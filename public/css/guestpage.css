@@ -78,7 +78,7 @@ padding-bottom: 30px;
     position: relative;
     width: 100%;
     height: auto;
-    
+
   }
 
   .mm {
@@ -183,8 +183,10 @@ padding-bottom: 30px;
     left: 32.75%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
-    height: 80px;
-    width: 200px;
+    /*height: 80px;
+    width: 200px;*/
+    height: auto;
+    width: auto;
     opacity: 0;
     transition: .5s ease;
     background-color: #008CBA;
@@ -209,8 +211,10 @@ padding-bottom: 30px;
     left: 32.95%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
-    height: 80px;
-    width: 200px;
+    /*height: 800px;
+    width: 700px;*/
+    height: auto;
+    width: auto;
     opacity: 0;
     transition: .5s ease;
     background-color: #008CBA;
