@@ -239,49 +239,112 @@
             <div class="container1">
                     <img src="images/im2rec.png"  class="mm" width="356px" height="80px">
                 <div class="overlay">
-                    <div class="text">Hello World</div>
+                    <div class="text">@if ($data2)
+                        @foreach ($data2 as $cdb3 )
+                        <table class="table table-dark">
+                            <thead>
+                                <td>Course Code</td>
+                                <td> Start</td>
+                                <td>End</td>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>{{$cdb3->course_code}}</td>
+                                <td>{{$cdb3->start_time}}</td>
+                                <td>{{$cdb3->end_time}}</td>
+                            </tr>
+                        </tbody>
+                        </table>
+                        @endforeach
+                    @else
+                    @php
+                    echo "No Allocations for Today"
+                    @endphp
+                    @endif </div> <!--4-->
                 </div>
             </div>
 
             <div class="container2">
                     <img src="images/im2rec.png"  class="mm1" width="509px" height="93px">
                 <div class="overlay1">
-                    <div class="text">Hello World</div>
+                    <div class="text">Hello World1</div>
                 </div>
             </div>
 
             <div class="container3">
                     <img src="images/im2rec.png"  class="mm2" width="363px" height="80px">
                 <div class="overlay2">
-                    <div class="text">Hello World</div>
+                    <div class="text">@if ($data1)
+                        @foreach ($data1 as $cdb3 )
+                        <table class="table table-dark">
+                            <thead>
+                                <td>Course Code</td>
+                                <td> Start</td>
+                                <td>End</td>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>{{$cdb3->course_code}}</td>
+                                <td>{{$cdb3->start_time}}</td>
+                                <td>{{$cdb3->end_time}}</td>
+                            </tr>
+                        </tbody>
+                        </table>
+                        @endforeach
+                    @else
+                    @php
+                    echo "No Allocations for Today"
+                    @endphp
+                    @endif</div> <!--17-->
                 </div>
             </div>
 
             <div class="container4">
                     <img src="images/im2rec.png"  class="mm3" width="392px" height="67px">
                 <div class="overlay3">
-                    <div class="text">Hello World</div>
+                    <div class="text">Hello World3</div>
                 </div>
             </div>
 
             <div class="container5">
                     <img src="images/im2rec.png"  class="mm4" width="379px" height="209px">
                 <div class="overlay4">
-                    <div class="text">Hello World</div>
+                    <div class="text">@if ($data3)
+                        @foreach ($data3 as $cdb3 )
+                        <table class="table table-dark">
+                            <thead>
+                                <td>Course Code</td>
+                                <td> Start</td>
+                                <td>End</td>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>{{$cdb3->course_code}}</td>
+                                <td>{{$cdb3->start_time}}</td>
+                                <td>{{$cdb3->end_time}}</td>
+                            </tr>
+                        </tbody>
+                        </table>
+                        @endforeach
+                    @else
+                    @php
+                    echo 'No Allocations for Today';
+                    @endphp
+                    @endif</div> <!--13-->
                 </div>
             </div>
 
             <div class="container6">
                     <img src="images/im2rec.png"  class="mm5" width="310px" height="90px">
                 <div class="overlay5">
-                    <div class="text">Hello World</div>
+                    <div class="text">Hello World5</div>
                 </div>
             </div>
 
             <div class="container7">
                     <img src="images/im2rec.png"  class="mm6" width="253px" height="78px">
                 <div class="overlay6">
-                    <div class="text">Hello World</div>
+                    <div class="text">Hello World6</div>
                 </div>
             </div>
 
