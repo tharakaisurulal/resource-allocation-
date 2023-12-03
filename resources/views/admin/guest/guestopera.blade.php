@@ -19,7 +19,7 @@
     <body>
         <div class="div1">
             <div class="div3">
-            <button type="button" class="btn btn-warning" onclick="window.location.href=''">
+            <button type="button" class="btn btn-warning" onclick="window.location.href='/guest/guestregistration2'">
                 Add Guests
             </button>
             </div>
@@ -70,10 +70,10 @@
                               Action
                             </button>
                             <ul class="dropdown-menu">
-                              <li><a class="dropdown-item" href="" >Edit</a></li>
-                              <li><a class="dropdown-item" href="">Delete</a></li>
+                              <li><a class="dropdown-item" href="{{url('update-guest/'.$cdb->id)}}" >Edit</a></li>
+                              <li><a class="dropdown-item" href="{{url('delete-guest/'.$cdb->id)}}">Delete</a></li>
                               <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Change Password</a></li>  <!-- Button trigger modal -->
-                              <li><a class="dropdown-item" href="">More</a></li>
+
                             </ul>
                           </div>
                     </td>

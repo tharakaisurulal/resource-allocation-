@@ -64,10 +64,10 @@
                               Action
                             </button>
                             <ul class="dropdown-menu">
-                              <li><a class="dropdown-item" href="" >Edit</a></li>
-                              <li><a class="dropdown-item" href="">Delete</a></li>
-                              <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Change Password</a></li>  <!-- Button trigger modal -->
-                              <li><a class="dropdown-item" href="">More</a></li>
+                              <li><a class="dropdown-item" href="{{url('update-lecturer/'.$cdb->id)}}" >Edit</a></li>
+                              <li><a class="dropdown-item" href="{{url('delete-lecturer/'.$cdb->id)}}">Delete</a></li>
+                              <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">Change Password</a></li>  <!-- Button trigger modal -->
+
                             </ul>
                           </div>
                     </td>
@@ -84,11 +84,11 @@
 
 
         <!-- Modal id="staticBackdrop"-->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel1" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="staticBackdropLabel">Change Password</h1>
+          <h1 class="modal-title fs-5" id="staticBackdropLabel1">Change Password</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -96,7 +96,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-          <button type="button" class="btn btn-primary"><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">Yes</a></button>
+          <button type="button" class="btn btn-primary" onclick="window.location.href='{{url('updatepassword-lecturer/'.$cdb->id)}}'" data-bs-target="#staticBackdrop1">Yes</button>
         </div>
       </div>
     </div>

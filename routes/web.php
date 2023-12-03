@@ -292,7 +292,9 @@ Route::get('update-student/{id}',[studentController::class, 'updatestudent'])->n
 
 Route::post('update1-student/{id}',[studentController::class, 'updatestudent1'])->name('updatestudent1');  //route to function of update programs.
 
-Route::post('updatestudentpassword-student/{id}',[studentController::class, 'updatestudentpassword'])->name('updatestudentpassword');  //route to function of update student password.
+Route::get('viewmore-student/{id}',[studentController::class, 'viewmore'])->name('viewmore');
+
+Route::get('updatestudentpassword-student/{id}',[studentController::class, 'updatestudentpassword'])->name('updatestudentpassword');  //route to function of update student password.
 
 
 /*admin.lecturer routes*/
@@ -303,6 +305,14 @@ Route::get('/admin/lecturer/lecturerregister', function () { //view student regi
 });
 
 Route::post('/admin/lecturer/lecturerstore', [lecturerController::class, 'lecturerstore'])->name('lecturerstore'); //storing data in lecturer table.
+
+Route::get('update-lecturer/{id}',[lecturerController::class, 'updatelecturer'])->name('updatelecturer');  //route to function of return selected user details to edit page.
+
+Route::post('update1-lecturer/{id}',[lecturerController::class, 'updatelecturer1'])->name('updatelecturer1');  //route to function of update programs.
+
+Route::get('updatepassword-lecturer/{id}',[lecturerController::class, 'updatelecturerpassword'])->name('updatelecturerpassword');  //route to function of update lecturer password.
+
+Route::get('delete-lecturer/{id}',[lecturerController::class, 'deletelecturer'])->name('deletelecturer');
 
 //Route::get('update-lecturer/{id}',[lecturerController::class, 'updatelecturer'])->name('updatelecturer');  //route to function of return selected user details to edit page.
 
@@ -319,6 +329,14 @@ Route::get('/admin/academicsupportive/academicsupregister', function () { //view
 
 Route::post('/admin/academicsupportive/accsupstore', [academicsupportiveController::class, 'accsupstore'])->name('accsupstore'); //storing data in lecturer table.
 
+Route::get('update-accsupportive/{id}',[academicsupportiveController::class, 'updateacademicsupportive'])->name('updateacademicsupportive');  //route to function of return selected user details to edit page.
+
+Route::post('update1-accsupportive/{id}',[academicsupportiveController::class, 'updateacademicsupportive1'])->name('updateacademicsupportive1');  //route to function of update programs.
+
+Route::get('updateguestpassword-accsupportive/{id}',[academicsupportiveController::class, 'updateguestpassword'])->name('updateguestpassword');  //route to function of update student password.
+
+Route::get('delete-accsupportive/{id}',[academicsupportiveController::class, 'deleteaccsupportive'])->name('deleteaccsupportive');
+
 //Route::get('update-lecturer/{id}',[academicsupportiveController::class, 'updatelecturer'])->name('updatelecturer');  //route to function of return selected user details to edit page.
 
 //Route::post('update1-lecturer/{id}',[academicsupportiveController::class, 'updatelecturer1'])->name('updatelecturer1');  //route to function of update programs.
@@ -327,8 +345,20 @@ Route::post('/admin/academicsupportive/accsupstore', [academicsupportiveControll
 
 
 
-/*admin.lecturehall routes*/
+/*admin.guest routes*/
 Route::get('/admin/guest/guestopera', [guestController::class, 'viewguest'])->name('admin.guest.guestopera');  //route to view student crud operation page.
+
+Route::get('update-guest/{id}',[guestController::class, 'updateguest'])->name('updateguest');  //route to function of return selected user details to edit page.
+
+Route::post('update1-guest/{id}',[guestController::class, 'updateguest1'])->name('updateguest1');  //route to function of update programs.
+
+Route::get('updateguestpassword-guest/{id}',[guestController::class, 'updateguestpassword'])->name('updateguestpassword');  //route to function of update student password.
+
+Route::get('delete-guest/{id}',[guestController::class, 'deleteguest'])->name('deleteguest');
+
+Route::get('/guest/guestregistration2', [guestController::class, 'guestregi2']);
+
+Route::post('admin/guest/gueststore1', [guestController::class, 'gueststore1'])->name('gueststore1');
 
 /*admin.timetable routes*/
 Route::get('/admin/timetable/addtimetable', [timetableController::class, 'addtimetable'])->name('admin.timetable.addtimetable');  //route to view student crud operation page.
