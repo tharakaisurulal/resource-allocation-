@@ -1612,15 +1612,15 @@ elseif((($request->radio)==3)&(($request->radio1)==2)){
 
     }
 
-    public function updateguestpassword($id)  //selected id will be updated using this function.
+    public function updateaccsupportivepassword($id)  //selected id will be updated using this function.
     {
     //return $id;
-        $guest = guest::find($id);
+        $accsupportive = accsupportive::find($id);
         //$this-> lhcapacity = $lecturehall1->lh_capacity;
         //$this-> lhname = $lecturehall1->lh_name;
         //$lecturehall1->update();
         //return $lecturehall1;
-        return view('admin.guest.adminguesteditpassword', ['guest'=>$guest]);
+        return view('admin.academicsupportive.adminaccsupportiveeditpassword', ['accsupportive'=>$accsupportive]);
     }
 
     public function deleteaccsupportive($id) //delete course using the selected id.

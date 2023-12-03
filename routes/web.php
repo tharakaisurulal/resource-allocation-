@@ -333,7 +333,7 @@ Route::get('update-accsupportive/{id}',[academicsupportiveController::class, 'up
 
 Route::post('update1-accsupportive/{id}',[academicsupportiveController::class, 'updateacademicsupportive1'])->name('updateacademicsupportive1');  //route to function of update programs.
 
-Route::get('updateguestpassword-accsupportive/{id}',[academicsupportiveController::class, 'updateguestpassword'])->name('updateguestpassword');  //route to function of update student password.
+Route::get('updateguestpassword-accsupportive/{id}',[academicsupportiveController::class, 'updateaccsupportivepassword'])->name('updateaccsupportivepassword');  //route to function of update student password.
 
 Route::get('delete-accsupportive/{id}',[academicsupportiveController::class, 'deleteaccsupportive'])->name('deleteaccsupportive');
 
