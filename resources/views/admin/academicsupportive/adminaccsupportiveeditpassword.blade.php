@@ -21,7 +21,7 @@
                 <h1>Retrive data</h1>
             </div>
 
-            <form action="{{url('update1-guest/'.$guest->id)}}" method="POST">
+            <form action="{{url('update1-accsupportive/'.$accsupportive->id)}}" method="POST">
                 @csrf
          <div class="d-flex justify-content-center div2">
 
@@ -36,13 +36,13 @@
                 <tbody>
 
                 <tr>
-                    <td><input type="text" name="id" value="{{$guest->id}}" required disabled></td>
-                    <td><input type="text" name="password1" value="{{$guest->password}}"></td>
+                    <td><input type="text" name="id" value="{{$accsupportive->id}}" required disabled></td>
+                    <td><input type="text" name="password1" value="{{$accsupportive->password}}"></td>
                     <td><input type="text" name="password"  required></td>
 
                     <td>
                             <button class="btn btn-secondary btn-sm" type="submit" >Submit</button>
-                           <a href="/admin/guest/guestopera"> <button class="btn btn-secondary btn-sm" type="button" >Back</button></a>
+                           <a href="/admin/academicsupportive/academicsupopera"> <button class="btn btn-secondary btn-sm" type="button" >Back</button></a>
                     </td>
                 </tr>
 

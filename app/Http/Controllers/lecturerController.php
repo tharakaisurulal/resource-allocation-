@@ -286,14 +286,14 @@ public function updatelecturer1(Request $request,$id)  //selected id will be upd
             //return $lecturehall;
             //$lecturehall->update($request->all());
                 //return $lecturehall;
-                return redirect()->route('admin.lecturer.lectureropera')->with('success',"Data updated successfully.");
+                return redirect()->route('admin.lecturer.lectureropera')->with('success',"Password updated successfully.");
         }
 
 }
 
-public function updatelecturerpassword($id)  //selected id will be updated using this function.
+public function updatelecturerpassword(Request $request,$id)  //selected id will be updated using this function.
 {
-//return $id;
+//return $request;
     $lecturer = lecturer::find($id);
     //$this-> lhcapacity = $lecturehall1->lh_capacity;
     //$this-> lhname = $lecturehall1->lh_name;
