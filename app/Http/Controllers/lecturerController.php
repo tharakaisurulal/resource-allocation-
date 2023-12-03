@@ -247,4 +247,67 @@ public function lecchoosetimetable()
     return view('lecturers.lectimetable',['data1'=> $data1]);
 }
 
+public function updatelecturer($id) //to do the update choose the selected id and return details in to edit page.
+{
+        $lecturer = lecturer::find($id);
+        //$this-> lhcapacity = $lecturehall1->lh_capacity;
+        //$this-> lhname = $lecturehall1->lh_name;
+        //$lecturehall1->update();
+        //return $student;
+        return view('admin.lecturer.adminlectureredit', ['lecturer'=>$lecturer]);
+
+}
+
+public function updatelecturer1(Request $request,$id)  //selected id will be updated using this function.
+{
+        if(!($request->password)){
+            $lecturer = lecturer::find($id);
+            //return $request;
+                $lecturer->username = $request -> input('username');
+                $lecturer->lec_name = $request -> input('name');
+                $lecturer->lec_mobile = $request -> input('mobile');
+                $lecturer->update();
+            //return $request;
+            //return $lecturehall;
+            //$lecturehall->update($request->all());
+                //return $lecturehall;
+                return redirect()->route('admin.lecturer.lectureropera')->with('success',"Data updated successfully.");
+        }
+        else{
+            $lecturer = lecturer::find($id);
+            //return $lecturer;
+                $lecturer->password = Hash::make($request -> input('password'));
+                //$student->last_name = $request -> input('lname');
+                //$student->mobile = $request -> input('mobile');
+                //$student->first_name = $request -> input('photo');
+                //$student->username = $request -> input('username');
+                $lecturer->update();
+            //return $request;
+            //return $lecturehall;
+            //$lecturehall->update($request->all());
+                //return $lecturehall;
+                return redirect()->route('admin.lecturer.lectureropera')->with('success',"Data updated successfully.");
+        }
+
+}
+
+public function updatelecturerpassword($id)  //selected id will be updated using this function.
+{
+//return $id;
+    $lecturer = lecturer::find($id);
+    //$this-> lhcapacity = $lecturehall1->lh_capacity;
+    //$this-> lhname = $lecturehall1->lh_name;
+    //$lecturehall1->update();
+    //return $lecturehall1;
+    return view('admin.lecturer.adminlecturereditpassword', ['lecturer'=>$lecturer]);
+}
+
+public function deletelecturer($id) //delete course using the selected id.
+{
+        $lecturer = lecturer::find($id);
+        $lecturer->delete();
+        return redirect()->back()-> with('success',"successfully deleted.");
+}
+
+
 }

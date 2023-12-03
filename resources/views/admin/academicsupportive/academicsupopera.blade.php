@@ -64,10 +64,10 @@
                               Action
                             </button>
                             <ul class="dropdown-menu">
-                              <li><a class="dropdown-item" href="" >Edit</a></li>
-                              <li><a class="dropdown-item" href="">Delete</a></li>
+                              <li><a class="dropdown-item" href="{{url('update-accsupportive/'.$cdb->id)}}" >Edit</a></li>
+                              <li><a class="dropdown-item" href="{{url('delete-accsupportive/'.$cdb->id)}}">Delete</a></li>
                               <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Change Password</a></li>  <!-- Button trigger modal -->
-                              <li><a class="dropdown-item" href="">More</a></li>
+
                             </ul>
                           </div>
                     </td>

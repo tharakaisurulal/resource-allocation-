@@ -18,46 +18,41 @@
     </head>
     <body>
         <div class="div1">
-            <div class="div3">
-            <button type="button" class="btn btn-warning" onclick="window.location.href='/admin/student/sturegister'">
-                Add Students
-            </button>
-            </div>
 
             <div class="text-center">
                 <h1>Retrive data</h1>
             </div>
 
             @if(session()->has('success'))
-            <div class="alert alert-success div5">{{session()->get('success')}}</div>
-        @endif
+                <div class="alert alert-success div5">{{session()->get('success')}}</div>
+            @endif
 
-        @if(session()->has('fail'))
-            <div class="alert alert-danger">{{session()->get('fail')}}</div>
-        @endif
+            @if(session()->has('fail'))
+                <div class="alert alert-danger">{{session()->get('fail')}}</div>
+            @endif
 
 
-            @if (isset($cusdata4))
-         <div class="d-flex justify-content-center div2">
+            @if (isset($joindata))
+                <div class="d-flex justify-content-center div2">
 
             <table class="table table-dark">
                 <thead>
                     <td>Id</td>
-                    <td>photo</td>
-                    <td>username</td>
-                    <td>first name</td>
-                    <td>mobile</td>
+                    <td>last_name</td>
+                    <td>program</td>
+                    <td>level</td>
+                    <td>semester</td>
                     <td>Action</td>
 
                 </thead>
                 <tbody>
-                    @foreach ($cusdata4 as $cdb)
+                    @foreach ($joindata as $cdb)
                 <tr>
                     <td>{{$cdb->id}}</td>
-                    <td><img src="{{asset('/uploads/students/'.$cdb->photo) }}" alt="image" width="50px" height="50px"></td>
-                    <td>{{$cdb->username}}</td>
-                    <td>{{$cdb->first_name}}</td>
-                    <td>{{$cdb->mobile}}</td>
+                    <td>{{$cdb->last_name}}</td>
+                    <td>{{$cdb->program}}</td>
+                    <td>{{$cdb->level}}</td>
+                    <td>{{$cdb->semester}}</td>
                     <td>
                         <div class="dropdown">
                             <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -66,7 +61,6 @@
                             <ul class="dropdown-menu">
                               <li><a class="dropdown-item" href="{{url('update-student/'.$cdb->id)}}" >Edit</a></li>
                               <li><a class="dropdown-item" href="{{url('delete-student/'.$cdb->id)}}">Delete</a></li>
-                              <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Change Password</a></li>  <!-- Button trigger modal -->
                               <li><a class="dropdown-item" href="{{url('viewmore-student/'.$cdb->id)}}">More</a></li>
                             </ul>
                           </div>
@@ -96,7 +90,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-          <button type="button" class="btn btn-primary"><a class="dropdown-item" href="{{url('updatestudentpassword-student/'.$cdb->id)}}" data-bs-target="#staticBackdrop1">Yes</a></button>
+          <button type="button" class="btn btn-primary"><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">Yes</a></button>
         </div>
       </div>
     </div>
