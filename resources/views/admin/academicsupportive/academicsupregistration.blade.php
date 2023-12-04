@@ -1,6 +1,5 @@
 @extends('layout.header')
 @section('content2')
-        <li><a href="/">HOME</a></li>
         <li><a href="/admin/academicsupportive/academicsupopera">BACK</a></li>
 @endsection
 

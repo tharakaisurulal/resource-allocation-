@@ -1,16 +1,15 @@
-.body {
+body {
   font: 400 15px Lato, sans-serif;
   line-height: 1.8;
-  color: #818181;
 }
 .h4{
   font-family: Montserrat, sans-serif;
 }
 .jumbotron {
   background-color: gray;
-  color: #fff;
-  padding: 100px 25px;
+  color: #070707;
   font-family: Montserrat, sans-serif;
+
 }
 
 .container-fluid {
@@ -40,4 +39,284 @@
 .item span {
   font-style: normal;
 }
+.item{
+    background: #0805056b;
+
+}
+
+#calendar{
+    /*padding-top: 50px;
+padding-left: 100px;*/
+width: 700px;
+
+
+}
+
+.divi1{
+    padding-top: 80px;
+
+}
+
+.divi2{
+    padding-top: 50px;
+    padding-left: 200px;
+padding-bottom: 50px;
+}
+
+.hb{
+padding-left: 260px;
+padding-bottom: 30px;
+}
+
+
+
+
+/* Container needed to position the button. Adjust the width as needed */
+
+  /* Make the image responsive */
+  .img2 {
+    position: relative;
+    width: 100%;
+    height: auto;
+
+  }
+
+  .mm {
+    position: absolute;
+    top: 13%;
+    left: 17.30%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    padding: 10px 80px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transform: skew(9deg);
+  }
+
+  .mm1 {
+    position: absolute;
+    top: 12%;
+    left: 39.6%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    padding: 10px 80px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transform: skew(9deg);
+    rotate: 1deg;
+  }
+
+  .mm2 {
+    position: absolute;
+    top: 45.9%;
+    left: 17.25%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    padding: 10px 80px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transform: skew(7deg);
+    rotate: 1deg;
+  }
+
+  .mm3 {
+    position: absolute;
+    top: 45.2%;
+    left: 39.2%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    padding: 10px 80px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transform: skew(7deg);
+    rotate: 1deg;
+  }
+
+  .mm4 {
+    position: absolute;
+    top: 20.8%;
+    left: 9.5%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    padding: 10px 80px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transform: skew(43deg);
+    rotate: -13deg;
+  }
+
+  .mm5 {
+    position: absolute;
+    top: 28.5%;
+    left: 53%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    padding: 10px 80px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transform: skew(10deg);
+  }
+
+  .mm6 {
+    position: absolute;
+    top: 25.5%;
+    left: 59.75%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    padding: 10px 80px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transform: skew(12deg);
+    rotate: 3deg;
+  }
+
+   .overlay {
+    position: absolute;
+    top: 14.5%;
+    left: 32.75%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    /*height: 80px;
+    width: 200px;*/
+    height: auto;
+    width: auto;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #008CBA;
+  }
+
+  .overlay1 {
+    position: absolute;
+    top:  14%;
+    left: 62%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    height: 80px;
+    width: 350px;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #008CBA;
+  }
+
+  .overlay2 {
+    position: absolute;
+    top:  47.5%;
+    left: 32.95%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    /*height: 800px;
+    width: 700px;*/
+    height: auto;
+    width: auto;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #008CBA;
+  }
+
+  .overlay3 {
+    position: absolute;
+    top: 46.5%;
+    left: 56.6%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    height: 80px;
+    width: 250px;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #008CBA;
+  }
+
+  .overlay4 {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    height: 210px;
+    width: 220px;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #008CBA;
+
+  }
+
+  .overlay5 {
+    position: absolute;
+    top: 30.5%;
+    left: 65%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    height: 80px;
+    width: 250px;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #008CBA;
+  }
+
+  .overlay6 {
+    position: absolute;
+    top: 27%;
+    left: 68.75%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    height: 80px;
+    width: 200px;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #008CBA;
+  }
+
+  .container1:hover .overlay {
+    opacity: 1;
+  }
+
+  .container2:hover .overlay1 {
+    opacity: 1;
+  }
+
+  .container3:hover .overlay2 {
+    opacity: 1;
+  }
+
+  .container4:hover .overlay3 {
+    opacity: 1;
+  }
+
+  .container5:hover .overlay4 {
+    opacity: 1;
+  }
+
+  .container6:hover .overlay5 {
+    opacity: 1;
+  }
+
+  .container7:hover .overlay6 {
+    opacity: 1;
+  }
+
+
+  .text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .container {
+    position: relative;
+    width: 50%;
+  }
+
 

@@ -42,6 +42,31 @@ class academicsupportiveController extends Controller
         //return view('guest.guesthome');
     }
 
+    public function accsuplecturehalldetails()
+    {
+        $dater3=lecturehall::all();
+        //return $dater3;
+        return view('academicsupportive.accsuplecturehalldetails',['dater3'=>$dater3]);
+
+    }
+
+    public function accsuplab()
+    {
+        $dater4=lab::all();
+        //return $dater3;
+        return view('academicsupportive.accsuplab',['dater4'=>$dater4]);
+
+    }
+
+
+    /*public function academicsupportiverequest()
+    {
+        $dater4=lab::all();
+        //return $dater3;
+        return view('academicsupportive.accsuplab',['dater4'=>$dater4]);
+
+    }*/
+
     public function filtertimetable()
     {
         $dater1=course::all();
@@ -1247,7 +1272,7 @@ public function viewbcs2sem2() //view the guest home page       //ok
 
 }
 
-public function viewbcs3sem1() //view the guest home page       //ok
+public function viewbcs3sem1()
 {
         $data1 = DB::table('timetables')
         ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
@@ -1541,6 +1566,68 @@ elseif((($request->radio)==3)&(($request->radio1)==2)){
     return redirect('/academicsupportive/acasuptablebcslevel3sem2');
 }
 
+    }
+
+    public function updateacademicsupportive($id) //to do the update choose the selected id and return details in to edit page.
+    {
+            $accsupportive = accsupportive::find($id);
+            //$this-> lhcapacity = $lecturehall1->lh_capacity;
+            //$this-> lhname = $lecturehall1->lh_name;
+            //$lecturehall1->update();
+            //return $student;
+            return view('admin.academicsupportive.adminaccsupportiveedit', ['accsupportive'=>$accsupportive]);
+
+    }
+
+    public function updateacademicsupportive1(Request $request,$id)  //selected id will be updated using this function.
+    {
+            if(!($request->password)){
+                $accsupportive = accsupportive::find($id);
+                //return $request;
+                    $accsupportive->username = $request -> input('username');
+                    $accsupportive->acc_name = $request -> input('name');
+                    $accsupportive->acc_mobile = $request -> input('mobile');
+                    $accsupportive->update();
+                //return $request;
+                //return $lecturehall;
+                //$lecturehall->update($request->all());
+                    //return $lecturehall;
+                    return redirect()->route('admin.academicsupportive.academicsupopera')->with('success',"Data updated successfully.");
+            }
+            else{
+                $accsupportive = accsupportive::find($id);
+                //return $lecturer;
+                    $accsupportive->password = Hash::make($request -> input('password'));
+                    //$student->last_name = $request -> input('lname');
+                    //$student->mobile = $request -> input('mobile');
+                    //$student->first_name = $request -> input('photo');
+                    //$student->username = $request -> input('username');
+                    $accsupportive->update();
+                //return $request;
+                //return $lecturehall;
+                //$lecturehall->update($request->all());
+                    //return $lecturehall;
+                    return redirect()->route('admin.academicsupportive.academicsupopera')->with('success',"Data updated successfully.");
+            }
+
+    }
+
+    public function updateaccsupportivepassword($id)  //selected id will be updated using this function.
+    {
+    //return $id;
+        $accsupportive = accsupportive::find($id);
+        //$this-> lhcapacity = $lecturehall1->lh_capacity;
+        //$this-> lhname = $lecturehall1->lh_name;
+        //$lecturehall1->update();
+        //return $lecturehall1;
+        return view('admin.academicsupportive.adminaccsupportiveeditpassword', ['accsupportive'=>$accsupportive]);
+    }
+
+    public function deleteaccsupportive($id) //delete course using the selected id.
+    {
+            $accsupportive = accsupportive::find($id);
+            $accsupportive->delete();
+            return redirect()->back()-> with('success',"successfully deleted.");
     }
 
 
