@@ -240,7 +240,7 @@
                     <img src="images/im2rec.png"  class="mm" width="356px" height="80px">
                 <div class="overlay">
                     <div class="text">@if ($data2)
-                        @foreach ($data2 as $cdb3 )
+
                         <table class="table table-dark">
                             <thead>
                                 <td>Course Code</td>
@@ -248,18 +248,20 @@
                                 <td>End</td>
                             </thead>
                             <tbody>
+                                @foreach ($data2 as $cdb3 )
                             <tr>
                                 <td>{{$cdb3->course_code}}</td>
                                 <td>{{$cdb3->start_time}}</td>
                                 <td>{{$cdb3->end_time}}</td>
                             </tr>
+                                @endforeach
                         </tbody>
                         </table>
-                        @endforeach
+
                     @else
-                    @php
-                    echo "No Allocations for Today"
-                    @endphp
+                        @php
+                            echo "No Allocations for Today"
+                        @endphp
                     @endif </div> <!--4-->
                 </div>
             </div>
@@ -274,8 +276,8 @@
             <div class="container3">
                     <img src="images/im2rec.png"  class="mm2" width="363px" height="80px">
                 <div class="overlay2">
-                    <div class="text">@if ($data1)
-                        @foreach ($data1 as $cdb3 )
+                    <div class="text">@if (!$data1)
+
                         <table class="table table-dark">
                             <thead>
                                 <td>Course Code</td>
@@ -283,18 +285,24 @@
                                 <td>End</td>
                             </thead>
                             <tbody>
+                                @foreach ($data1 as $cdb3 )
                             <tr>
                                 <td>{{$cdb3->course_code}}</td>
                                 <td>{{$cdb3->start_time}}</td>
                                 <td>{{$cdb3->end_time}}</td>
                             </tr>
+                                @endforeach
                         </tbody>
                         </table>
-                        @endforeach
+
                     @else
-                    @php
-                    echo "No Allocations for Today"
-                    @endphp
+                    <table class="table table-dark">
+                        <tbody>
+                        <tr>
+                            <td colspan="3">No Time slotes allocated For Today!</td>
+                        </tr>
+                    </tbody>
+                    </table>
                     @endif</div> <!--17-->
                 </div>
             </div>
