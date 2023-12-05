@@ -97,7 +97,7 @@
                         <select name="lecid" id="faculty">
                             <option value="">--Choose lecturer--</option>
                             @foreach ( $dater5 as $data )
-                            <option value="{{$data->id}}">@php
+                            <option value="{{$data->id}}" {{ ($timetable->lec_id == $data->id) ? 'selected' : '' }}>@php
                                 echo $data->lec_name;
                             @endphp</option>
                               @endforeach
@@ -107,7 +107,7 @@
                         <select name="lhid" id="faculty">
                             <option value="">--Choose lecture hall--</option>
                             @foreach ( $dater3 as $data1 )
-                            <option value="{{$data1->id}}">@php
+                            <option value="{{$data1->id}}" {{ ($timetable->lh_id == $data1->id) ? 'selected' : '' }}>@php
                                 echo $data1->lh_name;
                             @endphp</option>
                               @endforeach

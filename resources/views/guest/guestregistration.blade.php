@@ -46,14 +46,14 @@
                 <div class="inputBox">
                     <select name="faculty" id="faculty" value="{{old('faculty')}}">
                         <option value="">--Choose faculty--</option>
-                        <option value="op1">Faculty of Science</option>
-                        <option value="op2">Faculty of Management and Finance</option>
-                        <option value="op3">Faculty of Humanities and Social Sciences	</option>
-                        <option value="op4">Faculty of Fisheries and Marine Sciences and Technology</option>
-                        <option value="op5">Faculty of Medicine</option>
-                        <option value="op6">Faculty of Engineering</option>
-                        <option value="op7">Faculty of Technology</option>
-                        <option value="op7">Faculty of Agriculture</option>
+                        <option value="Science">Faculty of Science</option>
+                        <option value="Management and Finance">Faculty of Management and Finance</option>
+                        <option value="Humanities and Social Sciences">Faculty of Humanities and Social Sciences</option>
+                        <option value="Fisheries and Marine Sciences and Technology">Faculty of Fisheries and Marine Sciences and Technology</option>
+                        <option value="Medicine">Faculty of Medicine</option>
+                        <option value="Engineering">Faculty of Engineering</option>
+                        <option value="Technology">Faculty of Technology</option>
+                        <option value="Agriculture">Faculty of Agriculture</option>
                         </select>
                 </div>
                 <label class="text-danger span1">@error('faculty')  {{$message}}  @enderror</label>

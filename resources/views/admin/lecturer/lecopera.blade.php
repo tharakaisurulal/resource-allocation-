@@ -58,20 +58,23 @@
                     <td>{{$cdb->username}}</td>
                     <td>{{$cdb->lec_name}}</td>
                     <td>{{$cdb->lec_mobile}}</td>
+
                     <td>
+
                         <div class="dropdown">
                             <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                               Action
                             </button>
                             <ul class="dropdown-menu">
-                              <li><a class="dropdown-item" href="" >Edit</a></li>
-                              <li><a class="dropdown-item" href="">Delete</a></li>
-                              <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Change Password</a></li>  <!-- Button trigger modal -->
-                              <li><a class="dropdown-item" href="">More</a></li>
+                              <li><a class="dropdown-item" href="{{url('update-lecturer/'.$cdb->id)}}" >Edit</a></li>
+                              <li><a class="dropdown-item" href="{{url('delete-lecturer/'.$cdb->id)}}">Delete</a></li>
+                              <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#staticBackdrop{{$cdb->id}}">Change Password</a></li>  <!-- Button trigger modal -->
+                            </form>
                             </ul>
                           </div>
                     </td>
                 </tr>
+
                     @endforeach
                 </tbody>
               </table>
@@ -82,25 +85,26 @@
          @endif
         </div>
 
-
-        <!-- Modal id="staticBackdrop"-->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="staticBackdropLabel">Change Password</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            Do You want to change password?
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-          <button type="button" class="btn btn-primary"><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">Yes</a></button>
-        </div>
-      </div>
-    </div>
-  </div>
+            <!-- Modal id="staticBackdrop"-->
+            @for ($i=1;$i<=$cdb->id;$i++)
+            <div class="modal fade" id="staticBackdrop{{$i}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel1" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel1">Change Password</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Do You want to change password?
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                    <button type="button" class="btn btn-primary"><a class="dropdown-item" href="{{url('updatepassword-lecturer/'.$i)}}" data-bs-target="#staticBackdrop1">Yes</a></button>
+                    </div>
+                </div>
+                </div>
+            </div>
+            @endfor
 
     </body>
 </html>

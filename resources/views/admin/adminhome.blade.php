@@ -91,7 +91,7 @@
                     </h2>
                   </div>
 
-                  <div class="accordion-item">
+                  <!--<div class="accordion-item">
                     <h2 class="accordion-header" id="flush-headingFive">
                       <button class="accordion-button collapsed sec2" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
                         <li><a href="#">HALL REQUEST</a></li>
@@ -99,10 +99,10 @@
                     </h2>
                     <div id="flush-collapseFive" class="accordion-collapse collapse sec2" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
                       <div class="accordion-body">
-                          <!--write-->
+
                       </div>
                     </div>
-                  </div>
+                  </div>-->
 
 
                  <!-- <div class="accordion-item">
@@ -135,7 +135,7 @@
 
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="flush-headingEight">
-                      <button class="accordion-button collapsed sec2" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseEight" aria-expanded="false" aria-controls="flush-collapseEight" onclick="window.location.href='/addevent';">
+                      <button class="accordion-button collapsed sec2" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseEight" aria-expanded="false" aria-controls="flush-collapseEight" onclick="window.location.href='/eventope';">
                         <li><a href="#">EVENTS</a></li>
                       </button>
                     </h2>
