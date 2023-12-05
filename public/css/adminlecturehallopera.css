@@ -1,0 +1,38 @@
+.div1{
+    padding-top: 80px;
+}
+
+body{
+    background-color: #0805056b;
+}
+
+.div2{
+    padding: 5px 20px 20px 20px;
+}
+
+.div3{
+    padding: 20px 20px 20px 1000px;
+
+}
+
+td{
+    width: auto;
+    height: auto;
+}
+
+table{
+    width:100%;
+}
+
+.div5{
+    text-align: center;
+    margin: 0px 60px 20px 60px;
+}
+
+.tb1{
+    width: 500px;
+
+}
+
+
+

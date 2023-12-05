@@ -16,6 +16,9 @@ class student extends Model
         'email',
         'mobile',
         'photo',
+        'program_Id',
+        'semester',
+        'level',
         'subject1',
         'subject2',
         'subject3',
@@ -24,7 +27,6 @@ class student extends Model
         'subject6',
         'subject7',
         'subject8'
-
 
     ];
 }
