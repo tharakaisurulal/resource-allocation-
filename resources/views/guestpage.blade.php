@@ -31,13 +31,29 @@
 
 </head>
 <body>
+
+
     <div class="divi1">
     <div class="jumbotron text-center">
         <h1>TODAY ALLOCATION</h1>
         <p>From Department Of Computer Science</p>
-
       </div>
-      <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+      <div id="marquee-cont">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="50px" height="40px" style="background:#1174A8;">
+              <button id="ticker-title">Posts:</button>
+            </td>
+            <td id="marquee">
+              <marquee onmouseover="this.stop();" onmouseout="this.start();" id='scroll'>
+              <!--temp <img src="https://www.naishare.com/images/favicon.png" width="25px" />-->
+              </marquee>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+      <!--<div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
           <!-- Indicators -->
           <!--<ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -46,7 +62,7 @@
           </ol> -->
 
           <!-- Wrapper for slides -->
-          <div class="carousel-inner" role="listbox">
+          <!--<div class="carousel-inner" role="listbox">
             <div class="item active">
               <h4>"notice01"<br><span>Dtae(YYYY/MM/DD)</span></h4>
             </div>
@@ -58,7 +74,7 @@
             </div>
           </div>
           <!-- Left and right controls -->
-          <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+          <!--<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
               <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
               <span class="sr-only">Previous</span>
               </a>
@@ -67,7 +83,7 @@
               <span class="sr-only">Next</span>
               </a>
           </div>
-      </div>
+      </div>-->
 
 <!-- Container (About Section) -->
 <!--<div id="about" class="container-fluid">
@@ -237,9 +253,9 @@
         <img src="images/im1.jpg" alt="Snow"  class="img2" >
 
             <div class="container1">
-                    <img src="images/im2rec.png"  class="mm" width="356px" height="80px">
+                    <img src="images/im2rec.png" class="mm" width="356px" height="80px">
                 <div class="overlay">
-                    <div class="text">@if ($data2)
+                    <div class="text">@if (sizeof($data2)!==0)
 
                         <table class="table table-dark">
                             <thead>
@@ -248,20 +264,25 @@
                                 <td>End</td>
                             </thead>
                             <tbody>
-                                @foreach ($data2 as $cdb3 )
+                                @foreach ($data2 as $cdb2 )
                             <tr>
-                                <td>{{$cdb3->course_code}}</td>
-                                <td>{{$cdb3->start_time}}</td>
-                                <td>{{$cdb3->end_time}}</td>
+                                <td>{{$cdb2->course_code}}</td>
+                                <td>{{$cdb2->start_time}}</td>
+                                <td>{{$cdb2->end_time}}</td>
                             </tr>
                                 @endforeach
                         </tbody>
                         </table>
-
+                    </div>
+                    <div class="text">
                     @else
-                        @php
-                            echo "No Allocations for Today"
-                        @endphp
+                    <table class="table table-dark">
+                        <tbody>
+                            <tr>
+                                <td colspan="3">No Time slotes allocated For Today!</td>
+                            </tr>
+                        </tbody>
+                    </table>
                     @endif </div> <!--4-->
                 </div>
             </div>
@@ -269,14 +290,7 @@
             <div class="container2">
                     <img src="images/im2rec.png"  class="mm1" width="509px" height="93px">
                 <div class="overlay1">
-                    <div class="text">Hello World1</div>
-                </div>
-            </div>
-
-            <div class="container3">
-                    <img src="images/im2rec.png"  class="mm2" width="363px" height="80px">
-                <div class="overlay2">
-                    <div class="text">@if (!$data1)
+                    <div class="text">@if (sizeof($data3)!==0)
 
                         <table class="table table-dark">
                             <thead>
@@ -285,23 +299,59 @@
                                 <td>End</td>
                             </thead>
                             <tbody>
-                                @foreach ($data1 as $cdb3 )
+                                @foreach ($data4 as $cdb4 )
                             <tr>
-                                <td>{{$cdb3->course_code}}</td>
-                                <td>{{$cdb3->start_time}}</td>
-                                <td>{{$cdb3->end_time}}</td>
+                                <td>{{$cdb4->course_code}}</td>
+                                <td>{{$cdb4->start_time}}</td>
+                                <td>{{$cdb4->end_time}}</td>
                             </tr>
                                 @endforeach
                         </tbody>
                         </table>
-
+                    </div>
+                    <div class="text">
                     @else
                     <table class="table table-dark">
                         <tbody>
-                        <tr>
-                            <td colspan="3">No Time slotes allocated For Today!</td>
-                        </tr>
-                    </tbody>
+                            <tr>
+                                <td colspan="3">No Time slotes allocated For Today!</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    @endif</div> <!--03-->
+                </div>
+            </div>
+
+            <div class="container3">
+                    <img src="images/im2rec.png"  class="mm2" width="363px" height="80px">
+                <div class="overlay2">
+                    <div class="text">@if (sizeof($data1)!==0)
+
+                        <table class="table table-dark">
+                            <thead>
+                                <td>Course Code</td>
+                                <td> Start</td>
+                                <td>End</td>
+                            </thead>
+                            <tbody>
+                                @foreach ($data1 as $cdb1 )
+                            <tr>
+                                <td>{{$cdb1->course_code}}</td>
+                                <td>{{$cdb1->start_time}}</td>
+                                <td>{{$cdb1->end_time}}</td>
+                            </tr>
+                                @endforeach
+                        </tbody>
+                        </table>
+                    </div>
+                    <div class="text">
+                    @else
+                    <table class="table table-dark">
+                        <tbody>
+                            <tr>
+                                <td colspan="3">No Time slotes allocated For Today!</td>
+                            </tr>
+                        </tbody>
                     </table>
                     @endif</div> <!--17-->
                 </div>
@@ -310,15 +360,8 @@
             <div class="container4">
                     <img src="images/im2rec.png"  class="mm3" width="392px" height="67px">
                 <div class="overlay3">
-                    <div class="text">Hello World3</div>
-                </div>
-            </div>
+                    <div class="text">@if (sizeof($data6)!==0)
 
-            <div class="container5">
-                    <img src="images/im2rec.png"  class="mm4" width="379px" height="209px">
-                <div class="overlay4">
-                    <div class="text">@if ($data3)
-                        @foreach ($data3 as $cdb3 )
                         <table class="table table-dark">
                             <thead>
                                 <td>Course Code</td>
@@ -326,18 +369,60 @@
                                 <td>End</td>
                             </thead>
                             <tbody>
+                                @foreach ($data6 as $cdb6 )
+                            <tr>
+                                <td>{{$cdb6->course_code}}</td>
+                                <td>{{$cdb6->start_time}}</td>
+                                <td>{{$cdb6->end_time}}</td>
+                            </tr>
+                                @endforeach
+                        </tbody>
+                        </table>
+                    </div>
+                    <div class="text">
+                    @else
+                    <table class="table table-dark">
+                        <tbody>
+                            <tr>
+                                <td colspan="3">No Time slotes allocated For Today!</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    @endif</div> <!--16-->
+                </div>
+            </div>
+
+            <div class="container5">
+                    <img src="images/im2rec.png"  class="mm4" width="379px" height="209px">
+                <div class="overlay4">
+                    <div class="text">@if (sizeof($data3)!==0)
+
+                        <table class="table table-dark">
+                            <thead>
+                                <td>Course Code</td>
+                                <td> Start</td>
+                                <td>End</td>
+                            </thead>
+                            <tbody>
+                                @foreach ($data3 as $cdb3 )
                             <tr>
                                 <td>{{$cdb3->course_code}}</td>
                                 <td>{{$cdb3->start_time}}</td>
                                 <td>{{$cdb3->end_time}}</td>
                             </tr>
+                                @endforeach
                         </tbody>
                         </table>
-                        @endforeach
+                    </div>
+                    <div class="text">
                     @else
-                    @php
-                    echo 'No Allocations for Today';
-                    @endphp
+                    <table class="table table-dark">
+                        <tbody>
+                            <tr>
+                                <td colspan="3">No Time slotes allocated For Today!</td>
+                            </tr>
+                        </tbody>
+                    </table>
                     @endif</div> <!--13-->
                 </div>
             </div>
@@ -345,14 +430,70 @@
             <div class="container6">
                     <img src="images/im2rec.png"  class="mm5" width="310px" height="90px">
                 <div class="overlay5">
-                    <div class="text">Hello World5</div>
+                    <div class="text">@if (sizeof($data5)!==0)
+
+                        <table class="table table-dark">
+                            <thead>
+                                <td>Course Code</td>
+                                <td> Start</td>
+                                <td>End</td>
+                            </thead>
+                            <tbody>
+                                @foreach ($data5 as $cdb5 )
+                            <tr>
+                                <td>{{$cdb5->course_code}}</td>
+                                <td>{{$cdb5->start_time}}</td>
+                                <td>{{$cdb5->end_time}}</td>
+                            </tr>
+                                @endforeach
+                        </tbody>
+                        </table>
+                    </div>
+                    <div class="text">
+                    @else
+                    <table class="table table-dark">
+                        <tbody>
+                            <tr>
+                                <td colspan="3">No Time slotes allocated For Today!</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    @endif</div> <!--09-->
                 </div>
             </div>
 
             <div class="container7">
                     <img src="images/im2rec.png"  class="mm6" width="253px" height="78px">
                 <div class="overlay6">
-                    <div class="text">Hello World6</div>
+                    <div class="text">@if (sizeof($data7)!==0)
+
+                        <table class="table table-dark">
+                            <thead>
+                                <td>Course Code</td>
+                                <td> Start</td>
+                                <td>End</td>
+                            </thead>
+                            <tbody>
+                                @foreach ($data7 as $cdb7 )
+                            <tr>
+                                <td>{{$cdb7->course_code}}</td>
+                                <td>{{$cdb7->start_time}}</td>
+                                <td>{{$cdb7->end_time}}</td>
+                            </tr>
+                                @endforeach
+                        </tbody>
+                        </table>
+                    </div>
+                    <div class="text">
+                    @else
+                    <table class="table table-dark">
+                        <tbody>
+                            <tr>
+                                <td colspan="3">No Time slotes allocated For Today!</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    @endif</div> <!--08-->
                 </div>
             </div>
 
@@ -381,6 +522,28 @@
                     selectHelper: true
                     })
             });
+
+
+                        //array of news
+            const news = ["Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+            "Contrary to popular belief, Lorem Ipsum is not simply random text.",
+            "The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.",
+            "All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary."]
+
+            //logo
+            const logo = "<img src='https://www.naishare.com/images/favicon.png' width='25px' style='margin:0 8px'/>";
+            let tickerText = "";
+            //looping through the news array
+            for(let i=0; i<news.length; i++){
+            tickerText+=news[i];
+            //adds the logo in between news items
+            if(i!=news.length-1){
+                tickerText+=logo;
+            }
+            }
+
+            document.querySelector("#scroll").innerHTML = tickerText;
             </script>
 </body>
 </html>

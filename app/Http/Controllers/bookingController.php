@@ -6,6 +6,7 @@ use App\Models\timetable;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
+
 class bookingController extends Controller
 {
     public function viewguestpage()
@@ -62,8 +63,48 @@ class bookingController extends Controller
        ->where('lh_name','=','main-auditorium')
        ->where('day','=','Monday')
        ->get();
+
+        $data4 = DB::table('timetables')
+       //->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+   //->join('programs', 'timetables.program_id', '=', 'programs.id')
+   ->join('courses', 'timetables.course_id', '=', 'courses.id')
+   ->join('labs', 'timetables.lab_id', '=', 'labs.id')
+       ->select('timetables.*', 'courses.course_name', 'courses.course_code','labs.lab_name')
+       ->where('lab_name','=','Computer lab 01')
+       ->where('day','=','Monday')
+       ->get();
+
+       $data5 = DB::table('timetables')
+       //->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+   //->join('programs', 'timetables.program_id', '=', 'programs.id')
+   ->join('courses', 'timetables.course_id', '=', 'courses.id')
+   ->join('labs', 'timetables.lab_id', '=', 'labs.id')
+       ->select('timetables.*', 'courses.course_name', 'courses.course_code','labs.lab_name')
+       ->where('lab_name','=','Computer lab 02')
+       ->where('day','=','Monday')
+       ->get();
+
+       $data6 = DB::table('timetables')
+       //->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+   //->join('programs', 'timetables.program_id', '=', 'programs.id')
+   ->join('courses', 'timetables.course_id', '=', 'courses.id')
+   ->join('labs', 'timetables.lab_id', '=', 'labs.id')
+       ->select('timetables.*', 'courses.course_name', 'courses.course_code','labs.lab_name')
+       ->where('lab_name','=','Computer lab 03')
+       ->where('day','=','Monday')
+       ->get();
+
+       $data7 = DB::table('timetables')
+       //->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+   //->join('programs', 'timetables.program_id', '=', 'programs.id')
+   ->join('courses', 'timetables.course_id', '=', 'courses.id')
+   ->join('labs', 'timetables.lab_id', '=', 'labs.id')
+       ->select('timetables.*', 'courses.course_name', 'courses.course_code','labs.lab_name')
+       ->where('lab_name','=','Special lab')
+       ->where('day','=','Monday')
+       ->get();
         //return $data3;
-        return view('guestpage',['data1'=> $data1,'data2'=> $data2,'data3'=> $data3,'event'=>$event]);
+        return view('guestpage',['data1'=> $data1,'data2'=> $data2,'data3'=> $data3,'data4'=> $data4,'data5'=> $data5,'data6'=> $data6,'data7'=> $data7,'event'=>$event]);
 
     }
 
@@ -94,8 +135,49 @@ class bookingController extends Controller
        ->where('lh_name','=','main-auditorium')
        ->where('day','=','Tuesday')
        ->get();
-        //return view('booking');
-        return view('guestpage',['data1'=> $data1,'data2'=> $data2,'data3'=> $data3,'event'=>$event]);
+        //return sizeof($data2);
+        //dd($data2);
+        $data4 = DB::table('timetables')
+        //->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+    //->join('programs', 'timetables.program_id', '=', 'programs.id')
+    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+    ->join('labs', 'timetables.lab_id', '=', 'labs.id')
+        ->select('timetables.*', 'courses.course_name', 'courses.course_code','labs.lab_name')
+        ->where('lab_name','=','Computer lab 01')
+        ->where('day','=','Monday')
+        ->get();
+
+        $data5 = DB::table('timetables')
+        //->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+    //->join('programs', 'timetables.program_id', '=', 'programs.id')
+    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+    ->join('labs', 'timetables.lab_id', '=', 'labs.id')
+        ->select('timetables.*', 'courses.course_name', 'courses.course_code','labs.lab_name')
+        ->where('lab_name','=','Computer lab 02')
+        ->where('day','=','Monday')
+        ->get();
+
+        $data6 = DB::table('timetables')
+        //->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+    //->join('programs', 'timetables.program_id', '=', 'programs.id')
+    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+    ->join('labs', 'timetables.lab_id', '=', 'labs.id')
+        ->select('timetables.*', 'courses.course_name', 'courses.course_code','labs.lab_name')
+        ->where('lab_name','=','Computer lab 03')
+        ->where('day','=','Monday')
+        ->get();
+
+        $data7 = DB::table('timetables')
+        //->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+    //->join('programs', 'timetables.program_id', '=', 'programs.id')
+    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+    ->join('labs', 'timetables.lab_id', '=', 'labs.id')
+        ->select('timetables.*', 'courses.course_name', 'courses.course_code','labs.lab_name')
+        ->where('lab_name','=','Special lab')
+        ->where('day','=','Monday')
+        ->get();
+         //return $data3;
+         return view('guestpage',['data1'=> $data1,'data2'=> $data2,'data3'=> $data3,'data4'=> $data4,'data5'=> $data5,'data6'=> $data6,'data7'=> $data7,'event'=>$event]);
 
     }
 
@@ -127,7 +209,47 @@ class bookingController extends Controller
        ->where('day','=','Wednesday')
        ->get();
         //return view('booking');
-        return view('guestpage',['data1'=> $data1,'data2'=> $data2,'data3'=> $data3,'event'=>$event]);
+        $data4 = DB::table('timetables')
+        //->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+    //->join('programs', 'timetables.program_id', '=', 'programs.id')
+    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+    ->join('labs', 'timetables.lab_id', '=', 'labs.id')
+        ->select('timetables.*', 'courses.course_name', 'courses.course_code','labs.lab_name')
+        ->where('lab_name','=','Computer lab 01')
+        ->where('day','=','Monday')
+        ->get();
+
+        $data5 = DB::table('timetables')
+        //->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+    //->join('programs', 'timetables.program_id', '=', 'programs.id')
+    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+    ->join('labs', 'timetables.lab_id', '=', 'labs.id')
+        ->select('timetables.*', 'courses.course_name', 'courses.course_code','labs.lab_name')
+        ->where('lab_name','=','Computer lab 02')
+        ->where('day','=','Monday')
+        ->get();
+
+        $data6 = DB::table('timetables')
+        //->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+    //->join('programs', 'timetables.program_id', '=', 'programs.id')
+    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+    ->join('labs', 'timetables.lab_id', '=', 'labs.id')
+        ->select('timetables.*', 'courses.course_name', 'courses.course_code','labs.lab_name')
+        ->where('lab_name','=','Computer lab 03')
+        ->where('day','=','Monday')
+        ->get();
+
+        $data7 = DB::table('timetables')
+        //->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+    //->join('programs', 'timetables.program_id', '=', 'programs.id')
+    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+    ->join('labs', 'timetables.lab_id', '=', 'labs.id')
+        ->select('timetables.*', 'courses.course_name', 'courses.course_code','labs.lab_name')
+        ->where('lab_name','=','Special lab')
+        ->where('day','=','Monday')
+        ->get();
+         //return $data3;
+         return view('guestpage',['data1'=> $data1,'data2'=> $data2,'data3'=> $data3,'data4'=> $data4,'data5'=> $data5,'data6'=> $data6,'data7'=> $data7,'event'=>$event]);
 
     }
 
@@ -159,7 +281,47 @@ class bookingController extends Controller
        ->where('day','=','Thursday')
        ->get();
         //return view('booking');
-        return view('guestpage',['data1'=> $data1,'data2'=> $data2,'data3'=> $data3,'event'=>$event]);
+        $data4 = DB::table('timetables')
+        //->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+    //->join('programs', 'timetables.program_id', '=', 'programs.id')
+    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+    ->join('labs', 'timetables.lab_id', '=', 'labs.id')
+        ->select('timetables.*', 'courses.course_name', 'courses.course_code','labs.lab_name')
+        ->where('lab_name','=','Computer lab 01')
+        ->where('day','=','Monday')
+        ->get();
+
+        $data5 = DB::table('timetables')
+        //->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+    //->join('programs', 'timetables.program_id', '=', 'programs.id')
+    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+    ->join('labs', 'timetables.lab_id', '=', 'labs.id')
+        ->select('timetables.*', 'courses.course_name', 'courses.course_code','labs.lab_name')
+        ->where('lab_name','=','Computer lab 02')
+        ->where('day','=','Monday')
+        ->get();
+
+        $data6 = DB::table('timetables')
+        //->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+    //->join('programs', 'timetables.program_id', '=', 'programs.id')
+    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+    ->join('labs', 'timetables.lab_id', '=', 'labs.id')
+        ->select('timetables.*', 'courses.course_name', 'courses.course_code','labs.lab_name')
+        ->where('lab_name','=','Computer lab 03')
+        ->where('day','=','Monday')
+        ->get();
+
+        $data7 = DB::table('timetables')
+        //->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+    //->join('programs', 'timetables.program_id', '=', 'programs.id')
+    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+    ->join('labs', 'timetables.lab_id', '=', 'labs.id')
+        ->select('timetables.*', 'courses.course_name', 'courses.course_code','labs.lab_name')
+        ->where('lab_name','=','Special lab')
+        ->where('day','=','Monday')
+        ->get();
+         //return $data3;
+         return view('guestpage',['data1'=> $data1,'data2'=> $data2,'data3'=> $data3,'data4'=> $data4,'data5'=> $data5,'data6'=> $data6,'data7'=> $data7,'event'=>$event]);
 
     }
 
@@ -191,7 +353,47 @@ class bookingController extends Controller
        ->where('day','=','Friday')
        ->get();
         //return view('booking');
-        return view('guestpage',['data1'=> $data1,'data2'=> $data2,'data3'=> $data3,'event'=>$event]);
+        $data4 = DB::table('timetables')
+        //->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+    //->join('programs', 'timetables.program_id', '=', 'programs.id')
+    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+    ->join('labs', 'timetables.lab_id', '=', 'labs.id')
+        ->select('timetables.*', 'courses.course_name', 'courses.course_code','labs.lab_name')
+        ->where('lab_name','=','Computer lab 01')
+        ->where('day','=','Monday')
+        ->get();
+
+        $data5 = DB::table('timetables')
+        //->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+    //->join('programs', 'timetables.program_id', '=', 'programs.id')
+    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+    ->join('labs', 'timetables.lab_id', '=', 'labs.id')
+        ->select('timetables.*', 'courses.course_name', 'courses.course_code','labs.lab_name')
+        ->where('lab_name','=','Computer lab 02')
+        ->where('day','=','Monday')
+        ->get();
+
+        $data6 = DB::table('timetables')
+        //->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+    //->join('programs', 'timetables.program_id', '=', 'programs.id')
+    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+    ->join('labs', 'timetables.lab_id', '=', 'labs.id')
+        ->select('timetables.*', 'courses.course_name', 'courses.course_code','labs.lab_name')
+        ->where('lab_name','=','Computer lab 03')
+        ->where('day','=','Monday')
+        ->get();
+
+        $data7 = DB::table('timetables')
+        //->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+    //->join('programs', 'timetables.program_id', '=', 'programs.id')
+    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+    ->join('labs', 'timetables.lab_id', '=', 'labs.id')
+        ->select('timetables.*', 'courses.course_name', 'courses.course_code','labs.lab_name')
+        ->where('lab_name','=','Special lab')
+        ->where('day','=','Monday')
+        ->get();
+         //return $data3;
+         return view('guestpage',['data1'=> $data1,'data2'=> $data2,'data3'=> $data3,'data4'=> $data4,'data5'=> $data5,'data6'=> $data6,'data7'=> $data7,'event'=>$event]);
 
     }
 
@@ -223,7 +425,47 @@ class bookingController extends Controller
        ->where('day','=','Saturday')
        ->get();
         //return $data3;
-        return view('guestpage',['data1'=> $data1,'data2'=> $data2,'data3'=> $data3,'event'=>$event]);
+        $data4 = DB::table('timetables')
+        //->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+    //->join('programs', 'timetables.program_id', '=', 'programs.id')
+    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+    ->join('labs', 'timetables.lab_id', '=', 'labs.id')
+        ->select('timetables.*', 'courses.course_name', 'courses.course_code','labs.lab_name')
+        ->where('lab_name','=','Computer lab 01')
+        ->where('day','=','Monday')
+        ->get();
+
+        $data5 = DB::table('timetables')
+        //->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+    //->join('programs', 'timetables.program_id', '=', 'programs.id')
+    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+    ->join('labs', 'timetables.lab_id', '=', 'labs.id')
+        ->select('timetables.*', 'courses.course_name', 'courses.course_code','labs.lab_name')
+        ->where('lab_name','=','Computer lab 02')
+        ->where('day','=','Monday')
+        ->get();
+
+        $data6 = DB::table('timetables')
+        //->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+    //->join('programs', 'timetables.program_id', '=', 'programs.id')
+    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+    ->join('labs', 'timetables.lab_id', '=', 'labs.id')
+        ->select('timetables.*', 'courses.course_name', 'courses.course_code','labs.lab_name')
+        ->where('lab_name','=','Computer lab 03')
+        ->where('day','=','Monday')
+        ->get();
+
+        $data7 = DB::table('timetables')
+        //->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+    //->join('programs', 'timetables.program_id', '=', 'programs.id')
+    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+    ->join('labs', 'timetables.lab_id', '=', 'labs.id')
+        ->select('timetables.*', 'courses.course_name', 'courses.course_code','labs.lab_name')
+        ->where('lab_name','=','Special lab')
+        ->where('day','=','Monday')
+        ->get();
+         //return $data3;
+         return view('guestpage',['data1'=> $data1,'data2'=> $data2,'data3'=> $data3,'data4'=> $data4,'data5'=> $data5,'data6'=> $data6,'data7'=> $data7,'event'=>$event]);
 
     }
 
@@ -255,7 +497,47 @@ class bookingController extends Controller
        ->where('day','=','Sunday')
        ->get();
         //return view('booking');
-        return view('guestpage',['data1'=> $data1,'data2'=> $data2,'data3'=> $data3,'event'=>$event]);
+        $data4 = DB::table('timetables')
+        //->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+    //->join('programs', 'timetables.program_id', '=', 'programs.id')
+    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+    ->join('labs', 'timetables.lab_id', '=', 'labs.id')
+        ->select('timetables.*', 'courses.course_name', 'courses.course_code','labs.lab_name')
+        ->where('lab_name','=','Computer lab 01')
+        ->where('day','=','Monday')
+        ->get();
+
+        $data5 = DB::table('timetables')
+        //->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+    //->join('programs', 'timetables.program_id', '=', 'programs.id')
+    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+    ->join('labs', 'timetables.lab_id', '=', 'labs.id')
+        ->select('timetables.*', 'courses.course_name', 'courses.course_code','labs.lab_name')
+        ->where('lab_name','=','Computer lab 02')
+        ->where('day','=','Monday')
+        ->get();
+
+        $data6 = DB::table('timetables')
+        //->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+    //->join('programs', 'timetables.program_id', '=', 'programs.id')
+    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+    ->join('labs', 'timetables.lab_id', '=', 'labs.id')
+        ->select('timetables.*', 'courses.course_name', 'courses.course_code','labs.lab_name')
+        ->where('lab_name','=','Computer lab 03')
+        ->where('day','=','Monday')
+        ->get();
+
+        $data7 = DB::table('timetables')
+        //->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+    //->join('programs', 'timetables.program_id', '=', 'programs.id')
+    ->join('courses', 'timetables.course_id', '=', 'courses.id')
+    ->join('labs', 'timetables.lab_id', '=', 'labs.id')
+        ->select('timetables.*', 'courses.course_name', 'courses.course_code','labs.lab_name')
+        ->where('lab_name','=','Special lab')
+        ->where('day','=','Monday')
+        ->get();
+         //return $data3;
+         return view('guestpage',['data1'=> $data1,'data2'=> $data2,'data3'=> $data3,'data4'=> $data4,'data5'=> $data5,'data6'=> $data6,'data7'=> $data7,'event'=>$event]);
 
     }
 
