@@ -1,14 +1,14 @@
 body {
-  font: 400 15px Lato, sans-serif;
+  /*font: 400 15px Lato, sans-serif;*/
   line-height: 1.8;
 }
-.h4{
+/*.h4{
   font-family: Montserrat, sans-serif;
-}
+}*/
 .jumbotron {
   background-color: gray;
   color: #070707;
-  font-family: Montserrat, sans-serif;
+  /*font-family: Montserrat, sans-serif;*/
 
 }
 
