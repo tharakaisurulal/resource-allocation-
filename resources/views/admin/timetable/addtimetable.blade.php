@@ -56,7 +56,7 @@
 
         <label for="name"><b>Level:</b></label>
     <select name="level" id="faculty">
-        <option value="">--Choose course--</option>
+        <option value="">--Choose Level--</option>
         <option value="level1">Level 1</option>
         <option value="level2">Level 2</option>
         <option value="level3">Level 3</option>
