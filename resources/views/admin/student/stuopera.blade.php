@@ -43,9 +43,9 @@
             <table class="table table-dark">
                 <thead>
                     <td>Id</td>
+                    <td>photo</td>
                     <td>username</td>
                     <td>first name</td>
-                    <td>last_name</td>
                     <td>mobile</td>
                     <td>Action</td>
 
@@ -54,9 +54,9 @@
                     @foreach ($cusdata4 as $cdb)
                 <tr>
                     <td>{{$cdb->id}}</td>
+                    <td><img src="{{asset('/uploads/students/'.$cdb->photo) }}" alt="image" width="50px" height="50px"></td>
                     <td>{{$cdb->username}}</td>
                     <td>{{$cdb->first_name}}</td>
-                    <td>{{$cdb->last_name}}</td>
                     <td>{{$cdb->mobile}}</td>
                     <td>
                         <div class="dropdown">
@@ -66,8 +66,8 @@
                             <ul class="dropdown-menu">
                               <li><a class="dropdown-item" href="{{url('update-student/'.$cdb->id)}}" >Edit</a></li>
                               <li><a class="dropdown-item" href="{{url('delete-student/'.$cdb->id)}}">Delete</a></li>
-                              <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Change Password</a></li>  <!-- Button trigger modal -->
-                              <li><a class="dropdown-item" href="">More</a></li>
+                              <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#staticBackdrop{{$cdb->id}}">Change Password</a></li>  <!-- Button trigger modal -->
+                              <li><a class="dropdown-item" href="{{url('viewmore-student/'.$cdb->id)}}">More</a></li>
                             </ul>
                           </div>
                     </td>
@@ -82,25 +82,27 @@
          @endif
         </div>
 
-
-        <!-- Modal id="staticBackdrop"-->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
+  <!-- Modal id="staticBackdrop"-->
+  @for ($i=1;$i<=$cdb->id;$i++)
+  <div class="modal fade" id="staticBackdrop{{$i}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel1" aria-hidden="true">
+      <div class="modal-dialog">
       <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="staticBackdropLabel">Change Password</h1>
+          <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel1">Change Password</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            Do You want to change password?
-        </div>
-        <div class="modal-footer">
+          </div>
+          <div class="modal-body">
+              Do You want to change password?
+          </div>
+          <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-          <button type="button" class="btn btn-primary"><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">Yes</a></button>
-        </div>
+          <button type="button" class="btn btn-primary"><a class="dropdown-item" href="{{url('updatestudentpassword-student/'.$i)}}" data-bs-target="#staticBackdrop1">Yes</a></button>
+          </div>
       </div>
-    </div>
+      </div>
   </div>
+  @endfor
+
 
     </body>
 </html>

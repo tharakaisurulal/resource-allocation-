@@ -204,3 +204,17 @@ transform: rotate(-135deg);
 img{
 align-self: center;
 }
+
+.section2{
+    padding-top: 50px;
+    padding-left: 39%;
+    padding-right: 20px;
+    height:225px;
+
+}
+
+.but{
+width:150px;
+height:150px;
+
+}

@@ -76,8 +76,8 @@
                               Action
                             </button>
                             <ul class="dropdown-menu">
-                              <li><a class="dropdown-item" href="" >Edit</a></li>
-                              <li><a class="dropdown-item" href="">Delete</a></li>
+                              <li><a class="dropdown-item" href="{{url('update-timetable/'.$cdb->id)}}" >Edit</a></li>
+                              <li><a class="dropdown-item" href="{{url('delete-timetable/'.$cdb->id)}}">Delete</a></li>
                               <li><a class="dropdown-item" href="">More</a></li>
                             </ul>
                           </div>
@@ -136,7 +136,7 @@
                              Action
                            </button>
                            <ul class="dropdown-menu">
-                             <li><a class="dropdown-item" href="" >Edit</a></li>
+                             <li><a class="dropdown-item" href="{{url('update-timetable/'.$cdb->id)}}" >Edit</a></li>
                              <li><a class="dropdown-item" href="">Delete</a></li>
                              <li><a class="dropdown-item" href="">More</a></li>
                            </ul>

@@ -17,6 +17,8 @@ class student extends Model
         'mobile',
         'photo',
         'program_Id',
+        'semester',
+        'level',
         'subject1',
         'subject2',
         'subject3',
