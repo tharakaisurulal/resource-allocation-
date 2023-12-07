@@ -1,4 +1,12 @@
-@extends('layout.headerFooter')
+@extends('layout.header')
+@section('content2')
+        <li><a href="/">HOME</a></li>
+        <li><a href="#">ABOUT US</a></li>
+        <li><a href="#">CONTACT US</a></li>
+        <li><a href="#">NOTICE</a></li>
+        <li><a href="/guest/guestregistration">REGISTER</a></li>
+@endsection
+
 @section("content")
 <!DOCTYPE html>
 <html>
@@ -8,7 +16,6 @@
 
         <title>Lecture hall Allocation</title>
         @include('cdn')
-        <link rel="stylesheet" href={{asset('css/style.css')}}>
         <link rel="stylesheet" href={{asset('css/Login.css')}}>
     </head>
 
@@ -40,15 +47,16 @@
                 @csrf
                 <h1> LOGIN </h1>
 
-                <div class="inputBox">
+                <!--<div class="inputBox">
                     <select name="user" id="userid">
                         <option value=""><span>--Login As--</span></option>
                         <option value="Lecturer">Lecturer</option>
                         <option value="Student">Student</option>
                         <option value="Accademic_Supportive">Accademic-Supportive</option>
                         <option value="Guest">Guest</option>
+                        <option value="Admin">Admin</option>
                         </select>
-                </div>
+                </div>-->
 
                 <div class="inputBox" >
                     <input type="text" name="username" value="{{$loginname}}">

@@ -1,4 +1,13 @@
 @extends('layout.headerFooter')
+@section('content2')
+        <li><a href="/">HOME</a></li>
+        <li><a href="#">ABOUT US</a></li>
+        <li><a href="#">CONTACT US</a></li>
+        <li><a href="#">NOTICE</a></li>
+        <li><a href="/loginpage">LOGIN</a></li>
+        <li><a href="/guest/guestregistration">REGISTER</a></li>
+@endsection
+
 @section('content')
 <!DOCTYPE html>
 <html>
@@ -8,24 +17,25 @@
 
         <title>Lecture hall Allocation</title>
         @include('cdn')
-        <link rel="stylesheet" href={{asset('css/bootstrap.css')}}>
-        <link rel="stylesheet" href={{asset('css/style.css')}}>
+        <link rel="stylesheet" href={{asset('css/welcome.css')}}>
         <link rel="icon" type="text/css" href="{{asset('img/icons/favicon.png')}}">
 
     </head>
     <body>
+        <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
         <section id="banner">
 
             <div class="banner-text">
                 <h1>WELCOME TO RESOURCES MANAGEMENT SYSTEM...</h1>
                 <div class="banner-btn">
-                    <a href="#"><span></span>GUEST US</a>
+                    <a href="/guestpage"><span></span>GUEST US</a>
                     <a href="/loginpage"><span></span>LOGIN</a>
                     <a href="/guest/guestregistration"><span></span>REGISTER</a>
                 </div>
             </div>
         </div>
         </section>
+        <center><hr width="80%"></center>
 
         <!------------------------about section starts -------------------------------------->
 
@@ -58,7 +68,7 @@
                             </div>
 
                             <div class="button">
-                                <a href=""><span>Read More</span></a>
+                                <a href="/welcome/about"><span>Read More</span></a>
                             </div>
                         </div>
                     </div>
@@ -67,7 +77,7 @@
         <!---------------------- about section ends ---------------------------------------->
 
         <!---------------------- contact section starts ---------------------------------------->
-
+        <center><hr width="80%"></center>
         <section class="contactus" id="contactus">
             <div class="container">
             <div class="title-text">
@@ -161,6 +171,28 @@
 
            <script> jQuery('#waterdrop').raindrops({color:'#1c1f2f', canvasHeight:150, density: 0.1, frequency: 20});
           </script>
+
+<script>
+    // Get the button
+    let mybutton = document.getElementById("myBtn");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+    </script>
 
     </body>
 

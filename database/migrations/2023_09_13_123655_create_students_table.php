@@ -18,25 +18,47 @@ return new class extends Migration
             //$table->String ('reg_no');
             $table->String ('first_name');
             $table->String ('last_name');
-            $table->String ('email')->nullable();
+            //$table->String ('email')->nullable();
             $table->String ('mobile')->nullable();
             $table->String ('photo')->nullable();
             $table->unsignedBigInteger ('subject1')->nullable();
-            $table->foreign('subject1')->references('id')->on('courses');
+            $table->foreign('subject1')->references('id')->on('courses')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->unsignedBigInteger ('subject2')->nullable();
-            $table->foreign('subject2')->references('id')->on('courses');
+            $table->foreign('subject2')->references('id')->on('courses')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->unsignedBigInteger ('subject3')->nullable();
-            $table->foreign('subject3')->references('id')->on('courses');
+            $table->foreign('subject3')->references('id')->on('courses')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->unsignedBigInteger ('subject4')->nullable();
-            $table->foreign('subject4')->references('id')->on('courses');
+            $table->foreign('subject4')->references('id')->on('courses')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->unsignedBigInteger ('subject5')->nullable();
-            $table->foreign('subject5')->references('id')->on('courses');
+            $table->foreign('subject5')->references('id')->on('courses')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->unsignedBigInteger ('subject6')->nullable();
-            $table->foreign('subject6')->references('id')->on('courses');
+            $table->foreign('subject6')->references('id')->on('courses')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->unsignedBigInteger ('subject7')->nullable();
-            $table->foreign('subject7')->references('id')->on('courses');
+            $table->foreign('subject7')->references('id')->on('courses')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->unsignedBigInteger ('subject8')->nullable();
-            $table->foreign('subject8')->references('id')->on('courses');
+            $table->foreign('subject8')->references('id')->on('courses')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->unsignedBigInteger ('program_Id')->nullable();
+            $table->foreign('program_Id')->references('id')->on('programs')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->string ('level');
+            $table->string('semester');
             $table->timestamps();
         });
     }

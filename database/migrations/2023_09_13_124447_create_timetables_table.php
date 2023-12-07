@@ -14,20 +14,34 @@ return new class extends Migration
         Schema::create('timetables', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('program_id');
-            $table->foreign('program_id')->references('id')->on('programs');
+            $table->foreign('program_id')->references('id')->on('programs')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->unsignedBigInteger('course_id');
-            $table->foreign('course_id')->references('id')->on('courses');
+            $table->foreign('course_id')->references('id')->on('courses')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->string ('level');
             $table->string('semester');
             $table->string ('day');
             $table->string ('start_time');
             $table->string ('end_time');
             $table->unsignedBigInteger('lec_id')->nullable();
-            $table->foreign('lec_id')->references('id')->on('lecturers');
+            $table->foreign('lec_id')->references('id')->on('lecturers')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->unsignedBigInteger('lab_id')->nullable();
-            $table->foreign('lab_id')->references('id')->on('labs');
+            $table->foreign('lab_id')->references('id')->on('labs')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->unsignedBigInteger('lh_id')->nullable();
-            $table->foreign('lh_id')->references('id')->on('lecturehalls');
+            $table->foreign('lh_id')->references('id')->on('lecturehalls')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->unsignedBigInteger('acc_id')->nullable();
+            $table->foreign('acc_id')->references('id')->on('accsupportives')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }
