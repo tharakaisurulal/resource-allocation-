@@ -6,6 +6,7 @@
         <li><a href="#">NOTICE</a></li>
         <li><a href="/loginpage">LOGIN</a></li>
         <li><a href="/guest/guestregistration">REGISTER</a></li>
+
 @endsection
 
 @section('content')
