@@ -21,6 +21,14 @@ class bookingController extends Controller
                          'end'=> $booking -> end_time,
         ];
         }
+
+        $notices = Array();
+        $noticebar=notice::all();
+
+        foreach ($noticebar as $noticeb) {
+           $notices[]= ['notice'=> $noticeb -> notice
+        ];
+        }
         //return  $event;
 
         $dat=date("l");
@@ -105,7 +113,7 @@ class bookingController extends Controller
        ->where('day','=','Monday')
        ->get();
         //return $data3;
-        return view('guestpage',['data1'=> $data1,'data2'=> $data2,'data3'=> $data3,'data4'=> $data4,'data5'=> $data5,'data6'=> $data6,'data7'=> $data7,'event'=>$event]);
+        return view('guestpage',['data1'=> $data1,'data2'=> $data2,'data3'=> $data3,'data4'=> $data4,'data5'=> $data5,'data6'=> $data6,'data7'=> $data7,'event'=>$event,'notices'=>$notices]);
 
     }
 
@@ -178,7 +186,7 @@ class bookingController extends Controller
         ->where('day','=','Monday')
         ->get();
          //return $data3;
-         return view('guestpage',['data1'=> $data1,'data2'=> $data2,'data3'=> $data3,'data4'=> $data4,'data5'=> $data5,'data6'=> $data6,'data7'=> $data7,'event'=>$event]);
+         return view('guestpage',['data1'=> $data1,'data2'=> $data2,'data3'=> $data3,'data4'=> $data4,'data5'=> $data5,'data6'=> $data6,'data7'=> $data7,'event'=>$event,'notices'=>$notices]);
 
     }
 
@@ -250,7 +258,7 @@ class bookingController extends Controller
         ->where('day','=','Monday')
         ->get();
          //return $data3;
-         return view('guestpage',['data1'=> $data1,'data2'=> $data2,'data3'=> $data3,'data4'=> $data4,'data5'=> $data5,'data6'=> $data6,'data7'=> $data7,'event'=>$event]);
+         return view('guestpage',['data1'=> $data1,'data2'=> $data2,'data3'=> $data3,'data4'=> $data4,'data5'=> $data5,'data6'=> $data6,'data7'=> $data7,'event'=>$event,'notices'=>$notices]);
 
     }
 
@@ -322,7 +330,7 @@ class bookingController extends Controller
         ->where('day','=','Monday')
         ->get();
          //return $data3;
-         return view('guestpage',['data1'=> $data1,'data2'=> $data2,'data3'=> $data3,'data4'=> $data4,'data5'=> $data5,'data6'=> $data6,'data7'=> $data7,'event'=>$event]);
+         return view('guestpage',['data1'=> $data1,'data2'=> $data2,'data3'=> $data3,'data4'=> $data4,'data5'=> $data5,'data6'=> $data6,'data7'=> $data7,'event'=>$event,'notices'=>$notices]);
 
     }
 
@@ -394,7 +402,7 @@ class bookingController extends Controller
         ->where('day','=','Monday')
         ->get();
          //return $data3;
-         return view('guestpage',['data1'=> $data1,'data2'=> $data2,'data3'=> $data3,'data4'=> $data4,'data5'=> $data5,'data6'=> $data6,'data7'=> $data7,'event'=>$event]);
+         return view('guestpage',['data1'=> $data1,'data2'=> $data2,'data3'=> $data3,'data4'=> $data4,'data5'=> $data5,'data6'=> $data6,'data7'=> $data7,'event'=>$event,'notices'=>$notices]);
 
     }
 
@@ -466,7 +474,7 @@ class bookingController extends Controller
         ->where('day','=','Monday')
         ->get();
          //return $data3;
-         return view('guestpage',['data1'=> $data1,'data2'=> $data2,'data3'=> $data3,'data4'=> $data4,'data5'=> $data5,'data6'=> $data6,'data7'=> $data7,'event'=>$event]);
+         return view('guestpage',['data1'=> $data1,'data2'=> $data2,'data3'=> $data3,'data4'=> $data4,'data5'=> $data5,'data6'=> $data6,'data7'=> $data7,'event'=>$event,'notices'=>$notices]);
 
     }
 
@@ -538,7 +546,7 @@ class bookingController extends Controller
         ->where('day','=','Monday')
         ->get();
          //return $data3;
-         return view('guestpage',['data1'=> $data1,'data2'=> $data2,'data3'=> $data3,'data4'=> $data4,'data5'=> $data5,'data6'=> $data6,'data7'=> $data7,'event'=>$event]);
+         return view('guestpage',['data1'=> $data1,'data2'=> $data2,'data3'=> $data3,'data4'=> $data4,'data5'=> $data5,'data6'=> $data6,'data7'=> $data7,'event'=>$event,'notices'=>$notices]);
 
     }
 
