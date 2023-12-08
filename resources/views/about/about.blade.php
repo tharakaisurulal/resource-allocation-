@@ -1,20 +1,12 @@
 @extends('layout.headerFooter')
 @section('content2')
        <li><a href="/">Home</a></li>
-       <li><a href="#">Staff  <i class="fas fa-caret-right"></i></a>
-            <div class="dropdown_menu">
-                <ul>
-                    <li><a href="#">Acedemic Staff</a></li>
-                    <li><a href="#">Acedemic Support Staff</a></li>
-                    <li><a href="#">Non Acedemic Staff</a></li>
-                </ul>
-            </div>
-       </li>
-       <li><a href="#">Programs</a></li>
-       <li><a href="#">Research</a></li>
-       <li><a href="#">Services</a></li>
-       <li><a href="#">contact</a></li>
-       <li><a href="#">Log Out</a></li>
+       <li><a href="#">Acedemic Staff</a></li>
+       <li><a href="#">Acedemic Support Staff</a></li>
+       <li><a href="#">Non Acedemic Staff</a></li>
+
+
+
 @endsection
 
 @section('content')

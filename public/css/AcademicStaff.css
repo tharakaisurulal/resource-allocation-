@@ -1,0 +1,144 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    display:flex;
+    min-height: 100vh;
+    background:#525252;
+    animation:bgcolor infinite 20s;
+}
+
+@keyframes bgcolor{
+    0%{
+        background:#040720;
+    }
+
+    20%{
+        background:#52595D;
+    }
+
+    40%{
+        background:#151B54;
+    }
+
+    60%{
+        background:#4682B4;
+    }
+
+    80%{
+        background:#E6E6FA;
+    }
+
+    100%{
+        background:#7DFDFE;
+    }
+}
+table{
+    background-color:#7E7E7E;
+    padding: 40px 40px;
+    margin-top: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+th {
+    color:#fff;
+    align-items: center;
+    justify-content: center;
+}
+
+.card{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 270px;
+    height: 320px;
+    background: #C9C9C9;
+    border-radius: 20px;
+    box-shadow: 0 35px 80px rgba(0,0,0,0.15);
+    margin: 0 18px;
+    margin-top: 80px;
+    transition: 0.5s;
+}
+
+.card:hover{
+    height: 350px;
+}
+
+.card .imgBx{
+    position: absolute;
+    top:18px;
+    width: 220px;
+    height: 260px;
+    margin-left: 8%;
+    background: hsl(0, 5%, 45%);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.card:hover .imgBx{
+    top: -100px;
+    scale: 0.75;
+    box-shadow: 0 15px 45px rgba(0,0,0,0.2);
+}
+
+.card .imgBx img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card .content{
+    position: absolute;
+    top:285px;
+    width: 100%;
+    padding: 0 30px;
+    height: 35px;
+    overflow: hidden;
+    text-align: center;
+    transition: 0.5s;
+}
+
+.card:hover .content{
+    top:130px;
+    height: 250px;
+
+}
+
+.card .content h2{
+    font-size: 1em;
+    font-weight: 700;
+    color: var(--clr);
+}
+
+.card .content p{
+    color: #333;
+    font-size: 0.8em;
+}
+
+.card .content a{
+    position: relative;
+    top: 15px;
+    display: inline-block;
+    padding: 12px 12px;
+    background: var(--clr);
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+
+tr .name{
+    color: #fff;
+    font-size: 1.5em;
+}
