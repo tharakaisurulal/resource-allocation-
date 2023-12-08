@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\booking;
 use App\Models\timetable;
+use App\Models\notice;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
@@ -558,17 +559,6 @@ class bookingController extends Controller
         return view('admin.events.addevent');
     }
 
-
-    public function deletevent()
-    {
-        return view('deletevent');
-    }
-
-    public function editevent()
-    {
-        return view('updatevent');
-    }
-
     public function storer(Request $request)
     {
 //return $request;
@@ -592,7 +582,7 @@ class bookingController extends Controller
             }
     }
 
-    public function deleter(Request $request){
+    /*public function deleter(Request $request){
 
         $deleted = DB::table('bookings')->where('title',$request -> name)->delete();
 
@@ -600,7 +590,7 @@ class bookingController extends Controller
         //return view('view1');
         //return  $affected;
         return redirect()->route('delevent');
-        }
+        }*/
 
 
             public function updateevents($id) //to do the update choose the selected id and return details in to edit page.
@@ -632,175 +622,66 @@ class bookingController extends Controller
             }
 
 
-            //public function booking(){
-                //return view('booking');
-            //}
-
-            /*public function booking1(){
-                $dat=date("l");
-                    //return $dat;
-
-                $cusdata= timetable::all();
-                //return $cusdata;
-
-                if($dat=="Sunday"){
-                   //return $cusdata;
-
-                   $data1 = DB::table('timetables')
-                   //->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
-               //->join('programs', 'timetables.program_id', '=', 'programs.id')
-               ->join('courses', 'timetables.course_id', '=', 'courses.id')
-               ->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
-                   ->select('timetables.*', 'courses.course_name', 'courses.course_code','lecturehalls.lh_name')
-                   ->where('lh_name','=','MLT1')
-                   ->where('day','=','Sunday')
-                   ->get();
-                    //return view('booking');
-                    //return view('booking',['data1'=> $data1]);
-                    //return $data1;
-
-                    $data2 = DB::table('timetables')
-                   //->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
-               //->join('programs', 'timetables.program_id', '=', 'programs.id')
-               ->join('courses', 'timetables.course_id', '=', 'courses.id')
-               ->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
-                   ->select('timetables.*', 'courses.course_name', 'courses.course_code','lecturehalls.lh_name')
-                   ->where('lh_name','=','MLT2')
-                   ->where('day','=','Sunday')
-                   ->get();
-                    //return view('booking');
-                    return view('booking',['data1'=> $data1],['data2'=> $data2]);
-                    //return $data1;
-                }
-
-                elseif($dat=="Monday"){
-                    $data1 = DB::table('timetables')
-               ->join('courses', 'timetables.course_id', '=', 'courses.id')
-               ->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
-                   ->select('timetables.*', 'courses.course_name', 'courses.course_code','lecturehalls.lh_name')
-                   ->where('lh_name','=','MLT1')
-                   ->where('day','=','Monday')
-                   ->get();
-
-                    $data2 = DB::table('timetables')
-               ->join('courses', 'timetables.course_id', '=', 'courses.id')
-               ->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
-                   ->select('timetables.*', 'courses.course_name', 'courses.course_code','lecturehalls.lh_name')
-                   ->where('lh_name','=','MLT2')
-                   ->where('day','=','Monday')
-                   ->get();
-                    return $data1;
-                    return view('booking',['data1'=> $data1],['data2'=> $data2]);
-
-                }
+            public function noticeope()
+            {
+                $notice4= notice::all();
+                //return $cusdata4;
+                return view('admin.notice.noticeope',['notice4'=>$notice4]);
+            }
 
 
-                elseif($dat=="Tuesday"){
-                    $data1 = DB::table('timetables')
-               ->join('courses', 'timetables.course_id', '=', 'courses.id')
-               ->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
-                   ->select('timetables.*', 'courses.course_name', 'courses.course_code','lecturehalls.lh_name')
-                   ->where('lh_name','=','MLT1')
-                   ->where('day','=','Tuesday')
-                   ->get();
+            public function addnotice()
+            {
+                return view('admin.notice.addnotice');
+            }
 
-                    $data2 = DB::table('timetables')
-               ->join('courses', 'timetables.course_id', '=', 'courses.id')
-               ->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
-                   ->select('timetables.*', 'courses.course_name', 'courses.course_code','lecturehalls.lh_name')
-                   ->where('lh_name','=','MLT2')
-                   ->where('day','=','Tuesday')
-                   ->get();
+            public function storernotice(Request $request)
+            {
+        //return $request;
+                  $notice=notice::create([
+                    'notice'=> $request -> notice
 
-                    return view('booking',['data1'=> $data1],['data2'=> $data2]);
-
-                }
-
-                elseif($dat=="Wednesday"){
-                    $data1 = DB::table('timetables')
-               ->join('courses', 'timetables.course_id', '=', 'courses.id')
-               ->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
-                   ->select('timetables.*', 'courses.course_name', 'courses.course_code','lecturehalls.lh_name')
-                   ->where('lh_name','=','MLT1')
-                   ->where('day','=','Wednesday')
-                   ->get();
-
-                    $data2 = DB::table('timetables')
-               ->join('courses', 'timetables.course_id', '=', 'courses.id')
-               ->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
-                   ->select('timetables.*', 'courses.course_name', 'courses.course_code','lecturehalls.lh_name')
-                   ->where('lh_name','=','MLT2')
-                   ->where('day','=','Wednesday')
-                   ->get();
-
-                    return view('booking',['data1'=> $data1],['data2'=> $data2]);
-
-                }
-
-                elseif($dat=="Thursday"){
-                    $data1 = DB::table('timetables')
-               ->join('courses', 'timetables.course_id', '=', 'courses.id')
-               ->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
-                   ->select('timetables.*', 'courses.course_name', 'courses.course_code','lecturehalls.lh_name')
-                   ->where('lh_name','=','MLT1')
-                   ->where('day','=','Thursday')
-                   ->get();
-
-                    $data2 = DB::table('timetables')
-               ->join('courses', 'timetables.course_id', '=', 'courses.id')
-               ->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
-                   ->select('timetables.*', 'courses.course_name', 'courses.course_code','lecturehalls.lh_name')
-                   ->where('lh_name','=','MLT2')
-                   ->where('day','=','Thursday')
-                   ->get();
-
-                    return view('booking',['data1'=> $data1],['data2'=> $data2]);
-
-                }
-
-                elseif($dat=="Friday"){
-                    $data1 = DB::table('timetables')
-               ->join('courses', 'timetables.course_id', '=', 'courses.id')
-               ->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
-                   ->select('timetables.*', 'courses.course_name', 'courses.course_code','lecturehalls.lh_name')
-                   ->where('lh_name','=','MLT1')
-                   ->where('day','=','Friday')
-                   ->get();
-
-                    $data2 = DB::table('timetables')
-               ->join('courses', 'timetables.course_id', '=', 'courses.id')
-               ->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
-                   ->select('timetables.*', 'courses.course_name', 'courses.course_code','lecturehalls.lh_name')
-                   ->where('lh_name','=','MLT2')
-                   ->where('day','=','Friday')
-                   ->get();
-
-                    return view('booking',['data1'=> $data1],['data2'=> $data2]);
-
-                }
-
-                elseif($dat=="Saturday"){
-                    $data1 = DB::table('timetables')
-               ->join('courses', 'timetables.course_id', '=', 'courses.id')
-               ->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
-                   ->select('timetables.*', 'courses.course_name', 'courses.course_code','lecturehalls.lh_name')
-                   ->where('lh_name','=','MLT1')
-                   ->where('day','=','Saturday')
-                   ->get();
-
-                    $data2 = DB::table('timetables')
-               ->join('courses', 'timetables.course_id', '=', 'courses.id')
-               ->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
-                   ->select('timetables.*', 'courses.course_name', 'courses.course_code','lecturehalls.lh_name')
-                   ->where('lh_name','=','MLT2')
-                   ->where('day','=','Saturday')
-                   ->get();
-
-                    return view('booking',['data1'=> $data1],['data2'=> $data2]);
-
-                }
+                    ]);
 
 
+                    $res = $notice ->save();
+                    //$student=post::create($request->all());
+                    //$student->password = Hash::make($request->input('password'));
+                    //$student->save();
+                    if($res){
+                    //return redirect('/') -> withSuccess("you are registered");
+                    return back() -> with('success',"Notice is added");
+                    }
+                    else{
+                        return back() -> with('fail',"Notice is not added");
+                    }
+            }
 
-                                     }*/
+                    public function updatenotice($id) //to do the update choose the selected id and return details in to edit page.
+                    {
+                        $notice = notice::find($id);
+                        return view('admin.notice.adminnoticeedit', ['notice'=>$notice]);
+
+                    }
+
+                    public function updatenotice1(Request $request,$id)  //selected id will be updated using this function.
+                    {
+
+                        $notice = notice::find($id);
+
+                            $notice->title = $request -> input('notice');
+                            $notice->update();
+
+                            return redirect()->route('noticeope')->with('success',"Data updated successfully.");
+
+                    }
+
+                    public function deletetnotice($id) //delete programs using the selected id.
+                    {
+                            $notice = notice::find($id);
+                            $notice->delete();
+                            return redirect()->back()-> with('success',"successfully deleted.");
+                    }
+
+
 }

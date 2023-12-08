@@ -376,19 +376,33 @@ Route::post('update2-timetable/{id}',[timetableController::class, 'updatetimetab
 
 Route::get('delete-timetable/{id}',[timetableController::class, 'deletetimetable'])->name('deletetimetable');  //route to function of delete programs.
 
-Route::get('/index', [bookingController::class, 'index']);
-Route::get('/deletevent', [ bookingController::class, 'deletevent'])->name('delevent');
+//admin's events
+//Route::get('/index', [bookingController::class, 'index']);
+//Route::get('/deletevent', [ bookingController::class, 'deletevent'])->name('delevent');
 
 //Route::get('/editevent', [ bookingController::class, 'editevent'])->name('editevent');
-Route::get('update-event/{id}',[bookingController::class, 'updateevents'])->name('updateevents');  //route to function of return selected user details to edit page.
-Route::post('update1-event/{id}',[bookingController::class, 'updateevents1'])->name('updateevents1');
+Route::get('update-event/{id}',[bookingController::class, 'updateevents'])->name('updateevents');  //route to update page.
+Route::post('update1-event/{id}',[bookingController::class, 'updateevents1'])->name('updateevents1'); //route to update function.
 
-Route::get('delete-event/{id}',[bookingController::class, 'deletetevent'])->name('deletetevent');
+Route::get('delete-event/{id}',[bookingController::class, 'deletetevent'])->name('deletetevent'); //route to delete the events
 
-Route::get('/addevent', [ bookingController::class, 'addevent']);
-Route::post('/storer', [ bookingController::class, 'storer'])->name('storert');
-Route::post('/deleter', [ bookingController::class, 'deleter'])->name('deleter');
-Route::post('/editer', [ bookingController::class, 'editer'])->name('editer');
-Route::get('/eventope', [ bookingController::class, 'eventope'])->name('eventope');
+Route::get('/addevent', [ bookingController::class, 'addevent']); //route to addevent page.
+Route::post('/storer', [ bookingController::class, 'storer'])->name('storert'); //route to add the events
+//Route::post('/deleter', [ bookingController::class, 'deleter'])->name('deleter');
+//Route::post('/editer', [ bookingController::class, 'editer'])->name('editer');
+Route::get('/eventope', [ bookingController::class, 'eventope'])->name('eventope'); //route to event operation page.
 
-Route::get('/guestpage', [bookingController::class, 'viewguestpage'])->name('viewguestpage');
+Route::get('/guestpage', [bookingController::class, 'viewguestpage'])->name('viewguestpage'); //route to guest page.
+
+//admin's notice
+Route::get('update-notice/{id}',[bookingController::class, 'updatenotice'])->name('updatenotice');  //route to update page.
+Route::post('update1-notice/{id}',[bookingController::class, 'updatenotice1'])->name('updatenotice1'); //route to update function.
+
+Route::get('delete-notice/{id}',[bookingController::class, 'deletetnotice'])->name('deletetnotice'); //route to delete the notices
+
+Route::get('/addnotice', [ bookingController::class, 'addnotice']); //route to addnotice page.
+Route::post('/storernotice', [ bookingController::class, 'storernotice'])->name('storertnotice'); //route to add the notices
+//Route::post('/deleter', [ bookingController::class, 'deleter'])->name('deleter');
+//Route::post('/editer', [ bookingController::class, 'editer'])->name('editer');
+Route::get('/noticeope', [ bookingController::class, 'noticeope'])->name('noticeope'); //route to notice operation page.
+Route::get('/noticeoperation', [ bookingController::class, 'noticeope'])->name('noticeope');
