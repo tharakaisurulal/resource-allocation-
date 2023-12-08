@@ -509,7 +509,7 @@
 
         <script type="text/javascript">
             var booking =@json($event);
-                //console.log(event)
+                //console.log(booking)
                 $(document).ready(function() {
                 var calendar = $('#calendar').fullCalendar({
                     header: {
@@ -523,6 +523,13 @@
                     })
             });
 
+            for (let i = 0; i <booking.length; i++) {
+                //console.log(booking[i]);
+                //const news = [booking.event]
+
+    }
+
+    //console.log(sum);
 
                         //array of news
             //const news = ["Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
@@ -531,16 +538,19 @@
            // "The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.",
            // "All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary."]
 
-           const news = []
+           //const news = [booking.event]
+           //const news = [array.forEach(booking => {
+                //title;
+           //});]
 
             //logo
             const logo = "<img src='/images/O.jpg' width='25px' style='margin:0 8px'/>";
             let tickerText = "";
             //looping through the news array
-            for(let i=0; i<news.length; i++){
-            tickerText+=news[i];
+            for(let i=0; i<booking.length; i++){
+            tickerText+=booking[i].title;
             //adds the logo in between news items
-            if(i!=news.length-1){
+            if(i!=booking.length-1){
                 tickerText+=logo;
             }
             }
