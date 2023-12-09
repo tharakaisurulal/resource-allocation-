@@ -14,8 +14,8 @@
 
   <title>Bootstrap Theme Company Page</title>
 
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-   <!--<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+ <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -509,7 +509,8 @@
 
         <script type="text/javascript">
             var booking =@json($event);
-                //console.log(event)
+            var notice =@json($notices);
+                //console.log(notice)
                 $(document).ready(function() {
                 var calendar = $('#calendar').fullCalendar({
                     header: {
@@ -523,22 +524,34 @@
                     })
             });
 
+            //for (let i = 0; i <booking.length; i++) {
+                //console.log(booking[i]);
+                //const news = [booking.event]
+
+    //}
+
+    //console.log(sum);
 
                         //array of news
-            const news = ["Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-            "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-            "Contrary to popular belief, Lorem Ipsum is not simply random text.",
-            "The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.",
-            "All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary."]
+            //const news = ["Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            //"Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+            //"Contrary to popular belief, Lorem Ipsum is not simply random text.",
+           // "The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.",
+           // "All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary."]
+
+           //const news = [booking.event]
+           //const news = [array.forEach(booking => {
+                //title;
+           //});]
 
             //logo
-            const logo = "<img src='https://www.naishare.com/images/favicon.png' width='25px' style='margin:0 8px'/>";
+            const logo = "<img src='/images/O.jpg' width='25px' style='margin:0 8px'/>";
             let tickerText = "";
             //looping through the news array
-            for(let i=0; i<news.length; i++){
-            tickerText+=news[i];
+            for(let i=0; i<notice.length; i++){
+            tickerText+=notice[i].notice;
             //adds the logo in between news items
-            if(i!=news.length-1){
+            if(i!=notice.length-1){
                 tickerText+=logo;
             }
             }

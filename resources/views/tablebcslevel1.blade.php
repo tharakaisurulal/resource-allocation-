@@ -12,11 +12,11 @@
 
 
 
-<H1>BCS(General) DEGREE PROGRAMME(LEVEL 1 SEMESTER 1)</H1>
-<H2>Bachelor of Computer Science(General)(SC/2022)</H2>
+<h1>BCS(General) DEGREE PROGRAMME(LEVEL 1 SEMESTER 1)</h1>
+<h2>Bachelor of Computer Science(General)(SC/2022)</h2>
 <br>
 
-<TABLE class="myTimetable">
+<table class="myTimetable">
   <THEAD>
     <TR>
       <TH>Time</TH>
@@ -301,7 +301,7 @@
 
 
    </TBODY>
-  </TABLE>
+</table>
 
 
   <br><br>
