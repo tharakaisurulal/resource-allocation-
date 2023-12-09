@@ -105,18 +105,13 @@
                   </div>-->
 
 
-                 <!-- <div class="accordion-item">
+                 <div class="accordion-item">
                     <h2 class="accordion-header" id="flush-headingSix">
-                      <button class="accordion-button collapsed sec2" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
-                        <li><a href="#">EVENTS</a></li>
+                      <button class="accordion-button collapsed sec2" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix" onclick="window.location.href='/noticeope';">
+                        <li><a href="#">NOTICE</a></li>
                       </button>
                     </h2>
-                    <div id="flush-collapseSix" class="accordion-collapse collapse sec2" aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushExample">
-                      <div class="accordion-body">
-                          <!--write-->
-                     <!-- </div>
-                    </div>
-                  </div>-->
+                  </div>
 
 
                   <div class="accordion-item">
