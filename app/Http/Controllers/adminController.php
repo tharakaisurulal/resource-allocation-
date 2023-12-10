@@ -13,6 +13,7 @@ use App\Models\timetable;
 use App\Models\accsupportive;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class adminController extends Controller
 {
@@ -170,6 +171,66 @@ class adminController extends Controller
 
         }
 
+
+        public function viewsuggestions($id) //view allocation suggestion page.
+    {
+            $guestrequest = guestrequest::find($id);
+            $Date =$guestrequest->date;
+            $day = Carbon::createFromFormat('Y-m-d', $Date)->format('l');
+            $guestrequest->date = $day;
+            return  $guestrequest;
+
+                $data1 = DB::table('timetables')
+                ->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
+                ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+                //->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+            //->join('programs', 'timetables.program_id', '=', 'programs.id')
+            ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                ->select('timetables.*','lecturers.lec_name', 'courses.course_name','courses.course_code','lecturehalls.lh_name')
+                //->where('program_id','=',$request -> program)
+                //->where('level','=',$request -> level)
+                ->where('day','=',$day)
+                //->where('course_id','=',$request -> course)
+                //->where('semester','=',$request -> semester)
+                //->where('start_time','=',$request -> starttime)
+                //->where('end_time','=',$request -> endtime)
+                //->where('lec_id','=',$request -> lecturername)
+                //->where('lh_id','=',$request -> lecturehall)
+                ->get();
+
+                $data2 = DB::table('timetables')
+            //->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+            ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
+            //->join('programs', 'timetables.program_id', '=', 'programs.id')
+            ->join('courses', 'timetables.course_id', '=', 'courses.id')
+            //->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
+            ->join('labs', 'timetables.lab_id', '=', 'labs.id')
+            ->select('timetables.*', 'accsupportives.acc_name', 'courses.course_name','courses.course_code','labs.lab_name')
+            ->where('day','=',$day)
+            //->where('lh_name','=','MLT1')
+            //->where('day','=','Monday')
+            ->get();
+            //dd($dat2);
+            //return $dat2;
+
+            return view('admin.timetablesuggestions',['data1'=> $data1,'data2'=> $data2]);
+
+
+    }
+
+    public function deleteguestrequest($id) //delete course using the selected id.
+    {
+            $guestrequest = guestrequest::find($id);
+            $guestrequest->delete();
+            return redirect()->back()-> with('success',"successfully deleted.");
+    }
+
+    public function deletelecturerrequest($id) //delete course using the selected id.
+    {
+            $lecturerrequest = lecturerrequest::find($id);
+            $lecturerrequest->delete();
+            return redirect()->back()-> with('success',"successfully deleted.");
+    }
 
 
 }
