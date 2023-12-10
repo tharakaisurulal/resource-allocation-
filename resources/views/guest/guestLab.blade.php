@@ -28,7 +28,21 @@
             <h1 class="card-title"> {{$data->lab_name}}</h1>
             <p class="card-info">
                 Capacity : {{$data->lab_capacity}}<br>
-                Ac or Non Ac : {{$data->lab_air_conditioner}}<br>
+                Ac or Non Ac : @if ($cdb->lh_air_conditioner==null)
+                                no
+                            @else
+                                {{ $cdb->lh_air_conditioner }}
+                            @endif<br>
+                Projector : @if ($data->lab_projector==null)
+                            no
+                        @else
+                            {{$data->lab_projector}}
+                        @endif<br>
+                Sound System : @if ($data->lab_soundsystem==null)
+                            no
+                        @else
+                            {{$data->lab_soundsystem}}
+                        @endif<br>
                 @endif
             @endforeach
             </p>
@@ -45,7 +59,21 @@
             <h1 class="card-title"> {{$data->lab_name}}</h1>
             <p class="card-info">
                 Capacity : {{$data->lab_capacity}}<br>
-                Ac or Non Ac : {{$data->lab_air_conditioner}}<br>
+                Ac or Non Ac : @if ($cdb->lh_air_conditioner==null)
+                                no
+                            @else
+                                {{ $cdb->lh_air_conditioner }}
+                            @endif<br>
+                Projector : @if ($data->lab_projector==null)
+                            no
+                        @else
+                            {{$data->lab_projector}}
+                        @endif<br>
+                Sound System : @if ($data->lab_soundsystem==null)
+                            no
+                        @else
+                            {{$data->lab_soundsystem}}
+                        @endif<br>
                 @endif
             @endforeach
             </p>
@@ -62,7 +90,21 @@
             <h1 class="card-title">{{$data->lab_name}}</h1>
             <p class="card-info">
                 Capacity : {{$data->lab_capacity}}<br>
-                Ac or Non Ac : {{$data->lab_air_conditioner}}<br>
+                Ac or Non Ac : @if ($cdb->lh_air_conditioner==null)
+                                no
+                            @else
+                                {{ $cdb->lh_air_conditioner }}
+                            @endif<br>
+                Projector : @if ($data->lab_projector==null)
+                            no
+                        @else
+                            {{$data->lab_projector}}
+                        @endif<br>
+                Sound System : @if ($data->lab_soundsystem==null)
+                            no
+                        @else
+                            {{$data->lab_soundsystem}}
+                        @endif<br>
                 @endif
             @endforeach
             </p>
@@ -79,7 +121,21 @@
             <h1 class="card-title">{{$data->lab_name}}</h1>
             <p class="card-info">
                 Capacity : {{$data->lab_capacity}}<br>
-                Ac or Non Ac : {{$data->lab_air_conditioner}}<br>
+                Ac or Non Ac : @if ($cdb->lh_air_conditioner==null)
+                                no
+                            @else
+                                {{ $cdb->lh_air_conditioner }}
+                            @endif<br>
+                Projector : @if ($data->lab_projector==null)
+                            no
+                        @else
+                            {{$data->lab_projector}}
+                        @endif<br>
+                Sound System : @if ($data->lab_soundsystem==null)
+                            no
+                        @else
+                            {{$data->lab_soundsystem}}
+                        @endif<br>
                 @endif
             @endforeach
             </p>
