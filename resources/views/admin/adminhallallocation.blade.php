@@ -27,6 +27,7 @@
                    <td>Start Time</td>
                    <td>End Time</td>
                    <td>Reason</td>
+                   <td>Action</td>
 
                </thead>
                <tbody>
@@ -38,6 +39,11 @@
                     <td>{{$cdb->start_time}}</td>
                     <td>{{$cdb->end_time}}</td>
                     <td>{{$cdb->reason}}</td>
+                    <td>
+                            <button class="btn btn-secondary btn-sm" type="button" onclick="window.location.href='{{url('update-student/'.$cdb->id)}}'">
+                              Suggestions
+                            </button>
+                    </td>
                </tr>
                    @endforeach
                </tbody>

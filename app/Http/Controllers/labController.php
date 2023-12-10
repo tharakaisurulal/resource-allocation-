@@ -23,6 +23,8 @@ class labController extends Controller
             'lab_name'=> $request -> labname,
             'lab_capacity'=> $request -> labcapacity,
             'lab_air_conditioner'=> $request -> lab_air_conditioner,
+            'lab_projector'=> $request -> lab_projector,
+            'lab_soundsystem'=> $request -> lab_soundsystem,
         ]);
 
         $res3 = $labs ->save();
@@ -62,6 +64,8 @@ public function updatelab1(Request $request,$id) //selected id will be updated u
         $lab->lab_name = $request -> input('labname');
         $lab->lab_capacity = $request -> input('labcapacity');
         $lab->lab_air_conditioner = $request -> input('lab_air_conditioner');
+        $lab->lab_projector = $request -> input('lab_projector');
+        $lab->lab_soundsystem = $request -> input('lab_soundsystem');
         $lab->update();
     //return $request;
     //return $lecturehall;
