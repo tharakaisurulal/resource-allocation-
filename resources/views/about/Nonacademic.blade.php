@@ -31,7 +31,7 @@
         <td>
         <div class="card" style="--clr:#010522d2;">
             <div class="imgBx">
-                <img src="images/Nonacademic/1001.jpg" alt="">
+                <img src="/images/Nonacademic/1001.jpg" alt="">
             </div>
             <div class="content">
                 <h2>Mr. Damith Coomasaru</h2><br>
@@ -46,7 +46,7 @@
         <td>
         <div class="card" style="--clr:#010522d2;">
             <div class="imgBx">
-                <img src="images/Nonacademic/1009.jpg" alt="">
+                <img src="/images/Nonacademic/1009.jpg" alt="">
             </div>
             <div class="content">
                 <h2>Mr. Madushan Ariyarathne</h2><br>
@@ -66,7 +66,7 @@
         <td>
         <div class="card" style="--clr:#010522d2;">
             <div class="imgBx">
-                <img src="images/Nonacademic/1003.jpg" alt="">
+                <img src="/images/Nonacademic/1003.jpg" alt="">
             </div>
             <div class="content">
                 <h2>Mr. P.G. Hemantha</h2><br>
@@ -80,7 +80,7 @@
         <td>
         <div class="card" style="--clr:#010522d2;">
             <div class="imgBx">
-                <img src="images/Nonacademic/1005.jpg" alt="">
+                <img src="/images/Nonacademic/1005.jpg" alt="">
             </div>
             <div class="content">
                 <h2>Mr. H.G. Kapila</h2><br>
@@ -94,7 +94,7 @@
         <td>
         <div class="card" style="--clr:#010522d2;">
             <div class="imgBx">
-                <img src="images/Nonacademic/1007.jpg" alt="">
+                <img src="/images/Nonacademic/1007.jpg" alt="">
             </div>
             <div class="content">
                 <h2>Mr. S.P Kamal Srinath</h2><br>
@@ -108,7 +108,7 @@
         <td>
         <div class="card" style="--clr:#010522d2;">
             <div class="imgBx">
-                <img src="images/Nonacademic/1010.jpg" alt="">
+                <img src="/images/Nonacademic/1010.jpg" alt="">
             </div>
             <div class="content">
                 <h2>Mr. Harsha Udaya</h2><br>
