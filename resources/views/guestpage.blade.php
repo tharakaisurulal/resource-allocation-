@@ -509,7 +509,8 @@
 
         <script type="text/javascript">
             var booking =@json($event);
-                //console.log(booking)
+            var notice =@json($notices);
+                //console.log(notice)
                 $(document).ready(function() {
                 var calendar = $('#calendar').fullCalendar({
                     header: {
@@ -523,11 +524,11 @@
                     })
             });
 
-            for (let i = 0; i <booking.length; i++) {
+            //for (let i = 0; i <booking.length; i++) {
                 //console.log(booking[i]);
                 //const news = [booking.event]
 
-    }
+    //}
 
     //console.log(sum);
 
@@ -547,10 +548,10 @@
             const logo = "<img src='/images/O.jpg' width='25px' style='margin:0 8px'/>";
             let tickerText = "";
             //looping through the news array
-            for(let i=0; i<booking.length; i++){
-            tickerText+=booking[i].title;
+            for(let i=0; i<notice.length; i++){
+            tickerText+=notice[i].notice;
             //adds the logo in between news items
-            if(i!=booking.length-1){
+            if(i!=notice.length-1){
                 tickerText+=logo;
             }
             }
