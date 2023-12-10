@@ -32,6 +32,8 @@
                     <td>Lecturehall Name</td>
                     <td>Capacity</td>
                     <td>A/C</td>
+                    <td>Projector</td>
+                    <td>Sound System</td>
                     <td>Action</td>
 
                 </thead>
@@ -42,6 +44,8 @@
                     <td><input type="text" name="labname" value="{{$lab->lab_name}}" required></td>
                     <td><input type="text" name="labcapacity" value="{{$lab->lab_capacity}}" required></td>
                     <td><input type="checkbox" name="lab_air_conditioner" value="yes" ></td>
+                    <td><input type="checkbox" name="lab_projector" value="yes" ></td>
+                    <td><input type="checkbox" name="lab_soundsystem" value="yes" ></td>
                     <td>
                             <button class="btn btn-secondary btn-sm" type="submit" >Submit</button>
                            <a href="/admin/lab/adminlabopera"> <button class="btn btn-secondary btn-sm" type="button" >Back</button></a>

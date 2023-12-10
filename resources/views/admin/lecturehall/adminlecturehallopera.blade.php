@@ -53,6 +53,16 @@
                     <td>A/C:</td>
                     <td><input type="checkbox" name="lh_air_conditioner" value="yes" checked></td>
                 </tr>
+
+                <tr>
+                    <td>Projector:</td>
+                    <td><input type="checkbox" name="lh_projector" value="yes" checked></td>
+                </tr>
+
+                <tr>
+                    <td>Sound System:</td>
+                    <td><input type="checkbox" name="lh_soundsystem" value="yes" checked></td>
+                </tr>
              </table>
 
 
@@ -90,6 +100,8 @@
                     <td>Lecturehall Name</td>
                     <td>Capacity</td>
                     <td>A/C</td>
+                    <td>Projector</td>
+                    <td>Sound System</td>
                     <td>Action</td>
 
                 </thead>
@@ -99,7 +111,21 @@
                     <td>{{$cdb->id}}</td>
                     <td>{{$cdb->lh_name}}</td>
                     <td>{{$cdb->lh_capacity}}</td>
-                    <td>{{$cdb->lh_air_conditioner}}</td>
+                    <td>@if ($cdb->lh_air_conditioner==null)
+                            no
+                    @else
+                        {{ $cdb->lh_air_conditioner }}
+                    @endif</td>
+                    <td>@if ($cdb->lh_projector==null)
+                        no
+                    @else
+                        {{$cdb->lh_projector}}
+                    @endif</td>
+                    <td>@if ($cdb->lh_soundsystem==null)
+                        no
+                    @else
+                        {{$cdb->lh_soundsystem}}
+                    @endif</td>
                     <td>
                         <div class="dropdown">
                             <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
