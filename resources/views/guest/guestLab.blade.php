@@ -28,10 +28,10 @@
             <h1 class="card-title"> {{$data->lab_name}}</h1>
             <p class="card-info">
                 Capacity : {{$data->lab_capacity}}<br>
-                Ac or Non Ac : @if ($cdb->lh_air_conditioner==null)
+                Ac or Non Ac : @if ($data->lab_air_conditioner==null)
                                 no
                             @else
-                                {{ $cdb->lh_air_conditioner }}
+                                {{ $data->lab_air_conditioner }}
                             @endif<br>
                 Projector : @if ($data->lab_projector==null)
                             no
@@ -59,10 +59,10 @@
             <h1 class="card-title"> {{$data->lab_name}}</h1>
             <p class="card-info">
                 Capacity : {{$data->lab_capacity}}<br>
-                Ac or Non Ac : @if ($cdb->lh_air_conditioner==null)
+                Ac or Non Ac : @if ($data->lab_air_conditioner==null)
                                 no
                             @else
-                                {{ $cdb->lh_air_conditioner }}
+                                {{ $data->lab_air_conditioner }}
                             @endif<br>
                 Projector : @if ($data->lab_projector==null)
                             no
@@ -90,10 +90,10 @@
             <h1 class="card-title">{{$data->lab_name}}</h1>
             <p class="card-info">
                 Capacity : {{$data->lab_capacity}}<br>
-                Ac or Non Ac : @if ($cdb->lh_air_conditioner==null)
+                Ac or Non Ac : @if ($data->lab_air_conditioner==null)
                                 no
                             @else
-                                {{ $cdb->lh_air_conditioner }}
+                                {{ $data->lab_air_conditioner }}
                             @endif<br>
                 Projector : @if ($data->lab_projector==null)
                             no
@@ -121,10 +121,10 @@
             <h1 class="card-title">{{$data->lab_name}}</h1>
             <p class="card-info">
                 Capacity : {{$data->lab_capacity}}<br>
-                Ac or Non Ac : @if ($cdb->lh_air_conditioner==null)
+                Ac or Non Ac : @if ($data->lab_air_conditioner==null)
                                 no
                             @else
-                                {{ $cdb->lh_air_conditioner }}
+                                {{ $data->lab_air_conditioner }}
                             @endif<br>
                 Projector : @if ($data->lab_projector==null)
                             no
