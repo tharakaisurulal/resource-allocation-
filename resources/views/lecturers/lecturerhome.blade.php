@@ -11,7 +11,6 @@
 
 @section("content2")
         <li><a href="/logout">LOG OUT</a></li>
-        <li><a href="#">ABOUT US</a></li>
 @endsection
 
 @section("content")
@@ -30,7 +29,7 @@
 </head>
 <body>
 <!--------------------card section---------------------------->
-<div class="div1">
+
     <div class="card">
 
             <div class="face front">
@@ -103,7 +102,7 @@
                     </div>
             </div>
         </div>
-    </div>
+
 
     </body>
 </html>

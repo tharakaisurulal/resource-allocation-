@@ -24,6 +24,8 @@ class lecturehallController extends Controller
             'lh_name'=> $request -> lhname,
             'lh_capacity'=> $request -> lhcapacity,
             'lh_air_conditioner'=> $request -> lh_air_conditioner,
+            'lh_projector'=> $request -> lh_projector,
+            'lh_soundsystem'=> $request -> lh_soundsystem,
         ]);
 
         $res1 = $lecturehalls ->save();
@@ -63,6 +65,8 @@ public function updatelecturehall1(Request $request,$id)  //selected id will be 
         $lecturehall->lh_name = $request -> input('lhname');
         $lecturehall->lh_capacity = $request -> input('lhcapacity');
         $lecturehall->lh_air_conditioner = $request -> input('lh_air_conditioner');
+        $lecturehall->lh_projector = $request -> input('lh_projector');
+        $lecturehall->lh_soundsystem = $request -> input('lh_soundsystem');
         $lecturehall->update();
     //return $request;
     //return $lecturehall;
