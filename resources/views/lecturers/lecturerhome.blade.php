@@ -27,9 +27,9 @@
 
 
 </head>
-<body>
+<>
 <!--------------------card section---------------------------->
-
+<div class= "div1">
     <div class="card">
 
             <div class="face front">
@@ -102,8 +102,8 @@
                     </div>
             </div>
         </div>
+   </div>
 
-
-    </body>
+</body>
 </html>
 @endsection
