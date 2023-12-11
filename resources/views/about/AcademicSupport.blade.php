@@ -32,7 +32,7 @@
             <td>
             <div class="card" style="--clr:rgb(17, 17, 17);">
                 <div class="imgBx">
-                    <img src="images/Supportive/792.jpg" alt="">
+                    <img src="/images/Supportive/792.jpg" alt="">
                 </div>
                 <div class="content">
                     <h2>Mr. B.H. Saranapala</h2><br>
@@ -47,7 +47,7 @@
             <td>
             <div class="card" style="--clr:rgb(17, 17, 17);">
                 <div class="imgBx">
-                    <img src="images/Supportive/793.jpg" alt="">
+                    <img src="/images/Supportive/793.jpg" alt="">
                 </div>
                 <div class="content">
                     <h2>Mr. Anil P. Luwishewa</h2><br>
@@ -62,7 +62,7 @@
             <td>
             <div class="card" style="--clr:rgb(17, 17, 17);">
                 <div class="imgBx">
-                    <img src="images/Supportive/794.jpg" alt="">
+                    <img src="/images/Supportive/794.jpg" alt="">
                 </div>
                 <div class="content">
                     <h2>Ms. P.B.N.K. De Silva</h2><br>
@@ -77,7 +77,7 @@
             <td>
             <div class="card" style="--clr:rgb(17, 17, 17);">
                 <div class="imgBx">
-                    <img src="images/Supportive/795.jpg" alt="">
+                    <img src="/images/Supportive/795.jpg" alt="">
                 </div>
                 <div class="content">
                     <h2>Mr. U.V. Malawara Arachchi</h2><br>
@@ -96,7 +96,7 @@
         <td>
         <div class="card" style="--clr:rgb(17, 17, 17);">
             <div class="imgBx">
-                <img src="images/Supportive/796.jpg" alt="">
+                <img src="/images/Supportive/796.jpg" alt="">
             </div>
             <div class="content">
                 <h2>Ms. W.P. Priyanthi</h2><br>
@@ -111,7 +111,7 @@
         <td>
         <div class="card" style="--clr:rgb(17, 17, 17);">
             <div class="imgBx">
-                <img src="images/Supportive/797.jpg" alt="">
+                <img src="/images/Supportive/797.jpg" alt="">
             </div>
             <div class="content">
                 <h2>Mr. R.Wickramaratne</h2><br>
@@ -126,7 +126,7 @@
         <td>
         <div class="card" style="--clr:rgb(17, 17, 17);">
             <div class="imgBx">
-                <img src="images/Supportive/798.jpg" alt="">
+                <img src="/images/Supportive/798.jpg" alt="">
             </div>
             <div class="content">
                 <h2>Mr. C.L. Wimalaratne</h2><br>
@@ -141,7 +141,7 @@
         <td>
         <div class="card" style="--clr:rgb(17, 17, 17);">
             <div class="imgBx">
-                <img src="images/Supportive/799.jpg" alt="">
+                <img src="/images/Supportive/799.jpg" alt="">
             </div>
             <div class="content">
                 <h2>Ms. G.K. Mabula</h2><br>
@@ -160,7 +160,7 @@
         <td>
         <div class="card" style="--clr:rgb(17, 17, 17);">
             <div class="imgBx">
-                <img src="images/Supportive/800.jpg" alt="">
+                <img src="/images/Supportive/800.jpg" alt="">
             </div>
             <div class="content">
                 <h2>Mr. L.W. Wellakkage</h2><br>
@@ -175,7 +175,7 @@
         <td>
         <div class="card" style="--clr:rgb(17, 17, 17);">
             <div class="imgBx">
-                <img src="images/Supportive/802.jpg" alt="">
+                <img src="/images/Supportive/802.jpg" alt="">
             </div>
             <div class="content">
                 <h2>Mr. G.M.T. Ranjana</h2><br>
@@ -190,7 +190,7 @@
         <td>
         <div class="card" style="--clr:rgb(17, 17, 17);">
             <div class="imgBx">
-                <img src="images/Supportive/803.jpg" alt="">
+                <img src="/images/Supportive/803.jpg" alt="">
             </div>
             <div class="content">
                 <h2>Ms. W.K. Shajith</h2><br>
@@ -205,7 +205,7 @@
         <td>
         <div class="card" style="--clr:rgb(17, 17, 17);">
             <div class="imgBx">
-                <img src="images/Supportive/804.jpg" alt="">
+                <img src="/images/Supportive/804.jpg" alt="">
             </div>
             <div class="content">
                 <h2>Ms. H.G.S. Priyangani</h2><br>
