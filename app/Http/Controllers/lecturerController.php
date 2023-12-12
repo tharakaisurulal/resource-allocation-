@@ -41,12 +41,8 @@ class lecturerController extends Controller
     public function viewlecturer(){  //view the lecturer in database(inside the admin page).
         $cusdata5= lecturer::all();
         //return  $cusdata4;
-        if(count($cusdata5) === 0){  //if lecturer table is empty it does not return the $cusdata5 because it is empty.
-            return view('admin.lecturer.lecopera');
-        }
-        else{
             return view('admin.lecturer.lecopera',['cusdata5'=> $cusdata5]);
-        }
+
     }
 
     public function leclecturehalldetails() //view the lecturer lecturehall page

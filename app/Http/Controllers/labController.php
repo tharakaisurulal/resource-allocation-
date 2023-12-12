@@ -9,12 +9,8 @@ class labController extends Controller
     public function viewlab(){ //view the labs in database.
         $cusdata2= lab::all();
         //return  $cusdata;
-        if(count($cusdata2) === 0){  //if labs table is empty it does not return the $cusdata12 because it is empty.
-            return view('admin.lab.adminlabopera');
-        }
-        else{
             return view('admin.lab.adminlabopera',['cusdata2'=> $cusdata2]);
-        }
+
     }
 
     public function addlab(Request $request){ // add labs.
