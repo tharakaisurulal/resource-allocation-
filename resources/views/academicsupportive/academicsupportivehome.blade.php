@@ -52,12 +52,12 @@
 
             <div class="face front">
                 <img src="/images/Lap.jpg" alt="" width=300px height=350px>
-                <h3> Labortory</h3>
+                <h3> Laboratory</h3>
             </div>
 
             <div class="face back">
                     <div class="back-content center">
-                        <h3> Labortory</h3>
+                        <h3> Laboratory</h3>
                         <div class="button">
                             <a href="/academicsupportive/accsuplab"><span>CLICK</span></a>
                         </div>
