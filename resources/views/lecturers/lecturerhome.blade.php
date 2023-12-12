@@ -3,8 +3,9 @@
 @section("content1")
     <div class="header3"><img src="{{asset('/uploads/lecturers/'.$dater->lec_photo) }}" alt="image" class="img1"></div>
     <div class="header2">
-        <h6>Welcome!</h6><br>
-        <h6>{{$dater->lec_name}}</h6>
+        <h6>Welcome! {{$dater->lec_name}}</h6><br>
+        <h6>You are login as a Lecturer</h6>
+
     </div>
 @endsection
 
