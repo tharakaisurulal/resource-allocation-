@@ -5,8 +5,8 @@
 }
 
 body{
-    background: #0805056b;
-    background-size:cover;
+    background-color:#23242a;
+    background-size: cover;
 
 }
 
@@ -84,6 +84,7 @@ body{
     align-items: center;
     flex-direction: column;
 }
+
 .card .back .button a{
     position: relative;
     width: 160px;
@@ -149,13 +150,25 @@ body{
 }
 
 .div1{
-padding-top: 100px;
+    padding-top: 100px;
 
-display: flex;
-flex-wrap: wrap;
-align-items:center;
-justify-content: center;
-min-height: 100vh;
-/*background-color:#23242a;*/
-height: auto;
-}
+    display: flex;
+    flex-wrap: wrap;
+    align-items:center;
+    justify-content: center;
+    min-height: 100vh;
+    /*background-color:#23242a;*/
+    height: auto;
+    }
+
+    table{
+        margin-left: 30px;
+    }
+
+    #td1{
+        text-align: left;
+    }
+
+
+
+

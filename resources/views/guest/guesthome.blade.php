@@ -1,7 +1,7 @@
 @extends('layout.headerFooter')
 @section("content1")
-    <div class="div3"><img src="{{asset('/uploads/guests/'.$dater->photo) }}" alt="image" class="img1"></div>
-    <div class="div2">
+    <div class="header3"><img src="{{asset('/uploads/guests/'.$dater->photo) }}" alt="image" class="img1"></div>
+    <div class="header2">
         <h6>Welcome!</h6><br>
         <h6>{{$dater->guest_name}}</h6>
     </div>
@@ -9,7 +9,6 @@
 
 @section("content2")
         <li><a href="/logout">LOG OUT</a></li>
-        <li><a href="#">ABOUT US</a></li>
 @endsection
 
 @section("content")
@@ -42,7 +41,7 @@
                     <div class="back-content center">
                         <h3> Lecture Hall</h3>
                         <div class="button">
-                            <a href="/lecturehalldetails"><span>CLICK</span></a>
+                            <a href="/guest/guestlecturehalldetails"><span>CLICK</span></a>
                         </div>
                     </div>
             </div>
@@ -60,7 +59,7 @@
                     <div class="back-content center">
                         <h3> Labortory</h3>
                         <div class="button">
-                            <a href=""><span>CLICK</span></a>
+                            <a href="/guest/lab"><span>CLICK</span></a>
                         </div>
                     </div>
             </div>

@@ -42,10 +42,10 @@ a{
     position: fixed;
     right: 0;
     top: 0;
-    width:250px;
+    width:300px;
     margin-top: 80px;
     background:#757575;
-    transform: translateX(250px);
+    transform: translateX(300px);
     transition: transform 250ms ease-in-out;
     overflow:scroll;
 }
@@ -203,4 +203,18 @@ transform: rotate(-135deg);
 
 img{
 align-self: center;
+}
+
+.section2{
+    padding-top: 50px;
+    padding-left: 39%;
+    padding-right: 20px;
+    height:225px;
+
+}
+
+.but{
+width:150px;
+height:150px;
+
 }

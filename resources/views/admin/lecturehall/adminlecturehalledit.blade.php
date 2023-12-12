@@ -2,7 +2,7 @@
 
 @section("content2")
         <li><a href="#">BACK</a></li>
-        
+
 @endsection
 
 @section("content")
@@ -32,6 +32,8 @@
                     <td>Lecturehall Name</td>
                     <td>Capacity</td>
                     <td>A/C</td>
+                    <td>Projector</td>
+                    <td>Sound System</td>
                     <td>Action</td>
 
                 </thead>
@@ -42,6 +44,8 @@
                     <td><input type="text" name="lhname" value="{{$lecturehall->lh_name}}" required></td>
                     <td><input type="text" name="lhcapacity" value="{{$lecturehall->lh_capacity}}" required></td>
                     <td><input type="checkbox" name="lh_air_conditioner" value="yes" ></td>
+                    <td><input type="checkbox" name="lh_projector" value="yes" ></td>
+                    <td><input type="checkbox" name="lh_soundsystem" value="yes" ></td>
                     <td>
                             <button class="btn btn-secondary btn-sm" type="submit" >Submit</button>
                            <a href="/admin/lecturehall/adminlecturehallopera"> <button class="btn btn-secondary btn-sm" type="button" >Back</button></a>

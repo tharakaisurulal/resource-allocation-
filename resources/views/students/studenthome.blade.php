@@ -1,4 +1,17 @@
 @extends('layout.headerFooter')
+
+@section("content1")
+    <div class="header3"><img src="{{asset('/uploads/students/'.$dater->photo) }}" alt="image" class="img1"></div>
+    <div class="header2">
+        <h6>Welcome!</h6><br>
+        <h6>{{$dater->first_name.$dater->last_name}}</h6>
+    </div>
+@endsection
+
+@section("content2")
+        <li><a href="/logout">LOG OUT</a></li>
+@endsection
+
 @section("content")
 <!DOCTYPE html>
 <html lang="en">
@@ -27,7 +40,7 @@
                     <div class="back-content center">
                         <h3> Lecture Hall</h3>
                         <div class="button">
-                            <a href=""><span>CLICK</span></a>
+                            <a href="/students/studentlecturehalldetails"><span>CLICK</span></a>
                         </div>
                     </div>
             </div>
@@ -45,7 +58,7 @@
                     <div class="back-content center">
                         <h3> Labortory</h3>
                         <div class="button">
-                            <a href=""><span>CLICK</span></a>
+                            <a href="/students/lab"><span>CLICK</span></a>
                         </div>
                     </div>
             </div>
@@ -65,11 +78,12 @@
                     <div class="back-content center">
                         <h3> Time Table</h3>
                         <div class="button">
-                            <a href=""><span>CLICK</span></a>
+                            <a href="/students/viewtimetable"><span>CLICK</span></a>
                         </div>
                     </div>
             </div>
         </div>
+
 
 
         <div class="card">
@@ -88,8 +102,10 @@
                     </div>
             </div>
         </div>
+
     </div>
 
     </body>
 </html>
 @endsection
+

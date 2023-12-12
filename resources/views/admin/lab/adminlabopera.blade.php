@@ -1,7 +1,7 @@
 @extends('layout.header')
 
 @section("content2")
-        <li><a href="#">BACK</a></li>
+        <li><a href="/admin/adminhome">BACK</a></li>
 
 @endsection
 
@@ -22,7 +22,7 @@
 
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                Add Lecturehalls
+                Add Labs
             </button>
 
             <!-- Modal -->
@@ -53,6 +53,16 @@
                     <td>A/C:</td>
                     <td><input type="checkbox" name="lab_air_conditioner" value="yes" checked></td>
                 </tr>
+
+                <tr>
+                    <td>Projector:</td>
+                    <td><input type="checkbox" name="lab_projector" value="yes" checked></td>
+                </tr>
+
+                <tr>
+                    <td>Sound System:</td>
+                    <td><input type="checkbox" name="lab_soundsystem" value="yes" checked></td>
+                </tr>
              </table>
 
 
@@ -81,7 +91,7 @@
         @endif
 
 
-            @if (isset($cusdata2))
+            @if (sizeof($cusdata2)!==0)
          <div class="d-flex justify-content-center div2">
 
             <table class="table table-dark">
@@ -90,6 +100,8 @@
                     <td>Lecturehall Name</td>
                     <td>Capacity</td>
                     <td>A/C</td>
+                    <td>Projector</td>
+                    <td>Sound System</td>
                     <td>Action</td>
 
                 </thead>
@@ -99,7 +111,21 @@
                     <td>{{$cdb->id}}</td>
                     <td>{{$cdb->lab_name}}</td>
                     <td>{{$cdb->lab_capacity}}</td>
-                    <td>{{$cdb->lab_air_conditioner}}</td>
+                    <td>@if ($cdb->lab_air_conditioner==null)
+                                no
+                        @else
+                            {{ $cdb->lab_air_conditioner }}
+                        @endif</td>
+                        <td>@if ($cdb->lab_projector==null)
+                            no
+                        @else
+                            {{$cdb->lab_projector}}
+                        @endif</td>
+                        <td>@if ($cdb->lab_soundsystem==null)
+                            no
+                        @else
+                            {{$cdb->lab_soundsystem}}
+                        @endif</td>
                     <td>
                         <div class="dropdown">
                             <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">

@@ -22,7 +22,7 @@
 
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                Add Lecturehalls
+                Add Programs
             </button>
 
             <!-- Modal -->
@@ -72,7 +72,7 @@
         @endif
 
 
-            @if (isset($cusdata3))
+            @if (sizeof($cusdata3)!==0)
          <div class="d-flex justify-content-center div2">
 
             <table class="table table-dark">

@@ -7,13 +7,16 @@
         <title>Lecture hall Allocation</title>
         @include('cdn')
         <link rel="stylesheet" href={{asset('css/headerfooter.css')}}>
-
+        <link rel="icon" type="text/css" href="{{asset('/images/R.png')}}">
     </head>
 
     <body>
         <section class="sec1">
         <div class="header">
-            <img src="/images/logo_copy.png" class="logo">
+            <div class="im2">
+                <img src="/images/logo_copy.png" class="logo">
+            </div>
+
 
             @yield('content1')
 

@@ -11,6 +11,8 @@ class lab extends Model
     protected $fillable = [
         'lab_name',
         'lab_capacity',
-        'lab_air_conditioner'
+        'lab_air_conditioner',
+        'lab_projector',
+        'lab_soundsystem'
     ];
 }
