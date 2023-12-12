@@ -83,7 +83,7 @@ padding-bottom: 30px;
 
   .mm {
     position: absolute;
-    top: 13%;
+    top: 12.75%;
     left: 17.30%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
@@ -96,7 +96,7 @@ padding-bottom: 30px;
 
   .mm1 {
     position: absolute;
-    top: 12%;
+    top: 11.75%;
     left: 39.6%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
@@ -110,7 +110,7 @@ padding-bottom: 30px;
 
   .mm2 {
     position: absolute;
-    top: 45.9%;
+    top: 45%;
     left: 17.25%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
@@ -124,8 +124,8 @@ padding-bottom: 30px;
 
   .mm3 {
     position: absolute;
-    top: 45.2%;
-    left: 39.2%;
+    top: 44.4%;
+    left: 39.5%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     padding: 10px 80px;
@@ -138,7 +138,7 @@ padding-bottom: 30px;
 
   .mm4 {
     position: absolute;
-    top: 20.8%;
+    top: 20.4%;
     left: 9.5%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
@@ -152,7 +152,7 @@ padding-bottom: 30px;
 
   .mm5 {
     position: absolute;
-    top: 28.5%;
+    top: 28%;
     left: 53%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
@@ -165,7 +165,7 @@ padding-bottom: 30px;
 
   .mm6 {
     position: absolute;
-    top: 25.5%;
+    top: 25%;
     left: 59.75%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
@@ -262,8 +262,8 @@ padding-bottom: 30px;
 
   .overlay6 {
     position: absolute;
-    top: 27%;
-    left: 68.75%;
+    top: 24.5%;
+    left: 69.75%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     height: auto;
