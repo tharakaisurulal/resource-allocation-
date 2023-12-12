@@ -10,12 +10,8 @@ class lecturehallController extends Controller
     public function viewlecturehall(){  //view the lecturehalls in database.
         $cusdata= lecturehall::all();
         //return  $cusdata;
-        if(count($cusdata) === 0){ //if lecturehall table is empty it does not return the $cusdata because it is empty.
-            return view('admin.lecturehall.adminlecturehallopera');
-        }
-        else{
             return view('admin.lecturehall.adminlecturehallopera',['cusdata'=> $cusdata]);
-        }
+
     }
 
     public function addlecturehall(Request $request){  // add lecturehalls.

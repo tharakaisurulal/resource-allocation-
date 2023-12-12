@@ -37,7 +37,7 @@
         @endif
 
 
-            @if (isset($data1))
+            @if (sizeof($data1)!==0)
          <div class="d-flex justify-content-center div2">
 
             <table class="table table-dark">
@@ -94,7 +94,7 @@
         </div>
 
         <div>
-        @if (isset($data2))
+        @if (sizeof($data2)!==0)
 
         <div class="text-center">
             <h1>Practical Timetable</h1>

@@ -1,9 +1,9 @@
 @extends('layout.headerFooter')
 @section('content2')
        <li><a href="/">Home</a></li>
-       <li><a href="#">Acedemic Staff</a></li>
-       <li><a href="#">Acedemic Support Staff</a></li>
-       <li><a href="#">Non Acedemic Staff</a></li>
+       <li><a href="/welcome/about/academicstaff">Acedemic Staff</a></li>
+       <li><a href="/welcome/about/academicsupportive">Acedemic Support Staff</a></li>
+       <li><a href="/welcome/about/nonacademic">Non Acedemic Staff</a></li>
 
 
 
