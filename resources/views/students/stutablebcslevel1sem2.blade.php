@@ -1188,7 +1188,7 @@
   <div class="notice-board">
         <div class="notice-item">
             <div class="notice-title">Academic</div>
-            <div class="notice-content">Results-Level 2 CS</div>
+            <div class="notice-content">Results-LEVEL 1 CS</div>
         </div>
         <div class="notice-item">
             <div class="notice-title">Non-academic</div>
