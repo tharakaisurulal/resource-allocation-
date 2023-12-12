@@ -55,14 +55,9 @@
                     <td>{{$cdb->semester}}</td>
                     <td>
                         <div class="dropdown">
-                            <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              Action
+                            <button class="btn btn-secondary btn-sm" type="button" onclick="window.location.href='/admin/student/stuopera'" >
+                              Back
                             </button>
-                            <ul class="dropdown-menu">
-                              <li><a class="dropdown-item" href="{{url('update-student/'.$cdb->id)}}" >Edit</a></li>
-                              <li><a class="dropdown-item" href="{{url('delete-student/'.$cdb->id)}}">Delete</a></li>
-                              <li><a class="dropdown-item" href="{{url('viewmore-student/'.$cdb->id)}}">More</a></li>
-                            </ul>
                           </div>
                     </td>
                 </tr>
@@ -77,24 +72,6 @@
         </div>
 
 
-        <!-- Modal id="staticBackdrop"-->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="staticBackdropLabel">Change Password</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            Do You want to change password?
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-          <button type="button" class="btn btn-primary"><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">Yes</a></button>
-        </div>
-      </div>
-    </div>
-  </div>
 
     </body>
 </html>

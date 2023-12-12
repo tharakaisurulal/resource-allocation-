@@ -30,7 +30,7 @@
         <td>
         <div class="card" style="--clr:hsl(241, 100%, 29%);">
             <div class="imgBx">
-                <img src="images/Academic/873.jpg" alt="">
+                <img src="/images/Academic/873.jpg" alt="">
             </div>
             <div class="content">
                 <h2>Prof.(Mrs.) W.A.Indika</h2><br>
@@ -45,7 +45,7 @@
         <td>
         <div class="card" style="--clr:hsl(241, 100%, 29%);">
             <div class="imgBx">
-                <img src="images/Academic/781.jpg" alt="">
+                <img src="/images/Academic/781.jpg" alt="">
             </div>
             <div class="content">
                 <h2>Mr.S.A.S.Lorensuhewa</h2><br>
@@ -60,7 +60,7 @@
         <td>
         <div class="card" style="--clr:hsl(241, 100%, 29%);">
             <div class="imgBx">
-                <img src="images/Academic/787.jpg" alt="">
+                <img src="/images/Academic/787.jpg" alt="">
             </div>
             <div class="content">
                 <h2>Dr.J.A.Jeewanie</h2><br>
@@ -76,7 +76,7 @@
         <td>
         <div class="card" style="--clr:hsl(241, 100%, 29%);">
             <div class="imgBx">
-                <img src="images/Academic/786.jpg" alt="">
+                <img src="/images/Academic/786.jpg" alt="">
             </div>
             <div class="content">
                 <h2>Dr.Tharaka Ilayperuma</h2><br>
@@ -96,7 +96,7 @@
     <td>
     <div class="card" style="--clr:hsl(241, 100%, 29%);">
         <div class="imgBx">
-            <img src="images/Academic/788.jpg" alt="">
+            <img src="/images/Academic/788.jpg" alt="">
         </div>
         <div class="content">
             <h2>Dr.C.Thusangi Wannige</h2><br>
@@ -111,7 +111,7 @@
     <td>
     <div class="card" style="--clr:hsl(241, 100%, 29%);">
         <div class="imgBx">
-            <img src="images/Academic/849.jpg" alt="">
+            <img src="/images/Academic/849.jpg" alt="">
         </div>
         <div class="content">
             <h2>Dr.Sugandima Vidanagamachchi</h2><br>
@@ -126,7 +126,7 @@
     <td>
     <div class="card" style="--clr:hsl(241, 100%, 29%);">
         <div class="imgBx">
-            <img src="images/Academic/790.jpg" alt="">
+            <img src="/images/Academic/790.jpg" alt="">
         </div>
         <div class="content">
             <h2>Ms.T.D.G.Geethika</h2><br>
@@ -141,7 +141,7 @@
     <td>
     <div class="card" style="--clr:hsl(241, 100%, 29%);">
         <div class="imgBx">
-            <img src="images/Academic/874.jpg" alt="">
+            <img src="/images/Academic/874.jpg" alt="">
         </div>
         <div class="content">
             <h2>Mr.K.R.Wijeweera</h2><br>
@@ -161,7 +161,7 @@
     <td>
     <div class="card" style="--clr:hsl(241, 100%, 29%);">
         <div class="imgBx">
-            <img src="images/Academic/785.jpg" alt="">
+            <img src="/images/Academic/785.jpg" alt="">
         </div>
         <div class="content">
             <h2>Mrs. M. A. L Kalyani</h2><br>
@@ -176,7 +176,7 @@
     <td>
     <div class="card" style="--clr:hsl(241, 100%, 29%);">
         <div class="imgBx">
-            <img src="images/Academic/901.jpg" alt="">
+            <img src="/images/Academic/901.jpg" alt="">
         </div>
         <div class="content">
             <h2>Dr.Mr.K.D.C.G Kapugama</h2><br>
@@ -191,7 +191,7 @@
     <td>
     <div class="card" style="--clr:hsl(241, 100%, 29%);">
         <div class="imgBx">
-            <img src="images/Academic/903.jpg" alt="">
+            <img src="/images/Academic/903.jpg" alt="">
         </div>
         <div class="content">
             <h2>Mr.L.L.Gihan Chathuranga</h2><br>
@@ -206,7 +206,7 @@
     <td>
     <div class="card" style="--clr:hsl(241, 100%, 29%);">
         <div class="imgBx">
-            <img src="images/Academic/1011.jpg" alt="">
+            <img src="/images/Academic/1011.jpg" alt="">
         </div>
         <div class="content">
             <h2>Mr.K.A.T.S.Jayathilaka</h2><br>
@@ -225,7 +225,7 @@
     <td>
     <div class="card" style="--clr:hsl(241, 100%, 29%);">
         <div class="imgBx">
-            <img src="images/Academic/1012.jpg" alt="">
+            <img src="/images/Academic/1012.jpg" alt="">
         </div>
         <div class="content">
             <h2>Ms T.C. Weerakoon</h2><br>
@@ -240,7 +240,7 @@
     <td>
     <div class="card" style="--clr:hsl(241, 100%, 29%);">
         <div class="imgBx">
-            <img src="images/Academic/1013.jpg" alt="">
+            <img src="/images/Academic/1013.jpg" alt="">
         </div>
         <div class="content">
             <h2>Ms. Binuri Raigamkorale</h2><br>
@@ -255,7 +255,7 @@
     <td>
     <div class="card" style="--clr:hsl(241, 100%, 29%);">
         <div class="imgBx">
-            <img src="images/Academic/1070.jpg" alt="">
+            <img src="/images/Academic/1070.jpg" alt="">
         </div>
         <div class="content">
             <h2>Ms. M.S. Hiruni Peiris</h2><br>
@@ -270,7 +270,7 @@
     <td>
         <div class="card" style="--clr:hsl(241, 100%, 29%);">
             <div class="imgBx">
-                <img src="images/Academic/1072.jpg" alt="">
+                <img src="/images/Academic/1072.jpg" alt="">
             </div>
             <div class="content">
                 <h2>Ms. S.W.A.M.Upamalika</h2><br>
@@ -288,7 +288,7 @@
     <td>
     <div class="card" style="--clr:hsl(241, 100%, 29%);">
         <div class="imgBx">
-            <img src="images/Academic/1073.jpg" alt="">
+            <img src="/images/Academic/1073.jpg" alt="">
         </div>
         <div class="content">
             <h2>Ms. I.Nadisha Madhushanie</h2><br>
@@ -303,7 +303,7 @@
     <td>
         <div class="card" style="--clr:hsl(241, 100%, 29%);">
             <div class="imgBx">
-                <img src="images/Academic/1074.jpg" alt="">
+                <img src="/images/Academic/1074.jpg" alt="">
             </div>
             <div class="content">
                 <h2>Mr. Malaka Pathirana</h2><br>

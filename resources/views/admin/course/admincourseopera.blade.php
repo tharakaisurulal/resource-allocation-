@@ -77,7 +77,7 @@
         @endif
 
 
-            @if (isset($cusdata1))
+            @if (sizeof($cusdata1)!==0)
          <div class="d-flex justify-content-center div2">
 
             <table class="table table-dark">

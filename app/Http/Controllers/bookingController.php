@@ -645,7 +645,7 @@ class bookingController extends Controller
 
             public function storernotice(Request $request)
             {
-        //return $request;
+                  //return $request;
                   $notice=notice::create([
                     'notice'=> $request -> notice
 

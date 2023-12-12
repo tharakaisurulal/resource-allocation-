@@ -29,12 +29,12 @@ class studentController extends Controller
     public function viewstudent(){  //view the students in database(inside the admin page).
         $cusdata4= student::all();
         //return  $cusdata4;
-        if(count($cusdata4) === 0){  //if students table is empty it does not return the $cusdata4 because it is empty.
-            return view('admin.student.stuopera');
-        }
-        else{
+        //if(count($cusdata4) === 0){  //if students table is empty it does not return the $cusdata4 because it is empty.
+            //return view('admin.student.stuopera');
+       // }
+        //else{
             return view('admin.student.stuopera',['cusdata4'=> $cusdata4]);
-        }
+       // }
     }
 
     public function viewmore($id){  //view the more details of students in database(inside the admin page).
@@ -1026,5 +1026,13 @@ public function sturegister() //view admin's student registraion page.
         $dater1=course::all();
         return view('admin.student.sturegistration',['dater1'=> $dater1]);
 }
+
+public function deletestudent($id) //delete lecturer using the selected id.
+{
+        $student = student::find($id);
+        $student->delete();
+        return redirect()->back()-> with('success',"successfully deleted.");
+}
+
 
 }

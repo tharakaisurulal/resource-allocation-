@@ -24,12 +24,12 @@ use Illuminate\Support\Facades\Cookie;
 
 class lecturerController extends Controller
 {
-    public function lecturerhome() //view the guest home page       //ok
+    public function lecturerhome() //view the lecturer home page       //ok
     {
         //return "mv";
         $dater = array();
-        if(session()->has('reid')) /*If we are logged in session variable is assign, then we get the id of logged in user and detailas are assign to $dater variable and
-                                   return the logged in user details to guest home.mainly it is used in header welcome message.*/
+        if(session()->has('reid')) /*If we logged in, the session variable is assign, then we get the id of logged in user and detailas are assign to $dater variable and
+                                   return the logged in user details to lecturer home.mainly it is used in header to dispaly the name.*/
         {
             $dater=lecturer::where('id','=',session()->get('reid'))->first();
         }
@@ -38,25 +38,21 @@ class lecturerController extends Controller
         //return view('guest.guesthome');
     }
 
-    public function viewlecturer(){  //view the students in database(inside the admin page).
+    public function viewlecturer(){  //view the lecturer in database(inside the admin page).
         $cusdata5= lecturer::all();
         //return  $cusdata4;
-        if(count($cusdata5) === 0){  //if students table is empty it does not return the $cusdata4 because it is empty.
-            return view('admin.lecturer.lecopera');
-        }
-        else{
             return view('admin.lecturer.lecopera',['cusdata5'=> $cusdata5]);
-        }
+
     }
 
-    public function leclecturehalldetails() //view the guest lecturehall page
+    public function leclecturehalldetails() //view the lecturer lecturehall page
     {
         $dater3=lecturehall::all();
         //return $dater3;
         return view('lecturers.leclecturehalldetails',['dater3'=>$dater3]);
     }
 
-    public function lecturelab() //view the guest lab page
+    public function lecturelab() //view the lecturer lab page
     {
         $dater4=lab::all();
         //return $dater3;
@@ -65,7 +61,7 @@ class lecturerController extends Controller
     }
 
 
-    public function lecturerregistration() //view guest registration page.          //ok
+    public function lecturerregistration() //view lecturer registration page.
     {
         /*$dater = array();
         if(session()->has('reid'))
@@ -77,9 +73,9 @@ class lecturerController extends Controller
         return view('lecturer.lecturerregistration');
     }
 
-    public function lecturerrequest() //view guest request page.
+    public function lecturerrequest() //view lecturer request page.
     {
-        $dater = array();     //return the details of logged in user to guest request form.
+        $dater = array();     //return the details of logged in user to lecturer request form.
         if(session()->has('reid'))
         {
             $dater=lecturer::where('id','=',session()->get('reid'))->first();
@@ -90,7 +86,7 @@ class lecturerController extends Controller
     }
 
 
-    public function lecturerstore(Request $request) //store guest registration details.  //ok
+    public function lecturerstore(Request $request) //store lecturer registration details.  //ok
     {
     //return $request;
         $request->validate([  //validation part.
@@ -228,8 +224,7 @@ public function lecturerreq(Request $request) //request form details store to da
 public function lecchoosetimetable()
 {
     $dater = array();
-    if(session()->has('reid')) /*If we are logged in session variable is assign, then we get the id of logged in user and detailas are assign to $dater variable and
-                               return the logged in user details to guest home.mainly it is used in header welcome message.*/
+    if(session()->has('reid'))
     {
         $dater=lecturer::where('id','=',session()->get('reid'))->first();
 
@@ -291,7 +286,7 @@ public function updatelecturer1(Request $request,$id)  //selected id will be upd
 
 }
 
-public function updatelecturerpassword(Request $request,$id)  //selected id will be updated using this function.
+public function updatelecturerpassword(Request $request,$id)  //selected id password will be updated using this function.
 {
 //return $request;
     $lecturer = lecturer::find($id);
@@ -302,7 +297,7 @@ public function updatelecturerpassword(Request $request,$id)  //selected id will
     return view('admin.lecturer.adminlecturereditpassword', ['lecturer'=>$lecturer]);
 }
 
-public function deletelecturer($id) //delete course using the selected id.
+public function deletelecturer($id) //delete lecturer using the selected id.
 {
         $lecturer = lecturer::find($id);
         $lecturer->delete();

@@ -9,12 +9,8 @@ class programController extends Controller
     public function viewprogram(){ //view the programs in database.
         $cusdata3= program::all();
         //return  $cusdata;
-        if(count($cusdata3) === 0){  //if programs table is empty it does not return the $cusdata3 because it is empty.
-            return view('admin.program.adminprogramopera');
-        }
-        else{
             return view('admin.program.adminprogramopera',['cusdata3'=> $cusdata3]);
-        }
+
     }
 
     public function addprogram(Request $request){  // add programs.
