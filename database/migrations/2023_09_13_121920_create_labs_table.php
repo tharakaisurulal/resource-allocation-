@@ -16,6 +16,8 @@ return new class extends Migration
             $table->String ('lab_name');
             $table->String ('lab_capacity')->nullable();
             $table->String ('lab_air_conditioner')->nullable();
+            $table->String ('lab_projector')->nullable();
+            $table->String ('lab_soundsystem')->nullable();
             $table->timestamps();
         });
     }

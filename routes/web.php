@@ -31,8 +31,28 @@ Route::get('/', function () { //route to view welcome page.
 });
 
 Route::get('/welcome/about', function () { //route to view welcome page.
-    return view('about');
+    return view('about.about');
 });
+
+Route::get('/welcome/about/academicstaff', function () { //route to view welcome page.
+    return view('about.AcademicStaff');
+});
+
+Route::get('/welcome/about/academicsupportive', function () { //route to view welcome page.
+    return view('about.AcademicSupport');
+});
+
+Route::get('/welcome/about/nonacademic', function () { //route to view welcome page.
+    return view('about.Nonacademic');
+});
+
+Route::get('viewsuggestions/{id}',[adminController::class, 'viewsuggestions'])->name('viewsuggestions');
+
+Route::get('delete-guestrequest/{id}',[adminController::class, 'deleteguestrequest'])->name('deleteguestrequest');
+
+Route::get('delete-lecturerrequest/{id}',[adminController::class, 'deletelecturerrequest'])->name('deletelecturerrequest');
+
+//Route::get('/index1',[adminController::class, 'index1'])->name('index1');
 //Route::get('/guest/request', function () {
     //return view('guest.guestrequestform');
 //});
@@ -46,23 +66,13 @@ Route::get('/welcome/about', function () { //route to view welcome page.
 //Route::get('/home', function () {
     //return view('home')->middleware('IsLoggedIn');
 //});
-Route::get('/home1', function () {
-    return view('home1');
-});
+
 Route::get('/headerFooter', function () {  //route to view header and footer layout.
     return view('Layout.headerFooter');
 });
 
-
-
-
-
 Route::get('/guest/guesthome', function () {
     return view('guest.guesthome');
-});
-
-Route::get('/table', function () {
-    return view('table');
 });
 
 Route::get('/add', function () { //route to testing page.
@@ -79,14 +89,6 @@ Route::get('/header', function () {  //route to view header layout.
 //Route::get('/tablebcslevel1', function () {
     //return view('tablebcslevel1');
 //});
-
-Route::get('/tablebcslevel2', function () {
-    return view('tablebcslevel2');
-});
-
-Route::get('/tablebsclevel3', function () {
-    return view('tablebsclevel3');
-});
 
 Route::get('/stuprofile', function () {
     return view('stuprofile');
@@ -296,6 +298,8 @@ Route::post('update1-student/{id}',[studentController::class, 'updatestudent1'])
 Route::get('viewmore-student/{id}',[studentController::class, 'viewmore'])->name('viewmore');
 
 Route::get('updatestudentpassword-student/{id}',[studentController::class, 'updatestudentpassword'])->name('updatestudentpassword');  //route to function of update student password.
+
+Route::get('delete-student/{id}',[studentController::class, 'deletestudent'])->name('deletestudent');
 
 
 /*admin.lecturer routes*/

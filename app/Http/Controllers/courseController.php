@@ -9,12 +9,8 @@ class courseController extends Controller
     public function viewcourse(){ //view the courses in database.
         $cusdata1= course::all();
         //return  $cusdata1;
-        if(count($cusdata1) === 0){ //if course table is empty it does not return the $cusdata1 because it is empty.
-            return view('admin.course.admincourseopera');
-        }
-        else{
             return view('admin.course.admincourseopera',['cusdata1'=> $cusdata1]);
-        }
+
     }
 
 

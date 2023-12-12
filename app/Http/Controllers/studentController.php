@@ -29,12 +29,12 @@ class studentController extends Controller
     public function viewstudent(){  //view the students in database(inside the admin page).
         $cusdata4= student::all();
         //return  $cusdata4;
-        if(count($cusdata4) === 0){  //if students table is empty it does not return the $cusdata4 because it is empty.
-            return view('admin.student.stuopera');
-        }
-        else{
+        //if(count($cusdata4) === 0){  //if students table is empty it does not return the $cusdata4 because it is empty.
+            //return view('admin.student.stuopera');
+       // }
+        //else{
             return view('admin.student.stuopera',['cusdata4'=> $cusdata4]);
-        }
+       // }
     }
 
     public function viewmore($id){  //view the more details of students in database(inside the admin page).
@@ -84,14 +84,14 @@ class studentController extends Controller
             'password'=> 'required|unique:students|min:5|max:12',
             'mobile'=> 'required',
             'password1'=> 'required',
-            'subject1'=> 'required'|'required_without:subject2',
-            'subject2'=> 'required_without:subject3',
-            'subject3'=> 'required_without:subject4',
-            'subject4'=>  'required_without:subject5',
-            'subject5'=>  'required_without:subject6',
-            'subject6'=>  'required_without:subject7',
-            'subject7'=>  'required_without:subject8',
-            'subject8'=>  'nullable'
+            'subject1'=> 'required'|'required_with_all:subject2',
+            'subject2'=> 'required_with_all:subject3',
+            'subject3'=> 'required_with_all:subject4',
+            'subject4'=> 'required_with_all:subject5',
+            'subject5'=> 'required_with_all:subject6',
+            'subject6'=> 'required_with_all:subject7',
+            'subject7'=> 'required_with:subject8',
+            'subject8'=> 'nullable'
             //'program_Id' => 'required'
           ]);
           //return $request;
@@ -124,7 +124,11 @@ class studentController extends Controller
             'subject1'=> $request -> subject1,
             'subject2'=> $request -> subject2,
             'subject3'=> $request -> subject3,
-            'subject4'=> $request -> subject4
+            'subject4'=> $request -> subject4,
+            'subject5'=> $request -> subject5,
+            'subject6'=> $request -> subject6,
+            'subject7'=> $request -> subject7,
+            'subject8'=> $request -> subject8
 
             ]);
 
@@ -1026,5 +1030,13 @@ public function sturegister() //view admin's student registraion page.
         $dater1=course::all();
         return view('admin.student.sturegistration',['dater1'=> $dater1]);
 }
+
+public function deletestudent($id) //delete lecturer using the selected id.
+{
+        $student = student::find($id);
+        $student->delete();
+        return redirect()->back()-> with('success',"successfully deleted.");
+}
+
 
 }

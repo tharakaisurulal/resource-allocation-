@@ -30,7 +30,21 @@
             <h1 class="card-title">{{$data->lh_name}}</h1>
             <p class="card-info">
                 Capacity : {{$data->lh_capacity}}<br>
-                Ac or Non Ac : {{$data->lh_air_conditioner}}<br>
+                Ac or Non Ac : @if ($data->lh_air_conditioner==null)
+                                no
+                            @else
+                                {{ $data->lh_air_conditioner }}
+                            @endif<br>
+                Projector : @if ($data->lh_projector==null)
+                            no
+                        @else
+                            {{$data->lh_projector}}
+                        @endif<br>
+                Sound System : @if ($data->lh_soundsystem==null)
+                            no
+                        @else
+                            {{$data->lh_soundsystem}}
+                        @endif<br>
                 @endif
             @endforeach
             </p>
@@ -39,7 +53,7 @@
 
     <div class="card">
         <div class="col-6">
-            <img src="/images/R4.jpg" alt="" width=320px height=500px>
+            <img src="/images/miniauditorium.jpg" alt="" width=320px height=500px>
         </div>
         <div class="card-body">
             @foreach (  $dater3 as $data )
@@ -47,7 +61,21 @@
             <h1 class="card-title"> {{$data->lh_name}}</h1>
             <p class="card-info">
                 Capacity : {{$data->lh_capacity}}<br>
-                Ac or Non Ac : {{$data->lh_air_conditioner}}<br>
+                Ac or Non Ac : @if ($data->lh_air_conditioner==null)
+                                no
+                            @else
+                                {{$data->lh_air_conditioner }}
+                            @endif<br>
+                Projector : @if ($data->lh_projector==null)
+                            no
+                        @else
+                            {{$data->lh_projector}}
+                        @endif<br>
+                Sound System : @if ($data->lh_soundsystem==null)
+                            no
+                        @else
+                            {{$data->lh_soundsystem}}
+                        @endif<br>
                 @endif
             @endforeach
             </p>
@@ -55,14 +83,28 @@
     </div>
 
     <div class="card">
-        <img src="/images/R5.jpg" alt="" width=320px height=500px>
+        <img src="/images/mainauditorium.jpg" alt="" width=320px height=500px>
         <div class="card-body">
             @foreach (  $dater3 as $data )
             @if (($data->lh_name)=="main-auditorium")
             <h1 class="card-title"> {{$data->lh_name}}</h1>
             <p class="card-info">
                 Capacity : {{$data->lh_capacity}}<br>
-                Ac or Non Ac : {{$data->lh_air_conditioner}}<br>
+                Ac or Non Ac : @if ($data->lh_air_conditioner==null)
+                                    no
+                                @else
+                                    {{ $data->lh_air_conditioner }}
+                                @endif<br>
+                Projector : @if ($data->lh_projector==null)
+                                no
+                            @else
+                                {{$data->lh_projector}}
+                            @endif<br>
+                Sound System : @if ($data->lh_soundsystem==null)
+                                no
+                            @else
+                                {{$data->lh_soundsystem}}
+                            @endif<br>
                 @endif
             @endforeach
             </p>

@@ -56,12 +56,8 @@ class guestController extends Controller
     public function viewguest(){  //view the students in database(inside the admin page).
         $cusdata7= guest::all();
         //return  $cusdata4;
-        if(count($cusdata7) === 0){  //if students table is empty it does not return the $cusdata4 because it is empty.
-            return view('admin.guest.guestopera');
-        }
-        else{
             return view('admin.guest.guestopera',['cusdata7'=> $cusdata7]);
-        }
+
     }
 
     public function guestregistration() //view guest registration page.
@@ -165,7 +161,7 @@ class guestController extends Controller
     }
 }
 
-public function gueststore1(Request $request) //store guest registration details.
+/*public function gueststore1(Request $request) //store guest registration details.
     {
     //return $request;
         $request->validate([  //validation part.
@@ -220,7 +216,7 @@ public function gueststore1(Request $request) //store guest registration details
                $image->photo = $filename;
            }
 
-           $image->save();*/
+           $image->save();
 //return $request;
 
 
@@ -240,7 +236,7 @@ public function gueststore1(Request $request) //store guest registration details
     {
     return back() -> with('fail',"confirm passsword is not match");
     }
-}
+}*/
 
 
 //add details to the guest request table
@@ -251,9 +247,9 @@ public function guestreq(Request $request) //request form details store to datab
     $request->validate([
         //'name'=> 'required',
         //'email'=> 'required',
-        'date'=> 'required',
-        'starttime'=> 'required',
-        'endtime'=> 'required',
+        'date'=>  'required|date|after:tomorrow',
+        'starttime'=> 'required|date_format:H:i',
+        'endtime'=> 'required|date_format:H:i|after:starttime',
         'hallname'=> 'required',
         'faculty'=> 'required',
         'department'=> 'required',
