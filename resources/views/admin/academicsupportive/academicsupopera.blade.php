@@ -37,7 +37,7 @@
         @endif
 
 
-            @if (isset($cusdata6))
+            @if (sizeof($cusdata6)!==0)
          <div class="d-flex justify-content-center div2">
 
             <table class="table table-dark">
@@ -82,7 +82,7 @@
          @endif
         </div>
 
-
+        @if (sizeof($cusdata6)!==0)
                 <!-- Modal id="staticBackdrop"-->
             @for ($i=1;$i<=$cdb->id;$i++)
             <div class="modal fade" id="staticBackdrop{{$i}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel1" aria-hidden="true">
@@ -103,6 +103,7 @@
                 </div>
             </div>
             @endfor
+        @endif
 
     </body>
 </html>

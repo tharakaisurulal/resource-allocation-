@@ -56,12 +56,8 @@ class guestController extends Controller
     public function viewguest(){  //view the students in database(inside the admin page).
         $cusdata7= guest::all();
         //return  $cusdata4;
-        if(count($cusdata7) === 0){  //if students table is empty it does not return the $cusdata4 because it is empty.
-            return view('admin.guest.guestopera');
-        }
-        else{
             return view('admin.guest.guestopera',['cusdata7'=> $cusdata7]);
-        }
+
     }
 
     public function guestregistration() //view guest registration page.

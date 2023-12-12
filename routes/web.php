@@ -299,6 +299,8 @@ Route::get('viewmore-student/{id}',[studentController::class, 'viewmore'])->name
 
 Route::get('updatestudentpassword-student/{id}',[studentController::class, 'updatestudentpassword'])->name('updatestudentpassword');  //route to function of update student password.
 
+Route::get('delete-student/{id}',[studentController::class, 'deletestudent'])->name('deletestudent');
+
 
 /*admin.lecturer routes*/
 Route::get('/admin/lecturer/lectureopera', [lecturerController::class, 'viewlecturer'])->name('admin.lecturer.lectureropera');  //route to view student crud operation page.
