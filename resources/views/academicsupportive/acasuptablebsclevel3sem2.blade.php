@@ -1007,15 +1007,15 @@
   <div class="notice-board">
         <div class="notice-item">
             <div class="notice-title">Academic</div>
-            <div class="notice-content">ahhhhddhiedhiediedhiehdih</div>
+            <div class="notice-content">Results-Level 3 CS</div>
         </div>
         <div class="notice-item">
             <div class="notice-title">Non-academic</div>
-            <div class="notice-content">agdeudglehclheich</div>
+            <div class="notice-content">List of COLORS AWARD</div>
         </div>
         <div class="notice-item">
             <div class="notice-title">Important Notice </div>
-            <div class="notice-content">uvsegdoiecgugoeoci</div>
+            <div class="notice-content">Awareness webinar on ANSO SCHOLARSHIPSi</div>
         </div>
     </div>
 
