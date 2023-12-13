@@ -165,9 +165,9 @@ public function lecturerreq(Request $request) //request form details store to da
     $request->validate([
         //'name'=> 'required',
         //'email'=> 'required',
-        'date'=> 'required',
-        'starttime'=> 'required',
-        'endtime'=> 'required',
+        'date'=> 'required|date|after:tomorrow',
+        'starttime'=> 'required|date_format:H:i',
+        'endtime'=> 'required|date_format:H:i|after:starttime',
         'hallname'=> 'required',
         //'guest_id'=> 'required',
 

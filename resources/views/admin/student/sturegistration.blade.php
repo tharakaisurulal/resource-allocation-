@@ -133,6 +133,50 @@
         </select>
         <label class="text-danger span1">@error('subject4')  {{$message}}  @enderror</label><br>
 
+        <label for="subject5"><b>Subject 5:</b></label>
+    <select name="subject5" id="faculty">
+        <option value="">--Choose subject--</option>
+        @foreach ($dater1 as $cdb1 )
+        <option value="{{$cdb1->id}}">@php
+            echo $cdb1->course_name;
+        @endphp</option>
+        @endforeach
+        </select>
+        <label class="text-danger span1">@error('subject5')  {{$message}}  @enderror</label><br>
+
+        <label for="subject6"><b>Subject 6:</b></label>
+    <select name="subject6" id="faculty">
+        <option value="">--Choose subject--</option>
+        @foreach ($dater1 as $cdb1 )
+        <option value="{{$cdb1->id}}">@php
+            echo $cdb1->course_name;
+        @endphp</option>
+        @endforeach
+        </select>
+        <label class="text-danger span1">@error('subject6')  {{$message}}  @enderror</label><br>
+
+        <label for="subject7"><b>Subject 7:</b></label>
+    <select name="subject7" id="faculty">
+        <option value="">--Choose subject--</option>
+        @foreach ($dater1 as $cdb1 )
+        <option value="{{$cdb1->id}}">@php
+            echo $cdb1->course_name;
+        @endphp</option>
+        @endforeach
+        </select>
+        <label class="text-danger span1">@error('subject7')  {{$message}}  @enderror</label><br>
+
+        <label for="subject8"><b>Subject 8:</b></label>
+    <select name="subject8" id="faculty">
+        <option value="">--Choose subject--</option>
+        @foreach ($dater1 as $cdb1 )
+        <option value="{{$cdb1->id}}">@php
+            echo $cdb1->course_name;
+        @endphp</option>
+        @endforeach
+        </select>
+        <label class="text-danger span1">@error('subject8')  {{$message}}  @enderror</label><br>
+
         <!--<label for="email"><b>Username:</b></label>
     <input type="email" placeholder="Enter Email" name="email" id="email" >
     <label class="text-danger span1">@error('email')  {{$message}}  @enderror</label><br>-->

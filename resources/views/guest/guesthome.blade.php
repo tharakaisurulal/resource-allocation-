@@ -2,8 +2,8 @@
 @section("content1")
     <div class="header3"><img src="{{asset('/uploads/guests/'.$dater->photo) }}" alt="image" class="img1"></div>
     <div class="header2">
-        <h6>Welcome!</h6><br>
-        <h6>{{$dater->guest_name}}</h6>
+        <h6>Welcome! {{$dater->guest_name}}</h6><br>
+        <h6>You are login as a guest</h6>
     </div>
 @endsection
 
