@@ -51,7 +51,7 @@
 
                      <label for="name"><b>Semester:</b></label>
                  <select name="semester" id="faculty">
-                     <option value="">--Choose course--</option>
+                     <option value="">--Choose Semester--</option>
                      <option value="semester1">Semester 1</option>
                      <option value="semester2">Semester 2</option>
                      </select>
@@ -59,7 +59,7 @@
 
                      <label for="name"><b>Day:</b></label>
                  <select name="day" id="faculty">
-                     <option value="">--Choose course--</option>
+                     <option value="">--Choose Day--</option>
                      <option value="Sunday">Sunday</option>
                      <option value="Monday">Monday</option>
                      <option value="Tuesday">Tuesday</option>
@@ -72,7 +72,7 @@
 
                      <label for="name"><b>CourseCode:</b></label>
                  <select name="coursecode" id="faculty">
-                     <option value="">--Choose course--</option>
+                     <option value="">--Choose CourseCode--</option>
                         @foreach ($dater1 as $cdb1 )
                      <option value="{{$cdb1->id}}">@php
                             echo $cdb1->course_code;
