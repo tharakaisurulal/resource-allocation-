@@ -691,10 +691,10 @@ class bookingController extends Controller
                             return redirect()->back()-> with('success',"successfully deleted.");
                     }
 
-                    public function viewnotice(){ //view the courses in database.
+                    public function viewnotice(){
                         $cusdata1= notice::all();
                         //return  $cusdata1;
-                            return view('admin.course.admincourseopera',['cusdata1'=> $cusdata1]);
+                            return view('notice',['cusdata1'=> $cusdata1]);
 
                     }
 

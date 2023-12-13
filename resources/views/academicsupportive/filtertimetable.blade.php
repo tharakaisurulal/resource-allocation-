@@ -82,7 +82,10 @@
                          <div class="div3">
                             <button type="submit" class="btn btn-warning">
                                 Submit
-                            </button><br>
+                            </button>
+                            <div class="but2">
+                                <button type="button" class="btn btn-warning but1" onclick="window.location.href='{{ url()->previous() }}'">Back</button>
+                              </div><br>
                             </div><br>
     </form>
      </div>

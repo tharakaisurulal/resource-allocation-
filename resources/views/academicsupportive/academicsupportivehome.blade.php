@@ -3,8 +3,8 @@
 @section("content1")
     <div class="header3"><img src="{{asset('/uploads/accsup/'.$dater->photo) }}" alt="image" class="img1"></div>
     <div class="header2">
-        <h6>Welcome!</h6><br>
-        <h6>{{$dater->acc_name}}</h6>
+        <h6>Welcome! {{$dater->acc_name}}</h6><br>
+        <h6>You are login as a Academic Sup.</h6>
     </div>
 @endsection
 
@@ -74,10 +74,30 @@
 
             <div class="face back">
                     <div class="back-content center">
-                        <h3> Time Table</h3><br>
+                        <h3 class="hh1"> Time Table</h3><br>
+                        <hr>
                             <form action="{{route('choosetimetable')}}" method="POST">
                                 @csrf
                                 <table>
+
+                                    <tr>
+                                        <td colspan="3" id="td1"><h5><b>Choose Program</b></h5></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label class="container3">BCs
+                                                <input type="radio" checked="checked" name="radio2" value="1">
+                                                <span class="checkmark"></span>
+                                              </label>
+                                        </td>
+                                        <td>
+                                            <label class="container3">BSc
+                                                <input type="radio" name="radio2" value="2">
+                                                <span class="checkmark"></span>
+                                              </label>
+                                        </td>
+                                    </tr>
+
                                     <tr>
                                         <td colspan="3" id="td1"><h5><b>Choose Level</b></h5></td>
                                     </tr>
@@ -101,7 +121,7 @@
                                               </label>
                                         </td>
                                     </tr>
-                                    <hr class="hr1">
+
                                     <tr>
                                         <td colspan="3" id="td1"><h5><b>Choose Semester</b></h5></td>
                                     </tr>

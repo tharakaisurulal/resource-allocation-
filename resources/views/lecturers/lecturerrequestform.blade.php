@@ -102,7 +102,11 @@
                             <div class="col-sm-10">
                                 <input type="reset"value="Reset" name="reset">
                                 <input type="submit"value="Submit" name="submit">
+                                <button type="button" class="but2" onclick="window.location.href='/lecturers/lecturerhome'">Back</button>
+                            </div>
+
                         </div>
+
                     </form>
             </div>
             <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

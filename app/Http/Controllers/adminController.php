@@ -175,6 +175,7 @@ class adminController extends Controller
         public function viewsuggestions($id) //view allocation suggestion page.
     {
             $guestrequest = guestrequest::find($id);
+            //return  $guestrequest;
             $Date =$guestrequest->date;
             $day = Carbon::createFromFormat('Y-m-d', $Date)->format('l');
             $guestrequest->date = $day;
