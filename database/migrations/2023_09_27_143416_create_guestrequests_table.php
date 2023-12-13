@@ -23,6 +23,7 @@ return new class extends Migration
             $table->String ('department');
             $table->String ('reason',400)->nullable();
             $table->unsignedBigInteger('guest_id');
+            $table->timestamp('read_at')->nullable();
             $table->foreign('guest_id')->references('id')->on('guests')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');

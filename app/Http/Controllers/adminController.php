@@ -13,7 +13,11 @@ use App\Models\timetable;
 use App\Models\accsupportive;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 use Carbon\Carbon;
+
+
 
 class adminController extends Controller
 {
@@ -29,9 +33,10 @@ class adminController extends Controller
         $count1 = DB::table('lecturers')->count();
         $count2 = DB::table('accsupportives')->count();
         $count3 = DB::table('guests')->count();
+        $unreadMessagesCount = DB::table('guestrequests')->count();
         //return $count3;
         //return $dater;
-            return view('admin.adminhome',compact('count','count1','count2','count3','dater'));
+            return view('admin.adminhome',compact('count','count1','count2','count3','dater','unreadMessagesCount'));
         //return view('guest.guesthome');
     }
 
@@ -231,6 +236,20 @@ class adminController extends Controller
             $lecturerrequest->delete();
             return redirect()->back()-> with('success',"successfully deleted.");
     }
+    public function showUnreadMessagesCount()
+    {
+        $admin = Auth::user(); // Assuming you are using Laravel's built-in authentication
+        $unreadMessagesCount = $admin->messages()->whereNull('read_at')->count();
+    
+        return view('admin.dashboard', compact('unreadMessagesCount'));
+    } 
 
+    public function markMessagesAsRead()
+    {
+        $admin = Auth::user();
+        $admin->messages()->whereNull('read_at')->update(['read_at' => now()]);
+        return Redirect::back()->with('success', 'Messages marked as read successfully');
+    }
 
 }
+
