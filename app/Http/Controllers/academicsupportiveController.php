@@ -1540,26 +1540,48 @@ public function choosetimetable(Request $request) //store guest registration det
         'radio'=> 'required',
         'radio1'=> 'required'
       ]);
-if((($request->radio)==1)&(($request->radio1)==1)){
+
+if((($request->radio)==1)&(($request->radio1)==1)&(($request->radio2)==1)){
     return redirect('/academicsupportive/acasuptablebcslevel1sem1');
 }
-elseif((($request->radio)==1)&(($request->radio1)==2)){
+elseif((($request->radio)==1)&(($request->radio1)==2)&(($request->radio2)==1)){
     return redirect('/academicsupportive/acasuptablebcslevel1sem2');
 }
-elseif((($request->radio)==2)&(($request->radio1)==1)){
+elseif((($request->radio)==2)&(($request->radio1)==1)&(($request->radio2)==1)){
     return redirect('/academicsupportive/acasuptablebcslevel2sem1');
 }
 
-elseif((($request->radio)==2)&(($request->radio1)==2)){
+elseif((($request->radio)==2)&(($request->radio1)==2)&(($request->radio2)==1)){
     return redirect('/academicsupportive/acasuptablebcslevel2sem2');
 }
 
-elseif((($request->radio)==3)&(($request->radio1)==1)){
+elseif((($request->radio)==3)&(($request->radio1)==1)&(($request->radio2)==1)){
     return redirect('/academicsupportive/acasuptablebcslevel3sem1');
 }
 
-elseif((($request->radio)==3)&(($request->radio1)==2)){
+elseif((($request->radio)==3)&(($request->radio1)==2)&(($request->radio2)==1)){
     return redirect('/academicsupportive/acasuptablebcslevel3sem2');
+}
+elseif((($request->radio)==1)&(($request->radio1)==1)&(($request->radio2)==2)){
+    return redirect('/academicsupportive/acasuptablebsclevel1sem1');
+}
+elseif((($request->radio)==1)&(($request->radio1)==2)&(($request->radio2)==2)){
+    return redirect('/academicsupportive/acasuptablebsclevel1sem2');
+}
+elseif((($request->radio)==2)&(($request->radio1)==1)&(($request->radio2)==2)){
+    return redirect('/academicsupportive/acasuptablebsclevel2sem1');
+}
+
+elseif((($request->radio)==2)&(($request->radio1)==2)&(($request->radio2)==2)){
+    return redirect('/academicsupportive/acasuptablebsclevel2sem2');
+}
+
+elseif((($request->radio)==3)&(($request->radio1)==1)&(($request->radio2)==2)){
+    return redirect('/academicsupportive/acasuptablebsclevel3sem1');
+}
+
+elseif((($request->radio)==3)&(($request->radio1)==2)&(($request->radio2)==2)){
+    return redirect('/academicsupportive/acasuptablebsclevel3sem2');
 }
 
     }
