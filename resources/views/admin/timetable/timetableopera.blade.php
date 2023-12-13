@@ -37,7 +37,7 @@
         @endif
 
 
-            @if (isset($data1))
+            @if (sizeof($data1)!==0)
          <div class="d-flex justify-content-center div2">
 
             <table class="table table-dark">
@@ -76,8 +76,8 @@
                               Action
                             </button>
                             <ul class="dropdown-menu">
-                              <li><a class="dropdown-item" href="" >Edit</a></li>
-                              <li><a class="dropdown-item" href="">Delete</a></li>
+                              <li><a class="dropdown-item" href="{{url('update-timetable/'.$cdb->id)}}" >Edit</a></li>
+                              <li><a class="dropdown-item" href="{{url('delete-timetable/'.$cdb->id)}}">Delete</a></li>
                               <li><a class="dropdown-item" href="">More</a></li>
                             </ul>
                           </div>
@@ -94,7 +94,7 @@
         </div>
 
         <div>
-        @if (isset($data2))
+        @if (sizeof($data2)!==0)
 
         <div class="text-center">
             <h1>Practical Timetable</h1>
@@ -136,7 +136,7 @@
                              Action
                            </button>
                            <ul class="dropdown-menu">
-                             <li><a class="dropdown-item" href="" >Edit</a></li>
+                             <li><a class="dropdown-item" href="{{url('update-timetable/'.$cdb->id)}}" >Edit</a></li>
                              <li><a class="dropdown-item" href="">Delete</a></li>
                              <li><a class="dropdown-item" href="">More</a></li>
                            </ul>

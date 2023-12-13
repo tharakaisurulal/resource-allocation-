@@ -11,6 +11,9 @@ class lecturehall extends Model
     protected $fillable = [
         'lh_name',
         'lh_capacity',
-        'lh_air_conditioner'
+        'lh_air_conditioner',
+        'lh_projector',
+        'lh_soundsystem'
     ];
+
 }

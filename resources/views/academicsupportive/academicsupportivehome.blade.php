@@ -11,7 +11,6 @@
 
 @section("content2")
         <li><a href="/logout">LOG OUT</a></li>
-        <li><a href="#">ABOUT US</a></li>
 @endsection
 
 @section("content")
@@ -151,7 +150,7 @@
                     <div class="back-content center">
                         <h3> Maintains Form</h3>
                         <div class="button">
-                            <a href="/lecturers/request"><span>CLICK</span></a>
+                            <a href=""><span>CLICK</span></a>
                         </div>
                     </div>
             </div>

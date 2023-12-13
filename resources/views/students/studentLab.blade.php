@@ -23,11 +23,28 @@
             <img src="/images/OIP.jpg" alt="" width="320px" height="500px">
         </div>
         <div class="card-body">
-            <h1 class="card-title"> Laboratory 01</h1>
+            @foreach (  $dater4 as $data )
+            @if (($data->lab_name)=="Computer lab 01")
+            <h1 class="card-title">{{$data->lab_name}}</h1>
             <p class="card-info">
-                    Capacity :     <br>
-                    Ac or Non Ac : <br>
-                    Location
+                Capacity : {{$data->lab_capacity}}<br>
+                Ac or Non Ac : @if ($data->lab_air_conditioner==null)
+                                no
+                            @else
+                                {{ $data->lab_air_conditioner }}
+                            @endif<br>
+                Projector : @if ($data->lab_projector==null)
+                            no
+                        @else
+                            {{$data->lab_projector}}
+                        @endif<br>
+                Sound System : @if ($data->lab_soundsystem==null)
+                            no
+                        @else
+                            {{$data->lab_soundsystem}}
+                        @endif<br>
+                @endif
+            @endforeach
             </p>
         </div>
     </div>
@@ -37,11 +54,28 @@
             <img src="/images/computer.jpg" alt="" width="320px" height="500px">
         </div>
         <div class="card-body">
-            <h1 class="card-title"> Laboratory 02</h1>
+            @foreach (  $dater4 as $data )
+            @if (($data->lab_name)=="Computer lab 02")
+            <h1 class="card-title">{{$data->lab_name}}</h1>
             <p class="card-info">
-                    Capacity :     <br>
-                    Ac or Non Ac : <br>
-                    Location
+                Capacity : {{$data->lab_capacity}}<br>
+                Ac or Non Ac : @if ($data->lab_air_conditioner==null)
+                                no
+                            @else
+                                {{ $data->lab_air_conditioner }}
+                            @endif<br>
+                Projector : @if ($data->lab_projector==null)
+                            no
+                        @else
+                            {{$data->lab_projector}}
+                        @endif<br>
+                Sound System : @if ($data->lab_soundsystem==null)
+                            no
+                        @else
+                            {{$data->lab_soundsystem}}
+                        @endif<br>
+                @endif
+            @endforeach
             </p>
         </div>
     </div>
@@ -51,11 +85,59 @@
             <img src="/images/computer1.jpg" alt="" width="320px" height="500px">
         </div>
         <div class="card-body">
-            <h1 class="card-title">Reserach Lab</h1>
+            @foreach (  $dater4 as $data )
+            @if (($data->lab_name)=="Computer lab 03")
+            <h1 class="card-title">{{$data->lab_name}}</h1>
             <p class="card-info">
-                    Capacity :     <br>
-                    Ac or Non Ac : <br>
-                    Location
+                Capacity : {{$data->lab_capacity}}<br>
+                Ac or Non Ac : @if ($data->lab_air_conditioner==null)
+                                no
+                            @else
+                                {{ $data->lab_air_conditioner }}
+                            @endif<br>
+                Projector : @if ($data->lab_projector==null)
+                            no
+                        @else
+                            {{$data->lab_projector}}
+                        @endif<br>
+                Sound System : @if ($data->lab_soundsystem==null)
+                            no
+                        @else
+                            {{$data->lab_soundsystem}}
+                        @endif<br>
+                @endif
+            @endforeach
+            </p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="col-6">
+            <img src="/images/computer1.jpg" alt="" width="320px" height="500px">
+        </div>
+        <div class="card-body">
+            @foreach (  $dater4 as $data )
+            @if (($data->lab_name)=="Special lab")
+            <h1 class="card-title">{{$data->lab_name}}</h1>
+            <p class="card-info">
+                Capacity : {{$data->lab_capacity}}<br>
+                Ac or Non Ac : @if ($data->lab_air_conditioner==null)
+                                no
+                            @else
+                                {{ $data->lab_air_conditioner }}
+                            @endif<br>
+                Projector : @if ($data->lab_projector==null)
+                            no
+                        @else
+                            {{$data->lab_projector}}
+                        @endif<br>
+                Sound System : @if ($data->lab_soundsystem==null)
+                            no
+                        @else
+                            {{$data->lab_soundsystem}}
+                        @endif<br>
+                @endif
+            @endforeach
             </p>
         </div>
     </div>

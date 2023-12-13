@@ -81,13 +81,13 @@
                             <span>Time :</span>-->
                                 <select name="hallname" id="location">
                                     <option value="">--Choose Location--</option>
-                                    <option value="op1">lab 1</option>
-                                    <option value="op2">lab 2</option>
-                                    <option value="op3">lab 3</option>
-                                    <option value="op4">lecture hall 01</option>
-                                    <option value="op5">lecture hall 02</option>
-                                    <option value="op6">lecture hall 03</option>
-                                    <option value="op7">Main auditorium</option>
+                                    <option value="Lecture Hall 01">Lecture Hall 01</option>
+                                    <option value="mini-auditorium">mini-auditorium</option>
+                                    <option value="main-auditorium">main-auditorium</option>
+                                    <option value="Computer lab 01">Computer lab 01</option>
+                                    <option value="Computer lab 02">Computer lab 02</option>
+                                    <option value="Computer lab 03">Computer lab 03</option>
+                                    <option value="Special lab">Special lab</option>
                                 </select>
                         </div>
                         <label class="text-danger span1">@error('hallname')  {{$message}}  @enderror</label>
@@ -95,7 +95,7 @@
                         <div class="inputBox">
                         <!--<label for="input_time3" class="col-sm-2 col-form-label">Faculty: </label>-->
                             <select name="faculty" id="faculty">
-                                <option value="">--Choose faculty--</option>
+                                <option value="">--Choose Your faculty--</option>
                             <option value="op1">Faculty of Science</option>
                             <option value="op2">Faculty of Management and Finance</option>
                             <option value="op3">Faculty of Humanities and Social Sciences	</option>
@@ -111,7 +111,7 @@
                         <div class="inputBox">
                             <input type="text" placeholder="Department of Computer Science" name="department">
                             <i><ion-icon name="school"><icon-icon></i>
-                            <span>Department : </span>
+                            <span>Your Department : </span>
                         </div>
                         <label class="text-danger span1">@error('department')  {{$message}}  @enderror</label>
 

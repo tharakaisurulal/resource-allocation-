@@ -16,6 +16,8 @@ return new class extends Migration
             $table->String ('lh_name');
             $table->String ('lh_capacity')->nullable();
             $table->String ('lh_air_conditioner')->nullable();
+            $table->String ('lh_projector')->nullable();
+            $table->String ('lh_soundsystem')->nullable();
             $table->timestamps();
         });
     }

@@ -37,7 +37,7 @@
         @endif
 
 
-            @if (isset($cusdata6))
+            @if (sizeof($cusdata6)!==0)
          <div class="d-flex justify-content-center div2">
 
             <table class="table table-dark">
@@ -64,10 +64,10 @@
                               Action
                             </button>
                             <ul class="dropdown-menu">
-                              <li><a class="dropdown-item" href="" >Edit</a></li>
-                              <li><a class="dropdown-item" href="">Delete</a></li>
-                              <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Change Password</a></li>  <!-- Button trigger modal -->
-                              <li><a class="dropdown-item" href="">More</a></li>
+                              <li><a class="dropdown-item" href="{{url('update-accsupportive/'.$cdb->id)}}" >Edit</a></li>
+                              <li><a class="dropdown-item" href="{{url('delete-accsupportive/'.$cdb->id)}}">Delete</a></li>
+                              <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#staticBackdrop{{$cdb->id}}">Change Password</a></li>  <!-- Button trigger modal -->
+
                             </ul>
                           </div>
                     </td>
@@ -82,25 +82,28 @@
          @endif
         </div>
 
-
-        <!-- Modal id="staticBackdrop"-->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="staticBackdropLabel">Change Password</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            Do You want to change password?
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-          <button type="button" class="btn btn-primary"><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">Yes</a></button>
-        </div>
-      </div>
-    </div>
-  </div>
+        @if (sizeof($cusdata6)!==0)
+                <!-- Modal id="staticBackdrop"-->
+            @for ($i=1;$i<=$cdb->id;$i++)
+            <div class="modal fade" id="staticBackdrop{{$i}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel1" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel1">Change Password</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Do You want to change password?
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                    <button type="button" class="btn btn-primary"><a class="dropdown-item" href="{{url('updateguestpassword-accsupportive/'.$i)}}" data-bs-target="#staticBackdrop1">Yes</a></button>
+                    </div>
+                </div>
+                </div>
+            </div>
+            @endfor
+        @endif
 
     </body>
 </html>

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\lecturer;
+use App\Models\lecturehall;
+use App\Models\lab;
 use App\Models\lecturerrequest;
 use Illuminate\View\View;
 
@@ -22,12 +24,12 @@ use Illuminate\Support\Facades\Cookie;
 
 class lecturerController extends Controller
 {
-    public function lecturerhome() //view the guest home page       //ok
+    public function lecturerhome() //view the lecturer home page       //ok
     {
         //return "mv";
         $dater = array();
-        if(session()->has('reid')) /*If we are logged in session variable is assign, then we get the id of logged in user and detailas are assign to $dater variable and
-                                   return the logged in user details to guest home.mainly it is used in header welcome message.*/
+        if(session()->has('reid')) /*If we logged in, the session variable is assign, then we get the id of logged in user and detailas are assign to $dater variable and
+                                   return the logged in user details to lecturer home.mainly it is used in header to dispaly the name.*/
         {
             $dater=lecturer::where('id','=',session()->get('reid'))->first();
         }
@@ -36,19 +38,30 @@ class lecturerController extends Controller
         //return view('guest.guesthome');
     }
 
-    public function viewlecturer(){  //view the students in database(inside the admin page).
+    public function viewlecturer(){  //view the lecturer in database(inside the admin page).
         $cusdata5= lecturer::all();
         //return  $cusdata4;
-        if(count($cusdata5) === 0){  //if students table is empty it does not return the $cusdata4 because it is empty.
-            return view('admin.lecturer.lecopera');
-        }
-        else{
             return view('admin.lecturer.lecopera',['cusdata5'=> $cusdata5]);
-        }
+
+    }
+
+    public function leclecturehalldetails() //view the lecturer lecturehall page
+    {
+        $dater3=lecturehall::all();
+        //return $dater3;
+        return view('lecturers.leclecturehalldetails',['dater3'=>$dater3]);
+    }
+
+    public function lecturelab() //view the lecturer lab page
+    {
+        $dater4=lab::all();
+        //return $dater3;
+        return view('lecturers.lecturerlab',['dater4'=>$dater4]);
+
     }
 
 
-    public function lecturerregistration() //view guest registration page.          //ok
+    public function lecturerregistration() //view lecturer registration page.
     {
         /*$dater = array();
         if(session()->has('reid'))
@@ -60,9 +73,9 @@ class lecturerController extends Controller
         return view('lecturer.lecturerregistration');
     }
 
-    public function lecturerrequest() //view guest request page.
+    public function lecturerrequest() //view lecturer request page.
     {
-        $dater = array();     //return the details of logged in user to guest request form.
+        $dater = array();     //return the details of logged in user to lecturer request form.
         if(session()->has('reid'))
         {
             $dater=lecturer::where('id','=',session()->get('reid'))->first();
@@ -73,7 +86,7 @@ class lecturerController extends Controller
     }
 
 
-    public function lecturerstore(Request $request) //store guest registration details.  //ok
+    public function lecturerstore(Request $request) //store lecturer registration details.  //ok
     {
     //return $request;
         $request->validate([  //validation part.
@@ -152,9 +165,9 @@ public function lecturerreq(Request $request) //request form details store to da
     $request->validate([
         //'name'=> 'required',
         //'email'=> 'required',
-        'date'=> 'required',
-        'starttime'=> 'required',
-        'endtime'=> 'required',
+        'date'=> 'required|date|after:tomorrow',
+        'starttime'=> 'required|date_format:H:i',
+        'endtime'=> 'required|date_format:H:i|after:starttime',
         'hallname'=> 'required',
         //'guest_id'=> 'required',
 
@@ -207,5 +220,89 @@ public function lecturerreq(Request $request) //request form details store to da
 
 
 }
+
+public function lecchoosetimetable()
+{
+    $dater = array();
+    if(session()->has('reid'))
+    {
+        $dater=lecturer::where('id','=',session()->get('reid'))->first();
+
+        $data1 = DB::table('timetables')
+        ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+        ->join('programs', 'timetables.program_id', '=', 'programs.id')
+        ->join('courses', 'timetables.course_id', '=', 'courses.id')
+        ->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
+    ->select('timetables.*', 'courses.course_name', 'courses.course_code', 'lecturehalls.lh_name', 'programs.program','lecturers.lec_name')
+        ->where('lec_id','=',$dater-> id)
+        ->get();
+    }
+
+    //return $data1;
+    return view('lecturers.lectimetable',['data1'=> $data1]);
+}
+
+public function updatelecturer($id) //to do the update choose the selected id and return details in to edit page.
+{
+        $lecturer = lecturer::find($id);
+        //$this-> lhcapacity = $lecturehall1->lh_capacity;
+        //$this-> lhname = $lecturehall1->lh_name;
+        //$lecturehall1->update();
+        //return $student;
+        return view('admin.lecturer.adminlectureredit', ['lecturer'=>$lecturer]);
+
+}
+
+public function updatelecturer1(Request $request,$id)  //selected id will be updated using this function.
+{
+        if(!($request->password)){
+            $lecturer = lecturer::find($id);
+            //return $request;
+                $lecturer->username = $request -> input('username');
+                $lecturer->lec_name = $request -> input('name');
+                $lecturer->lec_mobile = $request -> input('mobile');
+                $lecturer->update();
+            //return $request;
+            //return $lecturehall;
+            //$lecturehall->update($request->all());
+                //return $lecturehall;
+                return redirect()->route('admin.lecturer.lectureropera')->with('success',"Data updated successfully.");
+        }
+        else{
+            $lecturer = lecturer::find($id);
+            //return $lecturer;
+                $lecturer->password = Hash::make($request -> input('password'));
+                //$student->last_name = $request -> input('lname');
+                //$student->mobile = $request -> input('mobile');
+                //$student->first_name = $request -> input('photo');
+                //$student->username = $request -> input('username');
+                $lecturer->update();
+            //return $request;
+            //return $lecturehall;
+            //$lecturehall->update($request->all());
+                //return $lecturehall;
+                return redirect()->route('admin.lecturer.lectureropera')->with('success',"Password updated successfully.");
+        }
+
+}
+
+public function updatelecturerpassword(Request $request,$id)  //selected id password will be updated using this function.
+{
+//return $request;
+    $lecturer = lecturer::find($id);
+    //$this-> lhcapacity = $lecturehall1->lh_capacity;
+    //$this-> lhname = $lecturehall1->lh_name;
+    //$lecturehall1->update();
+    //return $lecturehall1;
+    return view('admin.lecturer.adminlecturereditpassword', ['lecturer'=>$lecturer]);
+}
+
+public function deletelecturer($id) //delete lecturer using the selected id.
+{
+        $lecturer = lecturer::find($id);
+        $lecturer->delete();
+        return redirect()->back()-> with('success',"successfully deleted.");
+}
+
 
 }

@@ -57,6 +57,8 @@ return new class extends Migration
             $table->foreign('program_Id')->references('id')->on('programs')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
+            $table->string ('level');
+            $table->string('semester');
             $table->timestamps();
         });
     }

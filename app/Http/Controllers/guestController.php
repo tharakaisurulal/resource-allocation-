@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\guest;
+use App\Models\lecturehall;
+use App\Models\lab;
 use App\Models\guestrequest;
 use Illuminate\View\View;
 
@@ -35,15 +37,27 @@ class guestController extends Controller
         //return view('guest.guesthome');
     }
 
+    public function guestlecturehalldetails() //view the guest lecturehall page
+    {
+        $dater3=lecturehall::all();
+        //return $dater3;
+        return view('guest.guestlecturehalldetails',['dater3'=>$dater3]);
+    }
+
+    public function guestlab() //view the guest lab page
+    {
+        $dater4=lab::all();
+        //return $dater3;
+        return view('guest.guestlab',['dater4'=>$dater4]);
+
+    }
+
+
     public function viewguest(){  //view the students in database(inside the admin page).
         $cusdata7= guest::all();
         //return  $cusdata4;
-        if(count($cusdata7) === 0){  //if students table is empty it does not return the $cusdata4 because it is empty.
-            return view('admin.guest.guestopera');
-        }
-        else{
             return view('admin.guest.guestopera',['cusdata7'=> $cusdata7]);
-        }
+
     }
 
     public function guestregistration() //view guest registration page.
@@ -82,7 +96,7 @@ class guestController extends Controller
             'position'=> 'required',
             'mobile'=> 'required',
             'password1'=> 'required',
-            'faculty'=> 'required'
+
 
           ]);
           //return $request;
@@ -147,6 +161,83 @@ class guestController extends Controller
     }
 }
 
+/*public function gueststore1(Request $request) //store guest registration details.
+    {
+    //return $request;
+        $request->validate([  //validation part.
+            'name'=> 'required',
+            'faculty'=> 'required',
+            'username'=> 'required|unique:guests|unique:admins|unique:lecturers|unique:students|unique:accsupportives',
+            'password'=> 'required|unique:guests|min:5|max:12',
+            'department'=> 'required',
+            'position'=> 'required',
+            'mobile'=> 'required',
+            'password1'=> 'required',
+
+
+          ]);
+          //return $request;
+    if(($request->password)==($request->password1)){  //if password input and confirm password input are same.
+          if($request->hasfile('photo')) //check photo id added or not.
+           {
+               $file = $request->file('photo');
+               $extenstion = $file->getClientOriginalExtension();
+               $filename = time().'.'.$extenstion;
+               $file->move('uploads/guests/', $filename);
+
+           }
+           else{ //if photo is not added.
+            $filename=null;
+           }
+
+
+
+          $guests=guest::create([
+            'username'=> $request -> username,
+            //'email' => $request -> email,
+            'password'=> Hash::make($request -> password),
+            'guest_name'=> $request -> name,
+            'guest_faculty'=> $request -> faculty,
+            'guest_department'=> $request -> department,
+            'guest_position'=> $request -> position,
+            'mobile'=> $request -> mobile,
+            'photo'=> $filename
+            ]);
+
+            $res = $guests ->save();
+
+            /*$image = new guest;
+            if($request->hasfile('photo'))
+           {
+               $file = $request->file('photo');
+               $extenstion = $file->getClientOriginalExtension();
+               $filename = time().'.'.$extenstion;
+               $file->move('uploads/guests/', $filename);
+               $image->photo = $filename;
+           }
+
+           $image->save();
+//return $request;
+
+
+            //$student=post::create($request->all());
+            //$student->password = Hash::make($request->input('password'));
+            //$student->save();
+            if($res){
+            //return redirect('/') -> withSuccess("you are registered");
+            //return back() -> with('success',"you are registered");
+            return redirect('/admin/guest/guestopera') -> with('success',"you are registered,please login now");
+            }
+            else{
+                return back() -> with('fail',"you are not registered");
+            }
+    }
+    else
+    {
+    return back() -> with('fail',"confirm passsword is not match");
+    }
+}*/
+
 
 //add details to the guest request table
 public function guestreq(Request $request) //request form details store to database.
@@ -156,9 +247,9 @@ public function guestreq(Request $request) //request form details store to datab
     $request->validate([
         //'name'=> 'required',
         //'email'=> 'required',
-        'date'=> 'required',
-        'starttime'=> 'required',
-        'endtime'=> 'required',
+        'date'=>  'required|date|after:tomorrow',
+        'starttime'=> 'required|date_format:H:i',
+        'endtime'=> 'required|date_format:H:i|after:starttime',
         'hallname'=> 'required',
         'faculty'=> 'required',
         'department'=> 'required',
@@ -221,4 +312,78 @@ return view('admin.adminhome',['count'=>$count]);
      //zero raw
 //}
 }*/
+        public function updateguest($id) //to do the update choose the selected id and return details in to edit page.
+        {
+                $guest = guest::find($id);
+                //$this-> lhcapacity = $lecturehall1->lh_capacity;
+                //$this-> lhname = $lecturehall1->lh_name;
+                //$lecturehall1->update();
+                //return $student;
+                return view('admin.guest.adminguestedit', ['guest'=>$guest]);
+
+        }
+
+        public function updateguest1(Request $request,$id)  //selected id will be updated using this function.
+        {
+                if(!($request->password)){
+                    $guest = guest::find($id);
+                    //return $request;
+                        $guest->username = $request -> input('username');
+                        $guest->guest_name = $request -> input('name');
+                        $guest->mobile = $request -> input('mobile');
+                        $guest->guest_position = $request -> input('position');
+                        $guest->guest_faculty = $request -> input('faculty');
+                        $guest->guest_department = $request -> input('department');
+                        $guest->update();
+                    //return $request;
+                    //return $lecturehall;
+                    //$lecturehall->update($request->all());
+                        //return $lecturehall;
+                        return redirect()->route('admin.guest.guestopera')->with('success',"Data updated successfully.");
+                }
+                else{
+                    $guest = guest::find($id);
+                    //return $lecturer;
+                        $guest->password = Hash::make($request -> input('password'));
+                        //$student->last_name = $request -> input('lname');
+                        //$student->mobile = $request -> input('mobile');
+                        //$student->first_name = $request -> input('photo');
+                        //$student->username = $request -> input('username');
+                        $guest->update();
+                    //return $request;
+                    //return $lecturehall;
+                    //$lecturehall->update($request->all());
+                        //return $lecturehall;
+                        return redirect()->route('admin.guest.guestopera')->with('success',"Data updated successfully.");
+                }
+
+        }
+
+        public function updateguestpassword($id)  //selected id will be updated using this function.
+        {
+        //return $id;
+            $guest = guest::find($id);
+            //$this-> lhcapacity = $lecturehall1->lh_capacity;
+            //$this-> lhname = $lecturehall1->lh_name;
+            //$lecturehall1->update();
+            //return $lecturehall1;
+            return view('admin.guest.adminguesteditpassword', ['guest'=>$guest]);
+        }
+
+        public function deleteguest($id) //delete course using the selected id.
+        {
+                $guest = guest::find($id);
+                $guest->delete();
+                return redirect()->back()-> with('success',"successfully deleted.");
+        }
+
+        public function guestregi2() //view the guest registraion in admin page
+    {
+        //$dater3=lecturehall::all();
+        //return $dater3;
+        return view('admin.guest.adminguestregistration');
+    }
+
+
+
 }

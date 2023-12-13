@@ -1,0 +1,248 @@
+#calendar{
+    padding: 100px;
+width: 900px;
+height: 900px;
+}
+
+/* Container needed to position the button. Adjust the width as needed */
+
+  /* Make the image responsive */
+  .img1 {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+
+  .mm {
+    position: absolute;
+    top: 19%;
+    left: 17.15%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    padding: 10px 80px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transform: skew(9deg);
+  }
+
+  .mm1 {
+    position: absolute;
+    top: 17.5%;
+    left: 39.5%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    padding: 10px 80px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transform: skew(9deg);
+    rotate: 1deg;
+  }
+
+  .mm2 {
+    position: absolute;
+    top: 67.15%;
+    left: 17.15%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    padding: 10px 80px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transform: skew(7deg);
+    rotate: 1deg;
+  }
+
+  .mm3 {
+    position: absolute;
+    top: 66%;
+    left: 39.4%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    padding: 10px 80px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transform: skew(7deg);
+    rotate: 1deg;
+  }
+
+  .mm4 {
+    position: absolute;
+    top: 30.5%;
+    left: 9.5%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    padding: 10px 80px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transform: skew(43deg);
+    rotate: -13deg;
+  }
+
+  .mm5 {
+    position: absolute;
+    top: 41.75%;
+    left: 53%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    padding: 10px 80px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transform: skew(10deg);
+  }
+
+  .mm6 {
+    position: absolute;
+    top: 37.5%;
+    left: 59.75%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    padding: 10px 80px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transform: skew(12deg);
+    rotate: 3deg;
+  }
+
+   .overlay {
+    position: absolute;
+    top: 21.5%;
+    left: 32.75%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    height: 80px;
+    width: 200px;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #008CBA;
+  }
+
+  .overlay1 {
+    position: absolute;
+    top:  20.5%;
+    left: 62%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    height: 80px;
+    width: 350px;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #008CBA;
+  }
+
+  .overlay2 {
+    position: absolute;
+    top:  69.65%;
+    left: 32.95%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    height: 80px;
+    width: 200px;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #008CBA;
+  }
+
+  .overlay3 {
+    position: absolute;
+    top: 68.3%;
+    left: 56.6%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    height: 80px;
+    width: 250px;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #008CBA;
+  }
+
+  .overlay4 {
+    position: absolute;
+    top: 37%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    height: 210px;
+    width: 220px;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #008CBA;
+
+  }
+
+  .overlay5 {
+    position: absolute;
+    top: 44.5%;
+    left: 65%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    height: 80px;
+    width: 250px;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #008CBA;
+  }
+
+  .overlay6 {
+    position: absolute;
+    top: 39.5%;
+    left: 68.75%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    height: 80px;
+    width: 200px;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #008CBA;
+  }
+
+  .container1:hover .overlay {
+    opacity: 1;
+  }
+
+  .container2:hover .overlay1 {
+    opacity: 1;
+  }
+
+  .container3:hover .overlay2 {
+    opacity: 1;
+  }
+
+  .container4:hover .overlay3 {
+    opacity: 1;
+  }
+
+  .container5:hover .overlay4 {
+    opacity: 1;
+  }
+
+  .container6:hover .overlay5 {
+    opacity: 1;
+  }
+
+  .container7:hover .overlay6 {
+    opacity: 1;
+  }
+
+
+  .text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .container {
+    position: relative;
+    width: 50%;
+  }
