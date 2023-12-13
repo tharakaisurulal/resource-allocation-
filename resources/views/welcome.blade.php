@@ -50,7 +50,7 @@
                         <div class="article">
                             <img src={{asset('images/slider3.jpg')}} alt="" class="img-responsive floating-image right">
 
-                            <h2><ins>Department Of Computer Science</ins></h2>
+                            <h2><ins><b>Department Of Computer Science</b></ins></h2>
                             <p>&nbsp&nbsp&nbspThe Department of Computer Science of the University of Ruhuna is the oldest and one of the most esteemed computer science departments in the university system of Sri Lanka. The root of the department was the Computer Unit of the University of Ruhuna and the department was established in 1997 fulfilling a long-standing need of the University. Currently the department offers undergraduate programs, postgraduate programs and training programs on demand. The department disseminates it’s knowledge not only to the university students but also to the outside society through its external courses. The department further extends its services by providing software solutions and though ICT related consultancy services. </p>
 
                             <div class="profile">
