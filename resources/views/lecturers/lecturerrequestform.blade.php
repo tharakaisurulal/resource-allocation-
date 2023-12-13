@@ -83,13 +83,13 @@
                             <span>Time :</span>-->
                                 <select name="hallname" id="location">
                                     <option value="">--Choose Location--</option>
-                                    <option value="op1">lab 1</option>
-                                    <option value="op2">lab 2</option>
-                                    <option value="op3">lab 3</option>
-                                    <option value="op4">lecture hall 01</option>
-                                    <option value="op5">lecture hall 02</option>
-                                    <option value="op6">lecture hall 03</option>
-                                    <option value="op7">Main auditorium</option>
+                                    <option value="Lecture Hall 01">Lecture Hall 01</option>
+                                    <option value="mini-auditorium">mini-auditorium</option>
+                                    <option value="main-auditorium">main-auditorium</option>
+                                    <option value="Computer lab 01">Computer lab 01</option>
+                                    <option value="Computer lab 02">Computer lab 02</option>
+                                    <option value="Computer lab 03">Computer lab 03</option>
+                                    <option value="Special lab">Special lab</option>
                                 </select>
                         </div>
                         <label class="text-danger span1">@error('hallname')  {{$message}}  @enderror</label>
@@ -102,7 +102,11 @@
                             <div class="col-sm-10">
                                 <input type="reset"value="Reset" name="reset">
                                 <input type="submit"value="Submit" name="submit">
+                                <button type="button" class="but2" onclick="window.location.href='/lecturers/lecturerhome'">Back</button>
+                            </div>
+
                         </div>
+
                     </form>
             </div>
             <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

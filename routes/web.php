@@ -34,6 +34,12 @@ Route::get('/welcome/about', function () { //route to view welcome page.
     return view('about.about');
 });
 
+//Route::get('/welcome/notice', function () { //route to view welcome page.
+    //return view('notice');
+//});
+
+Route::get('/welcome/notice', [bookingController::class, 'viewnotice'])->name('viewnotice');
+
 Route::get('/welcome/about/academicstaff', function () { //route to view welcome page.
     return view('about.AcademicStaff');
 });

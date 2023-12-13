@@ -691,5 +691,13 @@ class bookingController extends Controller
                             return redirect()->back()-> with('success',"successfully deleted.");
                     }
 
+                    public function viewnotice(){
+                        $cusdata1= notice::all();
+                        //return  $cusdata1;
+                            return view('notice',['cusdata1'=> $cusdata1]);
+
+                    }
+
+
 
 }

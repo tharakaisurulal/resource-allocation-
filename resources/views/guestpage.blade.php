@@ -1,9 +1,9 @@
 @extends('layout.header')
 @section('content2')
         <li><a href="/">HOME</a></li>
-        <li><a href="#">ABOUT US</a></li>
-        <li><a href="#">CONTACT US</a></li>
-        <li><a href="#">NOTICE</a></li>
+        <li><a href="/welcome/about">ABOUT US</a></li>
+        <li><a href="/welcome/notice">NOTICE</a></li>
+        <li><a href="/loginpage">LOGIN</a></li>
         <li><a href="/guest/guestregistration">REGISTER</a></li>
 @endsection
 
@@ -54,7 +54,7 @@
       </div>
     </div>
       <!--<div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
-          <!-- Indicators -->
+         <!--Indicators -->
           <!--<ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
             <li data-target="#myCarousel" data-slide-to="1"></li>

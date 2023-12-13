@@ -1004,6 +1004,9 @@
   <br><br>
 
   <button type="button" class="btn btn-warning but1" onclick="window.location.href='/academicsupportive/filtertimetable'">Filter Timetable</button>
+<div class="but2">
+  <button type="button" class="btn btn-warning but1" onclick="window.location.href='/academicsupportive/academicsupportivehome'">Back</button>
+</div>
 <!--
   <h1 style="text-align: left;">NOTICE</h1>
   <div class="notice-board">
