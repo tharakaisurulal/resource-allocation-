@@ -34,9 +34,11 @@ Route::get('/welcome/about', function () { //route to view welcome page.
     return view('about.about');
 });
 
-Route::get('/welcome/notice', function () { //route to view welcome page.
-    return view('notice');
-});
+//Route::get('/welcome/notice', function () { //route to view welcome page.
+    //return view('notice');
+//});
+
+Route::get('/welcome/notice', [bookingController::class, 'viewnotice'])->name('viewnotice');
 
 Route::get('/welcome/about/academicstaff', function () { //route to view welcome page.
     return view('about.AcademicStaff');
@@ -51,6 +53,8 @@ Route::get('/welcome/about/nonacademic', function () { //route to view welcome p
 });
 
 Route::get('viewsuggestions/{id}',[adminController::class, 'viewsuggestions'])->name('viewsuggestions');
+
+Route::get('viewsuggestions1/{id}',[adminController::class, 'viewsuggestions1'])->name('viewsuggestions1');
 
 Route::get('delete-guestrequest/{id}',[adminController::class, 'deleteguestrequest'])->name('deleteguestrequest');
 
