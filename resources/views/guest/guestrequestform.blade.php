@@ -123,6 +123,7 @@
                             <div class="col-sm-10">
                                 <input type="reset"value="Reset" name="reset">
                                 <input type="submit"value="Submit" name="submit">
+                                 <button type="button" class="but2" onclick="window.location.href='/guest/guesthome'">Back</button>
                         </div>
                     </form>
             </div>
