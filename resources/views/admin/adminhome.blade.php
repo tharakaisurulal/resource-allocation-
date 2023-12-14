@@ -190,8 +190,8 @@
     <button type="button" class="btn btn-warning but">
         <a href="/admin/adminhallallocation">
         <h4>Hall Allocation</h4><br>
-        <p>Unread Requests From Guest: {{ $unreadMessagesCount }}</p><br>
-        <p>Unread Requests From Lecturer: {{ $unreadMessagesCount2 }}</p>
+        <!--<p>Unread Requests From Guest: {{ $unreadMessagesCount }}</p><br>
+        <p>Unread Requests From Lecturer: {{ $unreadMessagesCount2 }}</p>-->
         </a>
     </button>
 </div>
