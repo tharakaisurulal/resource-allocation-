@@ -32,7 +32,7 @@ body{
     position: relative;
     margin-top: 80px;
     width: 450px;
-    height:1400px;
+    height:1450px;
     background:#1c1c1c;
     border-radius: 8px;
     overflow: hidden;
@@ -246,4 +246,19 @@ button{
 
 #in1{
     color: #4e4d4d;
+}
+
+.but2{
+    border: none;
+    outline: none;
+    padding: 9px 25px;
+    background: #45f3ff;
+    cursor: pointer;
+    font-size: 0.9em;
+    border-radius:4px;
+    font-weight: 600;
+    width: 100px;
+    margin-bottom: 100px;
+ margin-top: 10px;
+    height: 40px;
 }

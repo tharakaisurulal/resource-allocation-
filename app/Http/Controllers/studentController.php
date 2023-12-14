@@ -980,42 +980,133 @@ public function stchoosetimetable()
         $dat2 = array($datt11);
     }
 
+    elseif(!($dater-> subject1)&&!($dater-> subject2)&&!($dater-> subject3)&&!($dater-> subject4)&&!($dater-> subject5)&&!($dater-> subject6)&&!($dater-> subject7)&&!($dater-> subject8)){
+        $datt1 = DB::table('timetables')
+        ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+        ->join('programs', 'timetables.program_id', '=', 'programs.id')
+        ->join('courses', 'timetables.course_id', '=', 'courses.id')
+        ->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
+    ->select('timetables.*', 'courses.course_name', 'courses.course_code', 'lecturehalls.lh_name', 'programs.program','lecturers.lec_name')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject1)
+        ->get();
+
+        $datt11 = DB::table('timetables')
+        ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
+        ->join('programs', 'timetables.program_id', '=', 'programs.id')
+        ->join('courses', 'timetables.course_id', '=', 'courses.id')
+        //->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
+        ->join('labs', 'timetables.lab_id', '=', 'labs.id')
+    ->select('timetables.*', 'courses.course_name', 'courses.course_code','programs.program','labs.lab_name','accsupportives.acc_name')
+        ->where('program_id','=',$dater-> program_Id)
+        ->where('level','=',$dater-> level)
+        ->where('semester','=',$dater-> semester)
+        ->where('course_id','=',$dater-> subject1)
+    ->get();
+
+        $dat1 = array();
+        $dat2 = array();
+    }
+
 
         if(($dater-> program_Id)=='1' && ($dater-> level)=='level1' && ($dater-> semester)== 'semester1'){
+            if((sizeof($dat1)==0)&&(sizeof($dat2)==0)){
+                return back() -> with('fail',"You are not registered for Courses");
+            }
+            else{
             return view('students.stutablebcslevel1sem1',['dat1'=> $dat1,'dat2'=> $dat2]);
+            }
         }
         elseif(($dater-> program_Id)=='1' && ($dater-> level)=='level1' && ($dater-> semester)== 'semester2'){
-            return view('students.stutablebcslevel1sem2',['dat1'=> $dat1,'dat2'=> $dat2]);
+            if((sizeof($dat1)==0)&&(sizeof($dat2)==0)){
+                return back() -> with('fail',"You are not registered for Courses");
+            }
+            else{
+                return view('students.stutablebcslevel1sem2',['dat1'=> $dat1,'dat2'=> $dat2]);
+            }
+
         }
         elseif(($dater-> program_Id)=='1' && ($dater-> level)=='level2' && ($dater-> semester)== 'semester1'){
+            if((sizeof($dat1)==0)&&(sizeof($dat2)==0)){
+                return back() -> with('fail',"You are not registered for Courses");
+            }
+            else{
             return view('students.stutablebcslevel2sem1',['dat1'=> $dat1,'dat2'=> $dat2]);
+            }
         }
         elseif(($dater-> program_Id)=='1' && ($dater-> level)=='level2' && ($dater-> semester)== 'semester2'){
-            return view('students.stutablebcslevel2sem2',['dat1'=> $dat1,'dat2'=> $dat2]);
+            if((sizeof($dat1)==0)&&(sizeof($dat2)==0)){
+                return back() -> with('fail',"You are not registered for Courses");
+            }
+            else{
+                return view('students.stutablebcslevel2sem2',['dat1'=> $dat1,'dat2'=> $dat2]);
+            }
         }
         elseif(($dater-> program_Id)=='1' && ($dater-> level)=='level3' && ($dater-> semester)== 'semester1'){
+            if((sizeof($dat1)==0)&&(sizeof($dat2)==0)){
+                return back() -> with('fail',"You are not registered for Courses");
+            }
+            else{
             return view('students.stutablebcslevel3sem1',['dat1'=> $dat1,'dat2'=> $dat2]);
+            }
         }
         elseif(($dater-> program_Id)=='1' && ($dater-> level)=='level3' && ($dater-> semester)== 'semester2'){
+            if((sizeof($dat1)==0)&&(sizeof($dat2)==0)){
+                return back() -> with('fail',"You are not registered for Courses");
+            }
+            else{
             return view('students.stutablebcslevel3sem2',['dat1'=> $dat1,'dat2'=> $dat2]);
+            }
         }
         elseif(($dater-> program_Id)=='2' && ($dater-> level)=='level1' && ($dater-> semester)== 'semester1'){
+            if((sizeof($dat1)==0)&&(sizeof($dat2)==0)){
+                return back() -> with('fail',"You are not registered for Courses");
+            }
+            else{
             return view('students.stutablebsclevel1sem1',['dat1'=> $dat1,'dat2'=> $dat2]);
+            }
         }
         elseif(($dater-> program_Id)=='2' && ($dater-> level)=='level1' && ($dater-> semester)== 'semester2'){
+            if((sizeof($dat1)==0)&&(sizeof($dat2)==0)){
+                return back() -> with('fail',"You are not registered for Courses");
+            }
+            else{
             return view('students.stutablebsclevel1sem2',['dat1'=> $dat1,'dat2'=> $dat2]);
+            }
         }
         elseif(($dater-> program_Id)=='2' && ($dater-> level)=='level2' && ($dater-> semester)== 'semester1'){
+            if((sizeof($dat1)==0)&&(sizeof($dat2)==0)){
+                return back() -> with('fail',"You are not registered for Courses");
+            }
+            else{
             return view('students.stutablebsclevel2sem1',['dat1'=> $dat1,'dat2'=> $dat2]);
+            }
         }
         elseif(($dater-> program_Id)=='2' && ($dater-> level)=='level2' && ($dater-> semester)== 'semester2'){
+            if((sizeof($dat1)==0)&&(sizeof($dat2)==0)){
+                return back() -> with('fail',"You are not registered for Courses");
+            }
+            else{
             return view('students.stutablebsclevel2sem2',['dat1'=> $dat1,'dat2'=> $dat2]);
+            }
         }
         elseif(($dater-> program_Id)=='2' && ($dater-> level)=='level3' && ($dater-> semester)== 'semester1'){
+            if((sizeof($dat1)==0)&&(sizeof($dat2)==0)){
+                return back() -> with('fail',"You are not registered for Courses");
+            }
+            else{
             return view('students.stutablebsclevel3sem1',['dat1'=> $dat1,'dat2'=> $dat2]);
+            }
         }
         elseif(($dater-> program_Id)=='2' && ($dater-> level)=='level3' && ($dater-> semester)== 'semester2'){
+            if((sizeof($dat1)==0)&&(sizeof($dat2)==0)){
+                return back() -> with('fail',"You are not registered for Courses");
+            }
+            else{
             return view('students.stutablebsclevel3sem2',['dat1'=> $dat1,'dat2'=> $dat2]);
+            }
         }
 
 

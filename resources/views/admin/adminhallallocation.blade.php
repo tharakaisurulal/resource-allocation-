@@ -89,7 +89,7 @@
                           Action
                         </button>
                         <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="{{url('viewsuggestions/'.$cdb->id)}}" >Suggestions</a></li>
+                          <li><a class="dropdown-item" href="{{url('viewsuggestions1/'.$cdb->id)}}" >Suggestions</a></li>
                           <li><a class="dropdown-item" href="{{url('delete-lecturerrequest/'.$cdb->id)}}">Delete</a></li>
                         </ul>
                       </div>
