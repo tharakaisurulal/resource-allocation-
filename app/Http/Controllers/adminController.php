@@ -179,26 +179,30 @@ class adminController extends Controller
             $Date =$guestrequest->date;
             $day = Carbon::createFromFormat('Y-m-d', $Date)->format('l');
             $guestrequest->date = $day;
-            return  $guestrequest;
-
-                $data1 = DB::table('timetables')
-                ->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
-                ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
-                //->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
-            //->join('programs', 'timetables.program_id', '=', 'programs.id')
-            ->join('courses', 'timetables.course_id', '=', 'courses.id')
-                ->select('timetables.*','lecturers.lec_name', 'courses.course_name','courses.course_code','lecturehalls.lh_name')
-                //->where('program_id','=',$request -> program)
-                //->where('level','=',$request -> level)
-                ->where('day','=',$day)
-                //->where('course_id','=',$request -> course)
-                //->where('semester','=',$request -> semester)
-                //->where('start_time','=',$request -> starttime)
-                //->where('end_time','=',$request -> endtime)
-                //->where('lec_id','=',$request -> lecturername)
-                //->where('lh_id','=',$request -> lecturehall)
-                ->get();
-
+            //return  $guestrequest;
+    if((($guestrequest -> hall_name)=="Lecture Hall 01")||(($guestrequest -> hall_name)=="mini-auditorium")||(($guestrequest -> hall_name)=="main-auditorium") ){
+                    $data1 = DB::table('timetables')
+                    ->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
+                    ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+                    //->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+                //->join('programs', 'timetables.program_id', '=', 'programs.id')
+                ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                    ->select('timetables.*','lecturers.lec_name', 'courses.course_name','courses.course_code','lecturehalls.lh_name')
+                    //->where('program_id','=',$request -> program)
+                    //->where('level','=',$request -> level)
+                    ->where('day','=',$day)
+                    //->where('course_id','=',$request -> course)
+                    //->where('semester','=',$request -> semester)
+                    //->where('start_time','=',$request -> starttime)
+                    //->where('end_time','=',$request -> endtime)
+                    //->where('lec_id','=',$request -> lecturername)
+                    //->where('lh_id','=',$request -> lecturehall)
+                    ->get();
+//return $data1;
+                    $data2 = array();
+                    return view('admin.timetablesuggestions',['data1'=> $data1,'data2'=> $data2]);
+    }
+    else{
                 $data2 = DB::table('timetables')
             //->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
             ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
@@ -213,8 +217,10 @@ class adminController extends Controller
             ->get();
             //dd($dat2);
             //return $dat2;
-
+            $data1 = array();
             return view('admin.timetablesuggestions',['data1'=> $data1,'data2'=> $data2]);
+    }
+
 
 
     }

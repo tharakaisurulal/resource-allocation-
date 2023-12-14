@@ -17,6 +17,11 @@
             <img src="/images/logo_copy.png" class="logo">
 
             @yield('content1')
+            <div class="header3"><img src="/images/admin.jpg" alt="image" class="img1"></div>
+                <div class="header2">
+                    <h6>Welcome! {{$dater->admin_name}}</h6><br>
+                    <h6>You are login as a Admin.</h6>
+                </div>
 
         <input type="checkbox" id="openSidebarMenu" hidden>
         <label for="openSidebarMenu" class="sidebarIconToggle">
