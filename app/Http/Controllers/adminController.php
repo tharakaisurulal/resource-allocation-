@@ -34,9 +34,10 @@ class adminController extends Controller
         $count2 = DB::table('accsupportives')->count();
         $count3 = DB::table('guests')->count();
         $unreadMessagesCount = DB::table('guestrequests')->count();
+        $unreadMessagesCount2 = DB::table('lecturerrequests')->count();
         //return $count3;
         //return $dater;
-            return view('admin.adminhome',compact('count','count1','count2','count3','dater','unreadMessagesCount'));
+            return view('admin.adminhome',compact('count','count1','count2','count3','dater','unreadMessagesCount','unreadMessagesCount2'));
         //return view('guest.guesthome');
     }
 
@@ -244,12 +245,24 @@ class adminController extends Controller
         return view('admin.dashboard', compact('unreadMessagesCount'));
     } 
 
+    public function showUnreadMessagesCount2()
+    {
+        $admin = Auth::user(); // Assuming you are using Laravel's built-in authentication
+        $unreadMessagesCount2 = $admin->messages()->whereNull('read_at')->count();
+    
+        return view('admin.dashboard', compact('unreadMessagesCount2'));
+    } 
+
     public function markMessagesAsRead()
     {
         $admin = Auth::user();
         $admin->messages()->whereNull('read_at')->update(['read_at' => now()]);
         return Redirect::back()->with('success', 'Messages marked as read successfully');
     }
+    
+
+
+    
 
 }
 
