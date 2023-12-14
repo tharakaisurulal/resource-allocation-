@@ -20,7 +20,7 @@
     <div class="div1">
     <div class="card">
         <div class="col-6">
-            <img src="/images/OIP.jpg" alt="" width="320px" height="500px">
+            <img src="/images/mini1.jpg" alt="" width="320px" height="500px">
         </div>
         <div class="card-body">
             @foreach (  $dater4 as $data )
@@ -51,7 +51,7 @@
 
     <div class="card">
         <div class="col-6">
-            <img src="/images/computer.jpg" alt="" width="320px" height="500px">
+            <img src="/images/mini2.jpg" alt="" width="320px" height="500px">
         </div>
         <div class="card-body">
             @foreach (  $dater4 as $data )
@@ -82,7 +82,7 @@
 
     <div class="card">
         <div class="col-6">
-            <img src="/images/computer1.jpg" alt="" width="320px" height="500px">
+            <img src="/images/lab1.jpeg" alt="" width="320px" height="500px">
         </div>
         <div class="card-body">
             @foreach (  $dater4 as $data )
@@ -113,7 +113,7 @@
 
     <div class="card">
         <div class="col-6">
-            <img src="/images/computer1.jpg" alt="" width="320px" height="500px">
+            <img src="/images/special1.jpg" alt="" width="320px" height="500px">
         </div>
         <div class="card-body">
             @foreach (  $dater4 as $data )
