@@ -191,6 +191,7 @@ public function updatetimetable2(Request $request,$id)  //selected id will be up
 
 public function deletetimetable($id) //delete programs using the selected id.
 {
+    //return $id;
         $timetable = timetable::find($id);
         $timetable->delete();
         return redirect()->back()-> with('success',"successfully deleted.");
