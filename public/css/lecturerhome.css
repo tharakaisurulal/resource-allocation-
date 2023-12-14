@@ -65,8 +65,9 @@ body{
 
 .card .back  h3{
     font-size: 30px;
-    margin-top: 20px;
+    margin-top: 10px;
     letter-spacing: 2px;
+
 }
 
 .card:hover .front{
@@ -169,6 +170,11 @@ body{
         text-align: left;
     }
 
-
+.hh1{
+    font-size: 30px;
+    margin-top: 10px;
+    letter-spacing: 2px;
+    margin-bottom: -20px;
+}
 
 
