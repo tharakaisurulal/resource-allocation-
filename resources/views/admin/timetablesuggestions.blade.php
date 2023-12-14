@@ -32,45 +32,43 @@
 
     <TD> 8.00-8.55</TD>
       <TD>
-        @foreach ($data1 as $cdb)
-            @if ((($cdb->day)=="Monday")&&(($cdb->start_time)=="08:00"))
-            @php
-                $color = "green";
-                echo $cdb->course_name;
-            @endphp
-                  <!--theory-->
-                  <div class="colo" style="background-color:{{$color}}">{{$color}}</div>
-            @endif
 
+        @foreach ($data1 as $cdb)      <!--theory-->
+            @if ((($cdb->day)=="Monday")&&(($cdb->start_time)=="08:00"))
+                @php
+                    $color = "green";
+                @endphp
+                  <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>
+            @endif
         @endforeach
 
         @foreach ($data2 as $cdb)
-        @if ((($cdb->day)=="Monday")&&(($cdb->start_time)=="08:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->acc_name}}</div>
-            <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
-        @endif
-    @endforeach
+            @if ((($cdb->day)=="Monday")&&(($cdb->start_time)=="08:00"))
+                @php
+                    $color = "green";
+                 @endphp
+                    <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>    <!--practical-->
+            @endif
+        @endforeach
         </TD>
 
 
       <TD>
         @foreach ($data1 as $cdb)
         @if ((($cdb->day)=="Tuesday")&&(($cdb->start_time)=="08:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->lec_name}}</div>
-            <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+        @php
+        $color = "green";
+    @endphp
+      <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>   <!--theory-->
         @endif
         @endforeach
 
         @foreach ($data2 as $cdb)
         @if ((($cdb->day)=="Tuesday")&&(($cdb->start_time)=="08:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->acc_name}}</div>
-            <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+        @php
+        $color = "green";
+     @endphp
+        <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>    <!--practical-->
         @endif
         @endforeach
 
@@ -78,19 +76,19 @@
       <TD>
         @foreach ($data1 as $cdb)
         @if ((($cdb->day)=="Wednesday")&&(($cdb->start_time)=="08:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->lec_name}}</div>
-            <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+        @php
+        $color = "green";
+    @endphp
+      <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>   <!--theory-->
         @endif
         @endforeach
 
         @foreach ($data2 as $cdb)
         @if ((($cdb->day)=="Wednesday")&&(($cdb->start_time)=="08:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->acc_name}}</div>
-            <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+        @php
+        $color = "green";
+     @endphp
+        <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>     <!--practical-->
         @endif
         @endforeach
 
@@ -98,19 +96,19 @@
       <TD>
         @foreach ($data1 as $cdb)
         @if ((($cdb->day)=="Thursday")&&(($cdb->start_time)=="08:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->lec_name}}</div>
-            <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+        @php
+        $color = "green";
+    @endphp
+      <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>   <!--theory-->
         @endif
         @endforeach
 
         @foreach ($data2 as $cdb)
         @if ((($cdb->day)=="Thursday")&&(($cdb->start_time)=="08:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->acc_name}}</div>
-            <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+        @php
+        $color = "green";
+     @endphp
+        <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>      <!--practical-->
         @endif
         @endforeach
 
@@ -118,19 +116,19 @@
       <TD>
         @foreach ($data1 as $cdb)
         @if ((($cdb->day)=="Friday")&&(($cdb->start_time)=="08:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->lec_name}}</div>
-            <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+        @php
+        $color = "green";
+    @endphp
+      <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>   <!--theory-->
         @endif
         @endforeach
 
         @foreach ($data2 as $cdb)
         @if ((($cdb->day)=="Friday")&&(($cdb->start_time)=="08:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->acc_name}}</div>
-            <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+        @php
+        $color = "green";
+     @endphp
+        <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>     <!--practical-->
         @endif
         @endforeach
 
@@ -142,19 +140,19 @@
       <TD>
         @foreach ($data1 as $cdb)
             @if ((($cdb->day)=="Monday")&&(($cdb->start_time)=="09:00"))
-                <div class="name" >{{$cdb->course_name}}</div>
-                <div class="code" >{{$cdb->course_code}}</div>
-                <div class="lecturer">{{$cdb->lec_name}}</div>
-                <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+            @php
+            $color = "green";
+        @endphp
+          <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>  <!--theory-->
             @endif
         @endforeach
 
         @foreach ($data2 as $cdb)
         @if ((($cdb->day)=="Monday")&&(($cdb->start_time)=="09:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->acc_name}}</div>
-            <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+        @php
+        $color = "green";
+     @endphp
+        <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>      <!--practical-->
         @endif
     @endforeach
         </TD>
@@ -162,19 +160,19 @@
         <TD>
             @foreach ($data1 as $cdb)
             @if ((($cdb->day)=="Tuesday")&&(($cdb->start_time)=="09:00"))
-                <div class="name" >{{$cdb->course_name}}</div>
-                <div class="code" >{{$cdb->course_code}}</div>
-                <div class="lecturer">{{$cdb->lec_name}}</div>
-                <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+            @php
+            $color = "green";
+        @endphp
+          <div class="colo" style="background-color:{{$color}}"> &nbsp;</div> <!--theory-->
             @endif
             @endforeach
 
             @foreach ($data2 as $cdb)
             @if ((($cdb->day)=="Tuesday")&&(($cdb->start_time)=="09:00"))
-                <div class="name" >{{$cdb->course_name}}</div>
-                <div class="code" >{{$cdb->course_code}}</div>
-                <div class="lecturer">{{$cdb->acc_name}}</div>
-                <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+            @php
+            $color = "green";
+         @endphp
+            <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>     <!--practical-->
             @endif
             @endforeach
         </TD>
@@ -182,19 +180,19 @@
         <TD>
             @foreach ($data1 as $cdb)
             @if ((($cdb->day)=="Wednesday")&&(($cdb->start_time)=="09:00"))
-                <div class="name" >{{$cdb->course_name}}</div>
-                <div class="code" >{{$cdb->course_code}}</div>
-                <div class="lecturer">{{$cdb->lec_name}}</div>
-                <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+            @php
+            $color = "green";
+        @endphp
+          <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>  <!--theory-->
             @endif
             @endforeach
 
             @foreach ($data2 as $cdb)
             @if ((($cdb->day)=="Wednesday")&&(($cdb->start_time)=="09:00"))
-                <div class="name" >{{$cdb->course_name}}</div>
-                <div class="code" >{{$cdb->course_code}}</div>
-                <div class="lecturer">{{$cdb->acc_name}}</div>
-                <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+            @php
+            $color = "green";
+         @endphp
+            <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>     <!--practical-->
             @endif
             @endforeach
 
@@ -203,19 +201,19 @@
         <TD>
             @foreach ($data1 as $cdb)
             @if ((($cdb->day)=="Thursday")&&(($cdb->start_time)=="09:00"))
-                <div class="name" >{{$cdb->course_name}}</div>
-                <div class="code" >{{$cdb->course_code}}</div>
-                <div class="lecturer">{{$cdb->lec_name}}</div>
-                <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+            @php
+            $color = "green";
+        @endphp
+          <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>   <!--theory-->
             @endif
             @endforeach
 
             @foreach ($data2 as $cdb)
             @if ((($cdb->day)=="Thursday")&&(($cdb->start_time)=="09:00"))
-                <div class="name" >{{$cdb->course_name}}</div>
-                <div class="code" >{{$cdb->course_code}}</div>
-                <div class="lecturer">{{$cdb->acc_name}}</div>
-                <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+            @php
+            $color = "green";
+         @endphp
+            <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>     <!--practical-->
             @endif
             @endforeach
             </TD>
@@ -223,19 +221,19 @@
             <TD>
                 @foreach ($data1 as $cdb)
                 @if ((($cdb->day)=="Friday")&&(($cdb->start_time)=="09:00"))
-                    <div class="name" >{{$cdb->course_name}}</div>
-                    <div class="code" >{{$cdb->course_code}}</div>
-                    <div class="lecturer">{{$cdb->lec_name}}</div>
-                    <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+                @php
+                $color = "green";
+            @endphp
+              <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>  <!--theory-->
                 @endif
                 @endforeach
 
                 @foreach ($data2 as $cdb)
                 @if ((($cdb->day)=="Friday")&&(($cdb->start_time)=="09:00"))
-                    <div class="name" >{{$cdb->course_name}}</div>
-                    <div class="code" >{{$cdb->course_code}}</div>
-                    <div class="lecturer">{{$cdb->acc_name}}</div>
-                    <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+                @php
+                $color = "green";
+             @endphp
+                <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>     <!--practical-->
                 @endif
                 @endforeach
                 </TD>
@@ -248,19 +246,19 @@
       <TD>
         @foreach ($data1 as $cdb)
         @if ((($cdb->day)=="Monday")&&(($cdb->start_time)=="10:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->lec_name}}</div>
-            <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+        @php
+        $color = "green";
+    @endphp
+      <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>   <!--theory-->
         @endif
     @endforeach
 
     @foreach ($data2 as $cdb)
     @if ((($cdb->day)=="Monday")&&(($cdb->start_time)=="10:00"))
-        <div class="name" >{{$cdb->course_name}}</div>
-        <div class="code" >{{$cdb->course_code}}</div>
-        <div class="lecturer">{{$cdb->acc_name}}</div>
-        <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+    @php
+    $color = "green";
+ @endphp
+    <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>    <!--practical-->
     @endif
 @endforeach
 
@@ -269,19 +267,19 @@
       <TD>
         @foreach ($data1 as $cdb)
         @if ((($cdb->day)=="Tuesday")&&(($cdb->start_time)=="10:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->lec_name}}</div>
-            <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+        @php
+        $color = "green";
+    @endphp
+      <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>   <!--theory-->
         @endif
         @endforeach
 
         @foreach ($data2 as $cdb)
         @if ((($cdb->day)=="Tuesday")&&(($cdb->start_time)=="10:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->acc_name}}</div>
-            <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+        @php
+        $color = "green";
+     @endphp
+        <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>      <!--practical-->
         @endif
         @endforeach
 
@@ -289,19 +287,19 @@
       <TD>
         @foreach ($data1 as $cdb)
         @if ((($cdb->day)=="Wednesday")&&(($cdb->start_time)=="10:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->lec_name}}</div>
-            <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+        @php
+        $color = "green";
+    @endphp
+      <div class="colo" style="background-color:{{$color}}"> &nbsp;</div><!--theory-->
         @endif
         @endforeach
 
         @foreach ($data2 as $cdb)
         @if ((($cdb->day)=="Wednesday")&&(($cdb->start_time)=="10:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->acc_name}}</div>
-            <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+        @php
+        $color = "green";
+     @endphp
+        <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>      <!--practical-->
         @endif
         @endforeach
         </TD>
@@ -309,19 +307,19 @@
       <TD>
         @foreach ($data1 as $cdb)
         @if ((($cdb->day)=="Thursday")&&(($cdb->start_time)=="10:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->lec_name}}</div>
-            <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+        @php
+        $color = "green";
+    @endphp
+      <div class="colo" style="background-color:{{$color}}"> &nbsp;</div> <!--theory-->
         @endif
         @endforeach
 
         @foreach ($data2 as $cdb)
         @if ((($cdb->day)=="Thursday")&&(($cdb->start_time)=="10:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->acc_name}}</div>
-            <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+        @php
+        $color = "green";
+     @endphp
+        <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>     <!--practical-->
         @endif
         @endforeach
 
@@ -331,19 +329,19 @@
       <TD>
         @foreach ($data1 as $cdb)
         @if ((($cdb->day)=="Friday")&&(($cdb->start_time)=="10:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->lec_name}}</div>
-            <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+        @php
+        $color = "green";
+    @endphp
+      <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>   <!--theory-->
         @endif
         @endforeach
 
         @foreach ($data2 as $cdb)
         @if ((($cdb->day)=="Friday")&&(($cdb->start_time)=="10:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->acc_name}}</div>
-            <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+        @php
+        $color = "green";
+     @endphp
+        <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>      <!--practical-->
         @endif
         @endforeach
 
@@ -355,19 +353,19 @@
       <TD>
         @foreach ($data1 as $cdb)
         @if ((($cdb->day)=="Monday")&&(($cdb->start_time)=="11:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->lec_name}}</div>
-            <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+        @php
+        $color = "green";
+    @endphp
+      <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>   <!--theory-->
         @endif
     @endforeach
 
     @foreach ($data2 as $cdb)
     @if ((($cdb->day)=="Monday")&&(($cdb->start_time)=="11:00"))
-        <div class="name" >{{$cdb->course_name}}</div>
-        <div class="code" >{{$cdb->course_code}}</div>
-        <div class="lecturer">{{$cdb->acc_name}}</div>
-        <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+    @php
+    $color = "green";
+ @endphp
+    <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>    <!--practical-->
     @endif
 @endforeach
 
@@ -376,19 +374,19 @@
       <TD>
         @foreach ($data1 as $cdb)
         @if ((($cdb->day)=="Tuesday")&&(($cdb->start_time)=="11:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->lec_name}}</div>
-            <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+        @php
+        $color = "green";
+    @endphp
+      <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>   <!--theory-->
         @endif
         @endforeach
 
         @foreach ($data2 as $cdb)
         @if ((($cdb->day)=="Tuesday")&&(($cdb->start_time)=="11:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->acc_name}}</div>
-            <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+        @php
+        $color = "green";
+     @endphp
+        <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>   <!--practical-->
         @endif
         @endforeach
 
@@ -396,19 +394,19 @@
       <TD>
         @foreach ($data1 as $cdb)
         @if ((($cdb->day)=="Wednesday")&&(($cdb->start_time)=="11:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->lec_name}}</div>
-            <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+        @php
+        $color = "green";
+    @endphp
+      <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>   <!--theory-->
         @endif
         @endforeach
 
         @foreach ($data2 as $cdb)
         @if ((($cdb->day)=="Wednesday")&&(($cdb->start_time)=="11:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->acc_name}}</div>
-            <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+        @php
+        $color = "green";
+     @endphp
+        <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>     <!--practical-->
         @endif
         @endforeach
         </TD>
@@ -416,19 +414,19 @@
       <TD>
         @foreach ($data1 as $cdb)
         @if ((($cdb->day)=="Thursday")&&(($cdb->start_time)=="11:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->lec_name}}</div>
-            <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+        @php
+        $color = "green";
+    @endphp
+      <div class="colo" style="background-color:{{$color}}"> &nbsp;</div> <!--theory-->
         @endif
         @endforeach
 
         @foreach ($data2 as $cdb)
         @if ((($cdb->day)=="Thursday")&&(($cdb->start_time)=="11:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->acc_name}}</div>
-            <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+        @php
+        $color = "green";
+     @endphp
+        <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>      <!--practical-->
         @endif
         @endforeach
 
@@ -438,19 +436,19 @@
       <TD>
         @foreach ($data1 as $cdb)
         @if ((($cdb->day)=="Friday")&&(($cdb->start_time)=="11:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->lec_name}}</div>
-            <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+        @php
+        $color = "green";
+    @endphp
+      <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>    <!--theory-->
         @endif
         @endforeach
 
         @foreach ($data2 as $cdb)
         @if ((($cdb->day)=="Friday")&&(($cdb->start_time)=="11:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->acc_name}}</div>
-            <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+        @php
+        $color = "green";
+     @endphp
+        <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>    <!--practical-->
         @endif
         @endforeach
 
@@ -467,19 +465,19 @@
       <TD>
         @foreach ($data1 as $cdb)
         @if ((($cdb->day)=="Monday")&&(($cdb->start_time)=="13:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->lec_name}}</div>
-            <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+        @php
+        $color = "green";
+    @endphp
+      <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>    <!--theory-->
         @endif
     @endforeach
 
     @foreach ($data2 as $cdb)
     @if ((($cdb->day)=="Monday")&&(($cdb->start_time)=="13:00"))
-        <div class="name" >{{$cdb->course_name}}</div>
-        <div class="code" >{{$cdb->course_code}}</div>
-        <div class="lecturer">{{$cdb->acc_name}}</div>
-        <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+    @php
+    $color = "green";
+ @endphp
+    <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>     <!--practical-->
     @endif
 @endforeach
 
@@ -488,19 +486,19 @@
       <TD>
         @foreach ($data1 as $cdb)
         @if ((($cdb->day)=="Tuesday")&&(($cdb->start_time)=="13:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->lec_name}}</div>
-            <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+        @php
+        $color = "green";
+    @endphp
+      <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>   <!--theory-->
         @endif
         @endforeach
 
         @foreach ($data2 as $cdb)
         @if ((($cdb->day)=="Tuesday")&&(($cdb->start_time)=="13:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->acc_name}}</div>
-            <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+        @php
+        $color = "green";
+     @endphp
+        <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>      <!--practical-->
         @endif
         @endforeach
 
@@ -508,19 +506,19 @@
       <TD>
         @foreach ($data1 as $cdb)
         @if ((($cdb->day)=="Wednesday")&&(($cdb->start_time)=="13:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->lec_name}}</div>
-            <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+        @php
+        $color = "green";
+    @endphp
+      <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>   <!--theory-->
         @endif
         @endforeach
 
         @foreach ($data2 as $cdb)
         @if ((($cdb->day)=="Wednesday")&&(($cdb->start_time)=="13:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->acc_name}}</div>
-            <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+        @php
+        $color = "green";
+     @endphp
+        <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>    <!--practical-->
         @endif
         @endforeach
         </TD>
@@ -528,19 +526,19 @@
       <TD>
         @foreach ($data1 as $cdb)
         @if ((($cdb->day)=="Thursday")&&(($cdb->start_time)=="13:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->lec_name}}</div>
-            <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+        @php
+        $color = "green";
+    @endphp
+      <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>   <!--theory-->
         @endif
         @endforeach
 
         @foreach ($data2 as $cdb)
         @if ((($cdb->day)=="Thursday")&&(($cdb->start_time)=="13:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->acc_name}}</div>
-            <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+        @php
+        $color = "green";
+     @endphp
+        <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>      <!--practical-->
         @endif
         @endforeach
 
@@ -550,19 +548,19 @@
       <TD>
         @foreach ($data1 as $cdb)
         @if ((($cdb->day)=="Friday")&&(($cdb->start_time)=="13:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->lec_name}}</div>
-            <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+        @php
+        $color = "green";
+    @endphp
+      <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>   <!--theory-->
         @endif
         @endforeach
 
         @foreach ($data2 as $cdb)
         @if ((($cdb->day)=="Friday")&&(($cdb->start_time)=="13:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->acc_name}}</div>
-            <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+        @php
+        $color = "green";
+     @endphp
+        <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>      <!--practical-->
         @endif
         @endforeach
 
@@ -575,19 +573,19 @@
         <TD>
             @foreach ($data1 as $cdb)
             @if ((($cdb->day)=="Monday")&&(($cdb->start_time)=="14:00"))
-                <div class="name" >{{$cdb->course_name}}</div>
-                <div class="code" >{{$cdb->course_code}}</div>
-                <div class="lecturer">{{$cdb->lec_name}}</div>
-                <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+            @php
+            $color = "green";
+        @endphp
+          <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>   <!--theory-->
             @endif
         @endforeach
 
         @foreach ($data2 as $cdb)
         @if ((($cdb->day)=="Monday")&&(($cdb->start_time)=="14:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->acc_name}}</div>
-            <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+        @php
+        $color = "green";
+     @endphp
+        <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>    <!--practical-->
         @endif
     @endforeach
 
@@ -596,19 +594,19 @@
           <TD>
             @foreach ($data1 as $cdb)
             @if ((($cdb->day)=="Tuesday")&&(($cdb->start_time)=="14:00"))
-                <div class="name" >{{$cdb->course_name}}</div>
-                <div class="code" >{{$cdb->course_code}}</div>
-                <div class="lecturer">{{$cdb->lec_name}}</div>
-                <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+            @php
+            $color = "green";
+        @endphp
+          <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>    <!--theory-->
             @endif
             @endforeach
 
             @foreach ($data2 as $cdb)
             @if ((($cdb->day)=="Tuesday")&&(($cdb->start_time)=="14:00"))
-                <div class="name" >{{$cdb->course_name}}</div>
-                <div class="code" >{{$cdb->course_code}}</div>
-                <div class="lecturer">{{$cdb->acc_name}}</div>
-                <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+            @php
+            $color = "green";
+         @endphp
+            <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>     <!--practical-->
             @endif
             @endforeach
 
@@ -616,19 +614,19 @@
           <TD>
             @foreach ($data1 as $cdb)
             @if ((($cdb->day)=="Wednesday")&&(($cdb->start_time)=="14:00"))
-                <div class="name" >{{$cdb->course_name}}</div>
-                <div class="code" >{{$cdb->course_code}}</div>
-                <div class="lecturer">{{$cdb->lec_name}}</div>
-                <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+            @php
+            $color = "green";
+        @endphp
+          <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>    <!--theory-->
             @endif
             @endforeach
 
             @foreach ($data2 as $cdb)
             @if ((($cdb->day)=="Wednesday")&&(($cdb->start_time)=="14:00"))
-                <div class="name" >{{$cdb->course_name}}</div>
-                <div class="code" >{{$cdb->course_code}}</div>
-                <div class="lecturer">{{$cdb->acc_name}}</div>
-                <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+            @php
+            $color = "green";
+         @endphp
+            <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>      <!--practical-->
             @endif
             @endforeach
             </TD>
@@ -636,19 +634,19 @@
           <TD>
             @foreach ($data1 as $cdb)
             @if ((($cdb->day)=="Thursday")&&(($cdb->start_time)=="14:00"))
-                <div class="name" >{{$cdb->course_name}}</div>
-                <div class="code" >{{$cdb->course_code}}</div>
-                <div class="lecturer">{{$cdb->lec_name}}</div>
-                <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+            @php
+            $color = "green";
+        @endphp
+          <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>    <!--theory-->
             @endif
             @endforeach
 
             @foreach ($data2 as $cdb)
             @if ((($cdb->day)=="Thursday")&&(($cdb->start_time)=="14:00"))
-                <div class="name" >{{$cdb->course_name}}</div>
-                <div class="code" >{{$cdb->course_code}}</div>
-                <div class="lecturer">{{$cdb->acc_name}}</div>
-                <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+            @php
+            $color = "green";
+         @endphp
+            <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>      <!--practical-->
             @endif
             @endforeach
 
@@ -658,19 +656,19 @@
           <TD>
             @foreach ($data1 as $cdb)
             @if ((($cdb->day)=="Friday")&&(($cdb->start_time)=="14:00"))
-                <div class="name" >{{$cdb->course_name}}</div>
-                <div class="code" >{{$cdb->course_code}}</div>
-                <div class="lecturer">{{$cdb->lec_name}}</div>
-                <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+            @php
+            $color = "green";
+        @endphp
+          <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>   <!--theory-->
             @endif
             @endforeach
 
             @foreach ($data2 as $cdb)
             @if ((($cdb->day)=="Friday")&&(($cdb->start_time)=="14:00"))
-                <div class="name" >{{$cdb->course_name}}</div>
-                <div class="code" >{{$cdb->course_code}}</div>
-                <div class="lecturer">{{$cdb->acc_name}}</div>
-                <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+            @php
+            $color = "green";
+         @endphp
+            <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>     <!--practical-->
             @endif
             @endforeach
 
@@ -683,19 +681,19 @@
         <TD>
             @foreach ($data1 as $cdb)
             @if ((($cdb->day)=="Monday")&&(($cdb->start_time)=="15:00"))
-                <div class="name" >{{$cdb->course_name}}</div>
-                <div class="code" >{{$cdb->course_code}}</div>
-                <div class="lecturer">{{$cdb->lec_name}}</div>
-                <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+            @php
+            $color = "green";
+        @endphp
+          <div class="colo" style="background-color:{{$color}}"> &nbsp;</div> <!--theory-->
             @endif
         @endforeach
 
         @foreach ($data2 as $cdb)
         @if ((($cdb->day)=="Monday")&&(($cdb->start_time)=="15:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->acc_name}}</div>
-            <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+        @php
+        $color = "green";
+     @endphp
+        <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>     <!--practical-->
         @endif
     @endforeach
 
@@ -704,19 +702,19 @@
           <TD>
             @foreach ($data1 as $cdb)
             @if ((($cdb->day)=="Tuesday")&&(($cdb->start_time)=="15:00"))
-                <div class="name" >{{$cdb->course_name}}</div>
-                <div class="code" >{{$cdb->course_code}}</div>
-                <div class="lecturer">{{$cdb->lec_name}}</div>
-                <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+            @php
+            $color = "green";
+        @endphp
+          <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>   <!--theory-->
             @endif
             @endforeach
 
             @foreach ($data2 as $cdb)
             @if ((($cdb->day)=="Tuesday")&&(($cdb->start_time)=="15:00"))
-                <div class="name" >{{$cdb->course_name}}</div>
-                <div class="code" >{{$cdb->course_code}}</div>
-                <div class="lecturer">{{$cdb->acc_name}}</div>
-                <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+            @php
+            $color = "green";
+         @endphp
+            <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>     <!--practical-->
             @endif
             @endforeach
 
@@ -724,19 +722,19 @@
           <TD>
             @foreach ($data1 as $cdb)
             @if ((($cdb->day)=="Wednesday")&&(($cdb->start_time)=="15:00"))
-                <div class="name" >{{$cdb->course_name}}</div>
-                <div class="code" >{{$cdb->course_code}}</div>
-                <div class="lecturer">{{$cdb->lec_name}}</div>
-                <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+            @php
+            $color = "green";
+        @endphp
+          <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>    <!--theory-->
             @endif
             @endforeach
 
             @foreach ($data2 as $cdb)
             @if ((($cdb->day)=="Wednesday")&&(($cdb->start_time)=="15:00"))
-                <div class="name" >{{$cdb->course_name}}</div>
-                <div class="code" >{{$cdb->course_code}}</div>
-                <div class="lecturer">{{$cdb->acc_name}}</div>
-                <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+            @php
+            $color = "green";
+         @endphp
+            <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>     <!--practical-->
             @endif
             @endforeach
             </TD>
@@ -744,19 +742,19 @@
           <TD>
             @foreach ($data1 as $cdb)
             @if ((($cdb->day)=="Thursday")&&(($cdb->start_time)=="15:00"))
-                <div class="name" >{{$cdb->course_name}}</div>
-                <div class="code" >{{$cdb->course_code}}</div>
-                <div class="lecturer">{{$cdb->lec_name}}</div>
-                <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+            @php
+            $color = "green";
+        @endphp
+          <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>  <!--theory-->
             @endif
             @endforeach
 
             @foreach ($data2 as $cdb)
             @if ((($cdb->day)=="Thursday")&&(($cdb->start_time)=="15:00"))
-                <div class="name" >{{$cdb->course_name}}</div>
-                <div class="code" >{{$cdb->course_code}}</div>
-                <div class="lecturer">{{$cdb->acc_name}}</div>
-                <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+            @php
+            $color = "green";
+         @endphp
+            <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>      <!--practical-->
             @endif
             @endforeach
 
@@ -766,19 +764,19 @@
           <TD>
             @foreach ($data1 as $cdb)
             @if ((($cdb->day)=="Friday")&&(($cdb->start_time)=="15:00"))
-                <div class="name" >{{$cdb->course_name}}</div>
-                <div class="code" >{{$cdb->course_code}}</div>
-                <div class="lecturer">{{$cdb->lec_name}}</div>
-                <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+            @php
+            $color = "green";
+        @endphp
+          <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>   <!--theory-->
             @endif
             @endforeach
 
             @foreach ($data2 as $cdb)
             @if ((($cdb->day)=="Friday")&&(($cdb->start_time)=="15:00"))
-                <div class="name" >{{$cdb->course_name}}</div>
-                <div class="code" >{{$cdb->course_code}}</div>
-                <div class="lecturer">{{$cdb->acc_name}}</div>
-                <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+            @php
+            $color = "green";
+         @endphp
+            <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>  <!--practical-->
             @endif
             @endforeach
 
@@ -790,19 +788,19 @@
       <TD>
         @foreach ($data1 as $cdb)
         @if ((($cdb->day)=="Monday")&&(($cdb->start_time)=="16:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->lec_name}}</div>
-            <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+        @php
+        $color = "green";
+    @endphp
+      <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>    <!--theory-->
         @endif
     @endforeach
 
     @foreach ($data2 as $cdb)
     @if ((($cdb->day)=="Monday")&&(($cdb->start_time)=="16:00"))
-        <div class="name" >{{$cdb->course_name}}</div>
-        <div class="code" >{{$cdb->course_code}}</div>
-        <div class="lecturer">{{$cdb->acc_name}}</div>
-        <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+    @php
+    $color = "green";
+ @endphp
+    <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>   <!--practical-->
     @endif
 @endforeach
 
@@ -811,19 +809,19 @@
       <TD>
         @foreach ($data1 as $cdb)
         @if ((($cdb->day)=="Tuesday")&&(($cdb->start_time)=="16:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->lec_name}}</div>
-            <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+        @php
+        $color = "green";
+    @endphp
+      <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>   <!--theory-->
         @endif
         @endforeach
 
         @foreach ($data2 as $cdb)
         @if ((($cdb->day)=="Tuesday")&&(($cdb->start_time)=="16:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->acc_name}}</div>
-            <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+        @php
+        $color = "green";
+     @endphp
+        <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>      <!--practical-->
         @endif
         @endforeach
 
@@ -831,19 +829,19 @@
       <TD>
         @foreach ($data1 as $cdb)
         @if ((($cdb->day)=="Wednesday")&&(($cdb->start_time)=="16:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->lec_name}}</div>
-            <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+        @php
+        $color = "green";
+    @endphp
+      <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>   <!--theory-->
         @endif
         @endforeach
 
         @foreach ($data2 as $cdb)
         @if ((($cdb->day)=="Wednesday")&&(($cdb->start_time)=="16:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->acc_name}}</div>
-            <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+        @php
+        $color = "green";
+     @endphp
+        <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>     <!--practical-->
         @endif
         @endforeach
         </TD>
@@ -851,19 +849,19 @@
       <TD>
         @foreach ($data1 as $cdb)
         @if ((($cdb->day)=="Thursday")&&(($cdb->start_time)=="16:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->lec_name}}</div>
-            <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+        @php
+        $color = "green";
+    @endphp
+      <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>    <!--theory-->
         @endif
         @endforeach
 
         @foreach ($data2 as $cdb)
         @if ((($cdb->day)=="Thursday")&&(($cdb->start_time)=="16:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->acc_name}}</div>
-            <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+        @php
+        $color = "green";
+     @endphp
+        <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>      <!--practical-->
         @endif
         @endforeach
 
@@ -873,19 +871,19 @@
       <TD>
         @foreach ($data1 as $cdb)
         @if ((($cdb->day)=="Friday")&&(($cdb->start_time)=="16:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->lec_name}}</div>
-            <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+        @php
+        $color = "green";
+    @endphp
+      <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>   <!--theory-->
         @endif
         @endforeach
 
         @foreach ($data2 as $cdb)
         @if ((($cdb->day)=="Friday")&&(($cdb->start_time)=="16:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->acc_name}}</div>
-            <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+        @php
+        $color = "green";
+     @endphp
+        <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>      <!--practical-->
         @endif
         @endforeach
 
@@ -898,19 +896,19 @@
         <TD>
             @foreach ($data1 as $cdb)
             @if ((($cdb->day)=="Monday")&&(($cdb->start_time)=="17:00"))
-                <div class="name" >{{$cdb->course_name}}</div>
-                <div class="code" >{{$cdb->course_code}}</div>
-                <div class="lecturer">{{$cdb->lec_name}}</div>
-                <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+            @php
+            $color = "green";
+        @endphp
+          <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>    <!--theory-->
             @endif
         @endforeach
 
         @foreach ($data2 as $cdb)
         @if ((($cdb->day)=="Monday")&&(($cdb->start_time)=="17:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->acc_name}}</div>
-            <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+        @php
+        $color = "green";
+     @endphp
+        <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>     <!--practical-->
         @endif
     @endforeach
 
@@ -919,19 +917,19 @@
           <TD>
             @foreach ($data1 as $cdb)
             @if ((($cdb->day)=="Tuesday")&&(($cdb->start_time)=="17:00"))
-                <div class="name" >{{$cdb->course_name}}</div>
-                <div class="code" >{{$cdb->course_code}}</div>
-                <div class="lecturer">{{$cdb->lec_name}}</div>
-                <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+            @php
+            $color = "green";
+        @endphp
+          <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>    <!--theory-->
             @endif
             @endforeach
 
             @foreach ($data2 as $cdb)
             @if ((($cdb->day)=="Tuesday")&&(($cdb->start_time)=="17:00"))
-                <div class="name" >{{$cdb->course_name}}</div>
-                <div class="code" >{{$cdb->course_code}}</div>
-                <div class="lecturer">{{$cdb->acc_name}}</div>
-                <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+            @php
+            $color = "green";
+         @endphp
+            <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>      <!--practical-->
             @endif
             @endforeach
 
@@ -939,19 +937,19 @@
           <TD>
             @foreach ($data1 as $cdb)
             @if ((($cdb->day)=="Wednesday")&&(($cdb->start_time)=="17:00"))
-                <div class="name" >{{$cdb->course_name}}</div>
-                <div class="code" >{{$cdb->course_code}}</div>
-                <div class="lecturer">{{$cdb->lec_name}}</div>
-                <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+            @php
+            $color = "green";
+        @endphp
+          <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>  <!--theory-->
             @endif
             @endforeach
 
             @foreach ($data2 as $cdb)
             @if ((($cdb->day)=="Wednesday")&&(($cdb->start_time)=="17:00"))
-                <div class="name" >{{$cdb->course_name}}</div>
-                <div class="code" >{{$cdb->course_code}}</div>
-                <div class="lecturer">{{$cdb->acc_name}}</div>
-                <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+            @php
+            $color = "green";
+         @endphp
+            <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>    <!--practical-->
             @endif
             @endforeach
             </TD>
@@ -959,19 +957,19 @@
           <TD>
             @foreach ($data1 as $cdb)
             @if ((($cdb->day)=="Thursday")&&(($cdb->start_time)=="17:00"))
-                <div class="name" >{{$cdb->course_name}}</div>
-                <div class="code" >{{$cdb->course_code}}</div>
-                <div class="lecturer">{{$cdb->lec_name}}</div>
-                <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+            @php
+            $color = "green";
+        @endphp
+          <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>   <!--theory-->
             @endif
             @endforeach
 
             @foreach ($data2 as $cdb)
             @if ((($cdb->day)=="Thursday")&&(($cdb->start_time)=="17:00"))
-                <div class="name" >{{$cdb->course_name}}</div>
-                <div class="code" >{{$cdb->course_code}}</div>
-                <div class="lecturer">{{$cdb->acc_name}}</div>
-                <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+            @php
+            $color = "green";
+         @endphp
+            <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>    <!--practical-->
             @endif
             @endforeach
 
@@ -981,19 +979,19 @@
           <TD>
             @foreach ($data1 as $cdb)
             @if ((($cdb->day)=="Friday")&&(($cdb->start_time)=="17:00"))
-                <div class="name" >{{$cdb->course_name}}</div>
-                <div class="code" >{{$cdb->course_code}}</div>
-                <div class="lecturer">{{$cdb->lec_name}}</div>
-                <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+            @php
+            $color = "green";
+        @endphp
+          <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>   <!--theory-->
             @endif
             @endforeach
 
             @foreach ($data2 as $cdb)
             @if ((($cdb->day)=="Friday")&&(($cdb->start_time)=="17:00"))
-                <div class="name" >{{$cdb->course_name}}</div>
-                <div class="code" >{{$cdb->course_code}}</div>
-                <div class="lecturer">{{$cdb->acc_name}}</div>
-                <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+            @php
+            $color = "green";
+         @endphp
+            <div class="colo" style="background-color:{{$color}}"> &nbsp;</div>     <!--practical-->
             @endif
             @endforeach
           </TD>
@@ -1004,6 +1002,9 @@
 
 
   <br><br>
+  <div class="but2">
+    <button type="button" class="btn btn-warning but1" onclick="window.location.href='/admin/adminhallallocation'">Back</button>
+  </div>
 
 </body>
 </html>
