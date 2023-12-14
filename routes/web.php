@@ -54,6 +54,8 @@ Route::get('/welcome/about/nonacademic', function () { //route to view welcome p
 
 Route::get('viewsuggestions/{id}',[adminController::class, 'viewsuggestions'])->name('viewsuggestions');
 
+Route::get('viewsuggestions1/{id}',[adminController::class, 'viewsuggestions1'])->name('viewsuggestions1');
+
 Route::get('delete-guestrequest/{id}',[adminController::class, 'deleteguestrequest'])->name('deleteguestrequest');
 
 Route::get('delete-lecturerrequest/{id}',[adminController::class, 'deletelecturerrequest'])->name('deletelecturerrequest');
