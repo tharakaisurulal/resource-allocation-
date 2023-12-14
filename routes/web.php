@@ -14,6 +14,7 @@ use App\Http\Controllers\lecturerController;
 use App\Http\Controllers\academicsupportiveController;
 use App\Http\Controllers\timetableController;
 use App\Http\Controllers\bookingController;
+use App\Http\Controllers\pdfController;
 
 /*
 |--------------------------------------------------------------------------
@@ -418,3 +419,5 @@ Route::post('/storernotice', [ bookingController::class, 'storernotice'])->name(
 //Route::post('/editer', [ bookingController::class, 'editer'])->name('editer');
 Route::get('/noticeope', [ bookingController::class, 'noticeope'])->name('noticeope'); //route to notice operation page.
 Route::get('/noticeoperation', [ bookingController::class, 'noticeope'])->name('noticeope');
+
+Route::get('exportpdf/{id}',[pdfController::class, 'exportpdf'])->name('exportpdf');
