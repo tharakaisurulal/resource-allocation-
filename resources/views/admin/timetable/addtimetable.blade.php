@@ -48,7 +48,7 @@
         <option value="">--Choose course--</option>
         @foreach ($dater1 as $cdb1 )
         <option value="{{$cdb1->id}}">@php
-            echo $cdb1->course_name;
+            echo $cdb1->course_name." ".$cdb1->course_code;
         @endphp</option>
         @endforeach
         </select>
