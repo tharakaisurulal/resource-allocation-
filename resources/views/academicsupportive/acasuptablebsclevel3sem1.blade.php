@@ -30,196 +30,31 @@
   <TBODY>
     <TR>
 
-    <TD> 8.00-8.55</TD>
-      <TD>
-        @foreach ($data1 as $cdb)
-        @if ((($cdb->day)=="Monday")&(($cdb->start_time)=="08:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->lec_name}}</div>
-            <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
-        @endif
-    @endforeach
-
-    @foreach ($data2 as $cdb)
-    @if ((($cdb->day)=="Monday")&(($cdb->start_time)=="08:00"))
-        <div class="name" >{{$cdb->course_name}}</div>
-        <div class="code" >{{$cdb->course_code}}</div>
-        <div class="lecturer">{{$cdb->acc_name}}</div>
-        <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
-    @endif
-@endforeach
-    </TD>
-
-
-  <TD>
-    @foreach ($data1 as $cdb)
-    @if ((($cdb->day)=="Tuesday")&(($cdb->start_time)=="08:00"))
-        <div class="name" >{{$cdb->course_name}}</div>
-        <div class="code" >{{$cdb->course_code}}</div>
-        <div class="lecturer">{{$cdb->lec_name}}</div>
-        <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
-    @endif
-    @endforeach
-
-    @foreach ($data2 as $cdb)
-    @if ((($cdb->day)=="Tuesday")&(($cdb->start_time)=="08:00"))
-        <div class="name" >{{$cdb->course_name}}</div>
-        <div class="code" >{{$cdb->course_code}}</div>
-        <div class="lecturer">{{$cdb->acc_name}}</div>
-        <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
-    @endif
-    @endforeach
-
-  </TD>
-  <TD>
-    @foreach ($data1 as $cdb)
-    @if ((($cdb->day)=="Wednesday")&(($cdb->start_time)=="08:00"))
-        <div class="name" >{{$cdb->course_name}}</div>
-        <div class="code" >{{$cdb->course_code}}</div>
-        <div class="lecturer">{{$cdb->lec_name}}</div>
-        <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
-    @endif
-    @endforeach
-
-    @foreach ($data2 as $cdb)
-    @if ((($cdb->day)=="Wednesday")&(($cdb->start_time)=="08:00"))
-        <div class="name" >{{$cdb->course_name}}</div>
-        <div class="code" >{{$cdb->course_code}}</div>
-        <div class="lecturer">{{$cdb->acc_name}}</div>
-        <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
-    @endif
-    @endforeach
-
-  </TD>
-  <TD>
-    @foreach ($data1 as $cdb)
-    @if ((($cdb->day)=="Thursday")&(($cdb->start_time)=="08:00"))
-        <div class="name" >{{$cdb->course_name}}</div>
-        <div class="code" >{{$cdb->course_code}}</div>
-        <div class="lecturer">{{$cdb->lec_name}}</div>
-        <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
-    @endif
-    @endforeach
-
-    @foreach ($data2 as $cdb)
-    @if ((($cdb->day)=="Thursday")&(($cdb->start_time)=="08:00"))
-        <div class="name" >{{$cdb->course_name}}</div>
-        <div class="code" >{{$cdb->course_code}}</div>
-        <div class="lecturer">{{$cdb->acc_name}}</div>
-        <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
-    @endif
-    @endforeach
-
-  </TD>
-  <TD>
-    @foreach ($data1 as $cdb)
-    @if ((($cdb->day)=="Friday")&(($cdb->start_time)=="08:00"))
-        <div class="name" >{{$cdb->course_name}}</div>
-        <div class="code" >{{$cdb->course_code}}</div>
-        <div class="lecturer">{{$cdb->lec_name}}</div>
-        <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
-    @endif
-    @endforeach
-
-    @foreach ($data2 as $cdb)
-    @if ((($cdb->day)=="Friday")&(($cdb->start_time)=="08:00"))
-        <div class="name" >{{$cdb->course_name}}</div>
-        <div class="code" >{{$cdb->course_code}}</div>
-        <div class="lecturer">{{$cdb->acc_name}}</div>
-        <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
-    @endif
-    @endforeach
-
-  </TD>
-</TR>
-
-<TR>
-  <TD>9.00-9.55</TD>
-  <TD>
-    @foreach ($data1 as $cdb)
-        @if ((($cdb->day)=="Monday")&(($cdb->start_time)=="09:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->lec_name}}</div>
-            <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
-        @endif
-    @endforeach
-
-    @foreach ($data2 as $cdb)
-    @if ((($cdb->day)=="Monday")&(($cdb->start_time)=="09:00"))
-        <div class="name" >{{$cdb->course_name}}</div>
-        <div class="code" >{{$cdb->course_code}}</div>
-        <div class="lecturer">{{$cdb->acc_name}}</div>
-        <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
-    @endif
-@endforeach
-    </TD>
-
-    <TD>
-        @foreach ($data1 as $cdb)
-        @if ((($cdb->day)=="Tuesday")&(($cdb->start_time)=="09:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->lec_name}}</div>
-            <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
-        @endif
-        @endforeach
-
-        @foreach ($data2 as $cdb)
-        @if ((($cdb->day)=="Tuesday")&(($cdb->start_time)=="09:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->acc_name}}</div>
-            <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
-        @endif
-        @endforeach
-    </TD>
-
-    <TD>
-        @foreach ($data1 as $cdb)
-        @if ((($cdb->day)=="Wednesday")&(($cdb->start_time)=="09:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->lec_name}}</div>
-            <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
-        @endif
-        @endforeach
-
-        @foreach ($data2 as $cdb)
-        @if ((($cdb->day)=="Wednesday")&(($cdb->start_time)=="09:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->acc_name}}</div>
-            <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
-        @endif
-        @endforeach
-
-    </TD>
-
-    <TD>
-        @foreach ($data1 as $cdb)
-        @if ((($cdb->day)=="Thursday")&(($cdb->start_time)=="09:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->lec_name}}</div>
-            <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
-        @endif
-        @endforeach
-
-        @foreach ($data2 as $cdb)
-        @if ((($cdb->day)=="Thursday")&(($cdb->start_time)=="09:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->acc_name}}</div>
-            <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
-        @endif
-        @endforeach
-        </TD>
-
-        <TD>
+        <TD> 8.00-8.55</TD>
+          <TD>
             @foreach ($data1 as $cdb)
-            @if ((($cdb->day)=="Friday")&(($cdb->start_time)=="09:00"))
+                @if ((($cdb->day)=="Monday")&&(($cdb->start_time)=="08:00"))
+                    <div class="name" >{{$cdb->course_name}}</div>
+                    <div class="code" >{{$cdb->course_code}}</div>
+                    <div class="lecturer">{{$cdb->lec_name}}</div>
+                    <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+                @endif
+            @endforeach
+
+            @foreach ($data2 as $cdb)
+            @if ((($cdb->day)=="Monday")&&(($cdb->start_time)=="08:00"))
+                <div class="name" >{{$cdb->course_name}}</div>
+                <div class="code" >{{$cdb->course_code}}</div>
+                <div class="lecturer">{{$cdb->acc_name}}</div>
+                <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+            @endif
+        @endforeach
+            </TD>
+
+
+          <TD>
+            @foreach ($data1 as $cdb)
+            @if ((($cdb->day)=="Tuesday")&&(($cdb->start_time)=="08:00"))
                 <div class="name" >{{$cdb->course_name}}</div>
                 <div class="code" >{{$cdb->course_code}}</div>
                 <div class="lecturer">{{$cdb->lec_name}}</div>
@@ -228,7 +63,238 @@
             @endforeach
 
             @foreach ($data2 as $cdb)
-            @if ((($cdb->day)=="Friday")&(($cdb->start_time)=="09:00"))
+            @if ((($cdb->day)=="Tuesday")&&(($cdb->start_time)=="08:00"))
+                <div class="name" >{{$cdb->course_name}}</div>
+                <div class="code" >{{$cdb->course_code}}</div>
+                <div class="lecturer">{{$cdb->acc_name}}</div>
+                <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+            @endif
+            @endforeach
+
+          </TD>
+          <TD>
+            @foreach ($data1 as $cdb)
+            @if ((($cdb->day)=="Wednesday")&&(($cdb->start_time)=="08:00"))
+                <div class="name" >{{$cdb->course_name}}</div>
+                <div class="code" >{{$cdb->course_code}}</div>
+                <div class="lecturer">{{$cdb->lec_name}}</div>
+                <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+            @endif
+            @endforeach
+
+            @foreach ($data2 as $cdb)
+            @if ((($cdb->day)=="Wednesday")&&(($cdb->start_time)=="08:00"))
+                <div class="name" >{{$cdb->course_name}}</div>
+                <div class="code" >{{$cdb->course_code}}</div>
+                <div class="lecturer">{{$cdb->acc_name}}</div>
+                <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+            @endif
+            @endforeach
+
+          </TD>
+          <TD>
+            @foreach ($data1 as $cdb)
+            @if ((($cdb->day)=="Thursday")&&(($cdb->start_time)=="08:00"))
+                <div class="name" >{{$cdb->course_name}}</div>
+                <div class="code" >{{$cdb->course_code}}</div>
+                <div class="lecturer">{{$cdb->lec_name}}</div>
+                <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+            @endif
+            @endforeach
+
+            @foreach ($data2 as $cdb)
+            @if ((($cdb->day)=="Thursday")&&(($cdb->start_time)=="08:00"))
+                <div class="name" >{{$cdb->course_name}}</div>
+                <div class="code" >{{$cdb->course_code}}</div>
+                <div class="lecturer">{{$cdb->acc_name}}</div>
+                <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+            @endif
+            @endforeach
+
+          </TD>
+          <TD>
+            @foreach ($data1 as $cdb)
+            @if ((($cdb->day)=="Friday")&&(($cdb->start_time)=="08:00"))
+                <div class="name" >{{$cdb->course_name}}</div>
+                <div class="code" >{{$cdb->course_code}}</div>
+                <div class="lecturer">{{$cdb->lec_name}}</div>
+                <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+            @endif
+            @endforeach
+
+            @foreach ($data2 as $cdb)
+            @if ((($cdb->day)=="Friday")&&(($cdb->start_time)=="08:00"))
+                <div class="name" >{{$cdb->course_name}}</div>
+                <div class="code" >{{$cdb->course_code}}</div>
+                <div class="lecturer">{{$cdb->acc_name}}</div>
+                <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+            @endif
+            @endforeach
+
+          </TD>
+        </TR>
+
+        <TR>
+          <TD>9.00-9.55</TD>
+          <TD>
+            @foreach ($data1 as $cdb)
+                @if ((($cdb->day)=="Monday")&&(($cdb->start_time)=="09:00"))
+                    <div class="name" >{{$cdb->course_name}}</div>
+                    <div class="code" >{{$cdb->course_code}}</div>
+                    <div class="lecturer">{{$cdb->lec_name}}</div>
+                    <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+                @endif
+            @endforeach
+
+            @foreach ($data2 as $cdb)
+            @if ((($cdb->day)=="Monday")&&(($cdb->start_time)=="09:00"))
+                <div class="name" >{{$cdb->course_name}}</div>
+                <div class="code" >{{$cdb->course_code}}</div>
+                <div class="lecturer">{{$cdb->acc_name}}</div>
+                <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+            @endif
+        @endforeach
+            </TD>
+
+            <TD>
+                @foreach ($data1 as $cdb)
+                @if ((($cdb->day)=="Tuesday")&&(($cdb->start_time)=="09:00"))
+                    <div class="name" >{{$cdb->course_name}}</div>
+                    <div class="code" >{{$cdb->course_code}}</div>
+                    <div class="lecturer">{{$cdb->lec_name}}</div>
+                    <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+                @endif
+                @endforeach
+
+                @foreach ($data2 as $cdb)
+                @if ((($cdb->day)=="Tuesday")&&(($cdb->start_time)=="09:00"))
+                    <div class="name" >{{$cdb->course_name}}</div>
+                    <div class="code" >{{$cdb->course_code}}</div>
+                    <div class="lecturer">{{$cdb->acc_name}}</div>
+                    <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+                @endif
+                @endforeach
+            </TD>
+
+            <TD>
+                @foreach ($data1 as $cdb)
+                @if ((($cdb->day)=="Wednesday")&&(($cdb->start_time)=="09:00"))
+                    <div class="name" >{{$cdb->course_name}}</div>
+                    <div class="code" >{{$cdb->course_code}}</div>
+                    <div class="lecturer">{{$cdb->lec_name}}</div>
+                    <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+                @endif
+                @endforeach
+
+                @foreach ($data2 as $cdb)
+                @if ((($cdb->day)=="Wednesday")&&(($cdb->start_time)=="09:00"))
+                    <div class="name" >{{$cdb->course_name}}</div>
+                    <div class="code" >{{$cdb->course_code}}</div>
+                    <div class="lecturer">{{$cdb->acc_name}}</div>
+                    <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+                @endif
+                @endforeach
+
+            </TD>
+
+            <TD>
+                @foreach ($data1 as $cdb)
+                @if ((($cdb->day)=="Thursday")&&(($cdb->start_time)=="09:00"))
+                    <div class="name" >{{$cdb->course_name}}</div>
+                    <div class="code" >{{$cdb->course_code}}</div>
+                    <div class="lecturer">{{$cdb->lec_name}}</div>
+                    <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+                @endif
+                @endforeach
+
+                @foreach ($data2 as $cdb)
+                @if ((($cdb->day)=="Thursday")&&(($cdb->start_time)=="09:00"))
+                    <div class="name" >{{$cdb->course_name}}</div>
+                    <div class="code" >{{$cdb->course_code}}</div>
+                    <div class="lecturer">{{$cdb->acc_name}}</div>
+                    <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+                @endif
+                @endforeach
+                </TD>
+
+                <TD>
+                    @foreach ($data1 as $cdb)
+                    @if ((($cdb->day)=="Friday")&&(($cdb->start_time)=="09:00"))
+                        <div class="name" >{{$cdb->course_name}}</div>
+                        <div class="code" >{{$cdb->course_code}}</div>
+                        <div class="lecturer">{{$cdb->lec_name}}</div>
+                        <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+                    @endif
+                    @endforeach
+
+                    @foreach ($data2 as $cdb)
+                    @if ((($cdb->day)=="Friday")&&(($cdb->start_time)=="09:00"))
+                        <div class="name" >{{$cdb->course_name}}</div>
+                        <div class="code" >{{$cdb->course_code}}</div>
+                        <div class="lecturer">{{$cdb->acc_name}}</div>
+                        <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+                    @endif
+                    @endforeach
+                    </TD>
+
+
+          </TR>
+
+          <TR>
+          <TD>10.00-10.55</TD>
+          <TD>
+            @foreach ($data1 as $cdb)
+            @if ((($cdb->day)=="Monday")&&(($cdb->start_time)=="10:00"))
+                <div class="name" >{{$cdb->course_name}}</div>
+                <div class="code" >{{$cdb->course_code}}</div>
+                <div class="lecturer">{{$cdb->lec_name}}</div>
+                <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+            @endif
+        @endforeach
+
+        @foreach ($data2 as $cdb)
+        @if ((($cdb->day)=="Monday")&&(($cdb->start_time)=="10:00"))
+            <div class="name" >{{$cdb->course_name}}</div>
+            <div class="code" >{{$cdb->course_code}}</div>
+            <div class="lecturer">{{$cdb->acc_name}}</div>
+            <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+        @endif
+    @endforeach
+
+          </TD>
+
+          <TD>
+            @foreach ($data1 as $cdb)
+            @if ((($cdb->day)=="Tuesday")&&(($cdb->start_time)=="10:00"))
+                <div class="name" >{{$cdb->course_name}}</div>
+                <div class="code" >{{$cdb->course_code}}</div>
+                <div class="lecturer">{{$cdb->lec_name}}</div>
+                <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+            @endif
+            @endforeach
+
+            @foreach ($data2 as $cdb)
+            @if ((($cdb->day)=="Tuesday")&&(($cdb->start_time)=="10:00"))
+                <div class="name" >{{$cdb->course_name}}</div>
+                <div class="code" >{{$cdb->course_code}}</div>
+                <div class="lecturer">{{$cdb->acc_name}}</div>
+                <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+            @endif
+            @endforeach
+
+          </TD>
+          <TD>
+            @foreach ($data1 as $cdb)
+            @if ((($cdb->day)=="Wednesday")&&(($cdb->start_time)=="10:00"))
+                <div class="name" >{{$cdb->course_name}}</div>
+                <div class="code" >{{$cdb->course_code}}</div>
+                <div class="lecturer">{{$cdb->lec_name}}</div>
+                <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+            @endif
+            @endforeach
+
+            @foreach ($data2 as $cdb)
+            @if ((($cdb->day)=="Wednesday")&&(($cdb->start_time)=="10:00"))
                 <div class="name" >{{$cdb->course_name}}</div>
                 <div class="code" >{{$cdb->course_code}}</div>
                 <div class="lecturer">{{$cdb->acc_name}}</div>
@@ -237,765 +303,698 @@
             @endforeach
             </TD>
 
+          <TD>
+            @foreach ($data1 as $cdb)
+            @if ((($cdb->day)=="Thursday")&&(($cdb->start_time)=="10:00"))
+                <div class="name" >{{$cdb->course_name}}</div>
+                <div class="code" >{{$cdb->course_code}}</div>
+                <div class="lecturer">{{$cdb->lec_name}}</div>
+                <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+            @endif
+            @endforeach
+
+            @foreach ($data2 as $cdb)
+            @if ((($cdb->day)=="Thursday")&&(($cdb->start_time)=="10:00"))
+                <div class="name" >{{$cdb->course_name}}</div>
+                <div class="code" >{{$cdb->course_code}}</div>
+                <div class="lecturer">{{$cdb->acc_name}}</div>
+                <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+            @endif
+            @endforeach
 
-  </TR>
-
-  <TR>
-  <TD>10.00-10.55</TD>
-  <TD>
-    @foreach ($data1 as $cdb)
-    @if ((($cdb->day)=="Monday")&(($cdb->start_time)=="10:00"))
-        <div class="name" >{{$cdb->course_name}}</div>
-        <div class="code" >{{$cdb->course_code}}</div>
-        <div class="lecturer">{{$cdb->lec_name}}</div>
-        <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
-    @endif
-@endforeach
-
-@foreach ($data2 as $cdb)
-@if ((($cdb->day)=="Monday")&(($cdb->start_time)=="10:00"))
-    <div class="name" >{{$cdb->course_name}}</div>
-    <div class="code" >{{$cdb->course_code}}</div>
-    <div class="lecturer">{{$cdb->acc_name}}</div>
-    <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
-@endif
-@endforeach
-
-  </TD>
-
-  <TD>
-    @foreach ($data1 as $cdb)
-    @if ((($cdb->day)=="Tuesday")&(($cdb->start_time)=="10:00"))
-        <div class="name" >{{$cdb->course_name}}</div>
-        <div class="code" >{{$cdb->course_code}}</div>
-        <div class="lecturer">{{$cdb->lec_name}}</div>
-        <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
-    @endif
-    @endforeach
-
-    @foreach ($data2 as $cdb)
-    @if ((($cdb->day)=="Tuesday")&(($cdb->start_time)=="10:00"))
-        <div class="name" >{{$cdb->course_name}}</div>
-        <div class="code" >{{$cdb->course_code}}</div>
-        <div class="lecturer">{{$cdb->acc_name}}</div>
-        <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
-    @endif
-    @endforeach
-
-  </TD>
-  <TD>
-    @foreach ($data1 as $cdb)
-    @if ((($cdb->day)=="Wednesday")&(($cdb->start_time)=="10:00"))
-        <div class="name" >{{$cdb->course_name}}</div>
-        <div class="code" >{{$cdb->course_code}}</div>
-        <div class="lecturer">{{$cdb->lec_name}}</div>
-        <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
-    @endif
-    @endforeach
-
-    @foreach ($data2 as $cdb)
-    @if ((($cdb->day)=="Wednesday")&(($cdb->start_time)=="10:00"))
-        <div class="name" >{{$cdb->course_name}}</div>
-        <div class="code" >{{$cdb->course_code}}</div>
-        <div class="lecturer">{{$cdb->acc_name}}</div>
-        <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
-    @endif
-    @endforeach
-    </TD>
-
-  <TD>
-    @foreach ($data1 as $cdb)
-    @if ((($cdb->day)=="Thursday")&(($cdb->start_time)=="10:00"))
-        <div class="name" >{{$cdb->course_name}}</div>
-        <div class="code" >{{$cdb->course_code}}</div>
-        <div class="lecturer">{{$cdb->lec_name}}</div>
-        <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
-    @endif
-    @endforeach
-
-    @foreach ($data2 as $cdb)
-    @if ((($cdb->day)=="Thursday")&(($cdb->start_time)=="10:00"))
-        <div class="name" >{{$cdb->course_name}}</div>
-        <div class="code" >{{$cdb->course_code}}</div>
-        <div class="lecturer">{{$cdb->acc_name}}</div>
-        <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
-    @endif
-    @endforeach
-
-
-  </TD>
-
-  <TD>
-    @foreach ($data1 as $cdb)
-    @if ((($cdb->day)=="Friday")&(($cdb->start_time)=="10:00"))
-        <div class="name" >{{$cdb->course_name}}</div>
-        <div class="code" >{{$cdb->course_code}}</div>
-        <div class="lecturer">{{$cdb->lec_name}}</div>
-        <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
-    @endif
-    @endforeach
-
-    @foreach ($data2 as $cdb)
-    @if ((($cdb->day)=="Friday")&(($cdb->start_time)=="10:00"))
-        <div class="name" >{{$cdb->course_name}}</div>
-        <div class="code" >{{$cdb->course_code}}</div>
-        <div class="lecturer">{{$cdb->acc_name}}</div>
-        <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
-    @endif
-    @endforeach
-
-  </TD>
-</TR>
-
-<TR>
-  <TD>11.00-12.00</TD>
-  <TD>
-    @foreach ($data1 as $cdb)
-    @if ((($cdb->day)=="Monday")&(($cdb->start_time)=="11:00"))
-        <div class="name" >{{$cdb->course_name}}</div>
-        <div class="code" >{{$cdb->course_code}}</div>
-        <div class="lecturer">{{$cdb->lec_name}}</div>
-        <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
-    @endif
-@endforeach
-
-@foreach ($data2 as $cdb)
-@if ((($cdb->day)=="Monday")&(($cdb->start_time)=="11:00"))
-    <div class="name" >{{$cdb->course_name}}</div>
-    <div class="code" >{{$cdb->course_code}}</div>
-    <div class="lecturer">{{$cdb->acc_name}}</div>
-    <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
-@endif
-@endforeach
-
-  </TD>
-
-  <TD>
-    @foreach ($data1 as $cdb)
-    @if ((($cdb->day)=="Tuesday")&(($cdb->start_time)=="11:00"))
-        <div class="name" >{{$cdb->course_name}}</div>
-        <div class="code" >{{$cdb->course_code}}</div>
-        <div class="lecturer">{{$cdb->lec_name}}</div>
-        <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
-    @endif
-    @endforeach
-
-    @foreach ($data2 as $cdb)
-    @if ((($cdb->day)=="Tuesday")&(($cdb->start_time)=="11:00"))
-        <div class="name" >{{$cdb->course_name}}</div>
-        <div class="code" >{{$cdb->course_code}}</div>
-        <div class="lecturer">{{$cdb->acc_name}}</div>
-        <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
-    @endif
-    @endforeach
-
-  </TD>
-  <TD>
-    @foreach ($data1 as $cdb)
-    @if ((($cdb->day)=="Wednesday")&(($cdb->start_time)=="11:00"))
-        <div class="name" >{{$cdb->course_name}}</div>
-        <div class="code" >{{$cdb->course_code}}</div>
-        <div class="lecturer">{{$cdb->lec_name}}</div>
-        <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
-    @endif
-    @endforeach
-
-    @foreach ($data2 as $cdb)
-    @if ((($cdb->day)=="Wednesday")&(($cdb->start_time)=="11:00"))
-        <div class="name" >{{$cdb->course_name}}</div>
-        <div class="code" >{{$cdb->course_code}}</div>
-        <div class="lecturer">{{$cdb->acc_name}}</div>
-        <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
-    @endif
-    @endforeach
-    </TD>
-
-  <TD>
-    @foreach ($data1 as $cdb)
-    @if ((($cdb->day)=="Thursday")&(($cdb->start_time)=="11:00"))
-        <div class="name" >{{$cdb->course_name}}</div>
-        <div class="code" >{{$cdb->course_code}}</div>
-        <div class="lecturer">{{$cdb->lec_name}}</div>
-        <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
-    @endif
-    @endforeach
-
-    @foreach ($data2 as $cdb)
-    @if ((($cdb->day)=="Thursday")&(($cdb->start_time)=="11:00"))
-        <div class="name" >{{$cdb->course_name}}</div>
-        <div class="code" >{{$cdb->course_code}}</div>
-        <div class="lecturer">{{$cdb->acc_name}}</div>
-        <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
-    @endif
-    @endforeach
-
-
-  </TD>
-
-  <TD>
-    @foreach ($data1 as $cdb)
-    @if ((($cdb->day)=="Friday")&(($cdb->start_time)=="11:00"))
-        <div class="name" >{{$cdb->course_name}}</div>
-        <div class="code" >{{$cdb->course_code}}</div>
-        <div class="lecturer">{{$cdb->lec_name}}</div>
-        <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
-    @endif
-    @endforeach
-
-    @foreach ($data2 as $cdb)
-    @if ((($cdb->day)=="Friday")&(($cdb->start_time)=="11:00"))
-        <div class="name" >{{$cdb->course_name}}</div>
-        <div class="code" >{{$cdb->course_code}}</div>
-        <div class="lecturer">{{$cdb->acc_name}}</div>
-        <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
-    @endif
-    @endforeach
-
-  </TD>
-</TR>
-
-
-  <TR>
-  <TD colspan="6" class="lunch">Lunch</TD>
-</TR>
-
-  <TR>
-  <TD>13.00-13.55</TD>
-  <TD>
-    @foreach ($data1 as $cdb)
-    @if ((($cdb->day)=="Monday")&(($cdb->start_time)=="13:00"))
-        <div class="name" >{{$cdb->course_name}}</div>
-        <div class="code" >{{$cdb->course_code}}</div>
-        <div class="lecturer">{{$cdb->lec_name}}</div>
-        <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
-    @endif
-@endforeach
-
-@foreach ($data2 as $cdb)
-@if ((($cdb->day)=="Monday")&(($cdb->start_time)=="13:00"))
-    <div class="name" >{{$cdb->course_name}}</div>
-    <div class="code" >{{$cdb->course_code}}</div>
-    <div class="lecturer">{{$cdb->acc_name}}</div>
-    <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
-@endif
-@endforeach
-
-  </TD>
-
-  <TD>
-    @foreach ($data1 as $cdb)
-    @if ((($cdb->day)=="Tuesday")&(($cdb->start_time)=="13:00"))
-        <div class="name" >{{$cdb->course_name}}</div>
-        <div class="code" >{{$cdb->course_code}}</div>
-        <div class="lecturer">{{$cdb->lec_name}}</div>
-        <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
-    @endif
-    @endforeach
-
-    @foreach ($data2 as $cdb)
-    @if ((($cdb->day)=="Tuesday")&(($cdb->start_time)=="13:00"))
-        <div class="name" >{{$cdb->course_name}}</div>
-        <div class="code" >{{$cdb->course_code}}</div>
-        <div class="lecturer">{{$cdb->acc_name}}</div>
-        <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
-    @endif
-    @endforeach
-
-  </TD>
-  <TD>
-    @foreach ($data1 as $cdb)
-    @if ((($cdb->day)=="Wednesday")&(($cdb->start_time)=="13:00"))
-        <div class="name" >{{$cdb->course_name}}</div>
-        <div class="code" >{{$cdb->course_code}}</div>
-        <div class="lecturer">{{$cdb->lec_name}}</div>
-        <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
-    @endif
-    @endforeach
-
-    @foreach ($data2 as $cdb)
-    @if ((($cdb->day)=="Wednesday")&(($cdb->start_time)=="13:00"))
-        <div class="name" >{{$cdb->course_name}}</div>
-        <div class="code" >{{$cdb->course_code}}</div>
-        <div class="lecturer">{{$cdb->acc_name}}</div>
-        <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
-    @endif
-    @endforeach
-    </TD>
-
-  <TD>
-    @foreach ($data1 as $cdb)
-    @if ((($cdb->day)=="Thursday")&(($cdb->start_time)=="13:00"))
-        <div class="name" >{{$cdb->course_name}}</div>
-        <div class="code" >{{$cdb->course_code}}</div>
-        <div class="lecturer">{{$cdb->lec_name}}</div>
-        <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
-    @endif
-    @endforeach
-
-    @foreach ($data2 as $cdb)
-    @if ((($cdb->day)=="Thursday")&(($cdb->start_time)=="13:00"))
-        <div class="name" >{{$cdb->course_name}}</div>
-        <div class="code" >{{$cdb->course_code}}</div>
-        <div class="lecturer">{{$cdb->acc_name}}</div>
-        <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
-    @endif
-    @endforeach
-
-
-  </TD>
-
-  <TD>
-    @foreach ($data1 as $cdb)
-    @if ((($cdb->day)=="Friday")&(($cdb->start_time)=="13:00"))
-        <div class="name" >{{$cdb->course_name}}</div>
-        <div class="code" >{{$cdb->course_code}}</div>
-        <div class="lecturer">{{$cdb->lec_name}}</div>
-        <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
-    @endif
-    @endforeach
-
-    @foreach ($data2 as $cdb)
-    @if ((($cdb->day)=="Friday")&(($cdb->start_time)=="13:00"))
-        <div class="name" >{{$cdb->course_name}}</div>
-        <div class="code" >{{$cdb->course_code}}</div>
-        <div class="lecturer">{{$cdb->acc_name}}</div>
-        <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
-    @endif
-    @endforeach
-
-  </TD>
-</TR>
-
-<TR>
-    <TD>14.00-14.55</TD>
-
-    <TD>
-        @foreach ($data1 as $cdb)
-        @if ((($cdb->day)=="Monday")&(($cdb->start_time)=="14:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->lec_name}}</div>
-            <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
-        @endif
-    @endforeach
-
-    @foreach ($data2 as $cdb)
-    @if ((($cdb->day)=="Monday")&(($cdb->start_time)=="14:00"))
-        <div class="name" >{{$cdb->course_name}}</div>
-        <div class="code" >{{$cdb->course_code}}</div>
-        <div class="lecturer">{{$cdb->acc_name}}</div>
-        <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
-    @endif
-@endforeach
-
-      </TD>
-
-      <TD>
-        @foreach ($data1 as $cdb)
-        @if ((($cdb->day)=="Tuesday")&(($cdb->start_time)=="14:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->lec_name}}</div>
-            <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
-        @endif
-        @endforeach
-
-        @foreach ($data2 as $cdb)
-        @if ((($cdb->day)=="Tuesday")&(($cdb->start_time)=="14:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->acc_name}}</div>
-            <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
-        @endif
-        @endforeach
-
-      </TD>
-      <TD>
-        @foreach ($data1 as $cdb)
-        @if ((($cdb->day)=="Wednesday")&(($cdb->start_time)=="14:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->lec_name}}</div>
-            <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
-        @endif
-        @endforeach
-
-        @foreach ($data2 as $cdb)
-        @if ((($cdb->day)=="Wednesday")&(($cdb->start_time)=="14:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->acc_name}}</div>
-            <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
-        @endif
-        @endforeach
-        </TD>
-
-      <TD>
-        @foreach ($data1 as $cdb)
-        @if ((($cdb->day)=="Thursday")&(($cdb->start_time)=="14:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->lec_name}}</div>
-            <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
-        @endif
-        @endforeach
-
-        @foreach ($data2 as $cdb)
-        @if ((($cdb->day)=="Thursday")&(($cdb->start_time)=="14:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->acc_name}}</div>
-            <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
-        @endif
-        @endforeach
-
-
-      </TD>
-
-      <TD>
-        @foreach ($data1 as $cdb)
-        @if ((($cdb->day)=="Friday")&(($cdb->start_time)=="14:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->lec_name}}</div>
-            <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
-        @endif
-        @endforeach
-
-        @foreach ($data2 as $cdb)
-        @if ((($cdb->day)=="Friday")&(($cdb->start_time)=="14:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->acc_name}}</div>
-            <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
-        @endif
-        @endforeach
-
-      </TD>
-</TR>
-
-<TR>
-    <TD>15.00-15.55</TD>
-
-    <TD>
-        @foreach ($data1 as $cdb)
-        @if ((($cdb->day)=="Monday")&(($cdb->start_time)=="15:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->lec_name}}</div>
-            <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
-        @endif
-    @endforeach
-
-    @foreach ($data2 as $cdb)
-    @if ((($cdb->day)=="Monday")&(($cdb->start_time)=="15:00"))
-        <div class="name" >{{$cdb->course_name}}</div>
-        <div class="code" >{{$cdb->course_code}}</div>
-        <div class="lecturer">{{$cdb->acc_name}}</div>
-        <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
-    @endif
-@endforeach
-
-      </TD>
-
-      <TD>
-        @foreach ($data1 as $cdb)
-        @if ((($cdb->day)=="Tuesday")&(($cdb->start_time)=="15:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->lec_name}}</div>
-            <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
-        @endif
-        @endforeach
-
-        @foreach ($data2 as $cdb)
-        @if ((($cdb->day)=="Tuesday")&(($cdb->start_time)=="15:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->acc_name}}</div>
-            <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
-        @endif
-        @endforeach
-
-      </TD>
-      <TD>
-        @foreach ($data1 as $cdb)
-        @if ((($cdb->day)=="Wednesday")&(($cdb->start_time)=="15:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->lec_name}}</div>
-            <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
-        @endif
-        @endforeach
-
-        @foreach ($data2 as $cdb)
-        @if ((($cdb->day)=="Wednesday")&(($cdb->start_time)=="15:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->acc_name}}</div>
-            <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
-        @endif
-        @endforeach
-        </TD>
-
-      <TD>
-        @foreach ($data1 as $cdb)
-        @if ((($cdb->day)=="Thursday")&(($cdb->start_time)=="15:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->lec_name}}</div>
-            <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
-        @endif
-        @endforeach
-
-        @foreach ($data2 as $cdb)
-        @if ((($cdb->day)=="Thursday")&(($cdb->start_time)=="15:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->acc_name}}</div>
-            <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
-        @endif
-        @endforeach
-
-
-      </TD>
-
-      <TD>
-        @foreach ($data1 as $cdb)
-        @if ((($cdb->day)=="Friday")&(($cdb->start_time)=="15:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->lec_name}}</div>
-            <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
-        @endif
-        @endforeach
-
-        @foreach ($data2 as $cdb)
-        @if ((($cdb->day)=="Friday")&(($cdb->start_time)=="15:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->acc_name}}</div>
-            <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
-        @endif
-        @endforeach
-
-      </TD>
-</TR>
-
-<TR>
-  <TD>16.00-16.55</TD>
-  <TD>
-    @foreach ($data1 as $cdb)
-    @if ((($cdb->day)=="Monday")&(($cdb->start_time)=="16:00"))
-        <div class="name" >{{$cdb->course_name}}</div>
-        <div class="code" >{{$cdb->course_code}}</div>
-        <div class="lecturer">{{$cdb->lec_name}}</div>
-        <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
-    @endif
-@endforeach
-
-@foreach ($data2 as $cdb)
-@if ((($cdb->day)=="Monday")&(($cdb->start_time)=="16:00"))
-    <div class="name" >{{$cdb->course_name}}</div>
-    <div class="code" >{{$cdb->course_code}}</div>
-    <div class="lecturer">{{$cdb->acc_name}}</div>
-    <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
-@endif
-@endforeach
-
-  </TD>
-
-  <TD>
-    @foreach ($data1 as $cdb)
-    @if ((($cdb->day)=="Tuesday")&(($cdb->start_time)=="16:00"))
-        <div class="name" >{{$cdb->course_name}}</div>
-        <div class="code" >{{$cdb->course_code}}</div>
-        <div class="lecturer">{{$cdb->lec_name}}</div>
-        <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
-    @endif
-    @endforeach
-
-    @foreach ($data2 as $cdb)
-    @if ((($cdb->day)=="Tuesday")&(($cdb->start_time)=="16:00"))
-        <div class="name" >{{$cdb->course_name}}</div>
-        <div class="code" >{{$cdb->course_code}}</div>
-        <div class="lecturer">{{$cdb->acc_name}}</div>
-        <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
-    @endif
-    @endforeach
-
-  </TD>
-  <TD>
-    @foreach ($data1 as $cdb)
-    @if ((($cdb->day)=="Wednesday")&(($cdb->start_time)=="16:00"))
-        <div class="name" >{{$cdb->course_name}}</div>
-        <div class="code" >{{$cdb->course_code}}</div>
-        <div class="lecturer">{{$cdb->lec_name}}</div>
-        <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
-    @endif
-    @endforeach
-
-    @foreach ($data2 as $cdb)
-    @if ((($cdb->day)=="Wednesday")&(($cdb->start_time)=="16:00"))
-        <div class="name" >{{$cdb->course_name}}</div>
-        <div class="code" >{{$cdb->course_code}}</div>
-        <div class="lecturer">{{$cdb->acc_name}}</div>
-        <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
-    @endif
-    @endforeach
-    </TD>
-
-  <TD>
-    @foreach ($data1 as $cdb)
-    @if ((($cdb->day)=="Thursday")&(($cdb->start_time)=="16:00"))
-        <div class="name" >{{$cdb->course_name}}</div>
-        <div class="code" >{{$cdb->course_code}}</div>
-        <div class="lecturer">{{$cdb->lec_name}}</div>
-        <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
-    @endif
-    @endforeach
-
-    @foreach ($data2 as $cdb)
-    @if ((($cdb->day)=="Thursday")&(($cdb->start_time)=="16:00"))
-        <div class="name" >{{$cdb->course_name}}</div>
-        <div class="code" >{{$cdb->course_code}}</div>
-        <div class="lecturer">{{$cdb->acc_name}}</div>
-        <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
-    @endif
-    @endforeach
-
-
-  </TD>
-
-  <TD>
-    @foreach ($data1 as $cdb)
-    @if ((($cdb->day)=="Friday")&(($cdb->start_time)=="16:00"))
-        <div class="name" >{{$cdb->course_name}}</div>
-        <div class="code" >{{$cdb->course_code}}</div>
-        <div class="lecturer">{{$cdb->lec_name}}</div>
-        <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
-    @endif
-    @endforeach
-
-    @foreach ($data2 as $cdb)
-    @if ((($cdb->day)=="Friday")&(($cdb->start_time)=="16:00"))
-        <div class="name" >{{$cdb->course_name}}</div>
-        <div class="code" >{{$cdb->course_code}}</div>
-        <div class="lecturer">{{$cdb->acc_name}}</div>
-        <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
-    @endif
-    @endforeach
-
-  </TD>
-</TR>
-
-<TR>
-    <TD>17.00-18.00</TD>
-
-    <TD>
-        @foreach ($data1 as $cdb)
-        @if ((($cdb->day)=="Monday")&(($cdb->start_time)=="17:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->lec_name}}</div>
-            <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
-        @endif
-    @endforeach
-
-    @foreach ($data2 as $cdb)
-    @if ((($cdb->day)=="Monday")&(($cdb->start_time)=="17:00"))
-        <div class="name" >{{$cdb->course_name}}</div>
-        <div class="code" >{{$cdb->course_code}}</div>
-        <div class="lecturer">{{$cdb->acc_name}}</div>
-        <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
-    @endif
-@endforeach
-
-      </TD>
-
-      <TD>
-        @foreach ($data1 as $cdb)
-        @if ((($cdb->day)=="Tuesday")&(($cdb->start_time)=="17:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->lec_name}}</div>
-            <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
-        @endif
-        @endforeach
-
-        @foreach ($data2 as $cdb)
-        @if ((($cdb->day)=="Tuesday")&(($cdb->start_time)=="17:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->acc_name}}</div>
-            <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
-        @endif
-        @endforeach
-
-      </TD>
-      <TD>
-        @foreach ($data1 as $cdb)
-        @if ((($cdb->day)=="Wednesday")&(($cdb->start_time)=="17:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->lec_name}}</div>
-            <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
-        @endif
-        @endforeach
-
-        @foreach ($data2 as $cdb)
-        @if ((($cdb->day)=="Wednesday")&(($cdb->start_time)=="17:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->acc_name}}</div>
-            <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
-        @endif
-        @endforeach
-        </TD>
-
-      <TD>
-        @foreach ($data1 as $cdb)
-        @if ((($cdb->day)=="Thursday")&(($cdb->start_time)=="17:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->lec_name}}</div>
-            <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
-        @endif
-        @endforeach
-
-        @foreach ($data2 as $cdb)
-        @if ((($cdb->day)=="Thursday")&(($cdb->start_time)=="17:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->acc_name}}</div>
-            <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
-        @endif
-        @endforeach
-
-
-      </TD>
-
-      <TD>
-        @foreach ($data1 as $cdb)
-        @if ((($cdb->day)=="Friday")&(($cdb->start_time)=="17:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->lec_name}}</div>
-            <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
-        @endif
-        @endforeach
-
-        @foreach ($data2 as $cdb)
-        @if ((($cdb->day)=="Friday")&(($cdb->start_time)=="17:00"))
-            <div class="name" >{{$cdb->course_name}}</div>
-            <div class="code" >{{$cdb->course_code}}</div>
-            <div class="lecturer">{{$cdb->acc_name}}</div>
-            <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
-        @endif
-        @endforeach
 
           </TD>
-    </TR>
+
+          <TD>
+            @foreach ($data1 as $cdb)
+            @if ((($cdb->day)=="Friday")&&(($cdb->start_time)=="10:00"))
+                <div class="name" >{{$cdb->course_name}}</div>
+                <div class="code" >{{$cdb->course_code}}</div>
+                <div class="lecturer">{{$cdb->lec_name}}</div>
+                <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+            @endif
+            @endforeach
+
+            @foreach ($data2 as $cdb)
+            @if ((($cdb->day)=="Friday")&&(($cdb->start_time)=="10:00"))
+                <div class="name" >{{$cdb->course_name}}</div>
+                <div class="code" >{{$cdb->course_code}}</div>
+                <div class="lecturer">{{$cdb->acc_name}}</div>
+                <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+            @endif
+            @endforeach
+
+          </TD>
+        </TR>
+
+        <TR>
+          <TD>11.00-12.00</TD>
+          <TD>
+            @foreach ($data1 as $cdb)
+            @if ((($cdb->day)=="Monday")&&(($cdb->start_time)=="11:00"))
+                <div class="name" >{{$cdb->course_name}}</div>
+                <div class="code" >{{$cdb->course_code}}</div>
+                <div class="lecturer">{{$cdb->lec_name}}</div>
+                <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+            @endif
+        @endforeach
+
+        @foreach ($data2 as $cdb)
+        @if ((($cdb->day)=="Monday")&&(($cdb->start_time)=="11:00"))
+            <div class="name" >{{$cdb->course_name}}</div>
+            <div class="code" >{{$cdb->course_code}}</div>
+            <div class="lecturer">{{$cdb->acc_name}}</div>
+            <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+        @endif
+    @endforeach
+
+          </TD>
+
+          <TD>
+            @foreach ($data1 as $cdb)
+            @if ((($cdb->day)=="Tuesday")&&(($cdb->start_time)=="11:00"))
+                <div class="name" >{{$cdb->course_name}}</div>
+                <div class="code" >{{$cdb->course_code}}</div>
+                <div class="lecturer">{{$cdb->lec_name}}</div>
+                <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+            @endif
+            @endforeach
+
+            @foreach ($data2 as $cdb)
+            @if ((($cdb->day)=="Tuesday")&&(($cdb->start_time)=="11:00"))
+                <div class="name" >{{$cdb->course_name}}</div>
+                <div class="code" >{{$cdb->course_code}}</div>
+                <div class="lecturer">{{$cdb->acc_name}}</div>
+                <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+            @endif
+            @endforeach
+
+          </TD>
+          <TD>
+            @foreach ($data1 as $cdb)
+            @if ((($cdb->day)=="Wednesday")&&(($cdb->start_time)=="11:00"))
+                <div class="name" >{{$cdb->course_name}}</div>
+                <div class="code" >{{$cdb->course_code}}</div>
+                <div class="lecturer">{{$cdb->lec_name}}</div>
+                <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+            @endif
+            @endforeach
+
+            @foreach ($data2 as $cdb)
+            @if ((($cdb->day)=="Wednesday")&&(($cdb->start_time)=="11:00"))
+                <div class="name" >{{$cdb->course_name}}</div>
+                <div class="code" >{{$cdb->course_code}}</div>
+                <div class="lecturer">{{$cdb->acc_name}}</div>
+                <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+            @endif
+            @endforeach
+            </TD>
+
+          <TD>
+            @foreach ($data1 as $cdb)
+            @if ((($cdb->day)=="Thursday")&&(($cdb->start_time)=="11:00"))
+                <div class="name" >{{$cdb->course_name}}</div>
+                <div class="code" >{{$cdb->course_code}}</div>
+                <div class="lecturer">{{$cdb->lec_name}}</div>
+                <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+            @endif
+            @endforeach
+
+            @foreach ($data2 as $cdb)
+            @if ((($cdb->day)=="Thursday")&&(($cdb->start_time)=="11:00"))
+                <div class="name" >{{$cdb->course_name}}</div>
+                <div class="code" >{{$cdb->course_code}}</div>
+                <div class="lecturer">{{$cdb->acc_name}}</div>
+                <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+            @endif
+            @endforeach
+
+
+          </TD>
+
+          <TD>
+            @foreach ($data1 as $cdb)
+            @if ((($cdb->day)=="Friday")&&(($cdb->start_time)=="11:00"))
+                <div class="name" >{{$cdb->course_name}}</div>
+                <div class="code" >{{$cdb->course_code}}</div>
+                <div class="lecturer">{{$cdb->lec_name}}</div>
+                <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+            @endif
+            @endforeach
+
+            @foreach ($data2 as $cdb)
+            @if ((($cdb->day)=="Friday")&&(($cdb->start_time)=="11:00"))
+                <div class="name" >{{$cdb->course_name}}</div>
+                <div class="code" >{{$cdb->course_code}}</div>
+                <div class="lecturer">{{$cdb->acc_name}}</div>
+                <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+            @endif
+            @endforeach
+
+          </TD>
+        </TR>
+
+
+          <TR>
+          <TD colspan="6" class="lunch">Lunch</TD>
+        </TR>
+
+          <TR>
+          <TD>13.00-13.55</TD>
+          <TD>
+            @foreach ($data1 as $cdb)
+            @if ((($cdb->day)=="Monday")&&(($cdb->start_time)=="13:00"))
+                <div class="name" >{{$cdb->course_name}}</div>
+                <div class="code" >{{$cdb->course_code}}</div>
+                <div class="lecturer">{{$cdb->lec_name}}</div>
+                <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+            @endif
+        @endforeach
+
+        @foreach ($data2 as $cdb)
+        @if ((($cdb->day)=="Monday")&&(($cdb->start_time)=="13:00"))
+            <div class="name" >{{$cdb->course_name}}</div>
+            <div class="code" >{{$cdb->course_code}}</div>
+            <div class="lecturer">{{$cdb->acc_name}}</div>
+            <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+        @endif
+    @endforeach
+
+          </TD>
+
+          <TD>
+            @foreach ($data1 as $cdb)
+            @if ((($cdb->day)=="Tuesday")&&(($cdb->start_time)=="13:00"))
+                <div class="name" >{{$cdb->course_name}}</div>
+                <div class="code" >{{$cdb->course_code}}</div>
+                <div class="lecturer">{{$cdb->lec_name}}</div>
+                <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+            @endif
+            @endforeach
+
+            @foreach ($data2 as $cdb)
+            @if ((($cdb->day)=="Tuesday")&&(($cdb->start_time)=="13:00"))
+                <div class="name" >{{$cdb->course_name}}</div>
+                <div class="code" >{{$cdb->course_code}}</div>
+                <div class="lecturer">{{$cdb->acc_name}}</div>
+                <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+            @endif
+            @endforeach
+
+          </TD>
+          <TD>
+            @foreach ($data1 as $cdb)
+            @if ((($cdb->day)=="Wednesday")&&(($cdb->start_time)=="13:00"))
+                <div class="name" >{{$cdb->course_name}}</div>
+                <div class="code" >{{$cdb->course_code}}</div>
+                <div class="lecturer">{{$cdb->lec_name}}</div>
+                <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+            @endif
+            @endforeach
+
+            @foreach ($data2 as $cdb)
+            @if ((($cdb->day)=="Wednesday")&&(($cdb->start_time)=="13:00"))
+                <div class="name" >{{$cdb->course_name}}</div>
+                <div class="code" >{{$cdb->course_code}}</div>
+                <div class="lecturer">{{$cdb->acc_name}}</div>
+                <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+            @endif
+            @endforeach
+            </TD>
+
+          <TD>
+            @foreach ($data1 as $cdb)
+            @if ((($cdb->day)=="Thursday")&&(($cdb->start_time)=="13:00"))
+                <div class="name" >{{$cdb->course_name}}</div>
+                <div class="code" >{{$cdb->course_code}}</div>
+                <div class="lecturer">{{$cdb->lec_name}}</div>
+                <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+            @endif
+            @endforeach
+
+            @foreach ($data2 as $cdb)
+            @if ((($cdb->day)=="Thursday")&&(($cdb->start_time)=="13:00"))
+                <div class="name" >{{$cdb->course_name}}</div>
+                <div class="code" >{{$cdb->course_code}}</div>
+                <div class="lecturer">{{$cdb->acc_name}}</div>
+                <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+            @endif
+            @endforeach
+
+
+          </TD>
+
+          <TD>
+            @foreach ($data1 as $cdb)
+            @if ((($cdb->day)=="Friday")&&(($cdb->start_time)=="13:00"))
+                <div class="name" >{{$cdb->course_name}}</div>
+                <div class="code" >{{$cdb->course_code}}</div>
+                <div class="lecturer">{{$cdb->lec_name}}</div>
+                <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+            @endif
+            @endforeach
+
+            @foreach ($data2 as $cdb)
+            @if ((($cdb->day)=="Friday")&&(($cdb->start_time)=="13:00"))
+                <div class="name" >{{$cdb->course_name}}</div>
+                <div class="code" >{{$cdb->course_code}}</div>
+                <div class="lecturer">{{$cdb->acc_name}}</div>
+                <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+            @endif
+            @endforeach
+
+          </TD>
+        </TR>
+
+        <TR>
+            <TD>14.00-14.55</TD>
+
+            <TD>
+                @foreach ($data1 as $cdb)
+                @if ((($cdb->day)=="Monday")&&(($cdb->start_time)=="14:00"))
+                    <div class="name" >{{$cdb->course_name}}</div>
+                    <div class="code" >{{$cdb->course_code}}</div>
+                    <div class="lecturer">{{$cdb->lec_name}}</div>
+                    <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+                @endif
+            @endforeach
+
+            @foreach ($data2 as $cdb)
+            @if ((($cdb->day)=="Monday")&&(($cdb->start_time)=="14:00"))
+                <div class="name" >{{$cdb->course_name}}</div>
+                <div class="code" >{{$cdb->course_code}}</div>
+                <div class="lecturer">{{$cdb->acc_name}}</div>
+                <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+            @endif
+        @endforeach
+
+              </TD>
+
+              <TD>
+                @foreach ($data1 as $cdb)
+                @if ((($cdb->day)=="Tuesday")&&(($cdb->start_time)=="14:00"))
+                    <div class="name" >{{$cdb->course_name}}</div>
+                    <div class="code" >{{$cdb->course_code}}</div>
+                    <div class="lecturer">{{$cdb->lec_name}}</div>
+                    <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+                @endif
+                @endforeach
+
+                @foreach ($data2 as $cdb)
+                @if ((($cdb->day)=="Tuesday")&&(($cdb->start_time)=="14:00"))
+                    <div class="name" >{{$cdb->course_name}}</div>
+                    <div class="code" >{{$cdb->course_code}}</div>
+                    <div class="lecturer">{{$cdb->acc_name}}</div>
+                    <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+                @endif
+                @endforeach
+
+              </TD>
+              <TD>
+                @foreach ($data1 as $cdb)
+                @if ((($cdb->day)=="Wednesday")&&(($cdb->start_time)=="14:00"))
+                    <div class="name" >{{$cdb->course_name}}</div>
+                    <div class="code" >{{$cdb->course_code}}</div>
+                    <div class="lecturer">{{$cdb->lec_name}}</div>
+                    <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+                @endif
+                @endforeach
+
+                @foreach ($data2 as $cdb)
+                @if ((($cdb->day)=="Wednesday")&&(($cdb->start_time)=="14:00"))
+                    <div class="name" >{{$cdb->course_name}}</div>
+                    <div class="code" >{{$cdb->course_code}}</div>
+                    <div class="lecturer">{{$cdb->acc_name}}</div>
+                    <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+                @endif
+                @endforeach
+                </TD>
+
+              <TD>
+                @foreach ($data1 as $cdb)
+                @if ((($cdb->day)=="Thursday")&&(($cdb->start_time)=="14:00"))
+                    <div class="name" >{{$cdb->course_name}}</div>
+                    <div class="code" >{{$cdb->course_code}}</div>
+                    <div class="lecturer">{{$cdb->lec_name}}</div>
+                    <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+                @endif
+                @endforeach
+
+                @foreach ($data2 as $cdb)
+                @if ((($cdb->day)=="Thursday")&&(($cdb->start_time)=="14:00"))
+                    <div class="name" >{{$cdb->course_name}}</div>
+                    <div class="code" >{{$cdb->course_code}}</div>
+                    <div class="lecturer">{{$cdb->acc_name}}</div>
+                    <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+                @endif
+                @endforeach
+
+
+              </TD>
+
+              <TD>
+                @foreach ($data1 as $cdb)
+                @if ((($cdb->day)=="Friday")&&(($cdb->start_time)=="14:00"))
+                    <div class="name" >{{$cdb->course_name}}</div>
+                    <div class="code" >{{$cdb->course_code}}</div>
+                    <div class="lecturer">{{$cdb->lec_name}}</div>
+                    <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+                @endif
+                @endforeach
+
+                @foreach ($data2 as $cdb)
+                @if ((($cdb->day)=="Friday")&&(($cdb->start_time)=="14:00"))
+                    <div class="name" >{{$cdb->course_name}}</div>
+                    <div class="code" >{{$cdb->course_code}}</div>
+                    <div class="lecturer">{{$cdb->acc_name}}</div>
+                    <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+                @endif
+                @endforeach
+
+              </TD>
+        </TR>
+
+        <TR>
+            <TD>15.00-15.55</TD>
+
+            <TD>
+                @foreach ($data1 as $cdb)
+                @if ((($cdb->day)=="Monday")&&(($cdb->start_time)=="15:00"))
+                    <div class="name" >{{$cdb->course_name}}</div>
+                    <div class="code" >{{$cdb->course_code}}</div>
+                    <div class="lecturer">{{$cdb->lec_name}}</div>
+                    <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+                @endif
+            @endforeach
+
+            @foreach ($data2 as $cdb)
+            @if ((($cdb->day)=="Monday")&&(($cdb->start_time)=="15:00"))
+                <div class="name" >{{$cdb->course_name}}</div>
+                <div class="code" >{{$cdb->course_code}}</div>
+                <div class="lecturer">{{$cdb->acc_name}}</div>
+                <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+            @endif
+        @endforeach
+
+              </TD>
+
+              <TD>
+                @foreach ($data1 as $cdb)
+                @if ((($cdb->day)=="Tuesday")&&(($cdb->start_time)=="15:00"))
+                    <div class="name" >{{$cdb->course_name}}</div>
+                    <div class="code" >{{$cdb->course_code}}</div>
+                    <div class="lecturer">{{$cdb->lec_name}}</div>
+                    <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+                @endif
+                @endforeach
+
+                @foreach ($data2 as $cdb)
+                @if ((($cdb->day)=="Tuesday")&&(($cdb->start_time)=="15:00"))
+                    <div class="name" >{{$cdb->course_name}}</div>
+                    <div class="code" >{{$cdb->course_code}}</div>
+                    <div class="lecturer">{{$cdb->acc_name}}</div>
+                    <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+                @endif
+                @endforeach
+
+              </TD>
+              <TD>
+                @foreach ($data1 as $cdb)
+                @if ((($cdb->day)=="Wednesday")&&(($cdb->start_time)=="15:00"))
+                    <div class="name" >{{$cdb->course_name}}</div>
+                    <div class="code" >{{$cdb->course_code}}</div>
+                    <div class="lecturer">{{$cdb->lec_name}}</div>
+                    <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+                @endif
+                @endforeach
+
+                @foreach ($data2 as $cdb)
+                @if ((($cdb->day)=="Wednesday")&&(($cdb->start_time)=="15:00"))
+                    <div class="name" >{{$cdb->course_name}}</div>
+                    <div class="code" >{{$cdb->course_code}}</div>
+                    <div class="lecturer">{{$cdb->acc_name}}</div>
+                    <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+                @endif
+                @endforeach
+                </TD>
+
+              <TD>
+                @foreach ($data1 as $cdb)
+                @if ((($cdb->day)=="Thursday")&&(($cdb->start_time)=="15:00"))
+                    <div class="name" >{{$cdb->course_name}}</div>
+                    <div class="code" >{{$cdb->course_code}}</div>
+                    <div class="lecturer">{{$cdb->lec_name}}</div>
+                    <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+                @endif
+                @endforeach
+
+                @foreach ($data2 as $cdb)
+                @if ((($cdb->day)=="Thursday")&&(($cdb->start_time)=="15:00"))
+                    <div class="name" >{{$cdb->course_name}}</div>
+                    <div class="code" >{{$cdb->course_code}}</div>
+                    <div class="lecturer">{{$cdb->acc_name}}</div>
+                    <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+                @endif
+                @endforeach
+
+
+              </TD>
+
+              <TD>
+                @foreach ($data1 as $cdb)
+                @if ((($cdb->day)=="Friday")&&(($cdb->start_time)=="15:00"))
+                    <div class="name" >{{$cdb->course_name}}</div>
+                    <div class="code" >{{$cdb->course_code}}</div>
+                    <div class="lecturer">{{$cdb->lec_name}}</div>
+                    <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+                @endif
+                @endforeach
+
+                @foreach ($data2 as $cdb)
+                @if ((($cdb->day)=="Friday")&&(($cdb->start_time)=="15:00"))
+                    <div class="name" >{{$cdb->course_name}}</div>
+                    <div class="code" >{{$cdb->course_code}}</div>
+                    <div class="lecturer">{{$cdb->acc_name}}</div>
+                    <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+                @endif
+                @endforeach
+
+              </TD>
+        </TR>
+
+        <TR>
+          <TD>16.00-16.55</TD>
+          <TD>
+            @foreach ($data1 as $cdb)
+            @if ((($cdb->day)=="Monday")&&(($cdb->start_time)=="16:00"))
+                <div class="name" >{{$cdb->course_name}}</div>
+                <div class="code" >{{$cdb->course_code}}</div>
+                <div class="lecturer">{{$cdb->lec_name}}</div>
+                <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+            @endif
+        @endforeach
+
+        @foreach ($data2 as $cdb)
+        @if ((($cdb->day)=="Monday")&&(($cdb->start_time)=="16:00"))
+            <div class="name" >{{$cdb->course_name}}</div>
+            <div class="code" >{{$cdb->course_code}}</div>
+            <div class="lecturer">{{$cdb->acc_name}}</div>
+            <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+        @endif
+    @endforeach
+
+          </TD>
+
+          <TD>
+            @foreach ($data1 as $cdb)
+            @if ((($cdb->day)=="Tuesday")&&(($cdb->start_time)=="16:00"))
+                <div class="name" >{{$cdb->course_name}}</div>
+                <div class="code" >{{$cdb->course_code}}</div>
+                <div class="lecturer">{{$cdb->lec_name}}</div>
+                <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+            @endif
+            @endforeach
+
+            @foreach ($data2 as $cdb)
+            @if ((($cdb->day)=="Tuesday")&&(($cdb->start_time)=="16:00"))
+                <div class="name" >{{$cdb->course_name}}</div>
+                <div class="code" >{{$cdb->course_code}}</div>
+                <div class="lecturer">{{$cdb->acc_name}}</div>
+                <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+            @endif
+            @endforeach
+
+          </TD>
+          <TD>
+            @foreach ($data1 as $cdb)
+            @if ((($cdb->day)=="Wednesday")&&(($cdb->start_time)=="16:00"))
+                <div class="name" >{{$cdb->course_name}}</div>
+                <div class="code" >{{$cdb->course_code}}</div>
+                <div class="lecturer">{{$cdb->lec_name}}</div>
+                <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+            @endif
+            @endforeach
+
+            @foreach ($data2 as $cdb)
+            @if ((($cdb->day)=="Wednesday")&&(($cdb->start_time)=="16:00"))
+                <div class="name" >{{$cdb->course_name}}</div>
+                <div class="code" >{{$cdb->course_code}}</div>
+                <div class="lecturer">{{$cdb->acc_name}}</div>
+                <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+            @endif
+            @endforeach
+            </TD>
+
+          <TD>
+            @foreach ($data1 as $cdb)
+            @if ((($cdb->day)=="Thursday")&&(($cdb->start_time)=="16:00"))
+                <div class="name" >{{$cdb->course_name}}</div>
+                <div class="code" >{{$cdb->course_code}}</div>
+                <div class="lecturer">{{$cdb->lec_name}}</div>
+                <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+            @endif
+            @endforeach
+
+            @foreach ($data2 as $cdb)
+            @if ((($cdb->day)=="Thursday")&&(($cdb->start_time)=="16:00"))
+                <div class="name" >{{$cdb->course_name}}</div>
+                <div class="code" >{{$cdb->course_code}}</div>
+                <div class="lecturer">{{$cdb->acc_name}}</div>
+                <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+            @endif
+            @endforeach
+
+
+          </TD>
+
+          <TD>
+            @foreach ($data1 as $cdb)
+            @if ((($cdb->day)=="Friday")&&(($cdb->start_time)=="16:00"))
+                <div class="name" >{{$cdb->course_name}}</div>
+                <div class="code" >{{$cdb->course_code}}</div>
+                <div class="lecturer">{{$cdb->lec_name}}</div>
+                <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+            @endif
+            @endforeach
+
+            @foreach ($data2 as $cdb)
+            @if ((($cdb->day)=="Friday")&&(($cdb->start_time)=="16:00"))
+                <div class="name" >{{$cdb->course_name}}</div>
+                <div class="code" >{{$cdb->course_code}}</div>
+                <div class="lecturer">{{$cdb->acc_name}}</div>
+                <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+            @endif
+            @endforeach
+
+          </TD>
+        </TR>
+
+        <TR>
+            <TD>17.00-18.00</TD>
+
+            <TD>
+                @foreach ($data1 as $cdb)
+                @if ((($cdb->day)=="Monday")&&(($cdb->start_time)=="17:00"))
+                    <div class="name" >{{$cdb->course_name}}</div>
+                    <div class="code" >{{$cdb->course_code}}</div>
+                    <div class="lecturer">{{$cdb->lec_name}}</div>
+                    <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+                @endif
+            @endforeach
+
+            @foreach ($data2 as $cdb)
+            @if ((($cdb->day)=="Monday")&&(($cdb->start_time)=="17:00"))
+                <div class="name" >{{$cdb->course_name}}</div>
+                <div class="code" >{{$cdb->course_code}}</div>
+                <div class="lecturer">{{$cdb->acc_name}}</div>
+                <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+            @endif
+        @endforeach
+
+              </TD>
+
+              <TD>
+                @foreach ($data1 as $cdb)
+                @if ((($cdb->day)=="Tuesday")&&(($cdb->start_time)=="17:00"))
+                    <div class="name" >{{$cdb->course_name}}</div>
+                    <div class="code" >{{$cdb->course_code}}</div>
+                    <div class="lecturer">{{$cdb->lec_name}}</div>
+                    <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+                @endif
+                @endforeach
+
+                @foreach ($data2 as $cdb)
+                @if ((($cdb->day)=="Tuesday")&&(($cdb->start_time)=="17:00"))
+                    <div class="name" >{{$cdb->course_name}}</div>
+                    <div class="code" >{{$cdb->course_code}}</div>
+                    <div class="lecturer">{{$cdb->acc_name}}</div>
+                    <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+                @endif
+                @endforeach
+
+              </TD>
+              <TD>
+                @foreach ($data1 as $cdb)
+                @if ((($cdb->day)=="Wednesday")&&(($cdb->start_time)=="17:00"))
+                    <div class="name" >{{$cdb->course_name}}</div>
+                    <div class="code" >{{$cdb->course_code}}</div>
+                    <div class="lecturer">{{$cdb->lec_name}}</div>
+                    <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+                @endif
+                @endforeach
+
+                @foreach ($data2 as $cdb)
+                @if ((($cdb->day)=="Wednesday")&&(($cdb->start_time)=="17:00"))
+                    <div class="name" >{{$cdb->course_name}}</div>
+                    <div class="code" >{{$cdb->course_code}}</div>
+                    <div class="lecturer">{{$cdb->acc_name}}</div>
+                    <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+                @endif
+                @endforeach
+                </TD>
+
+              <TD>
+                @foreach ($data1 as $cdb)
+                @if ((($cdb->day)=="Thursday")&&(($cdb->start_time)=="17:00"))
+                    <div class="name" >{{$cdb->course_name}}</div>
+                    <div class="code" >{{$cdb->course_code}}</div>
+                    <div class="lecturer">{{$cdb->lec_name}}</div>
+                    <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+                @endif
+                @endforeach
+
+                @foreach ($data2 as $cdb)
+                @if ((($cdb->day)=="Thursday")&&(($cdb->start_time)=="17:00"))
+                    <div class="name" >{{$cdb->course_name}}</div>
+                    <div class="code" >{{$cdb->course_code}}</div>
+                    <div class="lecturer">{{$cdb->acc_name}}</div>
+                    <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+                @endif
+                @endforeach
+
+
+              </TD>
+
+              <TD>
+                @foreach ($data1 as $cdb)
+                @if ((($cdb->day)=="Friday")&&(($cdb->start_time)=="17:00"))
+                    <div class="name" >{{$cdb->course_name}}</div>
+                    <div class="code" >{{$cdb->course_code}}</div>
+                    <div class="lecturer">{{$cdb->lec_name}}</div>
+                    <div class="hall">{{$cdb->lh_name}}</div>    <!--theory-->
+                @endif
+                @endforeach
+
+                @foreach ($data2 as $cdb)
+                @if ((($cdb->day)=="Friday")&&(($cdb->start_time)=="17:00"))
+                    <div class="name" >{{$cdb->course_name}}</div>
+                    <div class="code" >{{$cdb->course_code}}</div>
+                    <div class="lecturer">{{$cdb->acc_name}}</div>
+                    <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
+                @endif
+                @endforeach
+              </TD>
+        </TR>
 
    </TBODY>
   </TABLE>
