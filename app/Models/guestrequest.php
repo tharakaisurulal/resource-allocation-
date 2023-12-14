@@ -18,6 +18,7 @@ class guestrequest extends Model
         'faculty',
         'department',
         'reason',
-        'guest_id'
+        'guest_id',
+        'read_at'
     ];
 }
