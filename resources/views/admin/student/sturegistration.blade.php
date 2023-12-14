@@ -32,12 +32,12 @@
     <p>Please fill in this form to create an account.</p>
     <hr>
 
-    <label for="name"><b>First Name:</b></label>
-    <input type="text" placeholder="Enter Name" name="fname" id="name" >
+    <label for="name"><b>Name with Initials Without Last Name:</b></label>
+    <input type="text" placeholder="K.M.L." name="fname" id="name" >
     <label class="text-danger span1">@error('fname')  {{$message}}  @enderror</label><br>
 
     <label for="name"><b>Last Name:</b></label>
-    <input type="text" placeholder="Enter Name" name="lname" id="name" >
+    <input type="text" placeholder="Perera" name="lname" id="name" >
     <label class="text-danger span1">@error('lname')  {{$message}}  @enderror</label><br>
 
     <!--<label for="name"><b>Faculty</b></label>
@@ -58,7 +58,7 @@
     <input type="text" placeholder="Enter Department" name="department" id="dpt" required>-->
 
     <label for="psw"><b>Tel. No:</b></label>
-    <input type="text" placeholder="Enter Position" name="mobile" id="psw" >
+    <input type="text" placeholder="0712345678" name="mobile" id="psw" >
     <label class="text-danger span1">@error('mobile')  {{$message}}  @enderror</label><br>
 
    <label for="profileImage" class="form-label"><b>Upload Profile Image:</b></label>
@@ -94,7 +94,7 @@
         <option value="">--Choose subject--</option>
         @foreach ($dater1 as $cdb1 )
         <option value="{{$cdb1->id}}">@php
-            echo $cdb1->course_name;
+            echo $cdb1->course_name." ".$cdb1->course_code;
         @endphp</option>
         @endforeach
         </select>
@@ -105,7 +105,7 @@
         <option value="">--Choose subject--</option>
         @foreach ($dater1 as $cdb1 )
         <option value="{{$cdb1->id}}">@php
-            echo $cdb1->course_name;
+            echo $cdb1->course_name." ".$cdb1->course_code;
         @endphp</option>
         @endforeach
         </select>
@@ -116,7 +116,7 @@
         <option value="">--Choose subject--</option>
         @foreach ($dater1 as $cdb1 )
         <option value="{{$cdb1->id}}">@php
-            echo $cdb1->course_name;
+            echo $cdb1->course_name." ".$cdb1->course_code;
         @endphp</option>
         @endforeach
         </select>
@@ -127,7 +127,7 @@
         <option value="">--Choose subject--</option>
         @foreach ($dater1 as $cdb1 )
         <option value="{{$cdb1->id}}">@php
-            echo $cdb1->course_name;
+            echo $cdb1->course_name." ".$cdb1->course_code;
         @endphp</option>
         @endforeach
         </select>
@@ -138,7 +138,7 @@
         <option value="">--Choose subject--</option>
         @foreach ($dater1 as $cdb1 )
         <option value="{{$cdb1->id}}">@php
-            echo $cdb1->course_name;
+            echo $cdb1->course_name." ".$cdb1->course_code;
         @endphp</option>
         @endforeach
         </select>
@@ -149,7 +149,7 @@
         <option value="">--Choose subject--</option>
         @foreach ($dater1 as $cdb1 )
         <option value="{{$cdb1->id}}">@php
-            echo $cdb1->course_name;
+            echo $cdb1->course_name." ".$cdb1->course_code;
         @endphp</option>
         @endforeach
         </select>
@@ -160,7 +160,7 @@
         <option value="">--Choose subject--</option>
         @foreach ($dater1 as $cdb1 )
         <option value="{{$cdb1->id}}">@php
-            echo $cdb1->course_name;
+            echo $cdb1->course_name." ".$cdb1->course_code;
         @endphp</option>
         @endforeach
         </select>
@@ -171,7 +171,7 @@
         <option value="">--Choose subject--</option>
         @foreach ($dater1 as $cdb1 )
         <option value="{{$cdb1->id}}">@php
-            echo $cdb1->course_name;
+            echo $cdb1->course_name." ".$cdb1->course_code;
         @endphp</option>
         @endforeach
         </select>

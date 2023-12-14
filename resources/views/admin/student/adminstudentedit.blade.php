@@ -81,7 +81,7 @@
             <option value="">--Choose Course--</option>
             @foreach ( $dater3 as $data )
             <option value="{{$data->id}}" {{ ($student->subject1 == $data->id) ? 'selected' : '' }}>@php
-                echo $data->course_name;
+                echo $data->course_name." ".$data->course_code;
             @endphp</option>
 
               @endforeach
@@ -93,7 +93,7 @@
             <option value="">--Choose Course--</option>
             @foreach ( $dater3 as $data )
             <option value="{{$data->id}}" {{ ($student->subject2 == $data->id) ? 'selected' : '' }}>@php
-                echo $data->course_name;
+                echo $data->course_name." ".$data->course_code;
             @endphp</option>
 
               @endforeach
@@ -105,7 +105,7 @@
             <option value="">--Choose Course--</option>
             @foreach ( $dater3 as $data )
             <option value="{{$data->id}}" {{ ($student->subject3 == $data->id) ? 'selected' : '' }}>@php
-                echo $data->course_name;
+                echo $data->course_name." ".$data->course_code;
             @endphp</option>
 
               @endforeach
@@ -117,7 +117,7 @@
             <option value="">--Choose Course--</option>
             @foreach ( $dater3 as $data )
             <option value="{{$data->id}}" {{ ($student->subject4 == $data->id) ? 'selected' : '' }}>@php
-                echo $data->course_name;
+                echo $data->course_name." ".$data->course_code;
             @endphp</option>
 
               @endforeach
@@ -129,7 +129,7 @@
             <option value="">--Choose Course--</option>
             @foreach ( $dater3 as $data )
             <option value="{{$data->id}}" {{ ($student->subject5 == $data->id) ? 'selected' : '' }}>@php
-                echo $data->course_name;
+                echo $data->course_name." ".$data->course_code;
             @endphp</option>
 
               @endforeach
@@ -141,7 +141,7 @@
             <option value="">--Choose Course--</option>
             @foreach ( $dater3 as $data )
             <option value="{{$data->id}}" {{ ($student->subject6 == $data->id) ? 'selected' : '' }}>@php
-                echo $data->course_name;
+                echo $data->course_name." ".$data->course_code;
             @endphp</option>
 
               @endforeach
@@ -153,7 +153,7 @@
             <option value="">--Choose Course--</option>
             @foreach ( $dater3 as $data )
             <option value="{{$data->id}}" {{ ($student->subject7 == $data->id) ? 'selected' : '' }}>@php
-                echo $data->course_name;
+                echo $data->course_name." ".$data->course_code;
             @endphp</option>
 
               @endforeach
@@ -166,7 +166,7 @@
             <option value="">--Choose Course--</option>
             @foreach ( $dater3 as $data )
             <option value="{{$data->id}}" {{ ($student->subject8 == $data->id) ? 'selected' : '' }}>@php
-                echo $data->course_name;
+                echo $data->course_name." ".$data->course_code;
             @endphp</option>
 
               @endforeach
