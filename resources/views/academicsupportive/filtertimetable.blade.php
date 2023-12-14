@@ -11,9 +11,14 @@
 
     </head>
     <body class="bdy">
+
+      <div class="box">
         <div class="div1">
+            <form action="{{route('filtertimetablesubmit')}}" method="post">
+            @csrf
+
             <div class="text-center">
-                <h1>Timetable Filter</h1>
+                <h1><b>Timetable Filter</b></h1>
             </div>
 
             @if(session()->has('success'))
@@ -24,10 +29,7 @@
             <div class="alert alert-danger">{{session()->get('fail')}}</div>
         @endif
 
-        <div class="con1">
-    <form action="{{route('filtertimetablesubmit')}}" method="post">
-            @csrf
-             <label for="name"><b>Program:</b></label>
+            <label for="name"><b>Program:</b></label>
              <select name="prog" id="faculty">
                  <option value="">--Choose Program--</option>
                  @foreach ($dater2 as $cdb )
@@ -49,7 +51,7 @@
 
                      <label for="name"><b>Semester:</b></label>
                  <select name="semester" id="faculty">
-                     <option value="">--Choose course--</option>
+                     <option value="">--Choose Semester--</option>
                      <option value="semester1">Semester 1</option>
                      <option value="semester2">Semester 2</option>
                      </select>
@@ -57,7 +59,7 @@
 
                      <label for="name"><b>Day:</b></label>
                  <select name="day" id="faculty">
-                     <option value="">--Choose course--</option>
+                     <option value="">--Choose Day--</option>
                      <option value="Sunday">Sunday</option>
                      <option value="Monday">Monday</option>
                      <option value="Tuesday">Tuesday</option>
@@ -70,7 +72,7 @@
 
                      <label for="name"><b>CourseCode:</b></label>
                  <select name="coursecode" id="faculty">
-                     <option value="">--Choose course--</option>
+                     <option value="">--Choose CourseCode--</option>
                         @foreach ($dater1 as $cdb1 )
                      <option value="{{$cdb1->id}}">@php
                             echo $cdb1->course_code;
@@ -82,15 +84,20 @@
                          <div class="div3">
                             <button type="submit" class="btn btn-warning">
                                 Submit
-                            </button><br>
+                            </button>
+                            <div class="but2">
+                                <button type="button" class="btn btn-warning but1" onclick="history.back()">Back</button>
+                              </div><br>
                             </div><br>
-    </form>
-     </div>
+            </form>
+        </div>
+</div>
 
-     <h4>Theory</h4>
+<div class="box1">
+     <h4><b>Theory</b></h4>
          <div class="d-flex justify-content-center div2">
             @if (isset($joindata))
-        <table class="table table-dark">
+         <table class="table table-dark">
             <thead>
                 <td>Start Time</td>
                 <td>End Time</td>
@@ -116,15 +123,15 @@
 
 
 
-   <div>
+
 
     @else
     <div class="alert alert-danger">{{ 'Enter valid details' }}</div>
     @endif
     </div><br>
-</div>
 
-<h4>Practical </h4>
+
+<h4><b>Practical</b></h4>
 <div class="d-flex justify-content-center div2">
     @if (isset($joindata1))
     <table class="table table-dark">
@@ -152,17 +159,16 @@
   </table>
 
 <div>
-
+</div>
 @else
 <div class="alert alert-danger">{{ 'Enter valid details' }}</div>
 @endif
 </div>
 
-         </div>
+</div>
 
-        </div>
-
-    </body>
+</div>
+</body>
 </html>
 
 

@@ -21,6 +21,7 @@ return new class extends Migration
             $table->String ('hall_name');
             $table->String ('reason',400)->nullable();
             $table->unsignedBigInteger('lecturer_id');
+            $table->timestamp('read_at')->nullable();
             $table->foreign('lecturer_id')->references('id')->on('lecturers')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');

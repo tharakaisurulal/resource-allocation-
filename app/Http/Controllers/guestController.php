@@ -9,6 +9,9 @@ use App\Models\lab;
 use App\Models\guestrequest;
 use Illuminate\View\View;
 
+use App\Mail\RegisterMail;
+use Illuminate\Support\Facades\Mail;
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\hash;
 use session;
@@ -90,11 +93,11 @@ class guestController extends Controller
         $request->validate([  //validation part.
             'name'=> 'required',
             'faculty'=> 'required',
-            'username'=> 'required|unique:guests|unique:admins|unique:lecturers|unique:students|unique:accsupportives',
+            'username'=> 'required|email|unique:guests|unique:admins|unique:lecturers|unique:students|unique:accsupportives',
             'password'=> 'required|unique:guests|min:5|max:12',
             'department'=> 'required',
             'position'=> 'required',
-            'mobile'=> 'required',
+            'mobile'=> 'required|digits:10',
             'password1'=> 'required',
 
 
@@ -146,9 +149,10 @@ class guestController extends Controller
             //$student=post::create($request->all());
             //$student->password = Hash::make($request->input('password'));
             //$student->save();
-            if($res){
-            //return redirect('/') -> withSuccess("you are registered");
-            //return back() -> with('success',"you are registered");
+            if ($res) {
+                // Send a welcome email to the registered user
+                Mail::to($request->username)->send(new RegisterMail());
+
             return redirect('/loginpage') -> with('success',"you are registered,please login now");
             }
             else{

@@ -73,7 +73,7 @@
                 <label class="text-danger span1">@error('position')  {{$message}}  @enderror</label>
 
                 <div class="inputBox">
-                    <input type="text" name="mobile" value="{{old('mobile')}}"  placeholder="+94717665324">
+                    <input type="text" name="mobile" value="{{old('mobile')}}"  placeholder="0717665324">
                     <span>Tel. No</span>
                     <i><ion-icon name="call-sharp"></ion-icon></i>
                 </div>

@@ -3,8 +3,8 @@
 @section("content1")
     <div class="header3"><img src="{{asset('/uploads/students/'.$dater->photo) }}" alt="image" class="img1"></div>
     <div class="header2">
-        <h6>Welcome!</h6><br>
-        <h6>{{$dater->first_name.$dater->last_name}}</h6>
+        <h6>Welcome! {{$dater->first_name." ".$dater->last_name}}</h6><br>
+        <h6>You are login as a Student.</h6>
     </div>
 @endsection
 
@@ -27,8 +27,10 @@
 
 </head>
 <body>
+
 <!--------------------card section---------------------------->
 <div class="div1">
+
     <div class="card">
 
             <div class="face front">
@@ -80,24 +82,14 @@
                         <div class="button">
                             <a href="/students/viewtimetable"><span>CLICK</span></a>
                         </div>
-                    </div>
-            </div>
-        </div>
+                        <div>
+                            @if(session()->has('success'))
+                            <div class="alert alert-success div5">{{session()->get('success')}}</div>
+                        @endif
 
-
-
-        <div class="card">
-
-            <div class="face front">
-                <img src="/images/904740.png" alt="" width=300px height=350px>
-                <h3> Request </h3>
-            </div>
-
-            <div class="face back">
-                    <div class="back-content center">
-                        <h3> Request Form</h3>
-                        <div class="button">
-                            <a href="/lecturers/request"><span>CLICK</span></a>
+                        @if(session()->has('fail'))
+                            <div class="alert alert-danger">{{session()->get('fail')}}</div>
+                        @endif
                         </div>
                     </div>
             </div>

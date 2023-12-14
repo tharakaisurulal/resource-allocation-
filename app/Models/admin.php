@@ -15,3 +15,7 @@ class admin extends Model
 
     ];
 }
+function messages()
+{
+    return $this->hasMany(Message::class);
+}

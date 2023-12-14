@@ -116,6 +116,18 @@ BODY {
       }
 
 .but1{
-
    margin-left: 1000px;
+
 }
+
+.but2{
+
+float: right;
+margin-top: -40px;
+margin-right: 40px;
+ }
+
+ .colo{
+    width: auto;
+    height: auto;
+ }
