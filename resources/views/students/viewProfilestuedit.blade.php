@@ -1,10 +1,4 @@
-@extends('layout.header')
 
-@section("content2")
-        <li><a href="/admin/student/stuopera">BACK</a></li>
-@endsection
-
-@section("content")
 <!DOCTYPE html>
 <html>
     <head>
@@ -17,16 +11,6 @@
     </head>
     <body>
         <div class="div1">
-<div class="noti">
-            @if(session()->has('success'))
-            <div class="alert alert-success div5">{{session()->get('success')}}</div>
-        @endif
-
-        @if(session()->has('fail'))
-            <div class="alert alert-danger">{{session()->get('fail')}}</div>
-        @endif
-</div>
-
             <div class="text-center">
                 <h1>Update data</h1>
             </div>
@@ -186,7 +170,7 @@
         <td>Action</td>
         <td>
             <button class="btn btn-secondary btn-sm" type="submit" >Submit</button>
-            <button class="btn btn-secondary btn-sm" type="button" onclick="history.back()" >Back</button>
+           <a href="/admin/student/stuopera"> <button class="btn btn-secondary btn-sm" type="button" >Back</button></a>
     </td>
     </tr>
         </tbody>
@@ -196,5 +180,5 @@
         </div>
     </body>
 </html>
-@endsection
+
 

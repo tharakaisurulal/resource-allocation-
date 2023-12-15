@@ -103,6 +103,10 @@ Route::get('/stuprofile', function () {
     return view('stuprofile');
 });
 
+Route::get('/stuprofile1', function () {
+    return view('lecturers.viewProfile1');
+});
+
 
 /*guest routes*/
 
@@ -309,6 +313,8 @@ Route::get('viewmore-student/{id}',[studentController::class, 'viewmore'])->name
 Route::get('updatestudentpassword-student/{id}',[studentController::class, 'updatestudentpassword'])->name('updatestudentpassword');  //route to function of update student password.
 
 Route::get('delete-student/{id}',[studentController::class, 'deletestudent'])->name('deletestudent');
+
+Route::get('/admin/student/profile', [studentController::class, 'viewstuprofile'])->name('admin.student.viewstuprofile');
 
 
 /*admin.lecturer routes*/
