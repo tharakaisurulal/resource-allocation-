@@ -14,22 +14,32 @@
     <link rel="stylesheet" href="{{asset('css/notice.css')}}">
 </head>
 <body>
-
-    <h1 style="text-align: left;">NOTICE</h1>
     <div class="notice-board">
+    <h1 style="text-align:center;">NOTICE</h1>
+
+        @if (sizeof($cusdata1)!==0)
+        @foreach ($cusdata1 as $cdb)
           <div class="notice-item">
             <img src="/images/O1.jpg" class="img4" alt=""  width=100px height=100px>
-              <div class="notice-title">Academic</div>
-              <div class="notice-content">ahhhhddhiedhiediedhiehdih</div>
+              <div class="notice-title">{{$cdb->notice}}</div>
+              <!--<div class="notice-content"></div>-->
           </div>
+          @endforeach
+          @else
           <div class="notice-item">
+            <img src="/images/O1.jpg" class="img4" alt=""  width=100px height=100px>
+              <div class="notice-title"></div>
+              <!--<div class="notice-content"></div>-->
+          </div>
+          @endif
+          <!--<div class="notice-item">
               <div class="notice-title">Non-academic</div>
               <div class="notice-content">agdeudglehclheich</div>
           </div>
           <div class="notice-item">
               <div class="notice-title">Important Notice </div>
               <div class="notice-content">uvsegdoiecgugoeoci</div>
-          </div>
+          </div>-->
       </div>
 
 

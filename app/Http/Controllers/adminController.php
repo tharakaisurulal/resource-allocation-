@@ -13,7 +13,11 @@ use App\Models\timetable;
 use App\Models\accsupportive;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 use Carbon\Carbon;
+
+
 
 class adminController extends Controller
 {
@@ -29,9 +33,11 @@ class adminController extends Controller
         $count1 = DB::table('lecturers')->count();
         $count2 = DB::table('accsupportives')->count();
         $count3 = DB::table('guests')->count();
+        $unreadMessagesCount = DB::table('guestrequests')->count();
+        $unreadMessagesCount2 = DB::table('lecturerrequests')->count();
         //return $count3;
         //return $dater;
-            return view('admin.adminhome',compact('count','count1','count2','count3','dater'));
+            return view('admin.adminhome',compact('count','count1','count2','count3','dater','unreadMessagesCount','unreadMessagesCount2'));
         //return view('guest.guesthome');
     }
 
@@ -175,29 +181,34 @@ class adminController extends Controller
         public function viewsuggestions($id) //view allocation suggestion page.
     {
             $guestrequest = guestrequest::find($id);
+            //return  $guestrequest;
             $Date =$guestrequest->date;
             $day = Carbon::createFromFormat('Y-m-d', $Date)->format('l');
             $guestrequest->date = $day;
-            return  $guestrequest;
-
-                $data1 = DB::table('timetables')
-                ->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
-                ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
-                //->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
-            //->join('programs', 'timetables.program_id', '=', 'programs.id')
-            ->join('courses', 'timetables.course_id', '=', 'courses.id')
-                ->select('timetables.*','lecturers.lec_name', 'courses.course_name','courses.course_code','lecturehalls.lh_name')
-                //->where('program_id','=',$request -> program)
-                //->where('level','=',$request -> level)
-                ->where('day','=',$day)
-                //->where('course_id','=',$request -> course)
-                //->where('semester','=',$request -> semester)
-                //->where('start_time','=',$request -> starttime)
-                //->where('end_time','=',$request -> endtime)
-                //->where('lec_id','=',$request -> lecturername)
-                //->where('lh_id','=',$request -> lecturehall)
-                ->get();
-
+            //return  $guestrequest;
+    if((($guestrequest -> hall_name)=="Lecture Hall 01")||(($guestrequest -> hall_name)=="mini-auditorium")||(($guestrequest -> hall_name)=="main-auditorium") ){
+                    $data1 = DB::table('timetables')
+                    ->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
+                    ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+                    //->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+                //->join('programs', 'timetables.program_id', '=', 'programs.id')
+                ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                    ->select('timetables.*','lecturers.lec_name', 'courses.course_name','courses.course_code','lecturehalls.lh_name')
+                    //->where('program_id','=',$request -> program)
+                    //->where('level','=',$request -> level)
+                    ->where('day','=',$day)
+                    //->where('course_id','=',$request -> course)
+                    //->where('semester','=',$request -> semester)
+                    //->where('start_time','=',$request -> starttime)
+                    //->where('end_time','=',$request -> endtime)
+                    //->where('lec_id','=',$request -> lecturername)
+                    ->where('lecturehalls.lh_name','=',$guestrequest -> hall_name)
+                    ->get();
+//return $data1;
+                    $data2 = array();
+                    return view('admin.timetablesuggestions',['data1'=> $data1,'data2'=> $data2]);
+    }
+    else{
                 $data2 = DB::table('timetables')
             //->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
             ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
@@ -207,13 +218,66 @@ class adminController extends Controller
             ->join('labs', 'timetables.lab_id', '=', 'labs.id')
             ->select('timetables.*', 'accsupportives.acc_name', 'courses.course_name','courses.course_code','labs.lab_name')
             ->where('day','=',$day)
-            //->where('lh_name','=','MLT1')
-            //->where('day','=','Monday')
+            ->where('labs.lab_name','=',$guestrequest -> hall_name)
             ->get();
             //dd($dat2);
             //return $dat2;
-
+            $data1 = array();
             return view('admin.timetablesuggestions',['data1'=> $data1,'data2'=> $data2]);
+    }
+
+
+
+    }
+
+    public function viewsuggestions1($id) //view allocation suggestion page.
+    {
+            $lecturerrequest = lecturerrequest::find($id);
+            //return  $guestrequest;
+            $Date =$lecturerrequest->date;
+            $day = Carbon::createFromFormat('Y-m-d', $Date)->format('l');
+            $lecturerrequest->date = $day;
+            //return  $guestrequest;
+    if((($lecturerrequest -> hall_name)=="Lecture Hall 01")||(($lecturerrequest -> hall_name)=="mini-auditorium")||(($lecturerrequest -> hall_name)=="main-auditorium") ){
+                    $data1 = DB::table('timetables')
+                    ->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
+                    ->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+                    //->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+                //->join('programs', 'timetables.program_id', '=', 'programs.id')
+                ->join('courses', 'timetables.course_id', '=', 'courses.id')
+                    ->select('timetables.*','lecturers.lec_name', 'courses.course_name','courses.course_code','lecturehalls.lh_name')
+                    //->where('program_id','=',$request -> program)
+                    //->where('level','=',$request -> level)
+                    ->where('day','=',$day)
+                    //->where('course_id','=',$request -> course)
+                    //->where('semester','=',$request -> semester)
+                    //->where('start_time','=',$request -> starttime)
+                    //->where('end_time','=',$request -> endtime)
+                    //->where('lec_id','=',$request -> lecturername)
+                    ->where('lecturehalls.lh_name','=',$lecturerrequest -> hall_name)
+                    ->get();
+//return $data1;
+                    $data2 = array();
+                    return view('admin.timetablesuggestions',['data1'=> $data1,'data2'=> $data2]);
+    }
+    else{
+                $data2 = DB::table('timetables')
+            //->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+            ->join('accsupportives', 'timetables.acc_id', '=', 'accsupportives.id')
+            //->join('programs', 'timetables.program_id', '=', 'programs.id')
+            ->join('courses', 'timetables.course_id', '=', 'courses.id')
+            //->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
+            ->join('labs', 'timetables.lab_id', '=', 'labs.id')
+            ->select('timetables.*', 'accsupportives.acc_name', 'courses.course_name','courses.course_code','labs.lab_name')
+            ->where('day','=',$day)
+            ->where('labs.lab_name','=',$lecturerrequest -> hall_name)
+            ->get();
+            //dd($dat2);
+            //return $dat2;
+            $data1 = array();
+            return view('admin.timetablesuggestions',['data1'=> $data1,'data2'=> $data2]);
+    }
+
 
 
     }
@@ -231,6 +295,32 @@ class adminController extends Controller
             $lecturerrequest->delete();
             return redirect()->back()-> with('success',"successfully deleted.");
     }
+    public function showUnreadMessagesCount()
+    {
+        $admin = Auth::user(); // Assuming you are using Laravel's built-in authentication
+        $unreadMessagesCount = $admin->messages()->whereNull('read_at')->count();
+    
+        return view('admin.dashboard', compact('unreadMessagesCount'));
+    } 
 
+    public function showUnreadMessagesCount2()
+    {
+        $admin = Auth::user(); // Assuming you are using Laravel's built-in authentication
+        $unreadMessagesCount2 = $admin->messages()->whereNull('read_at')->count();
+    
+        return view('admin.dashboard', compact('unreadMessagesCount2'));
+    } 
+
+    public function markMessagesAsRead()
+    {
+        $admin = Auth::user();
+        $admin->messages()->whereNull('read_at')->update(['read_at' => now()]);
+        return Redirect::back()->with('success', 'Messages marked as read successfully');
+    }
+    
+
+
+    
 
 }
+

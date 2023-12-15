@@ -42,7 +42,7 @@
               @endif
           @endforeach
           @endforeach
-  
+
           @foreach ($dat2 as $data2)
           @foreach ($data2 as $cdb)
           @if ((($cdb->day)=="Monday")&(($cdb->start_time)=="08:00"))
@@ -54,8 +54,8 @@
       @endforeach
       @endforeach
           </TD>
-  
-  
+
+
         <TD>
           @foreach ($dat1 as $data1)
           @foreach ($data1 as $cdb)
@@ -67,7 +67,7 @@
           @endif
           @endforeach
           @endforeach
-  
+
           @foreach ($dat2 as $data2)
           @foreach ($data2 as $cdb)
           @if ((($cdb->day)=="Tuesday")&(($cdb->start_time)=="08:00"))
@@ -78,7 +78,7 @@
           @endif
           @endforeach
           @endforeach
-  
+
         </TD>
         <TD>
           @foreach ($dat1 as $data1)
@@ -91,7 +91,7 @@
           @endif
           @endforeach
           @endforeach
-  
+
           @foreach ($dat2 as $data2)
           @foreach ($data2 as $cdb)
           @if ((($cdb->day)=="Wednesday")&(($cdb->start_time)=="08:00"))
@@ -102,7 +102,7 @@
           @endif
           @endforeach
           @endforeach
-  
+
         </TD>
         <TD>
           @foreach ($dat1 as $data1)
@@ -115,7 +115,7 @@
           @endif
           @endforeach
           @endforeach
-  
+
           @foreach ($dat2 as $data2)
           @foreach ($data2 as $cdb)
           @if ((($cdb->day)=="Thursday")&(($cdb->start_time)=="08:00"))
@@ -126,7 +126,7 @@
           @endif
           @endforeach
           @endforeach
-  
+
         </TD>
         <TD>
           @foreach ($dat1 as $data1)
@@ -139,7 +139,7 @@
           @endif
           @endforeach
           @endforeach
-  
+
           @foreach ($dat2 as $data2)
           @foreach ($data2 as $cdb)
           @if ((($cdb->day)=="Friday")&(($cdb->start_time)=="08:00"))
@@ -150,10 +150,10 @@
           @endif
           @endforeach
           @endforeach
-  
+
         </TD>
       </TR>
-  
+
       <TR>
         <TD>9.00-9.55</TD>
         <TD>
@@ -167,7 +167,7 @@
               @endif
           @endforeach
           @endforeach
-  
+
           @foreach ($dat2 as $data2)
           @foreach ($data2 as $cdb)
           @if ((($cdb->day)=="Monday")&(($cdb->start_time)=="09:00"))
@@ -179,7 +179,7 @@
       @endforeach
       @endforeach
           </TD>
-  
+
           <TD>
               @foreach ($dat1 as $data1)
               @foreach ($data1 as $cdb)
@@ -191,7 +191,7 @@
               @endif
               @endforeach
               @endforeach
-  
+
               @foreach ($dat2 as $data2)
               @foreach ($data2 as $cdb)
               @if ((($cdb->day)=="Tuesday")&(($cdb->start_time)=="09:00"))
@@ -203,7 +203,7 @@
               @endforeach
               @endforeach
           </TD>
-  
+
           <TD>
               @foreach ($dat1 as $data1)
               @foreach ($data1 as $cdb)
@@ -215,7 +215,7 @@
               @endif
               @endforeach
               @endforeach
-  
+
               @foreach ($dat2 as $data2)
               @foreach ($data2 as $cdb)
               @if ((($cdb->day)=="Wednesday")&(($cdb->start_time)=="09:00"))
@@ -226,9 +226,9 @@
               @endif
               @endforeach
               @endforeach
-  
+
           </TD>
-  
+
           <TD>
               @foreach ($dat1 as $data1)
               @foreach ($data1 as $cdb)
@@ -240,7 +240,7 @@
               @endif
               @endforeach
               @endforeach
-  
+
               @foreach ($dat2 as $data2)
               @foreach ($data2 as $cdb)
               @if ((($cdb->day)=="Thursday")&(($cdb->start_time)=="09:00"))
@@ -252,7 +252,7 @@
               @endforeach
               @endforeach
               </TD>
-  
+
               <TD>
                   @foreach ($dat1 as $data1)
                   @foreach ($data1 as $cdb)
@@ -264,7 +264,7 @@
                   @endif
                   @endforeach
                   @endforeach
-  
+
                   @foreach ($dat2 as $data2)
                   @foreach ($data2 as $cdb)
                   @if ((($cdb->day)=="Friday")&(($cdb->start_time)=="09:00"))
@@ -276,10 +276,10 @@
                   @endforeach
                   @endforeach
                   </TD>
-  
-  
+
+
         </TR>
-  
+
         <TR>
         <TD>10.00-10.55</TD>
         <TD>
@@ -293,7 +293,7 @@
           @endif
       @endforeach
       @endforeach
-  
+
       @foreach ($dat2 as $data2)
       @foreach ($data2 as $cdb)
       @if ((($cdb->day)=="Monday")&(($cdb->start_time)=="10:00"))
@@ -304,9 +304,9 @@
       @endif
       @endforeach
       @endforeach
-  
+
         </TD>
-  
+
         <TD>
           @foreach ($dat1 as $data1)
           @foreach ($data1 as $cdb)
@@ -318,7 +318,7 @@
           @endif
           @endforeach
           @endforeach
-  
+
           @foreach ($dat2 as $data2)
           @foreach ($data2 as $cdb)
           @if ((($cdb->day)=="Tuesday")&(($cdb->start_time)=="10:00"))
@@ -329,7 +329,7 @@
           @endif
           @endforeach
           @endforeach
-  
+
         </TD>
         <TD>
           @foreach ($dat1 as $data1)
@@ -342,7 +342,7 @@
           @endif
           @endforeach
           @endforeach
-  
+
           @foreach ($dat2 as $data2)
           @foreach ($data2 as $cdb)
           @if ((($cdb->day)=="Wednesday")&(($cdb->start_time)=="10:00"))
@@ -354,7 +354,7 @@
           @endforeach
           @endforeach
           </TD>
-  
+
         <TD>
           @foreach ($dat1 as $data1)
           @foreach ($data1 as $cdb)
@@ -366,7 +366,7 @@
           @endif
           @endforeach
           @endforeach
-  
+
           @foreach ($dat2 as $data2)
           @foreach ($data2 as $cdb)
           @if ((($cdb->day)=="Thursday")&(($cdb->start_time)=="10:00"))
@@ -377,10 +377,10 @@
           @endif
           @endforeach
           @endforeach
-  
-  
+
+
         </TD>
-  
+
         <TD>
           @foreach ($dat1 as $data1)
           @foreach ($data1 as $cdb)
@@ -392,7 +392,7 @@
           @endif
           @endforeach
           @endforeach
-  
+
           @foreach ($dat2 as $data2)
           @foreach ($data2 as $cdb)
           @if ((($cdb->day)=="Friday")&(($cdb->start_time)=="10:00"))
@@ -403,10 +403,10 @@
           @endif
           @endforeach
           @endforeach
-  
+
         </TD>
       </TR>
-  
+
       <TR>
         <TD>11.00-12.00</TD>
         <TD>
@@ -420,7 +420,7 @@
           @endif
       @endforeach
       @endforeach
-  
+
       @foreach ($dat2 as $data2)
       @foreach ($data2 as $cdb)
       @if ((($cdb->day)=="Monday")&(($cdb->start_time)=="11:00"))
@@ -431,9 +431,9 @@
       @endif
       @endforeach
       @endforeach
-  
+
         </TD>
-  
+
         <TD>
           @foreach ($dat1 as $data1)
           @foreach ($data1 as $cdb)
@@ -445,7 +445,7 @@
           @endif
           @endforeach
           @endforeach
-  
+
           @foreach ($dat2 as $data2)
           @foreach ($data2 as $cdb)
           @if ((($cdb->day)=="Tuesday")&(($cdb->start_time)=="11:00"))
@@ -456,7 +456,7 @@
           @endif
           @endforeach
           @endforeach
-  
+
         </TD>
         <TD>
           @foreach ($dat1 as $data1)
@@ -469,7 +469,7 @@
           @endif
           @endforeach
           @endforeach
-  
+
           @foreach ($dat2 as $data2)
           @foreach ($data2 as $cdb)
           @if ((($cdb->day)=="Wednesday")&(($cdb->start_time)=="11:00"))
@@ -481,7 +481,7 @@
           @endforeach
           @endforeach
           </TD>
-  
+
         <TD>
           @foreach ($dat1 as $data1)
           @foreach ($data1 as $cdb)
@@ -493,7 +493,7 @@
           @endif
           @endforeach
           @endforeach
-  
+
           @foreach ($dat2 as $data2)
           @foreach ($data2 as $cdb)
           @if ((($cdb->day)=="Thursday")&(($cdb->start_time)=="11:00"))
@@ -504,10 +504,10 @@
           @endif
           @endforeach
           @endforeach
-  
-  
+
+
         </TD>
-  
+
         <TD>
           @foreach ($dat1 as $data1)
           @foreach ($data1 as $cdb)
@@ -519,7 +519,7 @@
           @endif
           @endforeach
           @endforeach
-  
+
           @foreach ($dat2 as $data2)
           @foreach ($data2 as $cdb)
           @if ((($cdb->day)=="Friday")&(($cdb->start_time)=="11:00"))
@@ -530,15 +530,15 @@
           @endif
           @endforeach
           @endforeach
-  
+
         </TD>
       </TR>
-  
-  
+
+
         <TR>
         <TD colspan="6" class="lunch">Lunch</TD>
       </TR>
-  
+
         <TR>
         <TD>13.00-13.55</TD>
         <TD>
@@ -552,7 +552,7 @@
           @endif
       @endforeach
       @endforeach
-  
+
       @foreach ($dat2 as $data2)
       @foreach ($data2 as $cdb)
       @if ((($cdb->day)=="Monday")&(($cdb->start_time)=="13:00"))
@@ -563,9 +563,9 @@
       @endif
       @endforeach
       @endforeach
-  
+
         </TD>
-  
+
         <TD>
           @foreach ($dat1 as $data1)
           @foreach ($data1 as $cdb)
@@ -577,7 +577,7 @@
           @endif
           @endforeach
           @endforeach
-  
+
           @foreach ($dat2 as $data2)
           @foreach ($data2 as $cdb)
           @if ((($cdb->day)=="Tuesday")&(($cdb->start_time)=="13:00"))
@@ -588,7 +588,7 @@
           @endif
           @endforeach
           @endforeach
-  
+
         </TD>
         <TD>
           @foreach ($dat1 as $data1)
@@ -601,7 +601,7 @@
           @endif
           @endforeach
           @endforeach
-  
+
           @foreach ($dat2 as $data2)
           @foreach ($data2 as $cdb)
           @if ((($cdb->day)=="Wednesday")&(($cdb->start_time)=="13:00"))
@@ -613,7 +613,7 @@
           @endforeach
           @endforeach
           </TD>
-  
+
         <TD>
           @foreach ($dat1 as $data1)
           @foreach ($data1 as $cdb)
@@ -625,7 +625,7 @@
           @endif
           @endforeach
           @endforeach
-  
+
           @foreach ($dat2 as $data2)
           @foreach ($data2 as $cdb)
           @if ((($cdb->day)=="Thursday")&(($cdb->start_time)=="13:00"))
@@ -636,10 +636,10 @@
           @endif
           @endforeach
           @endforeach
-  
-  
+
+
         </TD>
-  
+
         <TD>
           @foreach ($dat1 as $data1)
           @foreach ($data1 as $cdb)
@@ -651,7 +651,7 @@
           @endif
           @endforeach
           @endforeach
-  
+
           @foreach ($dat2 as $data2)
           @foreach ($data2 as $cdb)
           @if ((($cdb->day)=="Friday")&(($cdb->start_time)=="13:00"))
@@ -662,13 +662,13 @@
           @endif
           @endforeach
           @endforeach
-  
+
         </TD>
       </TR>
-  
+
       <TR>
           <TD>14.00-14.55</TD>
-  
+
           <TD>
               @foreach ($dat1 as $data1)
               @foreach ($data1 as $cdb)
@@ -680,7 +680,7 @@
               @endif
           @endforeach
           @endforeach
-  
+
           @foreach ($dat2 as $data2)
           @foreach ($data2 as $cdb)
           @if ((($cdb->day)=="Monday")&(($cdb->start_time)=="14:00"))
@@ -691,10 +691,10 @@
           @endif
           @endforeach
           @endforeach
-  
-  
+
+
             </TD>
-  
+
             <TD>
               @foreach ($dat1 as $data1)
               @foreach ($data1 as $cdb)
@@ -706,7 +706,7 @@
               @endif
               @endforeach
               @endforeach
-  
+
               @foreach ($dat2 as $data2)
               @foreach ($data2 as $cdb)
               @if ((($cdb->day)=="Tuesday")&(($cdb->start_time)=="14:00"))
@@ -717,7 +717,7 @@
               @endif
               @endforeach
               @endforeach
-  
+
             </TD>
             <TD>
               @foreach ($dat1 as $data1)
@@ -730,7 +730,7 @@
               @endif
               @endforeach
               @endforeach
-  
+
               @foreach ($dat2 as $data2)
               @foreach ($data2 as $cdb)
               @if ((($cdb->day)=="Wednesday")&(($cdb->start_time)=="14:00"))
@@ -742,7 +742,7 @@
               @endforeach
               @endforeach
               </TD>
-  
+
             <TD>
               @foreach ($dat1 as $data1)
               @foreach ($data1 as $cdb)
@@ -754,7 +754,7 @@
               @endif
               @endforeach
               @endforeach
-  
+
               @foreach ($dat2 as $data2)
               @foreach ($data2 as $cdb)
               @if ((($cdb->day)=="Thursday")&(($cdb->start_time)=="14:00"))
@@ -765,10 +765,10 @@
               @endif
               @endforeach
               @endforeach
-  
-  
+
+
             </TD>
-  
+
             <TD>
               @foreach ($dat1 as $data1)
               @foreach ($data1 as $cdb)
@@ -780,7 +780,7 @@
               @endif
               @endforeach
               @endforeach
-  
+
               @foreach ($dat2 as $data2)
               @foreach ($data2 as $cdb)
               @if ((($cdb->day)=="Friday")&(($cdb->start_time)=="14:00"))
@@ -791,13 +791,13 @@
               @endif
               @endforeach
               @endforeach
-  
+
             </TD>
       </TR>
-  
+
       <TR>
           <TD>15.00-15.55</TD>
-  
+
           <TD>
               @foreach ($dat1 as $data1)
               @foreach ($data1 as $cdb)
@@ -809,7 +809,7 @@
               @endif
           @endforeach
           @endforeach
-  
+
           @foreach ($dat2 as $data2)
           @foreach ($data2 as $cdb)
           @if ((($cdb->day)=="Monday")&(($cdb->start_time)=="15:00"))
@@ -820,9 +820,9 @@
           @endif
       @endforeach
       @endforeach
-  
+
             </TD>
-  
+
             <TD>
               @foreach ($dat1 as $data1)
               @foreach ($data1 as $cdb)
@@ -834,7 +834,7 @@
               @endif
               @endforeach
               @endforeach
-  
+
               @foreach ($dat2 as $data2)
               @foreach ($data2 as $cdb)
               @if ((($cdb->day)=="Tuesday")&(($cdb->start_time)=="15:00"))
@@ -845,7 +845,7 @@
               @endif
               @endforeach
               @endforeach
-  
+
             </TD>
             <TD>
               @foreach ($dat1 as $data1)
@@ -858,7 +858,7 @@
               @endif
               @endforeach
               @endforeach
-  
+
               @foreach ($dat2 as $data2)
               @foreach ($data2 as $cdb)
               @if ((($cdb->day)=="Wednesday")&(($cdb->start_time)=="15:00"))
@@ -870,7 +870,7 @@
               @endforeach
               @endforeach
               </TD>
-  
+
             <TD>
               @foreach ($dat1 as $data1)
               @foreach ($data1 as $cdb)
@@ -882,7 +882,7 @@
               @endif
               @endforeach
               @endforeach
-  
+
               @foreach ($dat2 as $data2)
               @foreach ($data2 as $cdb)
               @if ((($cdb->day)=="Thursday")&(($cdb->start_time)=="15:00"))
@@ -893,10 +893,10 @@
               @endif
               @endforeach
               @endforeach
-  
-  
+
+
             </TD>
-  
+
             <TD>
               @foreach ($dat1 as $data1)
               @foreach ($data1 as $cdb)
@@ -908,7 +908,7 @@
               @endif
               @endforeach
               @endforeach
-  
+
               @foreach ($dat2 as $data2)
               @foreach ($data2 as $cdb)
               @if ((($cdb->day)=="Friday")&(($cdb->start_time)=="15:00"))
@@ -919,10 +919,10 @@
               @endif
               @endforeach
               @endforeach
-  
+
             </TD>
       </TR>
-  
+
       <TR>
         <TD>16.00-16.55</TD>
         <TD>
@@ -936,7 +936,7 @@
           @endif
       @endforeach
       @endforeach
-  
+
       @foreach ($dat2 as $data2)
       @foreach ($data2 as $cdb)
       @if ((($cdb->day)=="Monday")&(($cdb->start_time)=="16:00"))
@@ -947,9 +947,9 @@
       @endif
       @endforeach
       @endforeach
-  
+
         </TD>
-  
+
         <TD>
           @foreach ($dat1 as $data1)
           @foreach ($data1 as $cdb)
@@ -961,7 +961,7 @@
           @endif
           @endforeach
           @endforeach
-  
+
           @foreach ($dat2 as $data2)
           @foreach ($data2 as $cdb)
           @if ((($cdb->day)=="Tuesday")&(($cdb->start_time)=="16:00"))
@@ -972,7 +972,7 @@
           @endif
           @endforeach
           @endforeach
-  
+
         </TD>
         <TD>
           @foreach ($dat1 as $data1)
@@ -985,7 +985,7 @@
           @endif
           @endforeach
           @endforeach
-  
+
           @foreach ($dat2 as $data2)
           @foreach ($data2 as $cdb)
           @if ((($cdb->day)=="Wednesday")&(($cdb->start_time)=="16:00"))
@@ -997,7 +997,7 @@
           @endforeach
           @endforeach
           </TD>
-  
+
         <TD>
           @foreach ($dat1 as $data1)
           @foreach ($data1 as $cdb)
@@ -1009,7 +1009,7 @@
           @endif
           @endforeach
           @endforeach
-  
+
           @foreach ($dat2 as $data2)
           @foreach ($data2 as $cdb)
           @if ((($cdb->day)=="Thursday")&(($cdb->start_time)=="16:00"))
@@ -1020,10 +1020,10 @@
           @endif
           @endforeach
           @endforeach
-  
-  
+
+
         </TD>
-  
+
         <TD>
           @foreach ($dat1 as $data1)
           @foreach ($data1 as $cdb)
@@ -1035,7 +1035,7 @@
           @endif
           @endforeach
           @endforeach
-  
+
           @foreach ($dat2 as $data2)
           @foreach ($data2 as $cdb)
           @if ((($cdb->day)=="Friday")&(($cdb->start_time)=="16:00"))
@@ -1046,13 +1046,13 @@
           @endif
           @endforeach
           @endforeach
-  
+
         </TD>
       </TR>
-  
+
       <TR>
           <TD>17.00-18.00</TD>
-  
+
           <TD>
               @foreach ($dat1 as $data1)
               @foreach ($data1 as $cdb)
@@ -1064,7 +1064,7 @@
               @endif
           @endforeach
           @endforeach
-  
+
           @foreach ($dat2 as $data2)
           @foreach ($data2 as $cdb)
           @if ((($cdb->day)=="Monday")&(($cdb->start_time)=="17:00"))
@@ -1075,9 +1075,9 @@
           @endif
       @endforeach
       @endforeach
-  
+
             </TD>
-  
+
             <TD>
               @foreach ($dat1 as $data1)
               @foreach ($data1 as $cdb)
@@ -1089,7 +1089,7 @@
               @endif
               @endforeach
               @endforeach
-  
+
               @foreach ($dat2 as $data2)
               @foreach ($data2 as $cdb)
               @if ((($cdb->day)=="Tuesday")&(($cdb->start_time)=="17:00"))
@@ -1100,7 +1100,7 @@
               @endif
               @endforeach
               @endforeach
-  
+
             </TD>
             <TD>
               @foreach ($dat1 as $data1)
@@ -1113,7 +1113,7 @@
               @endif
               @endforeach
               @endforeach
-  
+
               @foreach ($dat2 as $data2)
               @foreach ($data2 as $cdb)
               @if ((($cdb->day)=="Wednesday")&(($cdb->start_time)=="17:00"))
@@ -1125,7 +1125,7 @@
               @endforeach
               @endforeach
               </TD>
-  
+
             <TD>
               @foreach ($dat1 as $data1)
               @foreach ($data1 as $cdb)
@@ -1137,7 +1137,7 @@
               @endif
               @endforeach
               @endforeach
-  
+
               @foreach ($dat2 as $data2)
               @foreach ($data2 as $cdb)
               @if ((($cdb->day)=="Thursday")&(($cdb->start_time)=="17:00"))
@@ -1148,10 +1148,10 @@
               @endif
               @endforeach
               @endforeach
-  
-  
+
+
             </TD>
-  
+
             <TD>
               @foreach ($dat1 as $data1)
               @foreach ($data1 as $cdb)
@@ -1163,7 +1163,7 @@
               @endif
               @endforeach
               @endforeach
-  
+
               @foreach ($dat2 as $data2)
               @foreach ($data2 as $cdb)
               @if ((($cdb->day)=="Friday")&(($cdb->start_time)=="17:00"))
@@ -1174,38 +1174,18 @@
               @endif
               @endforeach
               @endforeach
-  
+
             </TD>
     </TR>
 
    </TBODY>
   </TABLE>
-
-
   <br><br>
 
-  <h1 style="text-align: left;">NOTICE</h1>
-  <div class="notice-board">
-        <div class="notice-item">
-            <div class="notice-title">Academic</div>
-            <div class="notice-content">ahhhhddhiedhiediedhiehdih</div>
-        </div>
-        <div class="notice-item">
-            <div class="notice-title">Non-academic</div>
-            <div class="notice-content">agdeudglehclheich</div>
-        </div>
-        <div class="notice-item">
-            <div class="notice-title">Important Notice </div>
-            <div class="notice-content">uvsegdoiecgugoeoci</div>
-        </div>
-    </div>
-
-    <div class="map">
-    <h1>MAP </h1>
-    <div class="contact map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3968.406479149826!2d80.57409017456467!3d5.938578379684964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1scomputer%20science%20department%20university%20of%20ruhuna!5e0!3m2!1sen!2slk!4v1694582628653!5m2!1sen!2slk"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-        </div>
+  <button type="button" class="btn btn-warning but1" onclick="window.location.href='/academicsupportive/filtertimetable'">Filter Timetable</button>
+  <div class="but2">
+    <button type="button" class="btn btn-warning but1" onclick="window.location.href='/students/studenthome'">Back</button>
+  </div>
 
 </body>
 </html>

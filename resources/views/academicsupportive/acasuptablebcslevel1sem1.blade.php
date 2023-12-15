@@ -33,7 +33,7 @@
     <TD> 8.00-8.55</TD>
       <TD>
         @foreach ($data1 as $cdb)
-            @if ((($cdb->day)=="Monday")&(($cdb->start_time)=="08:00"))
+            @if ((($cdb->day)=="Monday")&&(($cdb->start_time)=="08:00"))
                 <div class="name" >{{$cdb->course_name}}</div>
                 <div class="code" >{{$cdb->course_code}}</div>
                 <div class="lecturer">{{$cdb->lec_name}}</div>
@@ -42,7 +42,7 @@
         @endforeach
 
         @foreach ($data2 as $cdb)
-        @if ((($cdb->day)=="Monday")&(($cdb->start_time)=="08:00"))
+        @if ((($cdb->day)=="Monday")&&(($cdb->start_time)=="08:00"))
             <div class="name" >{{$cdb->course_name}}</div>
             <div class="code" >{{$cdb->course_code}}</div>
             <div class="lecturer">{{$cdb->acc_name}}</div>
@@ -54,7 +54,7 @@
 
       <TD>
         @foreach ($data1 as $cdb)
-        @if ((($cdb->day)=="Tuesday")&(($cdb->start_time)=="08:00"))
+        @if ((($cdb->day)=="Tuesday")&&(($cdb->start_time)=="08:00"))
             <div class="name" >{{$cdb->course_name}}</div>
             <div class="code" >{{$cdb->course_code}}</div>
             <div class="lecturer">{{$cdb->lec_name}}</div>
@@ -63,7 +63,7 @@
         @endforeach
 
         @foreach ($data2 as $cdb)
-        @if ((($cdb->day)=="Tuesday")&(($cdb->start_time)=="08:00"))
+        @if ((($cdb->day)=="Tuesday")&&(($cdb->start_time)=="08:00"))
             <div class="name" >{{$cdb->course_name}}</div>
             <div class="code" >{{$cdb->course_code}}</div>
             <div class="lecturer">{{$cdb->acc_name}}</div>
@@ -74,7 +74,7 @@
       </TD>
       <TD>
         @foreach ($data1 as $cdb)
-        @if ((($cdb->day)=="Wednesday")&(($cdb->start_time)=="08:00"))
+        @if ((($cdb->day)=="Wednesday")&&(($cdb->start_time)=="08:00"))
             <div class="name" >{{$cdb->course_name}}</div>
             <div class="code" >{{$cdb->course_code}}</div>
             <div class="lecturer">{{$cdb->lec_name}}</div>
@@ -83,7 +83,7 @@
         @endforeach
 
         @foreach ($data2 as $cdb)
-        @if ((($cdb->day)=="Wednesday")&(($cdb->start_time)=="08:00"))
+        @if ((($cdb->day)=="Wednesday")&&(($cdb->start_time)=="08:00"))
             <div class="name" >{{$cdb->course_name}}</div>
             <div class="code" >{{$cdb->course_code}}</div>
             <div class="lecturer">{{$cdb->acc_name}}</div>
@@ -94,7 +94,7 @@
       </TD>
       <TD>
         @foreach ($data1 as $cdb)
-        @if ((($cdb->day)=="Thursday")&(($cdb->start_time)=="08:00"))
+        @if ((($cdb->day)=="Thursday")&&(($cdb->start_time)=="08:00"))
             <div class="name" >{{$cdb->course_name}}</div>
             <div class="code" >{{$cdb->course_code}}</div>
             <div class="lecturer">{{$cdb->lec_name}}</div>
@@ -103,7 +103,7 @@
         @endforeach
 
         @foreach ($data2 as $cdb)
-        @if ((($cdb->day)=="Thursday")&(($cdb->start_time)=="08:00"))
+        @if ((($cdb->day)=="Thursday")&&(($cdb->start_time)=="08:00"))
             <div class="name" >{{$cdb->course_name}}</div>
             <div class="code" >{{$cdb->course_code}}</div>
             <div class="lecturer">{{$cdb->acc_name}}</div>
@@ -114,7 +114,7 @@
       </TD>
       <TD>
         @foreach ($data1 as $cdb)
-        @if ((($cdb->day)=="Friday")&(($cdb->start_time)=="08:00"))
+        @if ((($cdb->day)=="Friday")&&(($cdb->start_time)=="08:00"))
             <div class="name" >{{$cdb->course_name}}</div>
             <div class="code" >{{$cdb->course_code}}</div>
             <div class="lecturer">{{$cdb->lec_name}}</div>
@@ -123,7 +123,7 @@
         @endforeach
 
         @foreach ($data2 as $cdb)
-        @if ((($cdb->day)=="Friday")&(($cdb->start_time)=="08:00"))
+        @if ((($cdb->day)=="Friday")&&(($cdb->start_time)=="08:00"))
             <div class="name" >{{$cdb->course_name}}</div>
             <div class="code" >{{$cdb->course_code}}</div>
             <div class="lecturer">{{$cdb->acc_name}}</div>
@@ -138,7 +138,7 @@
       <TD>9.00-9.55</TD>
       <TD>
         @foreach ($data1 as $cdb)
-            @if ((($cdb->day)=="Monday")&(($cdb->start_time)=="09:00"))
+            @if ((($cdb->day)=="Monday")&&(($cdb->start_time)=="09:00"))
                 <div class="name" >{{$cdb->course_name}}</div>
                 <div class="code" >{{$cdb->course_code}}</div>
                 <div class="lecturer">{{$cdb->lec_name}}</div>
@@ -147,7 +147,7 @@
         @endforeach
 
         @foreach ($data2 as $cdb)
-        @if ((($cdb->day)=="Monday")&(($cdb->start_time)=="09:00"))
+        @if ((($cdb->day)=="Monday")&&(($cdb->start_time)=="09:00"))
             <div class="name" >{{$cdb->course_name}}</div>
             <div class="code" >{{$cdb->course_code}}</div>
             <div class="lecturer">{{$cdb->acc_name}}</div>
@@ -158,7 +158,7 @@
 
         <TD>
             @foreach ($data1 as $cdb)
-            @if ((($cdb->day)=="Tuesday")&(($cdb->start_time)=="09:00"))
+            @if ((($cdb->day)=="Tuesday")&&(($cdb->start_time)=="09:00"))
                 <div class="name" >{{$cdb->course_name}}</div>
                 <div class="code" >{{$cdb->course_code}}</div>
                 <div class="lecturer">{{$cdb->lec_name}}</div>
@@ -167,7 +167,7 @@
             @endforeach
 
             @foreach ($data2 as $cdb)
-            @if ((($cdb->day)=="Tuesday")&(($cdb->start_time)=="09:00"))
+            @if ((($cdb->day)=="Tuesday")&&(($cdb->start_time)=="09:00"))
                 <div class="name" >{{$cdb->course_name}}</div>
                 <div class="code" >{{$cdb->course_code}}</div>
                 <div class="lecturer">{{$cdb->acc_name}}</div>
@@ -178,7 +178,7 @@
 
         <TD>
             @foreach ($data1 as $cdb)
-            @if ((($cdb->day)=="Wednesday")&(($cdb->start_time)=="09:00"))
+            @if ((($cdb->day)=="Wednesday")&&(($cdb->start_time)=="09:00"))
                 <div class="name" >{{$cdb->course_name}}</div>
                 <div class="code" >{{$cdb->course_code}}</div>
                 <div class="lecturer">{{$cdb->lec_name}}</div>
@@ -187,7 +187,7 @@
             @endforeach
 
             @foreach ($data2 as $cdb)
-            @if ((($cdb->day)=="Wednesday")&(($cdb->start_time)=="09:00"))
+            @if ((($cdb->day)=="Wednesday")&&(($cdb->start_time)=="09:00"))
                 <div class="name" >{{$cdb->course_name}}</div>
                 <div class="code" >{{$cdb->course_code}}</div>
                 <div class="lecturer">{{$cdb->acc_name}}</div>
@@ -199,7 +199,7 @@
 
         <TD>
             @foreach ($data1 as $cdb)
-            @if ((($cdb->day)=="Thursday")&(($cdb->start_time)=="09:00"))
+            @if ((($cdb->day)=="Thursday")&&(($cdb->start_time)=="09:00"))
                 <div class="name" >{{$cdb->course_name}}</div>
                 <div class="code" >{{$cdb->course_code}}</div>
                 <div class="lecturer">{{$cdb->lec_name}}</div>
@@ -208,7 +208,7 @@
             @endforeach
 
             @foreach ($data2 as $cdb)
-            @if ((($cdb->day)=="Thursday")&(($cdb->start_time)=="09:00"))
+            @if ((($cdb->day)=="Thursday")&&(($cdb->start_time)=="09:00"))
                 <div class="name" >{{$cdb->course_name}}</div>
                 <div class="code" >{{$cdb->course_code}}</div>
                 <div class="lecturer">{{$cdb->acc_name}}</div>
@@ -219,7 +219,7 @@
 
             <TD>
                 @foreach ($data1 as $cdb)
-                @if ((($cdb->day)=="Friday")&(($cdb->start_time)=="09:00"))
+                @if ((($cdb->day)=="Friday")&&(($cdb->start_time)=="09:00"))
                     <div class="name" >{{$cdb->course_name}}</div>
                     <div class="code" >{{$cdb->course_code}}</div>
                     <div class="lecturer">{{$cdb->lec_name}}</div>
@@ -228,7 +228,7 @@
                 @endforeach
 
                 @foreach ($data2 as $cdb)
-                @if ((($cdb->day)=="Friday")&(($cdb->start_time)=="09:00"))
+                @if ((($cdb->day)=="Friday")&&(($cdb->start_time)=="09:00"))
                     <div class="name" >{{$cdb->course_name}}</div>
                     <div class="code" >{{$cdb->course_code}}</div>
                     <div class="lecturer">{{$cdb->acc_name}}</div>
@@ -244,7 +244,7 @@
       <TD>10.00-10.55</TD>
       <TD>
         @foreach ($data1 as $cdb)
-        @if ((($cdb->day)=="Monday")&(($cdb->start_time)=="10:00"))
+        @if ((($cdb->day)=="Monday")&&(($cdb->start_time)=="10:00"))
             <div class="name" >{{$cdb->course_name}}</div>
             <div class="code" >{{$cdb->course_code}}</div>
             <div class="lecturer">{{$cdb->lec_name}}</div>
@@ -253,7 +253,7 @@
     @endforeach
 
     @foreach ($data2 as $cdb)
-    @if ((($cdb->day)=="Monday")&(($cdb->start_time)=="10:00"))
+    @if ((($cdb->day)=="Monday")&&(($cdb->start_time)=="10:00"))
         <div class="name" >{{$cdb->course_name}}</div>
         <div class="code" >{{$cdb->course_code}}</div>
         <div class="lecturer">{{$cdb->acc_name}}</div>
@@ -265,7 +265,7 @@
 
       <TD>
         @foreach ($data1 as $cdb)
-        @if ((($cdb->day)=="Tuesday")&(($cdb->start_time)=="10:00"))
+        @if ((($cdb->day)=="Tuesday")&&(($cdb->start_time)=="10:00"))
             <div class="name" >{{$cdb->course_name}}</div>
             <div class="code" >{{$cdb->course_code}}</div>
             <div class="lecturer">{{$cdb->lec_name}}</div>
@@ -274,7 +274,7 @@
         @endforeach
 
         @foreach ($data2 as $cdb)
-        @if ((($cdb->day)=="Tuesday")&(($cdb->start_time)=="10:00"))
+        @if ((($cdb->day)=="Tuesday")&&(($cdb->start_time)=="10:00"))
             <div class="name" >{{$cdb->course_name}}</div>
             <div class="code" >{{$cdb->course_code}}</div>
             <div class="lecturer">{{$cdb->acc_name}}</div>
@@ -285,7 +285,7 @@
       </TD>
       <TD>
         @foreach ($data1 as $cdb)
-        @if ((($cdb->day)=="Wednesday")&(($cdb->start_time)=="10:00"))
+        @if ((($cdb->day)=="Wednesday")&&(($cdb->start_time)=="10:00"))
             <div class="name" >{{$cdb->course_name}}</div>
             <div class="code" >{{$cdb->course_code}}</div>
             <div class="lecturer">{{$cdb->lec_name}}</div>
@@ -294,7 +294,7 @@
         @endforeach
 
         @foreach ($data2 as $cdb)
-        @if ((($cdb->day)=="Wednesday")&(($cdb->start_time)=="10:00"))
+        @if ((($cdb->day)=="Wednesday")&&(($cdb->start_time)=="10:00"))
             <div class="name" >{{$cdb->course_name}}</div>
             <div class="code" >{{$cdb->course_code}}</div>
             <div class="lecturer">{{$cdb->acc_name}}</div>
@@ -305,7 +305,7 @@
 
       <TD>
         @foreach ($data1 as $cdb)
-        @if ((($cdb->day)=="Thursday")&(($cdb->start_time)=="10:00"))
+        @if ((($cdb->day)=="Thursday")&&(($cdb->start_time)=="10:00"))
             <div class="name" >{{$cdb->course_name}}</div>
             <div class="code" >{{$cdb->course_code}}</div>
             <div class="lecturer">{{$cdb->lec_name}}</div>
@@ -314,7 +314,7 @@
         @endforeach
 
         @foreach ($data2 as $cdb)
-        @if ((($cdb->day)=="Thursday")&(($cdb->start_time)=="10:00"))
+        @if ((($cdb->day)=="Thursday")&&(($cdb->start_time)=="10:00"))
             <div class="name" >{{$cdb->course_name}}</div>
             <div class="code" >{{$cdb->course_code}}</div>
             <div class="lecturer">{{$cdb->acc_name}}</div>
@@ -327,7 +327,7 @@
 
       <TD>
         @foreach ($data1 as $cdb)
-        @if ((($cdb->day)=="Friday")&(($cdb->start_time)=="10:00"))
+        @if ((($cdb->day)=="Friday")&&(($cdb->start_time)=="10:00"))
             <div class="name" >{{$cdb->course_name}}</div>
             <div class="code" >{{$cdb->course_code}}</div>
             <div class="lecturer">{{$cdb->lec_name}}</div>
@@ -336,7 +336,7 @@
         @endforeach
 
         @foreach ($data2 as $cdb)
-        @if ((($cdb->day)=="Friday")&(($cdb->start_time)=="10:00"))
+        @if ((($cdb->day)=="Friday")&&(($cdb->start_time)=="10:00"))
             <div class="name" >{{$cdb->course_name}}</div>
             <div class="code" >{{$cdb->course_code}}</div>
             <div class="lecturer">{{$cdb->acc_name}}</div>
@@ -351,7 +351,7 @@
       <TD>11.00-12.00</TD>
       <TD>
         @foreach ($data1 as $cdb)
-        @if ((($cdb->day)=="Monday")&(($cdb->start_time)=="11:00"))
+        @if ((($cdb->day)=="Monday")&&(($cdb->start_time)=="11:00"))
             <div class="name" >{{$cdb->course_name}}</div>
             <div class="code" >{{$cdb->course_code}}</div>
             <div class="lecturer">{{$cdb->lec_name}}</div>
@@ -360,7 +360,7 @@
     @endforeach
 
     @foreach ($data2 as $cdb)
-    @if ((($cdb->day)=="Monday")&(($cdb->start_time)=="11:00"))
+    @if ((($cdb->day)=="Monday")&&(($cdb->start_time)=="11:00"))
         <div class="name" >{{$cdb->course_name}}</div>
         <div class="code" >{{$cdb->course_code}}</div>
         <div class="lecturer">{{$cdb->acc_name}}</div>
@@ -372,7 +372,7 @@
 
       <TD>
         @foreach ($data1 as $cdb)
-        @if ((($cdb->day)=="Tuesday")&(($cdb->start_time)=="11:00"))
+        @if ((($cdb->day)=="Tuesday")&&(($cdb->start_time)=="11:00"))
             <div class="name" >{{$cdb->course_name}}</div>
             <div class="code" >{{$cdb->course_code}}</div>
             <div class="lecturer">{{$cdb->lec_name}}</div>
@@ -381,7 +381,7 @@
         @endforeach
 
         @foreach ($data2 as $cdb)
-        @if ((($cdb->day)=="Tuesday")&(($cdb->start_time)=="11:00"))
+        @if ((($cdb->day)=="Tuesday")&&(($cdb->start_time)=="11:00"))
             <div class="name" >{{$cdb->course_name}}</div>
             <div class="code" >{{$cdb->course_code}}</div>
             <div class="lecturer">{{$cdb->acc_name}}</div>
@@ -392,7 +392,7 @@
       </TD>
       <TD>
         @foreach ($data1 as $cdb)
-        @if ((($cdb->day)=="Wednesday")&(($cdb->start_time)=="11:00"))
+        @if ((($cdb->day)=="Wednesday")&&(($cdb->start_time)=="11:00"))
             <div class="name" >{{$cdb->course_name}}</div>
             <div class="code" >{{$cdb->course_code}}</div>
             <div class="lecturer">{{$cdb->lec_name}}</div>
@@ -401,7 +401,7 @@
         @endforeach
 
         @foreach ($data2 as $cdb)
-        @if ((($cdb->day)=="Wednesday")&(($cdb->start_time)=="11:00"))
+        @if ((($cdb->day)=="Wednesday")&&(($cdb->start_time)=="11:00"))
             <div class="name" >{{$cdb->course_name}}</div>
             <div class="code" >{{$cdb->course_code}}</div>
             <div class="lecturer">{{$cdb->acc_name}}</div>
@@ -412,7 +412,7 @@
 
       <TD>
         @foreach ($data1 as $cdb)
-        @if ((($cdb->day)=="Thursday")&(($cdb->start_time)=="11:00"))
+        @if ((($cdb->day)=="Thursday")&&(($cdb->start_time)=="11:00"))
             <div class="name" >{{$cdb->course_name}}</div>
             <div class="code" >{{$cdb->course_code}}</div>
             <div class="lecturer">{{$cdb->lec_name}}</div>
@@ -421,7 +421,7 @@
         @endforeach
 
         @foreach ($data2 as $cdb)
-        @if ((($cdb->day)=="Thursday")&(($cdb->start_time)=="11:00"))
+        @if ((($cdb->day)=="Thursday")&&(($cdb->start_time)=="11:00"))
             <div class="name" >{{$cdb->course_name}}</div>
             <div class="code" >{{$cdb->course_code}}</div>
             <div class="lecturer">{{$cdb->acc_name}}</div>
@@ -434,7 +434,7 @@
 
       <TD>
         @foreach ($data1 as $cdb)
-        @if ((($cdb->day)=="Friday")&(($cdb->start_time)=="11:00"))
+        @if ((($cdb->day)=="Friday")&&(($cdb->start_time)=="11:00"))
             <div class="name" >{{$cdb->course_name}}</div>
             <div class="code" >{{$cdb->course_code}}</div>
             <div class="lecturer">{{$cdb->lec_name}}</div>
@@ -443,7 +443,7 @@
         @endforeach
 
         @foreach ($data2 as $cdb)
-        @if ((($cdb->day)=="Friday")&(($cdb->start_time)=="11:00"))
+        @if ((($cdb->day)=="Friday")&&(($cdb->start_time)=="11:00"))
             <div class="name" >{{$cdb->course_name}}</div>
             <div class="code" >{{$cdb->course_code}}</div>
             <div class="lecturer">{{$cdb->acc_name}}</div>
@@ -463,7 +463,7 @@
       <TD>13.00-13.55</TD>
       <TD>
         @foreach ($data1 as $cdb)
-        @if ((($cdb->day)=="Monday")&(($cdb->start_time)=="13:00"))
+        @if ((($cdb->day)=="Monday")&&(($cdb->start_time)=="13:00"))
             <div class="name" >{{$cdb->course_name}}</div>
             <div class="code" >{{$cdb->course_code}}</div>
             <div class="lecturer">{{$cdb->lec_name}}</div>
@@ -472,7 +472,7 @@
     @endforeach
 
     @foreach ($data2 as $cdb)
-    @if ((($cdb->day)=="Monday")&(($cdb->start_time)=="13:00"))
+    @if ((($cdb->day)=="Monday")&&(($cdb->start_time)=="13:00"))
         <div class="name" >{{$cdb->course_name}}</div>
         <div class="code" >{{$cdb->course_code}}</div>
         <div class="lecturer">{{$cdb->acc_name}}</div>
@@ -484,7 +484,7 @@
 
       <TD>
         @foreach ($data1 as $cdb)
-        @if ((($cdb->day)=="Tuesday")&(($cdb->start_time)=="13:00"))
+        @if ((($cdb->day)=="Tuesday")&&(($cdb->start_time)=="13:00"))
             <div class="name" >{{$cdb->course_name}}</div>
             <div class="code" >{{$cdb->course_code}}</div>
             <div class="lecturer">{{$cdb->lec_name}}</div>
@@ -493,7 +493,7 @@
         @endforeach
 
         @foreach ($data2 as $cdb)
-        @if ((($cdb->day)=="Tuesday")&(($cdb->start_time)=="13:00"))
+        @if ((($cdb->day)=="Tuesday")&&(($cdb->start_time)=="13:00"))
             <div class="name" >{{$cdb->course_name}}</div>
             <div class="code" >{{$cdb->course_code}}</div>
             <div class="lecturer">{{$cdb->acc_name}}</div>
@@ -504,7 +504,7 @@
       </TD>
       <TD>
         @foreach ($data1 as $cdb)
-        @if ((($cdb->day)=="Wednesday")&(($cdb->start_time)=="13:00"))
+        @if ((($cdb->day)=="Wednesday")&&(($cdb->start_time)=="13:00"))
             <div class="name" >{{$cdb->course_name}}</div>
             <div class="code" >{{$cdb->course_code}}</div>
             <div class="lecturer">{{$cdb->lec_name}}</div>
@@ -513,7 +513,7 @@
         @endforeach
 
         @foreach ($data2 as $cdb)
-        @if ((($cdb->day)=="Wednesday")&(($cdb->start_time)=="13:00"))
+        @if ((($cdb->day)=="Wednesday")&&(($cdb->start_time)=="13:00"))
             <div class="name" >{{$cdb->course_name}}</div>
             <div class="code" >{{$cdb->course_code}}</div>
             <div class="lecturer">{{$cdb->acc_name}}</div>
@@ -524,7 +524,7 @@
 
       <TD>
         @foreach ($data1 as $cdb)
-        @if ((($cdb->day)=="Thursday")&(($cdb->start_time)=="13:00"))
+        @if ((($cdb->day)=="Thursday")&&(($cdb->start_time)=="13:00"))
             <div class="name" >{{$cdb->course_name}}</div>
             <div class="code" >{{$cdb->course_code}}</div>
             <div class="lecturer">{{$cdb->lec_name}}</div>
@@ -533,7 +533,7 @@
         @endforeach
 
         @foreach ($data2 as $cdb)
-        @if ((($cdb->day)=="Thursday")&(($cdb->start_time)=="13:00"))
+        @if ((($cdb->day)=="Thursday")&&(($cdb->start_time)=="13:00"))
             <div class="name" >{{$cdb->course_name}}</div>
             <div class="code" >{{$cdb->course_code}}</div>
             <div class="lecturer">{{$cdb->acc_name}}</div>
@@ -546,7 +546,7 @@
 
       <TD>
         @foreach ($data1 as $cdb)
-        @if ((($cdb->day)=="Friday")&(($cdb->start_time)=="13:00"))
+        @if ((($cdb->day)=="Friday")&&(($cdb->start_time)=="13:00"))
             <div class="name" >{{$cdb->course_name}}</div>
             <div class="code" >{{$cdb->course_code}}</div>
             <div class="lecturer">{{$cdb->lec_name}}</div>
@@ -555,7 +555,7 @@
         @endforeach
 
         @foreach ($data2 as $cdb)
-        @if ((($cdb->day)=="Friday")&(($cdb->start_time)=="13:00"))
+        @if ((($cdb->day)=="Friday")&&(($cdb->start_time)=="13:00"))
             <div class="name" >{{$cdb->course_name}}</div>
             <div class="code" >{{$cdb->course_code}}</div>
             <div class="lecturer">{{$cdb->acc_name}}</div>
@@ -571,7 +571,7 @@
 
         <TD>
             @foreach ($data1 as $cdb)
-            @if ((($cdb->day)=="Monday")&(($cdb->start_time)=="14:00"))
+            @if ((($cdb->day)=="Monday")&&(($cdb->start_time)=="14:00"))
                 <div class="name" >{{$cdb->course_name}}</div>
                 <div class="code" >{{$cdb->course_code}}</div>
                 <div class="lecturer">{{$cdb->lec_name}}</div>
@@ -580,7 +580,7 @@
         @endforeach
 
         @foreach ($data2 as $cdb)
-        @if ((($cdb->day)=="Monday")&(($cdb->start_time)=="14:00"))
+        @if ((($cdb->day)=="Monday")&&(($cdb->start_time)=="14:00"))
             <div class="name" >{{$cdb->course_name}}</div>
             <div class="code" >{{$cdb->course_code}}</div>
             <div class="lecturer">{{$cdb->acc_name}}</div>
@@ -592,7 +592,7 @@
 
           <TD>
             @foreach ($data1 as $cdb)
-            @if ((($cdb->day)=="Tuesday")&(($cdb->start_time)=="14:00"))
+            @if ((($cdb->day)=="Tuesday")&&(($cdb->start_time)=="14:00"))
                 <div class="name" >{{$cdb->course_name}}</div>
                 <div class="code" >{{$cdb->course_code}}</div>
                 <div class="lecturer">{{$cdb->lec_name}}</div>
@@ -601,7 +601,7 @@
             @endforeach
 
             @foreach ($data2 as $cdb)
-            @if ((($cdb->day)=="Tuesday")&(($cdb->start_time)=="14:00"))
+            @if ((($cdb->day)=="Tuesday")&&(($cdb->start_time)=="14:00"))
                 <div class="name" >{{$cdb->course_name}}</div>
                 <div class="code" >{{$cdb->course_code}}</div>
                 <div class="lecturer">{{$cdb->acc_name}}</div>
@@ -612,7 +612,7 @@
           </TD>
           <TD>
             @foreach ($data1 as $cdb)
-            @if ((($cdb->day)=="Wednesday")&(($cdb->start_time)=="14:00"))
+            @if ((($cdb->day)=="Wednesday")&&(($cdb->start_time)=="14:00"))
                 <div class="name" >{{$cdb->course_name}}</div>
                 <div class="code" >{{$cdb->course_code}}</div>
                 <div class="lecturer">{{$cdb->lec_name}}</div>
@@ -621,7 +621,7 @@
             @endforeach
 
             @foreach ($data2 as $cdb)
-            @if ((($cdb->day)=="Wednesday")&(($cdb->start_time)=="14:00"))
+            @if ((($cdb->day)=="Wednesday")&&(($cdb->start_time)=="14:00"))
                 <div class="name" >{{$cdb->course_name}}</div>
                 <div class="code" >{{$cdb->course_code}}</div>
                 <div class="lecturer">{{$cdb->acc_name}}</div>
@@ -632,7 +632,7 @@
 
           <TD>
             @foreach ($data1 as $cdb)
-            @if ((($cdb->day)=="Thursday")&(($cdb->start_time)=="14:00"))
+            @if ((($cdb->day)=="Thursday")&&(($cdb->start_time)=="14:00"))
                 <div class="name" >{{$cdb->course_name}}</div>
                 <div class="code" >{{$cdb->course_code}}</div>
                 <div class="lecturer">{{$cdb->lec_name}}</div>
@@ -641,7 +641,7 @@
             @endforeach
 
             @foreach ($data2 as $cdb)
-            @if ((($cdb->day)=="Thursday")&(($cdb->start_time)=="14:00"))
+            @if ((($cdb->day)=="Thursday")&&(($cdb->start_time)=="14:00"))
                 <div class="name" >{{$cdb->course_name}}</div>
                 <div class="code" >{{$cdb->course_code}}</div>
                 <div class="lecturer">{{$cdb->acc_name}}</div>
@@ -654,7 +654,7 @@
 
           <TD>
             @foreach ($data1 as $cdb)
-            @if ((($cdb->day)=="Friday")&(($cdb->start_time)=="14:00"))
+            @if ((($cdb->day)=="Friday")&&(($cdb->start_time)=="14:00"))
                 <div class="name" >{{$cdb->course_name}}</div>
                 <div class="code" >{{$cdb->course_code}}</div>
                 <div class="lecturer">{{$cdb->lec_name}}</div>
@@ -663,7 +663,7 @@
             @endforeach
 
             @foreach ($data2 as $cdb)
-            @if ((($cdb->day)=="Friday")&(($cdb->start_time)=="14:00"))
+            @if ((($cdb->day)=="Friday")&&(($cdb->start_time)=="14:00"))
                 <div class="name" >{{$cdb->course_name}}</div>
                 <div class="code" >{{$cdb->course_code}}</div>
                 <div class="lecturer">{{$cdb->acc_name}}</div>
@@ -679,7 +679,7 @@
 
         <TD>
             @foreach ($data1 as $cdb)
-            @if ((($cdb->day)=="Monday")&(($cdb->start_time)=="15:00"))
+            @if ((($cdb->day)=="Monday")&&(($cdb->start_time)=="15:00"))
                 <div class="name" >{{$cdb->course_name}}</div>
                 <div class="code" >{{$cdb->course_code}}</div>
                 <div class="lecturer">{{$cdb->lec_name}}</div>
@@ -688,7 +688,7 @@
         @endforeach
 
         @foreach ($data2 as $cdb)
-        @if ((($cdb->day)=="Monday")&(($cdb->start_time)=="15:00"))
+        @if ((($cdb->day)=="Monday")&&(($cdb->start_time)=="15:00"))
             <div class="name" >{{$cdb->course_name}}</div>
             <div class="code" >{{$cdb->course_code}}</div>
             <div class="lecturer">{{$cdb->acc_name}}</div>
@@ -700,7 +700,7 @@
 
           <TD>
             @foreach ($data1 as $cdb)
-            @if ((($cdb->day)=="Tuesday")&(($cdb->start_time)=="15:00"))
+            @if ((($cdb->day)=="Tuesday")&&(($cdb->start_time)=="15:00"))
                 <div class="name" >{{$cdb->course_name}}</div>
                 <div class="code" >{{$cdb->course_code}}</div>
                 <div class="lecturer">{{$cdb->lec_name}}</div>
@@ -709,7 +709,7 @@
             @endforeach
 
             @foreach ($data2 as $cdb)
-            @if ((($cdb->day)=="Tuesday")&(($cdb->start_time)=="15:00"))
+            @if ((($cdb->day)=="Tuesday")&&(($cdb->start_time)=="15:00"))
                 <div class="name" >{{$cdb->course_name}}</div>
                 <div class="code" >{{$cdb->course_code}}</div>
                 <div class="lecturer">{{$cdb->acc_name}}</div>
@@ -720,7 +720,7 @@
           </TD>
           <TD>
             @foreach ($data1 as $cdb)
-            @if ((($cdb->day)=="Wednesday")&(($cdb->start_time)=="15:00"))
+            @if ((($cdb->day)=="Wednesday")&&(($cdb->start_time)=="15:00"))
                 <div class="name" >{{$cdb->course_name}}</div>
                 <div class="code" >{{$cdb->course_code}}</div>
                 <div class="lecturer">{{$cdb->lec_name}}</div>
@@ -729,7 +729,7 @@
             @endforeach
 
             @foreach ($data2 as $cdb)
-            @if ((($cdb->day)=="Wednesday")&(($cdb->start_time)=="15:00"))
+            @if ((($cdb->day)=="Wednesday")&&(($cdb->start_time)=="15:00"))
                 <div class="name" >{{$cdb->course_name}}</div>
                 <div class="code" >{{$cdb->course_code}}</div>
                 <div class="lecturer">{{$cdb->acc_name}}</div>
@@ -740,7 +740,7 @@
 
           <TD>
             @foreach ($data1 as $cdb)
-            @if ((($cdb->day)=="Thursday")&(($cdb->start_time)=="15:00"))
+            @if ((($cdb->day)=="Thursday")&&(($cdb->start_time)=="15:00"))
                 <div class="name" >{{$cdb->course_name}}</div>
                 <div class="code" >{{$cdb->course_code}}</div>
                 <div class="lecturer">{{$cdb->lec_name}}</div>
@@ -749,7 +749,7 @@
             @endforeach
 
             @foreach ($data2 as $cdb)
-            @if ((($cdb->day)=="Thursday")&(($cdb->start_time)=="15:00"))
+            @if ((($cdb->day)=="Thursday")&&(($cdb->start_time)=="15:00"))
                 <div class="name" >{{$cdb->course_name}}</div>
                 <div class="code" >{{$cdb->course_code}}</div>
                 <div class="lecturer">{{$cdb->acc_name}}</div>
@@ -762,7 +762,7 @@
 
           <TD>
             @foreach ($data1 as $cdb)
-            @if ((($cdb->day)=="Friday")&(($cdb->start_time)=="15:00"))
+            @if ((($cdb->day)=="Friday")&&(($cdb->start_time)=="15:00"))
                 <div class="name" >{{$cdb->course_name}}</div>
                 <div class="code" >{{$cdb->course_code}}</div>
                 <div class="lecturer">{{$cdb->lec_name}}</div>
@@ -771,7 +771,7 @@
             @endforeach
 
             @foreach ($data2 as $cdb)
-            @if ((($cdb->day)=="Friday")&(($cdb->start_time)=="15:00"))
+            @if ((($cdb->day)=="Friday")&&(($cdb->start_time)=="15:00"))
                 <div class="name" >{{$cdb->course_name}}</div>
                 <div class="code" >{{$cdb->course_code}}</div>
                 <div class="lecturer">{{$cdb->acc_name}}</div>
@@ -786,7 +786,7 @@
       <TD>16.00-16.55</TD>
       <TD>
         @foreach ($data1 as $cdb)
-        @if ((($cdb->day)=="Monday")&(($cdb->start_time)=="16:00"))
+        @if ((($cdb->day)=="Monday")&&(($cdb->start_time)=="16:00"))
             <div class="name" >{{$cdb->course_name}}</div>
             <div class="code" >{{$cdb->course_code}}</div>
             <div class="lecturer">{{$cdb->lec_name}}</div>
@@ -795,7 +795,7 @@
     @endforeach
 
     @foreach ($data2 as $cdb)
-    @if ((($cdb->day)=="Monday")&(($cdb->start_time)=="16:00"))
+    @if ((($cdb->day)=="Monday")&&(($cdb->start_time)=="16:00"))
         <div class="name" >{{$cdb->course_name}}</div>
         <div class="code" >{{$cdb->course_code}}</div>
         <div class="lecturer">{{$cdb->acc_name}}</div>
@@ -807,7 +807,7 @@
 
       <TD>
         @foreach ($data1 as $cdb)
-        @if ((($cdb->day)=="Tuesday")&(($cdb->start_time)=="16:00"))
+        @if ((($cdb->day)=="Tuesday")&&(($cdb->start_time)=="16:00"))
             <div class="name" >{{$cdb->course_name}}</div>
             <div class="code" >{{$cdb->course_code}}</div>
             <div class="lecturer">{{$cdb->lec_name}}</div>
@@ -816,7 +816,7 @@
         @endforeach
 
         @foreach ($data2 as $cdb)
-        @if ((($cdb->day)=="Tuesday")&(($cdb->start_time)=="16:00"))
+        @if ((($cdb->day)=="Tuesday")&&(($cdb->start_time)=="16:00"))
             <div class="name" >{{$cdb->course_name}}</div>
             <div class="code" >{{$cdb->course_code}}</div>
             <div class="lecturer">{{$cdb->acc_name}}</div>
@@ -827,7 +827,7 @@
       </TD>
       <TD>
         @foreach ($data1 as $cdb)
-        @if ((($cdb->day)=="Wednesday")&(($cdb->start_time)=="16:00"))
+        @if ((($cdb->day)=="Wednesday")&&(($cdb->start_time)=="16:00"))
             <div class="name" >{{$cdb->course_name}}</div>
             <div class="code" >{{$cdb->course_code}}</div>
             <div class="lecturer">{{$cdb->lec_name}}</div>
@@ -836,7 +836,7 @@
         @endforeach
 
         @foreach ($data2 as $cdb)
-        @if ((($cdb->day)=="Wednesday")&(($cdb->start_time)=="16:00"))
+        @if ((($cdb->day)=="Wednesday")&&(($cdb->start_time)=="16:00"))
             <div class="name" >{{$cdb->course_name}}</div>
             <div class="code" >{{$cdb->course_code}}</div>
             <div class="lecturer">{{$cdb->acc_name}}</div>
@@ -847,7 +847,7 @@
 
       <TD>
         @foreach ($data1 as $cdb)
-        @if ((($cdb->day)=="Thursday")&(($cdb->start_time)=="16:00"))
+        @if ((($cdb->day)=="Thursday")&&(($cdb->start_time)=="16:00"))
             <div class="name" >{{$cdb->course_name}}</div>
             <div class="code" >{{$cdb->course_code}}</div>
             <div class="lecturer">{{$cdb->lec_name}}</div>
@@ -856,7 +856,7 @@
         @endforeach
 
         @foreach ($data2 as $cdb)
-        @if ((($cdb->day)=="Thursday")&(($cdb->start_time)=="16:00"))
+        @if ((($cdb->day)=="Thursday")&&(($cdb->start_time)=="16:00"))
             <div class="name" >{{$cdb->course_name}}</div>
             <div class="code" >{{$cdb->course_code}}</div>
             <div class="lecturer">{{$cdb->acc_name}}</div>
@@ -869,7 +869,7 @@
 
       <TD>
         @foreach ($data1 as $cdb)
-        @if ((($cdb->day)=="Friday")&(($cdb->start_time)=="16:00"))
+        @if ((($cdb->day)=="Friday")&&(($cdb->start_time)=="16:00"))
             <div class="name" >{{$cdb->course_name}}</div>
             <div class="code" >{{$cdb->course_code}}</div>
             <div class="lecturer">{{$cdb->lec_name}}</div>
@@ -878,7 +878,7 @@
         @endforeach
 
         @foreach ($data2 as $cdb)
-        @if ((($cdb->day)=="Friday")&(($cdb->start_time)=="16:00"))
+        @if ((($cdb->day)=="Friday")&&(($cdb->start_time)=="16:00"))
             <div class="name" >{{$cdb->course_name}}</div>
             <div class="code" >{{$cdb->course_code}}</div>
             <div class="lecturer">{{$cdb->acc_name}}</div>
@@ -894,7 +894,7 @@
 
         <TD>
             @foreach ($data1 as $cdb)
-            @if ((($cdb->day)=="Monday")&(($cdb->start_time)=="17:00"))
+            @if ((($cdb->day)=="Monday")&&(($cdb->start_time)=="17:00"))
                 <div class="name" >{{$cdb->course_name}}</div>
                 <div class="code" >{{$cdb->course_code}}</div>
                 <div class="lecturer">{{$cdb->lec_name}}</div>
@@ -903,7 +903,7 @@
         @endforeach
 
         @foreach ($data2 as $cdb)
-        @if ((($cdb->day)=="Monday")&(($cdb->start_time)=="17:00"))
+        @if ((($cdb->day)=="Monday")&&(($cdb->start_time)=="17:00"))
             <div class="name" >{{$cdb->course_name}}</div>
             <div class="code" >{{$cdb->course_code}}</div>
             <div class="lecturer">{{$cdb->acc_name}}</div>
@@ -915,7 +915,7 @@
 
           <TD>
             @foreach ($data1 as $cdb)
-            @if ((($cdb->day)=="Tuesday")&(($cdb->start_time)=="17:00"))
+            @if ((($cdb->day)=="Tuesday")&&(($cdb->start_time)=="17:00"))
                 <div class="name" >{{$cdb->course_name}}</div>
                 <div class="code" >{{$cdb->course_code}}</div>
                 <div class="lecturer">{{$cdb->lec_name}}</div>
@@ -924,7 +924,7 @@
             @endforeach
 
             @foreach ($data2 as $cdb)
-            @if ((($cdb->day)=="Tuesday")&(($cdb->start_time)=="17:00"))
+            @if ((($cdb->day)=="Tuesday")&&(($cdb->start_time)=="17:00"))
                 <div class="name" >{{$cdb->course_name}}</div>
                 <div class="code" >{{$cdb->course_code}}</div>
                 <div class="lecturer">{{$cdb->acc_name}}</div>
@@ -935,7 +935,7 @@
           </TD>
           <TD>
             @foreach ($data1 as $cdb)
-            @if ((($cdb->day)=="Wednesday")&(($cdb->start_time)=="17:00"))
+            @if ((($cdb->day)=="Wednesday")&&(($cdb->start_time)=="17:00"))
                 <div class="name" >{{$cdb->course_name}}</div>
                 <div class="code" >{{$cdb->course_code}}</div>
                 <div class="lecturer">{{$cdb->lec_name}}</div>
@@ -944,7 +944,7 @@
             @endforeach
 
             @foreach ($data2 as $cdb)
-            @if ((($cdb->day)=="Wednesday")&(($cdb->start_time)=="17:00"))
+            @if ((($cdb->day)=="Wednesday")&&(($cdb->start_time)=="17:00"))
                 <div class="name" >{{$cdb->course_name}}</div>
                 <div class="code" >{{$cdb->course_code}}</div>
                 <div class="lecturer">{{$cdb->acc_name}}</div>
@@ -955,7 +955,7 @@
 
           <TD>
             @foreach ($data1 as $cdb)
-            @if ((($cdb->day)=="Thursday")&(($cdb->start_time)=="17:00"))
+            @if ((($cdb->day)=="Thursday")&&(($cdb->start_time)=="17:00"))
                 <div class="name" >{{$cdb->course_name}}</div>
                 <div class="code" >{{$cdb->course_code}}</div>
                 <div class="lecturer">{{$cdb->lec_name}}</div>
@@ -964,7 +964,7 @@
             @endforeach
 
             @foreach ($data2 as $cdb)
-            @if ((($cdb->day)=="Thursday")&(($cdb->start_time)=="17:00"))
+            @if ((($cdb->day)=="Thursday")&&(($cdb->start_time)=="17:00"))
                 <div class="name" >{{$cdb->course_name}}</div>
                 <div class="code" >{{$cdb->course_code}}</div>
                 <div class="lecturer">{{$cdb->acc_name}}</div>
@@ -977,7 +977,7 @@
 
           <TD>
             @foreach ($data1 as $cdb)
-            @if ((($cdb->day)=="Friday")&(($cdb->start_time)=="17:00"))
+            @if ((($cdb->day)=="Friday")&&(($cdb->start_time)=="17:00"))
                 <div class="name" >{{$cdb->course_name}}</div>
                 <div class="code" >{{$cdb->course_code}}</div>
                 <div class="lecturer">{{$cdb->lec_name}}</div>
@@ -986,17 +986,15 @@
             @endforeach
 
             @foreach ($data2 as $cdb)
-            @if ((($cdb->day)=="Friday")&(($cdb->start_time)=="17:00"))
+            @if ((($cdb->day)=="Friday")&&(($cdb->start_time)=="17:00"))
                 <div class="name" >{{$cdb->course_name}}</div>
                 <div class="code" >{{$cdb->course_code}}</div>
                 <div class="lecturer">{{$cdb->acc_name}}</div>
                 <div class="hall">{{$cdb->lab_name}}</div>    <!--practical-->
             @endif
             @endforeach
-
           </TD>
     </TR>
-
    </TBODY>
   </TABLE>
 
@@ -1004,6 +1002,9 @@
   <br><br>
 
   <button type="button" class="btn btn-warning but1" onclick="window.location.href='/academicsupportive/filtertimetable'">Filter Timetable</button>
+<div class="but2">
+  <button type="button" class="btn btn-warning but1" onclick="window.location.href='/academicsupportive/academicsupportivehome'">Back</button>
+</div>
 <!--
   <h1 style="text-align: left;">NOTICE</h1>
   <div class="notice-board">
