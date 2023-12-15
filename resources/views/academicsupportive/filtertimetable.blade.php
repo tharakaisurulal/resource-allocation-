@@ -7,7 +7,7 @@
         <title>Laravel</title>
 
         @include('cdn')
-        <link rel="stylesheet" href={{asset('css/timetablefilter.css')}}>
+        <link rel="stylesheet" href="{{asset('css/timetablefilter.css')}}">
 
     </head>
     <body class="bdy">
