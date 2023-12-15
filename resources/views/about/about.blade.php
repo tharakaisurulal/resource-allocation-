@@ -19,7 +19,7 @@
     @include('cdn')
 	<title>ABOUT</title>
 
-    <link rel="stylesheet" href={{asset('css/about.css')}}>
+    <link rel="stylesheet" href="{{asset('css/about.css')}}">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -165,7 +165,7 @@
                     <div class="profile">
                         <h4><ins> HEAD </ins></h4>
                         <div class="img">
-                            <img src={{asset('images/849.jpg')}}>
+                            <img src="{{asset('images/849.jpg')}}">
                         </div>
 
                         <div class="b">
@@ -180,7 +180,7 @@
                     <div class="Premises">
                         <h4><ins>Department Premises</ins></h4>
                         <div class="img1">
-                            <img src={{asset('images/.jpg')}}>
+                            <img src="{{asset('images/.jpg')}}">
                         </div>
                     </div>
                 </div>
