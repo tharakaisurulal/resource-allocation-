@@ -17,7 +17,7 @@
 
         <title>Lecture hall Allocation</title>
         @include('cdn')
-        <link rel="stylesheet" href={{asset('css/guestregi.css')}}>
+        <link rel="stylesheet" href="{{asset('css/guestregi.css')}}">
 
     </head>
 
