@@ -1,4 +1,9 @@
-@extends('layout.headerFooter')
+@extends('layout.header')
+@section("content2")
+        <li><a href="/loginpage">BACK</a></li>
+
+@endsection
+
 @section("content")
 
 <!DOCTYPE html>
@@ -8,39 +13,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href={{asset('css/forgetpassword.css')}}>
+    <link rel="stylesheet" href={{asset('css/forgetpassword1.css')}}>
 
 </head>
 <body>
     <section class="login">
         <div class="box">
-            <form action="">
+            <form action="{{ route('forget.password.post') }}" method="POST">
+                @csrf
                 <h1> FORGET PASSWORD </h1>
+
+                @if(session()->has('success'))
+                <div class="alert alert-success">{{session()->get('success')}}</div>
+                @endif
+
+                @if(session()->has('fail'))
+                    <div class="alert alert-danger">{{session()->get('fail')}}</div>
+                @endif
+
                 <div class="inputBox">
-                    <input type="text" required>
+                    <input type="email" name="email"  placeholder="silva@gmail.com">
                     <span>Email</span>
-                    <i><ion-icon name="mail"></ion-icon></i>
+                    <i><ion-icon name="mail-sharp"></ion-icon></i>
+                </div>
+                <label class="text-danger span1">@error('email')  {{$message}}  @enderror</label>
+
+                <div class="links2">
+                    <input type="submit"value="Send Password Reset Link">
                 </div>
 
-                <div class="inputBox">
-                    <input type="password" required>
-                    <span>Password</span>
-                    <i><ion-icon name="lock-closed"></ion-icon></i>
-                </div>
-
-
-                <div class="inputBox">
-                    <input type="password" required>
-                    <span>Conformed Password</span>
-                    <P ID="message"></P>
-                    <i><ion-icon name="lock-closed"></ion-icon></i>
-                </div>
-
-                <div class="links">
-                    <input type="submit" onclick="checkpassword()" value="Submit"/>
-                        <div class="link2">
-                            <a href="/loginpage">login</a>
-                        </div>
+                <!--<div class="links">
+                    <div class="col-md-6 offset-md-4">
+                              <button type="submit" class="btn btn-primary">
+                                  Send Password Reset Link
+                              </button>
+                          </div>
                 </div>
             </form>
         </div>
