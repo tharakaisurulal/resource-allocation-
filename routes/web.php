@@ -1,6 +1,6 @@
 <?php
 
-
+use App\Http\Controllers\ForgotPasswordController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\guestController;
 use App\Http\Controllers\loginController;
@@ -141,7 +141,7 @@ Route::get('/loginpage', [loginController::class, 'loginpage'])->middleware('Log
 
 Route::get('/logout', [loginController::class, 'logout'])->name('logout'); //logout functions
 
-Route::get('/forgetpassword', [loginController::class, 'forgetpassword'])->name('forgetpassword'); //forget passsword page.
+//Route::get('/forgetpassword', [loginController::class, 'forgetpassword'])->name('forgetpassword'); //forget passsword page.
 
 
 
@@ -421,3 +421,14 @@ Route::get('/noticeope', [ bookingController::class, 'noticeope'])->name('notice
 Route::get('/noticeoperation', [ bookingController::class, 'noticeope'])->name('noticeope');
 
 Route::get('exportpdf/{id}',[pdfController::class, 'exportpdf'])->name('exportpdf');
+
+
+
+
+
+
+//Route::get('/forgetpassword', [loginController::class, 'forgetpassword'])->name('forgetpassword'); //forget passsword page.
+Route::get('forget-password', [ForgotPasswordController::class, 'showForgetPasswordForm'])->name('forget.password.get'); //link
+Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm'])->name('forget.password.post');
+Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get'); //pass
+Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
