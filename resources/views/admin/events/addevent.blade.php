@@ -6,6 +6,7 @@
 @endsection
 
 @section("content")
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +14,8 @@
     <link rel="stylesheet" href="{{asset('css/event.css')}}">
 </head>
 <body>
-    <form action="{{route('storert')}}" method="POST">
+
+    <form action="{{route('storert')}}" method="POST"> 
         @if(session()->has('success'))
             <div class="alert alert-success div55">{{session()->get('success')}}</div>
         @endif
