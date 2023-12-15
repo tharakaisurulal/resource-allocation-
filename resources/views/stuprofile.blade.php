@@ -1,6 +1,3 @@
-
-    
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -20,15 +17,15 @@
             font-size: 24px; /* Adjust the size as needed */
             vertical-align: middle;
             margin-right: 5px; /* Add some spacing between the icon and text */
-         
+
     </style>
-  
+
 </head>
 <body>
         <table class="inner-table">
                     <tr>
                         <div class="image">
-                    
+
                             <img src="images/pexels-simon-robben-614810.jpg" width="50%"/><br/>
                             <h4>Dr.abufhr</h4>
                         </td>
@@ -39,7 +36,7 @@
                          <h2>My Profile</h2></br>
                         </div>
 
-                          <div class="sform"> 
+                          <div class="sform">
                         <form>
                                 <label for="name">Name:</label>
                                 <input type="text" name="name"><br><br>
@@ -58,7 +55,7 @@
                              </select><br><br>
                           </form>
 
-                          
+
                  <div class="btn">
                 <br><button class="custom-button" onclick="alert('Button Clicked!')">Edit</button>
         </div>
@@ -70,16 +67,16 @@
                         </td>
                     </tr>
                 </table>
-        
-                
+
+
                 <!-- Notifications & Message -->
                 <div class="notifications-message">
                     <i class="ri-notification-line bell-icon"></i>
 			<a href="#"> Notifications &nbsp</a>
 			<a href="#"> Message</a>
                 </div>
-                
 
-              
+
+
 </body>
 </html>
