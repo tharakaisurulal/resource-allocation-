@@ -118,6 +118,14 @@
                     </h2>
                   </div>
 
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingSix">
+                      <button class="accordion-button collapsed sec2" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix" onclick="window.location.href='/messageope';">
+                        <li><a href="#">MESSAGES</a></li>
+                      </button>
+                    </h2>
+                  </div>
+
 
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="flush-headingEleven">
