@@ -16,6 +16,7 @@ class lecturerrequest extends Model
         'end_time',
         'hall_name',
         'reason',
+        'read_at',
         'lecturer_id'
     ];
 }

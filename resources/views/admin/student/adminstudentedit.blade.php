@@ -17,6 +17,16 @@
     </head>
     <body>
         <div class="div1">
+<div class="noti">
+            @if(session()->has('success'))
+            <div class="alert alert-success div5">{{session()->get('success')}}</div>
+        @endif
+
+        @if(session()->has('fail'))
+            <div class="alert alert-danger">{{session()->get('fail')}}</div>
+        @endif
+</div>
+
             <div class="text-center">
                 <h1>Update data</h1>
             </div>
@@ -81,7 +91,7 @@
             <option value="">--Choose Course--</option>
             @foreach ( $dater3 as $data )
             <option value="{{$data->id}}" {{ ($student->subject1 == $data->id) ? 'selected' : '' }}>@php
-                echo $data->course_name;
+                echo $data->course_name." ".$data->course_code;
             @endphp</option>
 
               @endforeach
@@ -93,7 +103,7 @@
             <option value="">--Choose Course--</option>
             @foreach ( $dater3 as $data )
             <option value="{{$data->id}}" {{ ($student->subject2 == $data->id) ? 'selected' : '' }}>@php
-                echo $data->course_name;
+                echo $data->course_name." ".$data->course_code;
             @endphp</option>
 
               @endforeach
@@ -105,7 +115,7 @@
             <option value="">--Choose Course--</option>
             @foreach ( $dater3 as $data )
             <option value="{{$data->id}}" {{ ($student->subject3 == $data->id) ? 'selected' : '' }}>@php
-                echo $data->course_name;
+                echo $data->course_name." ".$data->course_code;
             @endphp</option>
 
               @endforeach
@@ -117,7 +127,7 @@
             <option value="">--Choose Course--</option>
             @foreach ( $dater3 as $data )
             <option value="{{$data->id}}" {{ ($student->subject4 == $data->id) ? 'selected' : '' }}>@php
-                echo $data->course_name;
+                echo $data->course_name." ".$data->course_code;
             @endphp</option>
 
               @endforeach
@@ -129,7 +139,7 @@
             <option value="">--Choose Course--</option>
             @foreach ( $dater3 as $data )
             <option value="{{$data->id}}" {{ ($student->subject5 == $data->id) ? 'selected' : '' }}>@php
-                echo $data->course_name;
+                echo $data->course_name." ".$data->course_code;
             @endphp</option>
 
               @endforeach
@@ -141,7 +151,7 @@
             <option value="">--Choose Course--</option>
             @foreach ( $dater3 as $data )
             <option value="{{$data->id}}" {{ ($student->subject6 == $data->id) ? 'selected' : '' }}>@php
-                echo $data->course_name;
+                echo $data->course_name." ".$data->course_code;
             @endphp</option>
 
               @endforeach
@@ -153,7 +163,7 @@
             <option value="">--Choose Course--</option>
             @foreach ( $dater3 as $data )
             <option value="{{$data->id}}" {{ ($student->subject7 == $data->id) ? 'selected' : '' }}>@php
-                echo $data->course_name;
+                echo $data->course_name." ".$data->course_code;
             @endphp</option>
 
               @endforeach
@@ -166,7 +176,7 @@
             <option value="">--Choose Course--</option>
             @foreach ( $dater3 as $data )
             <option value="{{$data->id}}" {{ ($student->subject8 == $data->id) ? 'selected' : '' }}>@php
-                echo $data->course_name;
+                echo $data->course_name." ".$data->course_code;
             @endphp</option>
 
               @endforeach
@@ -176,7 +186,7 @@
         <td>Action</td>
         <td>
             <button class="btn btn-secondary btn-sm" type="submit" >Submit</button>
-           <a href="/admin/student/stuopera"> <button class="btn btn-secondary btn-sm" type="button" >Back</button></a>
+            <button class="btn btn-secondary btn-sm" type="button" onclick="history.back()" >Back</button>
     </td>
     </tr>
         </tbody>

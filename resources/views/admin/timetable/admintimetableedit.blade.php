@@ -143,9 +143,10 @@
                         <select name="accid" id="faculty" required>
                             <option value="">--Choose Academic Supportive--</option>
                             @foreach ( $dater6 as $data )
-                            <option value="{{$data->id}}">@php
+                            <option value="{{$data->id}}" {{ ($timetable->acc_id == $data->id) ? 'selected' : '' }}>@php
                                 echo $data->acc_name;
                             @endphp</option>
+
                               @endforeach
                         </select>
                     </td>
@@ -153,9 +154,10 @@
                         <select name="labid" id="faculty" required>
                             <option value="">--Choose lab--</option>
                             @foreach ( $dater4 as $data1 )
-                            <option value="{{$data1->id}}">@php
+                            <option value="{{$data1->id}}" {{ ($timetable->lab_id == $data1->id) ? 'selected' : '' }}>@php
                                 echo $data1->lab_name;
                             @endphp</option>
+
                               @endforeach
                         </select>
                     </td>

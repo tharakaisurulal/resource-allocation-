@@ -22,7 +22,7 @@
 
     <div class="card">
         <div class="col-6">
-            <img src="/images/R3.jpg" alt=""  width=320px height=500px>
+            <img src="/images/miniauditorium1.jpeg" alt=""  width=320px height=500px>
         </div>
         <div class="card-body">
             @foreach (  $dater3 as $data )
@@ -53,7 +53,7 @@
 
     <div class="card">
         <div class="col-6">
-            <img src="/images/R4.jpg" alt="" width=320px height=500px>
+            <img src="/images/miniauditorium.jpeg" alt="" width=320px height=500px>
         </div>
         <div class="card-body">
             @foreach (  $dater3 as $data )
@@ -83,7 +83,7 @@
     </div>
 
     <div class="card">
-        <img src="/images/R5.jpg" alt="" width=320px height=500px>
+        <img src="/images/mainauditorium.jpeg" alt="" width=320px height=500px>
         <div class="card-body">
             @foreach (  $dater3 as $data )
             @if (($data->lh_name)=="main-auditorium")

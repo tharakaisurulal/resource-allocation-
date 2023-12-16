@@ -1,6 +1,6 @@
 <?php
 
-
+use App\Http\Controllers\ForgotPasswordController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\guestController;
 use App\Http\Controllers\loginController;
@@ -14,6 +14,7 @@ use App\Http\Controllers\lecturerController;
 use App\Http\Controllers\academicsupportiveController;
 use App\Http\Controllers\timetableController;
 use App\Http\Controllers\bookingController;
+use App\Http\Controllers\pdfController;
 
 /*
 |--------------------------------------------------------------------------
@@ -102,19 +103,23 @@ Route::get('/stuprofile', function () {
     return view('stuprofile');
 });
 
+Route::get('/stuprofile1', function () {
+    return view('lecturers.viewProfile1');
+});
+
 
 /*guest routes*/
 
 Route::post('/gueststore', [guestController::class, 'gueststore'])->name('gueststore'); //storing data in guest table.
 
-//Route::get('/guest/guestregistration', [guestController::class, 'guestregistration'])->middleware('LoggedIn'); //restrict from home to guest registration, go to guest registraion
-Route::get('/guest/guestregistration', [guestController::class, 'guestregistration']);
+Route::get('/guest/guestregistration', [guestController::class, 'guestregistration'])->middleware('LoggedIn'); //restrict from home to guest registration, go to guest registraion
+//Route::get('/guest/guestregistration', [guestController::class, 'guestregistration']);
 
 Route::get('/guest/guestrequest', [guestController::class, 'guestrequest']); //view request page.
 
 //Route::get('/home', [loginController::class, 'home'])->middleware('IsLoggedIn'); //restrict from login to home
 //Route::get('/home', [loginController::class, 'home']);
-Route::get('/guest/guesthome', [guestController::class, 'guesthome']);
+Route::get('/guest/guesthome', [guestController::class, 'guesthome'])->middleware('IsLoggedIn');
 
 Route::post('/guestreq', [guestController::class, 'guestreq'])->name('guestreq'); //store request details in database.
 
@@ -136,11 +141,11 @@ Route::get('/guest/lab', [guestController::class, 'guestlab'])->name('guestlab')
 Route::post('/login', [loginController::class, 'login'])->name('login'); //login functions
 
 //Route::get('/loginpage', [loginController::class, 'loginpage'])->middleware('LoggedIn');//restrict from home to login, go to login
-Route::get('/loginpage', [loginController::class, 'loginpage']);
+Route::get('/loginpage', [loginController::class, 'loginpage'])->middleware('LoggedIn');
 
 Route::get('/logout', [loginController::class, 'logout'])->name('logout'); //logout functions
 
-Route::get('/forgetpassword', [loginController::class, 'forgetpassword'])->name('forgetpassword'); //forget passsword page.
+//Route::get('/forgetpassword', [loginController::class, 'forgetpassword'])->name('forgetpassword'); //forget passsword page.
 
 
 
@@ -153,7 +158,7 @@ Route::get('/forgetpassword', [loginController::class, 'forgetpassword'])->name(
     return view('lecturers.lecturerhome');
 });*/
 
-Route::get('/lecturers/lecturerhome', [lecturerController::class, 'lecturerhome']);
+Route::get('/lecturers/lecturerhome', [lecturerController::class, 'lecturerhome'])->middleware('IsLoggedIn');
 
 //Route::get('/lecturers/leclecturehalldetails', function () {
    //return view('lecturers.leclecturehalldetails');
@@ -170,7 +175,7 @@ Route::post('/lecturerreq', [lecturerController::class, 'lecturerreq'])->name('l
 Route::get('/lecturers/viewtimetable', [lecturerController::class, 'lecchoosetimetable'])->name('lecchoosetimetable');
 
 /*academicsupportive routes*/
-Route::get('/academicsupportive/academicsupportivehome', [academicsupportiveController::class, 'academicsupportivehome']);
+Route::get('/academicsupportive/academicsupportivehome', [academicsupportiveController::class, 'academicsupportivehome'])->middleware('IsLoggedIn');
 
 //Route::get('/academicsupportive/accsuplecturehalldetails', function () { //route to view lecturehalls.
     //return view('academicsupportive.accsuplecturehalldetails');
@@ -211,7 +216,7 @@ Route::post('/academicsupportive/filtertimetablesubmit', [academicsupportiveCont
 
 
 /*student routes*/
-Route::get('/students/studenthome', [studentController::class, 'studenthome']);
+Route::get('/students/studenthome', [studentController::class, 'studenthome'])->middleware('IsLoggedIn');
 
 //Route::get('/students/studentlecturehalldetails', function () { //route to view lecturehalls.
    // return view('students.studentlecturehalldetails');
@@ -232,7 +237,7 @@ Route::get('/students/viewtimetable', [studentController::class, 'stchoosetimeta
 //Route::get('/admin/adminlecturehallopera', function () {
     //return view('admin.adminlecturehallopera');
 //});
-Route::get('/admin/adminhome', [adminController::class, 'adminhome'])->name('adminhome'); //view admin home page.
+Route::get('/admin/adminhome', [adminController::class, 'adminhome'])->name('adminhome')->middleware('IsLoggedIn'); //view admin home page.
 
 Route::get('/admin/adminhallallocation', [adminController::class, 'adminhallallocation'])->name('adminhallallocation');
 
@@ -308,6 +313,8 @@ Route::get('viewmore-student/{id}',[studentController::class, 'viewmore'])->name
 Route::get('updatestudentpassword-student/{id}',[studentController::class, 'updatestudentpassword'])->name('updatestudentpassword');  //route to function of update student password.
 
 Route::get('delete-student/{id}',[studentController::class, 'deletestudent'])->name('deletestudent');
+
+Route::get('/admin/student/profile', [studentController::class, 'viewstuprofile'])->name('admin.student.viewstuprofile');
 
 
 /*admin.lecturer routes*/
@@ -418,3 +425,16 @@ Route::post('/storernotice', [ bookingController::class, 'storernotice'])->name(
 //Route::post('/editer', [ bookingController::class, 'editer'])->name('editer');
 Route::get('/noticeope', [ bookingController::class, 'noticeope'])->name('noticeope'); //route to notice operation page.
 Route::get('/noticeoperation', [ bookingController::class, 'noticeope'])->name('noticeope');
+
+Route::get('exportpdf/{id}',[pdfController::class, 'exportpdf'])->name('exportpdf');
+
+
+
+
+
+
+//Route::get('/forgetpassword', [loginController::class, 'forgetpassword'])->name('forgetpassword'); //forget passsword page.
+Route::get('forget-password', [ForgotPasswordController::class, 'showForgetPasswordForm'])->name('forget.password.get'); //link
+Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm'])->name('forget.password.post');
+Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get'); //pass
+Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');

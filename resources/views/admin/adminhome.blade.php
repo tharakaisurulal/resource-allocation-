@@ -118,6 +118,14 @@
                     </h2>
                   </div>
 
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingSix">
+                      <button class="accordion-button collapsed sec2" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix" onclick="window.location.href='/messageope';">
+                        <li><a href="#">MESSAGES</a></li>
+                      </button>
+                    </h2>
+                  </div>
+
 
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="flush-headingEleven">
@@ -190,8 +198,8 @@
     <button type="button" class="btn btn-warning but">
         <a href="/admin/adminhallallocation">
         <h4>Hall Allocation</h4><br>
-        <p>Unread Requests From Guest: {{ $unreadMessagesCount }}</p><br>
-        <p>Unread Requests From Lecturer: {{ $unreadMessagesCount2 }}</p>
+        <!--<p>Unread Requests From Guest: {{ $unreadMessagesCount }}</p><br>
+        <p>Unread Requests From Lecturer: {{ $unreadMessagesCount2 }}</p>-->
         </a>
     </button>
 </div>

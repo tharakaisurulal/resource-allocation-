@@ -7,10 +7,12 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 150px;
+    margin-bottom: 150px;
   }
-  html, body {
+  /*html, body {
     height: 190%;
-  }
+  }*/
 .card {
     display: flex;
     flex-direction: row;
@@ -171,6 +173,7 @@ background: linear-gradient(to right, #434343, #000000);
     width: 100%;
     height: 660px;
     border-collapse: collapse;
+    margin-top: -140px;
   }
 
   th{
@@ -190,5 +193,18 @@ background: linear-gradient(to right, #434343, #000000);
     font-weight: bold;
   }
 
+.dd1{
+    text-align: center;
+    margin-top: 50px;
+    padding-bottom: 20px;
+}
 
+.td12{
+    padding-top: 30px;
+    padding-left: 400px;
+}
 
+.td13{
+    padding-top: 30px;
+    padding-left: -200px;
+}

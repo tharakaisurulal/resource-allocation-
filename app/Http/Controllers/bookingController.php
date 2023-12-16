@@ -31,10 +31,10 @@ class bookingController extends Controller
         }
         //return  $event;
 
-        $dat=date("l");
+        $dat=date("l");//current day
         //return $dat;
 
-    $cusdata= timetable::all();
+    $cusdata= timetable::all(); //retrieves all records from the timetable model and stores them
     //return $cusdata;
 
     if($dat=="Monday"){
@@ -636,7 +636,12 @@ class bookingController extends Controller
                 //return $cusdata4;
                 return view('admin.notice.noticeope',['notice4'=>$notice4]);
             }
-
+            public function messageope()
+            {
+                $notice5= notice::all();
+                //return $cusdata4;
+                return view('admin.message.messageope',['notice5'=>$notice5]);
+            }
 
             public function addnotice()
             {

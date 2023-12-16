@@ -10,6 +10,7 @@
 
 @section("content2")
         <li><a href="/logout">LOG OUT</a></li>
+        <li><a href="/admin/student/profile">PROFILE</a></li>
 @endsection
 
 @section("content")
@@ -34,22 +35,22 @@
     <div class="card">
 
             <div class="face front">
-                <img src="/images/main.jpg" alt=""  width=300px height=350px>
-                <h3> Lecture Hall</h3>
+                <img src="/images/th.jpg" alt=""  width=300px height=350px>
+                <h3> Profile</h3>
             </div>
 
             <div class="face back">
                     <div class="back-content center">
-                        <h3> Lecture Hall</h3>
+                        <h3> Profile</h3>
                         <div class="button">
-                            <a href="/students/studentlecturehalldetails"><span>CLICK</span></a>
+                            <a href="/admin/student/profile"><span>CLICK</span></a>
                         </div>
                     </div>
             </div>
         </div>
 
 
-        <div class="card">
+        <!--<div class="card">
 
             <div class="face front">
                 <img src="/images/Lap.jpg" alt="" width=300px height=350px>
@@ -64,7 +65,7 @@
                         </div>
                     </div>
             </div>
-        </div>
+        </div>-->
 
 
 
