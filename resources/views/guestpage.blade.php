@@ -248,7 +248,7 @@
             </div>
           </div>
         </div>-->
-
+<!-- Map Start-->
     <div class="container">
         <img src="images/im1.jpg" alt="Snow"  class="img2" >
 

@@ -141,7 +141,7 @@ Route::get('/guest/lab', [guestController::class, 'guestlab'])->name('guestlab')
 Route::post('/login', [loginController::class, 'login'])->name('login'); //login functions
 
 //Route::get('/loginpage', [loginController::class, 'loginpage'])->middleware('LoggedIn');//restrict from home to login, go to login
-Route::get('/loginpage', [loginController::class, 'loginpage'])->middleware('LoggedIn');
+Route::get('/loginpage', [loginController::class, 'loginpage']); //->middleware('LoggedIn');
 
 Route::get('/logout', [loginController::class, 'logout'])->name('logout'); //logout functions
 
