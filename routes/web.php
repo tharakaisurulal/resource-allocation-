@@ -1,6 +1,6 @@
 <?php
 
-
+use App\Http\Controllers\ForgotPasswordController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\guestController;
 use App\Http\Controllers\loginController;
@@ -103,6 +103,10 @@ Route::get('/stuprofile', function () {
     return view('stuprofile');
 });
 
+Route::get('/stuprofile1', function () {
+    return view('lecturers.viewProfile1');
+});
+
 
 /*guest routes*/
 
@@ -141,7 +145,7 @@ Route::get('/loginpage', [loginController::class, 'loginpage'])->middleware('Log
 
 Route::get('/logout', [loginController::class, 'logout'])->name('logout'); //logout functions
 
-Route::get('/forgetpassword', [loginController::class, 'forgetpassword'])->name('forgetpassword'); //forget passsword page.
+//Route::get('/forgetpassword', [loginController::class, 'forgetpassword'])->name('forgetpassword'); //forget passsword page.
 
 
 
@@ -310,6 +314,8 @@ Route::get('updatestudentpassword-student/{id}',[studentController::class, 'upda
 
 Route::get('delete-student/{id}',[studentController::class, 'deletestudent'])->name('deletestudent');
 
+Route::get('/admin/student/profile', [studentController::class, 'viewstuprofile'])->name('admin.student.viewstuprofile');
+
 
 /*admin.lecturer routes*/
 Route::get('/admin/lecturer/lectureopera', [lecturerController::class, 'viewlecturer'])->name('admin.lecturer.lectureropera');  //route to view student crud operation page.
@@ -421,3 +427,14 @@ Route::get('/noticeope', [ bookingController::class, 'noticeope'])->name('notice
 Route::get('/noticeoperation', [ bookingController::class, 'noticeope'])->name('noticeope');
 
 Route::get('exportpdf/{id}',[pdfController::class, 'exportpdf'])->name('exportpdf');
+
+
+
+
+
+
+//Route::get('/forgetpassword', [loginController::class, 'forgetpassword'])->name('forgetpassword'); //forget passsword page.
+Route::get('forget-password', [ForgotPasswordController::class, 'showForgetPasswordForm'])->name('forget.password.get'); //link
+Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm'])->name('forget.password.post');
+Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get'); //pass
+Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');

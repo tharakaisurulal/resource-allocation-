@@ -33,10 +33,7 @@ class loginController extends Controller
        // return view('home');
     //}
 
-    public function forgetpassword() //view forget password page.
-    {
-        return view('forgetpassword');
-    }
+   
 
 
     /*public function login1(Request $request){
