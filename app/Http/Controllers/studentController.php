@@ -205,7 +205,7 @@ public function updatestudent1(Request $request,$id)  //selected id will be upda
             //return $lecturehall;
             //$lecturehall->update($request->all());
                 //return $lecturehall;
-                return redirect()->route('admin.student.stuopera')->with('success',"Data updated successfully.");
+                return back()->with('success',"Data updated successfully.");
         }
         else{
             $student = student::find($id);
@@ -1335,6 +1335,22 @@ public function deletestudent($id) //delete lecturer using the selected id.
         $student = student::find($id);
         $student->delete();
         return redirect()->back()-> with('success',"successfully deleted.");
+}
+
+public function viewstuprofile() //view admin's student registraion page.
+{
+    $dater1 = array();
+    if(session()->has('reid')) /*If we are logged in session variable is assign, then we get the id of logged in user and detailas are assign to $dater variable and
+                               return the logged in user details to guest home.mainly it is used in header welcome message.*/
+    {
+        $dater1=student::where('id','=',session()->get('reid'))->first();
+        $dater2=program::all();
+        $dater3=course::all();
+
+
+    }
+    //return $dater1;
+        return view('students.viewProfilestu',['dater1'=>$dater1,'dater2'=>$dater2,'dater3'=>$dater3]);
 }
 
 

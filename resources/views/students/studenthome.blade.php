@@ -10,6 +10,7 @@
 
 @section("content2")
         <li><a href="/logout">LOG OUT</a></li>
+        <li><a href="/admin/student/profile">PROFILE</a></li>
 @endsection
 
 @section("content")
