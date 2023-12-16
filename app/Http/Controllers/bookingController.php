@@ -636,7 +636,12 @@ class bookingController extends Controller
                 //return $cusdata4;
                 return view('admin.notice.noticeope',['notice4'=>$notice4]);
             }
-
+            public function messageope()
+            {
+                $notice5= notice::all();
+                //return $cusdata4;
+                return view('admin.message.messageope',['notice5'=>$notice5]);
+            }
 
             public function addnotice()
             {
