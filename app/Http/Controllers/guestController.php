@@ -153,7 +153,7 @@ class guestController extends Controller
                 // Send a welcome email to the registered user
                 Mail::to($request->username)->send(new RegisterMail());
 
-            return redirect('/loginpage') -> with('success',"you are registered,please login now");
+            return redirect('/loginpage') -> with('success',"you are registered successful! Check your Email ,please login now");
             }
             else{
                 return back() -> with('fail',"you are not registered");
