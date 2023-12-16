@@ -71,7 +71,7 @@
                 </div>
 
                 <div class="links">
-                    <a href="/forgetpassword">Forget Password?</a>
+                    <a href="forget-password">Forget Password?</a>
                         <div>
                             <input type="checkbox" name="remember" {{$is_remember}}> <label class="label1">Remember Me</label>
                         </div>

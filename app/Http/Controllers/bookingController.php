@@ -31,10 +31,10 @@ class bookingController extends Controller
         }
         //return  $event;
 
-        $dat=date("l");
+        $dat=date("l");//current day
         //return $dat;
 
-    $cusdata= timetable::all();
+    $cusdata= timetable::all(); //retrieves all records from the timetable model and stores them
     //return $cusdata;
 
     if($dat=="Monday"){
