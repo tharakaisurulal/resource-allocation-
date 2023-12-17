@@ -22,20 +22,20 @@
     }
     25%{
         /*background-image:linear-gradient(rgba(0,0,0,0.5),#0096),url('https://www.sci.ruh.ac.lk/computer/img/slider/slider2.jpg');*/
-        background-image:linear-gradient(rgba(0,0,0,0.5),#0096),url('/images/slider2.jpg');
+        background-image:linear-gradient(rgba(0,0,0,0.5),#0096),url('/images/p1.jpg');
 
     }
     50%{
         /*background-image: linear-gradient(rgba(0,0,0,0.5),#0096),url('https://www.sci.ruh.ac.lk/computer/img/slider/slider12.jpg');*/
-        background-image: linear-gradient(rgba(0,0,0,0.5),#0096),url('/images/slider12.jpg');
+        background-image: linear-gradient(rgba(0,0,0,0.5),#0096),url('/images/p2.jpg');
     }
     75%{
         /*background-image: linear-gradient(rgba(0,0,0,0.5),#0096),url('https://www.sci.ruh.ac.lk/computer/img/slider/slider12.jpg');*/
-        background-image: linear-gradient(rgba(0,0,0,0.5),#0096),url('/images/OIP22.jpg');
+        background-image: linear-gradient(rgba(0,0,0,0.5),#0096),url('/images/p3.jpg');
     }
     100%{
         /*background-image: linear-gradient(rgba(0,0,0,0.5),#0096),url('https://www.sci.ruh.ac.lk/computer/img/slider/slider12.jpg');*/
-        background-image: linear-gradient(rgba(0,0,0,0.5),#0096),url('/images/download.jpg');
+        background-image: linear-gradient(rgba(0,0,0,0.5),#0096),url('/images/p4.jpg');
     }
 
 }

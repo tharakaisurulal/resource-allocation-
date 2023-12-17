@@ -1,9 +1,9 @@
 @extends('layout.headerFooter')
 @section('content2')
        <li><a href="/">Home</a></li>
-       <li><a href="/welcome/about/academicstaff">Acedemic Staff</a></li>
-       <li><a href="/welcome/about/academicsupportive">Acedemic Support Staff</a></li>
-       <li><a href="/welcome/about/nonacademic">Non Acedemic Staff</a></li>
+       <li><a href="/welcome/about/academicstaff">Academic Staff</a></li>
+       <li><a href="/welcome/about/academicsupportive">Academic Support Staff</a></li>
+       <li><a href="/welcome/about/nonacademic">Non Academic Staff</a></li>
 
 
 
@@ -19,7 +19,7 @@
     @include('cdn')
 	<title>ABOUT</title>
 
-    <link rel="stylesheet" href={{asset('css/about.css')}}>
+    <link rel="stylesheet" href="{{asset('css/about.css')}}">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -44,11 +44,11 @@
     <div class="slide-container">
 
         <div class="slides">
-            <img src="/images/a1.jpg" class="active">
-            <img src="/images/b.jpg">
-            <img src="/images/c.jpg">
-            <img src="/images/p1.jpg">
-            <img src="/images/R4.jfif">
+            <img src="/images/mainauditorium.jpeg" class="active">
+            <img src="/images/mini1.jpg">
+            <img src="/images/lech1.jpg">
+            <img src="/images/slider3.jpg">
+            <img src="/images/2.jpg">
         </div>
 
         <div class="buttons">
@@ -165,7 +165,7 @@
                     <div class="profile">
                         <h4><ins> HEAD </ins></h4>
                         <div class="img">
-                            <img src={{asset('images/849.jpg')}}>
+                            <img src="{{asset('images/849.jpg')}}">
                         </div>
 
                         <div class="b">
@@ -177,12 +177,6 @@
                         </div>
                     </div>
 
-                    <div class="Premises">
-                        <h4><ins>Department Premises</ins></h4>
-                        <div class="img1">
-                            <img src={{asset('images/.jpg')}}>
-                        </div>
-                    </div>
                 </div>
             </div>
     </div>

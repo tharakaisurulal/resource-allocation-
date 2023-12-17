@@ -7,7 +7,7 @@
     @include('cdn')
 	<title>ABOUT</title>
 
-    <link rel="stylesheet" href={{asset('css/AcademicStaff.css')}}>
+    <link rel="stylesheet" href="{{asset('css/AcademicStaff.css')}}">
 
     <!---boxicons links-->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>

@@ -11,9 +11,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 
-    <link rel="stylesheet" href={{asset('css/lecturehalldetails.css')}}>
+    <link rel="stylesheet" href="{{asset('css/lecturehalldetails.css')}}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
-    <link rel="stylesheet" href={{asset('css/bootstrap.css')}}>
+    <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
 
 </head>
 <body>
