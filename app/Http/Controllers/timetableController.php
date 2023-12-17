@@ -410,7 +410,7 @@ public function requeststoreintimetable($id) //store guest registration details(
         //return redirect('/') -> withSuccess("you are registered");
         //return back() -> with('success',"you are registered");
         Mail::to($guest->email)->send(new RegisterMail1());
-        return back() -> with('success',"Timetable has been added!");
+        return back() -> with('success',"Timetable has been added! And Success messages send through Email.");
         }
         else{
             return back() -> with('fail',"Incorrect details. Timetable has not been added!");
