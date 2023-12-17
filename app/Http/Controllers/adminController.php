@@ -196,7 +196,7 @@ class adminController extends Controller
                     ->select('timetables.*','lecturers.lec_name', 'courses.course_name','courses.course_code','lecturehalls.lh_name')
                     //->where('program_id','=',$request -> program)
                     //->where('level','=',$request -> level)
-                    ->where('day','=',$day)
+                    //->where('day','=',$day)
                     //->where('course_id','=',$request -> course)
                     //->where('semester','=',$request -> semester)
                     //->where('start_time','=',$request -> starttime)
@@ -217,7 +217,7 @@ class adminController extends Controller
             //->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
             ->join('labs', 'timetables.lab_id', '=', 'labs.id')
             ->select('timetables.*', 'accsupportives.acc_name', 'courses.course_name','courses.course_code','labs.lab_name')
-            ->where('day','=',$day)
+            //->where('day','=',$day)
             ->where('labs.lab_name','=',$guestrequest -> hall_name)
             ->get();
             //dd($dat2);
@@ -248,7 +248,7 @@ class adminController extends Controller
                     ->select('timetables.*','lecturers.lec_name', 'courses.course_name','courses.course_code','lecturehalls.lh_name')
                     //->where('program_id','=',$request -> program)
                     //->where('level','=',$request -> level)
-                    ->where('day','=',$day)
+                    //->where('day','=',$day)
                     //->where('course_id','=',$request -> course)
                     //->where('semester','=',$request -> semester)
                     //->where('start_time','=',$request -> starttime)
@@ -269,7 +269,7 @@ class adminController extends Controller
             //->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
             ->join('labs', 'timetables.lab_id', '=', 'labs.id')
             ->select('timetables.*', 'accsupportives.acc_name', 'courses.course_name','courses.course_code','labs.lab_name')
-            ->where('day','=',$day)
+            //->where('day','=',$day)
             ->where('labs.lab_name','=',$lecturerrequest -> hall_name)
             ->get();
             //dd($dat2);
@@ -299,17 +299,17 @@ class adminController extends Controller
     {
         $admin = Auth::user(); // Assuming you are using Laravel's built-in authentication
         $unreadMessagesCount = $admin->messages()->whereNull('read_at')->count();
-    
+
         return view('admin.dashboard', compact('unreadMessagesCount'));
-    } 
+    }
 
     public function showUnreadMessagesCount2()
     {
         $admin = Auth::user(); // Assuming you are using Laravel's built-in authentication
         $unreadMessagesCount2 = $admin->messages()->whereNull('read_at')->count();
-    
+
         return view('admin.dashboard', compact('unreadMessagesCount2'));
-    } 
+    }
 
     public function markMessagesAsRead()
     {
@@ -317,10 +317,10 @@ class adminController extends Controller
         $admin->messages()->whereNull('read_at')->update(['read_at' => now()]);
         return Redirect::back()->with('success', 'Messages marked as read successfully');
     }
-    
 
 
-    
+
+
 
 }
 
