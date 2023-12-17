@@ -71,6 +71,7 @@
        <option value="1">BCs</option>
        <option value="2">BSc</option>
        </select>
+       <label class="text-danger span1">@error('program')  {{$message}}  @enderror</label><br>
 
     <label for="name"><b>Level:</b></label>
     <select name="level" id="faculty">

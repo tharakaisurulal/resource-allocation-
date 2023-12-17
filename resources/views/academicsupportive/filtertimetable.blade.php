@@ -7,7 +7,7 @@
         <title>Laravel</title>
 
         @include('cdn')
-        <link rel="stylesheet" href={{asset('css/timetablefilter.css')}}>
+        <link rel="stylesheet" href="{{asset('css/timetablefilter.css')}}">
 
     </head>
     <body class="bdy">
@@ -140,7 +140,7 @@
             <td>End Time</td>
             <td>Course Name</td>
             <td>Course Code</td>
-            <td>Lecturer Name</td>
+            <td>Academic Supportive Name</td>
 
         </thead>
         @foreach ($joindata1 as $cdb)
