@@ -35,7 +35,7 @@
     <div class="card">
 
             <div class="face front">
-                <img src="/images/th.jpg" alt=""  width=300px height=350px>
+                <img src="/images/prof.jpg" alt=""  width=300px height=350px>
                 <h3> Profile</h3>
             </div>
 
