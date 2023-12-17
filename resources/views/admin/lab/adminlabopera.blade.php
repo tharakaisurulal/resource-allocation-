@@ -12,7 +12,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Laravel</title>
+        <title>Labs</title>
 
         <link rel="stylesheet" href={{asset('css/adminlecturehallopera.css')}}>
     </head>
@@ -32,7 +32,7 @@
         <form action="{{route('addlab')}}" method="POST">
             @csrf
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Add Labs</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -40,12 +40,12 @@
             <table>
 
                 <tr>
-                    <td>Lecture Hall Name:</td>
+                    <td>Lab Name:</td>
                     <td><input type="text" name="labname" required></td>
                 </tr>
 
                 <tr>
-                    <td>Lecture Hall capacity:</td>
+                    <td>Lab capacity:</td>
                     <td><input type="text" name="labcapacity" required></td>
                 </tr>
 

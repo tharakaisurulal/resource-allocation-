@@ -14,6 +14,7 @@
 </head>
 <body>
     <div>
+
         <h3 class="tit">Guest's Request</h3>
 
         @if (sizeof($dater1)!==0)
@@ -46,6 +47,8 @@
                                 </button>
                                 <ul class="dropdown-menu">
                                   <li><a class="dropdown-item" href="{{url('viewsuggestions/'.$cdb->id)}}" >Suggestions</a></li>
+                                  <li><a class="dropdown-item" href="{{url('exportpdf/'.$cdb->id)}}">Export Approval PDF</a></li>
+                                  <li><a class="dropdown-item" href="{{url('requeststoreintimetable/'.$cdb->id)}}">Approve</a></li>
                                   <li><a class="dropdown-item" href="{{url('delete-guestrequest/'.$cdb->id)}}">Delete</a></li>
                                 </ul>
                               </div>
@@ -59,6 +62,14 @@
         <div class="alert alert-danger div5">{{ 'No Data!' }}</div>
         @endif
 
+        @if(session()->has('success'))
+        <div class="alert alert-success div5">{{session()->get('success')}}</div>
+    @endif
+
+    @if(session()->has('fail'))
+
+        <div class="alert alert-danger">{{session()->get('fail')}}</div>
+    @endif
         <h3 class="tit1">Lecturer's Request</h3>
         @if (sizeof($dater2)!==0)
         <div class="d-flex justify-content-center div2">
@@ -90,7 +101,7 @@
                         </button>
                         <ul class="dropdown-menu">
                           <li><a class="dropdown-item" href="{{url('viewsuggestions1/'.$cdb->id)}}" >Suggestions</a></li>
-                          <li><a class="dropdown-item" href="{{url('exportpdf/'.$cdb->id)}}">Export Approval PDF</a></li>
+                          <li><a class="dropdown-item" href="">Export Approval PDF</a></li>
                           <li><a class="dropdown-item" href="{{url('delete-lecturerrequest/'.$cdb->id)}}">Delete</a></li>
                           <li><a class="dropdown-item" href="">Approve</a></li>
                         </ul>

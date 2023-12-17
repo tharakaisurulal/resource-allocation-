@@ -40,24 +40,14 @@
                     </h2>
                   </div>-->
 
-
-                <div class="accordion-item">
-                  <h2 class="accordion-header bb" id="flush-headingOne">
-                    <button class="accordion-button collapsed sec2" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                        <li><a href="#">ACTORS</a></li>
-                    </button>
-                  </h2>
-                  <div id="flush-collapseOne" class="accordion-collapse collapse sec2" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">
-                        <ul>
-                            <li class="sec3"><a href="/admin/student/stuopera">STUDENT</a></li>
-                            <li class="sec3"><a href="/admin/lecturer/lectureopera">LECTURER</a></li>
-                            <li class="sec3"><a href="/admin/academicsupportive/academicsupopera">ACADEMIC-SUPPORTIVE</a></li>
-                            <li class="sec3"><a href="/admin/guest/guestopera">GUEST</a></li>
-                        </ul>
-                    </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingFour">
+                      <button class="accordion-button collapsed sec2" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour" onclick="window.location.href='/admin/program/adminprogramopera';">
+                        <li><a href="#">DEGREE PROGRAM</a></li>
+                      </button>
+                    </h2>
                   </div>
-                </div>
+
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="flush-headingTwo">
                     <button class="accordion-button collapsed sec2" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
@@ -79,14 +69,23 @@
                   </h2>
                 </div>
 
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingFour">
-                      <button class="accordion-button collapsed sec2" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour" onclick="window.location.href='/admin/program/adminprogramopera';">
-                        <li><a href="#">DEGREE PROGRAM</a></li>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header bb" id="flush-headingOne">
+                      <button class="accordion-button collapsed sec2" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                          <li><a href="#">ACTORS</a></li>
                       </button>
                     </h2>
+                    <div id="flush-collapseOne" class="accordion-collapse collapse sec2" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body">
+                          <ul>
+                              <li class="sec3"><a href="/admin/student/stuopera">STUDENT</a></li>
+                              <li class="sec3"><a href="/admin/lecturer/lectureopera">LECTURER</a></li>
+                              <li class="sec3"><a href="/admin/academicsupportive/academicsupopera">ACADEMIC-SUPPORTIVE</a></li>
+                              <li class="sec3"><a href="/admin/guest/guestopera">GUEST</a></li>
+                          </ul>
+                      </div>
+                    </div>
                   </div>
-
 
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="flush-headingSeven">
