@@ -103,7 +103,7 @@
                 <td>End Time</td>
                 <td>Course Name</td>
                 <td>Course Code</td>
-                <td>Lecturer Name</td>
+                <td>Lecturer's Name</td>
 
             </thead>
             @foreach ($joindata as $cdb)
@@ -140,7 +140,7 @@
             <td>End Time</td>
             <td>Course Name</td>
             <td>Course Code</td>
-            <td>Lecturer Name</td>
+            <td>Lecturer's Name</td>
 
         </thead>
         @foreach ($joindata1 as $cdb)
