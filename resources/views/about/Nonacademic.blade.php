@@ -30,6 +30,7 @@
     <tr>
         <td>
         <div class="card" style="--clr:#010522d2;">
+            <button type="button" class="btn btn-warning but1" onclick="history.back()" >Back</button>
             <div class="imgBx">
                 <img src="/images/Nonacademic/1001.jpg" alt="">
             </div>
@@ -107,6 +108,7 @@
 
         <td>
         <div class="card" style="--clr:#010522d2;">
+
             <div class="imgBx">
                 <img src="/images/Nonacademic/1010.jpg" alt="">
             </div>

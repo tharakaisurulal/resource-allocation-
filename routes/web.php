@@ -15,6 +15,7 @@ use App\Http\Controllers\academicsupportiveController;
 use App\Http\Controllers\timetableController;
 use App\Http\Controllers\bookingController;
 use App\Http\Controllers\pdfController;
+use App\Http\Controllers\LabmaintrainesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -440,3 +441,6 @@ Route::get('forget-password', [ForgotPasswordController::class, 'showForgetPassw
 Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm'])->name('forget.password.post');
 Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get'); //pass
 Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
+
+Route::get('/maintanceformview', [LabmaintrainesController::class, 'form'])->name('form');
+Route::post('/maintanceformsubmit', [LabmaintrainesController::class, 'viewcomplain'])->name('viewcomplain');
