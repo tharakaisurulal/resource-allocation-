@@ -177,12 +177,6 @@
                         </div>
                     </div>
 
-                    <div class="Premises">
-                        <h4><ins>Department Premises</ins></h4>
-                        <div class="img1">
-                            <img src="{{asset('images/.jpg')}}">
-                        </div>
-                    </div>
                 </div>
             </div>
     </div>
