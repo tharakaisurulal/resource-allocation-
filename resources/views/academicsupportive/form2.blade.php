@@ -12,7 +12,7 @@
         <div class="box">
 
             <form>
-                <h1>Lecture Hall Maintain Form</h1><br>
+                <h1>Lecture Hall Maintainance Form</h1><br>
 
                 <div class="s1">
                     <label>User name</label>
@@ -34,7 +34,7 @@
 
                         <tr>
 
-                            <td><label>A/C Problam</label></td>
+                            <td><label>A/C Problem</label></td>
                             <td></td>
 
                             <td><input type="checkbox" name="a_c" value="a/c"></td>
