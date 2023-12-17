@@ -14,13 +14,13 @@
 
   <title>Bootstrap Theme Company Page</title>
 
- <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">-->
+ <!--map script-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="{{asset('css/guestpage.css')}}">
 
+
+  <!--calander script-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -32,6 +32,8 @@
 </head>
 <body>
 
+
+  <!--today head-->
 
     <div class="divi1">
     <div class="jumbotron text-center">
@@ -53,9 +55,19 @@
         </table>
       </div>
     </div>
+<<<<<<< HEAD
      
 <!-- Map Start-->
     <div class="container">
+=======
+      
+   
+   
+   
+   <!--map start-->
+   
+        <div class="container">
+>>>>>>> main
         <img src="images/im1.jpg" alt="Snow"  class="img2" >
 
             <div class="container1">
@@ -85,7 +97,7 @@
                     <table class="table table-dark">
                         <tbody>
                             <tr>
-                                <td colspan="3">No Time slotes allocated For Today!</td>
+                                <td colspan="3">No Time Slotes Allocated For Today!</td>
                             </tr>
                         </tbody>
                     </table>
@@ -260,7 +272,7 @@
                     <table class="table table-dark">
                         <tbody>
                             <tr>
-                                <td colspan="3">No Time slotes allocated For Today!</td>
+                                <td colspan="3">No Time Slotes Allocated For Today!</td>
                             </tr>
                         </tbody>
                     </table>
@@ -295,17 +307,19 @@
                     <table class="table table-dark">
                         <tbody>
                             <tr>
-                                <td colspan="3">No Time slotes allocated For Today!</td>
+                                <td colspan="3">No Time Slotes Allocated For Today!</td>
                             </tr>
                         </tbody>
                     </table>
                     @endif</div> <!--08-->
                 </div>
             </div>
-      
+      <!--map end-->
 
+
+      <!--calander start-->
             <div class="divi2">
-              <h1 class="hb">Speacial Events</h1>
+              <h1 class="hb">Special Events</h1>
               <div id="calendar">
                   </div>
               </div>
@@ -320,7 +334,7 @@
                 $(document).ready(function() {
                 var calendar = $('#calendar').fullCalendar({
                     header: {
-                        left:'prev,next today',
+                        left:'prev,next,today',
                         center:'title',
                         right:'month,agendaWeek,agendaDay',
                     },
@@ -330,9 +344,17 @@
                     })
             });
 
+<<<<<<< HEAD
             
 
             //logo
+=======
+           //calander end
+
+
+            //notice start
+
+>>>>>>> main
             const logo = "<img src='/images/O.jpg' width='25px' style='margin:0 8px'/>";
             let tickerText = "";
             //looping through the news array
@@ -346,6 +368,10 @@
 
             document.querySelector("#scroll").innerHTML = tickerText;
             </script>
+            <!--notice end-->
+
+
+
 </body>
 </html>
 @endsection

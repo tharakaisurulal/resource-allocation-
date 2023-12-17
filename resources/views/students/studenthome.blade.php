@@ -22,7 +22,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 
-    <link rel="stylesheet" href={{asset('css/lecturerhome.css')}}>
+    <link rel="stylesheet" href="{{asset('css/lecturerhome.css')}}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
 
 
@@ -35,7 +35,7 @@
     <div class="card">
 
             <div class="face front">
-                <img src="/images/th.jpg" alt=""  width=300px height=350px>
+                <img src="/images/profi.jpeg" alt=""  width=300px height=350px>
                 <h3> Profile</h3>
             </div>
 

@@ -570,6 +570,14 @@ class bookingController extends Controller
     public function storer(Request $request)
     {
 //return $request;
+
+$request->validate([  //validation part.
+    'name'=> 'required',
+    'start'=> 'required',
+    'end'=> 'required',
+
+
+  ]);
           $bookings=booking::create([
             'title'=> $request -> name,
             'start_time' => $request -> start,
@@ -647,6 +655,7 @@ class bookingController extends Controller
             {
                 return view('admin.notice.addnotice');
             }
+
 
             public function storernotice(Request $request)
             {

@@ -12,8 +12,7 @@
 
 
 
-<H1>BCS(General) DEGREE PROGRAMME(LEVEL 2 SEMESTER 2)</H1>
-<H2>Bachelor of Computer Science(General)(SC/2021)</H2>
+<H1>Timetable</H1>
 <br>
 
 <TABLE class="myTimetable">
