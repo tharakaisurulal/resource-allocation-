@@ -51,7 +51,7 @@
         <div class="card">
 
             <div class="face front">
-                <img src="/images/Lap1.jpg" alt="" width=300px height=350px>
+                <img src="/images/lab1.jpeg" alt="" width=300px height=350px>
                 <h3> Laboratory</h3>
             </div>
 
