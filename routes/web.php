@@ -395,6 +395,8 @@ Route::post('update2-timetable/{id}',[timetableController::class, 'updatetimetab
 
 Route::get('delete-timetable/{id}',[timetableController::class, 'deletetimetable'])->name('deletetimetable');  //route to function of delete programs.
 
+Route::get('requeststoreintimetable/{id}', [timetableController::class, 'requeststoreintimetable'])->name('requeststoreintimetable');
+
 //admin's events
 //Route::get('/index', [bookingController::class, 'index']);
 //Route::get('/deletevent', [ bookingController::class, 'deletevent'])->name('delevent');

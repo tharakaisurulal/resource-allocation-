@@ -60,7 +60,6 @@
                         <ul class="dropdown-menu">
                           <li><a class="dropdown-item" href="{{url('update-event/'.$cdb->id)}}" >Edit</a></li>
                           <li><a class="dropdown-item" href="{{url('delete-event/'.$cdb->id)}}">Delete</a></li>
-                          <li><a class="dropdown-item" href="">More</a></li>
                         </ul>
                       </div>
                 </td>
