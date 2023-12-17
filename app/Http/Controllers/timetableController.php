@@ -5,11 +5,16 @@ use App\Models\course;
 use App\Models\program;
 use App\Models\lecturehall;
 use App\Models\lab;
+use App\Models\guest;
 use App\Models\lecturer;
 use App\Models\timetable;
+use App\Models\lecturerrequest;
+use App\Models\guestrequest;
 use App\Models\accsupportive;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Mail\RegisterMail1;
+use Illuminate\Support\Facades\Mail;
 
 class timetableController extends Controller
 {
@@ -94,6 +99,7 @@ public function viewtimetable(){  //view the students in database(inside the adm
             //->where('lh_name','=','MLT1')
             //->where('day','=','Monday')
         ->get();
+
         //return $data1;
         $data2 = DB::table('timetables')
             //->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
@@ -106,8 +112,32 @@ public function viewtimetable(){  //view the students in database(inside the adm
             //->where('lh_name','=','MLT1')
             //->where('day','=','Monday')
         ->get();
-        //return $data2;
-        return view('admin.timetable.timetableopera',['data1'=> $data1,'data2'=> $data2]);
+
+        $data3 = DB::table('timetables')
+        //->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+        //->join('programs', 'timetables.program_id', '=', 'programs.id')
+        //->join('courses', 'timetables.course_id', '=', 'courses.id')
+        ->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
+        //->join('labs', 'timetables.lab_id', '=', 'labs.id')
+    //->select('timetables.id','timetables.semester','timetables.day','timetables.start_time','timetables.end_time','lecturehalls.lh_name')
+    ->select('timetables.*','lecturehalls.lh_name')
+        ->where('level','=',null)
+        //->where('day','=','Monday')
+    ->get();
+
+    $data4 = DB::table('timetables')
+        //->join('lecturers', 'timetables.lec_id', '=', 'lecturers.id')
+        //->join('programs', 'timetables.program_id', '=', 'programs.id')
+        //->join('courses', 'timetables.course_id', '=', 'courses.id')
+        //->join('lecturehalls', 'timetables.lh_id', '=', 'lecturehalls.id')
+        ->join('labs', 'timetables.lab_id', '=', 'labs.id')
+    //->select('timetables.id','timetables.semester','timetables.day','timetables.start_time','timetables.end_time','labs.lab_name')
+    ->select('timetables.*','labs.lab_name')
+        ->where('level','=',null)
+        //->where('day','=','Monday')
+    ->get();
+        //return $data4;
+        return view('admin.timetable.timetableopera',['data1'=> $data1,'data2'=> $data2,'data3'=> $data3,'data4'=> $data4]);
     //}
 }
 
@@ -195,5 +225,196 @@ public function deletetimetable($id) //delete programs using the selected id.
         $timetable = timetable::find($id);
         $timetable->delete();
         return redirect()->back()-> with('success',"successfully deleted.");
+}
+
+public function requeststoreintimetable($id) //store guest registration details(inside the admin page).
+{
+    //$lecturer= lecturerrequest::find($id);
+    //$lecturer->date=date('l');
+
+    $guest= guestrequest::find($id);
+    $guest->date=date('l');
+
+/*if($lecturer->hall_name=="Lecture Hall 01"){
+      $timetable=timetable::create([
+        //'program_id'=> $request -> program,
+        //'level'=> $request -> level,
+        'day'=> $lecturer -> date,
+        //'course_id'=> $lecturer -> reason,
+        'start_time'=> $lecturer -> start_time,
+        'end_time'=> $lecturer -> end_time,
+        //'lec_id' => $request -> lecturername,
+        //'acc_id' => $request -> accsupname,
+        //'lab_id'=> $lecturer -> lab,
+        'lh_id'=> '2',
+        'semester'=> $lecturer -> reason,
+
+        ]);
+    }
+    elseif($lecturer->hall_name=="mini-auditorium"){
+        $timetable=timetable::create([
+          //'program_id'=> $request -> program,
+          //'level'=> $request -> level,
+          'day'=> $lecturer -> date,
+          'course_id'=> $lecturer -> reason,
+          'start_time'=> $lecturer -> start_time,
+          'end_time'=> $lecturer -> end_time,
+          //'lec_id' => $request -> lecturername,
+          //'acc_id' => $request -> accsupname,
+          //'lab_id'=> $lecturer -> lab,
+          'lh_id'=> '3',
+          //'semester'=> $request -> semester,
+
+          ]);
+      }
+
+      elseif($lecturer->hall_name=="main-auditorium"){
+        $timetable=timetable::create([
+          //'program_id'=> $request -> program,
+          //'level'=> $request -> level,
+          'day'=> $lecturer -> date,
+          'course_id'=> $lecturer -> reason,
+          'start_time'=> $lecturer -> start_time,
+          'end_time'=> $lecturer -> end_time,
+          //'lec_id' => $request -> lecturername,
+          //'acc_id' => $request -> accsupname,
+          //'lab_id'=> $lecturer -> lab,
+          'lh_id'=> '4',
+          //'semester'=> $request -> semester,
+
+          ]);
+      }*/
+
+      if($guest->hall_name=="Lecture Hall 01"){
+        $timetable=timetable::create([
+          //'program_id'=> $request -> program,
+          //'level'=> $request -> level,
+          'day'=> $guest -> date,
+          //'course_id'=> $lecturer -> reason,
+          'start_time'=> $guest -> start_time,
+          'end_time'=> $guest -> end_time,
+          //'lec_id' => $request -> lecturername,
+          //'acc_id' => $request -> accsupname,
+          //'lab_id'=> $lecturer -> lab,
+          'lh_id'=> '2',
+          'semester'=> $guest -> reason,
+
+          ]);
+      }
+      elseif($guest->hall_name=="mini-auditorium"){
+          $timetable=timetable::create([
+            //'program_id'=> $request -> program,
+            //'level'=> $request -> level,
+            'day'=> $guest -> date,
+            'semester'=> $guest -> reason,
+            'start_time'=> $guest -> start_time,
+            'end_time'=> $guest -> end_time,
+            //'lec_id' => $request -> lecturername,
+            //'acc_id' => $request -> accsupname,
+            //'lab_id'=> $lecturer -> lab,
+            'lh_id'=> '3',
+            //'semester'=> $request -> semester,
+
+            ]);
+        }
+
+        elseif($guest->hall_name=="main-auditorium"){
+          $timetable=timetable::create([
+            //'program_id'=> $request -> program,
+            //'level'=> $request -> level,
+            'day'=> $guest -> date,
+            'semester'=> $guest -> reason,
+            'start_time'=> $guest -> start_time,
+            'end_time'=> $guest -> end_time,
+            //'lec_id' => $request -> lecturername,
+            //'acc_id' => $request -> accsupname,
+            //'lab_id'=> $lecturer -> lab,
+            'lh_id'=> '4',
+            //'semester'=> $request -> semester,
+
+            ]);
+        }
+
+        elseif($guest->hall_name=="Computer lab 01"){
+            $timetable=timetable::create([
+              //'program_id'=> $request -> program,
+              //'level'=> $request -> level,
+              'day'=> $guest -> date,
+              'semester'=> $guest -> reason,
+              'start_time'=> $guest -> start_time,
+              'end_time'=> $guest -> end_time,
+              //'lec_id' => $request -> lecturername,
+              //'acc_id' => $request -> accsupname,
+              'lab_id'=> '2',
+              //'lh_id'=> '4',
+              //'semester'=> $request -> semester,
+
+              ]);
+          }
+
+          elseif($guest->hall_name=="Computer lab 02"){
+            $timetable=timetable::create([
+              //'program_id'=> $request -> program,
+              //'level'=> $request -> level,
+              'day'=> $guest -> date,
+              'semester'=> $guest -> reason,
+              'start_time'=> $guest -> start_time,
+              'end_time'=> $guest -> end_time,
+              //'lec_id' => $request -> lecturername,
+              //'acc_id' => $request -> accsupname,
+              'lab_id'=> '3',
+              //'lh_id'=> '4',
+              //'semester'=> $request -> semester,
+
+              ]);
+          }
+
+          elseif($guest->hall_name=="Computer lab 03"){
+            $timetable=timetable::create([
+              //'program_id'=> $request -> program,
+              //'level'=> $request -> level,
+              'day'=> $guest -> date,
+              'semester'=> $guest -> reason,
+              'start_time'=> $guest -> start_time,
+              'end_time'=> $guest -> end_time,
+              //'lec_id' => $request -> lecturername,
+              //'acc_id' => $request -> accsupname,
+              'lab_id'=> '4',
+              //'lh_id'=> '4',
+              //'semester'=> $request -> semester,
+
+              ]);
+          }
+
+          elseif($guest->hall_name=="Special lab"){
+            $timetable=timetable::create([
+              //'program_id'=> $request -> program,
+              //'level'=> $request -> level,
+              'day'=> $guest -> date,
+              'semester'=> $guest -> reason,
+              'start_time'=> $guest -> start_time,
+              'end_time'=> $guest -> end_time,
+              //'lec_id' => $request -> lecturername,
+              //'acc_id' => $request -> accsupname,
+              'lab_id'=> '5',
+              //'lh_id'=> '4',
+              //'semester'=> $request -> semester,
+
+              ]);
+          }
+
+
+        $res = $timetable ->save();
+
+        if($res){
+        //return redirect('/') -> withSuccess("you are registered");
+        //return back() -> with('success',"you are registered");
+        Mail::to($guest->email)->send(new RegisterMail1());
+        return back() -> with('success',"Timetable has been added!");
+        }
+        else{
+            return back() -> with('fail',"Incorrect details. Timetable has not been added!");
+        }
+
 }
 }

@@ -16,20 +16,20 @@ Faculty of Science,<br>
 University of Ruhuna,<br>
 Wellamadama,Matara,<br>
 Sri Lanka<br>
-{{date('Y/m/d')}}<br><br>
+<u>{{date('Y/m/d')}}</u><br><br>
 
-{{$lecturerrequest->name}}<br>
+<u>{{$guestrequest->name}}</u><br>
 Lecturer,<br>
 Department of Computer Science,<br>
 Faculty of Science<br>
-{{$lecturerrequest->email}}<br><br>
+<u>{{$guestrequest->email}}</u><br><br>
 
 
-Dear {{$lecturerrequest->name}},<br><br>
+Dear <u>{{$guestrequest->name}},</u><br><br>
 
 <center><h2><b>Approval for Hall Request</b></h2></center><br><br>
 
-I hope this letter finds you well. I have reviewed your request for the use of {{$lecturerrequest->hall_name}} at the University of Ruhuna, Faculty of Science, Department of Computer Science on {{$lecturerrequest->date}} for {{$lecturerrequest->reason}}.<br><br>
+I hope this letter finds you well. I have reviewed your request for the use of <u>{{$guestrequest->hall_name}}</u> at the University of Ruhuna, Faculty of Science, Department of Computer Science on <u>{{$guestrequest->date}}</u> for <u>{{$guestrequest->reason}}</u>.<br><br>
 
 After careful consideration, I am pleased to inform you that your request has been approved. We trust that the requested space will be used responsibly and that all necessary arrangements will be made to ensure a smooth and successful event.<br><br>
 

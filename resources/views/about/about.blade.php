@@ -44,11 +44,11 @@
     <div class="slide-container">
 
         <div class="slides">
-            <img src="/images/a1.jpg" class="active">
-            <img src="/images/b.jpg">
-            <img src="/images/c.jpg">
-            <img src="/images/p1.jpg">
-            <img src="/images/R4.jfif">
+            <img src="/images/mainauditorium.jpeg" class="active">
+            <img src="/images/mini1.jpg">
+            <img src="/images/lech1.jpg">
+            <img src="/images/slider3.jpg">
+            <img src="/images/2.jpg">
         </div>
 
         <div class="buttons">
@@ -177,12 +177,6 @@
                         </div>
                     </div>
 
-                    <div class="Premises">
-                        <h4><ins>Department Premises</ins></h4>
-                        <div class="img1">
-                            <img src="{{asset('images/.jpg')}}">
-                        </div>
-                    </div>
                 </div>
             </div>
     </div>
