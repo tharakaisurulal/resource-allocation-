@@ -130,7 +130,7 @@
             </tr>
 
             <tr>
-                <td class="td12"><a href="{{url('update-student/'.$dater1->id)}}"> <button class="btn btn-secondary btn-sm" type="button" >Edit</button></a></td>
+
                 <td class="td13"><a href="/students/studenthome" > <button class="btn btn-secondary btn-sm" type="button">Back</button></a></td>
             </tr>
 
