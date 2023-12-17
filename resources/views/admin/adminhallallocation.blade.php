@@ -47,8 +47,8 @@
                                 </button>
                                 <ul class="dropdown-menu">
                                   <li><a class="dropdown-item" href="{{url('viewsuggestions/'.$cdb->id)}}" >Suggestions</a></li>
-                                  <li><a class="dropdown-item" href="{{url('exportpdf/'.$cdb->id)}}">Export Approval PDF</a></li>
                                   <li><a class="dropdown-item" href="{{url('requeststoreintimetable/'.$cdb->id)}}">Approve</a></li>
+                                  <li><a class="dropdown-item" href="{{url('exportpdf/'.$cdb->id)}}">Export Approval PDF</a></li>
                                   <li><a class="dropdown-item" href="{{url('delete-guestrequest/'.$cdb->id)}}">Delete</a></li>
                                 </ul>
                               </div>
@@ -101,9 +101,10 @@
                         </button>
                         <ul class="dropdown-menu">
                           <li><a class="dropdown-item" href="{{url('viewsuggestions1/'.$cdb->id)}}" >Suggestions</a></li>
+                          <li><a class="dropdown-item" href="">Approve</a></li>
                           <li><a class="dropdown-item" href="">Export Approval PDF</a></li>
                           <li><a class="dropdown-item" href="{{url('delete-lecturerrequest/'.$cdb->id)}}">Delete</a></li>
-                          <li><a class="dropdown-item" href="">Approve</a></li>
+
                         </ul>
                       </div>
             </td>

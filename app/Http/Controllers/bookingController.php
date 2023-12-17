@@ -656,6 +656,7 @@ $request->validate([  //validation part.
                 return view('admin.notice.addnotice');
             }
 
+
             public function storernotice(Request $request)
             {
                   //return $request;

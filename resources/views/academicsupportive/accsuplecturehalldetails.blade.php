@@ -17,7 +17,7 @@
 
 </head>
 <body>
-<h1 id="tit">Lecturehall Details</h1>
+<h1 id="tit">Lecture Hall Details</h1>
     <div class="sec1">
 
     <div class="card">
