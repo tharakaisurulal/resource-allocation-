@@ -27,7 +27,7 @@
         <section id="banner">
 
             <div class="banner-text">
-                <h1>WELCOME TO RESOURCES MANAGEMENT SYSTEM...</h1>
+                <h1>WELCOME TO RESOURCES ALLOCATION SYSTEM...</h1>
                 <div class="banner-btn">
                     <a href="/guestpage"><span></span>TODAY</a>
                     <a href="/loginpage"><span></span>LOGIN</a>
