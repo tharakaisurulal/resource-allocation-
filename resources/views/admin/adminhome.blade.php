@@ -6,7 +6,7 @@
 
         <title>Lecture hall Allocation</title>
         @include('cdn')
-        <link rel="stylesheet" href={{asset('css/adminhome.css')}}>
+        <link rel="stylesheet" href="{{asset('css/adminhome.css')}}">
         <link rel="icon" type="text/css" href="{{asset('/images/R.png')}}">
 
     </head>
@@ -113,6 +113,14 @@
                     <h2 class="accordion-header" id="flush-headingSix">
                       <button class="accordion-button collapsed sec2" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix" onclick="window.location.href='/noticeope';">
                         <li><a href="#">NOTICE</a></li>
+                      </button>
+                    </h2>
+                  </div>
+
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingSix">
+                      <button class="accordion-button collapsed sec2" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix" onclick="window.location.href='/messageope';">
+                        <li><a href="#">MESSAGES</a></li>
                       </button>
                     </h2>
                   </div>

@@ -14,7 +14,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Labs</title>
 
-        <link rel="stylesheet" href={{asset('css/adminlecturehallopera.css')}}>
+        <link rel="stylesheet" href="{{asset('css/adminlecturehallopera.css')}}">
     </head>
     <body>
         <div class="div1">

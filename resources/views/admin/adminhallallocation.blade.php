@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href={{asset('css/adminhallallocation.css')}}>
+    <link rel="stylesheet" href="{{asset('css/adminhallallocation.css')}}">
     <title>Document</title>
 </head>
 <body>

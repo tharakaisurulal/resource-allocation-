@@ -10,7 +10,7 @@
 <html lang="en">
 <head>
     <title>Document</title>
-    <link rel="stylesheet" href={{asset('css/event.css')}}>
+    <link rel="stylesheet" href="{{asset('css/event.css')}}">
 </head>
 <body>
     <div class="div1">

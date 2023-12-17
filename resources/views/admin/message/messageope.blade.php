@@ -14,18 +14,12 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Laravel</title>
 
-        <link rel="stylesheet" href="{{asset('css/adminlecturehallopera.css')}}">
+        <link rel="stylesheet" href={{asset('css/adminlecturehallopera.css')}}>
     </head>
     <body>
-        <div class="div1">
-            <div class="div3">
-            <button type="button" class="btn btn-warning" onclick="window.location.href='/addnotice'">
-                Add notices
-            </button>
-            </div>
-
+        
             <div class="text-center">
-                <h1>Notices</h1>
+                <h1>Messages</h1>
             </div>
 
             @if(session()->has('success'))
@@ -37,18 +31,20 @@
         @endif
 
 
-            @if (sizeof($notice4)!==0)
+            @if (sizeof($notice5)!==0)
          <div class="d-flex justify-content-center div2">
 
             <table class="table table-dark">
                 <thead>
-                    <td>Id</td>
-                    <td>Notice</td>
-                    <td>Action</td>
+                    <td>First Name</td>
+                    <td>Last Name</td>
+                    <td>Email</td>
+                    <td>Message</td>
+                
 
                 </thead>
                 <tbody>
-                    @foreach ($notice4 as $cdb)
+                    @foreach ($notice5 as $cdb)
                 <tr>
                     <td>{{$cdb->id}}</td>
                     <td>{{$cdb->notice}}</td>
@@ -78,4 +74,3 @@
     </body>
 </html>
 @endsection
-
