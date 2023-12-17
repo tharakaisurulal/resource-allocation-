@@ -22,7 +22,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 
-    <link rel="stylesheet" href={{asset('css/lecturerhome.css')}}>
+    <link rel="stylesheet" href="{{asset('css/lecturerhome.css')}}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
 
 
@@ -35,22 +35,22 @@
     <div class="card">
 
             <div class="face front">
-                <img src="/images/main.jpg" alt=""  width=300px height=350px>
-                <h3> Lecture Hall</h3>
+                <img src="/images/profi.jpeg" alt=""  width=300px height=350px>
+                <h3> Profile</h3>
             </div>
 
             <div class="face back">
                     <div class="back-content center">
-                        <h3> Lecture Hall</h3>
+                        <h3> Profile</h3>
                         <div class="button">
-                            <a href="/students/studentlecturehalldetails"><span>CLICK</span></a>
+                            <a href="/admin/student/profile"><span>CLICK</span></a>
                         </div>
                     </div>
             </div>
         </div>
 
 
-        <div class="card">
+        <!--<div class="card">
 
             <div class="face front">
                 <img src="/images/Lap.jpg" alt="" width=300px height=350px>
@@ -65,7 +65,7 @@
                         </div>
                     </div>
             </div>
-        </div>
+        </div>-->
 
 
 

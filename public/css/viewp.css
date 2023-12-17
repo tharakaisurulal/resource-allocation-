@@ -2,7 +2,7 @@
 body {
     font-family: Arial, sans-serif;
     padding: 20px;
-    background: #180835;;
+    background:#0805056b;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -24,14 +24,15 @@ body {
     width: 85%;
     height: 780px;
     background: #12c2e9;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #f64f59, #c471ed, #12c2e9);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, #ecc332, #efe649);
+    /*background: -webkit-linear-gradient(to right, #f64f59, #c471ed, #12c2e9);  /* Chrome 10-25, Safari 5.1-6 */
+    /*background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
   .left-container {
     background: #000000;
-background: -webkit-linear-gradient(to right, #434343, #000000);
-background: linear-gradient(to right, #434343, #000000);
+    background: -webkit-linear-gradient(to right, #434343, #000000);
+    background: linear-gradient(to right, #434343, #000000);
     flex: 1;
     max-width: 30%;
     display: flex;
@@ -155,9 +156,9 @@ background: linear-gradient(to right, #434343, #000000);
 }
 
   .gradienttext{
-    background-image: linear-gradient(to right, #ee00ff 0%, #fbff00 100%);
+    background-image: linear-gradient(to right, #f68011 0%, #f2f606 100%);
     color: transparent;
-    -webkit-background-clip: text;
+    background-clip: text;
   }
   p {
     font-size: 18px;
@@ -179,7 +180,7 @@ background: linear-gradient(to right, #434343, #000000);
   th{
     padding: 20px;
     border: none;
-    color: red;
+    color: rgb(230, 170, 8);
   }
   td {
 
@@ -197,6 +198,8 @@ background: linear-gradient(to right, #434343, #000000);
     text-align: center;
     margin-top: 50px;
     padding-bottom: 20px;
+    
+    
 }
 
 .td12{

@@ -14,7 +14,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Laravel</title>
 
-        <link rel="stylesheet" href={{asset('css/adminlecturehallopera.css')}}>
+        <link rel="stylesheet" href="{{asset('css/adminlecturehallopera.css')}}">
     </head>
     <body>
         <div class="div1">
@@ -151,6 +151,123 @@
         @endif
     </div>
 
+    <div class="text-center">
+        <h1>Allocated from Request</h1>
+    </div>
+
+    <div>
+    @if (sizeof($data3)!==0)
+         <div class="d-flex justify-content-center div2">
+
+            <table class="table table-dark">
+                <thead>
+                    <td>Program</td>
+                    <td>Course code</td>
+                    <td>Course name</td>
+                    <td>Level</td>
+                    <td>Reason</td>
+                    <td>Day</td>
+                    <td>Start Time</td>
+                    <td>End Time</td>
+                    <td>Lecturer</td>
+                    <td>Lecturehall</td>
+                    <!--<td>Lab</td>-->
+                    <td>Action</td>
+
+                </thead>
+                <tbody>
+                    @foreach ($data3 as $cdb)
+                <tr>
+                    <td>{{$cdb->program_id}}</td>
+                    <td>{{$cdb->course_id}}</td>
+                    <td>{{$cdb->course_id}}</td>
+                    <td>{{$cdb->level}}</td>
+                    <td>{{$cdb->semester}}</td>
+                    <td>{{$cdb->day}}</td>
+                    <td>{{$cdb->start_time}}</td>
+                    <td>{{$cdb->end_time}}</td>
+                    <td>{{$cdb->lec_id}}</td>
+                    <td>{{$cdb->lh_name}}</td>
+
+                    <td>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              Action
+                            </button>
+                            <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="{{url('update-timetable/'.$cdb->id)}}" >Edit</a></li>
+                              <li><a class="dropdown-item" href="{{url('delete-timetable/'.$cdb->id)}}">Delete</a></li>
+                            </ul>
+                          </div>
+                    </td>
+                </tr>
+                    @endforeach
+                </tbody>
+              </table>
+
+         </div>
+         @else
+         <div class="alert alert-danger div5">{{ 'No Data!' }}</div>
+         @endif
+        </div>
+    </div>
+
+    <div>
+        @if (sizeof($data4)!==0)
+             <div class="d-flex justify-content-center div2">
+
+                <table class="table table-dark">
+                    <thead>
+                        <td>Program</td>
+                        <td>Course code</td>
+                        <td>Course name</td>
+                        <td>Level</td>
+                        <td>Reason</td>
+                        <td>Day</td>
+                        <td>Start Time</td>
+                        <td>End Time</td>
+                        <td>Acc. Sup.</td>
+                        <td>Lab</td>
+                        <!--<td>Lab</td>-->
+                        <td>Action</td>
+
+                    </thead>
+                    <tbody>
+                        @foreach ($data4 as $cdb)
+                    <tr>
+                        <td>{{$cdb->program_id}}</td>
+                        <td>{{$cdb->course_id}}</td>
+                        <td>{{$cdb->course_id}}</td>
+                        <td>{{$cdb->level}}</td>
+                        <td>{{$cdb->semester}}</td>
+                        <td>{{$cdb->day}}</td>
+                        <td>{{$cdb->start_time}}</td>
+                        <td>{{$cdb->end_time}}</td>
+                        <td>{{$cdb->acc_id}}</td>
+                        <td>{{$cdb->lab_name}}</td>
+
+                        <td>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                  Action
+                                </button>
+                                <ul class="dropdown-menu">
+                                  <li><a class="dropdown-item" href="{{url('update-timetable/'.$cdb->id)}}" >Edit</a></li>
+                                  <li><a class="dropdown-item" href="{{url('delete-timetable/'.$cdb->id)}}">Delete</a></li>
+                                </ul>
+                              </div>
+                        </td>
+                    </tr>
+                        @endforeach
+                    </tbody>
+                  </table>
+
+             </div>
+             @else
+             <div class="alert alert-danger div5">{{ 'No Data!' }}</div>
+             @endif
+            </div>
+        </div>
 
         <!-- Modal id="staticBackdrop"-->
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">

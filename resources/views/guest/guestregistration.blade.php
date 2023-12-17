@@ -17,7 +17,7 @@
 
         <title>Lecture hall Allocation</title>
         @include('cdn')
-        <link rel="stylesheet" href={{asset('css/guestregi.css')}}>
+        <link rel="stylesheet" href="{{asset('css/guestregi.css')}}">
 
     </head>
 
@@ -81,6 +81,7 @@
 
                 <div class="inputBox">
                     <input type="file" name="photo" value="{{old('photo')}}">
+                    <span>Add Profile photo</span>
                     <i><ion-icon name="person-circle-sharp"></ion-icon></i>
                 </div>
                 <label class="text-danger span1">@error('photo')  {{$message}}  @enderror</label>

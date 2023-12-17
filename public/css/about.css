@@ -238,7 +238,7 @@ body{
 
 .profile h4{
     font-size: 20px;
-    color: rgb(81, 11, 245);
+    color: #4e4e4c;
     font-weight: bold;
 }
 
@@ -255,7 +255,7 @@ body{
 .profile .b h3{
     font-size: 30px;
     font-weight: 700;
-    color: hsl(239, 94%, 49%);
+    color: #4e4e4c;
 }
 
 .profile .b p{
@@ -266,7 +266,7 @@ body{
 
 .content .article h2{
     text-align: center;
-    color: hsla(249, 60%, 21%, 0.918);
+    color: #4e4e4c;
     font-size: 24px;
     margin: 15px 100px;
 }
@@ -280,19 +280,6 @@ body{
 }
 
 /*-----------------------------------------------------*/
-
-.Premises h4{
-    font-size: 20px;
-    color: rgb(81, 11, 245);
-    font-weight: bold;
-}
-
-.Premises .img1{
-    margin-top: 10px;
-    padding-left: 10px;
-    width: 100px;
-    height: 100px;
-}
 
 @media screen and (max-width:770px){
     .about{

@@ -6,7 +6,7 @@
 
         <title>Lecture hall Allocation</title>
         @include('cdn')
-        <link rel="stylesheet" href={{asset('css/headerfooter.css')}}>
+        <link rel="stylesheet" href="{{asset('css/headerfooter.css')}}">
         <link rel="icon" type="text/css" href="{{asset('/images/R.png')}}">
 
     </head>
