@@ -33,7 +33,7 @@
     <div class="card">
 
             <div class="face front">
-                <img src="/images/main.jpg" alt=""  width=300px height=350px>
+                <img src="/images/main1.jpg" alt=""  width=300px height=350px>
                 <h3> Lecture Hall</h3>
             </div>
 
@@ -51,7 +51,7 @@
         <div class="card">
 
             <div class="face front">
-                <img src="/images/Lap.jpg" alt="" width=300px height=350px>
+                <img src="/images/Lap1.jpg" alt="" width=300px height=350px>
                 <h3> Laboratory</h3>
             </div>
 
