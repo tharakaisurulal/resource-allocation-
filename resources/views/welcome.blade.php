@@ -29,7 +29,7 @@
             <div class="banner-text">
                 <h1>WELCOME TO RESOURCES ALLOCATION SYSTEM...</h1>
                 <div class="banner-btn">
-                    <a href="/guestpage"><span></span>TODAYS</a>
+                    <a href="/guestpage"><span></span>TODAY</a>
                     <a href="/loginpage"><span></span>LOGIN</a>
                     <a href="/guest/guestregistration"><span></span>REGISTER</a>
                 </div>
