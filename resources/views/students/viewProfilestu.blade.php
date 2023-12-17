@@ -7,7 +7,7 @@
     @include('cdn')
 	<title>ABOUT</title>
 
-    <link rel="stylesheet" href={{asset('css/viewp.css')}}>
+    <link rel="stylesheet" href="{{asset('css/viewp.css')}}">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -40,18 +40,15 @@
 
 
         <div class="links">
-            <a class="ResearchGate" href=
-"https://www.ResearchGate.com/geeksforgeeks.org/"
+            <a class="ResearchGate" href="https://www.ResearchGate.com/geeksforgeeks.org/"
                 target="_blank" title="GFG_ResearchGate">
                 <i class="fab fa-ResearchGate"></i>
             </a>
-            <a class="git" href=
-"https://github.com/topics/geeksforgeeks"
+            <a class="git" href="https://github.com/topics/geeksforgeeks"
                 title="GFG_github" target="_blank">
                 <i class="fab fa-github-square"></i>
             </a>
-            <a class="linkedin" href=
-"https://www.geeksforgeeks.org/tag/linkedin/"
+            <a class="linkedin" href="https://www.geeksforgeeks.org/tag/linkedin/"
                 title="GFG_linkedin" target="_blank">
                 <i class="fab fa-linkedin"></i>
             </a>
@@ -133,7 +130,7 @@
             </tr>
 
             <tr>
-                <td class="td12"><a href="{{url('update-student/'.$dater1->id)}}"> <button class="btn btn-secondary btn-sm" type="button" >Edit</button></a></td>
+
                 <td class="td13"><a href="/students/studenthome" > <button class="btn btn-secondary btn-sm" type="button">Back</button></a></td>
             </tr>
 

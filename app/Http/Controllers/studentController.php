@@ -92,7 +92,11 @@ class studentController extends Controller
             'subject6'=> 'required_with_all:subject7',
             'subject7'=> 'required_with:subject8',
             'subject8'=> 'nullable',
-            'photo' => 'image'
+            'photo' => 'image',
+            'program'=> 'required',
+            'level'=> 'required',
+            'semester'=> 'required',
+
             //'program_Id' => 'required'
           ]);
           //return $request;

@@ -14,13 +14,13 @@
 
   <title>Bootstrap Theme Company Page</title>
 
- <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">-->
+ <!--map script-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="{{asset('css/guestpage.css')}}">
 
+
+  <!--calander script-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -32,6 +32,8 @@
 </head>
 <body>
 
+
+  <!--today head-->
 
     <div class="divi1">
     <div class="jumbotron text-center">
@@ -53,203 +55,13 @@
         </table>
       </div>
     </div>
-      <!--<div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
-         <!--Indicators -->
-          <!--<ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-          </ol> -->
-
-          <!-- Wrapper for slides -->
-          <!--<div class="carousel-inner" role="listbox">
-            <div class="item active">
-              <h4>"notice01"<br><span>Dtae(YYYY/MM/DD)</span></h4>
-            </div>
-            <div class="item">
-              <h4>"notice02"<br><span>Dtae(YYYY/MM/DD)</span></h4>
-            </div>
-            <div class="item">
-              <h4>"notice03"<br><span>Dtae(YYYY/MM/DD)</span></h4>
-            </div>
-          </div>
-          <!-- Left and right controls -->
-          <!--<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-              </a>
-              <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-              </a>
-          </div>
-      </div>-->
-
-<!-- Container (About Section) -->
-<!--<div id="about" class="container-fluid">
-  <div class="row">
-    <div class="col-sm-8">
-            <h2>TODAY ALLOCATION OF LECTURE HALLS</h2>
-          <table class="table table-bordered table-dark">
-        <thead>
-          <tr>
-            <th scope="col">Time</th>
-            <th scope="col">Main Auditorium</th>
-            <th scope="col">Lecture Hall 01</th>
-            <th scope="col">Lecture Hall 02</th>
-            <th scope="col">Lecture Hall 03</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">8-9</th>
-            <td> </td>
-            <td> </td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th scope="row">9-10</th>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td></td>
-          </tr>
-          <tr>
-          <th scope="row">10-11</th>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td></td>
-          </tr>
-          <th scope="row">11-12</th>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td></td>
-          </tr>
-          <th scope="row">13-14</th>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td></td>
-          </tr>
-          <th scope="row">14-15</th>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td></td>
-          </tr>
-          <th scope="row">15-16</th>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td></td>
-          </tr>
-          <th scope="row">16-17</th>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td></td>
-          </tr>
-          <th scope="row">17-18</th>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td></td>
-          </tr>
-
-        </tbody>
-      </table>
-          </div>
-    <div class="col-sm-4">
-      Calender
-    </div>
-  </div>
-</div>
-
-
-<div class="container-fluid bg-grey">
-  <div class="row">
-    <div class="col-sm-4">
-      map
-    </div>
-    <div class="col-sm-8">
-      <h2>TODAY ALLOCATION OF PRACTICAL LABS</h2>
-            <table class="table table-bordered table-dark">
-          <thead>
-            <tr>
-              <th scope="col">Time</th>
-              <th scope="col">Lab 01</th>
-              <th scope="col">Lab 02</th>
-              <th scope="col">Lab 03</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">8-9</th>
-              <td> </td>
-              <td> </td>
-              <td></td>
-            </tr>
-            <tr>
-              <th scope="row">9-10</th>
-              <td> </td>
-              <td> </td>
-              <td> </td>
-
-            </tr>
-            <tr>
-            <th scope="row">10-11</th>
-              <td> </td>
-              <td> </td>
-              <td> </td>
-
-            </tr>
-            <th scope="row">11-12</th>
-              <td> </td>
-              <td> </td>
-              <td> </td>
-
-            </tr>
-            <th scope="row">13-14</th>
-              <td> </td>
-              <td> </td>
-              <td> </td>
-
-            </tr>
-            <th scope="row">14-15</th>
-              <td> </td>
-              <td> </td>
-              <td> </td>
-
-            </tr>
-            <th scope="row">15-16</th>
-              <td> </td>
-              <td> </td>
-              <td> </td>
-
-            </tr>
-            <th scope="row">16-17</th>
-              <td> </td>
-              <td> </td>
-              <td> </td>
-
-            </tr>
-            <th scope="row">17-18</th>
-              <td> </td>
-              <td> </td>
-              <td> </td>
-
-            </tr>
-
-          </tbody>
-        </table>
-            </div>
-          </div>
-        </div>-->
-
-    <div class="container">
+      
+   
+   
+   
+   <!--map start-->
+   
+        <div class="container">
         <img src="images/im1.jpg" alt="Snow"  class="img2" >
 
             <div class="container1">
@@ -279,7 +91,7 @@
                     <table class="table table-dark">
                         <tbody>
                             <tr>
-                                <td colspan="3">No Time slotes allocated For Today!</td>
+                                <td colspan="3">No Time Slotes Allocated For Today!</td>
                             </tr>
                         </tbody>
                     </table>
@@ -454,7 +266,7 @@
                     <table class="table table-dark">
                         <tbody>
                             <tr>
-                                <td colspan="3">No Time slotes allocated For Today!</td>
+                                <td colspan="3">No Time Slotes Allocated For Today!</td>
                             </tr>
                         </tbody>
                     </table>
@@ -489,17 +301,19 @@
                     <table class="table table-dark">
                         <tbody>
                             <tr>
-                                <td colspan="3">No Time slotes allocated For Today!</td>
+                                <td colspan="3">No Time Slotes Allocated For Today!</td>
                             </tr>
                         </tbody>
                     </table>
                     @endif</div> <!--08-->
                 </div>
             </div>
-      
+      <!--map end-->
 
+
+      <!--calander start-->
             <div class="divi2">
-              <h1 class="hb">Speacial Events</h1>
+              <h1 class="hb">Special Events</h1>
               <div id="calendar">
                   </div>
               </div>
@@ -514,7 +328,7 @@
                 $(document).ready(function() {
                 var calendar = $('#calendar').fullCalendar({
                     header: {
-                        left:'prev,next today',
+                        left:'prev,next,today',
                         center:'title',
                         right:'month,agendaWeek,agendaDay',
                     },
@@ -524,27 +338,11 @@
                     })
             });
 
-            //for (let i = 0; i <booking.length; i++) {
-                //console.log(booking[i]);
-                //const news = [booking.event]
+           //calander end
 
-    //}
 
-    //console.log(sum);
+            //notice start
 
-                        //array of news
-            //const news = ["Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-            //"Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-            //"Contrary to popular belief, Lorem Ipsum is not simply random text.",
-           // "The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.",
-           // "All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary."]
-
-           //const news = [booking.event]
-           //const news = [array.forEach(booking => {
-                //title;
-           //});]
-
-            //logo
             const logo = "<img src='/images/O.jpg' width='25px' style='margin:0 8px'/>";
             let tickerText = "";
             //looping through the news array
@@ -558,6 +356,10 @@
 
             document.querySelector("#scroll").innerHTML = tickerText;
             </script>
+            <!--notice end-->
+
+
+
 </body>
 </html>
 @endsection
