@@ -9,12 +9,12 @@ class LabmaintrainesController extends Controller
 {
     public function form()
     {
-        return view('form');
+        return view('academicsupportive.form');
     }
 
     public function viewcomplain(Request $req)
     {
-        $Labmaintraines = new Labmaintraines([
+        /*$Labmaintraines = new Labmaintraines([
             'user_name' => $req->input('user_name'),
             'lab' => $req->input('Lab'), // Use 'Lab' instead of 'lab' to match the form field name
             'lap/pc' => $req->has('lap/pc'), // Use 'has' to check if the checkbox is checked
@@ -29,6 +29,6 @@ class LabmaintrainesController extends Controller
 
         $Labmaintraines->save();
 
-        return redirect()->back()->with('success', 'Form is submitted Successfully'); // Use redirect()->back() to return back to the form
+        return redirect()->back()->with('success', 'Form is submitted Successfully'); // Use redirect()->back() to return back to the form*/
     }
 }

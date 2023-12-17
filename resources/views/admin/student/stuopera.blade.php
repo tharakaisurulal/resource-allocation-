@@ -45,7 +45,7 @@
                     <td>Id</td>
                     <td>photo</td>
                     <td>username</td>
-                    <td>first name</td>
+                    <td>Initials</td>
                     <td>mobile</td>
                     <td>Action</td>
 
