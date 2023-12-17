@@ -91,7 +91,7 @@
                     <table class="table table-dark">
                         <tbody>
                             <tr>
-                                <td colspan="3">No Time slotes allocated For Today!</td>
+                                <td colspan="3">No Time Slotes Allocated For Today!</td>
                             </tr>
                         </tbody>
                     </table>
@@ -266,7 +266,7 @@
                     <table class="table table-dark">
                         <tbody>
                             <tr>
-                                <td colspan="3">No Time slotes allocated For Today!</td>
+                                <td colspan="3">No Time Slotes Allocated For Today!</td>
                             </tr>
                         </tbody>
                     </table>
@@ -301,7 +301,7 @@
                     <table class="table table-dark">
                         <tbody>
                             <tr>
-                                <td colspan="3">No Time slotes allocated For Today!</td>
+                                <td colspan="3">No Time Slotes Allocated For Today!</td>
                             </tr>
                         </tbody>
                     </table>
@@ -313,7 +313,7 @@
 
       <!--calander start-->
             <div class="divi2">
-              <h1 class="hb">Speacial Events</h1>
+              <h1 class="hb">Special Events</h1>
               <div id="calendar">
                   </div>
               </div>
