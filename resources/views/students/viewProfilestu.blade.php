@@ -40,18 +40,15 @@
 
 
         <div class="links">
-            <a class="ResearchGate" href=
-"https://www.ResearchGate.com/geeksforgeeks.org/"
+            <a class="ResearchGate" href="https://www.ResearchGate.com/geeksforgeeks.org/"
                 target="_blank" title="GFG_ResearchGate">
                 <i class="fab fa-ResearchGate"></i>
             </a>
-            <a class="git" href=
-"https://github.com/topics/geeksforgeeks"
+            <a class="git" href="https://github.com/topics/geeksforgeeks"
                 title="GFG_github" target="_blank">
                 <i class="fab fa-github-square"></i>
             </a>
-            <a class="linkedin" href=
-"https://www.geeksforgeeks.org/tag/linkedin/"
+            <a class="linkedin" href="https://www.geeksforgeeks.org/tag/linkedin/"
                 title="GFG_linkedin" target="_blank">
                 <i class="fab fa-linkedin"></i>
             </a>
