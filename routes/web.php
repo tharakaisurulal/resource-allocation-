@@ -120,7 +120,7 @@ Route::get('/guest/guestrequest', [guestController::class, 'guestrequest']); //v
 
 //Route::get('/home', [loginController::class, 'home'])->middleware('IsLoggedIn'); //restrict from login to home
 //Route::get('/home', [loginController::class, 'home']);
-Route::get('/guest/guesthome', [guestController::class, 'guesthome'])->middleware('IsLoggedIn');
+Route::get('/guest/guesthome', [guestController::class, 'guesthome']);//->middleware('IsLoggedIn');
 
 Route::post('/guestreq', [guestController::class, 'guestreq'])->name('guestreq'); //store request details in database.
 
@@ -443,4 +443,14 @@ Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showRese
 Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
 
 Route::get('/maintanceformview', [LabmaintrainesController::class, 'form'])->name('form');
-Route::post('/maintanceformsubmit', [LabmaintrainesController::class, 'viewcomplain'])->name('viewcomplain');
+Route::get('/maintanceformview1', [LabmaintrainesController::class, 'form2'])->name('form2');
+Route::post('/maintanceformsubmit', [LabmaintrainesController::class, 'viewcomplaint'])->name('viewcomplaint');
+
+//Route::post('/labform', [LabmaintrainesController::class, 'viewComplaint'])->name('formView');
+Route::post('/labform2', [LabmaintrainesController::class, 'viewhallComplaint'])->name('formView2');
+Route::get('/lab-complaints', [LabmaintrainesController::class, 'viewLabComplaints']);
+
+
+Route::get('/viewlabcomp', [LabmaintrainesController::class, 'viewlabcom']);
+
+
