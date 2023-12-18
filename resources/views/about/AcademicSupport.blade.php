@@ -76,6 +76,7 @@
 
             <td>
             <div class="card" style="--clr:rgb(17, 17, 17);">
+                <button type="button" class="btn btn-warning but1" onclick="history.back()" >Back</button>
                 <div class="imgBx">
                     <img src="/images/Supportive/795.jpg" alt="">
                 </div>
