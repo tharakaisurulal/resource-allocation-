@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    padding: 0;
+    /*box-sizing: border-box;*/
+    /*font-family: 'Poppins', sans-serif;*/
+}
+body{
+    background: #0805056b;
+    background-size:cover;
+
+}
+#full{
+    display: flex;
+   justify-content: center;
+   align-items:center;
+   min-height: 100vh;
+   /*background-color:#0805056b;*/
+   padding-top: 20px;
+    }
+
+
+    .box{
+        position: relative;
+        margin-top: 65px;
+        width: 450px;
+        height:710px;
+        background:#1c1c1c;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    
+    .box::before{
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 380px;
+        height: 620px;
+        background: linear-gradient(0deg, transparent,transparent,#45f3ff,#45f3ff,#45f3ff);
+        z-index: 1;
+        transform-origin: bottom right;
+        animation:animate 6s linear infinite;
+    }
+    
+    .box::after{
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 380px;
+        height: 620px;
+        background: linear-gradient(0deg, transparent,transparent,#45f3ff,#45f3ff,#45f3ff);
+        z-index: 1;
+        transform-origin: bottom right;
+        animation:animate 6s linear infinite;
+        animation-delay: -3s;
+    }
+    @keyframes animate
+    {
+        0%{
+            transform: rotate(0deg);
+        }
+        100%{
+            transform: rotate(360deg);
+        }
+    
+    }
+
+    .box form{
+        position: absolute;
+        inset: 4px;
+        background:#222;
+        padding: 50px 40px;
+        border-radius:8px;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .box form h1{
+        color: #21b1b1;
+        font-weight: 500;
+        text-align: center;
+        letter-spacing: 0.1em;
+    }
+
+.s1{
+    font-size: 15pt;
+    left:0;
+    bottom:0;
+    width:100%;
+    border-radius: 4px;
+    color: #fff;
+
+
+}
+
+
+
+
+.s2{
+    font-size: 15pt;
+    color: #fff;
+}
+
+
+
+.s3{
+    margin-top: 150px;
+}
+
+.box form h3{
+    color: #fff;
+    }
+
+
+.box form  input[type="submit"],
+.box form  input[type="reset"],
+.box form button[type="button"]
+{
+        background-color: #45f3ff;
+        padding:7px 15px;
+        border-radius: 4px;
+        font-weight: 300;
+       
+}
+table{
+    margin-left: auto;
+      margin-right: auto;
+}
