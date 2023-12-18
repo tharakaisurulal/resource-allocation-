@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Labmaintraines;
+use App\Models\hallmaintraines;
+
 
 class LabmaintrainesController extends Controller
 {
@@ -69,7 +71,7 @@ class LabmaintrainesController extends Controller
             'other' => $req->input('other'),
             'add_comment' => $req->input('add_comment'),
         ]);
-
+        return $req;
         // Save the new hall complaint
         $hallmaintraines->save();
 
@@ -77,10 +79,10 @@ class LabmaintrainesController extends Controller
         $hallComplaints = hallmaintraines::all();
 
         // Pass the data to the view and include a success message
-        /*return view('admin.complains', [
+        return view('admin.complains', [
             'labComplaints' => [],
             'hallComplaints' => $hallComplaints,
-        ])->with('success', 'Form is submitted Successfully');*/
+        ])->with('success', 'Form is submitted Successfully');
     }
 
     // public function viewLabComplaints()
@@ -94,7 +96,8 @@ class LabmaintrainesController extends Controller
     {
         //$dater1 = array();
         $labComplaints = Labmaintraines::all();
-            return view('admin.complains',['labComplaints'=> $labComplaints]);
+        $hallComplaints = hallmaintraines::all();
+            return view('admin.complains',['labComplaints'=> $labComplaints,'hallComplaints' => $hallComplaints,]);
         //return $dater1;
             //return view('admin.timetable.addtimetable',compact('dater1'));
         //return view('guest.guesthome');
