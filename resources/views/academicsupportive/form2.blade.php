@@ -11,8 +11,16 @@
     <div id="full">
         <div class="box">
 
-            <form>
+            <form action="{{ route('formView2') }}" method="POST">
+                @csrf
                 <h1>Lecture Hall Maintainance Form</h1><br>
+                @if(session()->has('success'))
+                <div class="alert alert-success">{{session()->get('success')}}</div>
+            @endif
+
+            @if(session()->has('fail'))
+                <div class="alert alert-danger">{{session()->get('fail')}}</div>
+            @endif
 
                 <div class="s1">
                     <label>User name</label>
