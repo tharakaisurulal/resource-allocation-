@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('labmaintraines', function (Blueprint $table) {
             $table->id();
-           
+
              // Add columns based on the form fields
              $table->string('user_name');
              $table->string('lab');
