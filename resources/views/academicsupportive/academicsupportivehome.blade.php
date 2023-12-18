@@ -163,14 +163,30 @@
 
             <div class="face front">
                 <img src="/images/904740.png" alt="" width=300px height=350px>
-                <h3> Maintains</h3>
+                <h3> Maintains on Labs</h3>
             </div>
 
             <div class="face back">
                     <div class="back-content center">
                         <h3> Maintains Form</h3>
                         <div class="button">
-                            <a href=""><span>CLICK</span></a>
+                            <a href="/maintanceformview"><span>CLICK</span></a>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <div class="card">
+
+            <div class="face front">
+                <img src="/images/904740.png" alt="" width=300px height=350px>
+                <h3> Maintains on Lecturehalls</h3>
+            </div>
+
+            <div class="face back">
+                    <div class="back-content center">
+                        <h3> Maintains Form</h3>
+                        <div class="button">
+                            <a href="/maintanceformview1"><span>CLICK</span></a>
                         </div>
                     </div>
             </div>

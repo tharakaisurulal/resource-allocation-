@@ -55,12 +55,12 @@
         </table>
       </div>
     </div>
-      
-   
-   
-   
+
+
+
+
    <!--map start-->
-   
+
         <div class="container">
         <img src="images/im1.jpg" alt="Snow"  class="img2" >
 
@@ -357,9 +357,6 @@
             document.querySelector("#scroll").innerHTML = tickerText;
             </script>
             <!--notice end-->
-
-
-
 </body>
 </html>
 @endsection

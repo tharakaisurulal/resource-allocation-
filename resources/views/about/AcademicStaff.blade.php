@@ -74,7 +74,9 @@
         </td>
 
         <td>
+
         <div class="card" style="--clr:hsl(241, 100%, 29%);">
+            <button type="button" class="btn btn-warning but1" onclick="history.back()" >Back</button>
             <div class="imgBx">
                 <img src="/images/Academic/786.jpg" alt="">
             </div>
@@ -317,5 +319,6 @@
 </tr>
 
 </table>
+
 </body>
 </html>

@@ -15,6 +15,7 @@ use App\Http\Controllers\academicsupportiveController;
 use App\Http\Controllers\timetableController;
 use App\Http\Controllers\bookingController;
 use App\Http\Controllers\pdfController;
+use App\Http\Controllers\LabmaintrainesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -119,7 +120,7 @@ Route::get('/guest/guestrequest', [guestController::class, 'guestrequest']); //v
 
 //Route::get('/home', [loginController::class, 'home'])->middleware('IsLoggedIn'); //restrict from login to home
 //Route::get('/home', [loginController::class, 'home']);
-Route::get('/guest/guesthome', [guestController::class, 'guesthome'])->middleware('IsLoggedIn');
+Route::get('/guest/guesthome', [guestController::class, 'guesthome']);//->middleware('IsLoggedIn');
 
 Route::post('/guestreq', [guestController::class, 'guestreq'])->name('guestreq'); //store request details in database.
 
@@ -440,3 +441,16 @@ Route::get('forget-password', [ForgotPasswordController::class, 'showForgetPassw
 Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm'])->name('forget.password.post');
 Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get'); //pass
 Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
+
+Route::get('/maintanceformview', [LabmaintrainesController::class, 'form'])->name('form');
+Route::get('/maintanceformview1', [LabmaintrainesController::class, 'form2'])->name('form2');
+Route::post('/maintanceformsubmit', [LabmaintrainesController::class, 'viewcomplaint'])->name('viewcomplaint');
+
+//Route::post('/labform', [LabmaintrainesController::class, 'viewComplaint'])->name('formView');
+Route::post('/labform2', [LabmaintrainesController::class, 'viewhallComplaint'])->name('formView2');
+Route::get('/lab-complaints', [LabmaintrainesController::class, 'viewLabComplaints']);
+
+
+Route::get('/viewlabcomp', [LabmaintrainesController::class, 'viewlabcom']);
+
+
