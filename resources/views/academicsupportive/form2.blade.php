@@ -13,14 +13,16 @@
 
             <form action="{{ route('formView2') }}" method="POST">
                 @csrf
-                <h1>Lecture Hall Maintainance Form</h1><br>
-                @if(session()->has('success'))
-                <div class="alert alert-success">{{session()->get('success')}}</div>
-            @endif
+                @if(Session::has('success'))
+                <div style="color: black; text-align: center; background-color: #129999;" class="alert alert-success">{{
+                    Session::get('success') }}</div>
+                @endif
 
-            @if(session()->has('fail'))
-                <div class="alert alert-danger">{{session()->get('fail')}}</div>
-            @endif
+                @if(Session::has('fail'))
+                <div style="color: white; background-color: red;" class="alert alert-danger">{{ Session::get('fail') }}
+                </div>
+                @endif
+                <h1>Lecture Hall Maintainance Form</h1><br>
 
                 <div class="s1">
                     <label>User name</label>
