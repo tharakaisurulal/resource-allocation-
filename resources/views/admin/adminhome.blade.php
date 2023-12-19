@@ -196,7 +196,6 @@
         <p>Unread Requests From Lecturer: {{ $unreadMessagesCount2 }}</p>-->
         </a>
     </button>
-    <a href="/viewlabcomp">dddddd</a>
 </div>
     </body>
     </html>
