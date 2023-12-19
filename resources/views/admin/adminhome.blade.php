@@ -123,21 +123,16 @@
                         <li><a href="#">MESSAGES</a></li>
                       </button>
                     </h2>
-                  </div>
+                  </div>-->
 
 
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="flush-headingEleven">
-                      <button class="accordion-button collapsed sec2" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseEleven" aria-expanded="false" aria-controls="flush-collapseEleven">
+                      <button class="accordion-button collapsed sec2" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseEleven" aria-expanded="false" aria-controls="flush-collapseEleven" onclick="window.location.href='/viewlabcomp';">
                         <li><a href="#">MAINTENANCE COMPLAIN</a></li>
                       </button>
                     </h2>
-                    <div id="flush-collapseEleven" class="accordion-collapse collapse sec2" aria-labelledby="flush-headingEleven" data-bs-parent="#accordionFlushExample">
-                      <div class="accordion-body">
-
-                      </div>
-                    </div>
-                  </div>-->
+                  </div>
 
 
                   <div class="accordion-item">
