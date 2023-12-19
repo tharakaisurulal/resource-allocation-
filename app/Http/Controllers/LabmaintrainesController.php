@@ -42,16 +42,20 @@ class LabmaintrainesController extends Controller
     ]);
 
     // Save the new Lab complaint
-    $labComplaint->save();
+    $ress=$labComplaint->save();
 
     // Retrieve all Labmaintraines data
     $labComplaints = Labmaintraines::all();
 
     // Pass the data to the view and include a success message
-    return view('admin.complains', [
-        'labComplaints' => $labComplaints,
-        'hallComplaints' => [],
-    ])->with('success', 'Form is submitted Successfully');
+    if($ress){
+        //return redirect('/') -> withSuccess("you are registered");
+        //return back() -> with('success',"you are registered");
+        return back() -> with('success',"you have successfully submitted the form");
+        }
+        else{
+            return back() -> with('fail',"Form is not submitted");
+        }
 }
 
 
@@ -71,18 +75,22 @@ class LabmaintrainesController extends Controller
             'other' => $req->input('other'),
             'add_comment' => $req->input('add_comment'),
         ]);
-        return $req;
+        //return $req;
         // Save the new hall complaint
-        $hallmaintraines->save();
+        $ress=$hallmaintraines->save();
 
         // Retrieve all hallmaintraines data
         $hallComplaints = hallmaintraines::all();
 
         // Pass the data to the view and include a success message
-        return view('admin.complains', [
-            'labComplaints' => [],
-            'hallComplaints' => $hallComplaints,
-        ])->with('success', 'Form is submitted Successfully');
+        if($ress){
+            //return redirect('/') -> withSuccess("you are registered");
+            //return back() -> with('success',"you are registered");
+            return back() -> with('success',"you have successfully submitted the form");
+            }
+            else{
+                return back() -> with('fail',"Form is not submitted");
+            }
     }
 
     // public function viewLabComplaints()
@@ -103,5 +111,19 @@ class LabmaintrainesController extends Controller
         //return view('guest.guesthome');
 
     }
+
+    public function deletelabmainta($id) //delete lecturer using the selected id.
+{
+        $Labmaintraines = Labmaintraines::find($id);
+        $Labmaintraines->delete();
+        return redirect()->back()-> with('success',"successfully deleted.");
+}
+
+public function deletehallmainta($id) //delete lecturer using the selected id.
+{
+        $hallmaintraines = hallmaintraines::find($id);
+        $hallmaintraines->delete();
+        return redirect()->back()-> with('success',"successfully deleted.");
+}
 
 }
