@@ -61,6 +61,45 @@
             @endforeach
         </table>
     @endif
+
+    @if(count($hallComplaints)==!0)
+        <h2>Hall Complaints</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>User Name</th>
+                    <th>Hall</th>
+                    <th>A/C</th>
+                    <th>Fan</th>
+                    <th>Projector</th>
+                    <th>Sound</th>
+                    <th>Light</th>
+                    <th>Chair</th>
+                    <th>Other</th>
+                    <th>Additional Comment</th>
+                    <th>Timestamp</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($hallComplaints as $complaint)
+                    <tr>
+                        <td>{{ $complaint->user_name }}</td>
+                        <td>{{ $complaint->hall }}</td>
+                        <td>{{ $complaint->a_c ? 'Yes' : 'No' }}</td>
+                        <td>{{ $complaint->fan ? 'Yes' : 'No' }}</td>
+                        <td>{{ $complaint->projector ? 'Yes' : 'No' }}</td>
+                        <td>{{ $complaint->sound ? 'Yes' : 'No' }}</td>
+                        <td>{{ $complaint->light ? 'Yes' : 'No' }}</td>
+                        <td>{{ $complaint->chair ? 'Yes' : 'No' }}</td>
+                        <td>{{ $complaint->other }}</td>
+                        <td>{{ $complaint->add_comment }}</td>
+                        <td>{{ $complaint->created_at }}</td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    @endif
 </body>
 
 </html>
