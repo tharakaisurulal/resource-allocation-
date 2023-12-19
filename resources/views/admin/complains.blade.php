@@ -44,6 +44,7 @@
                 <th>Lights</th>
                 <th>Other Issues</th>
                 <th>Additional comment</th>
+                <th>Action</th>
             </tr>
             @foreach($labComplaints as $complaint)
                 <tr>
@@ -57,6 +58,14 @@
                     <td>{{ $complaint->light ? 'Yes' : 'No' }}</td>
                     <td>{{ $complaint->other }}</td>
                     <td>{{ $complaint->add_comment }}</td>
+                    <td>
+                        <div class="dropdown">
+                              <!--<li><a class="dropdown-item" href="{{url('update-student/'.$complaint->id)}}" >Edit</a></li>-->
+                              <li><a class="dropdown-item" href="{{url('deletelabmainta/'.$complaint->id)}}">Delete</a></li>
+                            </ul>
+                          </div>
+
+                    </td>
                 </tr>
             @endforeach
         </table>
@@ -79,6 +88,7 @@
                     <th>Other</th>
                     <th>Additional Comment</th>
                     <th>Timestamp</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -95,11 +105,21 @@
                         <td>{{ $complaint->other }}</td>
                         <td>{{ $complaint->add_comment }}</td>
                         <td>{{ $complaint->created_at }}</td>
+                        <td>
+                            <div class="dropdown">
+                                  <!--<li><a class="dropdown-item" href="{{url('update-student/'.$complaint->id)}}" >Edit</a></li>-->
+                                  <li><a class="dropdown-item" href="{{url('deletehallmainta/'.$complaint->id)}}">Delete</a></li>
+                                </ul>
+                              </div>
+
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
     @endif
+
+    <button type="button" onclick="history.back()" style="margin-left: 1100px; margin-top:40px;">Back</button>
 </body>
 
 </html>

@@ -14,7 +14,7 @@
     <div id="full">
         <div class="box">
 
-            <form action="{{ route('viewcomplain') }}" method="POST">
+            <form action="{{ route('viewcomplaint') }}" method="POST">
                 @if(Session::has('success'))
                 <div style="color: black; text-align: center; background-color: #129999;" class="alert alert-success">{{
                     Session::get('success') }}</div>

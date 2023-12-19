@@ -453,5 +453,7 @@ Route::get('/lab-complaints', [LabmaintrainesController::class, 'viewLabComplain
 
 Route::get('/viewlabcomp', [LabmaintrainesController::class, 'viewlabcom']);
 Route::get('/viewlabcomp1', [LabmaintrainesController::class, 'viewlabcom1']);
+Route::get('deletelabmainta/{id}', [LabmaintrainesController::class, 'deletelabmainta']);
+Route::get('deletehallmainta/{id}', [LabmaintrainesController::class, 'deletehallmainta']);
 
 
